@@ -1,5 +1,18 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json?v=6";
+const DATA_URL = "./data/genshin_uid_802472241_data.json?v=7";
 const STORAGE_KEY = "genshin_uid_802472241_done_v1";
+
+const WEAPON_SWAPS = [
+  { id: "sw_navia", priority: "bad", from: "Xinyan", to: "Navia", reason: "Kiếm Li Cốt (27.6% CR) kéo CR Navia 29% → 57% (hoặc Kiếm Vô Công từ Chongyun)" },
+  { id: "sw_fischl", priority: "bad", from: "Yelan", to: "Fischl", reason: "Tuyệt Huyền R5 thay Cung Rỉ Sét → +48% ST Oz" },
+  { id: "sw_yelan", priority: "bad", from: "Kujou Sara", to: "Yelan", reason: "Cung Tây Phong (nâng 90) bù thiếu ER 140.7%" },
+  { id: "sw_xl", priority: "bad", from: "Chevreuse", to: "Xiangling", reason: "Lao Xiên Cá R5 mạnh hơn Xương Sống cho Nộ XL" },
+  { id: "sw_chev", priority: "bad", from: "Candace", to: "Chevreuse", reason: "Hắc Anh Thương R5 (46.9% HP) kéo Chev lên 40k HP" },
+  { id: "sw_noelle", priority: "warn", from: "Sayu", to: "Noelle", reason: "Kiếm Bạch Ảnh R5 DEF% thay Vũ Tài Lv.1 (Nhà Hát)" },
+  { id: "sw_jean", priority: "warn", from: "Nhà Lữ Hành", to: "Jean", reason: "Tây Phong Kiếm R5 bù ER 105% cho Jean / Layla" },
+  { id: "sw_nilou", priority: "warn", from: "Lynette", to: "Nilou", reason: "Kiếm Bến Tàu HP% (nâng 90) tăng Hạt Sum Suê" },
+  { id: "sw_kuki", priority: "warn", from: "Nilou", to: "Kuki Shinobu", reason: "Thiết Phong Kích R3 (+165 EM) khi không dùng Nilou" },
+  { id: "sw_ning", priority: "warn", from: "Shikanoin Heizou", to: "Ningguang", reason: "Mượn Chương Nhạc R5 thay sách 1★ Lv.1 (Nhà Hát)" },
+];
 
 const SET_META = {
   mh: {
@@ -420,10 +433,55 @@ function renderChecklist() {
   `;
 }
 
+function renderWeaponSwaps() {
+  const doneCount = WEAPON_SWAPS.filter((s) => APP.done[s.id]).length;
+  return `
+    <section class="checklist-section">
+      <div class="checklist-head">
+        <strong>Đổi Vũ Khí Sẵn Có (${doneCount}/${WEAPON_SWAPS.length} đã đổi)</strong>
+        <span>0 tốn Nhựa · Chuyển vũ khí đang nằm ở nhân vật dự bị sang chủ lực</span>
+      </div>
+      <div class="swap-grid">
+        ${WEAPON_SWAPS.map((s) => {
+          const fromC = byName(s.from);
+          const toC = byName(s.to);
+          const w = fromC?.weapon;
+          const isDone = !!APP.done[s.id];
+          const focused = APP.focusChar === s.to;
+          return `
+            <div class="swap-row ${isDone ? "done" : ""} ${focused ? "focused" : ""}" data-char="${esc(s.to)}">
+              <div class="swap-transfer">
+                <input type="checkbox" data-fix-id="${esc(s.id)}" ${isDone ? "checked" : ""} aria-label="Đổi ${esc(w?.name || "")} cho ${esc(s.to)}" />
+                <span class="status-dot dot-${s.priority === "bad" ? "bad" : "warn"}"></span>
+                <span class="swap-char" title="Từ ${esc(s.from)}">
+                  ${fromC?.icon ? `<img src="${esc(fromC.icon)}" alt="${esc(s.from)}" referrerpolicy="no-referrer" />` : ""}
+                  <span>${esc(s.from)}</span>
+                </span>
+                <span class="swap-arrow">→</span>
+                <span class="swap-weapon" title="${esc(w?.name || "")} R${esc(w?.refinement || 1)} Lv.${esc(w?.level || 1)}">
+                  ${w?.icon ? `<img src="${esc(w.icon)}" alt="${esc(w.name)}" referrerpolicy="no-referrer" />` : ""}
+                  <strong>${esc(w?.name || "")}</strong>
+                </span>
+                <span class="swap-arrow">→</span>
+                <span class="swap-char" title="Sang ${esc(s.to)}">
+                  ${toC?.icon ? `<img src="${esc(toC.icon)}" alt="${esc(s.to)}" referrerpolicy="no-referrer" />` : ""}
+                  <span>${esc(s.to)}</span>
+                </span>
+              </div>
+              <div class="swap-reason" title="${esc(s.reason)}">${esc(s.reason)}</div>
+            </div>
+          `;
+        }).join("")}
+      </div>
+    </section>
+  `;
+}
+
 function render() {
   document.getElementById("app-root").innerHTML = [
     renderRadar(),
     renderStage(),
+    renderWeaponSwaps(),
     renderChecklist(),
   ].join("");
 
@@ -446,7 +504,7 @@ function render() {
       render();
     });
   });
-  document.querySelectorAll(".check-row input[type=checkbox]").forEach((cb) => {
+  document.querySelectorAll("input[type=checkbox][data-fix-id]").forEach((cb) => {
     cb.addEventListener("click", (e) => {
       e.stopPropagation();
       APP.done[cb.getAttribute("data-fix-id")] = cb.checked;
@@ -454,7 +512,7 @@ function render() {
       render();
     });
   });
-  document.querySelectorAll(".check-row").forEach((el) => {
+  document.querySelectorAll(".check-row, .swap-row").forEach((el) => {
     el.addEventListener("click", () => {
       const ch = el.getAttribute("data-char");
       APP.focusChar = APP.focusChar === ch ? null : ch;
