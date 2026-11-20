@@ -1,4 +1,4 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json?v=9";
+const DATA_URL = "./data/genshin_uid_802472241_data.json?v=10";
 const STORAGE_KEY = "genshin_uid_802472241_done_v2";
 
 const SET_META = {
@@ -49,6 +49,79 @@ const SURPLUS_WEAPONS = [
   { id: "s_fading", from: "Collei", to: "Kujou Sara", action: "Chuyển sang cho Kujou Sara", plan: "Sara nhường Cung Tây Phong cho Yelan → mượn Lạc Hà R5 (Base ATK 565 · 30.6% ER) từ Collei giữ trọn buff ATK." },
   { id: "s_sapwood", from: "Kuki Shinobu", to: "Bennett", action: "Đưa cho Bennett (nếu Kuki cầm Thiết Phong Kích)", plan: "Base ATK 565 cao hơn Răng Nanh Rỉ Sét (510), giúp Bennett buff ATK mạnh hơn · Hoặc đưa Nhà Lữ Hành (Thảo)." },
   { id: "s_isshin", from: "Jean", to: "Lynette", action: "Đổi qua cho Lynette (dư thêm Narzissenkreuz từ Layla)", plan: "Jean mượn Tây Phong Kiếm & Layla cầm Kiếm Bến Tàu HP% → chuyển Isshin Lv.80 cho Lynette (còn Narzissenkreuz R3 tạm cất/chờ Valeriy)." },
+];
+
+const COLLECT_WEAPONS = [
+  {
+    id: "c_fleuve",
+    name: "Ống Đồng Fleuve Cendre",
+    type: "Kiếm Đơn 4★ · 45.9% ER · +CR% E",
+    icon: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Machination.png",
+    source: "Câu cá Fontaine (64%)",
+    chars: ["Jean", "Lynette", "Xingqiu"],
+    extraTarget: "BiS F2P cho Furina",
+    why: "Giải quyết thiếu Tây Phong Kiếm & để sẵn cho mục tiêu roll Furina (đổi ở NPC Delaroche, không tốn Phôi).",
+  },
+  {
+    id: "c_masterkey",
+    name: "Chìa Khóa Vạn Năng",
+    type: "Trọng Kiếm 4★ · 61.3% ER · +EM",
+    icon: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Ilmarinen.png",
+    source: "Rèn Nod-Krai (7%)",
+    chars: ["Aino"],
+    extraTarget: null,
+    why: "Vũ khí rèn F2P số 1 cho Aino (hiện đang cầm kiếm 1★): vừa đủ Nạp 61.3% vừa cộng EM ngoài sân.",
+  },
+  {
+    id: "c_finale",
+    name: "Nhạc Khúc Biển Sâu",
+    type: "Kiếm Đơn 4★ · 565 ATK · 27.6% ATK",
+    icon: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Vorpal.png",
+    source: "Rèn Fontaine (Estelle)",
+    chars: ["Valeriy", "Kamisato Ayaka"],
+    extraTarget: null,
+    why: "Tốt nhất cho Valeriy (buff quill & khiên scale thuần theo Tổng ATK), thay cho kiếm 1★ hiện tại.",
+  },
+  {
+    id: "c_amber",
+    name: "Mẫu Kim Phách",
+    type: "Pháp Khí 4★ · 41.3% HP · Hồi máu Nộ",
+    icon: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Proto.png",
+    source: "Rèn Liyue / Mondstadt (100%)",
+    chars: ["Mona", "Sucrose", "Charlotte"],
+    extraTarget: null,
+    why: "Cả acc chưa có cây nào: biến Mona/Sucrose thành Healer phụ kiêm hồi Năng Lượng khi Nộ.",
+  },
+  {
+    id: "c_hakushin",
+    name: "Vòng Bạch Thần",
+    type: "Pháp Khí 4★ · 30.6% ER · Buff Lôi",
+    icon: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Bakufu.png",
+    source: "Nhiệm vụ Inazuma (100%)",
+    chars: ["Sucrose", "Mona", "Lisa"],
+    extraTarget: null,
+    why: "Bản vẽ từ chuỗi quest Anh Đào Thần: buff thẳng ST nguyên tố cho team Keqing / Mitya khi kích phản ứng Lôi.",
+  },
+  {
+    id: "c_moonweaver",
+    name: "Bình Minh Của Người Dệt Trăng",
+    type: "Kiếm Đơn 4★ · 565 ATK · +ST Nộ",
+    icon: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Miekka.png",
+    source: "World Quest Nod-Krai (Đảo Hiisi)",
+    chars: ["Lynette", "Keqing", "Kaeya"],
+    extraTarget: "Free 100% không tốn Phôi",
+    why: "Nhận trực tiếp sau chuỗi quest Polkka Beneath the Moon's Oracle — cực mạnh cho nhân vật Nộ 40–60 năng lượng.",
+  },
+  {
+    id: "c_ezpitzal",
+    name: "Sáo Ezpitzal",
+    type: "Kiếm Đơn 4★ · 69.0% DEF · +DEF E",
+    icon: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Isikhulu.png",
+    source: "Giải đố Natlan (3%)",
+    chars: [],
+    extraTarget: "Free 1 bản · Để sẵn cho Xilonen",
+    why: "Làm giải đố Furnace of Fiery Embers nhận free 1 cây (BiS F2P cho Xilonen trong danh sách roll sắp tới).",
+  },
 ];
 
 const FARM_DAYS = [
@@ -165,7 +238,7 @@ function renderTodayStrip() {
 }
 
 function renderViewBar() {
-  const allTasks = [...ACTIONS, ...SURPLUS_WEAPONS];
+  const allTasks = [...ACTIONS, ...SURPLUS_WEAPONS, ...COLLECT_WEAPONS];
   const total = allTasks.length;
   const doneCount = allTasks.filter((a) => APP.done[a.id]).length;
   const pct = Math.round((doneCount / total) * 100);
@@ -320,17 +393,71 @@ function renderSurplusBucket() {
   `;
 }
 
+function renderCollectBucket() {
+  const filtered = APP.filter === "pending" ? COLLECT_WEAPONS.filter((w) => !APP.done[w.id]) : COLLECT_WEAPONS;
+  if (filtered.length === 0) return "";
+
+  return `
+    <section class="bucket bucket-collect">
+      <div class="bucket-head">
+        <h2>5. Vũ Khí Miễn Phí / Rèn Đáng Thu Thập Sau (${filtered.length})</h2>
+        <span>Món acc chưa thấy sở hữu · làm quest, câu cá hoặc rèn khi đủ Phôi</span>
+      </div>
+      <div class="action-table">
+        ${filtered
+          .map((w) => {
+            const isDone = !!APP.done[w.id];
+            const faces = w.chars
+              .map((n) => {
+                const c = byName(n);
+                return `<span class="sflow-char">
+                  ${c?.icon ? `<img src="${esc(c.icon)}" alt="${esc(n)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                  <strong>${esc(n)}</strong>
+                </span>`;
+              })
+              .join("");
+
+            return `
+              <div class="surplus-row ${isDone ? "done" : ""}">
+                <div class="col-sw">
+                  <input type="checkbox" data-act-id="${esc(w.id)}" ${isDone ? "checked" : ""} aria-label="Thu thập ${esc(w.name)}" />
+                  <img class="w-pic" src="${esc(w.icon)}" alt="${esc(w.name)}" loading="lazy" referrerpolicy="no-referrer" />
+                  <div>
+                    <strong>${esc(w.name)}</strong>
+                    <small>${esc(w.type)}</small>
+                  </div>
+                </div>
+                <div class="col-cfor">
+                  <span class="csource">${esc(w.source)}</span>
+                  <div class="cfaces">
+                    ${faces}
+                    ${w.extraTarget ? `<span class="sflow-vault">${esc(w.extraTarget)}</span>` : ""}
+                  </div>
+                </div>
+                <div class="col-splan">
+                  <b>${esc(w.why)}</b>
+                </div>
+              </div>
+            `;
+          })
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
 function renderTrackerView() {
   const nowItems = ACTIONS.filter((a) => a.bucket === "now");
   const farmItems = ACTIONS.filter((a) => a.bucket === "farm");
   const laterItems = ACTIONS.filter((a) => a.bucket === "later");
-  const totalCount = ACTIONS.length + SURPLUS_WEAPONS.length;
+  const totalCount = ACTIONS.length + SURPLUS_WEAPONS.length + COLLECT_WEAPONS.length;
 
   const body = [
     renderActionBucket("1. Làm Ngay Trong Game — 0 Tốn Nhựa", "Đổi vũ khí đang nằm ở nhân vật dự bị & sửa dòng chính TDV có sẵn", "bucket-now", nowItems),
     renderActionBucket("2. Cần Farm — Vùng Đã Mở", "Fontaine (64%) · Nod-Krai (7%) · Inazuma (100%) · Sumeru (100%)", "bucket-farm", farmItems),
     renderActionBucket("3. Đợi Mở Snezhnaya (0%)", "Chờ đi tới Snezhnaya mới farm được Sách & Boss", "bucket-later", laterItems),
     renderSurplusBucket(),
+    renderCollectBucket(),
   ].join("");
 
   return `
