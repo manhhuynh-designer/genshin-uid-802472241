@@ -1,4 +1,4 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json";
+const DATA_URL = "./data/genshin_uid_802472241_data.json?v=2";
 
 function esc(v) {
   return String(v ?? "")
