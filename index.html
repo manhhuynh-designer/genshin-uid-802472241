@@ -3,55 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahyh (UID 802472241) — Genshin Battle Chronicle &amp; Meta Planner</title>
+  <title>Mahyh · UID 802472241 — La Hoàn · Nhà Hát · Meta 7.2 · Lịch Farm</title>
   <link rel="stylesheet" href="./assets/styles.css" />
 </head>
 <body>
-  <header class="hero">
+  <header class="hero" id="hero">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-overlay"></div>
     <div class="container hero-inner">
-      <div>
-        <div class="badge-row">
-          <span class="pill pill-gold">Asia · os_asia</span>
-          <span class="pill" id="ar-pill">AR 60</span>
-          <span class="pill">Version 7.2</span>
+      <div class="hero-left">
+        <img class="hero-logo" id="hero-logo" alt="Genshin Impact" referrerpolicy="no-referrer" />
+        <div>
+          <div class="badge-row">
+            <span class="pill pill-gold">UID 802472241</span>
+            <span class="pill">AR 60 · Asia</span>
+            <span class="pill">Patch 7.2</span>
+          </div>
+          <h1 id="player-title">Mahyh</h1>
+          <p class="subtitle" id="crawl-meta">Tóm tắt tư vấn La Hoàn · Nhà Hát · Meta 7.2 · Lịch Farm</p>
         </div>
-        <h1 id="player-title">Mahyh <span class="uid-tag">UID 802472241</span></h1>
-        <p class="subtitle" id="crawl-meta">Đang tải dữ liệu từ HoYoLAB Battle Chronicle…</p>
       </div>
       <div class="hero-actions">
-        <a class="btn btn-secondary" href="./data/genshin_uid_802472241_data.json" target="_blank" rel="noopener">Tải JSON gốc</a>
-        <a class="btn btn-primary" href="./docs/conversation-notes.md" target="_blank" rel="noopener">Ghi chú Markdown</a>
+        <a class="btn btn-secondary" href="./data/genshin_uid_802472241_data.json" target="_blank" rel="noopener">JSON</a>
+        <a class="btn btn-primary" href="./docs/conversation-notes.md" target="_blank" rel="noopener">Notes</a>
       </div>
     </div>
   </header>
 
-  <nav class="tabs-bar">
-    <div class="container tabs-inner" role="tablist">
-      <button class="tab-btn active" data-tab="overview" role="tab">Tổng Quan &amp; Khám Phá</button>
-      <button class="tab-btn" data-tab="characters" role="tab">Nhân Vật &amp; Build (70)</button>
-      <button class="tab-btn" data-tab="endgame" role="tab">La Hoàn · Ảo Cảnh · Nhà Hát</button>
-      <button class="tab-btn" data-tab="planner" role="tab">Meta 7.2 &amp; Lịch Farm</button>
+  <nav class="quick-nav">
+    <div class="container nav-inner">
+      <a class="nav-pill active" href="#sec-abyss">La Hoàn (16.11–16.12)</a>
+      <a class="nav-pill" href="#sec-theater">Nhà Hát (01.11–01.12)</a>
+      <a class="nav-pill" href="#sec-fixes">Sửa Build Nhanh</a>
+      <a class="nav-pill" href="#sec-meta">Meta 7.2 Cần Build</a>
+      <a class="nav-pill" href="#sec-farm">Lịch Farm &amp; Ảo Cảnh</a>
     </div>
   </nav>
 
-  <main class="container main-content">
-    <section id="tab-overview" class="tab-panel active"></section>
-    <section id="tab-characters" class="tab-panel"></section>
-    <section id="tab-endgame" class="tab-panel"></section>
-    <section id="tab-planner" class="tab-panel"></section>
+  <main class="container main-content" id="app-root">
+    <div class="loading">Đang tải dữ liệu HoYoLAB…</div>
   </main>
-
-  <div id="char-modal" class="modal hidden" aria-hidden="true">
-    <div class="modal-backdrop" id="modal-backdrop"></div>
-    <div class="modal-dialog" role="dialog" aria-modal="true">
-      <button class="modal-close" id="modal-close" aria-label="Đóng">&times;</button>
-      <div id="modal-body"></div>
-    </div>
-  </div>
 
   <footer class="footer">
     <div class="container">
-      <span>Dữ liệu crawl từ HoYoLAB Battle Chronicle · Lưu trữ tại GitHub Pages</span>
+      <span>Dữ liệu HoYoLAB Battle Chronicle · Hình ảnh từ HoYoVerse · Cập nhật 20/11/2026</span>
     </div>
   </footer>
 

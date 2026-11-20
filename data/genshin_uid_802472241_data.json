@@ -122,7 +122,9 @@
       },
       "moonoculus_number": 23,
       "iceculus_number": 0
-    }
+    },
+    "banner": "https://upload-os-bbs.hoyolab.com/game_record/game_record_ys_background.png",
+    "logo": "https://fastcdn.hoyoverse.com/static-resource-v2/2024/04/12/b700cce2ac4c68a520b15cafa86a03f0_2812765778371293568.png"
   },
   "world_explorations": [
     {
@@ -2141,7 +2143,8 @@
         "refinement": 1,
         "base_atk": "741",
         "substat_name": "Tăng Sát Thương Vật Lý",
-        "substat_val": "20.7%"
+        "substat_val": "20.7%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/13a14bc2183b1a33041042b77ac4b640.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -2228,7 +2231,8 @@
               "value": "4.1%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/038dcfa1e4b0a18dae83a7144448d9d2.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -2261,7 +2265,8 @@
               "value": "5.3%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6b4141163c5894064f43c363f0564566.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -2294,7 +2299,8 @@
               "value": "13.2%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/22be2edca2dccded53c85f524b860631.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -2327,7 +2333,8 @@
               "value": "13.1%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/01cec5c9e1de97af4f4d2a0638fb1aae.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -2360,9 +2367,12 @@
               "value": "21",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0fa0f2fe45f925ef624bf054787dba0c.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4ea05e98ca62e2d3c7de83ea6bcf641b.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c123ee4bf6ffb2cd1d6a8a86d50f5ca6.png"
     },
     {
       "id": 10000016,
@@ -2386,7 +2396,8 @@
         "refinement": 1,
         "base_atk": "608",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "49.6%"
+        "substat_val": "49.6%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/45c64eb0f4dfffe24ab9e993616f02c6.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -2473,7 +2484,8 @@
               "value": "5.3%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a82e8324d448243daaa56674785ee82f.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -2506,7 +2518,8 @@
               "value": "19.4%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/3c1d9a36485e88013c09f47f3c21278f.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -2539,7 +2552,8 @@
               "value": "19.2%",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c15763dd94d87979e2996cb7d0c1bb86.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -2572,7 +2586,8 @@
               "value": "5.3%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/86f0c7fcf7afe2813a3d463ab1a5848f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -2605,9 +2620,12 @@
               "value": "239",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/af4efe37b74a0af38cd48784e415ec89.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/929d6645727e400b3a294b559e36a03f.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/043e63419a356fd2bf13db8dfb2b5d4d.png"
     },
     {
       "id": 10000042,
@@ -2631,7 +2649,8 @@
         "refinement": 1,
         "base_atk": "542",
         "substat_name": "Tỷ Lệ Bạo Kích",
-        "substat_val": "44.1%"
+        "substat_val": "44.1%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6a538e31e42088f7ba572556cc5862e0.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -2718,7 +2737,8 @@
               "value": "27.2%",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f5a1fb5232b2985617002eac1bfea8e6.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -2751,7 +2771,8 @@
               "value": "11.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6b4141163c5894064f43c363f0564566.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -2784,7 +2805,8 @@
               "value": "17.1%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/78f59c06ac14bd2ae3e2150d62b84f9f.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -2817,7 +2839,8 @@
               "value": "5.8%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0c3a5868f5b77bf7bf8ae6c56e016557.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -2850,9 +2873,12 @@
               "value": "8.7%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b4634a741ac5cb248dde25c0159be60c.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/89d47da9c1ed3ade59b3c9f7fd00f1e8.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/df836c6388fcdbdbf994ddeefc39d4fa.png"
     },
     {
       "id": 10000052,
@@ -2876,7 +2902,8 @@
         "refinement": 1,
         "base_atk": "608",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "55.1%"
+        "substat_val": "55.1%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/481772ac498bbc4a9b61c694144096e5.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -2963,7 +2990,8 @@
               "value": "5.8%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16879d66028f85addecf5a7208f6bffb.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -2996,7 +3024,8 @@
               "value": "239",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -3029,7 +3058,8 @@
               "value": "418",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/30ad4db8661bccad21474d67fad9d908.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -3062,7 +3092,8 @@
               "value": "42",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4bde30654f95c0666d3318326260ad45.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -3095,9 +3126,12 @@
               "value": "5.2%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/23aa979c8e86b7006a62039b9dd81c5b.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/46a9bec95f302341ab00637840aa4e5d.png"
     },
     {
       "id": 10000030,
@@ -3121,7 +3155,8 @@
         "refinement": 1,
         "base_atk": "674",
         "substat_name": "Tỷ Lệ Bạo Kích",
-        "substat_val": "22.1%"
+        "substat_val": "22.1%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4b8624f9f3d335b504d879e9b1e07ae9.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -3208,7 +3243,8 @@
               "value": "37",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -3241,7 +3277,8 @@
               "value": "35.0%",
               "rolls": 4
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/84ba5a506941c2e7c67eec4fc91f6e6a.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -3274,7 +3311,8 @@
               "value": "54",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5e1fe50f98902ba239b743a552c95288.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -3307,7 +3345,8 @@
               "value": "7.3%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/86f0c7fcf7afe2813a3d463ab1a5848f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -3340,9 +3379,12 @@
               "value": "17.9%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/dcdf1f408c923028f4565bcb1f2d12ae.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9dcda1d9e45a4f9e59266480ee2fc0c8.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f913c3175bbbd4b87e56fcac393584f1.png"
     },
     {
       "id": 10000079,
@@ -3366,7 +3408,8 @@
         "refinement": 5,
         "base_atk": "565",
         "substat_name": "Tinh Thông Nguyên Tố",
-        "substat_val": "110"
+        "substat_val": "110",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f9c8a43e26e2e0cfca8d757a07d4c235.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -3453,7 +3496,8 @@
               "value": "11.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c79204097e23b60d19a7b870979ce54f.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -3486,7 +3530,8 @@
               "value": "508",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6b4141163c5894064f43c363f0564566.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -3519,7 +3564,8 @@
               "value": "16",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/3c8b4bfb6150d33c584c1c4fd04152e6.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -3552,7 +3598,8 @@
               "value": "508",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a773f40f5edfe1e1ee710d929a6a7c45.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -3585,9 +3632,12 @@
               "value": "16",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/32a7b0d18a4dec699b89adaf829e7070.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e7beb9e36337d7f64139ee0c97d1a93a.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16a33e051dccbe4f4cfdd8ba7be39e49.png"
     },
     {
       "id": 10000037,
@@ -3611,7 +3661,8 @@
         "refinement": 5,
         "base_atk": "454",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "55.1%"
+        "substat_val": "55.1%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0d09981aa5c965eb05df4d6fa400d7bc.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -3698,7 +3749,8 @@
               "value": "7.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/17dfffacc89923b85f3fa406f041208e.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -3731,7 +3783,8 @@
               "value": "7.3%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/70e4bef4acbb4d4789923c3e546aeaf1.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -3764,7 +3817,8 @@
               "value": "6.2%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/00cfc809485c04ff1092838901c8c413.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -3797,7 +3851,8 @@
               "value": "19.4%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/00068fbfdac5602f0ebd3d6a2b85d0bc.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -3830,9 +3885,12 @@
               "value": "9.9%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/83903a2b1f0da3e6aeab6328089c9595.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2977be100672154bb7f5fc0d1abe0eb2.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/337dc30c0acf43eef293126c3697f0c4.png"
     },
     {
       "id": 10000046,
@@ -3856,7 +3914,8 @@
         "refinement": 1,
         "base_atk": "674",
         "substat_name": "Tỷ Lệ Bạo Kích",
-        "substat_val": "22.1%"
+        "substat_val": "22.1%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4b8624f9f3d335b504d879e9b1e07ae9.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -3943,7 +4002,8 @@
               "value": "21.0%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/85f548425496394e4b812302b3de514a.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -3976,7 +4036,8 @@
               "value": "6.6%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/afcf2a5cf7f130054dac4f31dd7d6c03.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -4009,7 +4070,8 @@
               "value": "3.9%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f8a6ac0223534c936003a96d018d498b.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -4042,7 +4104,8 @@
               "value": "9.7%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/86f0c7fcf7afe2813a3d463ab1a5848f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -4075,9 +4138,12 @@
               "value": "44",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/71e9ec339457ff7e274469ddb97889f4.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/fbb8dbc972616d4b5004c2042e96c5c5.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/06415bd39a58de5597566341384a5757.png"
     },
     {
       "id": 10000047,
@@ -4101,7 +4167,8 @@
         "refinement": 1,
         "base_atk": "608",
         "substat_name": "Tinh Thông Nguyên Tố",
-        "substat_val": "198"
+        "substat_val": "198",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/fcc21d0d30236aa146f099de4e4bdfa8.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -4188,7 +4255,8 @@
               "value": "3.9%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/79119f6a441fc37f39b08f225d63034b.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -4221,7 +4289,8 @@
               "value": "42",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/37134a2511467762e3a085ab1d043965.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -4254,7 +4323,8 @@
               "value": "13.4%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/892c53d0973b06b805a48c8d5054f53c.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -4287,7 +4357,8 @@
               "value": "4.5%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/cfd075bca5834faa858d8a6c5d6dc95c.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -4320,9 +4391,12 @@
               "value": "11.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/71e9ec339457ff7e274469ddb97889f4.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7d56eb845d4f982757a942a97f88b958.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0c1aa899e2b8ea002a0249ab1e09da8f.png"
     },
     {
       "id": 10000002,
@@ -4347,7 +4421,8 @@
         "refinement": 3,
         "base_atk": "454",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "55.1%"
+        "substat_val": "55.1%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1aa93cbdddb0444e0eff47b3f84dc5d9.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -4434,7 +4509,8 @@
               "value": "12.3%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e92dbe60ede8b9f83ea92e32f96c5b7a.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -4467,7 +4543,8 @@
               "value": "7.4%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4c8e83f11bd905ad8dd7089b42ad7ad3.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -4500,7 +4577,8 @@
               "value": "39",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5fcf01c9f5778dfc6b7fee2ae2b42a28.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -4533,7 +4611,8 @@
               "value": "4.1%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/86f0c7fcf7afe2813a3d463ab1a5848f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -4566,9 +4645,12 @@
               "value": "14.0%",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9ecabf53a38ca54ef43b7f614b5f9375.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f616e8fdc168d5e5314929a492788e93.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e1780871765f03d8bd15781c34fc2cf7.png"
     },
     {
       "id": 10000066,
@@ -4592,7 +4674,8 @@
         "refinement": 5,
         "base_atk": "510",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "41.3%"
+        "substat_val": "41.3%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/85dbd526e5a6d0f20af4d0253be63ac0.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -4679,7 +4762,8 @@
               "value": "8.2%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f5a1fb5232b2985617002eac1bfea8e6.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -4712,7 +4796,8 @@
               "value": "21.0%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5f120cdac0fc7783d0ba6d1452818d5d.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -4745,7 +4830,8 @@
               "value": "9.7%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/34b9935fadcb083f8b4db3c4fd915754.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -4778,7 +4864,8 @@
               "value": "9.9%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/01cec5c9e1de97af4f4d2a0638fb1aae.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -4811,9 +4898,12 @@
               "value": "18.1%",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/69750e95511b6aed7919f73b1d568ccd.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e350954e7c5f587e8c1e9fd5931ebac2.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0814c87324bffe900f0b082681f7fa83.png"
     },
     {
       "id": 10000073,
@@ -4837,7 +4927,8 @@
         "refinement": 5,
         "base_atk": "454",
         "substat_name": "Tinh Thông Nguyên Tố",
-        "substat_val": "221"
+        "substat_val": "221",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/807ae55311a3a8382194a656e214e7b1.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -4924,7 +5015,8 @@
               "value": "23",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/857d990ee0b5c27e926f5e3fc642f8ca.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -4957,7 +5049,8 @@
               "value": "42",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f6c8890ea69ba66c882603f03ea20322.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -4990,7 +5083,8 @@
               "value": "209",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9f1d53d9f4d0fe7ea1c605cc873dd626.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -5023,7 +5117,8 @@
               "value": "12.4%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b3ad7ec5ac0a0deb2ebee69dc07400fd.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -5056,9 +5151,12 @@
               "value": "12.1%",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/dcdf1f408c923028f4565bcb1f2d12ae.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/823e31bf43f378bd66c394985a323da8.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0d7b4efd06baa8f1677d980ccedb526b.png"
     },
     {
       "id": 10000091,
@@ -5082,7 +5180,8 @@
         "refinement": 5,
         "base_atk": "401",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "50.3%"
+        "substat_val": "50.3%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d6a5ab503c052d5c0814a39417cc2fee.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -5169,7 +5268,8 @@
               "value": "13.9%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1da6fb182fbf62736bd20ddbfeb2e485.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -5202,7 +5302,8 @@
               "value": "8.7%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5ae89b30076c36972b7609b75cf30f9d.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -5235,7 +5336,8 @@
               "value": "54",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e15db34d8698aad900ff66e7bdb0ae33.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -5268,7 +5370,8 @@
               "value": "14.6%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/93cad63c87c2579babcc178e56c21880.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -5301,9 +5404,12 @@
               "value": "239",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ab5f9dccce3d0e29617e41b4c21634ad.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/dd80b2174e316e6a9a4f699dba23d6af.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2a3fbbce347d5ae98426266aff533da6.png"
     },
     {
       "id": 10000087,
@@ -5327,7 +5433,8 @@
         "refinement": 1,
         "base_atk": "542",
         "substat_name": "Sát Thương Bạo Kích",
-        "substat_val": "88.2%"
+        "substat_val": "88.2%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a9c72ec4bc54b9acf27362095da7af61.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -5414,7 +5521,8 @@
               "value": "3.5%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -5447,7 +5555,8 @@
               "value": "12.3%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/84ba5a506941c2e7c67eec4fc91f6e6a.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -5480,7 +5589,8 @@
               "value": "10.9%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/3c8b4bfb6150d33c584c1c4fd04152e6.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -5513,7 +5623,8 @@
               "value": "239",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a773f40f5edfe1e1ee710d929a6a7c45.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -5546,9 +5657,12 @@
               "value": "11.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b30987d539b299dc89004d72274f5e89.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e9845ca38202540e3fb4b7b3ee7857f5.png"
     },
     {
       "id": 10000070,
@@ -5572,7 +5686,8 @@
         "refinement": 3,
         "base_atk": "510",
         "substat_name": "Tinh Thông Nguyên Tố",
-        "substat_val": "165"
+        "substat_val": "165",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d6627a35dc10a7c7f9d5db832e271cce.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -5659,7 +5774,8 @@
               "value": "14.0%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/857d990ee0b5c27e926f5e3fc642f8ca.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -5692,7 +5808,8 @@
               "value": "11.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f6c8890ea69ba66c882603f03ea20322.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -5725,7 +5842,8 @@
               "value": "35",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9f1d53d9f4d0fe7ea1c605cc873dd626.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -5758,7 +5876,8 @@
               "value": "6.6%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/63535d205fedae06e3ed9c403262ccde.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -5791,9 +5910,12 @@
               "value": "19.0%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8734dfe7b60bdaecae7da95903db457e.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2cb9c9350cf6ff26b2ff293cce139cab.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1e07e9977b820fab75f68ab548df0912.png"
     },
     {
       "id": 10000054,
@@ -5817,7 +5939,8 @@
         "refinement": 5,
         "base_atk": "565",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "27.6%"
+        "substat_val": "27.6%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f9308f15888ca90af00ff12c5223c1a9.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -5904,7 +6027,8 @@
               "value": "9.9%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5f1381c508febb2a6e39aa87eaa4c5fc.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -5937,7 +6061,8 @@
               "value": "14.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/edd5f358c027aff093cbb2ef60e8e3b8.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -5970,7 +6095,8 @@
               "value": "448",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e122b3e8efbbe27bceaac08e17818ce4.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -6003,7 +6129,8 @@
               "value": "10.5%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7ebafcb6489bf83e21b7aa53959b7f41.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -6036,9 +6163,12 @@
               "value": "67",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/dcdf1f408c923028f4565bcb1f2d12ae.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/90652aa121930a54372ede5e53b4615e.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/517ed13692f1a2bec9ce3a27a2be5c1e.png"
     },
     {
       "id": 10000069,
@@ -6062,7 +6192,8 @@
         "refinement": 5,
         "base_atk": "429",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "22.7%"
+        "substat_val": "22.7%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6e37803f70f76be9df083b99a5af8307.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -6149,7 +6280,8 @@
               "value": "18",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6e1a599dabaefe12d191547469d753cd.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -6182,7 +6314,8 @@
               "value": "7.3%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c38d8f95cdbfb5d70ac50f60e5520c90.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -6215,7 +6348,8 @@
               "value": "19",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/69ac28067027935b79072bd3dc5319ed.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -6248,7 +6382,8 @@
               "value": "12.4%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ed4d28bc20d96536005c1a50fa9a12b2.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -6281,9 +6416,12 @@
               "value": "10.9%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8734dfe7b60bdaecae7da95903db457e.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2747d92218297b5094d4b8fe6d5f6475.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/61c738c82f2c477e439d9cf2db7f4323.png"
     },
     {
       "id": 10000093,
@@ -6307,7 +6445,8 @@
         "refinement": 1,
         "base_atk": "674",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "33.1%"
+        "substat_val": "33.1%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d3f398d9ee417e931b1e273242dd8008.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -6394,7 +6533,8 @@
               "value": "23",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/79119f6a441fc37f39b08f225d63034b.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -6427,7 +6567,8 @@
               "value": "9.9%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f6c8890ea69ba66c882603f03ea20322.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -6460,7 +6601,8 @@
               "value": "7.4%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/892c53d0973b06b805a48c8d5054f53c.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -6493,7 +6635,8 @@
               "value": "23",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/cfd075bca5834faa858d8a6c5d6dc95c.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -6526,9 +6669,12 @@
               "value": "22.5%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f568e5d02b0cfa74365cda3159cfacc8.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/20c3618fbc7304c6b716e2733b2d4db3.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1eb11739e1e1a2d5ad29463a5d09fa46.png"
     },
     {
       "id": 10000058,
@@ -6552,7 +6698,8 @@
         "refinement": 1,
         "base_atk": "608",
         "substat_name": "Sát Thương Bạo Kích",
-        "substat_val": "66.2%"
+        "substat_val": "66.2%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5df4b80100a07922792ac85362ee6af8.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -6639,7 +6786,8 @@
               "value": "63",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/440a8a8ecc8f0f02645d5484949fca6b.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -6672,7 +6820,8 @@
               "value": "37",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5f120cdac0fc7783d0ba6d1452818d5d.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -6705,7 +6854,8 @@
               "value": "16",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f8a6ac0223534c936003a96d018d498b.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -6738,7 +6888,8 @@
               "value": "14",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e6751e19ddf8c4a10632a5999e9395f3.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -6771,9 +6922,12 @@
               "value": "42",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/69750e95511b6aed7919f73b1d568ccd.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/54f9f46e282f81dc06c45d2783e0206a.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4b934ae3c9806de2aca7750b6914a0ae.png"
     },
     {
       "id": 10000060,
@@ -6797,7 +6951,8 @@
         "refinement": 5,
         "base_atk": "510",
         "substat_name": "Tinh Thông Nguyên Tố",
-        "substat_val": "165"
+        "substat_val": "165",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/da3d5e7bbc112c4e1378de554a79c6c3.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -6884,7 +7039,8 @@
               "value": "5.3%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16879d66028f85addecf5a7208f6bffb.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -6917,7 +7073,8 @@
               "value": "23",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -6950,7 +7107,8 @@
               "value": "14.9%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f8a6ac0223534c936003a96d018d498b.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -6983,7 +7141,8 @@
               "value": "10.5%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/24b9a122db4e39e9b9e2eb1cbcf5925f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -7016,9 +7175,12 @@
               "value": "3.1%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e76d6bdb8f4aeea019df7856ef9eca3f.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/15eac9ad95c6f6981ecc15427218589c.png"
     },
     {
       "id": 10000049,
@@ -7042,7 +7204,8 @@
         "refinement": 1,
         "base_atk": "674",
         "substat_name": "Tỷ Lệ Bạo Kích",
-        "substat_val": "22.1%"
+        "substat_val": "22.1%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/504e181be5a8ba069b7249a3f7cf978d.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -7129,7 +7292,8 @@
               "value": "42",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/85f548425496394e4b812302b3de514a.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -7162,7 +7326,8 @@
               "value": "6.2%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/afcf2a5cf7f130054dac4f31dd7d6c03.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -7195,7 +7360,8 @@
               "value": "21",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f8a6ac0223534c936003a96d018d498b.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -7228,7 +7394,8 @@
               "value": "5.8%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b3ad7ec5ac0a0deb2ebee69dc07400fd.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -7261,9 +7428,12 @@
               "value": "47",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/71e9ec339457ff7e274469ddb97889f4.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7d324e9ea99247b744b08f7016649d1d.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b82b7c9b25ac12356946a8b83b5cdd06.png"
     },
     {
       "id": 10000032,
@@ -7287,7 +7457,8 @@
         "refinement": 5,
         "base_atk": "510",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "45.9%"
+        "substat_val": "45.9%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/685c320aa78fc0c2e29f2e445393949a.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -7374,7 +7545,8 @@
               "value": "29",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/bd80c45d24f484036927eda40339f730.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -7407,7 +7579,8 @@
               "value": "27.2%",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7a7f049517a93e3b317a5c5df8892e60.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -7440,7 +7613,8 @@
               "value": "3.9%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f8a6ac0223534c936003a96d018d498b.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -7473,7 +7647,8 @@
               "value": "13.2%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4bde30654f95c0666d3318326260ad45.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -7506,9 +7681,12 @@
               "value": "14.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2e5e66807c6c65eea1918ce6465cdc74.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/41a97aae8bf579ce350a90bbddc59fdf.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/697a077514d8ec3820d93d087b57c9a1.png"
     },
     {
       "id": 10000023,
@@ -7532,7 +7710,8 @@
         "refinement": 1,
         "base_atk": "674",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "36.8%"
+        "substat_val": "36.8%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/32df7904999ca5913e0501847a6f57b0.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -7619,7 +7798,8 @@
               "value": "16",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16879d66028f85addecf5a7208f6bffb.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -7652,7 +7832,8 @@
               "value": "7.3%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -7685,7 +7866,8 @@
               "value": "35",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/30ad4db8661bccad21474d67fad9d908.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -7718,7 +7900,8 @@
               "value": "31",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7bd1f02bc563ba3449d9e08161ac978e.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -7751,9 +7934,12 @@
               "value": "19",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c836c2dc7d71fe8065ae2798d360167b.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c56e6b7ce9072e548ea8aaef94db3554.png"
     },
     {
       "id": 10000027,
@@ -7777,7 +7963,8 @@
         "refinement": 1,
         "base_atk": "23",
         "substat_name": null,
-        "substat_val": null
+        "substat_val": null,
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/852d232e46ddaacdfcb86b3f53413405.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -7864,7 +8051,8 @@
               "value": "5.2%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/857d990ee0b5c27e926f5e3fc642f8ca.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -7897,9 +8085,12 @@
               "value": "14.0%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2fda7dfb07d970fc90db910de890f3e8.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/3ae1f1d40773cd13d361e329a7efd887.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/8ee346a1f9c82976b4cbecb88ee81d38.png"
     },
     {
       "id": 10000006,
@@ -7923,7 +8114,8 @@
         "refinement": 1,
         "base_atk": "510",
         "substat_name": "Tỷ Lệ Bạo Kích",
-        "substat_val": "27.6%"
+        "substat_val": "27.6%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/be0408e0e9d8356566c6cbad21b959d7.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -8010,7 +8202,8 @@
               "value": "19.0%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/857d990ee0b5c27e926f5e3fc642f8ca.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -8043,7 +8236,8 @@
               "value": "14.8%",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f6c8890ea69ba66c882603f03ea20322.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -8076,7 +8270,8 @@
               "value": "68",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9f1d53d9f4d0fe7ea1c605cc873dd626.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -8109,7 +8304,8 @@
               "value": "40",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e6751e19ddf8c4a10632a5999e9395f3.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -8142,9 +8338,12 @@
               "value": "42",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8734dfe7b60bdaecae7da95903db457e.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/415cb4af1a402f97aebfcf8edc2ca235.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/bfa1ecf0ff3cd43f322fa45c7609f72f.png"
     },
     {
       "id": 10000005,
@@ -8168,7 +8367,8 @@
         "refinement": 5,
         "base_atk": "401",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "55.9%"
+        "substat_val": "55.9%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/cfda75195bd9c341e314a56e976d532f.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -8255,7 +8455,8 @@
               "value": "5.4%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/daea64738ee81507c05b9752f51f195f.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -8288,7 +8489,8 @@
               "value": "10.9%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -8321,7 +8523,8 @@
               "value": "19",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/30ad4db8661bccad21474d67fad9d908.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -8354,7 +8557,8 @@
               "value": "508",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ed4d28bc20d96536005c1a50fa9a12b2.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -8387,9 +8591,12 @@
               "value": "88",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/874608b484a50855196d6b526d844791.png"
         }
-      ]
+      ],
+      "icon": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/08/24/d311eba245723b7e3b15e1d2deb8f8a7_6566639347563049912.png",
+      "card_image": "https://webstatic.hoyoverse.com/upload/static-resource/2023/05/08/ec15648be34aa80db3ac32844af3a467_8937995274995808517.png"
     },
     {
       "id": 10000041,
@@ -8414,7 +8621,8 @@
         "refinement": 5,
         "base_atk": "309",
         "substat_name": "Tỷ Lệ HP",
-        "substat_val": "29.0%"
+        "substat_val": "29.0%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/aff08755a2149ffb6c0fa7d1d189a222.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -8501,7 +8709,8 @@
               "value": "10.9%",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16879d66028f85addecf5a7208f6bffb.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -8534,7 +8743,8 @@
               "value": "16.2%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -8567,7 +8777,8 @@
               "value": "14.6%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5fcf01c9f5778dfc6b7fee2ae2b42a28.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -8600,7 +8811,8 @@
               "value": "7.4%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/24b9a122db4e39e9b9e2eb1cbcf5925f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -8633,9 +8845,12 @@
               "value": "5.8%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/e73c8896a2a5e52cfaa8847daaee53b8.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/2ef7bdc0940edde20edcae71c6aba983.png"
     },
     {
       "id": 10000003,
@@ -8659,7 +8874,8 @@
         "refinement": 1,
         "base_atk": "449",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "37.7%"
+        "substat_val": "37.7%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d0bc1a9d160a598e7cfe669f71402662.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -8741,7 +8957,8 @@
               "value": "3.5%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/79119f6a441fc37f39b08f225d63034b.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -8774,7 +8991,8 @@
               "value": "42",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -8807,7 +9025,8 @@
               "value": "32",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/892c53d0973b06b805a48c8d5054f53c.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -8835,9 +9054,12 @@
               "value": "299",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/69750e95511b6aed7919f73b1d568ccd.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/eabf3af20320ed8dc3fed73ab11148cc.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/fb6549496c0420027a8a76314ad8a51a.png"
     },
     {
       "id": 10000094,
@@ -8861,7 +9083,8 @@
         "refinement": 5,
         "base_atk": "454",
         "substat_name": "Tỷ Lệ Phòng Ngự",
-        "substat_val": "69.0%"
+        "substat_val": "69.0%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8c150d11be0738ee0188f6f5a2a56f86.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -8948,7 +9171,8 @@
               "value": "7.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7d2a0cb19ab89de53c88937d6c4648a1.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -8981,7 +9205,8 @@
               "value": "777",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7db5803961686258dbd643be089789fb.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -9014,7 +9239,8 @@
               "value": "14.0%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/764223d7f9023c5914c9ef6049fc9e6d.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -9047,7 +9273,8 @@
               "value": "23",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/544af5812ec326714c12519b4d8cee97.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -9080,9 +9307,12 @@
               "value": "7.0%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/40ed752ca709ba2d84e0c8674eea82e8.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2eeb4b86d43acc81c6f9b37bdba03e83.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9075785b0748147c0d146d0de597ad76.png"
     },
     {
       "id": 10000022,
@@ -9106,7 +9336,8 @@
         "refinement": 1,
         "base_atk": "608",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "55.1%"
+        "substat_val": "55.1%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e9555699ff95fac410422d9dfd7e631a.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -9193,7 +9424,8 @@
               "value": "9.3%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/79119f6a441fc37f39b08f225d63034b.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -9221,7 +9453,8 @@
               "value": "21",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/37134a2511467762e3a085ab1d043965.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -9249,7 +9482,8 @@
               "value": "6.5%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/892c53d0973b06b805a48c8d5054f53c.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -9277,7 +9511,8 @@
               "value": "3.9%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5d25615fe6509385b867e634bebe93ed.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -9305,9 +9540,12 @@
               "value": "21",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f568e5d02b0cfa74365cda3159cfacc8.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/da04983f26f201db1a287bf922cdcaff.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1f282ea5de7ec2b37d1afd731a6e5a09.png"
     },
     {
       "id": 10000014,
@@ -9331,7 +9569,8 @@
         "refinement": 5,
         "base_atk": "388",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "37.9%"
+        "substat_val": "37.9%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/bb4ff947d3649e393b6ca2e117b072d6.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -9418,7 +9657,8 @@
               "value": "18.7%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/857d990ee0b5c27e926f5e3fc642f8ca.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -9451,7 +9691,8 @@
               "value": "13.4%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f6c8890ea69ba66c882603f03ea20322.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -9484,7 +9725,8 @@
               "value": "10.4%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5e1fe50f98902ba239b743a552c95288.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -9517,7 +9759,8 @@
               "value": "10.9%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4bde30654f95c0666d3318326260ad45.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -9550,9 +9793,12 @@
               "value": "47",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/dcdf1f408c923028f4565bcb1f2d12ae.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f55430aba2d84b36d64136958c58c93a.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/3aa7548a8eddcc68f65feb966809c16b.png"
     },
     {
       "id": 10000024,
@@ -9576,7 +9822,8 @@
         "refinement": 1,
         "base_atk": "23",
         "substat_name": null,
-        "substat_val": null
+        "substat_val": null,
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b1e284917f1ca8330ba929ef8f116aba.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -9663,7 +9910,8 @@
               "value": "508",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9f1d53d9f4d0fe7ea1c605cc873dd626.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -9696,7 +9944,8 @@
               "value": "21.0%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f58b5b37605550b7ffefe4b4ee2bcf7d.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -9729,9 +9978,12 @@
               "value": "7.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8734dfe7b60bdaecae7da95903db457e.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/bc2903d1a46616c871d5108d033a463d.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/cb9d963745960117e365925b608cb6d9.png"
     },
     {
       "id": 10000036,
@@ -9755,7 +10007,8 @@
         "refinement": 1,
         "base_atk": "608",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "49.6%"
+        "substat_val": "49.6%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0ba71f650c9ae79f9f652ae7d6f9df86.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -9842,7 +10095,8 @@
               "value": "11.1%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16879d66028f85addecf5a7208f6bffb.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -9875,7 +10129,8 @@
               "value": "538",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -9908,7 +10163,8 @@
               "value": "17.9%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/30ad4db8661bccad21474d67fad9d908.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -9941,7 +10197,8 @@
               "value": "82",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5d25615fe6509385b867e634bebe93ed.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -9974,9 +10231,12 @@
               "value": "3.1%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/38b5bd856ea9fff842477a77265da49b.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/3bb54061826c93893d0155af7cb4ea7d.png"
     },
     {
       "id": 10000039,
@@ -10000,7 +10260,8 @@
         "refinement": 3,
         "base_atk": "523",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "27.9%"
+        "substat_val": "27.9%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4a03625fdbc739dca379573871a4c2ca.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -10087,7 +10348,8 @@
               "value": "58",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4c8a4c6d40add9e2437f556163501b83.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -10120,7 +10382,8 @@
               "value": "777",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b5ff9725aa638fdc76d9eaea734d481e.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -10153,7 +10416,8 @@
               "value": "42",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5e1fe50f98902ba239b743a552c95288.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -10186,7 +10450,8 @@
               "value": "20.1%",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5d25615fe6509385b867e634bebe93ed.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -10219,9 +10484,12 @@
               "value": "40",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/dcdf1f408c923028f4565bcb1f2d12ae.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/3de7b18fbecffbb57a73fe5032d24950.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/043e7bf77209f350e1ce109796bdc9a5.png"
     },
     {
       "id": 10000031,
@@ -10245,7 +10513,8 @@
         "refinement": 4,
         "base_atk": "510",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "41.3%"
+        "substat_val": "41.3%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6b682afb95373317a4a965b8974b5d08.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -10332,7 +10601,8 @@
               "value": "9.7%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/40445cb5a9bdd5c8df397d819b8bc958.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -10365,7 +10635,8 @@
               "value": "16.2%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/afcf2a5cf7f130054dac4f31dd7d6c03.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -10398,7 +10669,8 @@
               "value": "42",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/78f59c06ac14bd2ae3e2150d62b84f9f.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -10431,7 +10703,8 @@
               "value": "11.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/63535d205fedae06e3ed9c403262ccde.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -10464,9 +10737,12 @@
               "value": "13.4%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/71e9ec339457ff7e274469ddb97889f4.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/207a0e35e0637a2bcb0a28fdfa61f7a4.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/106a64d4df0e0ff92f897ddd157812fa.png"
     },
     {
       "id": 10000034,
@@ -10490,7 +10766,8 @@
         "refinement": 5,
         "base_atk": "42",
         "substat_name": "Tinh Thông Nguyên Tố",
-        "substat_val": "36"
+        "substat_val": "36",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/de1e307e1104fbf7c8f7a7ef5cb143e1.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -10577,7 +10854,8 @@
               "value": "14.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1da6fb182fbf62736bd20ddbfeb2e485.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -10610,7 +10888,8 @@
               "value": "21.4%",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5ae89b30076c36972b7609b75cf30f9d.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -10643,7 +10922,8 @@
               "value": "33",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8888163740ced1e480057c56dc3f2600.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -10676,7 +10956,8 @@
               "value": "10.1%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/86f0c7fcf7afe2813a3d463ab1a5848f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -10709,9 +10990,12 @@
               "value": "14.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0fa0f2fe45f925ef624bf054787dba0c.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1eb5023b8ca517a5fe27316b3771a191.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/75466da6be40f779a5c247022ecd861c.png"
     },
     {
       "id": 10000045,
@@ -10735,7 +11019,8 @@
         "refinement": 5,
         "base_atk": "565",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "30.6%"
+        "substat_val": "30.6%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7db45b7a84bb80468aaf0f5f430e9bdc.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -10822,7 +11107,8 @@
               "value": "21",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/bd80c45d24f484036927eda40339f730.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -10855,7 +11141,8 @@
               "value": "16",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7a7f049517a93e3b317a5c5df8892e60.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -10888,7 +11175,8 @@
               "value": "11.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a0a8d92d6fe1d956d5e1a97d6ffcd78d.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -10921,7 +11209,8 @@
               "value": "7.0%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/86f0c7fcf7afe2813a3d463ab1a5848f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -10954,9 +11243,12 @@
               "value": "687",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2e5e66807c6c65eea1918ce6465cdc74.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7987cb608a5375cdfd1e34dda9455a31.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5eb94ae8141acb3f32e7b6b3609b8fdc.png"
     },
     {
       "id": 10000043,
@@ -10980,7 +11272,8 @@
         "refinement": 1,
         "base_atk": "565",
         "substat_name": "Tinh Thông Nguyên Tố",
-        "substat_val": "110"
+        "substat_val": "110",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ad12d566dd0376457b622464e0744fe2.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -11067,7 +11360,8 @@
               "value": "9.9%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/79119f6a441fc37f39b08f225d63034b.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -11100,7 +11394,8 @@
               "value": "67",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/37134a2511467762e3a085ab1d043965.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -11133,7 +11428,8 @@
               "value": "31",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/892c53d0973b06b805a48c8d5054f53c.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -11166,7 +11462,8 @@
               "value": "6.5%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7bd1f02bc563ba3449d9e08161ac978e.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -11199,9 +11496,12 @@
               "value": "60",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f568e5d02b0cfa74365cda3159cfacc8.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/27ee1aba588f3e8e42800249fe1047e8.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1934376137e2bcefc6623221dd37e117.png"
     },
     {
       "id": 10000025,
@@ -11225,7 +11525,8 @@
         "refinement": 5,
         "base_atk": "454",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "61.3%"
+        "substat_val": "61.3%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8d40dcb0e8e25ad6c5940095fa6984ab.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -11312,7 +11613,8 @@
               "value": "9.3%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16879d66028f85addecf5a7208f6bffb.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -11345,7 +11647,8 @@
               "value": "13.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -11378,7 +11681,8 @@
               "value": "6.6%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f6f09d13b225b09af60bba4c945cb3df.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -11411,7 +11715,8 @@
               "value": "16.3%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/24b9a122db4e39e9b9e2eb1cbcf5925f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -11444,9 +11749,12 @@
               "value": "18.8%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/cf352253ba22524007154d6d6fc66b55.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/89be6f2f06f7b49ccc5c051364e79255.png"
     },
     {
       "id": 10000048,
@@ -11470,7 +11778,8 @@
         "refinement": 5,
         "base_atk": "454",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "55.1%"
+        "substat_val": "55.1%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6ec8e2657f0f24d5ed35ecbde8aa85db.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -11557,7 +11866,8 @@
               "value": "19.4%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5ff2da2140ec40936c57a7e3c00368c8.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -11590,7 +11900,8 @@
               "value": "9.7%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/70e4bef4acbb4d4789923c3e546aeaf1.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -11623,7 +11934,8 @@
               "value": "35",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/00cfc809485c04ff1092838901c8c413.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -11656,7 +11968,8 @@
               "value": "39",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/01cec5c9e1de97af4f4d2a0638fb1aae.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -11689,9 +12002,12 @@
               "value": "14.6%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/83903a2b1f0da3e6aeab6328089c9595.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/9d2730b17e4cfdc85b52b163948a8c12.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/791f2b5a2a186d49b575dbce566d804b.png"
     },
     {
       "id": 10000064,
@@ -11715,7 +12031,8 @@
         "refinement": 5,
         "base_atk": "565",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "30.6%"
+        "substat_val": "30.6%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7db45b7a84bb80468aaf0f5f430e9bdc.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -11802,7 +12119,8 @@
               "value": "16.8%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7d2a0cb19ab89de53c88937d6c4648a1.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -11835,7 +12153,8 @@
               "value": "37",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7db5803961686258dbd643be089789fb.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -11868,7 +12187,8 @@
               "value": "13.2%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/764223d7f9023c5914c9ef6049fc9e6d.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -11901,7 +12221,8 @@
               "value": "53",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6cb0e3cb2a3b003c9a206e1e89a9bd41.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -11934,9 +12255,12 @@
               "value": "10.9%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2f1dcfffae4b7ca51bc8b5a89cec6844.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/45fc56fa83f5447d6a61677f514a9131.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f60ebc8184fb63e3691bf283300a9ced.png"
     },
     {
       "id": 10000072,
@@ -11960,7 +12284,8 @@
         "refinement": 5,
         "base_atk": "354",
         "substat_name": "Tỷ Lệ HP",
-        "substat_val": "46.9%"
+        "substat_val": "46.9%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/badaa063427a6e3f39d9c031b3dddc24.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -12047,7 +12372,8 @@
               "value": "23",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e92dbe60ede8b9f83ea92e32f96c5b7a.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -12080,7 +12406,8 @@
               "value": "16.2%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/84ba5a506941c2e7c67eec4fc91f6e6a.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -12113,7 +12440,8 @@
               "value": "15.2%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5e1fe50f98902ba239b743a552c95288.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -12146,7 +12474,8 @@
               "value": "24.1%",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/24b9a122db4e39e9b9e2eb1cbcf5925f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -12179,9 +12508,12 @@
               "value": "17.9%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/dcdf1f408c923028f4565bcb1f2d12ae.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9ef120c399afbf7f136034b68d721d44.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/40eaa773d25cd7e83b141a3017d01b87.png"
     },
     {
       "id": 10000067,
@@ -12205,7 +12537,8 @@
         "refinement": 5,
         "base_atk": "565",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "30.6%"
+        "substat_val": "30.6%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ab3de086b1a1f6a42d1b5c8ae32f3b15.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -12292,7 +12625,8 @@
               "value": "19",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/857d990ee0b5c27e926f5e3fc642f8ca.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -12325,7 +12659,8 @@
               "value": "9.7%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c38d8f95cdbfb5d70ac50f60e5520c90.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -12358,7 +12693,8 @@
               "value": "13.2%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/69ac28067027935b79072bd3dc5319ed.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -12391,7 +12727,8 @@
               "value": "19",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ed4d28bc20d96536005c1a50fa9a12b2.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -12424,9 +12761,12 @@
               "value": "19.0%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/874608b484a50855196d6b526d844791.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/eaf61637b76953695940fe1ceedb18a0.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e841487d9fda7a2a2f2af632df46148a.png"
     },
     {
       "id": 10000056,
@@ -12450,7 +12790,8 @@
         "refinement": 5,
         "base_atk": "347",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "50.5%"
+        "substat_val": "50.5%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f0b8edcc330cd9de1dcf97eccb20cbaf.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -12537,7 +12878,8 @@
               "value": "13.2%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16879d66028f85addecf5a7208f6bffb.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -12570,7 +12912,8 @@
               "value": "239",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -12603,7 +12946,8 @@
               "value": "5.4%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/00cfc809485c04ff1092838901c8c413.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -12636,7 +12980,8 @@
               "value": "10.2%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/24b9a122db4e39e9b9e2eb1cbcf5925f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -12669,9 +13014,12 @@
               "value": "42",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/3dc3a368e5c3be42a05afb7a9fdc9c41.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a33454553ce97218a7c4c3b18d2f7736.png"
     },
     {
       "id": 10000065,
@@ -12695,7 +13043,8 @@
         "refinement": 2,
         "base_atk": "565",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "30.6%"
+        "substat_val": "30.6%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ade9757e4346ef1402c32bdde6b7a7e4.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -12782,7 +13131,8 @@
               "value": "15.7%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/857d990ee0b5c27e926f5e3fc642f8ca.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -12815,7 +13165,8 @@
               "value": "5.3%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/84ba5a506941c2e7c67eec4fc91f6e6a.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -12848,7 +13199,8 @@
               "value": "568",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9f1d53d9f4d0fe7ea1c605cc873dd626.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -12881,7 +13233,8 @@
               "value": "10.9%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/24b9a122db4e39e9b9e2eb1cbcf5925f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -12914,9 +13267,12 @@
               "value": "14.6%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/dcdf1f408c923028f4565bcb1f2d12ae.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/caa2e14875915abee78b186b61fd8f3a.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/23844a510719de73b93095cad8bab344.png"
     },
     {
       "id": 10000080,
@@ -12940,7 +13296,8 @@
         "refinement": 5,
         "base_atk": "565",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "30.6%"
+        "substat_val": "30.6%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7db45b7a84bb80468aaf0f5f430e9bdc.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -13027,7 +13384,8 @@
               "value": "7.0%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4c8e83f11bd905ad8dd7089b42ad7ad3.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -13060,7 +13418,8 @@
               "value": "10.5%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5e1fe50f98902ba239b743a552c95288.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -13093,7 +13452,8 @@
               "value": "5.2%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/86f0c7fcf7afe2813a3d463ab1a5848f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -13126,9 +13486,12 @@
               "value": "14.9%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9ecabf53a38ca54ef43b7f614b5f9375.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f239b3032e85ebb64554e69a58eec91b.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/563abaa7b94ce5602f793e8f428237d7.png"
     },
     {
       "id": 10000050,
@@ -13152,7 +13515,8 @@
         "refinement": 5,
         "base_atk": "454",
         "substat_name": "Tinh Thông Nguyên Tố",
-        "substat_val": "221"
+        "substat_val": "221",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/cf0f39f3f9fddd9fdcafe921ca8cff1a.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -13239,7 +13603,8 @@
               "value": "19",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16879d66028f85addecf5a7208f6bffb.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -13272,7 +13637,8 @@
               "value": "16",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/84ba5a506941c2e7c67eec4fc91f6e6a.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -13305,7 +13671,8 @@
               "value": "51",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/30ad4db8661bccad21474d67fad9d908.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -13338,7 +13705,8 @@
               "value": "14.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/24b9a122db4e39e9b9e2eb1cbcf5925f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -13371,9 +13739,12 @@
               "value": "8.2%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/dcdf1f408c923028f4565bcb1f2d12ae.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/57ede6ce84e7030b58af29520198119b.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a5dd4cadab4bb91b06f0447b6e5485fa.png"
     },
     {
       "id": 10000074,
@@ -13397,7 +13768,8 @@
         "refinement": 3,
         "base_atk": "327",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "30.4%"
+        "substat_val": "30.4%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7ef90872b3553d9c0f4e3452737cec2d.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -13484,7 +13856,8 @@
               "value": "11.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -13517,7 +13890,8 @@
               "value": "11.7%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/84ba5a506941c2e7c67eec4fc91f6e6a.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -13550,7 +13924,8 @@
               "value": "12.4%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/30ad4db8661bccad21474d67fad9d908.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -13583,7 +13958,8 @@
               "value": "19",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5d25615fe6509385b867e634bebe93ed.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -13616,9 +13992,12 @@
               "value": "47",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8734dfe7b60bdaecae7da95903db457e.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/523506069469ad5f09b79daf6ed3a285.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7542bbd97dcec8f92ed9d37aef51860c.png"
     },
     {
       "id": 10000083,
@@ -13642,7 +14021,8 @@
         "refinement": 1,
         "base_atk": "327",
         "substat_name": "Tỷ Lệ HP",
-        "substat_val": "30.4%"
+        "substat_val": "30.4%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/137e6ee9d36a6af76d67718713859bbd.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -13729,7 +14109,8 @@
               "value": "10.5%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16879d66028f85addecf5a7208f6bffb.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -13762,7 +14143,8 @@
               "value": "11.7%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -13790,7 +14172,8 @@
               "value": "3.9%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/30ad4db8661bccad21474d67fad9d908.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -13823,7 +14206,8 @@
               "value": "747",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4bde30654f95c0666d3318326260ad45.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -13856,9 +14240,12 @@
               "value": "16",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5dad272ce992b32d3aa7a708869d1a4a.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/60213e6fc8ce5142f827248f6def8267.png"
     },
     {
       "id": 10000077,
@@ -13882,7 +14269,8 @@
         "refinement": 5,
         "base_atk": "354",
         "substat_name": "Tỷ Lệ HP",
-        "substat_val": "46.9%"
+        "substat_val": "46.9%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/badaa063427a6e3f39d9c031b3dddc24.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -13969,7 +14357,8 @@
               "value": "42",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -14002,7 +14391,8 @@
               "value": "10.1%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/84ba5a506941c2e7c67eec4fc91f6e6a.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -14035,7 +14425,8 @@
               "value": "37",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/30ad4db8661bccad21474d67fad9d908.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -14068,7 +14459,8 @@
               "value": "20.2%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/00068fbfdac5602f0ebd3d6a2b85d0bc.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -14101,9 +14493,12 @@
               "value": "6.6%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d7ec9b285faccd804b54fa026dde96e8.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/655197c064d6dd3bf8b1a9ff40276443.png"
     },
     {
       "id": 10000059,
@@ -14127,7 +14522,8 @@
         "refinement": 5,
         "base_atk": "510",
         "substat_name": "Sát Thương Bạo Kích",
-        "substat_val": "55.1%"
+        "substat_val": "55.1%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/22d2b64c9fd0ab81ef934c8387f72d0c.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -14214,7 +14610,8 @@
               "value": "10.5%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/79119f6a441fc37f39b08f225d63034b.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -14247,7 +14644,8 @@
               "value": "35",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/37134a2511467762e3a085ab1d043965.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -14280,7 +14678,8 @@
               "value": "6.6%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/892c53d0973b06b805a48c8d5054f53c.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -14313,7 +14712,8 @@
               "value": "11.7%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7bd1f02bc563ba3449d9e08161ac978e.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -14346,9 +14746,12 @@
               "value": "14.0%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f568e5d02b0cfa74365cda3159cfacc8.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c4d144d578bf42c6f03ac240a3bf2c3c.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a7d8c423ed47fd899a1e26deb4985e0b.png"
     },
     {
       "id": 10000035,
@@ -14372,7 +14775,8 @@
         "refinement": 5,
         "base_atk": "565",
         "substat_name": "Tăng Sát Thương Vật Lý",
-        "substat_val": "34.5%"
+        "substat_val": "34.5%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d859d175bb85b6add3dc3df1fb8abc5a.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -14459,7 +14863,8 @@
               "value": "10.5%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/888617693e9828103722622f7c1daca8.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -14492,7 +14897,8 @@
               "value": "75",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f6c8890ea69ba66c882603f03ea20322.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -14525,7 +14931,8 @@
               "value": "84",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/30ad4db8661bccad21474d67fad9d908.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -14558,7 +14965,8 @@
               "value": "68",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5d25615fe6509385b867e634bebe93ed.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -14591,9 +14999,12 @@
               "value": "56",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/dcdf1f408c923028f4565bcb1f2d12ae.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2825ff5127afc078dd1bd3e1b2e39996.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d2e43a6abf3a467608fa3243efcdb1d7.png"
     },
     {
       "id": 10000044,
@@ -14617,7 +15028,8 @@
         "refinement": 1,
         "base_atk": "510",
         "substat_name": "Tỷ Lệ Bạo Kích",
-        "substat_val": "27.6%"
+        "substat_val": "27.6%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8add3ad74e3838695ee23cacbe99e776.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -14704,7 +15116,8 @@
               "value": "35",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/bd80c45d24f484036927eda40339f730.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -14737,7 +15150,8 @@
               "value": "10.9%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/22be2edca2dccded53c85f524b860631.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -14770,7 +15184,8 @@
               "value": "23",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/86f0c7fcf7afe2813a3d463ab1a5848f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -14803,9 +15218,12 @@
               "value": "16",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9ecabf53a38ca54ef43b7f614b5f9375.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/b3085c5955360785fc5a1c25ab1a15f4.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/6a71c0d330549777b5c77204c3cc0f99.png"
     },
     {
       "id": 10000055,
@@ -14829,7 +15247,8 @@
         "refinement": 1,
         "base_atk": "23",
         "substat_name": null,
-        "substat_val": null
+        "substat_val": null,
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c75ade4a5acb5eb9aaefbed318bf75ff.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -14916,7 +15335,8 @@
               "value": "54",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7d2a0cb19ab89de53c88937d6c4648a1.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -14949,7 +15369,8 @@
               "value": "7.0%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7db5803961686258dbd643be089789fb.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -14982,7 +15403,8 @@
               "value": "16.3%",
               "rolls": 4
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/764223d7f9023c5914c9ef6049fc9e6d.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -15015,9 +15437,12 @@
               "value": "18",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2f1dcfffae4b7ca51bc8b5a89cec6844.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a3a8da43e8c4d76986237ab784e49070.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/887a51c0e27155afdf19685e9ec50f27.png"
     },
     {
       "id": 10000076,
@@ -15041,7 +15466,8 @@
         "refinement": 1,
         "base_atk": "23",
         "substat_name": null,
-        "substat_val": null
+        "substat_val": null,
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c75ade4a5acb5eb9aaefbed318bf75ff.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -15128,7 +15554,8 @@
               "value": "14.8%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/85f548425496394e4b812302b3de514a.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -15161,7 +15588,8 @@
               "value": "7.8%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/afcf2a5cf7f130054dac4f31dd7d6c03.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -15194,7 +15622,8 @@
               "value": "60",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/34b9935fadcb083f8b4db3c4fd915754.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -15227,7 +15656,8 @@
               "value": "16.2%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/24b9a122db4e39e9b9e2eb1cbcf5925f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -15260,9 +15690,12 @@
               "value": "508",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/69750e95511b6aed7919f73b1d568ccd.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/58a03d4cded3b6e93af3cc3efb708031.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/29b52d4346cb12447abb34ba278e805e.png"
     },
     {
       "id": 10000090,
@@ -15286,7 +15719,8 @@
         "refinement": 5,
         "base_atk": "510",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "45.9%"
+        "substat_val": "45.9%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/643071ffc7526446b48101f159ee0437.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -15373,7 +15807,8 @@
               "value": "23",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/85f548425496394e4b812302b3de514a.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -15406,7 +15841,8 @@
               "value": "15.2%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/afcf2a5cf7f130054dac4f31dd7d6c03.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -15439,7 +15875,8 @@
               "value": "86",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5e1fe50f98902ba239b743a552c95288.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -15472,7 +15909,8 @@
               "value": "23",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/24b9a122db4e39e9b9e2eb1cbcf5925f.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -15505,9 +15943,12 @@
               "value": "11.0%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/dcdf1f408c923028f4565bcb1f2d12ae.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/817f1d6da2a3ff6e6bfedeb39104ad71.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b2d3ec7e38651a0f4c1d3f8850828665.png"
     },
     {
       "id": 10000068,
@@ -15531,7 +15972,8 @@
         "refinement": 1,
         "base_atk": "23",
         "substat_name": null,
-        "substat_val": null
+        "substat_val": null,
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b1e284917f1ca8330ba929ef8f116aba.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -15613,7 +16055,8 @@
               "value": "4.7%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6e1a599dabaefe12d191547469d753cd.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -15646,7 +16089,8 @@
               "value": "10.5%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/30ad4db8661bccad21474d67fad9d908.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -15679,7 +16123,8 @@
               "value": "3.9%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5d25615fe6509385b867e634bebe93ed.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -15712,9 +16157,12 @@
               "value": "5.8%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/dcdf1f408c923028f4565bcb1f2d12ae.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d4892796ad70d139c13a6e42d170b877.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f6fee4ebe0665c0d74b912b171fcf084.png"
     },
     {
       "id": 10000085,
@@ -15738,7 +16186,8 @@
         "refinement": 5,
         "base_atk": "449",
         "substat_name": "Tỷ Lệ HP",
-        "substat_val": "37.7%"
+        "substat_val": "37.7%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d7f9ca521e414f63dfe24876b91cc139.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -15793,7 +16242,9 @@
         }
       },
       "artifact_sets": "",
-      "artifacts": []
+      "artifacts": [],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/34ef1ba51a4893d9df4be717e56891ae.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c34de18ee82c4748a2416776aa66ca28.png"
     },
     {
       "id": 10000053,
@@ -15817,7 +16268,8 @@
         "refinement": 5,
         "base_atk": "449",
         "substat_name": "Tỷ Lệ Phòng Ngự",
-        "substat_val": "47.2%"
+        "substat_val": "47.2%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b014e2aa23e856e0cf3f802584b26862.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -15899,7 +16351,8 @@
               "value": "4.1%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -15932,7 +16385,8 @@
               "value": "9.9%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/37134a2511467762e3a085ab1d043965.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -15965,7 +16419,8 @@
               "value": "5.8%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8888163740ced1e480057c56dc3f2600.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -15993,7 +16448,8 @@
               "value": "19",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5d25615fe6509385b867e634bebe93ed.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -16026,9 +16482,12 @@
               "value": "9.3%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9ecabf53a38ca54ef43b7f614b5f9375.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1791a03bc18b12a8030a4e16df2ea5f6.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/da97cf807380b928f823addcbd8e0a5f.png"
     },
     {
       "id": 10000088,
@@ -16052,7 +16511,8 @@
         "refinement": 1,
         "base_atk": "23",
         "substat_name": null,
-        "substat_val": null
+        "substat_val": null,
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/852d232e46ddaacdfcb86b3f53413405.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -16107,7 +16567,9 @@
         }
       },
       "artifact_sets": "",
-      "artifacts": []
+      "artifacts": [],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f4e68e94225fa95112ae03c0a6d10938.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/abe5fda7322bc28ae763c4f4a0b0326d.png"
     },
     {
       "id": 10000092,
@@ -16131,7 +16593,8 @@
         "refinement": 2,
         "base_atk": "565",
         "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "27.6%"
+        "substat_val": "27.6%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0365a23ab21b087a788d0d41c37bb049.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -16218,7 +16681,8 @@
               "value": "15.8%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a82e8324d448243daaa56674785ee82f.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -16251,7 +16715,8 @@
               "value": "19.4%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/3c1d9a36485e88013c09f47f3c21278f.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -16284,7 +16749,8 @@
               "value": "2.7%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c15763dd94d87979e2996cb7d0c1bb86.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -16317,7 +16783,8 @@
               "value": "74",
               "rolls": 3
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/93cad63c87c2579babcc178e56c21880.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -16350,9 +16817,12 @@
               "value": "4.1%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/af4efe37b74a0af38cd48784e415ec89.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1238a7679cc90e138ec793b08aa853c7.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2c41e4fdd1b76e1a9c2b6d41d415b854.png"
     },
     {
       "id": 10000061,
@@ -16376,7 +16846,8 @@
         "refinement": 1,
         "base_atk": "23",
         "substat_name": null,
-        "substat_val": null
+        "substat_val": null,
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0b590e80914fdb8e348323fff888be0c.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -16431,7 +16902,9 @@
         }
       },
       "artifact_sets": "",
-      "artifacts": []
+      "artifacts": [],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/49767b6d7070afddae937e417253bb3f.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2c0a47ebdfd3a286ba9359d1d8fbf428.png"
     },
     {
       "id": 10000021,
@@ -16455,7 +16928,8 @@
         "refinement": 5,
         "base_atk": "39",
         "substat_name": "Sát Thương Bạo Kích",
-        "substat_val": "10.2%"
+        "substat_val": "10.2%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5f810f2e0af41ab46e69f96a44e7aa0e.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -16537,9 +17011,12 @@
               "value": "5.3%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/daea64738ee81507c05b9752f51f195f.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9fae2c3ff5862c261c8ad7200084f567.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b84c93cdc99e46f04da11b206c44c3a1.png"
     },
     {
       "id": 10000015,
@@ -16563,7 +17040,8 @@
         "refinement": 1,
         "base_atk": "23",
         "substat_name": null,
-        "substat_val": null
+        "substat_val": null,
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0b590e80914fdb8e348323fff888be0c.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -16618,7 +17096,9 @@
         }
       },
       "artifact_sets": "",
-      "artifacts": []
+      "artifacts": [],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/c1d2a8e0948af4942feb5d086500528b.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/699e3449/3adac950e5854a16fa2cb30efc4f005e.png"
     },
     {
       "id": 10000062,
@@ -16642,7 +17122,8 @@
         "refinement": 1,
         "base_atk": "23",
         "substat_name": null,
-        "substat_val": null
+        "substat_val": null,
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c75ade4a5acb5eb9aaefbed318bf75ff.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -16697,7 +17178,9 @@
         }
       },
       "artifact_sets": "",
-      "artifacts": []
+      "artifacts": [],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ac42af1ac5dff78b080c5bdaa1bfbc76.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/3a516e474ae9418fea628e9b3e39f2ae.png"
     },
     {
       "id": 10000136,
@@ -16721,7 +17204,8 @@
         "refinement": 1,
         "base_atk": "110",
         "substat_name": "Sát Thương Bạo Kích",
-        "substat_val": "33.9%"
+        "substat_val": "33.9%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/6aea6776/ec4643eca7890833b5b415f7ad5dc79b.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -16776,7 +17260,9 @@
         }
       },
       "artifact_sets": "",
-      "artifacts": []
+      "artifacts": [],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/6aea6776/a024f93489bf998b23dd8a41746bbc17.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/6aea6776/fcab89e1d245b975392b9398a0cccb27.png"
     },
     {
       "id": 10000020,
@@ -16800,7 +17286,8 @@
         "refinement": 1,
         "base_atk": "361",
         "substat_name": "Tăng Sát Thương Vật Lý",
-        "substat_val": "25.4%"
+        "substat_val": "25.4%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/15bb71d26fd594136aea9157303ab019.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -16887,9 +17374,12 @@
               "value": "10.5%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6b4141163c5894064f43c363f0564566.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0a8a2c7373dcc8f2549b645d0c3374b7.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4baf60a51aba5af9e88281357c454a54.png"
     },
     {
       "id": 10000100,
@@ -16913,7 +17403,8 @@
         "refinement": 3,
         "base_atk": "497",
         "substat_name": "Tăng Sát Thương Vật Lý",
-        "substat_val": "31.5%"
+        "substat_val": "31.5%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b96753e95648a2ddf2ece0cdcd12b758.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -17000,7 +17491,8 @@
               "value": "15.9%",
               "rolls": 4
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/40445cb5a9bdd5c8df397d819b8bc958.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
@@ -17028,7 +17520,8 @@
               "value": "5.4%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -17061,7 +17554,8 @@
               "value": "5.8%",
               "rolls": 0
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a0a8d92d6fe1d956d5e1a97d6ffcd78d.png"
         },
         {
           "slot": "Ly Không Gian",
@@ -17094,7 +17588,8 @@
               "value": "14.6%",
               "rolls": 2
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/db301a8934290c15dd2dd43102ec8161.png"
         },
         {
           "slot": "Nón Lý Trí",
@@ -17127,9 +17622,12 @@
               "value": "8.7%",
               "rolls": 1
             }
-          ]
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
         }
-      ]
+      ],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2c4b6f3e78da44cbe10f9cbc37a50fe1.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f6267285eb36e1c0ecb4b9a712f467c5.png"
     },
     {
       "id": 10000137,
@@ -17153,7 +17651,8 @@
         "refinement": 1,
         "base_atk": "23",
         "substat_name": null,
-        "substat_val": null
+        "substat_val": null,
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0b590e80914fdb8e348323fff888be0c.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -17208,7 +17707,9 @@
         }
       },
       "artifact_sets": "",
-      "artifacts": []
+      "artifacts": [],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/6aea6776/2cd496faf46d4727430723b840e61881.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/6aea6776/bb982df85ebf91cd145a91f7b63a685c.png"
     },
     {
       "id": 10000121,
@@ -17232,7 +17733,8 @@
         "refinement": 1,
         "base_atk": "23",
         "substat_name": null,
-        "substat_val": null
+        "substat_val": null,
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b1e284917f1ca8330ba929ef8f116aba.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -17287,7 +17789,9 @@
         }
       },
       "artifact_sets": "",
-      "artifacts": []
+      "artifacts": [],
+      "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/68c0b17a/cfec735e9e867016be94f500e9dae122.png",
+      "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/68c0b17a/c8386584baefbf80461d65cf4e67de08.png"
     }
   ]
 }
