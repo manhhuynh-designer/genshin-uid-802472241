@@ -1,4 +1,4 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json?v=8";
+const DATA_URL = "./data/genshin_uid_802472241_data.json?v=9";
 const STORAGE_KEY = "genshin_uid_802472241_done_v2";
 
 const SET_META = {
@@ -40,6 +40,15 @@ const ACTIONS = [
   // Bucket 3: Waiting for Snezhnaya (0%)
   { id: "a_mitya", bucket: "later", name: "Mitya", swapFrom: null, swapNote: "Nâng Trấn Sắc Lệnh Tinh Tú 20 → 90", fixTitle: "Tier 0 Meta 7.2 · Chờ mở map Snezhnaya", fixSub: "Cát EM · Ly EM/Lôi · Nón CR/CD (sách Charity)", setKey: "dids" },
   { id: "a_valeriy", bucket: "later", name: "Valeriy", swapFrom: null, swapNote: "Chuẩn bị sẵn Tây Phong Kiếm", fixTitle: "Khiên + Buff chuyên cho Mitya · Chờ Snezhnaya", fixSub: "Cát/Ly/Nón ATK% · Sách Charity chung với Mitya", setKey: "furnace" },
+];
+
+const SURPLUS_WEAPONS = [
+  { id: "s_spine", from: "Xiangling", to: "Kachina", action: "Chuyển cho Kachina (hoặc giữ kho dự phòng 5★)", plan: "Xiangling đổi sang Lao Xiên Cá R5 → Xương Sống thay Lưu Nguyệt Châm (Vật Lý) cho Kachina, hoặc cất dự phòng 5★ Nạp." },
+  { id: "s_fish", from: "Navia", to: "Beidou", action: "Gắn ngay cho Beidou Lv.80 C6", plan: "Navia đổi sang Kiếm Li Cốt / Kiếm Vô Công → Beidou bỏ kiếm 1★ Lv.1, dùng luôn để đủ quân đi Nhà Hát 7.2." },
+  { id: "s_rust", from: "Fischl", to: null, action: "Cất kho dự phòng (tạm nghỉ)", plan: "Fischl đổi sang Tuyệt Huyền R5 → Yoimiya đã có Cánh Thiên Không 5★ mạnh hơn nên Cung Rỉ Sét R4 chưa cần dùng." },
+  { id: "s_fading", from: "Collei", to: "Kujou Sara", action: "Chuyển sang cho Kujou Sara", plan: "Sara nhường Cung Tây Phong cho Yelan → mượn Lạc Hà R5 (Base ATK 565 · 30.6% ER) từ Collei giữ trọn buff ATK." },
+  { id: "s_sapwood", from: "Kuki Shinobu", to: "Bennett", action: "Đưa cho Bennett (nếu Kuki cầm Thiết Phong Kích)", plan: "Base ATK 565 cao hơn Răng Nanh Rỉ Sét (510), giúp Bennett buff ATK mạnh hơn · Hoặc đưa Nhà Lữ Hành (Thảo)." },
+  { id: "s_isshin", from: "Jean", to: "Lynette", action: "Đổi qua cho Lynette (dư thêm Narzissenkreuz từ Layla)", plan: "Jean mượn Tây Phong Kiếm & Layla cầm Kiếm Bến Tàu HP% → chuyển Isshin Lv.80 cho Lynette (còn Narzissenkreuz R3 tạm cất/chờ Valeriy)." },
 ];
 
 const FARM_DAYS = [
@@ -156,8 +165,9 @@ function renderTodayStrip() {
 }
 
 function renderViewBar() {
-  const total = ACTIONS.length;
-  const doneCount = ACTIONS.filter((a) => APP.done[a.id]).length;
+  const allTasks = [...ACTIONS, ...SURPLUS_WEAPONS];
+  const total = allTasks.length;
+  const doneCount = allTasks.filter((a) => APP.done[a.id]).length;
   const pct = Math.round((doneCount / total) * 100);
   const pendingCount = total - doneCount;
 
@@ -254,22 +264,80 @@ function renderActionBucket(title, sub, cls, items) {
   `;
 }
 
+function renderSurplusBucket() {
+  const filtered = APP.filter === "pending" ? SURPLUS_WEAPONS.filter((s) => !APP.done[s.id]) : SURPLUS_WEAPONS;
+  if (filtered.length === 0) return "";
+
+  return `
+    <section class="bucket bucket-surplus">
+      <div class="bucket-head">
+        <h2>4. Vũ Khí Dư Sau Chỉnh &amp; Plan Dùng Tiếp (${filtered.length})</h2>
+        <span>Tận dụng lại đồ Lv.60–90 vừa tháo ra, tránh bỏ phí hoặc thiếu slot Nhà Hát 7.2</span>
+      </div>
+      <div class="action-table">
+        ${filtered
+          .map((s) => {
+            const fromC = byName(s.from);
+            const toC = s.to ? byName(s.to) : null;
+            const w = fromC?.weapon;
+            const isDone = !!APP.done[s.id];
+
+            const destHtml = toC
+              ? `<span class="sflow-char">
+                  <img src="${esc(toC.icon)}" alt="${esc(s.to)}" loading="lazy" referrerpolicy="no-referrer" />
+                  <strong>${esc(s.to)}</strong>
+                </span>`
+              : `<span class="sflow-vault">Kho dự phòng</span>`;
+
+            return `
+              <div class="surplus-row ${isDone ? "done" : ""}">
+                <div class="col-sw">
+                  <input type="checkbox" data-act-id="${esc(s.id)}" ${isDone ? "checked" : ""} aria-label="Xử lý ${esc(w?.name || s.id)}" />
+                  ${w?.icon ? `<img class="w-pic" src="${esc(w.icon)}" alt="${esc(w.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                  <div>
+                    <strong>${esc(w?.name || "-")}</strong>
+                    <small>${esc(w?.rarity || 4)}★ Lv.${esc(w?.level || 1)} R${esc(w?.refinement || 1)}${w?.substat_name ? ` · ${esc(w.substat_name)} ${esc(w.substat_val)}` : ""}</small>
+                  </div>
+                </div>
+                <div class="col-sflow">
+                  <span class="sflow-char">
+                    ${fromC?.icon ? `<img src="${esc(fromC.icon)}" alt="${esc(s.from)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                    <span>${esc(s.from)}</span>
+                  </span>
+                  <span class="swap-arrow">→</span>
+                  ${destHtml}
+                </div>
+                <div class="col-splan">
+                  <b>${esc(s.action)}</b>
+                  <span>${esc(s.plan)}</span>
+                </div>
+              </div>
+            `;
+          })
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
 function renderTrackerView() {
   const nowItems = ACTIONS.filter((a) => a.bucket === "now");
   const farmItems = ACTIONS.filter((a) => a.bucket === "farm");
   const laterItems = ACTIONS.filter((a) => a.bucket === "later");
+  const totalCount = ACTIONS.length + SURPLUS_WEAPONS.length;
 
   const body = [
     renderActionBucket("1. Làm Ngay Trong Game — 0 Tốn Nhựa", "Đổi vũ khí đang nằm ở nhân vật dự bị & sửa dòng chính TDV có sẵn", "bucket-now", nowItems),
     renderActionBucket("2. Cần Farm — Vùng Đã Mở", "Fontaine (64%) · Nod-Krai (7%) · Inazuma (100%) · Sumeru (100%)", "bucket-farm", farmItems),
     renderActionBucket("3. Đợi Mở Snezhnaya (0%)", "Chờ đi tới Snezhnaya mới farm được Sách & Boss", "bucket-later", laterItems),
+    renderSurplusBucket(),
   ].join("");
 
   return `
     <div class="tracker-controls">
       <div class="filter-group">
         <button class="filter-btn ${APP.filter === "pending" ? "active" : ""}" data-filter="pending">Chỉ hiện việc chưa xong</button>
-        <button class="filter-btn ${APP.filter === "all" ? "active" : ""}" data-filter="all">Hiện tất cả (${ACTIONS.length})</button>
+        <button class="filter-btn ${APP.filter === "all" ? "active" : ""}" data-filter="all">Hiện tất cả (${totalCount})</button>
       </div>
       <span style="font-size:12px; color:var(--muted);">Tick vào ô vuông khi làm xong trong game — tự lưu trên trình duyệt</span>
     </div>

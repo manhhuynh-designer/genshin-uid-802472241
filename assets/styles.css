@@ -243,6 +243,7 @@ h1 {
 .bucket-now h2 { color: var(--bad); }
 .bucket-farm h2 { color: var(--gold); }
 .bucket-later h2 { color: var(--muted); }
+.bucket-surplus h2 { color: var(--ok); }
 .bucket-head span { font-size: 12px; color: var(--muted); }
 
 .action-table { display: flex; flex-direction: column; }
@@ -343,6 +344,84 @@ h1 {
 }
 .col-artifact strong { display: block; font-size: 12.5px; color: var(--gold); font-weight: 600; }
 .col-artifact small { display: block; font-size: 11.5px; color: var(--muted); }
+
+/* Surplus Weapons Bucket */
+.surplus-row {
+  display: grid;
+  grid-template-columns: 270px 265px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 8px;
+  border-bottom: 1px solid rgba(211, 188, 142, 0.08);
+  transition: background 0.12s, opacity 0.14s;
+}
+.surplus-row:hover { background: rgba(255, 255, 255, 0.025); }
+.surplus-row.done { opacity: 0.4; }
+.surplus-row.done .col-sw strong { text-decoration: line-through; }
+
+@media (max-width: 960px) {
+  .surplus-row { grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+  .col-splan { grid-column: 1 / -1; }
+}
+@media (max-width: 620px) {
+  .surplus-row { grid-template-columns: 1fr; gap: 8px; }
+}
+
+.col-sw {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.col-sw input[type="checkbox"] {
+  accent-color: var(--ok);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.col-sw img.w-pic {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.65));
+}
+.col-sw strong { display: block; font-size: 13.5px; color: var(--ivory); }
+.col-sw small { display: block; font-size: 11.5px; color: var(--muted); }
+
+.col-sflow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.sflow-char {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+}
+.sflow-char img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #1f1b2a;
+  border: 1px solid var(--line);
+}
+.sflow-char span { color: var(--muted); }
+.sflow-char strong { color: var(--gold); font-weight: 600; }
+.sflow-vault {
+  font-size: 12px;
+  color: var(--muted);
+  border: 1px dashed rgba(211, 188, 142, 0.25);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.col-sflow .swap-arrow { color: var(--gold); font-size: 12px; }
+
+.col-splan b { display: block; font-size: 13px; color: var(--ok); font-weight: 600; }
+.col-splan span { display: block; font-size: 12px; color: var(--muted); }
 
 /* VIEW 2: Party Stage */
 .stage-layout {
