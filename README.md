@@ -2,7 +2,7 @@
 
 Static dashboard, structured JSON dataset, analysis notes, and macOS Chrome crawler for HoYoLAB Battle Chronicle data (crawled **2026-11-20**, Version **7.2**).
 
-- **GitHub Pages Dashboard:** `https://manhhuynh-designer.github.io/genshin-uid-802472241/`
+- **GitHub Pages Dashboard:** `https://manhhuynh.work/genshin-uid-802472241/`
 - **Raw Dataset:** [`data/genshin_uid_802472241_data.json`](./data/genshin_uid_802472241_data.json) (all 70 characters, weapons, refinements, talents, stats, artifacts + substats & roll counts, Spiral Abyss, Stygian Onslaught, World Exploration, Serenitea Pot, TCG)
 - **Advice & Farming Plan:** [`docs/conversation-notes.md`](./docs/conversation-notes.md)
 
