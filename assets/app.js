@@ -1,120 +1,62 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json?v=7";
-const STORAGE_KEY = "genshin_uid_802472241_done_v1";
-
-const WEAPON_SWAPS = [
-  { id: "sw_navia", priority: "bad", from: "Xinyan", to: "Navia", reason: "Kiếm Li Cốt (27.6% CR) kéo CR Navia 29% → 57% (hoặc Kiếm Vô Công từ Chongyun)" },
-  { id: "sw_fischl", priority: "bad", from: "Yelan", to: "Fischl", reason: "Tuyệt Huyền R5 thay Cung Rỉ Sét → +48% ST Oz" },
-  { id: "sw_yelan", priority: "bad", from: "Kujou Sara", to: "Yelan", reason: "Cung Tây Phong (nâng 90) bù thiếu ER 140.7%" },
-  { id: "sw_xl", priority: "bad", from: "Chevreuse", to: "Xiangling", reason: "Lao Xiên Cá R5 mạnh hơn Xương Sống cho Nộ XL" },
-  { id: "sw_chev", priority: "bad", from: "Candace", to: "Chevreuse", reason: "Hắc Anh Thương R5 (46.9% HP) kéo Chev lên 40k HP" },
-  { id: "sw_noelle", priority: "warn", from: "Sayu", to: "Noelle", reason: "Kiếm Bạch Ảnh R5 DEF% thay Vũ Tài Lv.1 (Nhà Hát)" },
-  { id: "sw_jean", priority: "warn", from: "Nhà Lữ Hành", to: "Jean", reason: "Tây Phong Kiếm R5 bù ER 105% cho Jean / Layla" },
-  { id: "sw_nilou", priority: "warn", from: "Lynette", to: "Nilou", reason: "Kiếm Bến Tàu HP% (nâng 90) tăng Hạt Sum Suê" },
-  { id: "sw_kuki", priority: "warn", from: "Nilou", to: "Kuki Shinobu", reason: "Thiết Phong Kích R3 (+165 EM) khi không dùng Nilou" },
-  { id: "sw_ning", priority: "warn", from: "Shikanoin Heizou", to: "Ningguang", reason: "Mượn Chương Nhạc R5 thay sách 1★ Lv.1 (Nhà Hát)" },
-];
+const DATA_URL = "./data/genshin_uid_802472241_data.json?v=8";
+const STORAGE_KEY = "genshin_uid_802472241_done_v2";
 
 const SET_META = {
-  mh: {
-    name: "4pc Thợ Săn Marechaussee",
-    where: "Kết Cục Của Tội Lỗi (Fontaine)",
-    icon: "https://enka.network/ui/UI_RelicIcon_15031_4.png",
-  },
-  gt: {
-    name: "4pc Đoàn Kịch Hoàng Kim",
-    where: "Kết Cục Của Tội Lỗi (Fontaine)",
-    icon: "https://enka.network/ui/UI_RelicIcon_15032_4.png",
-  },
-  nw: {
-    name: "4pc Tiếng Đêm Trong Rừng Vang",
-    where: "Thành Cổ Rơi Vào Khúc Nhạc (Fontaine) / Tráp Thánh",
-    icon: "https://enka.network/ui/UI_RelicIcon_15034_4.png",
-  },
-  gd: {
-    name: "4pc Giấc Mộng Hoàng Kim",
-    where: "Tháp Hôn Thần (Sumeru) / Tráp Thánh",
-    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/857d990ee0b5c27e926f5e3fc642f8ca.png",
-  },
-  dw: {
-    name: "4pc Ký Ức Rừng Sâu",
-    where: "Tháp Hôn Thần (Sumeru) / Tráp Thánh",
-    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6e1a599dabaefe12d191547469d753cd.png",
-  },
-  no: {
-    name: "4pc Nghi Thức Tông Thất Cổ",
-    where: "Tráp Thánh (Strongbox) / Liyue",
-    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/bd80c45d24f484036927eda40339f730.png",
-  },
-  vv: {
-    name: "4pc Bóng Hình Màu Xanh",
-    where: "Vương Quốc Vô Tận (Mondstadt) / Tráp Thánh",
-    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/79119f6a441fc37f39b08f225d63034b.png",
-  },
-  glad: {
-    name: "4pc Giác Đấu Sĩ (đổi Nón CR%)",
-    where: "Tráp Thánh (Strongbox) / Boss",
-    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f5a1fb5232b2985617002eac1bfea8e6.png",
-  },
-  husk: {
-    name: "4pc Giấc Mộng Phù Hoa / Đoàn Kịch",
-    where: "Đình Ngủ Say (Inazuma) / Tráp Thánh",
-    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7d2a0cb19ab89de53c88937d6c4648a1.png",
-  },
-  silken: {
-    name: "4pc Khúc Ca Trăng Lụa",
-    where: "Frostladen Machinery (Nod-Krai)",
-    icon: "https://enka.network/ui/UI_RelicIcon_15042_4.png",
-  },
-  dids: {
-    name: "4pc Ảo Tưởng Vụn Vỡ (hoặc Giấc Mộng)",
-    where: "Thorny Crown (Mondstadt) / Tráp Thánh",
-    icon: "https://enka.network/ui/UI_RelicIcon_15046_4.png",
-  },
-  furnace: {
-    name: "4pc Trái Tim Lửa Nung (tạm Tông Thất)",
-    where: "Inverted Glacier (Snezhnaya) / Tráp Thánh",
-    icon: "https://enka.network/ui/UI_RelicIcon_15048_4.png",
-  },
-  totm: {
-    name: "4pc Thiên Nham Vững Chắc",
-    where: "Kính Nham (Liyue) / Tráp Thánh",
-    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png",
-  },
+  mh: { name: "4pc Thợ Săn Marechaussee", where: "Kết Cục Của Tội Lỗi (Fontaine)", icon: "https://enka.network/ui/UI_RelicIcon_15031_4.png" },
+  gt: { name: "4pc Đoàn Kịch Hoàng Kim", where: "Kết Cục Của Tội Lỗi (Fontaine)", icon: "https://enka.network/ui/UI_RelicIcon_15032_4.png" },
+  nw: { name: "4pc Tiếng Đêm Trong Rừng Vang", where: "Thành Cổ Rơi Vào Khúc Nhạc (Fontaine) / Tráp Thánh", icon: "https://enka.network/ui/UI_RelicIcon_15034_4.png" },
+  gd: { name: "4pc Giấc Mộng Hoàng Kim", where: "Tháp Hôn Thần (Sumeru) / Tráp Thánh", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/857d990ee0b5c27e926f5e3fc642f8ca.png" },
+  dw: { name: "4pc Ký Ức Rừng Sâu", where: "Tháp Hôn Thần (Sumeru) / Tráp Thánh", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6e1a599dabaefe12d191547469d753cd.png" },
+  no: { name: "4pc Nghi Thức Tông Thất Cổ", where: "Tráp Thánh (Strongbox) / Liyue", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/bd80c45d24f484036927eda40339f730.png" },
+  vv: { name: "4pc Bóng Hình Màu Xanh", where: "Vương Quốc Vô Tận (Mondstadt) / Tráp Thánh", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/79119f6a441fc37f39b08f225d63034b.png" },
+  glad: { name: "4pc Giác Đấu Sĩ", where: "Tráp Thánh / Boss Thế Giới", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f5a1fb5232b2985617002eac1bfea8e6.png" },
+  silken: { name: "4pc Khúc Ca Trăng Lụa", where: "Frostladen Machinery (Nod-Krai)", icon: "https://enka.network/ui/UI_RelicIcon_15042_4.png" },
+  dids: { name: "4pc Ảo Tưởng Vụn Vỡ (hoặc Giấc Mộng)", where: "Thorny Crown (Mondstadt) / Tráp Thánh", icon: "https://enka.network/ui/UI_RelicIcon_15046_4.png" },
+  furnace: { name: "4pc Trái Tim Lửa Nung (tạm Tông Thất)", where: "Inverted Glacier (Snezhnaya) / Tráp Thánh", icon: "https://enka.network/ui/UI_RelicIcon_15048_4.png" },
+  totm: { name: "4pc Thiên Nham Vững Chắc", where: "Kính Nham (Liyue) / Tráp Thánh", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png" },
 };
 
-const FIX_NODES = [
-  { id: "neuv", name: "Neuvillette", level: "bad", label: "CR 26% → Nón CR% · Đổi bộ Marechaussee", setKey: "mh" },
-  { id: "navia", name: "Navia", level: "bad", label: "Cát HP% → ATK% + Nón CR% · Vua Biển 90", setKey: "nw" },
-  { id: "kuki", name: "Kuki Shinobu", level: "bad", label: "EM 318 → 3 món EM + Lv.90", setKey: "gd" },
-  { id: "chiori", name: "Chiori", level: "bad", label: "E 1→8 + Cát ATK% → DEF%", setKey: "gt" },
-  { id: "fischl", name: "Fischl", level: "bad", label: "CR 31.8% → Tuyệt Huyền + Nón CR%", setKey: "gt" },
-  { id: "chev", name: "Chevreuse", level: "bad", label: "HP 21.5k → 3 món HP% (mốc 40k)", setKey: "no" },
-  { id: "ayato", name: "Kamisato Ayato", level: "warn", label: "CR 31.4% → đổi Nón CR%", setKey: "glad" },
-  { id: "nahida", name: "Nahida", level: "warn", label: "Team Thảo cần 1 người cầm Rừng Sâu", setKey: "dw" },
-  { id: "aino", name: "Aino", level: "warn", label: "Lv.1 → 80 · Cát ER (190–250%)", setKey: "silken" },
-  { id: "mitya", name: "Mitya", level: "warn", label: "Chờ Snezhnaya · Cát/Ly EM + Trấn", setKey: "dids" },
-  { id: "valeriy", name: "Valeriy", level: "warn", label: "Chờ Snezhnaya · 3 món ATK% / Tây Phong", setKey: "furnace" },
-  { id: "jean", name: "Jean", level: "warn", label: "Thiếu Ly + Hoa/Nón +0 · đẩy ER 160%", setKey: "vv" },
-  { id: "venti", name: "Venti", level: "warn", label: "4 món trên HoYoLAB đang +0 (check/sync)", setKey: "vv" },
-  { id: "mika", name: "Mika", level: "warn", label: "Thiếu Hoa · đổi Ly/Nón HP/Trị Liệu", setKey: "no" },
-  { id: "itgear", name: "Ningguang", level: "warn", label: "Lắp đồ tạm cho Ningguang, Beidou, Noelle, Gorou", setKey: "totm" },
+// Unified per-character action dossier (Weapon + Artifact Fix + Set + Where to farm in ONE row)
+const ACTIONS = [
+  // Bucket 1: Do now in-game (0 Resin or quick swap)
+  { id: "a_navia", bucket: "now", name: "Navia", swapFrom: "Xinyan", swapNote: "Hoặc Kiếm Vô Công 5★ từ Chongyun", fixTitle: "Cát HP% → ATK% + Nón CR%", fixSub: "Hiện CR 29.1% · Nâng kiếm 90 nếu giữ Vua Biển", setKey: "nw" },
+  { id: "a_fischl", bucket: "now", name: "Fischl", swapFrom: "Yelan", swapNote: "Bỏ Cung Rỉ Sét (vô dụng cho Oz)", fixTitle: "Đổi Nón → CR% (đang 31.8% CR)", fixSub: "Gắn Tuyệt Huyền R5 tăng +48% ST Oz", setKey: "gt" },
+  { id: "a_yelan", bucket: "now", name: "Yelan", swapFrom: "Kujou Sara", swapNote: "Nâng Cung Tây Phong 70 → 90", fixTitle: "Giải quyết thiếu ER (đang 140.7%)", fixSub: "Giữ Cát HP% + Ly Thủy + Nón CR/CD", setKey: null },
+  { id: "a_xl", bucket: "now", name: "Xiangling", swapFrom: "Chevreuse", swapNote: "Lao Xiên Cá R5 mạnh hơn Xương Sống", fixTitle: "Giữ nguyên bộ 4pc Dấu Ấn (236% ER)", fixSub: "Đã chuẩn C6 · 7/11/13", setKey: null },
+  { id: "a_chev", bucket: "now", name: "Chevreuse", swapFrom: "Candace", swapNote: "Hắc Anh Thương R5 (+46.9% HP)", fixTitle: "Đổi Ly Hỏa & Nón CR → Full HP%", fixSub: "Đang 21.5k HP → kéo lên mốc 40k HP", setKey: "no" },
+  { id: "a_kuki", bucket: "now", name: "Kuki Shinobu", swapFrom: "Nilou", swapNote: "Mượn Thiết Phong Kích R3 nếu Nilou nghỉ", fixTitle: "Đổi Cát/Ly/Nón → 3 món EM", fixSub: "Đang 318 EM → cần ~900+ EM & lên Lv.90", setKey: "gd" },
+  { id: "a_ayato", bucket: "now", name: "Kamisato Ayato", swapFrom: null, swapNote: "Giữ Tiếng Hét Của Rồng R5", fixTitle: "Đổi Nón STBK → Nón CR%", fixSub: "Hiện CR 31.4% / CD 208.9% (chuẩn bị Nhà Hát Màn 6)", setKey: "glad" },
+  { id: "a_noelle", bucket: "now", name: "Noelle", swapFrom: "Sayu", swapNote: "Kiếm Bạch Ảnh R5 DEF% thay Vũ Tài Lv.1", fixTitle: "Lắp đồ cho Ningguang, Beidou, Noelle, Gorou", fixSub: "Đủ quân số 25+ Lv.70 vào Nhà Hát trước 01/12", setKey: "totm" },
+  { id: "a_ning", bucket: "now", name: "Ningguang", swapFrom: "Shikanoin Heizou", swapNote: "Mượn Chương Nhạc R5 thay sách 1★", fixTitle: "Gắn đủ 5 món TDV (hiện mới 2 món)", fixSub: "Chuẩn bị sẵn slot Nham cho Nhà Hát Màn 8", setKey: "nw" },
+
+  // Bucket 2: Farm in unlocked regions (Fontaine, Nod-Krai, Inazuma, Sumeru)
+  { id: "a_neuv", bucket: "farm", name: "Neuvillette", swapFrom: null, swapNote: "Giữ Trấn Nghi Thức R1 Lv.90", fixTitle: "Đổi 3 món HP% → Cát HP% + Ly HP/Thủy + Nón CR%", fixSub: "Hiện CR 26% quá thấp · Farm bí cảnh Fontaine", setKey: "mh" },
+  { id: "a_chiori", bucket: "farm", name: "Chiori", swapFrom: null, swapNote: "Giữ Con Thoi Chu Sa R5 Lv.90", fixTitle: "Nâng E từ 1 → 8–9 · Đổi Cát ATK% → DEF%", fixSub: "Sách Ánh Sáng (Inazuma T4/7) + nâng Ly Nham +20", setKey: "gt" },
+  { id: "a_aino", bucket: "farm", name: "Aino", swapFrom: "Nhà Lữ Hành", swapNote: "Hoặc rèn Master Key · Đại Kiếm Tây Phong", fixTitle: "Nâng Lv.1 → 80 · Thiên phú 1/6/8 · Cát ER", fixSub: "Boss Knuckle Duckle + Đặc sản đều ở Nod-Krai (đã mở)", setKey: "silken" },
+  { id: "a_jean", bucket: "farm", name: "Jean", swapFrom: "Nhà Lữ Hành", swapNote: "Mượn Tây Phong Kiếm R5 cho đủ Nạp", fixTitle: "Lắp đủ 5 món +20 (đang thiếu Ly, 2 món +0)", fixSub: "Đẩy ER từ 105% → 160–180% làm Healer toàn đội", setKey: "vv" },
+  { id: "a_venti", bucket: "farm", name: "Venti", swapFrom: null, swapNote: "Giữ Trấn Tiếng Thở Dài Vô Tận R1", fixTitle: "4 món trên HoYoLAB đang ở Lv.0", fixSub: "Kiểm tra lại trong game hoặc nâng bộ 4pc Bóng Hình", setKey: "vv" },
+  { id: "a_nahida", bucket: "farm", name: "Nahida", swapFrom: null, swapNote: "Giữ Mảnh Chương Tế Lễ R5 (749 EM)", fixTitle: "Team Thảo cần 1 người mặc 4pc Rừng Sâu", fixSub: "Đổi qua Tráp Thánh nếu team không có Collei/Yaoyao cầm", setKey: "dw" },
+
+  // Bucket 3: Waiting for Snezhnaya (0%)
+  { id: "a_mitya", bucket: "later", name: "Mitya", swapFrom: null, swapNote: "Nâng Trấn Sắc Lệnh Tinh Tú 20 → 90", fixTitle: "Tier 0 Meta 7.2 · Chờ mở map Snezhnaya", fixSub: "Cát EM · Ly EM/Lôi · Nón CR/CD (sách Charity)", setKey: "dids" },
+  { id: "a_valeriy", bucket: "later", name: "Valeriy", swapFrom: null, swapNote: "Chuẩn bị sẵn Tây Phong Kiếm", fixTitle: "Khiên + Buff chuyên cho Mitya · Chờ Snezhnaya", fixSub: "Cát/Ly/Nón ATK% · Sách Charity chung với Mitya", setKey: "furnace" },
 ];
 
 const FARM_DAYS = [
-  { key: 1, short: "T2", title: "Thứ 2", chars: ["Chiori", "Aino"], tasks: ["3× Boss Tuần (Narwhal + Quick Silken Feather)", "Sách Aino / Địa Mạch"] },
-  { key: 2, short: "T3", title: "Thứ 3", chars: ["Aino", "Kuki Shinobu", "Chevreuse"], tasks: ["Boss Knuckle Duckle (Nod-Krai)", "Mãng Xà (Kuki) · Hải Mã (Chev)"] },
-  { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Navia", "Aino"], tasks: ["Sách Ánh Sáng (Chiori)", "Vũ khí Vua Biển & Tây Phong"] },
-  { key: 4, short: "T5", title: "Thứ 5", chars: ["Neuvillette", "Fischl"], tasks: ["Full TDV Thợ Săn Marechaussee / Đoàn Kịch (Fontaine)"] },
-  { key: 5, short: "T6", title: "Thứ 6", chars: ["Neuvillette", "Fischl", "Aino"], tasks: ["Check Ảo Cảnh (10 ngày đầu → +1 TDV/120 Nhựa)", "Hoặc Boss + TDV Fontaine"] },
-  { key: 6, short: "T7", title: "Thứ 7", chars: ["Chiori", "Navia"], tasks: ["Chốt Sách Ánh Sáng (E 8–9)", "Vua Biển Lv.90"] },
-  { key: 0, short: "CN", title: "CN", chars: ["Neuvillette", "Chiori", "Aino"], tasks: ["Bù sách/vũ khí thiếu", "Dư chạy TDV Thợ Săn / Đoàn Kịch"] },
+  { key: 1, short: "T2", title: "Thứ 2", chars: ["Chiori", "Aino"], resin: "3× Boss Tuần (Narwhal cho Chiori + Quick Silken Feather cho Aino) · Sách Aino", extra: "Nhặt Cỏ Naku, Hoa Lumidouce, Portable Bearing" },
+  { key: 2, short: "T3", title: "Thứ 3", chars: ["Aino", "Kuki Shinobu", "Chevreuse"], resin: "Boss Thế Giới: Knuckle Duckle (Nod-Krai — Aino) · Mãng Xà (Kuki) · Hải Mã (Chev)", extra: "Dọn quái thường lấy nguyên liệu nâng cấp" },
+  { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Navia", "Aino"], resin: "Sách Ánh Sáng (Inazuma — E Chiori) · Vũ khí Vua Biển (Navia) & Tây Phong", extra: "Ép Tráp Thánh → Giấc Mộng Hoàng Kim / Ký Ức Rừng Sâu" },
+  { key: 4, short: "T5", title: "Thứ 5", chars: ["Neuvillette", "Fischl"], resin: "Full Nhựa: Kết Cục Của Tội Lỗi (Fontaine) — 4pc Thợ Săn & 4pc Đoàn Kịch", extra: "Nhặt lại đặc sản (hồi 48h)" },
+  { key: 5, short: "T6", title: "Thứ 6", chars: ["Neuvillette", "Fischl", "Aino"], resin: "Check Ảo Cảnh Hiểm Ác (10 ngày đầu → +1 TDV/120 Nhựa) · hoặc Boss + TDV Fontaine", extra: "Làm xong các việc Đổi Vũ Khí (0 Nhựa) & đi Nhà Hát trước 01/12" },
+  { key: 6, short: "T7", title: "Thứ 7", chars: ["Chiori", "Navia"], resin: "Chốt Sách Ánh Sáng (Chiori E 8–9) · Chốt nâng Vũ khí", extra: "Leo lại La Hoàn Tầng 11-3 & Tầng 12" },
+  { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Neuvillette", "Chiori", "Aino"], resin: "Bù Sách / Vũ khí còn thiếu · dư chạy Kết Cục Của Tội Lỗi (Fontaine)", extra: "Kiểm tra đường mở map Snezhnaya cho Mitya & Valeriy" },
 ];
 
 const MODES = {
   teams: {
     label: "Đội Hình",
     items: [
-      { title: "Raiden National", sub: "Ổn định #1 Boss đơn · ER 236–276%", note: "Sẵn sàng 100% · Không trùng đồ", status: "ok", members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"] },
+      { title: "Raiden National", sub: "Ổn định #1 Boss đơn · ER 236–276%", note: "Sẵn sàng 100% · Đưa Lao Xiên Cá cho XL càng mạnh", status: "ok", members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"] },
       { title: "Keqing Tăng Cường", sub: "Chỉ số đẹp nhất · 70/231", note: "Sẵn sàng 100% · Kazuha 1,011 EM", status: "ok", members: ["Keqing", "Nahida", "Yae Miko", "Kaedehara Kazuha"] },
       { title: "Ayaka Đóng Băng", sub: "Ayaka 10/10/10 · Mona 8/8/13", note: "Sẵn sàng 100% · ~95% CR thực", status: "ok", members: ["Kamisato Ayaka", "Mona", "Kaedehara Kazuha", "Sangonomiya Kokomi"] },
       { title: "Hu Tao Bốc Hơi", sub: "2 Thủy + Khiên Zhongli", note: "Sẵn sàng 100% · 2 Hòa Phác Diên riêng", status: "ok", members: ["Hu Tao", "Yelan", "Xingqiu", "Zhongli"] },
@@ -123,14 +65,14 @@ const MODES = {
       { title: "Nilou Sum Suê", sub: "51.5k HP · Collei 4pc Rừng Sâu", note: "Sẵn sàng 100%", status: "ok", members: ["Nilou", "Nahida", "Sangonomiya Kokomi", "Collei"] },
       { title: "Eula Vật Lý", sub: "C2 10/10/10 · Rosaria C6 bù CR", note: "Tình huống / Siêu Dẫn · CR 51.7%", status: "warn", members: ["Eula", "Raiden Shogun", "Rosaria", "Zhongli"] },
       { title: "Neuvillette Carry", sub: "Chờ Nón CR% / 4pc Thợ Săn", note: "Sửa Neuvillette CR 26% · Hoặc Nahida + Kuki", status: "bad", members: ["Neuvillette", "Kaedehara Kazuha", "Zhongli", "Yae Miko"] },
-      { title: "Navia 2 Nham", sub: "Chờ Cát ATK% + Chiori E 8–9", note: "Sửa Navia Cát ATK% & Chiori E 1→8", status: "bad", members: ["Navia", "Chiori", "Bennett", "Xiangling"] },
+      { title: "Navia 2 Nham", sub: "Chờ Cát ATK% + Kiếm Li Cốt + Chiori E", note: "Sửa Navia & Chiori để mở khóa sát thương", status: "bad", members: ["Navia", "Chiori", "Bennett", "Xiangling"] },
       { title: "Mitya Meta 7.2", sub: "Chờ Snezhnaya (Aino farm trước)", note: "Đã có Trấn Mitya + Valeriy C1", status: "warn", members: ["Mitya", "Valeriy", "Kaedehara Kazuha", "Aino"] },
     ],
   },
   abyss: {
     label: "La Hoàn",
     items: [
-      { title: "12 · Nửa 1 — Navia Phá Khiên", sub: "+75% Lunar-Crystallize · 12-3 Moongecko", note: "Sửa Navia Cát ATK% + Chiori E 1→8", status: "bad", members: ["Navia", "Zhongli", "Chiori", "Xianyun"] },
+      { title: "12 · Nửa 1 — Navia Phá Khiên", sub: "+75% Lunar-Crystallize · 12-3 Moongecko", note: "Sửa Navia (Kiếm Li Cốt + Cát ATK%) + Chiori E", status: "bad", members: ["Navia", "Zhongli", "Chiori", "Xianyun"] },
       { title: "12 · Nửa 2 — Raiden National", sub: "+200 EM · 12-1 Wavebinder · 12-2 Hỏa/Lôi", note: "Đội hình sẵn sàng đánh ngay", status: "ok", members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"] },
       { title: "12 · Nửa 2 — Neuvillette EM", sub: "Tận dụng +200 EM khi sửa xong", note: "Chờ Neuvillette CR% + Kuki 3 món EM", status: "bad", members: ["Neuvillette", "Nahida", "Kuki Shinobu", "Kaedehara Kazuha"] },
       { title: "12 · Nửa 1 — Eula Siêu Dẫn", sub: "12-2 Frostnight Herra · Blessing Siêu Dẫn", note: "Rosaria C6 (74% CR) đi kèm bù CR", status: "warn", members: ["Eula", "Raiden Shogun", "Rosaria", "Zhongli"] },
@@ -157,10 +99,10 @@ const MODES = {
 
 let APP = {
   data: null,
+  view: "tracker",   // tracker | stage | week
+  filter: "pending", // pending | all
   mode: "teams",
   index: 0,
-  dayKey: new Date().getDay(),
-  focusChar: null,
   done: loadDone(),
 };
 
@@ -183,44 +125,18 @@ function esc(v) {
 function byName(name) {
   return APP.data.characters.find((c) => c.name === name) || null;
 }
+
 function stat(c, key) {
   return (c && c.stats && c.stats[key] && c.stats[key].final) || "-";
 }
 
-function charNode(name) {
-  const c = byName(name);
-  if (!c) return { level: "warn", text: "Mục tiêu roll / Trial" };
-  const cr = parseFloat(stat(c, "Tỷ Lệ Bạo Kích"));
-  const em = parseFloat(stat(c, "Tinh Thông Nguyên Tố"));
-  const hp = parseFloat(stat(c, "Giới Hạn HP"));
-  const er = parseFloat(stat(c, "Hiệu Quả Nạp Nguyên Tố"));
-
-  if (name === "Neuvillette" && cr < 45) return { level: "bad", text: `CR ${cr}% → Nón CR% / 4pc Thợ Săn` };
-  if (name === "Navia" && cr < 45) return { level: "bad", text: `Cát HP% · CR ${cr}% → ATK% + CR%` };
-  if (name === "Kuki Shinobu" && em < 500) return { level: "bad", text: `EM ${em} → 3 món EM + Lv.90` };
-  if (name === "Chiori" && c.talent_levels === "1/1/1") return { level: "bad", text: "E 1→8 + Cát DEF%" };
-  if (name === "Chevreuse" && hp < 32000) return { level: "bad", text: `HP ${Math.round(hp / 1000)}k → 40k HP` };
-  if (name === "Fischl" && cr < 45) return { level: "bad", text: `CR ${cr}% → Tuyệt Huyền + Nón CR` };
-  if (name === "Kamisato Ayato" && cr < 45) return { level: "warn", text: `CR ${cr}% → Nón CR%` };
-  if (name === "Yelan") return { level: "warn", text: `68.9/152.6 · ER ${er}% (1 Thủy hơi thiếu)` };
-  if (name === "Xianyun") return { level: "warn", text: `2,647 ATK · ER ${er}%` };
-  if (name === "Mitya") return { level: "warn", text: "Có Trấn · Chờ Snezhnaya" };
-  if (name === "Valeriy") return { level: "warn", text: "C1 · Chờ Snezhnaya" };
-  if (name === "Aino") return { level: "warn", text: "Lv.1→80 (Nod-Krai)" };
-  if (name === "Eula") return { level: "warn", text: `C2 10/10/10 · CR ${cr}%` };
-  if (name === "Mona") return { level: "ok", text: `C4 · 8/8/13 · ${er}% ER` };
-  if (name === "Raiden Shogun") return { level: "ok", text: `Đoạn Thảo R1 · ${er}% ER` };
-  if (name === "Bennett") return { level: "ok", text: `C6 · ${er}% ER · 4pc Tông Thất` };
-  if (name === "Kamisato Ayaka") return { level: "ok", text: "10/10/10 · ~95% CR thực" };
-  if (name === "Keqing") return { level: "ok", text: `${cr}% / ${stat(c, "Sát Thương Bạo Kích")}` };
-  if (name === "Kaedehara Kazuha") return { level: "ok", text: `${em} EM + Trấn` };
-  if (name === "Zhongli") return { level: "ok", text: `${Math.round(hp / 1000)}k HP · 4pc Thiên Nham` };
-  return { level: "ok", text: `Lv.${c.level} · ${c.talent_levels}` };
+function findActionForChar(name) {
+  return ACTIONS.find((a) => a.name === name) || null;
 }
 
-function renderRadar() {
-  const day = FARM_DAYS.find((d) => d.key === APP.dayKey) || FARM_DAYS[0];
-  const isToday = APP.dayKey === new Date().getDay();
+function renderTodayStrip() {
+  const todayKey = new Date().getDay();
+  const day = FARM_DAYS.find((d) => d.key === todayKey) || FARM_DAYS[0];
   const faces = day.chars
     .map((n) => {
       const c = byName(n);
@@ -229,16 +145,135 @@ function renderRadar() {
     .join("");
 
   return `
-    <section class="radar-bar">
-      <div class="radar-info">
-        <span class="radar-day-label">${isToday ? "Hôm nay" : "Lịch"} · ${esc(day.title)}</span>
-        <div class="radar-faces">${faces}</div>
-        <div class="radar-tasks">${day.tasks.map(esc).join('<span class="sep">·</span>')}</div>
-      </div>
-      <div class="weekday-switch">
-        ${FARM_DAYS.map((d) => `<button class="weekday-btn ${d.key === APP.dayKey ? "active" : ""}" data-day="${d.key}">${esc(d.short)}</button>`).join("")}
+    <section class="today-strip">
+      <div class="today-left">
+        <span class="today-badge">Hôm nay · ${esc(day.title)}</span>
+        <div class="today-faces">${faces}</div>
+        <div class="today-text">${esc(day.resin)}<span class="sep">·</span>${esc(day.extra)}</div>
       </div>
     </section>
+  `;
+}
+
+function renderViewBar() {
+  const total = ACTIONS.length;
+  const doneCount = ACTIONS.filter((a) => APP.done[a.id]).length;
+  const pct = Math.round((doneCount / total) * 100);
+  const pendingCount = total - doneCount;
+
+  return `
+    <div class="view-bar">
+      <nav class="view-tabs">
+        <button class="view-tab ${APP.view === "tracker" ? "active" : ""}" data-view="tracker">Việc Cần Làm (${pendingCount})</button>
+        <button class="view-tab ${APP.view === "stage" ? "active" : ""}" data-view="stage">Sân Khấu Đội Hình</button>
+        <button class="view-tab ${APP.view === "week" ? "active" : ""}" data-view="week">Lịch Farm 7 Ngày</button>
+      </nav>
+      <div class="progress-inline">
+        <span>Đã xong <strong>${doneCount}/${total}</strong></span>
+        <div class="prog-track"><div class="prog-fill" style="width:${pct}%"></div></div>
+      </div>
+    </div>
+  `;
+}
+
+function renderActionBucket(title, sub, cls, items) {
+  const filtered = APP.filter === "pending" ? items.filter((a) => !APP.done[a.id]) : items;
+  if (filtered.length === 0) return "";
+
+  return `
+    <section class="bucket ${cls}">
+      <div class="bucket-head">
+        <h2>${esc(title)} (${filtered.length})</h2>
+        <span>${esc(sub)}</span>
+      </div>
+      <div class="action-table">
+        ${filtered
+          .map((a) => {
+            const c = byName(a.name);
+            const fromC = a.swapFrom ? byName(a.swapFrom) : null;
+            const w = fromC ? fromC.weapon : c?.weapon;
+            const s = a.setKey ? SET_META[a.setKey] : null;
+            const isDone = !!APP.done[a.id];
+
+            const weaponCol = a.swapFrom
+              ? `<div class="col-weapon">
+                  ${fromC?.icon ? `<img class="mini-face" src="${esc(fromC.icon)}" title="Từ ${esc(a.swapFrom)}" referrerpolicy="no-referrer" />` : ""}
+                  <span class="swap-arrow">→</span>
+                  ${w?.icon ? `<img class="w-pic" src="${esc(w.icon)}" alt="${esc(w.name)}" referrerpolicy="no-referrer" />` : ""}
+                  <div>
+                    <b>Đổi sang ${esc(w?.name || "")}</b>
+                    <span>${esc(a.swapNote)}</span>
+                  </div>
+                </div>`
+              : `<div class="col-weapon">
+                  ${w?.icon ? `<img class="w-pic" src="${esc(w.icon)}" alt="${esc(w.name)}" referrerpolicy="no-referrer" />` : ""}
+                  <div>
+                    <b>${esc(w?.name || "-")} (R${esc(w?.refinement || 1)} · Lv.${esc(w?.level || 1)})</b>
+                    <span>${esc(a.swapNote)}</span>
+                  </div>
+                </div>`;
+
+            const artCol = s
+              ? `<div class="col-artifact">
+                  <img src="${esc(s.icon)}" alt="${esc(s.name)}" loading="lazy" referrerpolicy="no-referrer" />
+                  <div>
+                    <strong>${esc(s.name)}</strong>
+                    <small>${esc(s.where)}</small>
+                  </div>
+                </div>`
+              : `<div class="col-artifact">
+                  <div>
+                    <strong style="color:var(--ok);">Bộ TDV hiện tại đã ổn</strong>
+                    <small>${esc(c?.artifact_sets || "")}</small>
+                  </div>
+                </div>`;
+
+            return `
+              <div class="action-row ${isDone ? "done" : ""}">
+                <div class="col-char">
+                  <input type="checkbox" data-act-id="${esc(a.id)}" ${isDone ? "checked" : ""} aria-label="Hoàn thành ${esc(a.name)}" />
+                  ${c?.icon ? `<img src="${esc(c.icon)}" alt="${esc(a.name)}" referrerpolicy="no-referrer" />` : ""}
+                  <div>
+                    <strong>${esc(a.name)}</strong>
+                    <small>Lv.${esc(c?.level ?? "-")} · C${esc(c?.constellation ?? "-")} · ${esc(c?.talent_levels ?? "")}</small>
+                  </div>
+                </div>
+                ${weaponCol}
+                <div class="col-fix">
+                  <span class="fix-badge ${a.bucket === "now" ? "" : "warn"}">${a.bucket === "now" ? "● Làm ngay" : a.bucket === "farm" ? "● Cần farm" : "● Chờ map"}</span>
+                  <span class="fix-detail">${esc(a.fixTitle)}</span>
+                  <span class="fix-sub">${esc(a.fixSub)}</span>
+                </div>
+                ${artCol}
+              </div>
+            `;
+          })
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderTrackerView() {
+  const nowItems = ACTIONS.filter((a) => a.bucket === "now");
+  const farmItems = ACTIONS.filter((a) => a.bucket === "farm");
+  const laterItems = ACTIONS.filter((a) => a.bucket === "later");
+
+  const body = [
+    renderActionBucket("1. Làm Ngay Trong Game — 0 Tốn Nhựa", "Đổi vũ khí đang nằm ở nhân vật dự bị & sửa dòng chính TDV có sẵn", "bucket-now", nowItems),
+    renderActionBucket("2. Cần Farm — Vùng Đã Mở", "Fontaine (64%) · Nod-Krai (7%) · Inazuma (100%) · Sumeru (100%)", "bucket-farm", farmItems),
+    renderActionBucket("3. Đợi Mở Snezhnaya (0%)", "Chờ đi tới Snezhnaya mới farm được Sách & Boss", "bucket-later", laterItems),
+  ].join("");
+
+  return `
+    <div class="tracker-controls">
+      <div class="filter-group">
+        <button class="filter-btn ${APP.filter === "pending" ? "active" : ""}" data-filter="pending">Chỉ hiện việc chưa xong</button>
+        <button class="filter-btn ${APP.filter === "all" ? "active" : ""}" data-filter="all">Hiện tất cả (${ACTIONS.length})</button>
+      </div>
+      <span style="font-size:12px; color:var(--muted);">Tick vào ô vuông khi làm xong trong game — tự lưu trên trình duyệt</span>
+    </div>
+    ${body || `<div style="padding:36px 0; text-align:center; color:var(--ok); font-weight:600;">Bạn đã tick hoàn thành toàn bộ danh sách chỉnh sửa!</div>`}
   `;
 }
 
@@ -257,23 +292,12 @@ function renderFoot() {
         <div class="theater-faces">
           ${elig
             .map(
-              (c) => `
-              <span class="t-face ${needGear.has(c.name) ? "warn" : ""}" title="${esc(c.name)} Lv.${c.level} C${c.constellation}">
+              (c) => `<span class="t-face ${needGear.has(c.name) ? "warn" : ""}" title="${esc(c.name)} Lv.${c.level} C${c.constellation}">
                 <img src="${esc(c.icon)}" alt="${esc(c.name)}" loading="lazy" referrerpolicy="no-referrer" />
                 ${esc(c.name)}
               </span>`
             )
             .join("")}
-        </div>
-      </div>
-    `;
-  }
-  if (APP.mode === "meta") {
-    return `
-      <div class="stage-foot">
-        <div class="foot-title">
-          <span><strong>Snezhnaya 0%</strong> (tạm gác Mitya &amp; Valeriy) · Farm ngay ở Nod-Krai (7%) &amp; Fontaine (64%)</span>
-          <span>Ảo Cảnh Hiểm Ác (10 ngày đầu kỳ 11.11–15.12): 120 Nhựa = +1 TDV 5★</span>
         </div>
       </div>
     `;
@@ -291,24 +315,21 @@ function renderFoot() {
   return "";
 }
 
-function renderStage() {
+function renderStageView() {
   const items = MODES[APP.mode].items;
   const active = items[APP.index] || items[0];
 
   const rowsHtml = items
     .map((it, idx) => {
-      const impacted = APP.focusChar && it.members.includes(APP.focusChar);
       const faces = it.members
         .map((n) => {
           const c = byName(n);
-          return c?.icon
-            ? `<img src="${esc(c.icon)}" alt="${esc(n)}" referrerpolicy="no-referrer" />`
-            : `<span class="face-ghost">${esc(n.slice(0, 2).toUpperCase())}</span>`;
+          return c?.icon ? `<img src="${esc(c.icon)}" alt="${esc(n)}" referrerpolicy="no-referrer" />` : `<span class="face-ghost">${esc(n.slice(0, 2).toUpperCase())}</span>`;
         })
         .join("");
 
       return `
-        <button class="roster-row ${idx === APP.index ? "active" : ""} ${impacted ? "impacted" : ""}" data-idx="${idx}">
+        <button class="roster-row ${idx === APP.index ? "active" : ""}" data-idx="${idx}">
           <span class="status-dot dot-${esc(it.status)}"></span>
           <div class="row-faces">${faces}</div>
           <div class="row-text">
@@ -323,17 +344,24 @@ function renderStage() {
   const pillarsHtml = active.members
     .map((name) => {
       const c = byName(name);
-      const node = charNode(name);
-      const isFocus = APP.focusChar === name;
+      const act = findActionForChar(name);
+      const isPending = act && !APP.done[act.id];
       const el = c?.element || "Geo";
       const artUrl = c?.splash || c?.icon || "";
       const wIcon = c?.weapon?.icon;
       const artIcons = (c?.artifacts || []).slice(0, 3).map((a) => a.icon).filter(Boolean);
-      const fixDef = FIX_NODES.find((f) => f.name === name);
-      const recSet = fixDef ? SET_META[fixDef.setKey] : null;
+
+      let noteClass = "note-ok";
+      let noteText = c ? "Đã ổn định" : "Mục tiêu roll";
+      if (isPending) {
+        noteClass = act.bucket === "now" ? "note-bad" : "note-warn";
+        noteText = act.fixTitle;
+      } else if (act && APP.done[act.id]) {
+        noteText = "✓ Đã xong";
+      }
 
       return `
-        <article class="character-pillar ${isFocus ? "is-focus" : ""}" style="--el: var(--el-${esc(el)}, 211,188,142);">
+        <article class="character-pillar" style="--el: var(--el-${esc(el)}, 211,188,142);">
           <div class="splash-wrap">
             ${artUrl ? `<img class="splash-img" src="${esc(artUrl)}" alt="${esc(name)}" referrerpolicy="no-referrer" />` : `<div class="splash-ghost">${esc(name.slice(0, 2).toUpperCase())}</div>`}
           </div>
@@ -351,15 +379,8 @@ function renderStage() {
                   </div>`
                 : `<div class="pillar-gear"><span class="talent-txt">Chưa sở hữu</span></div>`
             }
-            <div class="pillar-note note-${esc(node.level)}">${esc(node.text)}</div>
-            ${
-              recSet
-                ? `<div class="pillar-set" title="${esc(recSet.name)} — ${esc(recSet.where)}">
-                    <img src="${esc(recSet.icon)}" alt="${esc(recSet.name)}" referrerpolicy="no-referrer" />
-                    <span>${esc(recSet.where)}</span>
-                  </div>`
-                : ""
-            }
+            <div class="pillar-note ${noteClass}">${esc(noteText)}</div>
+            ${isPending ? `<button class="jump-link" data-jump-tracker="1">Xem chi tiết sửa →</button>` : ""}
           </div>
         </article>
       `;
@@ -389,108 +410,74 @@ function renderStage() {
   `;
 }
 
-function renderChecklist() {
-  const doneCount = FIX_NODES.filter((n) => APP.done[n.id]).length;
+function renderWeekView() {
+  const todayKey = new Date().getDay();
   return `
-    <section class="checklist-section">
-      <div class="checklist-head">
-        <strong>Node Build · Bộ Thánh Di Vật &amp; Chỗ Farm (${doneCount}/${FIX_NODES.length})</strong>
-        <span>Bấm nhân vật để sáng các đội liên quan · Tick ô vuông để lưu</span>
-      </div>
-      <div class="check-columns">
-        ${FIX_NODES.map((n) => {
-          const c = byName(n.name);
-          const s = SET_META[n.setKey];
-          const isDone = !!APP.done[n.id];
-          const focused = APP.focusChar === n.name;
-          return `
-            <div class="check-row ${isDone ? "done" : ""} ${focused ? "focused" : ""}" data-char="${esc(n.name)}">
-              <div class="check-left">
-                <input type="checkbox" data-fix-id="${esc(n.id)}" ${isDone ? "checked" : ""} aria-label="${esc(n.name)}" />
-                <span class="status-dot dot-${n.level === "bad" ? "bad" : "warn"}"></span>
-                ${c?.icon ? `<img src="${esc(c.icon)}" alt="${esc(n.name)}" referrerpolicy="no-referrer" />` : ""}
-                <div class="check-row-text">
-                  <b>${esc(n.name)}</b>
-                  <span>${esc(n.label)}</span>
-                </div>
-              </div>
-              ${
-                s
-                  ? `<div class="check-farm" title="${esc(s.name)} — ${esc(s.where)}">
-                      <div class="check-farm-meta">
-                        <strong>${esc(s.name)}</strong>
-                        <small>${esc(s.where)}</small>
-                      </div>
-                      <img src="${esc(s.icon)}" alt="${esc(s.name)}" loading="lazy" referrerpolicy="no-referrer" />
-                    </div>`
-                  : ""
-              }
+    <div class="onslaught-banner">
+      <strong>Ảo Cảnh Hiểm Ác (Kỳ 11.11 – 15.12 · Reset mỗi 5–6 tuần):</strong>
+      10 ngày đầu kỳ (<em>Disturbance Outbreak</em>) cho phép tiêu Nhựa farm TDV tại Bí cảnh Chúc Phúc: <strong>120 Nhựa = +1 mảnh 5★ thưởng</strong> &amp; mốc <strong>1,200 Dire Prestige</strong> nhận <em>Dust of Enlightenment</em>. (Không farm được Boss / Sách / Vũ khí.)
+    </div>
+    <div class="week-list">
+      ${FARM_DAYS.map((d) => {
+        const isToday = d.key === todayKey;
+        const faces = d.chars
+          .map((n) => {
+            const c = byName(n);
+            return c?.icon ? `<img src="${esc(c.icon)}" alt="${esc(n)}" title="${esc(n)}" referrerpolicy="no-referrer" />` : "";
+          })
+          .join("");
+        return `
+          <div class="week-row ${isToday ? "is-today" : ""}">
+            <div class="week-day">
+              <strong>${esc(d.title)}</strong>
+              ${isToday ? `<small>Hôm nay</small>` : ""}
             </div>
-          `;
-        }).join("")}
-      </div>
-    </section>
-  `;
-}
-
-function renderWeaponSwaps() {
-  const doneCount = WEAPON_SWAPS.filter((s) => APP.done[s.id]).length;
-  return `
-    <section class="checklist-section">
-      <div class="checklist-head">
-        <strong>Đổi Vũ Khí Sẵn Có (${doneCount}/${WEAPON_SWAPS.length} đã đổi)</strong>
-        <span>0 tốn Nhựa · Chuyển vũ khí đang nằm ở nhân vật dự bị sang chủ lực</span>
-      </div>
-      <div class="swap-grid">
-        ${WEAPON_SWAPS.map((s) => {
-          const fromC = byName(s.from);
-          const toC = byName(s.to);
-          const w = fromC?.weapon;
-          const isDone = !!APP.done[s.id];
-          const focused = APP.focusChar === s.to;
-          return `
-            <div class="swap-row ${isDone ? "done" : ""} ${focused ? "focused" : ""}" data-char="${esc(s.to)}">
-              <div class="swap-transfer">
-                <input type="checkbox" data-fix-id="${esc(s.id)}" ${isDone ? "checked" : ""} aria-label="Đổi ${esc(w?.name || "")} cho ${esc(s.to)}" />
-                <span class="status-dot dot-${s.priority === "bad" ? "bad" : "warn"}"></span>
-                <span class="swap-char" title="Từ ${esc(s.from)}">
-                  ${fromC?.icon ? `<img src="${esc(fromC.icon)}" alt="${esc(s.from)}" referrerpolicy="no-referrer" />` : ""}
-                  <span>${esc(s.from)}</span>
-                </span>
-                <span class="swap-arrow">→</span>
-                <span class="swap-weapon" title="${esc(w?.name || "")} R${esc(w?.refinement || 1)} Lv.${esc(w?.level || 1)}">
-                  ${w?.icon ? `<img src="${esc(w.icon)}" alt="${esc(w.name)}" referrerpolicy="no-referrer" />` : ""}
-                  <strong>${esc(w?.name || "")}</strong>
-                </span>
-                <span class="swap-arrow">→</span>
-                <span class="swap-char" title="Sang ${esc(s.to)}">
-                  ${toC?.icon ? `<img src="${esc(toC.icon)}" alt="${esc(s.to)}" referrerpolicy="no-referrer" />` : ""}
-                  <span>${esc(s.to)}</span>
-                </span>
-              </div>
-              <div class="swap-reason" title="${esc(s.reason)}">${esc(s.reason)}</div>
+            <div class="week-faces">${faces}</div>
+            <div class="week-tasks">
+              <div>${esc(d.resin)}</div>
+              <small>${esc(d.extra)}</small>
             </div>
-          `;
-        }).join("")}
-      </div>
-    </section>
+          </div>
+        `;
+      }).join("")}
+    </div>
   `;
 }
 
 function render() {
+  let content = "";
+  if (APP.view === "tracker") content = renderTrackerView();
+  else if (APP.view === "stage") content = renderStageView();
+  else content = renderWeekView();
+
   document.getElementById("app-root").innerHTML = [
-    renderRadar(),
-    renderStage(),
-    renderWeaponSwaps(),
-    renderChecklist(),
+    renderTodayStrip(),
+    renderViewBar(),
+    content,
   ].join("");
 
-  document.querySelectorAll(".weekday-btn").forEach((b) => {
+  document.querySelectorAll(".view-tab").forEach((b) => {
     b.addEventListener("click", () => {
-      APP.dayKey = Number(b.getAttribute("data-day"));
+      APP.view = b.getAttribute("data-view");
       render();
     });
   });
+
+  document.querySelectorAll(".filter-btn").forEach((b) => {
+    b.addEventListener("click", () => {
+      APP.filter = b.getAttribute("data-filter");
+      render();
+    });
+  });
+
+  document.querySelectorAll("input[type=checkbox][data-act-id]").forEach((cb) => {
+    cb.addEventListener("change", () => {
+      APP.done[cb.getAttribute("data-act-id")] = cb.checked;
+      saveDone();
+      render();
+    });
+  });
+
   document.querySelectorAll(".mode-tab").forEach((b) => {
     b.addEventListener("click", () => {
       APP.mode = b.getAttribute("data-mode");
@@ -498,28 +485,17 @@ function render() {
       render();
     });
   });
+
   document.querySelectorAll(".roster-row").forEach((b) => {
     b.addEventListener("click", () => {
       APP.index = Number(b.getAttribute("data-idx"));
       render();
     });
   });
-  document.querySelectorAll("input[type=checkbox][data-fix-id]").forEach((cb) => {
-    cb.addEventListener("click", (e) => {
-      e.stopPropagation();
-      APP.done[cb.getAttribute("data-fix-id")] = cb.checked;
-      saveDone();
-      render();
-    });
-  });
-  document.querySelectorAll(".check-row, .swap-row").forEach((el) => {
-    el.addEventListener("click", () => {
-      const ch = el.getAttribute("data-char");
-      APP.focusChar = APP.focusChar === ch ? null : ch;
-      if (APP.focusChar) {
-        const idx = MODES[APP.mode].items.findIndex((it) => it.members.includes(APP.focusChar));
-        if (idx !== -1) APP.index = idx;
-      }
+
+  document.querySelectorAll("[data-jump-tracker]").forEach((b) => {
+    b.addEventListener("click", () => {
+      APP.view = "tracker";
       render();
     });
   });
