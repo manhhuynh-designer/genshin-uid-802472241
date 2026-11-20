@@ -1,19 +1,90 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json?v=5";
+const DATA_URL = "./data/genshin_uid_802472241_data.json?v=6";
 const STORAGE_KEY = "genshin_uid_802472241_done_v1";
 
+const SET_META = {
+  mh: {
+    name: "4pc Thợ Săn Marechaussee",
+    where: "Kết Cục Của Tội Lỗi (Fontaine)",
+    icon: "https://enka.network/ui/UI_RelicIcon_15031_4.png",
+  },
+  gt: {
+    name: "4pc Đoàn Kịch Hoàng Kim",
+    where: "Kết Cục Của Tội Lỗi (Fontaine)",
+    icon: "https://enka.network/ui/UI_RelicIcon_15032_4.png",
+  },
+  nw: {
+    name: "4pc Tiếng Đêm Trong Rừng Vang",
+    where: "Thành Cổ Rơi Vào Khúc Nhạc (Fontaine) / Tráp Thánh",
+    icon: "https://enka.network/ui/UI_RelicIcon_15034_4.png",
+  },
+  gd: {
+    name: "4pc Giấc Mộng Hoàng Kim",
+    where: "Tháp Hôn Thần (Sumeru) / Tráp Thánh",
+    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/857d990ee0b5c27e926f5e3fc642f8ca.png",
+  },
+  dw: {
+    name: "4pc Ký Ức Rừng Sâu",
+    where: "Tháp Hôn Thần (Sumeru) / Tráp Thánh",
+    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6e1a599dabaefe12d191547469d753cd.png",
+  },
+  no: {
+    name: "4pc Nghi Thức Tông Thất Cổ",
+    where: "Tráp Thánh (Strongbox) / Liyue",
+    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/bd80c45d24f484036927eda40339f730.png",
+  },
+  vv: {
+    name: "4pc Bóng Hình Màu Xanh",
+    where: "Vương Quốc Vô Tận (Mondstadt) / Tráp Thánh",
+    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/79119f6a441fc37f39b08f225d63034b.png",
+  },
+  glad: {
+    name: "4pc Giác Đấu Sĩ (đổi Nón CR%)",
+    where: "Tráp Thánh (Strongbox) / Boss",
+    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f5a1fb5232b2985617002eac1bfea8e6.png",
+  },
+  husk: {
+    name: "4pc Giấc Mộng Phù Hoa / Đoàn Kịch",
+    where: "Đình Ngủ Say (Inazuma) / Tráp Thánh",
+    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7d2a0cb19ab89de53c88937d6c4648a1.png",
+  },
+  silken: {
+    name: "4pc Khúc Ca Trăng Lụa",
+    where: "Frostladen Machinery (Nod-Krai)",
+    icon: "https://enka.network/ui/UI_RelicIcon_15042_4.png",
+  },
+  dids: {
+    name: "4pc Ảo Tưởng Vụn Vỡ (hoặc Giấc Mộng)",
+    where: "Thorny Crown (Mondstadt) / Tráp Thánh",
+    icon: "https://enka.network/ui/UI_RelicIcon_15046_4.png",
+  },
+  furnace: {
+    name: "4pc Trái Tim Lửa Nung (tạm Tông Thất)",
+    where: "Inverted Glacier (Snezhnaya) / Tráp Thánh",
+    icon: "https://enka.network/ui/UI_RelicIcon_15048_4.png",
+  },
+  totm: {
+    name: "4pc Thiên Nham Vững Chắc",
+    where: "Kính Nham (Liyue) / Tráp Thánh",
+    icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png",
+  },
+};
+
 const FIX_NODES = [
-  { id: "neuv", name: "Neuvillette", level: "bad", label: "CR 26% → Nón CR% / 4pc Thợ Săn" },
-  { id: "navia", name: "Navia", level: "bad", label: "Cát HP% → ATK% + Nón CR% · Vua Biển 90" },
-  { id: "kuki", name: "Kuki Shinobu", level: "bad", label: "EM 318 → 3 món EM + Lv.90" },
-  { id: "chiori", name: "Chiori", level: "bad", label: "E 1→8 + Cát ATK% → DEF%" },
-  { id: "chev", name: "Chevreuse", level: "bad", label: "HP 21.5k → 3 món HP% (40k)" },
-  { id: "fischl", name: "Fischl", level: "bad", label: "CR 31.8% → Tuyệt Huyền + Nón CR" },
-  { id: "ayato", name: "Kamisato Ayato", level: "warn", label: "CR 31.4% → đổi Nón CR%" },
-  { id: "aino", name: "Aino", level: "warn", label: "Farm Nod-Krai · Lv.80 · Silken Moon" },
-  { id: "itgear", name: "Ningguang", level: "warn", label: "Lắp đồ tạm: Ningguang, Beidou, Noelle, Gorou" },
-  { id: "jean", name: "Jean", level: "warn", label: "Thiếu Ly + Hoa/Nón +0 · đẩy ER 160%" },
-  { id: "venti", name: "Venti", level: "warn", label: "4 món trên HoYoLAB đang +0" },
-  { id: "mitya", name: "Mitya", level: "warn", label: "Chờ Snezhnaya · Lv.90 + Trấn" },
+  { id: "neuv", name: "Neuvillette", level: "bad", label: "CR 26% → Nón CR% · Đổi bộ Marechaussee", setKey: "mh" },
+  { id: "navia", name: "Navia", level: "bad", label: "Cát HP% → ATK% + Nón CR% · Vua Biển 90", setKey: "nw" },
+  { id: "kuki", name: "Kuki Shinobu", level: "bad", label: "EM 318 → 3 món EM + Lv.90", setKey: "gd" },
+  { id: "chiori", name: "Chiori", level: "bad", label: "E 1→8 + Cát ATK% → DEF%", setKey: "gt" },
+  { id: "fischl", name: "Fischl", level: "bad", label: "CR 31.8% → Tuyệt Huyền + Nón CR%", setKey: "gt" },
+  { id: "chev", name: "Chevreuse", level: "bad", label: "HP 21.5k → 3 món HP% (mốc 40k)", setKey: "no" },
+  { id: "ayato", name: "Kamisato Ayato", level: "warn", label: "CR 31.4% → đổi Nón CR%", setKey: "glad" },
+  { id: "nahida", name: "Nahida", level: "warn", label: "Team Thảo cần 1 người cầm Rừng Sâu", setKey: "dw" },
+  { id: "aino", name: "Aino", level: "warn", label: "Lv.1 → 80 · Cát ER (190–250%)", setKey: "silken" },
+  { id: "mitya", name: "Mitya", level: "warn", label: "Chờ Snezhnaya · Cát/Ly EM + Trấn", setKey: "dids" },
+  { id: "valeriy", name: "Valeriy", level: "warn", label: "Chờ Snezhnaya · 3 món ATK% / Tây Phong", setKey: "furnace" },
+  { id: "jean", name: "Jean", level: "warn", label: "Thiếu Ly + Hoa/Nón +0 · đẩy ER 160%", setKey: "vv" },
+  { id: "venti", name: "Venti", level: "warn", label: "4 món trên HoYoLAB đang +0 (check/sync)", setKey: "vv" },
+  { id: "mika", name: "Mika", level: "warn", label: "Thiếu Hoa · đổi Ly/Nón HP/Trị Liệu", setKey: "no" },
+  { id: "itgear", name: "Ningguang", level: "warn", label: "Lắp đồ tạm cho Ningguang, Beidou, Noelle, Gorou", setKey: "totm" },
 ];
 
 const FARM_DAYS = [
@@ -245,6 +316,8 @@ function renderStage() {
       const artUrl = c?.splash || c?.icon || "";
       const wIcon = c?.weapon?.icon;
       const artIcons = (c?.artifacts || []).slice(0, 3).map((a) => a.icon).filter(Boolean);
+      const fixDef = FIX_NODES.find((f) => f.name === name);
+      const recSet = fixDef ? SET_META[fixDef.setKey] : null;
 
       return `
         <article class="character-pillar ${isFocus ? "is-focus" : ""}" style="--el: var(--el-${esc(el)}, 211,188,142);">
@@ -266,6 +339,14 @@ function renderStage() {
                 : `<div class="pillar-gear"><span class="talent-txt">Chưa sở hữu</span></div>`
             }
             <div class="pillar-note note-${esc(node.level)}">${esc(node.text)}</div>
+            ${
+              recSet
+                ? `<div class="pillar-set" title="${esc(recSet.name)} — ${esc(recSet.where)}">
+                    <img src="${esc(recSet.icon)}" alt="${esc(recSet.name)}" referrerpolicy="no-referrer" />
+                    <span>${esc(recSet.where)}</span>
+                  </div>`
+                : ""
+            }
           </div>
         </article>
       `;
@@ -300,23 +381,37 @@ function renderChecklist() {
   return `
     <section class="checklist-section">
       <div class="checklist-head">
-        <strong>Node Build &amp; Chỉnh Đồ (${doneCount}/${FIX_NODES.length})</strong>
+        <strong>Node Build · Bộ Thánh Di Vật &amp; Chỗ Farm (${doneCount}/${FIX_NODES.length})</strong>
         <span>Bấm nhân vật để sáng các đội liên quan · Tick ô vuông để lưu</span>
       </div>
       <div class="check-columns">
         ${FIX_NODES.map((n) => {
           const c = byName(n.name);
+          const s = SET_META[n.setKey];
           const isDone = !!APP.done[n.id];
           const focused = APP.focusChar === n.name;
           return `
             <div class="check-row ${isDone ? "done" : ""} ${focused ? "focused" : ""}" data-char="${esc(n.name)}">
-              <input type="checkbox" data-fix-id="${esc(n.id)}" ${isDone ? "checked" : ""} aria-label="${esc(n.name)}" />
-              ${c?.icon ? `<img src="${esc(c.icon)}" alt="${esc(n.name)}" referrerpolicy="no-referrer" />` : ""}
-              <div class="check-row-text">
-                <b>${esc(n.name)}</b>
-                <span>${esc(n.label)}</span>
+              <div class="check-left">
+                <input type="checkbox" data-fix-id="${esc(n.id)}" ${isDone ? "checked" : ""} aria-label="${esc(n.name)}" />
+                <span class="status-dot dot-${n.level === "bad" ? "bad" : "warn"}"></span>
+                ${c?.icon ? `<img src="${esc(c.icon)}" alt="${esc(n.name)}" referrerpolicy="no-referrer" />` : ""}
+                <div class="check-row-text">
+                  <b>${esc(n.name)}</b>
+                  <span>${esc(n.label)}</span>
+                </div>
               </div>
-              <span class="status-dot dot-${n.level === "bad" ? "bad" : "warn"}"></span>
+              ${
+                s
+                  ? `<div class="check-farm" title="${esc(s.name)} — ${esc(s.where)}">
+                      <div class="check-farm-meta">
+                        <strong>${esc(s.name)}</strong>
+                        <small>${esc(s.where)}</small>
+                      </div>
+                      <img src="${esc(s.icon)}" alt="${esc(s.name)}" loading="lazy" referrerpolicy="no-referrer" />
+                    </div>`
+                  : ""
+              }
             </div>
           `;
         }).join("")}
