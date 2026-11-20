@@ -3,55 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahyh · UID 802472241 — La Hoàn · Nhà Hát · Meta 7.2 · Lịch Farm</title>
+  <title>Mahyh · UID 802472241 — Party Stage &amp; Planner</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23162138'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-size='36' fill='%23ebc56e'>✦</text></svg>" />
-  <link rel="stylesheet" href="./assets/styles.css?v=3" />
+  <link rel="stylesheet" href="./assets/styles.css?v=4" />
 </head>
 <body>
-  <header class="hero" id="hero">
-    <div class="hero-bg" id="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-inner">
-      <div class="hero-left">
-        <img class="hero-logo" id="hero-logo" alt="Genshin Impact" referrerpolicy="no-referrer" />
+  <header class="topbar">
+    <div class="topbar-bg" id="hero-bg"></div>
+    <div class="topbar-overlay"></div>
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img class="brand-logo" id="hero-logo" alt="Genshin" referrerpolicy="no-referrer" />
         <div>
-          <div class="badge-row">
-            <span class="pill pill-gold">UID 802472241</span>
-            <span class="pill">AR 60 · Asia</span>
-            <span class="pill">Patch 7.2</span>
+          <div class="brand-title">
+            <strong id="player-title">Mahyh</strong>
+            <span class="pill pill-gold">UID 802472241 · AR 60</span>
+            <span class="pill">La Hoàn 11-3 (25★)</span>
+            <span class="pill">Ảo Cảnh III (335s)</span>
           </div>
-          <h1 id="player-title">Mahyh</h1>
-          <p class="subtitle" id="crawl-meta">Đội hình · La Hoàn · Nhà Hát · Node Build/Chỉnh · Meta 7.2 · Lịch Farm</p>
+          <div class="brand-sub">Bấm vào đội hình bên trái để xem sân khấu 4 nhân vật · Tick checklist bên dưới khi sửa xong đồ</div>
         </div>
       </div>
-      <div class="hero-actions">
+      <div class="brand-actions">
         <a class="btn btn-secondary" href="./data/genshin_uid_802472241_data.json" target="_blank" rel="noopener">JSON</a>
         <a class="btn btn-primary" href="./docs/conversation-notes.md" target="_blank" rel="noopener">Notes</a>
       </div>
     </div>
   </header>
 
-  <nav class="quick-nav">
-    <div class="container nav-inner">
-      <a class="nav-pill active" href="#sec-teams">Đội Hình Hiện Tại</a>
-      <a class="nav-pill" href="#sec-abyss">La Hoàn (16.11–16.12)</a>
-      <a class="nav-pill" href="#sec-theater">Nhà Hát (01.11–01.12)</a>
-      <a class="nav-pill" href="#sec-fixes">Node Build / Chỉnh</a>
-      <a class="nav-pill" href="#sec-meta">Meta 7.2</a>
-      <a class="nav-pill" href="#sec-farm">Lịch Farm &amp; Ảo Cảnh</a>
-    </div>
-  </nav>
-
-  <main class="container main-content" id="app-root">
+  <main class="container workspace" id="app-root">
     <div class="loading">Đang tải dữ liệu HoYoLAB…</div>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <span>Dữ liệu HoYoLAB Battle Chronicle · Hình ảnh từ HoYoVerse · Cập nhật 20/11/2026</span>
-    </div>
-  </footer>
-
-  <script src="./assets/app.js?v=3"></script>
+  <script src="./assets/app.js?v=4"></script>
 </body>
 </html>
