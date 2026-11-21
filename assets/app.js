@@ -1,4 +1,4 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json?v=10";
+const DATA_URL = "./data/genshin_uid_802472241_data.json?v=11";
 const STORAGE_KEY = "genshin_uid_802472241_done_v2";
 
 const SET_META = {
@@ -67,7 +67,7 @@ const COLLECT_WEAPONS = [
     name: "Chìa Khóa Vạn Năng",
     type: "Trọng Kiếm 4★ · 61.3% ER · +EM",
     icon: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Ilmarinen.png",
-    source: "Rèn Nod-Krai (7%)",
+    source: "Rèn Nod-Krai (8%)",
     chars: ["Aino"],
     extraTarget: null,
     why: "Vũ khí rèn F2P số 1 cho Aino (hiện đang cầm kiếm 1★): vừa đủ Nạp 61.3% vừa cộng EM ngoài sân.",
@@ -172,7 +172,7 @@ const MODES = {
   meta: {
     label: "Meta 7.2",
     items: [
-      { title: "Build Ngay (Vùng Đã Mở)", sub: "Nod-Krai (7%) · Fontaine (64%) · Inazuma (100%)", note: "Farm không cần qua Snezhnaya", status: "ok", members: ["Aino", "Chiori", "Kuki Shinobu", "Fischl"] },
+      { title: "Build Ngay (Vùng Đã Mở)", sub: "Nod-Krai (8%) · Fontaine (64%) · Inazuma (100%)", note: "Farm không cần qua Snezhnaya", status: "ok", members: ["Aino", "Chiori", "Kuki Shinobu", "Fischl"] },
       { title: "Chờ Mở Snezhnaya (0%)", sub: "Sách Charity & Boss nằm ở Snezhnaya", note: "Đã có sẵn Trấn Sắc Lệnh Tinh Tú cho Mitya", status: "warn", members: ["Mitya", "Valeriy", "Kaedehara Kazuha", "Aino"] },
       { title: "Mục Tiêu Roll Bổ Sung", sub: "Support kéo trần toàn đội hình", note: "Ưu tiên Furina & Xilonen", status: "warn", members: ["Furina", "Xilonen", "Odette", "Columbina"] },
     ],
@@ -454,7 +454,7 @@ function renderTrackerView() {
 
   const body = [
     renderActionBucket("1. Làm Ngay Trong Game — 0 Tốn Nhựa", "Đổi vũ khí đang nằm ở nhân vật dự bị & sửa dòng chính TDV có sẵn", "bucket-now", nowItems),
-    renderActionBucket("2. Cần Farm — Vùng Đã Mở", "Fontaine (64%) · Nod-Krai (7%) · Inazuma (100%) · Sumeru (100%)", "bucket-farm", farmItems),
+    renderActionBucket("2. Cần Farm — Vùng Đã Mở", "Fontaine (64%) · Nod-Krai (8%) · Inazuma (100%) · Sumeru (100%)", "bucket-farm", farmItems),
     renderActionBucket("3. Đợi Mở Snezhnaya (0%)", "Chờ đi tới Snezhnaya mới farm được Sách & Boss", "bucket-later", laterItems),
     renderSurplusBucket(),
     renderCollectBucket(),
