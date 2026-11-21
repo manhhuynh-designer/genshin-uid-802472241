@@ -1,82 +1,74 @@
 # Ghi chú Tư vấn & Kế hoạch Tài khoản Genshin (`UID 802472241`)
 
-Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl ngày **20/11/2026** (Version **7.2**).
+Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật ngày **21/11/2026** (Version **7.2**, **71 nhân vật**).
 
 ---
 
-## 1. Sửa ngay các build đang bị lệch chỉ số
+## 0. Các việc đã hoàn thành sau đợt Crawl 21/11/2026
+
+- **Đổi vũ khí & Thánh Di Vật hoàn tất:**
+  - `Navia`: đã gắn **`Kiếm Li Cốt Lv.90 R1`** (CR tăng từ `29.1%` → **`56.7%`**).
+  - `Ningguang`: đã gắn **`Quyển Thiên Không Lv.90 R2`** (`2,501 ATK`) + 5 món TDV (`2pc Giác Đấu + 2pc Phiến Đá`), giải phóng `Chương Nhạc Lang Thang R5` vào kho.
+  - `Fischl`: đã gắn **`Tuyệt Huyền Lv.90 R5`** (`224 EM`).
+  - `Yelan`: đã gắn **`Cung Tây Phong Lv.70 R5`** (ER tăng `140.7%` → **`191.2%`**).
+  - `Xiangling`: đã gắn **`Lao Xiên Cá Lv.90 R5`** (`245.6% ER`).
+  - `Chevreuse`: đã gắn **`Hắc Anh Thương Lv.90 R5`** (HP tăng `21.5k` → **`25.9k`**).
+  - `Kuki Shinobu`: đã gắn **`Thiết Phong Kích Lv.90 R3`** (EM tăng `318` → **`483`**).
+  - `Kamisato Ayato`: đã sửa xong tỷ lệ Crit (`31.4%` → **`62.5% CR / 152.1% CD`**).
+  - `Noelle`: đã gắn **`Kiếm Bạch Ảnh Lv.80 R5`** (`2,595 DEF`) + `4pc Thiên Nham`.
+  - `Jean`: đã gắn **`Tây Phong Kiếm Lv.80 R5`** (ER `105%` → **`215.4%`**).
+  - `Nahida`: đã đổi trọn bộ **`4pc Ký Ức Rừng Sâu`** (**`1,012 EM`**).
+  - `Chiori`: đã lắp đủ **`Cát DEF%`** (**`2,163 DEF · 60.2/71.0`**).
+  - `Aino`: đã nâng **Lv.1 → Lv.60** (`1/2/2`), gắn **`Đại Kiếm Tây Phong R5`** (`186.2% ER · 440 EM`).
+  - `Valeriy`: mở khóa **C2**.
+  - Nhân vật mới thứ 71: **`Alyosha`** (4★ Thương Lôi, Lv.1 C0).
+- **Thành tích mới:**
+  - **Ảo Cảnh Hiểm Ác (Độ khó III):** Rút kỷ lục từ `335s` → **`246s`** (*Kẻ Neo Sóng* `84s` với `Raiden + Bennett + Xiangling + Yelan`; *Hoàng Đế Thép Lửa* `61s` với `Neuvillette + Kazuha + Zhongli + Yae Miko`; *Thằn Lằn* `101s` với `Neuvillette + Raiden + Navia + Diona`).
+  - **Nod-Krai:** `7%` → **`8%`** (`26` Nguyệt Thần Đồng, `493` điểm dịch chuyển, `1,092` thành tựu).
+
+---
+
+## 1. Các việc cần chỉnh tiếp (Ưu tiên hiện tại)
 
 1. **Neuvillette (Lv.90 C0, 10/10/10, Nghi Thức Dòng Chảy Vĩnh Hằng R1)**
-   - *Hiện trạng:* Đeo 3 món HP% (Cát/Ly/Nón đều HP%) + 2pc Thiên Nham + 2pc Vầng Sáng → `26.0%` CR / `252.8%` CD.
-   - *Khắc phục:* Đổi sang **4pc Thợ Săn Marechaussee** + **Nón Tỷ Lệ Bạo Kích** (mục tiêu `55–64%` CR trước buff).
-2. **Navia (Lv.90 C0)**
-   - *Hiện trạng:* Đeo Cát **HP%** (`46.6%`) thay vì ATK%, `29.1%` CR / `204.2%` CD, `Vua Biển Hàng Hiệu` Lv.80.
-   - *Khắc phục:* Đổi Cát **ATK%** + Nón **CR%**, nâng `Vua Biển` lên Lv.90.
-3. **Kuki Shinobu (Lv.80 C4)**
-   - *Hiện trạng:* Đeo Cát ATK% / Ly HP% / Nón CR% → chỉ `318` EM.
-   - *Khắc phục:* Đổi sang **3 món Tinh Thông (EM)** + nâng **Lv.90** để tối ưu sát thương Nở Rộ (Hyperbloom).
-4. **Chiori (Lv.80 C0, Con Thoi Chu Sa R5 Lv.90)**
-   - *Hiện trạng:* Thiên phú `1/1/1`, đeo Cát ATK%, Ly Nham chưa max (`34.7%`).
-   - *Khắc phục:* Nâng E lên `8–9`, đổi Cát **DEF%**, nâng Ly Nham Lv.20.
-5. **Fischl (Lv.80 C6)** & **Kamisato Ayato (Lv.90 C0)**
-   - *Fischl:* Bỏ `Cung Rỉ Sét`, chuyển sang `Tuyệt Huyền` / cung CR-CD + Nón CR% (hiện `31.8%` CR) + bộ **4pc Đoàn Kịch Hoàng Kim**.
-   - *Ayato:* Đổi Nón sang CR% (hiện `31.4%` CR / `208.9%` CD).
-6. **Lắp lại đồ tạm cho Nhà Hát Giả Tưởng:** `Ningguang` (Lv.89), `Beidou` (Lv.80), `Noelle` (Lv.80), `Gorou` (Lv.70) hiện đang thiếu TDV hoặc cầm vũ khí Lv.1.
+   - *Hiện trạng:* `48,487 HP`, `26.0% CR / 252.8% CD` (đang đeo 3 món HP% + 2pc Thiên Nham + 2pc Vầng Sáng).
+   - *Khắc phục:* Farm **4pc Thợ Săn Marechaussee** (Fontaine) + **Nón Tỷ Lệ Bạo Kích** để đẩy lên `55–64% CR` trước buff.
+2. **Navia (Lv.90 C0, 6/9/8, Kiếm Li Cốt Lv.90 R1)**
+   - *Hiện trạng:* `56.7% CR / 204.2% CD`, nhưng vẫn đeo **Cát HP%** nên ATK chỉ **`1,536`**.
+   - *Khắc phục:* Đổi sang **Cát ATK%** (có thêm dòng CR càng tốt để chạm `65–70% CR`).
+3. **Beidou (Lv.80 C6) & Gorou (Lv.70 C5) & Ningguang (Lv.89 C6)**
+   - `Beidou`: Đang cầm **kiếm 1★ Lv.1** và mới 3 món TDV (`111% ER`) → gắn `Vua Biển R5` (từ Xinyan) hoặc `Kiếm Vô Công 5★` (từ Chongyun kèm **Cát ER** / `4pc Dấu Ấn`).
+   - `Gorou`: Đang cầm **cung 1★ Lv.1** & thiếu Ly → lắp tạm cung Nạp để đủ slot Nhà Hát 7.2 trước `01/12`.
+   - `Ningguang`: Đã có `Quyển Thiên Không R2` (`2,501 ATK`) nhưng Ly Nham đang `+0` và CR mới **`14.7%`** → nâng Ly `+20` và đổi sang **Nón CR%**.
+4. **Raiden Shogun (Lv.90 C1, 6/9/10, Đoạn Thảo Trường Đao R1)**
+   - *Hiện trạng:* `50.1% CR / 182.1% CD · 264.1% ER` (Nón STBK dính 3 roll HP phẳng).
+   - *Khắc phục:* Đổi sang **Nón CR%** (hướng `~70% CR / ~145% CD`) để nhát chém đầu Nộ nổ bạo kích ổn định hơn.
+5. **Chevreuse (Lv.70 C1) & Kuki Shinobu (Lv.80 C4) & Fischl (Lv.80 C6) & Yelan (Lv.90 C0)**
+   - `Chevreuse`: HP mới `25,918` (còn đeo Ly Hỏa & Nón CR) → đổi sang **Ly HP% + Nón HP%** + nâng Lv.80 để chạm **`40,000 HP`**.
+   - `Kuki Shinobu`: EM mới `483` (còn đeo Cát ATK / Ly HP / Nón CR) → đổi **3 món EM** + nâng **Lv.90** (`~900+ EM`).
+   - `Fischl`: Đang `31.8% CR / 137.1% CD` → đổi sang **Nón CR%** + farm dần **4pc Đoàn Kịch Hoàng Kim**.
+   - `Yelan`: Nâng **`Cung Tây Phong Lv.70 → Lv.90`** để đẩy ER lên ~`202%`.
+6. **Chiori (Lv.80 C0), Aino (Lv.60 C0), Jean (Lv.80 C2), Venti (Lv.80 C0)**
+   - `Chiori`: Đã có Cát DEF% (`2,163 DEF`) → nâng E từ `1` → `8–9`, nâng Ly Nham `+14 → +20`.
+   - `Aino`: Nâng tiếp **Lv.60 → 80**, thiên phú `1/2/2 → 1/6/8`, farm dần **4pc Khúc Ca Trăng Lụa**.
+   - `Jean`: Đã có `215.4% ER` → nâng Ly ATK% (`+0 → +20`) và ép dần **4pc Bóng Hình**.
+   - `Venti`: 4/5 món TDV trên HoYoLAB đang `+0` → nâng lên `+20`.
 
 ---
 
-## 2. Tư vấn La Hoàn Thâm Cảnh (`16.11.2026 – 16.12.2026`)
+## 2. Tư vấn La Hoàn & Nhà Hát (`11/2026 – 12/2026`)
 
-- **Hiện trạng:** `11-3` (`25/36★`, Tầng 11 đạt `7/9★`).
-- **Tầng 11:** Buff **+60% Lôi** và **+60% Nham**.
-- **Tầng 12 (mỗi phòng 1 Boss đơn):**
-  - *Nửa 1 (+75% Lunar-Crystallize):* 12-1 **Battle-Hardened Prism Slime**, 12-2 **Frostnight Herra**, 12-3 **Radiant Moongecko** (ưu tiên Nham/Trọng Kiếm phá khiên).
-  - *Nửa 2 (+200 EM):* 12-1 **Wavebinder** (ngắt cơ chế bằng ấn nguyên tố nhanh như Oz), 12-2 **Guardian Blade of Drifting Snow** (cần Hỏa/Lôi khi vào khiên), 12-3 **Perpetual Mechanical Array**.
-- **Đội hình gợi ý:**
-  - *Nửa 1:* `Navia + Zhongli (C1) + Chiori (hoặc Yae Miko) + Xianyun / Kokomi`
-  - *Nửa 2 (Phương án A — sẵn sàng nhất):* `Raiden Shogun (C1) + Bennett (C6) + Xiangling (C6) + Yelan / Xingqiu`
-  - *Nửa 2 (Phương án B — sau khi sửa Neuvillette & Kuki):* `Neuvillette + Nahida + Kuki Shinobu (full EM) / Fischl + Kaedehara Kazuha`
+- **La Hoàn (`16.11 – 16.12`, đang `11-3`, `25/36★`):**
+  - *Nửa 1 (+75% Lunar-Crystallize):* `Navia (Li Cốt) + Zhongli + Chiori + Xianyun/Bennett`
+  - *Nửa 2 (+200 EM):* `Raiden National` đã sẵn sàng (vừa clear Boss 1 Ảo Cảnh 84s), hoặc `Neuvillette + Nahida (4pc Rừng Sâu) + Kuki + Kazuha` sau khi sửa CR Neuvillette.
+- **Nhà Hát (`01.11 – 01.12`, Thủy · Lôi · Nham):**
+  - `Ayato` (`62.5/152.1`) và `Noelle` (`Kiếm Bạch Ảnh`) đã sẵn sàng; cần hoàn tất lắp đồ cho `Beidou`, `Gorou` và sửa Ly/Nón cho `Ningguang` trước **01/12**.
 
 ---
 
-## 3. Tư vấn Nhà Hát Giả Tưởng (`01.11.2026 – 01.12.2026`, Season 29)
+## 3. Danh sách Nhân vật Meta 7.2 & Chờ Snezhnaya (`0%`)
 
-- **Nguyên tố:** Thủy · Lôi · Nham.
-- **Trial Opening Characters:** `Yelan`, `Aino`, `Flins`, `Fischl`, `Zhongli`, `Kachina`.
-- **Special Guests:** `Qiqi`, `Odette`, `Vesna`, `Jahoda`.
-- **Quân số của tài khoản:** **25 nhân vật Lv.70+** + **3 Trial chưa nâng (`Flins`, `Aino`, `Kachina`)** + **1 mượn bạn bè** = **29 slot** (đủ điều kiện vào cả Chế Độ Khó và Visionary).
-- **Phân bổ Boss:**
-  - *Màn 3 (Jadeplume Terrorshroom):* `Keqing + Fischl + Xingqiu + Zhongli/Barbara`
-  - *Màn 6 (Whisperer of Nightmares):* `Ayato + Yae Miko + Yelan/Xingqiu + Kuki`
-  - *Màn 8 (Battle-Hardened Samachurl — cần Thủy + Nham):* Giữ `Navia + Zhongli/Chiori/Ningguang + Yelan/Xingqiu`
-  - *Màn 10 (Radiant Moonfly — cần Healer mạnh):* Giữ `Neuvillette + Raiden C1 + Sangonomiya Kokomi (hoặc Qiqi C4 / Noelle C6) + Fischl/Yelan`
-- **Ưu tiên mượn bạn bè:** `Furina` hoặc `Xilonen`.
-
----
-
-## 4. Danh sách Nhân vật Meta 7.2 cần Build & Theo dõi
-
-### Đã có sẵn trong kho (cần build)
-1. **Mitya (Lv.20 C0, trấn `Sắc Lệnh Tinh Tú` R1):** Tier 0 / SS-Tier carry/sub-DPS hệ **Stellar-Conduct** (Sách *Charity*, Boss & Đặc sản ở **Snezhnaya**).
-2. **Valeriy (Lv.1 C1):** Khiên + Buffer chuyên đi cùng Mitya (cùng sách *Charity* và boss tuần *Mask of the Virtuous Doctor* ở **Snezhnaya**).
-3. **Aino (Lv.1 C0):** Cấp Thủy off-field + nâng Moonsign Level (Boss *Knuckle Duckle* & Đặc sản *Portable Bearing* ở **Nod-Krai** — đã mở sẵn).
-4. **Chiori (Lv.80 C0):** S-Tier Sub-DPS Nham (nâng E từ `1` → `8–9`, đổi Cát DEF% — nguyên liệu ở Inazuma/Fontaine đã mở).
-
-### Chưa có — Nên cân nhắc roll bổ sung
-- **Support kéo trần acc:** `Furina`, `Xilonen`, `Odette` (hợp khung Mitya + Valeriy), `Columbina`.
-- **Main DPS bổ sung:** `Mavuika`, `Arlecchino`, `Zibai`, `Sandrone`, `Flins`, `Vesna`.
-
----
-
-## 5. Lịch Farm (Tối ưu khi chưa mở Snezhnaya)
-
-Vì **Snezhnaya đang `0%`** (`Lãnh Nguyên Volkodlak` mới `2.9%`), tạm gác **Mitya & Valeriy** cho tới khi qua được map Snezhnaya. Trong lúc đó tập trung hoàn toàn vào **Fontaine (`64%`), Inazuma (`100%`), Vực Đá Sâu (`100%`), Nod-Krai (`7%`)**:
-
-- **Thứ 2:** Boss tuần (*All-Devouring Narwhal* cho Chiori, *Khiêu Chiến Nhanh* lấy *Silken Feather* cho Aino) + Sách cho Aino / Hoa Địa Mạch.
-- **Thứ 3:** Boss Thế Giới (*Knuckle Duckle* ở Nod-Krai cho Aino, *Mãng Xà Di Tích* cho Kuki, *Hải Mã Ngàn Năm* cho Chevreuse).
-- **Thứ 4 & Thứ 7:** Sách *Ánh Sáng* (Inazuma, **Chiori**) + Vũ khí `Vua Biển` (Fontaine, **Navia**) + `Đại Kiếm Tây Phong` (Mondstadt, **Aino**).
-- **Thứ 5 & Thứ 6 & Chủ Nhật:** Farm **Bí cảnh Thợ Săn Marechaussee / Đoàn Kịch Hoàng Kim** (cho Neuvillette & Fischl) + ép Tráp Thánh sang *Giấc Mộng Hoàng Kim* / *Ký Ức Rừng Sâu*.
-
-### Lưu ý đặc biệt: Farm qua `Ảo Cảnh Hiểm Ác` (`Disturbance Outbreak`)
-- Chỉ mở tiêu Nhựa trong **10 ngày đầu chu kỳ** (`2026.11.11 – 2026.12.15`, nên kiểm tra ngay ngày `20/11/2026`).
-- Chỉ farm được **Thánh Di Vật** (không farm được Sách/Vũ khí/Boss Thế Giới), nhưng mỗi **120 Nhựa** được **+1 mảnh 5★ thưởng** và tích **Dire Prestige** (mốc `1,200` nhận *Dust of Enlightenment*). Nếu cửa sổ 10 ngày còn mở, ưu tiên xả toàn bộ Nhựa TDV vào đây.
+1. **Mitya (Lv.20 C0, trấn `Sắc Lệnh Tinh Tú` R1):** Tier 0 meta Stellar-Conduct (sách *Charity*, Snezhnaya).
+2. **Valeriy (Lv.1 C2):** Khiên + Buffer cho Mitya (cân nhắc rèn `Nhạc Khúc Biển Sâu` ATK%).
+3. **Alyosha (Lv.1 C0 — nhân vật mới thứ 71):** 4★ Thương Lôi off-field Healer + Buff ATK hệ Stellar-Conduct (ưu tiên `Thương Tây Phong` + `4pc Tông Thất` / `Heart of the Furnace`, sách & boss ở Snezhnaya).
+4. **Aino (Lv.60 C0):** Đã mở boss *Knuckle Duckle* ở Nod-Krai (`8%`), ưu tiên build tiếp trước khi qua Snezhnaya.

@@ -1,15 +1,21 @@
+import datetime
 import json
+import os
 from collections import Counter
 
-with open("/Users/huynhducmanh/.gemini/antigravity/brain/0e512e4a-880d-47af-9caa-aacd2664d910/scratch/overview_data.json") as f:
+BRAIN_DIR = "/Users/huynhducmanh/.gemini/antigravity/brain/0e512e4a-880d-47af-9caa-aacd2664d910/scratch"
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO_DATA = os.path.join(REPO_ROOT, "data", "genshin_uid_802472241_data.json")
+
+with open(os.path.join(BRAIN_DIR, "overview_data.json")) as f:
     ov = json.load(f)
-with open("/Users/huynhducmanh/.gemini/antigravity/brain/0e512e4a-880d-47af-9caa-aacd2664d910/scratch/characters_full.json") as f:
+with open(os.path.join(BRAIN_DIR, "characters_full.json")) as f:
     cf = json.load(f)
-with open("/Users/huynhducmanh/.gemini/antigravity/brain/0e512e4a-880d-47af-9caa-aacd2664d910/scratch/challenge.json") as f:
+with open(os.path.join(BRAIN_DIR, "challenge.json")) as f:
     ch = json.load(f)
 
 pd = ov["pageData"]
-prop_map = cf["property_map"]
+prop_map = cf.get("property_map") or {}
 
 # Map icon filename & avatar_id -> name
 id_to_name = {}
@@ -26,10 +32,13 @@ for cid, c in cf["characters_by_id"].items():
 def prop_name(ptype):
     return prop_map.get(str(ptype), {}).get("filter_name") or prop_map.get(str(ptype), {}).get("name") or str(ptype)
 
+av_map = {a["id"]: a for a in pd["avatars"]}
+
 # Build clean character records sorted by level desc, rarity desc, id asc
 chars = []
 for cid, c in cf["characters_by_id"].items():
     b = c["base"]
+    av = av_map.get(b["id"], {})
     w = c.get("weapon") or {}
     props = {}
     for p in c.get("selected_properties", []):
@@ -51,10 +60,8 @@ for cid, c in cf["characters_by_id"].items():
             "set": sname,
             "rarity": r.get("rarity"),
             "level": r.get("level"),
-            "main_stat": {
-                "name": prop_name((r.get("main_property") or {}).get("property_type")),
-                "value": (r.get("main_property") or {}).get("value")
-            },
+            "main_stat": prop_name((r.get("main_property") or {}).get("property_type")),
+            "main_val": (r.get("main_property") or {}).get("value"),
             "substats": [
                 {
                     "name": prop_name(sp.get("property_type")),
@@ -62,9 +69,16 @@ for cid, c in cf["characters_by_id"].items():
                     "rolls": sp.get("times", 0)
                 }
                 for sp in r.get("sub_property_list", [])
-            ]
+            ],
+            "icon": r.get("icon", "")
         })
     set_summary = ", ".join(f"{cnt}pc {name}" for name, cnt in set_counts.most_common())
+    if b["id"] in (10000041, 10000002) and len(active_skills) >= 4:
+        normal_talents = [s for s in active_skills if "Senho" not in s.get("name", "") and "Dòng Chảy Ảo" not in s.get("name", "")]
+        talent_str = "/".join(str(s["level"]) for s in normal_talents[:3])
+    else:
+        talent_str = "/".join(str(s["level"]) for s in active_skills[:3])
+
     chars.append({
         "id": b["id"],
         "name": b["name"],
@@ -75,7 +89,7 @@ for cid, c in cf["characters_by_id"].items():
         "constellation": b["actived_constellation_num"],
         "friendship": b["fetter"],
         "talents": [f"{s['name']}: {s['level']}" for s in active_skills],
-        "talent_levels": "/".join(str(s["level"]) for s in active_skills[:3]),
+        "talent_levels": talent_str,
         "weapon": {
             "name": w.get("name"),
             "rarity": w.get("rarity"),
@@ -84,10 +98,14 @@ for cid, c in cf["characters_by_id"].items():
             "base_atk": (w.get("main_property") or {}).get("final"),
             "substat_name": prop_name((w.get("sub_property") or {}).get("property_type")) if w.get("sub_property") else None,
             "substat_val": (w.get("sub_property") or {}).get("final") if w.get("sub_property") else None,
+            "icon": w.get("icon", ""),
         },
         "stats": props,
         "artifact_sets": set_summary,
         "artifacts": relics,
+        "icon": b.get("icon") or av.get("image") or "",
+        "card_image": av.get("card_image") or "",
+        "splash": b.get("image") or "",
     })
 
 chars.sort(key=lambda x: (-x["level"], -x["rarity"], -x["constellation"], x["name"]))
@@ -147,22 +165,26 @@ stygian = {
     "cycle": "2026.11.11-2026.12.15",
     "difficulty": "III",
     "mode": "Single Player",
-    "best_time_sec": 335,
+    "best_time_sec": 246,
     "bosses": [
-        {"name": "Kẻ Neo Sóng: Thường", "time_sec": 133, "max_single_hit": 127964, "total_damage": 1378423, "team": ch_chars[0:4]},
-        {"name": "Hoàng Đế Thép Lửa: Thường", "time_sec": 101, "max_single_hit": 34831, "total_damage": 542014, "team": ch_chars[4:8]},
+        {"name": "Kẻ Neo Sóng: Thường", "time_sec": 84, "max_single_hit": 189421, "total_damage": 928340, "team": ch_chars[0:4]},
+        {"name": "Hoàng Đế Thép Lửa: Thường", "time_sec": 61, "max_single_hit": 27753, "total_damage": 396287, "team": ch_chars[4:8]},
         {"name": "Thằn Lằn Ánh Trăng Bức Xạ: Thường", "time_sec": 101, "max_single_hit": 42517, "total_damage": 519894, "team": ch_chars[8:12]},
     ]
 }
 
+game_records = ov.get("rootData", {}).get("gameRecords") or [{}]
+
 master = {
-    "crawled_at": "2026-11-20T10:59:00+07:00",
+    "crawled_at": datetime.datetime.now().astimezone().isoformat(),
     "account": {
         "uid": "802472241",
         "nickname": pd["role"]["nickname"],
         "adventure_rank": pd["role"]["level"],
         "server": "Asia Server (os_asia)",
-        "stats": pd["stats"]
+        "stats": pd["stats"],
+        "banner": game_records[0].get("background_image", ""),
+        "logo": game_records[0].get("logo", ""),
     },
     "world_explorations": pd["world_explorations"],
     "serenitea_pot": pd["homes"],
@@ -174,11 +196,10 @@ master = {
     "characters": chars
 }
 
-out_json = "/Users/huynhducmanh/.gemini/antigravity/brain/0e512e4a-880d-47af-9caa-aacd2664d910/scratch/genshin_uid_802472241_data.json"
-with open(out_json, "w", encoding="utf-8") as f:
+with open(REPO_DATA, "w", encoding="utf-8") as f:
     json.dump(master, f, ensure_ascii=False, indent=2)
 
-print("Wrote:", out_json)
+print("Wrote:", REPO_DATA)
 print("Abyss 0 max_floor:", abyss_clean[0]["max_floor"], "stars:", abyss_clean[0]["total_star"], "most_played:", abyss_clean[0]["most_played"])
 if len(abyss_clean) > 1:
     print("Abyss 1 max_floor:", abyss_clean[1]["max_floor"], "stars:", abyss_clean[1]["total_star"])

@@ -1,10 +1,11 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json?v=11";
-const STORAGE_KEY = "genshin_uid_802472241_done_v2";
+const DATA_URL = "./data/genshin_uid_802472241_data.json?v=12";
+const STORAGE_KEY = "genshin_uid_802472241_done_v3";
 
 const SET_META = {
   mh: { name: "4pc Thợ Săn Marechaussee", where: "Kết Cục Của Tội Lỗi (Fontaine)", icon: "https://enka.network/ui/UI_RelicIcon_15031_4.png" },
   gt: { name: "4pc Đoàn Kịch Hoàng Kim", where: "Kết Cục Của Tội Lỗi (Fontaine)", icon: "https://enka.network/ui/UI_RelicIcon_15032_4.png" },
   nw: { name: "4pc Tiếng Đêm Trong Rừng Vang", where: "Thành Cổ Rơi Vào Khúc Nhạc (Fontaine) / Tráp Thánh", icon: "https://enka.network/ui/UI_RelicIcon_15034_4.png" },
+  esf: { name: "4pc Dấu Ấn Ngăn Cách", where: "Sân Vườn Momiji (Inazuma) / Tráp Thánh", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16879d66028f85addecf5a7208f6bffb.png" },
   gd: { name: "4pc Giấc Mộng Hoàng Kim", where: "Tháp Hôn Thần (Sumeru) / Tráp Thánh", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/857d990ee0b5c27e926f5e3fc642f8ca.png" },
   dw: { name: "4pc Ký Ức Rừng Sâu", where: "Tháp Hôn Thần (Sumeru) / Tráp Thánh", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6e1a599dabaefe12d191547469d753cd.png" },
   no: { name: "4pc Nghi Thức Tông Thất Cổ", where: "Tráp Thánh (Strongbox) / Liyue", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/bd80c45d24f484036927eda40339f730.png" },
@@ -16,39 +17,77 @@ const SET_META = {
   totm: { name: "4pc Thiên Nham Vững Chắc", where: "Kính Nham (Liyue) / Tráp Thánh", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png" },
 };
 
-// Unified per-character action dossier (Weapon + Artifact Fix + Set + Where to farm in ONE row)
+// Unified per-character action dossier (synced with crawl 21/11/2026 — Ayato, Xiangling, Nahida, Noelle đã hoàn thành)
 const ACTIONS = [
-  // Bucket 1: Do now in-game (0 Resin or quick swap)
-  { id: "a_navia", bucket: "now", name: "Navia", swapFrom: "Xinyan", swapNote: "Hoặc Kiếm Vô Công 5★ từ Chongyun", fixTitle: "Cát HP% → ATK% + Nón CR%", fixSub: "Hiện CR 29.1% · Nâng kiếm 90 nếu giữ Vua Biển", setKey: "nw" },
-  { id: "a_fischl", bucket: "now", name: "Fischl", swapFrom: "Yelan", swapNote: "Bỏ Cung Rỉ Sét (vô dụng cho Oz)", fixTitle: "Đổi Nón → CR% (đang 31.8% CR)", fixSub: "Gắn Tuyệt Huyền R5 tăng +48% ST Oz", setKey: "gt" },
-  { id: "a_yelan", bucket: "now", name: "Yelan", swapFrom: "Kujou Sara", swapNote: "Nâng Cung Tây Phong 70 → 90", fixTitle: "Giải quyết thiếu ER (đang 140.7%)", fixSub: "Giữ Cát HP% + Ly Thủy + Nón CR/CD", setKey: null },
-  { id: "a_xl", bucket: "now", name: "Xiangling", swapFrom: "Chevreuse", swapNote: "Lao Xiên Cá R5 mạnh hơn Xương Sống", fixTitle: "Giữ nguyên bộ 4pc Dấu Ấn (236% ER)", fixSub: "Đã chuẩn C6 · 7/11/13", setKey: null },
-  { id: "a_chev", bucket: "now", name: "Chevreuse", swapFrom: "Candace", swapNote: "Hắc Anh Thương R5 (+46.9% HP)", fixTitle: "Đổi Ly Hỏa & Nón CR → Full HP%", fixSub: "Đang 21.5k HP → kéo lên mốc 40k HP", setKey: "no" },
-  { id: "a_kuki", bucket: "now", name: "Kuki Shinobu", swapFrom: "Nilou", swapNote: "Mượn Thiết Phong Kích R3 nếu Nilou nghỉ", fixTitle: "Đổi Cát/Ly/Nón → 3 món EM", fixSub: "Đang 318 EM → cần ~900+ EM & lên Lv.90", setKey: "gd" },
-  { id: "a_ayato", bucket: "now", name: "Kamisato Ayato", swapFrom: null, swapNote: "Giữ Tiếng Hét Của Rồng R5", fixTitle: "Đổi Nón STBK → Nón CR%", fixSub: "Hiện CR 31.4% / CD 208.9% (chuẩn bị Nhà Hát Màn 6)", setKey: "glad" },
-  { id: "a_noelle", bucket: "now", name: "Noelle", swapFrom: "Sayu", swapNote: "Kiếm Bạch Ảnh R5 DEF% thay Vũ Tài Lv.1", fixTitle: "Lắp đồ cho Ningguang, Beidou, Noelle, Gorou", fixSub: "Đủ quân số 25+ Lv.70 vào Nhà Hát trước 01/12", setKey: "totm" },
-  { id: "a_ning", bucket: "now", name: "Ningguang", swapFrom: "Shikanoin Heizou", swapNote: "Mượn Chương Nhạc R5 thay sách 1★", fixTitle: "Gắn đủ 5 món TDV (hiện mới 2 món)", fixSub: "Chuẩn bị sẵn slot Nham cho Nhà Hát Màn 8", setKey: "nw" },
+  // Bucket 1: Do now in-game (0 Resin or quick swap / artifact mainstat fix)
+  { id: "a_navia", bucket: "now", name: "Navia", swapFrom: null, swapNote: "✓ Đã gắn Kiếm Li Cốt R1 (CR nhảy 29.1% → 56.7%)", fixTitle: "Đổi Cát HP% → Cát ATK%", fixSub: "ATK đang 1,536 do đeo Cát HP% · Tìm thêm chút CR lên ~65–70%", setKey: "nw" },
+  { id: "a_ning", bucket: "now", name: "Ningguang", swapFrom: null, swapNote: "✓ Đã gắn Quyển Thiên Không R2 (2,501 ATK)", fixTitle: "Nâng Ly Nham (+0 → +20) & đổi Nón → CR%", fixSub: "CR đang 14.7% / 169.7% CD · Chỉnh xong sẵn sàng Nhà Hát Màn 8", setKey: null },
+  { id: "a_beidou", bucket: "now", name: "Beidou", swapFrom: "Xinyan", swapNote: "Hoặc Kiếm Vô Công 5★ từ Chongyun", fixTitle: "Bỏ kiếm 1★ & lắp đủ 5 món TDV (có Cát ER)", fixSub: "Đang mới 3 món TDV, 111% ER · Cần gấp trước hạn Nhà Hát 01/12", setKey: "esf" },
+  { id: "a_fischl", bucket: "now", name: "Fischl", swapFrom: null, swapNote: "✓ Đã gắn Tuyệt Huyền R5 (224 EM · +48% ST Oz)", fixTitle: "Đổi Nón STBK → Nón CR% (đang 31.8% CR)", fixSub: "Giữ 2 Lôi 2 ATK tạm rồi farm dần 4pc Đoàn Kịch ở Fontaine", setKey: "gt" },
+  { id: "a_chev", bucket: "now", name: "Chevreuse", swapFrom: null, swapNote: "✓ Đã gắn Hắc Anh Thương R5 (HP lên 25.9k)", fixTitle: "Đổi Ly Hỏa & Nón CR → Full HP% + lên Lv.80", fixSub: "Kéo từ 25.9k → mốc 40,000 HP để mở trọn +40% ATK Quá Tải", setKey: "no" },
+  { id: "a_kuki", bucket: "now", name: "Kuki Shinobu", swapFrom: null, swapNote: "✓ Đã gắn Thiết Phong Kích R3 (EM lên 483)", fixTitle: "Đổi Cát ATK / Ly HP / Nón CR → 3 món EM", fixSub: "Kéo từ 483 → ~900+ EM & nâng Lv.80 → 90 tối ưu Nở Rộ", setKey: "gd" },
+  { id: "a_raiden", bucket: "now", name: "Raiden Shogun", swapFrom: null, swapNote: "Giữ Trấn Đoạn Thảo R1 (264.1% ER)", fixTitle: "Đổi Nón STBK (dính 3 roll HP) → Nón CR%", fixSub: "50.1/182.1 dễ hụt crit nhát đầu Q · Kéo ~70% CR / ~145% CD", setKey: null },
+  { id: "a_yelan", bucket: "now", name: "Yelan", swapFrom: null, swapNote: "✓ Đã gắn Cung Tây Phong R5 (ER lên 191.2%)", fixTitle: "Nâng Cung Tây Phong Lv.70 → Lv.90", fixSub: "68.9/152.6 · 28.8k HP đã đẹp · Lên 90 thêm ~11% ER là chốt", setKey: null },
+  { id: "a_gorou", bucket: "now", name: "Gorou", swapFrom: null, swapNote: "Đang cầm Cung Săn Bắn 1★ Lv.1", fixTitle: "Lắp cung Nạp tạm & thêm Ly (đang 4 món)", fixSub: "Đủ đồ dự bị slot Nham cho Nhà Hát Giả Tưởng 7.2", setKey: null },
 
-  // Bucket 2: Farm in unlocked regions (Fontaine, Nod-Krai, Inazuma, Sumeru)
-  { id: "a_neuv", bucket: "farm", name: "Neuvillette", swapFrom: null, swapNote: "Giữ Trấn Nghi Thức R1 Lv.90", fixTitle: "Đổi 3 món HP% → Cát HP% + Ly HP/Thủy + Nón CR%", fixSub: "Hiện CR 26% quá thấp · Farm bí cảnh Fontaine", setKey: "mh" },
-  { id: "a_chiori", bucket: "farm", name: "Chiori", swapFrom: null, swapNote: "Giữ Con Thoi Chu Sa R5 Lv.90", fixTitle: "Nâng E từ 1 → 8–9 · Đổi Cát ATK% → DEF%", fixSub: "Sách Ánh Sáng (Inazuma T4/7) + nâng Ly Nham +20", setKey: "gt" },
-  { id: "a_aino", bucket: "farm", name: "Aino", swapFrom: "Nhà Lữ Hành", swapNote: "Hoặc rèn Master Key · Đại Kiếm Tây Phong", fixTitle: "Nâng Lv.1 → 80 · Thiên phú 1/6/8 · Cát ER", fixSub: "Boss Knuckle Duckle + Đặc sản đều ở Nod-Krai (đã mở)", setKey: "silken" },
-  { id: "a_jean", bucket: "farm", name: "Jean", swapFrom: "Nhà Lữ Hành", swapNote: "Mượn Tây Phong Kiếm R5 cho đủ Nạp", fixTitle: "Lắp đủ 5 món +20 (đang thiếu Ly, 2 món +0)", fixSub: "Đẩy ER từ 105% → 160–180% làm Healer toàn đội", setKey: "vv" },
-  { id: "a_venti", bucket: "farm", name: "Venti", swapFrom: null, swapNote: "Giữ Trấn Tiếng Thở Dài Vô Tận R1", fixTitle: "4 món trên HoYoLAB đang ở Lv.0", fixSub: "Kiểm tra lại trong game hoặc nâng bộ 4pc Bóng Hình", setKey: "vv" },
-  { id: "a_nahida", bucket: "farm", name: "Nahida", swapFrom: null, swapNote: "Giữ Mảnh Chương Tế Lễ R5 (749 EM)", fixTitle: "Team Thảo cần 1 người mặc 4pc Rừng Sâu", fixSub: "Đổi qua Tráp Thánh nếu team không có Collei/Yaoyao cầm", setKey: "dw" },
+  // Bucket 2: Farm in unlocked regions (Fontaine 64%, Nod-Krai 8%, Inazuma 100%, Sumeru 100%)
+  { id: "a_neuv", bucket: "farm", name: "Neuvillette", swapFrom: null, swapNote: "Giữ Trấn Nghi Thức R1 Lv.90 (48.5k HP)", fixTitle: "Đổi 3 món HP% → Cát HP% + Ly HP/Thủy + Nón CR%", fixSub: "Ưu tiên farm #1: đang 26.0% CR / 252.8% CD · Bí cảnh Fontaine", setKey: "mh" },
+  { id: "a_chiori", bucket: "farm", name: "Chiori", swapFrom: null, swapNote: "✓ Đã đủ Cát DEF% (2,163 DEF · 60.2/71.0)", fixTitle: "Nâng E từ 1 → 8–9 · Nâng Ly Nham (+14 → +20)", fixSub: "Sách Ánh Sáng (Inazuma T4/T7) + tìm thêm dòng phụ STBK", setKey: "gt" },
+  { id: "a_aino", bucket: "farm", name: "Aino", swapFrom: null, swapNote: "✓ Đã lên Lv.60 · Đại Kiếm Tây Phong (186% ER · 440 EM)", fixTitle: "Nâng tiếp Lv.60 → 80 · Thiên phú 1/2/2 → 1/6/8", fixSub: "Boss Knuckle Duckle + farm dần 4pc Khúc Ca Trăng Lụa (Nod-Krai 8%)", setKey: "silken" },
+  { id: "a_jean", bucket: "farm", name: "Jean", swapFrom: null, swapNote: "✓ Đã gắn Tây Phong Kiếm R5 (ER lên 215.4%)", fixTitle: "Nâng Ly ATK% (+0 → +20) · Ép Tráp 4pc Bóng Hình", fixSub: "Nạp đã dư 215% · Hoàn thiện bộ 4pc VV trừ 40% kháng", setKey: "vv" },
+  { id: "a_venti", bucket: "farm", name: "Venti", swapFrom: null, swapNote: "Giữ Trấn Tiếng Thở Dài Vô Tận R1 (196.6% ER)", fixTitle: "4 món TDV trên HoYoLAB vẫn ở +0", fixSub: "Nâng Lông/Cát EM/Ly Phong/Nón lên +20 (đã đủ 4pc Bóng Hình)", setKey: "vv" },
 
   // Bucket 3: Waiting for Snezhnaya (0%)
   { id: "a_mitya", bucket: "later", name: "Mitya", swapFrom: null, swapNote: "Nâng Trấn Sắc Lệnh Tinh Tú 20 → 90", fixTitle: "Tier 0 Meta 7.2 · Chờ mở map Snezhnaya", fixSub: "Cát EM · Ly EM/Lôi · Nón CR/CD (sách Charity)", setKey: "dids" },
-  { id: "a_valeriy", bucket: "later", name: "Valeriy", swapFrom: null, swapNote: "Chuẩn bị sẵn Tây Phong Kiếm", fixTitle: "Khiên + Buff chuyên cho Mitya · Chờ Snezhnaya", fixSub: "Cát/Ly/Nón ATK% · Sách Charity chung với Mitya", setKey: "furnace" },
+  { id: "a_valeriy", bucket: "later", name: "Valeriy", swapFrom: null, swapNote: "✓ Đã lên C2 · Rèn sẵn Nhạc Khúc Biển Sâu (ATK%)", fixTitle: "Khiên + Buff chuyên cho Mitya · Chờ Snezhnaya", fixSub: "Cát/Ly/Nón ATK% · Sách Charity chung với Mitya", setKey: "furnace" },
+  { id: "a_alyosha", bucket: "later", name: "Alyosha", swapFrom: null, swapNote: "Nhân vật mới (4★ Thương Lôi) · Hợp Thương Tây Phong", fixTitle: "Healer + Buff ATK team Stellar-Conduct · Chờ Snezhnaya", fixSub: "Cát ER/ATK% · Ly ATK% · Nón ATK%/Trị Liệu · Ưu tiên E > Q", setKey: "no" },
 ];
 
 const SURPLUS_WEAPONS = [
-  { id: "s_spine", from: "Xiangling", to: "Kachina", action: "Chuyển cho Kachina (hoặc giữ kho dự phòng 5★)", plan: "Xiangling đổi sang Lao Xiên Cá R5 → Xương Sống thay Lưu Nguyệt Châm (Vật Lý) cho Kachina, hoặc cất dự phòng 5★ Nạp." },
-  { id: "s_fish", from: "Navia", to: "Beidou", action: "Gắn ngay cho Beidou Lv.80 C6", plan: "Navia đổi sang Kiếm Li Cốt / Kiếm Vô Công → Beidou bỏ kiếm 1★ Lv.1, dùng luôn để đủ quân đi Nhà Hát 7.2." },
-  { id: "s_rust", from: "Fischl", to: null, action: "Cất kho dự phòng (tạm nghỉ)", plan: "Fischl đổi sang Tuyệt Huyền R5 → Yoimiya đã có Cánh Thiên Không 5★ mạnh hơn nên Cung Rỉ Sét R4 chưa cần dùng." },
-  { id: "s_fading", from: "Collei", to: "Kujou Sara", action: "Chuyển sang cho Kujou Sara", plan: "Sara nhường Cung Tây Phong cho Yelan → mượn Lạc Hà R5 (Base ATK 565 · 30.6% ER) từ Collei giữ trọn buff ATK." },
-  { id: "s_sapwood", from: "Kuki Shinobu", to: "Bennett", action: "Đưa cho Bennett (nếu Kuki cầm Thiết Phong Kích)", plan: "Base ATK 565 cao hơn Răng Nanh Rỉ Sét (510), giúp Bennett buff ATK mạnh hơn · Hoặc đưa Nhà Lữ Hành (Thảo)." },
-  { id: "s_isshin", from: "Jean", to: "Lynette", action: "Đổi qua cho Lynette (dư thêm Narzissenkreuz từ Layla)", plan: "Jean mượn Tây Phong Kiếm & Layla cầm Kiếm Bến Tàu HP% → chuyển Isshin Lv.80 cho Lynette (còn Narzissenkreuz R3 tạm cất/chờ Valeriy)." },
+  {
+    id: "s_widsith",
+    from: null,
+    fromLabel: "Trong túi đồ",
+    customWeapon: { name: "Chương Nhạc Lang Thang", rarity: 4, level: 90, refinement: 5, substat_name: "STBK", substat_val: "55.1%", icon: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Troupe.png" },
+    to: "Mona",
+    action: "Gắn cho Mona Nuke Nộ (hoặc trả lại Heizou)",
+    plan: "Ningguang đã cầm Quyển Thiên Không R2 → Chương Nhạc R5 đang rảnh, lắp Mona đẩy lên 53.2/204.6 (Heizou hiện đang cầm sách 1★).",
+  },
+  {
+    id: "s_fish",
+    from: "Xinyan",
+    to: "Beidou",
+    action: "Chuyển từ Xinyan → Beidou Lv.80 C6",
+    plan: "Beidou đang cầm kiếm 1★ Lv.1 → nhận Vua Biển R5 (hoặc Kiếm Vô Công 5★ từ Chongyun kèm Cát ER) để đi Nhà Hát 7.2.",
+  },
+  {
+    id: "s_fading",
+    from: "Collei",
+    to: "Kujou Sara",
+    action: "Đổi Lạc Hà R5 cho Kujou Sara thay Cung Rỉ Sét",
+    plan: "Sara đang cầm Cung Rỉ Sét (vô dụng + thiếu ER 131%) → Lạc Hà Base ATK 565 · 30.6% ER giữ trọn buff ATK & nạp mượt hơn.",
+  },
+  {
+    id: "s_rust",
+    from: "Kujou Sara",
+    to: null,
+    action: "Cất kho dự phòng sau khi Sara lấy Lạc Hà",
+    plan: "Yoimiya đã có Cánh Thiên Không 5★ mạnh hơn nên Cung Rỉ Sét R4 tạm cất kho.",
+  },
+  {
+    id: "s_sapwood",
+    from: "Nilou",
+    to: "Bennett",
+    action: "Chuyển cho Bennett (Base ATK 510 → 565)",
+    plan: "Nilou scale HP% (51.5k HP) không tận dụng Base ATK → đưa Bennett buff ATK to hơn Răng Nanh Rỉ Sét (vẫn giữ ~249% ER).",
+  },
+  {
+    id: "s_dockhand",
+    from: "Lynette",
+    to: "Layla",
+    action: "Đổi chéo Kiếm Bến Tàu (HP%) ↔ Narzissenkreuz (ATK%)",
+    plan: "Layla (khiên 36.5k HP) lấy Kiếm Bến Tàu HP% từ Lynette, trả Lưỡi Kiếm Narzissenkreuz ATK% lại cho Lynette.",
+  },
 ];
 
 const COLLECT_WEAPONS = [
@@ -70,7 +109,7 @@ const COLLECT_WEAPONS = [
     source: "Rèn Nod-Krai (8%)",
     chars: ["Aino"],
     extraTarget: null,
-    why: "Vũ khí rèn F2P số 1 cho Aino (hiện đang cầm kiếm 1★): vừa đủ Nạp 61.3% vừa cộng EM ngoài sân.",
+    why: "Nâng cấp rèn F2P cho Aino (hiện đang cầm Đại Kiếm Tây Phong): 61.3% ER + tự cộng EM ngoài sân.",
   },
   {
     id: "c_finale",
@@ -127,34 +166,34 @@ const COLLECT_WEAPONS = [
 const FARM_DAYS = [
   { key: 1, short: "T2", title: "Thứ 2", chars: ["Chiori", "Aino"], resin: "3× Boss Tuần (Narwhal cho Chiori + Quick Silken Feather cho Aino) · Sách Aino", extra: "Nhặt Cỏ Naku, Hoa Lumidouce, Portable Bearing" },
   { key: 2, short: "T3", title: "Thứ 3", chars: ["Aino", "Kuki Shinobu", "Chevreuse"], resin: "Boss Thế Giới: Knuckle Duckle (Nod-Krai — Aino) · Mãng Xà (Kuki) · Hải Mã (Chev)", extra: "Dọn quái thường lấy nguyên liệu nâng cấp" },
-  { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Navia", "Aino"], resin: "Sách Ánh Sáng (Inazuma — E Chiori) · Vũ khí Vua Biển (Navia) & Tây Phong", extra: "Ép Tráp Thánh → Giấc Mộng Hoàng Kim / Ký Ức Rừng Sâu" },
+  { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Yelan", "Aino"], resin: "Sách Ánh Sáng (Inazuma — E Chiori) · Nâng Cung Tây Phong (Yelan 70 → 90)", extra: "Ép Tráp Thánh → Bóng Hình Màu Xanh (Jean) / Tông Thất (Chev) / Tiếng Đêm (Navia)" },
   { key: 4, short: "T5", title: "Thứ 5", chars: ["Neuvillette", "Fischl"], resin: "Full Nhựa: Kết Cục Của Tội Lỗi (Fontaine) — 4pc Thợ Săn & 4pc Đoàn Kịch", extra: "Nhặt lại đặc sản (hồi 48h)" },
-  { key: 5, short: "T6", title: "Thứ 6", chars: ["Neuvillette", "Fischl", "Aino"], resin: "Check Ảo Cảnh Hiểm Ác (10 ngày đầu → +1 TDV/120 Nhựa) · hoặc Boss + TDV Fontaine", extra: "Làm xong các việc Đổi Vũ Khí (0 Nhựa) & đi Nhà Hát trước 01/12" },
-  { key: 6, short: "T7", title: "Thứ 7", chars: ["Chiori", "Navia"], resin: "Chốt Sách Ánh Sáng (Chiori E 8–9) · Chốt nâng Vũ khí", extra: "Leo lại La Hoàn Tầng 11-3 & Tầng 12" },
-  { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Neuvillette", "Chiori", "Aino"], resin: "Bù Sách / Vũ khí còn thiếu · dư chạy Kết Cục Của Tội Lỗi (Fontaine)", extra: "Kiểm tra đường mở map Snezhnaya cho Mitya & Valeriy" },
+  { key: 5, short: "T6", title: "Thứ 6", chars: ["Neuvillette", "Fischl", "Aino"], resin: "Check Ảo Cảnh Hiểm Ác (10 ngày đầu → +1 TDV/120 Nhựa) · hoặc Boss + TDV Fontaine", extra: "Hoàn tất lắp đồ cho Beidou/Gorou/Ningguang trước Nhà Hát 01/12" },
+  { key: 6, short: "T7", title: "Thứ 7", chars: ["Chiori", "Yelan"], resin: "Chốt Sách Ánh Sáng (Chiori E 8–9) · Chốt nâng Cung Tây Phong 90", extra: "Leo lại La Hoàn Tầng 11-3 & Tầng 12" },
+  { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Neuvillette", "Chiori", "Aino"], resin: "Bù Sách / Vũ khí còn thiếu · dư chạy Kết Cục Của Tội Lỗi (Fontaine)", extra: "Kiểm tra đường mở map Snezhnaya cho Mitya, Valeriy (C2) & Alyosha" },
 ];
 
 const MODES = {
   teams: {
     label: "Đội Hình",
     items: [
-      { title: "Raiden National", sub: "Ổn định #1 Boss đơn · ER 236–276%", note: "Sẵn sàng 100% · Đưa Lao Xiên Cá cho XL càng mạnh", status: "ok", members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"] },
-      { title: "Keqing Tăng Cường", sub: "Chỉ số đẹp nhất · 70/231", note: "Sẵn sàng 100% · Kazuha 1,011 EM", status: "ok", members: ["Keqing", "Nahida", "Yae Miko", "Kaedehara Kazuha"] },
-      { title: "Ayaka Đóng Băng", sub: "Ayaka 10/10/10 · Mona 8/8/13", note: "Sẵn sàng 100% · ~95% CR thực", status: "ok", members: ["Kamisato Ayaka", "Mona", "Kaedehara Kazuha", "Sangonomiya Kokomi"] },
+      { title: "Raiden National", sub: "Ổn định #1 Boss đơn · Clear Ảo Cảnh Boss 1 trong 84s", note: "Sẵn sàng 100% · XL Lao Xiên Cá (245.6% ER) · Yelan Tây Phong (191.2% ER)", status: "ok", members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"] },
+      { title: "Keqing Tăng Cường", sub: "Chỉ số đẹp nhất · 70/231", note: "Sẵn sàng 100% · Nahida 4pc Rừng Sâu (1,012 EM) · Kazuha 1,011 EM", status: "ok", members: ["Keqing", "Nahida", "Yae Miko", "Kaedehara Kazuha"] },
+      { title: "Ayaka Đóng Băng", sub: "Ayaka 10/10/10 · Mona 8/8/13", note: "Sẵn sàng 100% · ~95% CR thực · Đổi Rosaria C6 + Kokomi Thiên Nham càng khỏe", status: "ok", members: ["Kamisato Ayaka", "Mona", "Kaedehara Kazuha", "Sangonomiya Kokomi"] },
       { title: "Hu Tao Bốc Hơi", sub: "2 Thủy + Khiên Zhongli", note: "Sẵn sàng 100% · 2 Hòa Phác Diên riêng", status: "ok", members: ["Hu Tao", "Yelan", "Xingqiu", "Zhongli"] },
       { title: "Yoimiya Đánh Thường", sub: "Yoimiya 74/203 · Yun Jin C6", note: "Sẵn sàng 100% · 2,160 DEF Yun Jin", status: "ok", members: ["Yoimiya", "Yelan", "Yun Jin", "Zhongli"] },
       { title: "Ganyu Tan Chảy", sub: "Ganyu 10/10/10 · 4pc Đoàn Hát", note: "Sẵn sàng 100%", status: "ok", members: ["Ganyu", "Bennett", "Xiangling", "Zhongli"] },
-      { title: "Nilou Sum Suê", sub: "51.5k HP · Collei 4pc Rừng Sâu", note: "Sẵn sàng 100%", status: "ok", members: ["Nilou", "Nahida", "Sangonomiya Kokomi", "Collei"] },
+      { title: "Nilou Sum Suê", sub: "51.5k HP · Nahida 4pc Rừng Sâu (1,012 EM)", note: "Sẵn sàng 100%", status: "ok", members: ["Nilou", "Nahida", "Sangonomiya Kokomi", "Collei"] },
       { title: "Eula Vật Lý", sub: "C2 10/10/10 · Rosaria C6 bù CR", note: "Tình huống / Siêu Dẫn · CR 51.7%", status: "warn", members: ["Eula", "Raiden Shogun", "Rosaria", "Zhongli"] },
       { title: "Neuvillette Carry", sub: "Chờ Nón CR% / 4pc Thợ Săn", note: "Sửa Neuvillette CR 26% · Hoặc Nahida + Kuki", status: "bad", members: ["Neuvillette", "Kaedehara Kazuha", "Zhongli", "Yae Miko"] },
-      { title: "Navia 2 Nham", sub: "Chờ Cát ATK% + Kiếm Li Cốt + Chiori E", note: "Sửa Navia & Chiori để mở khóa sát thương", status: "bad", members: ["Navia", "Chiori", "Bennett", "Xiangling"] },
-      { title: "Mitya Meta 7.2", sub: "Chờ Snezhnaya (Aino farm trước)", note: "Đã có Trấn Mitya + Valeriy C1", status: "warn", members: ["Mitya", "Valeriy", "Kaedehara Kazuha", "Aino"] },
+      { title: "Navia 2 Nham", sub: "Đã gắn Li Cốt (56.7/204.2) · Chờ Cát ATK% & Chiori E", note: "Chiori đã có Cát DEF% · Còn đổi Cát ATK% cho Navia & nâng E Chiori", status: "warn", members: ["Navia", "Chiori", "Bennett", "Xiangling"] },
+      { title: "Mitya Meta 7.2", sub: "Chờ Snezhnaya (Aino đã Lv.60 · Valeriy C2 · Alyosha mới)", note: "Đã có Trấn Mitya + Valeriy C2 + Alyosha (Healer/Buff mới)", status: "warn", members: ["Mitya", "Valeriy", "Kaedehara Kazuha", "Aino"] },
     ],
   },
   abyss: {
     label: "La Hoàn",
     items: [
-      { title: "12 · Nửa 1 — Navia Phá Khiên", sub: "+75% Lunar-Crystallize · 12-3 Moongecko", note: "Sửa Navia (Kiếm Li Cốt + Cát ATK%) + Chiori E", status: "bad", members: ["Navia", "Zhongli", "Chiori", "Xianyun"] },
+      { title: "12 · Nửa 1 — Navia Phá Khiên", sub: "+75% Lunar-Crystallize · 12-3 Moongecko", note: "Navia đã gắn Li Cốt (còn đổi Cát ATK%) + nâng E Chiori", status: "warn", members: ["Navia", "Zhongli", "Chiori", "Xianyun"] },
       { title: "12 · Nửa 2 — Raiden National", sub: "+200 EM · 12-1 Wavebinder · 12-2 Hỏa/Lôi", note: "Đội hình sẵn sàng đánh ngay", status: "ok", members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"] },
       { title: "12 · Nửa 2 — Neuvillette EM", sub: "Tận dụng +200 EM khi sửa xong", note: "Chờ Neuvillette CR% + Kuki 3 món EM", status: "bad", members: ["Neuvillette", "Nahida", "Kuki Shinobu", "Kaedehara Kazuha"] },
       { title: "12 · Nửa 1 — Eula Siêu Dẫn", sub: "12-2 Frostnight Herra · Blessing Siêu Dẫn", note: "Rosaria C6 (74% CR) đi kèm bù CR", status: "warn", members: ["Eula", "Raiden Shogun", "Rosaria", "Zhongli"] },
@@ -164,16 +203,16 @@ const MODES = {
     label: "Nhà Hát",
     items: [
       { title: "Màn 3 · Jadeplume Terrorshroom", sub: "Kích Lôi nhanh", note: "Mở màn bằng Lôi + Thủy", status: "ok", members: ["Keqing", "Fischl", "Xingqiu", "Barbara"] },
-      { title: "Màn 6 · Whisperer of Nightmares", sub: "Phá khiên Thủy + Lôi", note: "Ayato đổi Nón CR% (đang 31.4%)", status: "warn", members: ["Kamisato Ayato", "Yae Miko", "Yelan", "Kuki Shinobu"] },
-      { title: "Màn 8 · Battle-Hardened Samachurl", sub: "Bắt buộc giữ Nham + Thủy", note: "Giữ Navia + Zhongli/Chiori tới Màn 8", status: "bad", members: ["Navia", "Zhongli", "Chiori", "Xingqiu"] },
+      { title: "Màn 6 · Whisperer of Nightmares", sub: "Phá khiên Thủy + Lôi", note: "✓ Ayato đã sửa lên 62.5/152.1 · Sẵn sàng!", status: "ok", members: ["Kamisato Ayato", "Yae Miko", "Yelan", "Kuki Shinobu"] },
+      { title: "Màn 8 · Battle-Hardened Samachurl", sub: "Bắt buộc giữ Nham + Thủy", note: "Navia (Li Cốt) + Ningguang (Quyển Thiên Không R2, cần nâng Ly & Nón CR%)", status: "warn", members: ["Navia", "Zhongli", "Chiori", "Xingqiu"] },
       { title: "Màn 10 · Radiant Moonfly", sub: "Cần Healer toàn đội mạnh", note: "Mượn bạn: Furina hoặc Xilonen", status: "warn", members: ["Neuvillette", "Raiden Shogun", "Sangonomiya Kokomi", "Yelan"] },
     ],
   },
   meta: {
     label: "Meta 7.2",
     items: [
-      { title: "Build Ngay (Vùng Đã Mở)", sub: "Nod-Krai (8%) · Fontaine (64%) · Inazuma (100%)", note: "Farm không cần qua Snezhnaya", status: "ok", members: ["Aino", "Chiori", "Kuki Shinobu", "Fischl"] },
-      { title: "Chờ Mở Snezhnaya (0%)", sub: "Sách Charity & Boss nằm ở Snezhnaya", note: "Đã có sẵn Trấn Sắc Lệnh Tinh Tú cho Mitya", status: "warn", members: ["Mitya", "Valeriy", "Kaedehara Kazuha", "Aino"] },
+      { title: "Build Ngay (Vùng Đã Mở)", sub: "Nod-Krai (8%) · Fontaine (64%) · Inazuma (100%)", note: "Aino đã Lv.60 · Nâng tiếp E Chiori, HP Chevreuse & EM Kuki", status: "ok", members: ["Aino", "Chiori", "Kuki Shinobu", "Chevreuse"] },
+      { title: "Chờ Mở Snezhnaya (0%)", sub: "Sách Charity & Boss nằm ở Snezhnaya", note: "Đã có Trấn Mitya + Valeriy C2 + Alyosha (4★ Thương Lôi mới)", status: "warn", members: ["Mitya", "Valeriy", "Alyosha", "Aino"] },
       { title: "Mục Tiêu Roll Bổ Sung", sub: "Support kéo trần toàn đội hình", note: "Ưu tiên Furina & Xilonen", status: "warn", members: ["Furina", "Xilonen", "Odette", "Columbina"] },
     ],
   },
@@ -210,6 +249,24 @@ function byName(name) {
 
 function stat(c, key) {
   return (c && c.stats && c.stats[key] && c.stats[key].final) || "-";
+}
+
+function compactStats(c) {
+  if (!c) return "";
+  const hpSet = new Set(["Neuvillette", "Chevreuse", "Nilou", "Yelan", "Layla", "Sangonomiya Kokomi", "Zhongli"]);
+  const defSet = new Set(["Chiori", "Noelle", "Gorou", "Kachina", "Yun Jin"]);
+  const emSet = new Set(["Nahida", "Kuki Shinobu", "Aino", "Kaedehara Kazuha", "Sucrose"]);
+  const cr = stat(c, "Tỷ Lệ Bạo Kích");
+  const cd = stat(c, "Sát Thương Bạo Kích");
+  const er = stat(c, "Hiệu Quả Nạp Nguyên Tố");
+  const parts = [];
+  if (hpSet.has(c.name)) parts.push(`${stat(c, "Giới Hạn HP")} HP`);
+  if (defSet.has(c.name)) parts.push(`${stat(c, "Phòng Ngự")} DEF`);
+  if (emSet.has(c.name)) parts.push(`${stat(c, "Tinh Thông Nguyên Tố")} EM`);
+  if (!hpSet.has(c.name) && !defSet.has(c.name) && !emSet.has(c.name)) parts.push(`${stat(c, "Tấn Công")} ATK`);
+  parts.push(`${cr}/${cd}`);
+  parts.push(`ER ${er}`);
+  return parts.join(" · ");
 }
 
 function findActionForChar(name) {
@@ -319,6 +376,7 @@ function renderActionBucket(title, sub, cls, items) {
                   <div>
                     <strong>${esc(a.name)}</strong>
                     <small>Lv.${esc(c?.level ?? "-")} · C${esc(c?.constellation ?? "-")} · ${esc(c?.talent_levels ?? "")}</small>
+                    ${c ? `<small class="char-live-stat">${esc(compactStats(c))}</small>` : ""}
                   </div>
                 </div>
                 ${weaponCol}
@@ -350,10 +408,17 @@ function renderSurplusBucket() {
       <div class="action-table">
         ${filtered
           .map((s) => {
-            const fromC = byName(s.from);
+            const fromC = s.from ? byName(s.from) : null;
             const toC = s.to ? byName(s.to) : null;
-            const w = fromC?.weapon;
+            const w = s.customWeapon || fromC?.weapon;
             const isDone = !!APP.done[s.id];
+
+            const fromHtml = fromC
+              ? `<span class="sflow-char">
+                  ${fromC.icon ? `<img src="${esc(fromC.icon)}" alt="${esc(s.from)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                  <span>${esc(s.from)}</span>
+                </span>`
+              : `<span class="sflow-vault">${esc(s.fromLabel || "Trong túi đồ")}</span>`;
 
             const destHtml = toC
               ? `<span class="sflow-char">
@@ -373,10 +438,7 @@ function renderSurplusBucket() {
                   </div>
                 </div>
                 <div class="col-sflow">
-                  <span class="sflow-char">
-                    ${fromC?.icon ? `<img src="${esc(fromC.icon)}" alt="${esc(s.from)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                    <span>${esc(s.from)}</span>
-                  </span>
+                  ${fromHtml}
                   <span class="swap-arrow">→</span>
                   ${destHtml}
                 </div>
@@ -477,12 +539,12 @@ function renderFoot() {
     const elig = APP.data.characters.filter(
       (c) => c.level >= 70 && (["Hydro", "Electro", "Geo"].includes(c.element) || c.name === "Qiqi")
     );
-    const needGear = new Set(["Ningguang", "Beidou", "Noelle", "Gorou"]);
+    const needGear = new Set(["Beidou", "Gorou", "Ningguang"]);
     return `
       <div class="stage-foot">
         <div class="foot-title">
           <span><strong>${elig.length} nhân vật Lv.70+</strong> + 3 Trial (Flins, Aino, Kachina) · Hạn 01/12</span>
-          <span style="color:var(--bad);">Đỏ = cần lắp vũ khí/TDV tạm trước khi vào</span>
+          <span style="color:var(--bad);">Đỏ = Beidou/Gorou còn vũ khí 1★ · Ningguang cần nâng Ly +0 &amp; Nón CR%</span>
         </div>
         <div class="theater-faces">
           ${elig
@@ -574,6 +636,7 @@ function renderStageView() {
                   </div>`
                 : `<div class="pillar-gear"><span class="talent-txt">Chưa sở hữu</span></div>`
             }
+            ${c ? `<div class="pillar-stats">${esc(compactStats(c))}</div>` : ""}
             <div class="pillar-note ${noteClass}">${esc(noteText)}</div>
             ${isPending ? `<button class="jump-link" data-jump-tracker="1">Xem chi tiết sửa →</button>` : ""}
           </div>

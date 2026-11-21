@@ -295,6 +295,7 @@ h1 {
 }
 .col-char strong { display: block; font-size: 14px; }
 .col-char small { display: block; font-size: 11.5px; color: var(--muted); }
+.col-char small.char-live-stat { color: var(--gold); font-size: 11px; margin-top: 1px; }
 
 .col-weapon {
   display: flex;
@@ -616,6 +617,7 @@ h1 {
 }
 .pillar-gear img { width: 23px; height: 23px; object-fit: contain; }
 .pillar-gear .talent-txt { font-size: 11px; color: var(--muted); margin-left: 3px; }
+.pillar-stats { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
 
 .pillar-note { font-size: 11.5px; font-weight: 600; }
 .note-ok { color: var(--ok); }
