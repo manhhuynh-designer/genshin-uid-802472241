@@ -1,31 +1,63 @@
 {
-  "crawled_at": "2026-11-21T12:23:21.124323+07:00",
+  "crawled_at": "2026-11-22T13:57:33.699333+07:00",
   "account": {
     "uid": "802472241",
     "nickname": "Mahyh",
     "adventure_rank": 60,
     "server": "Asia Server (os_asia)",
     "stats": {
-      "active_day_number": 1308,
-      "achievement_number": 1092,
+      "active_day_number": 1309,
+      "achievement_number": 1112,
       "anemoculus_number": 66,
       "geoculus_number": 131,
       "avatar_number": 71,
-      "way_point_number": 493,
+      "way_point_number": 507,
       "domain_number": 63,
       "spiral_abyss": "11-3",
-      "precious_chest_number": 595,
+      "precious_chest_number": 597,
       "luxurious_chest_number": 224,
-      "exquisite_chest_number": 1954,
-      "common_chest_number": 2551,
+      "exquisite_chest_number": 1960,
+      "common_chest_number": 2555,
       "electroculus_number": 181,
       "magic_chest_number": 216,
       "dendroculus_number": 271,
       "hydroculus_number": 162,
       "pyroculus_number": 18,
       "field_ext_map": {
-        "role_combat_pc": {
-          "link": "https://act.hoyolab.com/ys/event/bbs-lineup-ys-sea/index.html?bbs_presentation_style=fullscreen&utm_source=hoyolab&utm_medium=tools&utm_campaign=battlechronicle&utm_id=2#/pc/home",
+        "dendroculus_number": {
+          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
+          "backup_link": ""
+        },
+        "iceculus_number": {
+          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?hyl_presentation_style=fullscreen#/map/2?shown_types=694,833&center=-6637.50,-7841.50&zoom=-2.00",
+          "backup_link": ""
+        },
+        "common_chest_number": {
+          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
+          "backup_link": ""
+        },
+        "domain_number": {
+          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
+          "backup_link": ""
+        },
+        "geoculus_number": {
+          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
+          "backup_link": ""
+        },
+        "magic_chest_number": {
+          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
+          "backup_link": ""
+        },
+        "electroculus_number": {
+          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
+          "backup_link": ""
+        },
+        "hard_challenge": {
+          "link": "",
+          "backup_link": ""
+        },
+        "avatar_number": {
+          "link": "",
           "backup_link": ""
         },
         "pyroculus_number": {
@@ -36,51 +68,23 @@
           "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
           "backup_link": ""
         },
+        "way_point_number": {
+          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
+          "backup_link": ""
+        },
         "moonoculus_number": {
           "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?hyl_presentation_style=fullscreen#/map/2?shown_types=694&center=-242.00,-10089.00&zoom=-2.00",
-          "backup_link": ""
-        },
-        "common_chest_number": {
-          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
-          "backup_link": ""
-        },
-        "luxurious_chest_number": {
-          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
           "backup_link": ""
         },
         "precious_chest_number": {
           "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
           "backup_link": ""
         },
-        "avatar_number": {
-          "link": "",
+        "role_combat_pc": {
+          "link": "https://act.hoyolab.com/ys/event/bbs-lineup-ys-sea/index.html?bbs_presentation_style=fullscreen&utm_source=hoyolab&utm_medium=tools&utm_campaign=battlechronicle&utm_id=2#/pc/home",
           "backup_link": ""
         },
-        "geoculus_number": {
-          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
-          "backup_link": ""
-        },
-        "exquisite_chest_number": {
-          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
-          "backup_link": ""
-        },
-        "hard_challenge": {
-          "link": "",
-          "backup_link": ""
-        },
-        "way_point_number": {
-          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
-          "backup_link": ""
-        },
-        "domain_number": {
-          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
-          "backup_link": ""
-        },
-        "iceculus_number": {
-          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?hyl_presentation_style=fullscreen#/map/2?shown_types=694,833&center=-6637.50,-7841.50&zoom=-2.00",
-          "backup_link": ""
-        },
-        "magic_chest_number": {
+        "anemoculus_number": {
           "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
           "backup_link": ""
         },
@@ -88,11 +92,7 @@
           "link": "https://act.hoyolab.com/ys/event/bbs-lineup-ys-sea/index.html?bbs_presentation_style=fullscreen&utm_source=hoyolab&utm_medium=tools&utm_campaign=battlechronicle&utm_id=2#/m/home",
           "backup_link": ""
         },
-        "electroculus_number": {
-          "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
-          "backup_link": ""
-        },
-        "anemoculus_number": {
+        "luxurious_chest_number": {
           "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
           "backup_link": ""
         },
@@ -100,18 +100,18 @@
           "link": "",
           "backup_link": ""
         },
-        "dendroculus_number": {
+        "exquisite_chest_number": {
           "link": "https://act.hoyolab.com/ys/app/interactive-map/index.html?bbs_presentation_style=no_header&utm_source=tool&utm_medium=button&utm_campaign=battlechronicle&utm_id=2#/map/2",
           "backup_link": ""
         }
       },
       "role_combat": {
         "is_unlock": true,
-        "max_round_id": 0,
-        "has_data": false,
-        "has_detail_data": false,
+        "max_round_id": 3,
+        "has_data": true,
+        "has_detail_data": true,
         "tarot_finished_cnt": 0,
-        "difficulty_id": 0
+        "difficulty_id": 3
       },
       "full_fetter_avatar_num": 39,
       "hard_challenge": {
@@ -121,12 +121,118 @@
         "is_unlock": true
       },
       "moonoculus_number": 26,
-      "iceculus_number": 0
+      "iceculus_number": 3
     },
     "banner": "https://upload-os-bbs.hoyolab.com/game_record/game_record_ys_background.png",
     "logo": "https://fastcdn.hoyoverse.com/static-resource-v2/2024/04/12/b700cce2ac4c68a520b15cafa86a03f0_2812765778371293568.png"
   },
   "world_explorations": [
+    {
+      "level": 0,
+      "exploration_percentage": 30,
+      "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterIcon_Snezhnaya.png",
+      "name": "Snezhnaya",
+      "type": "Reputation",
+      "offerings": [
+        {
+          "name": "Thiết Bị Phân Tích Ảnh Vực",
+          "level": 0,
+          "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaYingYu.png",
+          "open_state": "OfferingOpenStateUnlocked"
+        },
+        {
+          "name": "Hang Bài Ca Thủy Triều",
+          "level": 0,
+          "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaXiGe.png",
+          "open_state": "OfferingOpenStateLocked"
+        },
+        {
+          "name": "Nhà Gỗ Thợ Săn",
+          "level": 0,
+          "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaXunLie.png",
+          "open_state": "OfferingOpenStateLocked"
+        },
+        {
+          "name": "Nhà Hát Korolevskiy",
+          "level": 0,
+          "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaJuYuan.png",
+          "open_state": "OfferingOpenStateLocked"
+        },
+        {
+          "name": "Ốc Đảo Teplo",
+          "level": 0,
+          "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaSpecialBrewOasis.png",
+          "open_state": "OfferingOpenStateLocked"
+        },
+        {
+          "name": "Cục Vận Tải Đường Sắt Hoàng Gia",
+          "level": 0,
+          "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaRoyalRailwayTransportBureau.png",
+          "open_state": "OfferingOpenStateLocked"
+        }
+      ],
+      "id": 20,
+      "parent_id": 0,
+      "map_url": "https://act.hoyolab.com/ys/app/interactive-map/index.html?hyl_presentation_style=fullscreen#/map/2?shown_types=694&center=-6637.50,-7841.50&zoom=-2.00",
+      "strategy_url": "",
+      "background_image": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterBackground_Snezhnaya.png",
+      "inner_icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterInnerIcon_Snezhnaya.png",
+      "cover": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterCover_Snezhnaya.png",
+      "area_exploration_list": [
+        {
+          "name": "Lãnh Nguyên Volkodlak",
+          "exploration_percentage": 181
+        },
+        {
+          "name": "Vùng Đất Băng Vĩnh Cửu",
+          "exploration_percentage": 117
+        },
+        {
+          "name": "Đỉnh Băng Giá",
+          "exploration_percentage": 0
+        },
+        {
+          "name": "Thung Lũng Lông Vũ Lửa",
+          "exploration_percentage": 0
+        },
+        {
+          "name": "Lăng Mộ Bạch Dương Tuyết",
+          "exploration_percentage": 0
+        },
+        {
+          "name": "Novokitezhgrad",
+          "exploration_percentage": 12
+        },
+        {
+          "name": "Đỉnh Sải Cánh",
+          "exploration_percentage": 0
+        }
+      ],
+      "boss_list": [
+        {
+          "name": "Tạo Vật Phái Sinh Bất Diệt",
+          "kill_num": 0
+        },
+        {
+          "name": "Sư Tử Cánh Lai Ghép",
+          "kill_num": 0
+        },
+        {
+          "name": "Lưỡi Đao Giữa Tuyết",
+          "kill_num": 0
+        },
+        {
+          "name": "Kẻ Neo Sóng",
+          "kill_num": 0
+        }
+      ],
+      "is_hot": true,
+      "index_active": true,
+      "detail_active": true,
+      "seven_statue_level": 1,
+      "natan_reputation": null,
+      "world_type": 2
+    },
     {
       "level": 0,
       "exploration_percentage": 8,
@@ -225,7 +331,7 @@
         },
         {
           "name": "Đảo Lempo",
-          "exploration_percentage": 302
+          "exploration_percentage": 304
         },
         {
           "name": "Đảo Hiisi",
@@ -267,7 +373,7 @@
         },
         {
           "name": "Vịt Nắm Đấm",
-          "kill_num": 4
+          "kill_num": 8
         },
         {
           "name": "Linh Chủ Đêm Sương",
@@ -289,7 +395,7 @@
       "is_hot": false,
       "index_active": false,
       "detail_active": true,
-      "seven_statue_level": 1,
+      "seven_statue_level": 2,
       "natan_reputation": null,
       "world_type": 2
     },
@@ -683,7 +789,7 @@
         },
         {
           "name": "Nấm Thúy Linh",
-          "kill_num": 78
+          "kill_num": 79
         },
         {
           "name": "Thảo Nguyên Bản",
@@ -1034,112 +1140,6 @@
     {
       "level": 0,
       "exploration_percentage": 0,
-      "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterIcon_Snezhnaya.png",
-      "name": "Snezhnaya",
-      "type": "Reputation",
-      "offerings": [
-        {
-          "name": "Thiết Bị Phân Tích Ảnh Vực",
-          "level": 0,
-          "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaYingYu.png",
-          "open_state": "OfferingOpenStateLocked"
-        },
-        {
-          "name": "Hang Bài Ca Thủy Triều",
-          "level": 0,
-          "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaXiGe.png",
-          "open_state": "OfferingOpenStateLocked"
-        },
-        {
-          "name": "Nhà Gỗ Thợ Săn",
-          "level": 0,
-          "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaXunLie.png",
-          "open_state": "OfferingOpenStateLocked"
-        },
-        {
-          "name": "Nhà Hát Korolevskiy",
-          "level": 0,
-          "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaJuYuan.png",
-          "open_state": "OfferingOpenStateLocked"
-        },
-        {
-          "name": "Ốc Đảo Teplo",
-          "level": 0,
-          "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaSpecialBrewOasis.png",
-          "open_state": "OfferingOpenStateLocked"
-        },
-        {
-          "name": "Cục Vận Tải Đường Sắt Hoàng Gia",
-          "level": 0,
-          "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaRoyalRailwayTransportBureau.png",
-          "open_state": "OfferingOpenStateLocked"
-        }
-      ],
-      "id": 20,
-      "parent_id": 0,
-      "map_url": "https://act.hoyolab.com/ys/app/interactive-map/index.html?hyl_presentation_style=fullscreen#/map/2?shown_types=694&center=-6637.50,-7841.50&zoom=-2.00",
-      "strategy_url": "",
-      "background_image": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterBackground_Snezhnaya.png",
-      "inner_icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterInnerIcon_Snezhnaya.png",
-      "cover": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterCover_Snezhnaya.png",
-      "area_exploration_list": [
-        {
-          "name": "Lãnh Nguyên Volkodlak",
-          "exploration_percentage": 101
-        },
-        {
-          "name": "Vùng Đất Băng Vĩnh Cửu",
-          "exploration_percentage": 0
-        },
-        {
-          "name": "Đỉnh Băng Giá",
-          "exploration_percentage": 0
-        },
-        {
-          "name": "Thung Lũng Lông Vũ Lửa",
-          "exploration_percentage": 0
-        },
-        {
-          "name": "Lăng Mộ Bạch Dương Tuyết",
-          "exploration_percentage": 0
-        },
-        {
-          "name": "Novokitezhgrad",
-          "exploration_percentage": 0
-        },
-        {
-          "name": "Đỉnh Sải Cánh",
-          "exploration_percentage": 0
-        }
-      ],
-      "boss_list": [
-        {
-          "name": "Tạo Vật Phái Sinh Bất Diệt",
-          "kill_num": 0
-        },
-        {
-          "name": "Sư Tử Cánh Lai Ghép",
-          "kill_num": 0
-        },
-        {
-          "name": "Lưỡi Đao Giữa Tuyết",
-          "kill_num": 0
-        },
-        {
-          "name": "Kẻ Neo Sóng",
-          "kill_num": 0
-        }
-      ],
-      "is_hot": true,
-      "index_active": true,
-      "detail_active": true,
-      "seven_statue_level": 1,
-      "natan_reputation": null,
-      "world_type": 2
-    },
-    {
-      "level": 0,
-      "exploration_percentage": 0,
       "icon": "",
       "name": "Thần Điện Không Gian",
       "type": "Offering",
@@ -1254,7 +1254,7 @@
       "level": 10,
       "visit_num": 25,
       "comfort_num": 26840,
-      "item_num": 2390,
+      "item_num": 2392,
       "name": "Động La Phù",
       "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/home/UI_HomeworldModule_2_Pic.png",
       "comfort_level_name": "Cung Vàng Điện Ngọc",
@@ -1264,7 +1264,7 @@
       "level": 10,
       "visit_num": 25,
       "comfort_num": 26840,
-      "item_num": 2390,
+      "item_num": 2392,
       "name": "Đỉnh Thúy Đại",
       "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/home/UI_HomeworldModule_1_Pic.png",
       "comfort_level_name": "Cung Vàng Điện Ngọc",
@@ -1274,7 +1274,7 @@
       "level": 10,
       "visit_num": 25,
       "comfort_num": 26840,
-      "item_num": 2390,
+      "item_num": 2392,
       "name": "Đảo Thanh Quỳnh",
       "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/home/UI_HomeworldModule_3_Pic.png",
       "comfort_level_name": "Cung Vàng Điện Ngọc",
@@ -1284,7 +1284,7 @@
       "level": 10,
       "visit_num": 25,
       "comfort_num": 26840,
-      "item_num": 2390,
+      "item_num": 2392,
       "name": "Hội Khởi Đình",
       "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/home/UI_HomeworldModule_4_Pic.png",
       "comfort_level_name": "Cung Vàng Điện Ngọc",
@@ -1294,7 +1294,7 @@
       "level": 10,
       "visit_num": 25,
       "comfort_num": 26840,
-      "item_num": 2390,
+      "item_num": 2392,
       "name": "Khu Rừng Ngát Hương",
       "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/home/UI_HomeworldModule_5_Pic.png",
       "comfort_level_name": "Cung Vàng Điện Ngọc",
@@ -1304,7 +1304,7 @@
       "level": 10,
       "visit_num": 25,
       "comfort_num": 26840,
-      "item_num": 2390,
+      "item_num": 2392,
       "name": "Đảo Xoáy",
       "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/home/UI_HomeworldModule_6_Pic.png",
       "comfort_level_name": "Cung Vàng Điện Ngọc",
@@ -1466,7 +1466,7 @@
           "value": 9
         },
         {
-          "name": "Nahida",
+          "name": "Yae Miko",
           "value": 9
         },
         {
@@ -1474,7 +1474,7 @@
           "value": 9
         },
         {
-          "name": "Yae Miko",
+          "name": "Nahida",
           "value": 9
         }
       ],
@@ -2113,11 +2113,11 @@
   },
   "imaginarium_theater": {
     "is_unlock": true,
-    "max_round_id": 0,
-    "has_data": false,
-    "has_detail_data": false,
+    "max_round_id": 3,
+    "has_data": true,
+    "has_detail_data": true,
     "tarot_finished_cnt": 0,
-    "difficulty_id": 0
+    "difficulty_id": 3
   },
   "characters_count": 71,
   "characters": [
@@ -2852,6 +2852,250 @@
       "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/89d47da9c1ed3ade59b3c9f7fd00f1e8.png",
       "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/df836c6388fcdbdbf994ddeefc39d4fa.png",
       "splash": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/image_7/e93402cd5088ae56d51de8bcc4e1d5d9.png"
+    },
+    {
+      "id": 10000005,
+      "name": "Nhà Lữ Hành",
+      "element": "Cryo",
+      "rarity": 5,
+      "rarity_raw": 5,
+      "level": 90,
+      "constellation": 1,
+      "friendship": 0,
+      "talents": [
+        "Giá Rét Dị Bang: 1",
+        "Băng Sương Kiếm: 1",
+        "Băng Tụ Sắc Bén: 1"
+      ],
+      "talent_levels": "1/1/1",
+      "weapon": {
+        "name": "Thanh Kiếm Exaiphanes",
+        "rarity": 5,
+        "level": 20,
+        "refinement": 1,
+        "base_atk": "122",
+        "substat_name": "Tỷ Lệ Bạo Kích",
+        "substat_val": "12.7%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/6a7ba976/8ec89cd8827583d02662704f5738efc8.png"
+      },
+      "stats": {
+        "Giới Hạn HP": {
+          "base": "10875",
+          "add": "6366",
+          "final": "17240"
+        },
+        "Tỷ Lệ Bạo Kích": {
+          "base": "62.8%",
+          "add": "",
+          "final": "62.8%"
+        },
+        "Tấn Công": {
+          "base": "337",
+          "add": "611",
+          "final": "948"
+        },
+        "Sát Thương Bạo Kích": {
+          "base": "79.5%",
+          "add": "",
+          "final": "79.5%"
+        },
+        "Phòng Ngự": {
+          "base": "683",
+          "add": "379",
+          "final": "1062"
+        },
+        "Tăng Trị Liệu": {
+          "base": "0.0%",
+          "add": "",
+          "final": "0.0%"
+        },
+        "Tinh Thông Nguyên Tố": {
+          "base": "19",
+          "add": "",
+          "final": "19"
+        },
+        "Tăng Nhận Trị Liệu": {
+          "base": "0.0%",
+          "add": "",
+          "final": "0.0%"
+        },
+        "Tăng Sát Thương Nguyên Tố Băng": {
+          "base": "0.0%",
+          "add": "",
+          "final": "0.0%"
+        },
+        "Hiệu Quả Nạp Nguyên Tố": {
+          "base": "186.0%",
+          "add": "",
+          "final": "186.0%"
+        }
+      },
+      "artifact_sets": "2pc Dấu Ấn Ngăn Cách, 2pc Ký Ức Rừng Sâu, 1pc Hiền Nhân Bốc Lửa",
+      "artifacts": [
+        {
+          "slot": "Hoa Sự Sống",
+          "name": "Sự Từ Chối Của Người Vượt Lửa",
+          "set": "Hiền Nhân Bốc Lửa",
+          "rarity": 5,
+          "level": 20,
+          "main_stat": "HP",
+          "main_val": "4780",
+          "substats": [
+            {
+              "name": "Tỷ Lệ Bạo Kích",
+              "value": "10.9%",
+              "rolls": 2
+            },
+            {
+              "name": "Tấn Công",
+              "value": "37",
+              "rolls": 1
+            },
+            {
+              "name": "Tỷ Lệ Tấn Công",
+              "value": "9.3%",
+              "rolls": 1
+            },
+            {
+              "name": "Sát Thương Bạo Kích",
+              "value": "5.4%",
+              "rolls": 0
+            }
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/daea64738ee81507c05b9752f51f195f.png"
+        },
+        {
+          "slot": "Lông Vũ Tử Vong",
+          "name": "Lông Vũ Rơi Rụng",
+          "set": "Dấu Ấn Ngăn Cách",
+          "rarity": 5,
+          "level": 20,
+          "main_stat": "Tấn Công",
+          "main_val": "311",
+          "substats": [
+            {
+              "name": "Phòng Ngự",
+              "value": "62",
+              "rolls": 2
+            },
+            {
+              "name": "Tỷ Lệ Tấn Công",
+              "value": "10.5%",
+              "rolls": 1
+            },
+            {
+              "name": "Tỷ Lệ Bạo Kích",
+              "value": "3.1%",
+              "rolls": 0
+            },
+            {
+              "name": "Sát Thương Bạo Kích",
+              "value": "10.9%",
+              "rolls": 1
+            }
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
+        },
+        {
+          "slot": "Cát Thời Gian",
+          "name": "Hộp Lôi Vân",
+          "set": "Dấu Ấn Ngăn Cách",
+          "rarity": 5,
+          "level": 20,
+          "main_stat": "Hiệu Quả Nạp Nguyên Tố",
+          "main_val": "51.8%",
+          "substats": [
+            {
+              "name": "Tỷ Lệ Tấn Công",
+              "value": "12.8%",
+              "rolls": 2
+            },
+            {
+              "name": "Tỷ Lệ Phòng Ngự",
+              "value": "20.4%",
+              "rolls": 2
+            },
+            {
+              "name": "Tỷ Lệ HP",
+              "value": "9.9%",
+              "rolls": 1
+            },
+            {
+              "name": "Tấn Công",
+              "value": "19",
+              "rolls": 0
+            }
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/30ad4db8661bccad21474d67fad9d908.png"
+        },
+        {
+          "slot": "Ly Không Gian",
+          "name": "Đèn Của Kẻ Lạc Lối",
+          "set": "Ký Ức Rừng Sâu",
+          "rarity": 5,
+          "level": 20,
+          "main_stat": "Tăng Sát Thương Nguyên Tố Thảo",
+          "main_val": "46.6%",
+          "substats": [
+            {
+              "name": "Tấn Công",
+              "value": "33",
+              "rolls": 1
+            },
+            {
+              "name": "Sát Thương Bạo Kích",
+              "value": "13.2%",
+              "rolls": 1
+            },
+            {
+              "name": "Tỷ Lệ Phòng Ngự",
+              "value": "13.1%",
+              "rolls": 1
+            },
+            {
+              "name": "HP",
+              "value": "508",
+              "rolls": 1
+            }
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ed4d28bc20d96536005c1a50fa9a12b2.png"
+        },
+        {
+          "slot": "Nón Lý Trí",
+          "name": "Vương Miện Của Nguyệt Quế",
+          "set": "Ký Ức Rừng Sâu",
+          "rarity": 5,
+          "level": 20,
+          "main_stat": "Tỷ Lệ Bạo Kích",
+          "main_val": "31.1%",
+          "substats": [
+            {
+              "name": "Tấn Công",
+              "value": "19",
+              "rolls": 0
+            },
+            {
+              "name": "Hiệu Quả Nạp Nguyên Tố",
+              "value": "14.2%",
+              "rolls": 2
+            },
+            {
+              "name": "Tinh Thông Nguyên Tố",
+              "value": "19",
+              "rolls": 0
+            },
+            {
+              "name": "Phòng Ngự",
+              "value": "88",
+              "rolls": 3
+            }
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/874608b484a50855196d6b526d844791.png"
+        }
+      ],
+      "icon": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/08/24/d311eba245723b7e3b15e1d2deb8f8a7_6566639347563049912.png",
+      "card_image": "https://webstatic.hoyoverse.com/upload/static-resource/2023/05/08/ec15648be34aa80db3ac32844af3a467_8937995274995808517.png",
+      "splash": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/image_7/5b215c3fb522b2845905ce5c0c589a19.png"
     },
     {
       "id": 10000052,
@@ -5078,28 +5322,28 @@
       "stats": {
         "Giới Hạn HP": {
           "base": "12650",
-          "add": "12684",
-          "final": "25334"
+          "add": "6759",
+          "final": "19409"
         },
         "Tỷ Lệ Bạo Kích": {
-          "base": "56.7%",
+          "base": "80.0%",
           "add": "",
-          "final": "56.7%"
+          "final": "80.0%"
         },
         "Tấn Công": {
           "base": "861",
-          "add": "675",
-          "final": "1536"
+          "add": "894",
+          "final": "1755"
         },
         "Sát Thương Bạo Kích": {
-          "base": "204.2%",
+          "base": "180.1%",
           "add": "",
-          "final": "204.2%"
+          "final": "180.1%"
         },
         "Phòng Ngự": {
           "base": "793",
-          "add": "162",
-          "final": "955"
+          "add": "295",
+          "final": "1088"
         },
         "Tăng Trị Liệu": {
           "base": "0.0%",
@@ -5107,9 +5351,9 @@
           "final": "0.0%"
         },
         "Tinh Thông Nguyên Tố": {
-          "base": "79",
+          "base": "61",
           "add": "",
-          "final": "79"
+          "final": "61"
         },
         "Tăng Nhận Trị Liệu": {
           "base": "0.0%",
@@ -5122,9 +5366,9 @@
           "final": "61.6%"
         },
         "Hiệu Quả Nạp Nguyên Tố": {
-          "base": "100.0%",
+          "base": "104.5%",
           "add": "",
-          "final": "100.0%"
+          "final": "104.5%"
         }
       },
       "artifact_sets": "4pc Phiến Đá Lâu Đời, 1pc Diệm Liệt Ma Nữ Cháy Rực",
@@ -5199,28 +5443,28 @@
           "set": "Phiến Đá Lâu Đời",
           "rarity": 5,
           "level": 20,
-          "main_stat": "Tỷ Lệ HP",
+          "main_stat": "Tỷ Lệ Tấn Công",
           "main_val": "46.6%",
           "substats": [
             {
-              "name": "Sát Thương Bạo Kích",
-              "value": "14.8%",
-              "rolls": 1
-            },
-            {
-              "name": "Tinh Thông Nguyên Tố",
-              "value": "19",
+              "name": "Hiệu Quả Nạp Nguyên Tố",
+              "value": "4.5%",
               "rolls": 0
             },
             {
-              "name": "Tỷ Lệ Tấn Công",
-              "value": "8.7%",
-              "rolls": 1
+              "name": "Tỷ Lệ HP",
+              "value": "5.3%",
+              "rolls": 0
+            },
+            {
+              "name": "Sát Thương Bạo Kích",
+              "value": "35.0%",
+              "rolls": 4
             },
             {
               "name": "Tấn Công",
-              "value": "54",
-              "rolls": 2
+              "value": "14",
+              "rolls": 0
             }
           ],
           "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e15db34d8698aad900ff66e7bdb0ae33.png"
@@ -5263,27 +5507,27 @@
           "set": "Phiến Đá Lâu Đời",
           "rarity": 5,
           "level": 20,
-          "main_stat": "Sát Thương Bạo Kích",
-          "main_val": "62.2%",
+          "main_stat": "Tỷ Lệ Bạo Kích",
+          "main_val": "31.1%",
           "substats": [
             {
-              "name": "Tấn Công",
-              "value": "66",
-              "rolls": 3
+              "name": "Sát Thương Bạo Kích",
+              "value": "17.9%",
+              "rolls": 2
             },
             {
-              "name": "Tỷ Lệ Bạo Kích",
-              "value": "7.8%",
+              "name": "Phòng Ngự",
+              "value": "35",
               "rolls": 1
             },
             {
-              "name": "Tỷ Lệ HP",
-              "value": "5.3%",
-              "rolls": 0
+              "name": "Tỷ Lệ Phòng Ngự",
+              "value": "12.4%",
+              "rolls": 1
             },
             {
               "name": "HP",
-              "value": "239",
+              "value": "209",
               "rolls": 0
             }
           ],
@@ -5322,28 +5566,28 @@
       "stats": {
         "Giới Hạn HP": {
           "base": "14695",
-          "add": "33792",
-          "final": "48487"
+          "add": "20771",
+          "final": "35466"
         },
         "Tỷ Lệ Bạo Kích": {
-          "base": "26.0%",
+          "base": "52.8%",
           "add": "",
-          "final": "26.0%"
+          "final": "52.8%"
         },
         "Tấn Công": {
           "base": "750",
-          "add": "454",
-          "final": "1204"
+          "add": "460",
+          "final": "1210"
         },
         "Sát Thương Bạo Kích": {
-          "base": "252.8%",
+          "base": "234.9%",
           "add": "",
-          "final": "252.8%"
+          "final": "234.9%"
         },
         "Phòng Ngự": {
           "base": "576",
-          "add": "149",
-          "final": "725"
+          "add": "",
+          "final": "576"
         },
         "Tăng Trị Liệu": {
           "base": "0.0%",
@@ -5351,9 +5595,9 @@
           "final": "0.0%"
         },
         "Tinh Thông Nguyên Tố": {
-          "base": "117",
+          "base": "77",
           "add": "",
-          "final": "117"
+          "final": "77"
         },
         "Tăng Nhận Trị Liệu": {
           "base": "0.0%",
@@ -5361,63 +5605,31 @@
           "final": "0.0%"
         },
         "Tăng Sát Thương Nguyên Tố Thủy": {
-          "base": "0.0%",
+          "base": "61.6%",
           "add": "",
-          "final": "0.0%"
+          "final": "61.6%"
         },
         "Hiệu Quả Nạp Nguyên Tố": {
-          "base": "129.2%",
+          "base": "127.2%",
           "add": "",
-          "final": "129.2%"
+          "final": "127.2%"
         }
       },
-      "artifact_sets": "2pc Thiên Nham Vững Chắc, 2pc Vầng Sáng Vourukasha, 1pc Dấu Ấn Ngăn Cách",
+      "artifact_sets": "4pc Trái Tim Trầm Luân, 1pc Diệm Liệt Ma Nữ Cháy Rực",
       "artifacts": [
         {
           "slot": "Hoa Sự Sống",
-          "name": "Hoa Chiến Công",
-          "set": "Thiên Nham Vững Chắc",
+          "name": "Hoa Cài Vàng",
+          "set": "Trái Tim Trầm Luân",
           "rarity": 5,
           "level": 20,
           "main_stat": "HP",
           "main_val": "4780",
           "substats": [
             {
-              "name": "Phòng Ngự",
-              "value": "86",
-              "rolls": 3
-            },
-            {
-              "name": "Hiệu Quả Nạp Nguyên Tố",
-              "value": "5.8%",
-              "rolls": 0
-            },
-            {
-              "name": "Sát Thương Bạo Kích",
-              "value": "19.4%",
-              "rolls": 2
-            },
-            {
               "name": "Tỷ Lệ Bạo Kích",
-              "value": "3.5%",
-              "rolls": 0
-            }
-          ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png"
-        },
-        {
-          "slot": "Lông Vũ Tử Vong",
-          "name": "Chiêu Võ Linh Vũ",
-          "set": "Thiên Nham Vững Chắc",
-          "rarity": 5,
-          "level": 20,
-          "main_stat": "Tấn Công",
-          "main_val": "311",
-          "substats": [
-            {
-              "name": "Tỷ Lệ Tấn Công",
-              "value": "5.8%",
-              "rolls": 0
+              "value": "10.5%",
+              "rolls": 2
             },
             {
               "name": "Tinh Thông Nguyên Tố",
@@ -5425,113 +5637,145 @@
               "rolls": 2
             },
             {
-              "name": "Sát Thương Bạo Kích",
-              "value": "14.0%",
-              "rolls": 1
-            },
-            {
-              "name": "Hiệu Quả Nạp Nguyên Tố",
-              "value": "12.3%",
-              "rolls": 1
-            }
-          ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/84ba5a506941c2e7c67eec4fc91f6e6a.png"
-        },
-        {
-          "slot": "Cát Thời Gian",
-          "name": "Thời Khắc Xưa Cổ",
-          "set": "Vầng Sáng Vourukasha",
-          "rarity": 5,
-          "level": 20,
-          "main_stat": "Tỷ Lệ HP",
-          "main_val": "46.6%",
-          "substats": [
-            {
-              "name": "Tỷ Lệ Bạo Kích",
-              "value": "7.8%",
-              "rolls": 1
-            },
-            {
-              "name": "Tấn Công",
-              "value": "18",
-              "rolls": 0
-            },
-            {
-              "name": "Tinh Thông Nguyên Tố",
-              "value": "56",
-              "rolls": 2
-            },
-            {
-              "name": "Tỷ Lệ Phòng Ngự",
-              "value": "10.9%",
-              "rolls": 1
-            }
-          ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/3c8b4bfb6150d33c584c1c4fd04152e6.png"
-        },
-        {
-          "slot": "Ly Không Gian",
-          "name": "Bữa Tiệc Vui Vô Bờ",
-          "set": "Vầng Sáng Vourukasha",
-          "rarity": 5,
-          "level": 20,
-          "main_stat": "Tỷ Lệ HP",
-          "main_val": "46.6%",
-          "substats": [
-            {
-              "name": "Tỷ Lệ Bạo Kích",
-              "value": "6.2%",
-              "rolls": 1
-            },
-            {
-              "name": "Tấn Công",
-              "value": "47",
-              "rolls": 2
-            },
-            {
-              "name": "Sát Thương Bạo Kích",
-              "value": "14.0%",
-              "rolls": 1
-            },
-            {
-              "name": "HP",
-              "value": "239",
-              "rolls": 0
-            }
-          ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a773f40f5edfe1e1ee710d929a6a7c45.png"
-        },
-        {
-          "slot": "Nón Lý Trí",
-          "name": "Nón Hoa Mỹ",
-          "set": "Dấu Ấn Ngăn Cách",
-          "rarity": 5,
-          "level": 20,
-          "main_stat": "Tỷ Lệ HP",
-          "main_val": "46.6%",
-          "substats": [
-            {
-              "name": "Sát Thương Bạo Kích",
-              "value": "28.8%",
-              "rolls": 3
-            },
-            {
               "name": "Tỷ Lệ Tấn Công",
               "value": "4.7%",
               "rolls": 0
             },
             {
+              "name": "Tỷ Lệ HP",
+              "value": "8.7%",
+              "rolls": 1
+            }
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e3f3ff85477d75c6b073dcb941865249.png"
+        },
+        {
+          "slot": "Lông Vũ Tử Vong",
+          "name": "Ngọn Gió Hồi Ức",
+          "set": "Trái Tim Trầm Luân",
+          "rarity": 5,
+          "level": 20,
+          "main_stat": "Tấn Công",
+          "main_val": "311",
+          "substats": [
+            {
+              "name": "Tỷ Lệ Bạo Kích",
+              "value": "2.7%",
+              "rolls": 0
+            },
+            {
+              "name": "Tỷ Lệ HP",
+              "value": "14.6%",
+              "rolls": 2
+            },
+            {
+              "name": "Tỷ Lệ Tấn Công",
+              "value": "10.5%",
+              "rolls": 1
+            },
+            {
+              "name": "Sát Thương Bạo Kích",
+              "value": "11.7%",
+              "rolls": 1
+            }
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c57c81c236d88176a653c2b0be80d71d.png"
+        },
+        {
+          "slot": "Cát Thời Gian",
+          "name": "La Bàn Đồng",
+          "set": "Trái Tim Trầm Luân",
+          "rarity": 5,
+          "level": 20,
+          "main_stat": "Tỷ Lệ HP",
+          "main_val": "46.6%",
+          "substats": [
+            {
+              "name": "Tấn Công",
+              "value": "35",
+              "rolls": 1
+            },
+            {
+              "name": "Sát Thương Bạo Kích",
+              "value": "13.2%",
+              "rolls": 1
+            },
+            {
+              "name": "HP",
+              "value": "807",
+              "rolls": 2
+            },
+            {
               "name": "Tỷ Lệ Bạo Kích",
               "value": "3.5%",
               "rolls": 0
+            }
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6c8ad61b731cc2c0c53ddd4f22e6a50d.png"
+        },
+        {
+          "slot": "Ly Không Gian",
+          "name": "Ly Gợn Sóng",
+          "set": "Trái Tim Trầm Luân",
+          "rarity": 5,
+          "level": 20,
+          "main_stat": "Tăng Sát Thương Nguyên Tố Thủy",
+          "main_val": "46.6%",
+          "substats": [
+            {
+              "name": "Tỷ Lệ HP",
+              "value": "10.5%",
+              "rolls": 1
+            },
+            {
+              "name": "Hiệu Quả Nạp Nguyên Tố",
+              "value": "16.2%",
+              "rolls": 2
+            },
+            {
+              "name": "Tinh Thông Nguyên Tố",
+              "value": "16",
+              "rolls": 0
+            },
+            {
+              "name": "Sát Thương Bạo Kích",
+              "value": "11.7%",
+              "rolls": 1
+            }
+          ],
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/63535d205fedae06e3ed9c403262ccde.png"
+        },
+        {
+          "slot": "Nón Lý Trí",
+          "name": "Nón Ma Nữ Lo Lắng",
+          "set": "Diệm Liệt Ma Nữ Cháy Rực",
+          "rarity": 5,
+          "level": 20,
+          "main_stat": "Tỷ Lệ Bạo Kích",
+          "main_val": "31.1%",
+          "substats": [
+            {
+              "name": "HP",
+              "value": "418",
+              "rolls": 1
+            },
+            {
+              "name": "Sát Thương Bạo Kích",
+              "value": "21.8%",
+              "rolls": 2
             },
             {
               "name": "Hiệu Quả Nạp Nguyên Tố",
               "value": "11.0%",
               "rolls": 1
+            },
+            {
+              "name": "Tỷ Lệ HP",
+              "value": "4.1%",
+              "rolls": 0
             }
           ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/af4efe37b74a0af38cd48784e415ec89.png"
         }
       ],
       "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b30987d539b299dc89004d72274f5e89.png",
@@ -8944,250 +9188,6 @@
       "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2eeb4b86d43acc81c6f9b37bdba03e83.png",
       "card_image": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9075785b0748147c0d146d0de597ad76.png",
       "splash": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/image_7/42cbf2f3fcbcffdbc9613bc220932304.png"
-    },
-    {
-      "id": 10000005,
-      "name": "Nhà Lữ Hành",
-      "element": "Cryo",
-      "rarity": 5,
-      "rarity_raw": 5,
-      "level": 80,
-      "constellation": 0,
-      "friendship": 0,
-      "talents": [
-        "Giá Rét Dị Bang: 1",
-        "Băng Sương Kiếm: 1",
-        "Băng Tụ Sắc Bén: 1"
-      ],
-      "talent_levels": "1/1/1",
-      "weapon": {
-        "name": "Kagotsurube Isshin",
-        "rarity": 4,
-        "level": 80,
-        "refinement": 1,
-        "base_atk": "449",
-        "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "37.7%",
-        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d0bc1a9d160a598e7cfe669f71402662.png"
-      },
-      "stats": {
-        "Giới Hạn HP": {
-          "base": "10122",
-          "add": "6291",
-          "final": "16413"
-        },
-        "Tỷ Lệ Bạo Kích": {
-          "base": "50.1%",
-          "add": "",
-          "final": "50.1%"
-        },
-        "Tấn Công": {
-          "base": "649",
-          "add": "1033",
-          "final": "1682"
-        },
-        "Sát Thương Bạo Kích": {
-          "base": "79.5%",
-          "add": "",
-          "final": "79.5%"
-        },
-        "Phòng Ngự": {
-          "base": "635",
-          "add": "363",
-          "final": "999"
-        },
-        "Tăng Trị Liệu": {
-          "base": "0.0%",
-          "add": "",
-          "final": "0.0%"
-        },
-        "Tinh Thông Nguyên Tố": {
-          "base": "19",
-          "add": "",
-          "final": "19"
-        },
-        "Tăng Nhận Trị Liệu": {
-          "base": "0.0%",
-          "add": "",
-          "final": "0.0%"
-        },
-        "Tăng Sát Thương Nguyên Tố Băng": {
-          "base": "0.0%",
-          "add": "",
-          "final": "0.0%"
-        },
-        "Hiệu Quả Nạp Nguyên Tố": {
-          "base": "186.0%",
-          "add": "",
-          "final": "186.0%"
-        }
-      },
-      "artifact_sets": "2pc Dấu Ấn Ngăn Cách, 2pc Ký Ức Rừng Sâu, 1pc Hiền Nhân Bốc Lửa",
-      "artifacts": [
-        {
-          "slot": "Hoa Sự Sống",
-          "name": "Sự Từ Chối Của Người Vượt Lửa",
-          "set": "Hiền Nhân Bốc Lửa",
-          "rarity": 5,
-          "level": 20,
-          "main_stat": "HP",
-          "main_val": "4780",
-          "substats": [
-            {
-              "name": "Tỷ Lệ Bạo Kích",
-              "value": "10.9%",
-              "rolls": 2
-            },
-            {
-              "name": "Tấn Công",
-              "value": "37",
-              "rolls": 1
-            },
-            {
-              "name": "Tỷ Lệ Tấn Công",
-              "value": "9.3%",
-              "rolls": 1
-            },
-            {
-              "name": "Sát Thương Bạo Kích",
-              "value": "5.4%",
-              "rolls": 0
-            }
-          ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/daea64738ee81507c05b9752f51f195f.png"
-        },
-        {
-          "slot": "Lông Vũ Tử Vong",
-          "name": "Lông Vũ Rơi Rụng",
-          "set": "Dấu Ấn Ngăn Cách",
-          "rarity": 5,
-          "level": 20,
-          "main_stat": "Tấn Công",
-          "main_val": "311",
-          "substats": [
-            {
-              "name": "Phòng Ngự",
-              "value": "62",
-              "rolls": 2
-            },
-            {
-              "name": "Tỷ Lệ Tấn Công",
-              "value": "10.5%",
-              "rolls": 1
-            },
-            {
-              "name": "Tỷ Lệ Bạo Kích",
-              "value": "3.1%",
-              "rolls": 0
-            },
-            {
-              "name": "Sát Thương Bạo Kích",
-              "value": "10.9%",
-              "rolls": 1
-            }
-          ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
-        },
-        {
-          "slot": "Cát Thời Gian",
-          "name": "Hộp Lôi Vân",
-          "set": "Dấu Ấn Ngăn Cách",
-          "rarity": 5,
-          "level": 20,
-          "main_stat": "Hiệu Quả Nạp Nguyên Tố",
-          "main_val": "51.8%",
-          "substats": [
-            {
-              "name": "Tỷ Lệ Tấn Công",
-              "value": "12.8%",
-              "rolls": 2
-            },
-            {
-              "name": "Tỷ Lệ Phòng Ngự",
-              "value": "20.4%",
-              "rolls": 2
-            },
-            {
-              "name": "Tỷ Lệ HP",
-              "value": "9.9%",
-              "rolls": 1
-            },
-            {
-              "name": "Tấn Công",
-              "value": "19",
-              "rolls": 0
-            }
-          ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/30ad4db8661bccad21474d67fad9d908.png"
-        },
-        {
-          "slot": "Ly Không Gian",
-          "name": "Đèn Của Kẻ Lạc Lối",
-          "set": "Ký Ức Rừng Sâu",
-          "rarity": 5,
-          "level": 20,
-          "main_stat": "Tăng Sát Thương Nguyên Tố Thảo",
-          "main_val": "46.6%",
-          "substats": [
-            {
-              "name": "Tấn Công",
-              "value": "33",
-              "rolls": 1
-            },
-            {
-              "name": "Sát Thương Bạo Kích",
-              "value": "13.2%",
-              "rolls": 1
-            },
-            {
-              "name": "Tỷ Lệ Phòng Ngự",
-              "value": "13.1%",
-              "rolls": 1
-            },
-            {
-              "name": "HP",
-              "value": "508",
-              "rolls": 1
-            }
-          ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ed4d28bc20d96536005c1a50fa9a12b2.png"
-        },
-        {
-          "slot": "Nón Lý Trí",
-          "name": "Vương Miện Của Nguyệt Quế",
-          "set": "Ký Ức Rừng Sâu",
-          "rarity": 5,
-          "level": 20,
-          "main_stat": "Tỷ Lệ Bạo Kích",
-          "main_val": "31.1%",
-          "substats": [
-            {
-              "name": "Tấn Công",
-              "value": "19",
-              "rolls": 0
-            },
-            {
-              "name": "Hiệu Quả Nạp Nguyên Tố",
-              "value": "14.2%",
-              "rolls": 2
-            },
-            {
-              "name": "Tinh Thông Nguyên Tố",
-              "value": "19",
-              "rolls": 0
-            },
-            {
-              "name": "Phòng Ngự",
-              "value": "88",
-              "rolls": 3
-            }
-          ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/874608b484a50855196d6b526d844791.png"
-        }
-      ],
-      "icon": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/08/24/d311eba245723b7e3b15e1d2deb8f8a7_6566639347563049912.png",
-      "card_image": "https://webstatic.hoyoverse.com/upload/static-resource/2023/05/08/ec15648be34aa80db3ac32844af3a467_8937995274995808517.png",
-      "splash": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/image_7/5b215c3fb522b2845905ce5c0c589a19.png"
     },
     {
       "id": 10000022,
@@ -15810,18 +15810,18 @@
       "friendship": 1,
       "talents": [
         "Phương Pháp Tu Sửa Gõ Và Đập: 1",
-        "Bàn Tay Kỳ Diệu: 2",
-        "Máy Làm Lạnh Tinh Xảo: 2"
+        "Bàn Tay Kỳ Diệu: 3",
+        "Máy Làm Lạnh Tinh Xảo: 4"
       ],
-      "talent_levels": "1/2/2",
+      "talent_levels": "1/3/4",
       "weapon": {
         "name": "Đại Kiếm Tây Phong",
         "rarity": 4,
-        "level": 80,
+        "level": 90,
         "refinement": 5,
-        "base_atk": "401",
+        "base_atk": "454",
         "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "55.9%",
+        "substat_val": "61.3%",
         "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7646388f158d62d56f368631a37427c3.png"
       },
       "stats": {
@@ -15836,9 +15836,9 @@
           "final": "40.0%"
         },
         "Tấn Công": {
-          "base": "560",
-          "add": "360",
-          "final": "920"
+          "base": "614",
+          "add": "365",
+          "final": "979"
         },
         "Sát Thương Bạo Kích": {
           "base": "175.9%",
@@ -15871,9 +15871,9 @@
           "final": "46.6%"
         },
         "Hiệu Quả Nạp Nguyên Tố": {
-          "base": "186.2%",
+          "base": "191.6%",
           "add": "",
-          "final": "186.2%"
+          "final": "191.6%"
         }
       },
       "artifact_sets": "2pc Giấc Mộng Hoàng Kim, 2pc Dấu Ấn Ngăn Cách, 1pc Thiên Nham Vững Chắc",
@@ -16471,28 +16471,28 @@
       "stats": {
         "Giới Hạn HP": {
           "base": "6054",
-          "add": "6700",
-          "final": "12754"
+          "add": "6274",
+          "final": "12328"
         },
         "Tỷ Lệ Bạo Kích": {
-          "base": "46.2%",
+          "base": "18.6%",
           "add": "",
-          "final": "46.2%"
+          "final": "18.6%"
         },
         "Tấn Công": {
           "base": "725",
-          "add": "752",
-          "final": "1477"
+          "add": "891",
+          "final": "1616"
         },
         "Sát Thương Bạo Kích": {
-          "base": "129.3%",
+          "base": "169.7%",
           "add": "",
-          "final": "129.3%"
+          "final": "169.7%"
         },
         "Phòng Ngự": {
           "base": "373",
-          "add": "90",
-          "final": "463"
+          "add": "132",
+          "final": "505"
         },
         "Tăng Trị Liệu": {
           "base": "0.0%",
@@ -16515,12 +16515,12 @@
           "final": "61.6%"
         },
         "Hiệu Quả Nạp Nguyên Tố": {
-          "base": "174.5%",
+          "base": "163.5%",
           "add": "",
-          "final": "174.5%"
+          "final": "163.5%"
         }
       },
-      "artifact_sets": "5pc Diệm Liệt Ma Nữ Cháy Rực",
+      "artifact_sets": "4pc Diệm Liệt Ma Nữ Cháy Rực, 1pc Dấu Ấn Ngăn Cách",
       "artifacts": [
         {
           "slot": "Hoa Sự Sống",
@@ -16652,35 +16652,35 @@
         },
         {
           "slot": "Nón Lý Trí",
-          "name": "Nón Ma Nữ Lo Lắng",
-          "set": "Diệm Liệt Ma Nữ Cháy Rực",
+          "name": "Nón Hoa Mỹ",
+          "set": "Dấu Ấn Ngăn Cách",
           "rarity": 5,
           "level": 20,
-          "main_stat": "Tỷ Lệ Bạo Kích",
-          "main_val": "31.1%",
+          "main_stat": "Sát Thương Bạo Kích",
+          "main_val": "62.2%",
           "substats": [
             {
+              "name": "Tỷ Lệ Tấn Công",
+              "value": "19.2%",
+              "rolls": 3
+            },
+            {
+              "name": "Tỷ Lệ Bạo Kích",
+              "value": "3.5%",
+              "rolls": 0
+            },
+            {
+              "name": "Phòng Ngự",
+              "value": "42",
+              "rolls": 1
+            },
+            {
               "name": "HP",
-              "value": "418",
-              "rolls": 1
-            },
-            {
-              "name": "Sát Thương Bạo Kích",
-              "value": "21.8%",
-              "rolls": 2
-            },
-            {
-              "name": "Hiệu Quả Nạp Nguyên Tố",
-              "value": "11.0%",
-              "rolls": 1
-            },
-            {
-              "name": "Tỷ Lệ HP",
-              "value": "4.1%",
+              "value": "239",
               "rolls": 0
             }
           ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/af4efe37b74a0af38cd48784e415ec89.png"
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8af0dc3497b273ccdee34d2cc948aa59.png"
         }
       ],
       "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1238a7679cc90e138ec793b08aa853c7.png",

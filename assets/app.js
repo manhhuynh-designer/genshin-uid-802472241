@@ -1,5 +1,5 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json?v=12";
-const STORAGE_KEY = "genshin_uid_802472241_done_v3";
+const DATA_URL = "./data/genshin_uid_802472241_data.json?v=13";
+const STORAGE_KEY = "genshin_uid_802472241_done_v4";
 
 const SET_META = {
   mh: { name: "4pc Thợ Săn Marechaussee", where: "Kết Cục Của Tội Lỗi (Fontaine)", icon: "https://enka.network/ui/UI_RelicIcon_15031_4.png" },
@@ -17,10 +17,9 @@ const SET_META = {
   totm: { name: "4pc Thiên Nham Vững Chắc", where: "Kính Nham (Liyue) / Tráp Thánh", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png" },
 };
 
-// Unified per-character action dossier (synced with crawl 21/11/2026 — Ayato, Xiangling, Nahida, Noelle đã hoàn thành)
+// Unified per-character action dossier (synced with crawl 22/11/2026 — Navia 80/180, Neuv Trầm Luân 52.8%, Snezhnaya mở 3%)
 const ACTIONS = [
   // Bucket 1: Do now in-game (0 Resin or quick swap / artifact mainstat fix)
-  { id: "a_navia", bucket: "now", name: "Navia", swapFrom: null, swapNote: "✓ Đã gắn Kiếm Li Cốt R1 (CR nhảy 29.1% → 56.7%)", fixTitle: "Đổi Cát HP% → Cát ATK%", fixSub: "ATK đang 1,536 do đeo Cát HP% · Tìm thêm chút CR lên ~65–70%", setKey: "nw" },
   { id: "a_ning", bucket: "now", name: "Ningguang", swapFrom: null, swapNote: "✓ Đã gắn Quyển Thiên Không R2 (2,501 ATK)", fixTitle: "Nâng Ly Nham (+0 → +20) & đổi Nón → CR%", fixSub: "CR đang 14.7% / 169.7% CD · Chỉnh xong sẵn sàng Nhà Hát Màn 8", setKey: null },
   { id: "a_beidou", bucket: "now", name: "Beidou", swapFrom: "Xinyan", swapNote: "Hoặc Kiếm Vô Công 5★ từ Chongyun", fixTitle: "Bỏ kiếm 1★ & lắp đủ 5 món TDV (có Cát ER)", fixSub: "Đang mới 3 món TDV, 111% ER · Cần gấp trước hạn Nhà Hát 01/12", setKey: "esf" },
   { id: "a_fischl", bucket: "now", name: "Fischl", swapFrom: null, swapNote: "✓ Đã gắn Tuyệt Huyền R5 (224 EM · +48% ST Oz)", fixTitle: "Đổi Nón STBK → Nón CR% (đang 31.8% CR)", fixSub: "Giữ 2 Lôi 2 ATK tạm rồi farm dần 4pc Đoàn Kịch ở Fontaine", setKey: "gt" },
@@ -31,16 +30,17 @@ const ACTIONS = [
   { id: "a_gorou", bucket: "now", name: "Gorou", swapFrom: null, swapNote: "Đang cầm Cung Săn Bắn 1★ Lv.1", fixTitle: "Lắp cung Nạp tạm & thêm Ly (đang 4 món)", fixSub: "Đủ đồ dự bị slot Nham cho Nhà Hát Giả Tưởng 7.2", setKey: null },
 
   // Bucket 2: Farm in unlocked regions (Fontaine 64%, Nod-Krai 8%, Inazuma 100%, Sumeru 100%)
-  { id: "a_neuv", bucket: "farm", name: "Neuvillette", swapFrom: null, swapNote: "Giữ Trấn Nghi Thức R1 Lv.90 (48.5k HP)", fixTitle: "Đổi 3 món HP% → Cát HP% + Ly HP/Thủy + Nón CR%", fixSub: "Ưu tiên farm #1: đang 26.0% CR / 252.8% CD · Bí cảnh Fontaine", setKey: "mh" },
+  { id: "a_neuv", bucket: "farm", name: "Neuvillette", swapFrom: null, swapNote: "Giữ Trấn Nghi Thức R1 · Tạm 4pc Trầm Luân (52.8/234.9 · Ly Thủy)", fixTitle: "Farm tiếp 4pc Thợ Săn Marechaussee (Fontaine)", fixSub: "Đã sửa CR từ 26% → 52.8% (+35.2% Crit) · Qua Thợ Săn nhảy lên ~88.8% CR", setKey: "mh" },
   { id: "a_chiori", bucket: "farm", name: "Chiori", swapFrom: null, swapNote: "✓ Đã đủ Cát DEF% (2,163 DEF · 60.2/71.0)", fixTitle: "Nâng E từ 1 → 8–9 · Nâng Ly Nham (+14 → +20)", fixSub: "Sách Ánh Sáng (Inazuma T4/T7) + tìm thêm dòng phụ STBK", setKey: "gt" },
-  { id: "a_aino", bucket: "farm", name: "Aino", swapFrom: null, swapNote: "✓ Đã lên Lv.60 · Đại Kiếm Tây Phong (186% ER · 440 EM)", fixTitle: "Nâng tiếp Lv.60 → 80 · Thiên phú 1/2/2 → 1/6/8", fixSub: "Boss Knuckle Duckle + farm dần 4pc Khúc Ca Trăng Lụa (Nod-Krai 8%)", setKey: "silken" },
+  { id: "a_aino", bucket: "farm", name: "Aino", swapFrom: null, swapNote: "✓ Đã nâng Đại Kiếm Tây Phong Lv.90 R5 (191.6% ER · 440 EM)", fixTitle: "Nâng tiếp Lv.60 → 80 · Thiên phú 1/3/4 → 1/6/8", fixSub: "Boss Knuckle Duckle + farm dần 4pc Khúc Ca Trăng Lụa (Nod-Krai 8%)", setKey: "silken" },
   { id: "a_jean", bucket: "farm", name: "Jean", swapFrom: null, swapNote: "✓ Đã gắn Tây Phong Kiếm R5 (ER lên 215.4%)", fixTitle: "Nâng Ly ATK% (+0 → +20) · Ép Tráp 4pc Bóng Hình", fixSub: "Nạp đã dư 215% · Hoàn thiện bộ 4pc VV trừ 40% kháng", setKey: "vv" },
   { id: "a_venti", bucket: "farm", name: "Venti", swapFrom: null, swapNote: "Giữ Trấn Tiếng Thở Dài Vô Tận R1 (196.6% ER)", fixTitle: "4 món TDV trên HoYoLAB vẫn ở +0", fixSub: "Nâng Lông/Cát EM/Ly Phong/Nón lên +20 (đã đủ 4pc Bóng Hình)", setKey: "vv" },
+  { id: "a_navia", bucket: "farm", name: "Navia", swapFrom: null, swapNote: "✓ Đã chốt 80.0/180.1 · 1,755 ATK (Kiếm Li Cốt R1)", fixTitle: "Tùy chọn: Farm dần 4pc Tiếng Đêm Trong Rừng Vang", fixSub: "Bộ 4pc Phiến Đá hiện tại đã rất khỏe (+29.2% DPS) · Ưu tiên sau Neuvillette", setKey: "nw" },
 
-  // Bucket 3: Waiting for Snezhnaya (0%)
-  { id: "a_mitya", bucket: "later", name: "Mitya", swapFrom: null, swapNote: "Nâng Trấn Sắc Lệnh Tinh Tú 20 → 90", fixTitle: "Tier 0 Meta 7.2 · Chờ mở map Snezhnaya", fixSub: "Cát EM · Ly EM/Lôi · Nón CR/CD (sách Charity)", setKey: "dids" },
-  { id: "a_valeriy", bucket: "later", name: "Valeriy", swapFrom: null, swapNote: "✓ Đã lên C2 · Rèn sẵn Nhạc Khúc Biển Sâu (ATK%)", fixTitle: "Khiên + Buff chuyên cho Mitya · Chờ Snezhnaya", fixSub: "Cát/Ly/Nón ATK% · Sách Charity chung với Mitya", setKey: "furnace" },
-  { id: "a_alyosha", bucket: "later", name: "Alyosha", swapFrom: null, swapNote: "Nhân vật mới (4★ Thương Lôi) · Hợp Thương Tây Phong", fixTitle: "Healer + Buff ATK team Stellar-Conduct · Chờ Snezhnaya", fixSub: "Cát ER/ATK% · Ly ATK% · Nón ATK%/Trị Liệu · Ưu tiên E > Q", setKey: "no" },
+  // Bucket 3: Snezhnaya unlocked (3%, 3 Iceculus) — start farming!
+  { id: "a_mitya", bucket: "later", name: "Mitya", swapFrom: null, swapNote: "Nâng Trấn Sắc Lệnh Tinh Tú 20 → 90", fixTitle: "Tier 0 Meta 7.2 · Đã mở Snezhnaya · Bắt đầu farm", fixSub: "Cát EM · Ly EM/Lôi · Nón CR/CD (sách Charity)", setKey: "dids" },
+  { id: "a_valeriy", bucket: "later", name: "Valeriy", swapFrom: null, swapNote: "✓ Đã lên C2 · Rèn sẵn Nhạc Khúc Biển Sâu (ATK%)", fixTitle: "Khiên + Buff chuyên cho Mitya · Đã mở Snezhnaya · Bắt đầu farm", fixSub: "Cát/Ly/Nón ATK% · Sách Charity chung với Mitya", setKey: "furnace" },
+  { id: "a_alyosha", bucket: "later", name: "Alyosha", swapFrom: null, swapNote: "Nhân vật mới (4★ Thương Lôi) · Hợp Thương Tây Phong", fixTitle: "Healer + Buff ATK team Stellar-Conduct · Đã mở Snezhnaya · Bắt đầu farm", fixSub: "Cát ER/ATK% · Ly ATK% · Nón ATK%/Trị Liệu · Ưu tiên E > Q", setKey: "no" },
 ];
 
 const SURPLUS_WEAPONS = [
@@ -170,7 +170,7 @@ const FARM_DAYS = [
   { key: 4, short: "T5", title: "Thứ 5", chars: ["Neuvillette", "Fischl"], resin: "Full Nhựa: Kết Cục Của Tội Lỗi (Fontaine) — 4pc Thợ Săn & 4pc Đoàn Kịch", extra: "Nhặt lại đặc sản (hồi 48h)" },
   { key: 5, short: "T6", title: "Thứ 6", chars: ["Neuvillette", "Fischl", "Aino"], resin: "Check Ảo Cảnh Hiểm Ác (10 ngày đầu → +1 TDV/120 Nhựa) · hoặc Boss + TDV Fontaine", extra: "Hoàn tất lắp đồ cho Beidou/Gorou/Ningguang trước Nhà Hát 01/12" },
   { key: 6, short: "T7", title: "Thứ 7", chars: ["Chiori", "Yelan"], resin: "Chốt Sách Ánh Sáng (Chiori E 8–9) · Chốt nâng Cung Tây Phong 90", extra: "Leo lại La Hoàn Tầng 11-3 & Tầng 12" },
-  { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Neuvillette", "Chiori", "Aino"], resin: "Bù Sách / Vũ khí còn thiếu · dư chạy Kết Cục Của Tội Lỗi (Fontaine)", extra: "Kiểm tra đường mở map Snezhnaya cho Mitya, Valeriy (C2) & Alyosha" },
+  { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Neuvillette", "Chiori", "Aino"], resin: "Bù Sách / Vũ khí còn thiếu · dư chạy Kết Cục Của Tội Lỗi (Fontaine)", extra: "Farm sách Charity & Boss Snezhnaya (3%) cho Mitya, Valeriy (C2) & Alyosha" },
 ];
 
 const MODES = {
@@ -185,17 +185,17 @@ const MODES = {
       { title: "Ganyu Tan Chảy", sub: "Ganyu 10/10/10 · 4pc Đoàn Hát", note: "Sẵn sàng 100%", status: "ok", members: ["Ganyu", "Bennett", "Xiangling", "Zhongli"] },
       { title: "Nilou Sum Suê", sub: "51.5k HP · Nahida 4pc Rừng Sâu (1,012 EM)", note: "Sẵn sàng 100%", status: "ok", members: ["Nilou", "Nahida", "Sangonomiya Kokomi", "Collei"] },
       { title: "Eula Vật Lý", sub: "C2 10/10/10 · Rosaria C6 bù CR", note: "Tình huống / Siêu Dẫn · CR 51.7%", status: "warn", members: ["Eula", "Raiden Shogun", "Rosaria", "Zhongli"] },
-      { title: "Neuvillette Carry", sub: "Chờ Nón CR% / 4pc Thợ Săn", note: "Sửa Neuvillette CR 26% · Hoặc Nahida + Kuki", status: "bad", members: ["Neuvillette", "Kaedehara Kazuha", "Zhongli", "Yae Miko"] },
-      { title: "Navia 2 Nham", sub: "Đã gắn Li Cốt (56.7/204.2) · Chờ Cát ATK% & Chiori E", note: "Chiori đã có Cát DEF% · Còn đổi Cát ATK% cho Navia & nâng E Chiori", status: "warn", members: ["Navia", "Chiori", "Bennett", "Xiangling"] },
-      { title: "Mitya Meta 7.2", sub: "Chờ Snezhnaya (Aino đã Lv.60 · Valeriy C2 · Alyosha mới)", note: "Đã có Trấn Mitya + Valeriy C2 + Alyosha (Healer/Buff mới)", status: "warn", members: ["Mitya", "Valeriy", "Kaedehara Kazuha", "Aino"] },
+      { title: "Neuvillette Carry", sub: "Tạm 4pc Trầm Luân 52.8/234.9 + Ly Thủy · Farm tiếp Thợ Săn", note: "Đã bỏ 3 món HP% (+35.2% Crit) · Farm thêm 4pc Thợ Săn là kịch trần", status: "warn", members: ["Neuvillette", "Kaedehara Kazuha", "Zhongli", "Yae Miko"] },
+      { title: "Navia 2 Nham", sub: "✓ Đã chốt 80.0/180.1 · 1,755 ATK · Li Cốt R1", note: "Navia đã hoàn chỉnh · Còn nâng E Chiori (1 → 8–9)", status: "ok", members: ["Navia", "Chiori", "Bennett", "Xiangling"] },
+      { title: "Mitya Meta 7.2", sub: "Đã mở Snezhnaya (3%) · Aino Lv.60 · Valeriy C2 · Alyosha", note: "Đã qua map Snezhnaya → bắt đầu farm sách Charity & Boss cho bộ 3", status: "warn", members: ["Mitya", "Valeriy", "Kaedehara Kazuha", "Aino"] },
     ],
   },
   abyss: {
     label: "La Hoàn",
     items: [
-      { title: "12 · Nửa 1 — Navia Phá Khiên", sub: "+75% Lunar-Crystallize · 12-3 Moongecko", note: "Navia đã gắn Li Cốt (còn đổi Cát ATK%) + nâng E Chiori", status: "warn", members: ["Navia", "Zhongli", "Chiori", "Xianyun"] },
+      { title: "12 · Nửa 1 — Navia Phá Khiên", sub: "+75% Lunar-Crystallize · 12-3 Moongecko", note: "✓ Navia đã chốt 80/180 · Còn nâng E Chiori để vượt 12-3 nhẹ nhàng", status: "ok", members: ["Navia", "Zhongli", "Chiori", "Xianyun"] },
       { title: "12 · Nửa 2 — Raiden National", sub: "+200 EM · 12-1 Wavebinder · 12-2 Hỏa/Lôi", note: "Đội hình sẵn sàng đánh ngay", status: "ok", members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"] },
-      { title: "12 · Nửa 2 — Neuvillette EM", sub: "Tận dụng +200 EM khi sửa xong", note: "Chờ Neuvillette CR% + Kuki 3 món EM", status: "bad", members: ["Neuvillette", "Nahida", "Kuki Shinobu", "Kaedehara Kazuha"] },
+      { title: "12 · Nửa 2 — Neuvillette EM", sub: "Tận dụng +200 EM khi sửa xong", note: "Neuvillette đã lên 52.8/234.9 (4pc Trầm Luân) · Còn đổi 3 món EM cho Kuki", status: "warn", members: ["Neuvillette", "Nahida", "Kuki Shinobu", "Kaedehara Kazuha"] },
       { title: "12 · Nửa 1 — Eula Siêu Dẫn", sub: "12-2 Frostnight Herra · Blessing Siêu Dẫn", note: "Rosaria C6 (74% CR) đi kèm bù CR", status: "warn", members: ["Eula", "Raiden Shogun", "Rosaria", "Zhongli"] },
     ],
   },
@@ -204,7 +204,7 @@ const MODES = {
     items: [
       { title: "Màn 3 · Jadeplume Terrorshroom", sub: "Kích Lôi nhanh", note: "Mở màn bằng Lôi + Thủy", status: "ok", members: ["Keqing", "Fischl", "Xingqiu", "Barbara"] },
       { title: "Màn 6 · Whisperer of Nightmares", sub: "Phá khiên Thủy + Lôi", note: "✓ Ayato đã sửa lên 62.5/152.1 · Sẵn sàng!", status: "ok", members: ["Kamisato Ayato", "Yae Miko", "Yelan", "Kuki Shinobu"] },
-      { title: "Màn 8 · Battle-Hardened Samachurl", sub: "Bắt buộc giữ Nham + Thủy", note: "Navia (Li Cốt) + Ningguang (Quyển Thiên Không R2, cần nâng Ly & Nón CR%)", status: "warn", members: ["Navia", "Zhongli", "Chiori", "Xingqiu"] },
+      { title: "Màn 8 · Battle-Hardened Samachurl", sub: "Bắt buộc giữ Nham + Thủy", note: "✓ Navia 80/180 sẵn sàng · Lắp đồ Beidou/Gorou & nâng Ly/Nón CR% Ningguang", status: "warn", members: ["Navia", "Zhongli", "Chiori", "Xingqiu"] },
       { title: "Màn 10 · Radiant Moonfly", sub: "Cần Healer toàn đội mạnh", note: "Mượn bạn: Furina hoặc Xilonen", status: "warn", members: ["Neuvillette", "Raiden Shogun", "Sangonomiya Kokomi", "Yelan"] },
     ],
   },
@@ -212,7 +212,7 @@ const MODES = {
     label: "Meta 7.2",
     items: [
       { title: "Build Ngay (Vùng Đã Mở)", sub: "Nod-Krai (8%) · Fontaine (64%) · Inazuma (100%)", note: "Aino đã Lv.60 · Nâng tiếp E Chiori, HP Chevreuse & EM Kuki", status: "ok", members: ["Aino", "Chiori", "Kuki Shinobu", "Chevreuse"] },
-      { title: "Chờ Mở Snezhnaya (0%)", sub: "Sách Charity & Boss nằm ở Snezhnaya", note: "Đã có Trấn Mitya + Valeriy C2 + Alyosha (4★ Thương Lôi mới)", status: "warn", members: ["Mitya", "Valeriy", "Alyosha", "Aino"] },
+      { title: "Snezhnaya Đã Mở (3%)", sub: "Đã có 3 Băng Thần Đồng · Farm sách Charity & Boss", note: "Đã có Trấn Mitya + Valeriy C2 + Alyosha (4★ Thương Lôi mới)", status: "warn", members: ["Mitya", "Valeriy", "Alyosha", "Aino"] },
       { title: "Mục Tiêu Roll Bổ Sung", sub: "Support kéo trần toàn đội hình", note: "Ưu tiên Furina & Xilonen", status: "warn", members: ["Furina", "Xilonen", "Odette", "Columbina"] },
     ],
   },
@@ -381,7 +381,7 @@ function renderActionBucket(title, sub, cls, items) {
                 </div>
                 ${weaponCol}
                 <div class="col-fix">
-                  <span class="fix-badge ${a.bucket === "now" ? "" : "warn"}">${a.bucket === "now" ? "● Làm ngay" : a.bucket === "farm" ? "● Cần farm" : "● Chờ map"}</span>
+                  <span class="fix-badge ${a.bucket === "now" ? "" : "warn"}">${a.bucket === "now" ? "● Làm ngay" : a.bucket === "farm" ? "● Cần farm" : "● Snezhnaya"}</span>
                   <span class="fix-detail">${esc(a.fixTitle)}</span>
                   <span class="fix-sub">${esc(a.fixSub)}</span>
                 </div>
@@ -517,7 +517,7 @@ function renderTrackerView() {
   const body = [
     renderActionBucket("1. Làm Ngay Trong Game — 0 Tốn Nhựa", "Đổi vũ khí đang nằm ở nhân vật dự bị & sửa dòng chính TDV có sẵn", "bucket-now", nowItems),
     renderActionBucket("2. Cần Farm — Vùng Đã Mở", "Fontaine (64%) · Nod-Krai (8%) · Inazuma (100%) · Sumeru (100%)", "bucket-farm", farmItems),
-    renderActionBucket("3. Đợi Mở Snezhnaya (0%)", "Chờ đi tới Snezhnaya mới farm được Sách & Boss", "bucket-later", laterItems),
+    renderActionBucket("3. Đã Mở Snezhnaya (3%) — Bắt Đầu Farm", "Đã mở 3% map & 3 Băng Thần Đồng · Bắt đầu farm sách Charity & Boss", "bucket-later", laterItems),
     renderSurplusBucket(),
     renderCollectBucket(),
   ].join("");
