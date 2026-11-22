@@ -1,4 +1,4 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json?v=13";
+const DATA_URL = "./data/genshin_uid_802472241_data.json?v=14";
 const STORAGE_KEY = "genshin_uid_802472241_done_v4";
 
 const SET_META = {
@@ -42,6 +42,158 @@ const ACTIONS = [
   { id: "a_valeriy", bucket: "later", name: "Valeriy", swapFrom: null, swapNote: "✓ Đã lên C2 · Rèn sẵn Nhạc Khúc Biển Sâu (ATK%)", fixTitle: "Khiên + Buff chuyên cho Mitya · Đã mở Snezhnaya · Bắt đầu farm", fixSub: "Cát/Ly/Nón ATK% · Sách Charity chung với Mitya", setKey: "furnace" },
   { id: "a_alyosha", bucket: "later", name: "Alyosha", swapFrom: null, swapNote: "Nhân vật mới (4★ Thương Lôi) · Hợp Thương Tây Phong", fixTitle: "Healer + Buff ATK team Stellar-Conduct · Đã mở Snezhnaya · Bắt đầu farm", fixSub: "Cát ER/ATK% · Ly ATK% · Nón ATK%/Trị Liệu · Ưu tiên E > Q", setKey: "no" },
 ];
+
+const CHAR_GUIDES = {
+  Ningguang: {
+    mainStats: "Cát ATK% · Ly ST Nham · Nón CR%",
+    targets: "Mục tiêu: ≥60% CR · Ly Nham Lv.20 · Giữ 2 Giác Đấu + 2 Phiến Đá",
+    steps: [
+      "Nâng ngay Ly Tăng ST Nguyên Tố Nham từ Lv.0 lên Lv.20.",
+      "Đổi Nón STBK hiện tại sang Nón Tỷ Lệ Bạo Kích (hiện CR mới 14.7%).",
+      "Giữ nguyên Quyển Thiên Không Lv.90 R2 (2,501 ATK) để sẵn sàng đi Nhà Hát Màn 8.",
+    ],
+  },
+  Beidou: {
+    mainStats: "Cát ER% · Ly ST Lôi · Nón CR%",
+    targets: "Mục tiêu: 160–180% ER · 60% CR / 120% CD",
+    steps: [
+      "Tháo Kiếm Huấn Luyện 1★ Lv.1 — gắn Vua Biển Hàng Hiệu R5 (từ Xinyan) hoặc Kiếm Vô Công 5★ (từ Chongyun).",
+      "Lắp đủ 5 món TDV (hiện mới đeo 3 món), ưu tiên bộ 4pc Dấu Ấn Ngăn Cách.",
+      "Dùng Cát Hiệu Quả Nạp (ER) để kéo từ 111.0% lên 160–180% giúp xoay Nộ đều trong Nhà Hát.",
+    ],
+  },
+  Fischl: {
+    mainStats: "Cát ATK%/EM · Ly ST Lôi · Nón CR%",
+    targets: "Mục tiêu: 60%+ CR / 130%+ CD · 4pc Đoàn Kịch Hoàng Kim",
+    steps: [
+      "Giữ nguyên Tuyệt Huyền Lv.90 R5 (+224 EM & +48% sát thương Oz).",
+      "Đổi Nón STBK sang Nón Tỷ Lệ Bạo Kích (CR đang 31.8% quá thấp).",
+      "Farm dần bộ 4pc Đoàn Kịch Hoàng Kim chung bí cảnh với Neuvillette tại Fontaine.",
+    ],
+  },
+  Chevreuse: {
+    mainStats: "Cát HP% · Ly HP% · Nón HP%",
+    targets: "Mục tiêu: Chạm mốc 40,000 HP (+40% ATK toàn đội Quá Tải) · ~140% ER",
+    steps: [
+      "Giữ Hắc Anh Thương R5 (+46.9% HP).",
+      "Đổi Ly ST Hỏa & Nón CR hiện tại sang cả 2 món HP% (HP đang 25.9k còn thiếu nhiều).",
+      "Nâng Chevreuse lên Lv.80 và dùng dần 4pc Tông Thất Cổ (hoặc mix 2pc HP để chạm 40k HP trước).",
+    ],
+  },
+  "Kuki Shinobu": {
+    mainStats: "Cát EM · Ly EM · Nón EM",
+    targets: "Mục tiêu: ~900+ EM · Nâng Lv.80 → Lv.90 (tăng thẳng ~30% sát thương Nở Rộ)",
+    steps: [
+      "Giữ Thiết Phong Kích Lv.90 R3 (+165 EM).",
+      "Đổi toàn bộ Cát ATK% / Ly HP% / Nón CR% sang 3 món Tinh Thông Nguyên Tố (EM đang mới 483).",
+      "Nâng cấp nhân vật lên Lv.90 vì sát thương Nở Rộ phụ thuộc trực tiếp vào Level và EM.",
+    ],
+  },
+  "Raiden Shogun": {
+    mainStats: "Cát ER% · Ly ST Lôi · Nón CR%",
+    targets: "Mục tiêu: ~70–75% CR / 145% CD · 270% ER ngoài trận (với Đoạn Thảo)",
+    steps: [
+      "Giữ Trấn Đoạn Thảo Trường Đao R1 (264.1% ER rất đẹp).",
+      "Đổi Nón STBK hiện tại (bị 3 roll HP phẳng +1,135) sang Nón CR% có dòng phụ STBK để nhát chém đầu Nộ ổn định.",
+      "Tối ưu thêm buff từ đội: đổi Kiếm Gỗ (Base ATK 565) cho Bennett thay Răng Nanh Rỉ Sét (510).",
+    ],
+  },
+  Yelan: {
+    mainStats: "Cát HP% · Ly ST Thủy · Nón CR/CD",
+    targets: "Mục tiêu: ~200% ER · Giữ 68.9/152.6 & 28.8k HP",
+    steps: [
+      "Nâng Cung Tây Phong R5 từ Lv.70 → Lv.90 để lấy thêm ~11% ER (hiện 191.2% ER).",
+      "Giữ nguyên bộ 4pc Dấu Ấn Ngăn Cách và các chỉ số 68.9% CR / 152.6% CD hiện tại.",
+    ],
+  },
+  Gorou: {
+    mainStats: "Cát ER% · Ly phòng ngự/Nham · Nón CR% (nếu cầm Tây Phong)",
+    targets: "Mục tiêu: ≥180% ER · Đủ 5 món TDV cho Nhà Hát",
+    steps: [
+      "Tháo Cung Săn Bắn 1★ Lv.1 — gắn cung Nạp bất kỳ (Cung Tây Phong / Cung Tế Lễ dư).",
+      "Lắp thêm mảnh Ly (hiện mới 4 món TDV) để đủ bộ dự bị Nham cho Nhà Hát Giả Tưởng 7.2.",
+    ],
+  },
+  Neuvillette: {
+    mainStats: "Cát HP% · Ly HP% hoặc ST Thủy · Nón CR% (sau sang Thợ Săn dùng Nón CD%)",
+    targets: "Mục tiêu: 55–64% CR trước buff (91–100% CR sau 4pc Thợ Săn) · 35k–40k HP",
+    steps: [
+      "Tạm giữ bộ 4pc Trái Tim Trầm Luân + Ly Thủy vừa đổi (52.8% CR / 234.9% CD, đã bỏ 3 món HP% cũ).",
+      "Dồn Nhựa farm bí cảnh Kết Cục Của Tội Lỗi (Fontaine) lấy bộ 4pc Thợ Săn Marechaussee.",
+      "Giữ lại Nón/Cát nhiều CR hoặc CD để chuyển qua Thợ Săn (với CR hiện tại lên Thợ Săn đạt ~88.8% CR).",
+    ],
+  },
+  Chiori: {
+    mainStats: "Cát DEF% · Ly ST Nham · Nón CR%/CD%",
+    targets: "Mục tiêu: E Lv.8–9 · ≥60% CR / ≥120% CD · >2,000 DEF",
+    steps: [
+      "Cát DEF% đã chuẩn (2,163 DEF) và đang cầm Con Thoi Chu Sa R5 Lv.90.",
+      "Ưu tiên nâng Thiên phú E (Búp Bê Tamoto) từ Lv.1 → Lv.8–9 bằng Sách Ánh Sáng (Inazuma T4/T7).",
+      "Nâng Ly Nham từ +14 → +20 và tìm dần mảnh hoa/lông/nón có dòng phụ STBK (hiện mới 71.0% CD).",
+    ],
+  },
+  Aino: {
+    mainStats: "Cát ER% hoặc EM · Ly EM/Thủy · Nón EM/CR%",
+    targets: "Mục tiêu: Lv.80 · Thiên phú 1/6/8 · ≥180% ER · ≥400 EM",
+    steps: [
+      "Đại Kiếm Tây Phong Lv.90 R5 (191.6% ER · 440 EM) đã rất mượt — cân nhắc rèn Chìa Khóa Vạn Năng khi dư Phôi.",
+      "Đánh Boss Knuckle Duckle (Nod-Krai) + nhặt Portable Bearing kéo Lv.60 → Lv.80 và E/Q lên 6/8.",
+      "Farm dần bộ 4pc Khúc Ca Trăng Lụa tại Nod-Krai (8%) để tối ưu buff Moonsign.",
+    ],
+  },
+  Jean: {
+    mainStats: "Cát ATK%/ER% · Ly ATK% · Nón CR% hoặc Tăng Trị Liệu",
+    targets: "Mục tiêu: ≥180% ER (đã đạt 215.4%) · Đủ bộ 4pc Bóng Hình Màu Xanh",
+    steps: [
+      "Giữ Tây Phong Kiếm R5 (ER 215.4% rất thoải mái cho Healer toàn đội).",
+      "Nâng Ly ATK% hiện đang Lv.0 lên Lv.20 để tăng lượng hồi máu của Nộ.",
+      "Ép Tráp Thánh lấy đủ bộ 4pc Bóng Hình Màu Xanh (-40% kháng nguyên tố).",
+    ],
+  },
+  Venti: {
+    mainStats: "Cát EM · Ly EM hoặc ST Phong · Nón EM/Crit",
+    targets: "Mục tiêu: Toàn bộ 5 món TDV +20 · Giữ 4pc Bóng Hình + Trấn R1",
+    steps: [
+      "4/5 mảnh TDV trên HoYoLAB (Lông, Cát EM, Ly Phong, Nón) hiện đang ở Lv.0.",
+      "Kiểm tra & nâng đủ 4 món lên Lv.20 (nếu đã dùng Cát/Ly EM cho phản ứng Khuếch Tán càng tốt).",
+    ],
+  },
+  Navia: {
+    mainStats: "Cát ATK% · Ly ST Nham · Nón CR%",
+    targets: "Đã chốt đẹp: 80.0% CR / 180.1% CD · 1,755 ATK · Kiếm Li Cốt R1",
+    steps: [
+      "Đã hoàn thành nâng cấp cốt lõi (+29.2% sát thương so với trước).",
+      "Bước tùy chọn dài hạn: farm thêm 4pc Tiếng Đêm Trong Rừng Vang sau khi xong bộ Thợ Săn cho Neuvillette.",
+    ],
+  },
+  Mitya: {
+    mainStats: "Cát EM · Ly EM hoặc ST Lôi · Nón CR/CD",
+    targets: "Mục tiêu: Lv.90 · Nâng Trấn Sắc Lệnh Tinh Tú Lv.90 · Sách Charity (Snezhnaya)",
+    steps: [
+      "Snezhnaya đã mở (3%) — bắt đầu đánh Boss vùng, nhặt đặc sản và farm sách Charity.",
+      "Nâng Trấn 5★ Sắc Lệnh Tinh Tú từ Lv.20 lên Lv.90 trước tiên.",
+      "Sưu tầm dần bộ 4pc Ảo Tưởng Vụn Vỡ (hoặc dùng tạm 4pc Giấc Mộng Hoàng Kim).",
+    ],
+  },
+  Valeriy: {
+    mainStats: "Cát ATK% · Ly ATK% · Nón ATK%",
+    targets: "Đã có C2 · Mục tiêu: Rèn Nhạc Khúc Biển Sâu · Sách Charity (Snezhnaya)",
+    steps: [
+      "Tháo Vô Phong Kiếm 1★ — rèn Nhạc Khúc Biển Sâu (Fontaine) vì khiên & buff quill của Valeriy scale thuần ATK.",
+      "Farm chung sách Charity tại Snezhnaya cùng Mitya, nâng E & Q làm khiên/buffer cho Mitya.",
+      "Lắp 3 món chính ATK% trên bộ 4pc Trái Tim Lửa Nung (hoặc tạm 4pc Tông Thất Cổ).",
+    ],
+  },
+  Alyosha: {
+    mainStats: "Cát ER%/ATK% · Ly ATK% · Nón ATK%/Trị Liệu (hoặc CR% nếu Tây Phong)",
+    targets: "Nhân vật mới 4★ Lôi · Ưu tiên E > Q · ~180%+ ER",
+    steps: [
+      "Tháo Thương Tân Thủ 1★ — gắn Thương Tây Phong (hoặc rèn Song of the Vigil tại Snezhnaya).",
+      "Ưu tiên nâng Thiên phú E (buff Precision ATK%) → Q (hồi máu & ATK theo tổng ATK), bỏ qua đánh thường.",
+      "Lắp bộ 4pc Nghi Thức Tông Thất Cổ (hoặc Heart of the Furnace nếu team đã có Tông Thất).",
+    ],
+  },
+};
 
 const SURPLUS_WEAPONS = [
   {
@@ -224,6 +376,7 @@ let APP = {
   filter: "pending", // pending | all
   mode: "teams",
   index: 0,
+  modalChar: null,
   done: loadDone(),
 };
 
@@ -369,7 +522,7 @@ function renderActionBucket(title, sub, cls, items) {
                 </div>`;
 
             return `
-              <div class="action-row ${isDone ? "done" : ""}">
+              <div class="action-row ${isDone ? "done" : ""}" data-open-char="${esc(a.name)}">
                 <div class="col-char">
                   <input type="checkbox" data-act-id="${esc(a.id)}" ${isDone ? "checked" : ""} aria-label="Hoàn thành ${esc(a.name)}" />
                   ${c?.icon ? `<img src="${esc(c.icon)}" alt="${esc(a.name)}" referrerpolicy="no-referrer" />` : ""}
@@ -384,6 +537,7 @@ function renderActionBucket(title, sub, cls, items) {
                   <span class="fix-badge ${a.bucket === "now" ? "" : "warn"}">${a.bucket === "now" ? "● Làm ngay" : a.bucket === "farm" ? "● Cần farm" : "● Snezhnaya"}</span>
                   <span class="fix-detail">${esc(a.fixTitle)}</span>
                   <span class="fix-sub">${esc(a.fixSub)}</span>
+                  <span class="row-detail-hint">Chi tiết &amp; 5 món TDV →</span>
                 </div>
                 ${artCol}
               </div>
@@ -549,7 +703,7 @@ function renderFoot() {
         <div class="theater-faces">
           ${elig
             .map(
-              (c) => `<span class="t-face ${needGear.has(c.name) ? "warn" : ""}" title="${esc(c.name)} Lv.${c.level} C${c.constellation}">
+              (c) => `<span class="t-face ${needGear.has(c.name) ? "warn" : ""}" data-open-char="${esc(c.name)}" title="${esc(c.name)} Lv.${c.level} C${c.constellation} — bấm xem chi tiết">
                 <img src="${esc(c.icon)}" alt="${esc(c.name)}" loading="lazy" referrerpolicy="no-referrer" />
                 ${esc(c.name)}
               </span>`
@@ -618,7 +772,7 @@ function renderStageView() {
       }
 
       return `
-        <article class="character-pillar" style="--el: var(--el-${esc(el)}, 211,188,142);">
+        <article class="character-pillar" style="--el: var(--el-${esc(el)}, 211,188,142);" ${c ? `data-open-char="${esc(name)}"` : ""}>
           <div class="splash-wrap">
             ${artUrl ? `<img class="splash-img" src="${esc(artUrl)}" alt="${esc(name)}" referrerpolicy="no-referrer" />` : `<div class="splash-ghost">${esc(name.slice(0, 2).toUpperCase())}</div>`}
           </div>
@@ -638,7 +792,7 @@ function renderStageView() {
             }
             ${c ? `<div class="pillar-stats">${esc(compactStats(c))}</div>` : ""}
             <div class="pillar-note ${noteClass}">${esc(noteText)}</div>
-            ${isPending ? `<button class="jump-link" data-jump-tracker="1">Xem chi tiết sửa →</button>` : ""}
+            ${c ? `<button class="jump-link" data-open-char="${esc(name)}">${isPending ? "Xem chi tiết sửa →" : "Xem chỉ số &amp; TDV →"}</button>` : ""}
           </div>
         </article>
       `;
@@ -702,6 +856,225 @@ function renderWeekView() {
   `;
 }
 
+function openCharModal(name) {
+  if (!name) return;
+  APP.modalChar = name;
+  document.body.classList.add("modal-open");
+  renderModal();
+}
+
+function closeCharModal() {
+  if (!APP.modalChar) return;
+  APP.modalChar = null;
+  document.body.classList.remove("modal-open");
+  const root = document.getElementById("modal-root");
+  if (root) root.innerHTML = "";
+}
+
+function renderModal() {
+  const root = document.getElementById("modal-root");
+  if (!root) return;
+  const name = APP.modalChar;
+  if (!name) {
+    root.innerHTML = "";
+    return;
+  }
+
+  const c = byName(name);
+  const act = findActionForChar(name);
+  const guide = CHAR_GUIDES[name] || null;
+  if (!c && !act) {
+    closeCharModal();
+    return;
+  }
+
+  const el = c?.element || "Geo";
+  const isDone = act ? !!APP.done[act.id] : false;
+  const setMeta = act?.setKey ? SET_META[act.setKey] : null;
+  const fromC = act?.swapFrom ? byName(act.swapFrom) : null;
+  const w = c?.weapon;
+
+  // Stat cards (core + non-zero elemental/physical DMG)
+  const coreStats = [
+    ["HP tối đa", stat(c, "Giới Hạn HP")],
+    ["Tấn công", stat(c, "Tấn Công")],
+    ["Phòng ngự", stat(c, "Phòng Ngự")],
+    ["Tỷ lệ Bạo kích", stat(c, "Tỷ Lệ Bạo Kích")],
+    ["ST Bạo kích", stat(c, "Sát Thương Bạo Kích")],
+    ["Hiệu quả Nạp", stat(c, "Hiệu Quả Nạp Nguyên Tố")],
+    ["Tinh thông", stat(c, "Tinh Thông Nguyên Tố")],
+  ];
+  const dmgEntries = Object.entries(c?.stats || {})
+    .filter(([k, v]) => k.startsWith("Tăng Sát Thương ") && v?.final && v.final !== "0.0%" && v.final !== "-")
+    .map(([k, v]) => [k.replace("Tăng Sát Thương Nguyên Tố ", "ST ").replace("Tăng Sát Thương ", "ST "), v.final]);
+
+  // Related surplus / collect suggestions
+  const relatedSurplus = SURPLUS_WEAPONS.filter((s) => s.from === name || s.to === name);
+  const relatedCollect = COLLECT_WEAPONS.filter((cw) => (cw.chars || []).includes(name));
+  const weaponNotes = [];
+  if (act?.swapNote) {
+    weaponNotes.push({
+      title: fromC ? `Gợi ý đổi từ ${act.swapFrom}: ${fromC.weapon?.name || ""}` : "Ghi chú vũ khí hiện tại",
+      desc: act.swapNote,
+    });
+  }
+  relatedSurplus.forEach((s) => {
+    const wn = s.customWeapon?.name || (s.from ? byName(s.from)?.weapon?.name : "") || "Vũ khí dư";
+    weaponNotes.push({ title: `${wn} — ${s.action}`, desc: s.plan });
+  });
+  relatedCollect.forEach((cw) => {
+    weaponNotes.push({ title: `Thu thập: ${cw.name} (${cw.source})`, desc: cw.why });
+  });
+
+  const arts = c?.artifacts || [];
+  const artMissingWarn = arts.length < 5 ? ` · Đang thiếu ${5 - arts.length} món` : "";
+
+  root.innerHTML = `
+    <div class="char-modal-backdrop" id="char-modal-backdrop">
+      <div class="char-modal" role="dialog" aria-modal="true" aria-labelledby="modal-char-name" style="--el: var(--el-${esc(el)}, 211,188,142);">
+        <div class="modal-head">
+          ${c?.splash ? `<img class="modal-splash" src="${esc(c.splash)}" alt="" referrerpolicy="no-referrer" />` : ""}
+          <div class="modal-head-left">
+            ${c?.icon ? `<img class="modal-avatar" src="${esc(c.icon)}" alt="${esc(name)}" referrerpolicy="no-referrer" />` : ""}
+            <div class="modal-title-wrap">
+              <h2 id="modal-char-name">
+                ${esc(name)}
+                <span class="modal-el-pill">${esc(el)}</span>
+              </h2>
+              <div class="modal-sub">${c ? `Lv.${esc(c.level)} · C${esc(c.constellation)} · Thiên phú ${esc(c.talent_levels)}` : "Nhân vật mục tiêu"}</div>
+            </div>
+          </div>
+          <div class="modal-head-actions">
+            ${act ? `<button class="modal-done-btn ${isDone ? "is-done" : ""}" data-modal-done="${esc(act.id)}">${isDone ? "✓ Đã hoàn thành" : "Đánh dấu đã xong"}</button>` : ""}
+            <button class="modal-close" data-modal-close="1" aria-label="Đóng">×</button>
+          </div>
+        </div>
+
+        <section class="modal-section">
+          <h3 class="modal-section-title">Kế hoạch chỉnh sửa &amp; Dòng chính mục tiêu</h3>
+          ${
+            act
+              ? `
+                <div class="modal-fix-summary">
+                  <strong>${esc(act.fixTitle)}</strong>
+                  <span class="fix-badge ${act.bucket === "now" ? "" : "warn"}">${act.bucket === "now" ? "● Làm ngay" : act.bucket === "farm" ? "● Cần farm" : "● Snezhnaya"}</span>
+                </div>
+                <div class="modal-mainstats">
+                  ${guide ? `<div><strong>Dòng chính:</strong> ${esc(guide.mainStats)}</div><div><strong>Ngưỡng đẹp:</strong> ${esc(guide.targets)}</div>` : `<div>${esc(act.fixSub)}</div>`}
+                </div>
+                ${
+                  guide?.steps?.length
+                    ? `<ol class="modal-steps">${guide.steps.map((st) => `<li>${esc(st)}</li>`).join("")}</ol>`
+                    : ""
+                }
+                ${
+                  setMeta
+                    ? `<div class="modal-set-target">
+                        <img src="${esc(setMeta.icon)}" alt="${esc(setMeta.name)}" referrerpolicy="no-referrer" />
+                        <div>
+                          <strong>${esc(setMeta.name)}</strong>
+                          <small>Nơi farm: ${esc(setMeta.where)}</small>
+                        </div>
+                      </div>`
+                    : ""
+                }
+              `
+              : `<strong style="color:var(--ok); font-size:13.5px;">✓ Build hiện tại đã ổn định — không có hạng mục cần sửa gấp.</strong>`
+          }
+        </section>
+
+        ${
+          c
+            ? `<section class="modal-section">
+                <h3 class="modal-section-title">Chỉ số thực tế (Crawl 22/11)</h3>
+                <div class="modal-stats-grid">
+                  ${[...coreStats, ...dmgEntries]
+                    .map(([label, val]) => `<div class="modal-stat-item"><span>${esc(label)}</span><strong>${esc(val)}</strong></div>`)
+                    .join("")}
+                </div>
+              </section>`
+            : ""
+        }
+
+        <section class="modal-section">
+          <h3 class="modal-section-title">Vũ khí đang cầm &amp; Hoán đổi liên quan</h3>
+          ${
+            w?.name
+              ? `<div class="modal-weapon-box">
+                  ${w.icon ? `<img src="${esc(w.icon)}" alt="${esc(w.name)}" referrerpolicy="no-referrer" />` : ""}
+                  <div>
+                    <strong>${esc(w.name)} (${esc(w.rarity || 4)}★ · Lv.${esc(w.level || 1)} · R${esc(w.refinement || 1)})</strong>
+                    <small>${w.base_atk ? `Base ATK ${esc(w.base_atk)}` : ""}${w.substat_name ? ` · ${esc(w.substat_name)} ${esc(w.substat_val)}` : ""}</small>
+                  </div>
+                </div>`
+              : `<div class="modal-sub">Chưa có dữ liệu vũ khí.</div>`
+          }
+          ${
+            weaponNotes.length
+              ? `<div class="modal-swap-note">
+                  ${weaponNotes.map((n) => `<div><strong>${esc(n.title)}:</strong> <small>${esc(n.desc)}</small></div>`).join("")}
+                </div>`
+              : ""
+          }
+        </section>
+
+        ${
+          c
+            ? `<section class="modal-section">
+                <h3 class="modal-section-title">Thánh Di Vật (${arts.length}/5)${artMissingWarn ? `<span style="color:var(--bad);">${esc(artMissingWarn)}</span>` : ""} ${c.artifact_sets ? `· <span style="color:var(--muted); text-transform:none; font-weight:500;">${esc(c.artifact_sets)}</span>` : ""}</h3>
+                ${
+                  arts.length
+                    ? `<div class="modal-art-list">
+                        ${arts
+                          .map((ar) => {
+                            const lvl = Number(ar.level ?? 0);
+                            const isLow = lvl < 20;
+                            return `
+                              <div class="modal-art-row">
+                                ${ar.icon ? `<img src="${esc(ar.icon)}" alt="${esc(ar.slot || "")}" loading="lazy" referrerpolicy="no-referrer" />` : "<div></div>"}
+                                <div class="modal-art-main">
+                                  <strong>${esc(ar.main_stat)} ${esc(ar.main_val)}</strong>
+                                  <small>${esc(ar.slot)} · ${esc(ar.set)} · <span class="${isLow ? "art-lvl-low" : ""}">Lv.+${esc(lvl)}</span></small>
+                                </div>
+                                <div class="modal-art-subs">
+                                  ${(ar.substats || [])
+                                    .map((sp) => `<span>${esc(sp.name)} +${esc(sp.value)}${sp.rolls > 0 ? `<span class="sub-roll">(+${esc(sp.rolls)})</span>` : ""}</span>`)
+                                    .join("")}
+                                </div>
+                              </div>
+                            `;
+                          })
+                          .join("")}
+                      </div>`
+                    : `<div class="modal-sub">Chưa lắp mảnh Thánh Di Vật nào.</div>`
+                }
+              </section>`
+            : ""
+        }
+      </div>
+    </div>
+  `;
+
+  const backdrop = document.getElementById("char-modal-backdrop");
+  if (backdrop) {
+    backdrop.addEventListener("click", (e) => {
+      if (e.target === backdrop) closeCharModal();
+    });
+  }
+  root.querySelectorAll("[data-modal-close]").forEach((btn) => {
+    btn.addEventListener("click", closeCharModal);
+  });
+  root.querySelectorAll("[data-modal-done]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-modal-done");
+      APP.done[id] = !APP.done[id];
+      saveDone();
+      render();
+      renderModal();
+    });
+  });
+}
+
 function render() {
   let content = "";
   if (APP.view === "tracker") content = renderTrackerView();
@@ -751,15 +1124,19 @@ function render() {
     });
   });
 
-  document.querySelectorAll("[data-jump-tracker]").forEach((b) => {
-    b.addEventListener("click", () => {
-      APP.view = "tracker";
-      render();
+  document.querySelectorAll("[data-open-char]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      if (e.target.closest('input[type="checkbox"]')) return;
+      e.stopPropagation();
+      openCharModal(el.getAttribute("data-open-char"));
     });
   });
 }
 
 async function init() {
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && APP.modalChar) closeCharModal();
+  });
   try {
     const res = await fetch(DATA_URL);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
