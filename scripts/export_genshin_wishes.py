@@ -58,6 +58,18 @@ RATE_LIMIT_BACKOFFS = (2, 4, 6, 8, 10)
 NETWORK_RETRIES = 3
 PAGE_SIZE = 20
 
+AUTH_PARAM_KEYS = (
+    "authkey_ver",
+    "sign_type",
+    "auth_appid",
+    "lang",
+    "region",
+    "authkey",
+    "game_biz",
+    "device_type",
+    "game_version",
+)
+
 HEADER_FILL = PatternFill(start_color="1E293B", end_color="1E293B", fill_type="solid")
 HEADER_FONT = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
 SECTION_FONT = Font(name="Calibri", size=12, bold=True, color="1E293B")
@@ -167,7 +179,8 @@ def extract_auth_endpoint(cache_file: Path) -> tuple[str, dict[str, str]]:
         query_map = urllib.parse.parse_qs(parsed.query, keep_blank_values=True)
         flat_params = {k: v[0] for k, v in query_map.items()}
         if flat_params.get("authkey"):
-            return parsed.netloc, flat_params
+            clean_params = {k: flat_params[k] for k in AUTH_PARAM_KEYS if k in flat_params}
+            return parsed.netloc, clean_params
 
     raise RuntimeError(
         "Không tìm thấy authkey hợp lệ trong webCaches. "
@@ -188,6 +201,7 @@ class GachaApiClient:
     def _get_json(self, endpoint: str, extra_params: dict[str, str] | None = None) -> dict[str, Any]:
         url = f"https://{self.host}{endpoint}"
         params = dict(self.base_params)
+        params.pop("begin_id", None)
         if extra_params:
             params.update(extra_params)
 
