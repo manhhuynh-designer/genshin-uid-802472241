@@ -1,0 +1,245 @@
+{
+  "info": {
+    "uid": "802472241",
+    "lang": "vi-vn",
+    "export_timestamp": 1795401224,
+    "export_time": "2026-11-23 09:33:44",
+    "export_app": "genshin-wish-export",
+    "export_app_version": "1.0.0",
+    "uigf_version": "v3.0",
+    "region_time_zone": 8
+  },
+  "list": [
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-21 23:37:07",
+      "name": "Hắc Anh Thương",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795273560000140841"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-22 01:09:18",
+      "name": "Yanfei",
+      "item_type": "Nhân Vật",
+      "rank_type": "4",
+      "id": "1795280760000019841"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-22 01:09:58",
+      "name": "Quả Cầu Ngọc",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795280760000022241"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-22 01:10:08",
+      "name": "Lời Thề Xạ Thủ Thần",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795280760000023541"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-22 02:49:31",
+      "name": "Gậy Thu Phục",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795284360000091641"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:19:37",
+      "name": "Kiếm Huyết Rồng",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000067041"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:19:37",
+      "name": "Quả Cầu Ngọc",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000067141"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:19:37",
+      "name": "Lời Thề Xạ Thủ Thần",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000067241"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:19:37",
+      "name": "Kiếm Phi Thiên",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000067341"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:19:37",
+      "name": "Quả Cầu Ngọc",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000067441"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:19:37",
+      "name": "Lãnh Nhẫn",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000067541"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:19:37",
+      "name": "Valeriy",
+      "item_type": "Nhân Vật",
+      "rank_type": "4",
+      "id": "1795367160000067641"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:19:37",
+      "name": "Cung Lông Quạ",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000067741"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:19:37",
+      "name": "Lãnh Nhẫn",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000067841"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:19:37",
+      "name": "Nỏ Kéo",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000067941"
+    },
+    {
+      "uigf_gacha_type": "200",
+      "gacha_type": "200",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:20:10",
+      "name": "Tóm Tắt Ma Pháp",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000068541"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:42:19",
+      "name": "Câu Chuyện Diệt Rồng",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000125141"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:42:26",
+      "name": "Kiếm Huyết Rồng",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000127441"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:42:31",
+      "name": "Câu Chuyện Diệt Rồng",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000127741"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 01:42:36",
+      "name": "Quả Cầu Ngọc",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795367160000127841"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 02:28:38",
+      "name": "Quả Cầu Ngọc",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795370760000085041"
+    }
+  ]
+}

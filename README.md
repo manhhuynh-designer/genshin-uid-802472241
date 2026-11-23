@@ -15,11 +15,13 @@ genshin-uid-802472241/
 │   ├── styles.css
 │   └── app.js
 ├── data/
-│   └── genshin_uid_802472241_data.json
+│   ├── genshin_uid_802472241_data.json
+│   └── wish_history/             # Exported wish/roll history (XLSX, UIGF v3.0 JSON, CSV)
 ├── docs/
 │   └── conversation-notes.md     # Abyss, Theater, 7.2 meta & farming schedule
 └── scripts/
-    └── crawl_hoyolab.py          # Reusable macOS Chrome AppleScript crawler
+    ├── crawl_hoyolab.py          # Reusable macOS Chrome AppleScript crawler
+    └── export_genshin_wishes.py  # Windows local webCaches wish history exporter
 ```
 
 ## Re-crawling Data (macOS Chrome)
@@ -28,4 +30,12 @@ Enable `View > Developer > Allow JavaScript from Apple Events` in Google Chrome,
 
 ```bash
 python3 scripts/crawl_hoyolab.py --uid 802472241 --server os_asia --profile-dir Default --out data/genshin_uid_802472241_data.json
+```
+
+## Re-exporting Wish History (Windows)
+
+Open Wish History in Genshin Impact once so the local `webCaches` token is fresh, then run:
+
+```powershell
+python scripts/export_genshin_wishes.py
 ```
