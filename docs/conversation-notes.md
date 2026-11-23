@@ -1,21 +1,22 @@
 # Ghi chú Tư vấn & Kế hoạch Tài khoản Genshin (`UID 802472241`)
 
-Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật ngày **22/11/2026** (Version **7.2**, **71 nhân vật**).
+Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật ngày **23/11/2026** (Version **7.2**, **71 nhân vật**).
 
 ---
 
-## 0. Các việc đã hoàn thành sau đợt Crawl 22/11/2026
+## 0. Các việc đã hoàn thành sau đợt Crawl 23/11/2026
 
-- **Đổi vũ khí & Thánh Di Vật hoàn tất:**
-  - `Navia`: đã chốt **`Kiếm Li Cốt Lv.90 R1` + `Cát ATK%` (+35.0% STBK) + `Nón CR%`**, nâng chỉ số lên **`80.0% CR / 180.1% CD` · `1,755 ATK`** (`4pc Phiến Đá Lâu Đời`, tăng `+29.2%` DPS kỳ vọng so với 21/11).
-  - `Neuvillette`: đã bỏ bộ 3 món HP% cũ (`26.0% CR`), chuyển tạm sang **`4pc Trái Tim Trầm Luân` + `Ly ST Thủy 46.6%` + `Nón CR%`** → **`35,466 HP · 52.8% CR / 234.9% CD`** (`+35.2%` CritMult + thêm sát thương Thủy & Trọng Kích).
-  - `Aino`: đã nâng **`Đại Kiếm Tây Phong Lv.80 → Lv.90 R5`** và thiên phú `1/2/2 → 1/3/4` (`191.6% ER · 440 EM · 40.0/175.9`).
-  - `Nhà Lữ Hành`: chuyển sang **hệ Băng (`Cryo`)**, lên **`Lv.90 C1`**, cầm thử `Thanh Kiếm Exaiphanes Lv.20 R1`.
-  - *(Trước đó ngày 21/11 đã xong: `Ayato 62.5/152.1`, `Xiangling Lao Xiên Cá R5`, `Nahida 4pc Ký Ức Rừng Sâu 1,012 EM`, `Noelle Kiếm Bạch Ảnh 2,595 DEF`, `Ningguang Quyển Thiên Không R2`, `Yelan Tây Phong R5`, `Fischl Tuyệt Huyền R5`, `Kuki Thiết Phong Kích R3`, `Chevreuse Hắc Anh Thương R5`, `Jean Tây Phong Kiếm R5`, `Chiori Cát DEF%`, `Valeriy C2`, `Alyosha` mới).*
-- **Mở bản đồ & Thành tích mới:**
-  - **Snezhnaya đã mở (`0% → 3.0%`):** Nhặt `3` Băng Thần Đồng, mở thêm `+14` Điểm Dịch Chuyển (`493 → 507`), `+20` Thành Tựu (`1,092 → 1,112`).
-  - **Nhà Hát Giả Tưởng (`01.11 – 01.12`):** Đã đi tới **Màn 3** (Độ khó **3**).
-  - **Ảo Cảnh Hiểm Ác (Độ khó III):** Giữ kỷ lục **`246s`** (*Kẻ Neo Sóng* `84s`, *Hoàng Đế Thép Lửa* `61s`, *Thằn Lằn* `101s`).
+- **Cập nhật mới ngày 23/11:**
+  - `Navia`: đã **vương miện E Lv.10** và nâng Q lên Lv.9 (**`6/10/9`**, `80.0% CR / 180.1% CD · 1,755 ATK`).
+  - `Aino`: mở khóa **C1** (`Lv.60 · 1/3/4 · Đại Kiếm Tây Phong Lv.90 R5`).
+  - `Valeriy`: mở khóa **C3** (thiên phú **`4/1/1`**).
+  - `Nhà Lữ Hành (Cryo)`: mở khóa **C2**, nâng `Thanh Kiếm Exaiphanes` lên **`Lv.40 R2`** (`ATK 948 → 1,126 · CR 62.8% → 68.6%`).
+  - **Snezhnaya & Bản đồ:** Snezhnaya **`3.0% → 4.0%`**, Băng Thần Đồng **`3 → 6`**, Điểm dịch chuyển **`507 → 519`**, Thành tựu **`1,112 → 1,128`**.
+- **Đã hoàn thành trước đó (`21–22/11`):**
+  - `Navia` chốt **`Kiếm Li Cốt R1` + `Cát ATK%` + `Nón CR%`** (`+29.2%` DPS), `Neuvillette` chuyển tạm **`4pc Trái Tim Trầm Luân` + `Ly Thủy`** (`52.8/234.9`), `Aino` nâng `Đại Kiếm Tây Phong Lv.90`, `Ayato` (`62.5/152.1`), `Xiangling` (`Lao Xiên Cá R5`), `Nahida` (`4pc Rừng Sâu 1,012 EM`), `Noelle` (`Kiếm Bạch Ảnh`), `Ningguang` (`Quyển Thiên Không R2`), `Yelan` (`Tây Phong R5`), `Fischl` (`Tuyệt Huyền R5`), `Kuki` (`Thiết Phong Kích R3`), `Chevreuse` (`Hắc Anh Thương R5`), `Jean` (`Tây Phong Kiếm R5`), `Chiori` (`Cát DEF%`), `Alyosha` mới.
+- **Thành tích hiện tại:**
+  - **Nhà Hát Giả Tưởng (`01.11 – 01.12`):** Màn **3** (Độ khó **3**).
+  - **Ảo Cảnh Hiểm Ác (Độ khó III):** Kỷ lục **`246s`** (*Kẻ Neo Sóng* `84s`, *Hoàng Đế Thép Lửa* `61s`, *Thằn Lằn* `101s`).
 
 ---
 
@@ -54,9 +55,9 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 
 ---
 
-## 3. Danh sách Nhân vật Meta 7.2 tại Snezhnaya (`Đã mở 3%`)
+## 3. Danh sách Nhân vật Meta 7.2 tại Snezhnaya (`Đã mở 4%`)
 
 1. **Mitya (Lv.20 C0, trấn `Sắc Lệnh Tinh Tú` R1):** Tier 0 meta Stellar-Conduct — bắt đầu farm sách *Charity* & Boss Snezhnaya.
-2. **Valeriy (Lv.1 C2):** Khiên + Buffer cho Mitya — rèn `Nhạc Khúc Biển Sâu` (ATK%) + farm sách *Charity*.
+2. **Valeriy (Lv.1 C3):** Khiên + Buffer cho Mitya — rèn `Nhạc Khúc Biển Sâu` (ATK%) + farm sách *Charity*.
 3. **Alyosha (Lv.1 C0 — nhân vật mới thứ 71):** 4★ Thương Lôi off-field Healer + Buff ATK hệ Stellar-Conduct (ưu tiên `Thương Tây Phong` + `4pc Tông Thất` / `Heart of the Furnace`, sách & boss ở Snezhnaya).
-4. **Aino (Lv.60 C0):** Đã nâng `Đại Kiếm Tây Phong Lv.90`, tiếp tục kéo lên Lv.80 & thiên phú `1/6/8`.
+4. **Aino (Lv.60 C1):** Đã nâng `Đại Kiếm Tây Phong Lv.90`, tiếp tục kéo lên Lv.80 & thiên phú `1/6/8`.
