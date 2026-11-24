@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import ctypes
 import json
 import os
 import re
@@ -153,18 +154,75 @@ def find_latest_cache_file(game_data_dir: Path) -> Path:
     raise FileNotFoundError(f"Không tìm thấy file cache data_2 trong: {web_caches}")
 
 
-def extract_auth_endpoint(cache_file: Path) -> tuple[str, dict[str, str]]:
-    """Copy data_2 to a temp file and extract the newest gacha log endpoint and params."""
+def read_cache_bytes(cache_file: Path) -> bytes:
+    """Read cache bytes, falling back to Win32 shared-read if the game holds a write lock."""
     fd, tmp_path = tempfile.mkstemp(prefix="genshin_cache_", suffix=".tmp")
     os.close(fd)
     try:
-        shutil.copy2(cache_file, tmp_path)
-        raw_text = Path(tmp_path).read_bytes().decode("utf-8", errors="ignore")
+        try:
+            shutil.copy2(cache_file, tmp_path)
+            return Path(tmp_path).read_bytes()
+        except OSError:
+            if os.name != "nt":
+                raise
     finally:
         try:
             os.remove(tmp_path)
         except OSError:
             pass
+
+    from ctypes import wintypes
+
+    generic_read = 0x80000000
+    share_all = 0x00000001 | 0x00000002 | 0x00000004
+    open_existing = 3
+    attr_normal = 0x80
+    invalid_handle = ctypes.c_void_p(-1).value
+
+    kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel32.CreateFileW.restype = wintypes.HANDLE
+    kernel32.CreateFileW.argtypes = [
+        wintypes.LPCWSTR,
+        wintypes.DWORD,
+        wintypes.DWORD,
+        wintypes.LPVOID,
+        wintypes.DWORD,
+        wintypes.DWORD,
+        wintypes.HANDLE,
+    ]
+    kernel32.ReadFile.restype = wintypes.BOOL
+    kernel32.ReadFile.argtypes = [
+        wintypes.HANDLE,
+        wintypes.LPVOID,
+        wintypes.DWORD,
+        ctypes.POINTER(wintypes.DWORD),
+        wintypes.LPVOID,
+    ]
+    kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
+
+    handle = kernel32.CreateFileW(
+        str(cache_file), generic_read, share_all, None, open_existing, attr_normal, None
+    )
+    if handle == invalid_handle:
+        raise OSError(f"CreateFileW failed with Win32 error {ctypes.get_last_error()}")
+
+    chunks: list[bytes] = []
+    try:
+        buf = ctypes.create_string_buffer(65536)
+        read_len = wintypes.DWORD(0)
+        while True:
+            ok = kernel32.ReadFile(handle, buf, len(buf), ctypes.byref(read_len), None)
+            if not ok or read_len.value == 0:
+                break
+            chunks.append(buf.raw[: read_len.value])
+    finally:
+        kernel32.CloseHandle(handle)
+    return b"".join(chunks)
+
+
+def extract_auth_endpoint(cache_file: Path) -> tuple[str, dict[str, str]]:
+    """Read data_2 safely and extract the newest gacha log endpoint and auth params."""
+    raw_text = read_cache_bytes(cache_file).decode("utf-8", errors="ignore")
 
     url_pattern = re.compile(r"^(https://[^\x00\s]+?gacha_info/api/getGachaLog[^\x00\s]+)")
     parts = raw_text.split("1/0/")

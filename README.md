@@ -1,9 +1,10 @@
 # Genshin Impact Battle Chronicle — `UID 802472241` (`Mahyh`, Asia)
 
-Static dashboard, structured JSON dataset, analysis notes, and macOS Chrome crawler for HoYoLAB Battle Chronicle data (crawled **2026-11-20**, Version **7.2**).
+Static dashboard, structured JSON dataset, analysis notes, and crawlers/exporters for HoYoLAB Battle Chronicle & wish history data (crawled **2026-11-24**, Version **7.2**).
 
 - **GitHub Pages Dashboard:** `https://manhhuynh.work/genshin-uid-802472241/`
-- **Raw Dataset:** [`data/genshin_uid_802472241_data.json`](./data/genshin_uid_802472241_data.json) (all 70 characters, weapons, refinements, talents, stats, artifacts + substats & roll counts, Spiral Abyss, Stygian Onslaught, World Exploration, Serenitea Pot, TCG)
+- **Raw Dataset:** [`data/genshin_uid_802472241_data.json`](./data/genshin_uid_802472241_data.json) (all 73 characters, weapons, refinements, talents, stats, artifacts + substats & roll counts, Spiral Abyss, Stygian Onslaught, World Exploration, Serenitea Pot, TCG)
+- **Wish History:** [`data/wish_history/`](./data/wish_history/) (128 exported pulls in XLSX, UIGF v3.0 JSON, and CSV)
 - **Advice & Farming Plan:** [`docs/conversation-notes.md`](./docs/conversation-notes.md)
 
 ## Structure

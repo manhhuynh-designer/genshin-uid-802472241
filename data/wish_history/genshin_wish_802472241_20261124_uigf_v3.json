@@ -2,8 +2,8 @@
   "info": {
     "uid": "802472241",
     "lang": "vi-vn",
-    "export_timestamp": 1795401891,
-    "export_time": "2026-11-23 09:44:51",
+    "export_timestamp": 1795499677,
+    "export_time": "2026-11-24 12:54:37",
     "export_app": "genshin-wish-export",
     "export_app_version": "1.0.0",
     "uigf_version": "v3.0",
@@ -1318,6 +1318,105 @@
       "item_type": "Vũ Khí",
       "rank_type": "3",
       "id": "1795370760000085041"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 21:14:29",
+      "name": "Kiếm Sáo",
+      "item_type": "Vũ Khí",
+      "rank_type": "4",
+      "id": "1795439160000062241"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 21:14:38",
+      "name": "Lãnh Nhẫn",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795439160000063641"
+    },
+    {
+      "uigf_gacha_type": "200",
+      "gacha_type": "200",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 21:15:19",
+      "name": "Nỏ Kéo",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795439160000066241"
+    },
+    {
+      "uigf_gacha_type": "200",
+      "gacha_type": "200",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 21:15:25",
+      "name": "Lãnh Nhẫn",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795439160000067741"
+    },
+    {
+      "uigf_gacha_type": "200",
+      "gacha_type": "200",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 21:15:31",
+      "name": "Noelle",
+      "item_type": "Nhân Vật",
+      "rank_type": "4",
+      "id": "1795439160000067941"
+    },
+    {
+      "uigf_gacha_type": "200",
+      "gacha_type": "200",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 21:15:38",
+      "name": "Lãnh Nhẫn",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795439160000068241"
+    },
+    {
+      "uigf_gacha_type": "200",
+      "gacha_type": "200",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 21:15:43",
+      "name": "Thần Kiếm Lê Minh",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795439160000068441"
+    },
+    {
+      "uigf_gacha_type": "301",
+      "gacha_type": "400",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 21:16:05",
+      "name": "Furina",
+      "item_type": "Nhân Vật",
+      "rank_type": "5",
+      "id": "1795439160000070141"
+    },
+    {
+      "uigf_gacha_type": "302",
+      "gacha_type": "302",
+      "item_id": "",
+      "count": "1",
+      "time": "2026-11-23 21:16:46",
+      "name": "Thần Kiếm Lê Minh",
+      "item_type": "Vũ Khí",
+      "rank_type": "3",
+      "id": "1795439160000072541"
     }
   ]
 }
