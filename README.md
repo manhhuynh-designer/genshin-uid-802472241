@@ -21,11 +21,26 @@ genshin-uid-802472241/
 ├── docs/
 │   └── conversation-notes.md     # Abyss, Theater, 7.2 meta & farming schedule
 └── scripts/
-    ├── crawl_hoyolab.py          # Reusable macOS Chrome AppleScript crawler
+    ├── build_data_json.py        # Cross-platform raw crawl -> dashboard JSON builder
+    ├── crawl_hoyolab.py          # Cross-platform HoYoLAB crawler (Windows Chrome CDP & macOS)
     └── export_genshin_wishes.py  # Windows local webCaches wish history exporter
 ```
 
-## Re-crawling Data (macOS Chrome)
+## Re-crawling Data (Windows — Chrome CDP)
+
+Run one command to launch an isolated persistent Chrome profile (sign in to HoYoLAB on first run; subsequent runs reuse the session automatically) and update `data/genshin_uid_802472241_data.json`:
+
+```powershell
+python scripts/crawl_hoyolab.py
+```
+
+Or attach to an already-running Chrome remote debugging session without touching other tabs:
+
+```powershell
+python scripts/crawl_hoyolab.py --cdp-url http://127.0.0.1:9222
+```
+
+## Re-crawling Data (macOS — Chrome AppleScript / CDP)
 
 Enable `View > Developer > Allow JavaScript from Apple Events` in Google Chrome, make sure HoYoLAB is signed in on your Chrome profile, and run:
 
