@@ -355,7 +355,13 @@ const MODES = {
         note: "Vừa có Furina Lv.80 ghép song Thủy · Nâng Cát ER +20 & farm thêm 4pc Thợ Săn/Đoàn Kịch",
         status: "ok",
         members: ["Neuvillette", "Furina", "Kaedehara Kazuha", "Zhongli"],
-        power: { cur: 64, proj: 92, curTier: "A+", projTier: "S+", role: "AOE · Đơn", tags: ["st", "aoe", "upgrade"], badge: "Ảo Cảnh 34s", upgrade: "Neuv 4pc Thợ Săn + Furina Lv.90 Q10 / 4pc Đoàn Kịch / Ống Đồng (chung 1 bí cảnh Fontaine)" },
+        power: {
+          cur: 64, proj: 92, curTier: "A+", projTier: "S+",
+          role: "AOE · Đơn", tags: ["st", "aoe", "upgrade"], badge: "Ảo Cảnh 34s",
+          short: "Neuv+Furina", labelPos: "left", cost: "1 bí cảnh",
+          chips: ["Neuv 4pc Thợ Săn", "Furina Lv.90 Q10", "Ống Đồng / 4pc Đoàn Kịch"],
+          upgrade: "Neuv 4pc Thợ Săn + Furina Lv.90 Q10 / 4pc Đoàn Kịch / Ống Đồng (chung 1 bí cảnh Fontaine)",
+        },
       },
       {
         title: "Raiden + Furina Hyper",
@@ -363,7 +369,13 @@ const MODES = {
         note: "Raiden vừa đổi Nón CR% cực ổn định · Furina + Yae + Yelan nổ sát thương cực nhanh",
         status: "ok",
         members: ["Raiden Shogun", "Furina", "Yae Miko", "Yelan"],
-        power: { cur: 62, proj: 78, curTier: "A+", projTier: "S", role: "Đơn mục tiêu", tags: ["st", "upgrade"], badge: "Ảo Cảnh 56s", upgrade: "Furina Lv.90 Q10 + Cát ER +20/4pc Đoàn Kịch · Yelan Tây Phong 90 · Yae tăng CR (60%+)" },
+        power: {
+          cur: 62, proj: 78, curTier: "A+", projTier: "S",
+          role: "Đơn mục tiêu", tags: ["st", "upgrade"], badge: "Ảo Cảnh 56s",
+          short: "Raiden+Furina", labelPos: "top", cost: "Trung bình",
+          chips: ["Furina Lv.90 Q10", "Yelan Tây Phong 90", "Yae tăng CR 60%+"],
+          upgrade: "Furina Lv.90 Q10 + Cát ER +20/4pc Đoàn Kịch · Yelan Tây Phong 90 · Yae tăng CR (60%+)",
+        },
       },
       {
         title: "Raiden National",
@@ -371,7 +383,13 @@ const MODES = {
         note: "Sẵn sàng 100% · Chuyển Kiếm Gỗ sang Bennett càng khỏe",
         status: "ok",
         members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"],
-        power: { cur: 61, proj: 68, curTier: "A+", projTier: "A+", role: "Đơn mục tiêu", tags: ["st"], badge: "Sẵn sàng 100%", upgrade: "Bennett đổi Kiếm Gỗ (565 Base ATK) · Yelan Tây Phong 90 · Tối ưu nhẹ Crit Xiangling" },
+        power: {
+          cur: 61, proj: 68, curTier: "A+", projTier: "A+",
+          role: "Đơn mục tiêu", tags: ["st"], badge: "Sẵn sàng 100%",
+          short: "National", labelPos: "right", cost: "Thấp",
+          chips: ["Bennett Kiếm Gỗ", "Yelan Tây Phong 90", "Tối ưu Crit XL"],
+          upgrade: "Bennett đổi Kiếm Gỗ (565 Base ATK) · Yelan Tây Phong 90 · Tối ưu nhẹ Crit Xiangling",
+        },
       },
       {
         title: "Keqing Tăng Cường",
@@ -379,7 +397,13 @@ const MODES = {
         note: "Câu Ống Đồng cho Furina để trả Bàn Nham (70/231) · Nahida 1,012 EM · Kazuha 1,011 EM",
         status: "warn",
         members: ["Keqing", "Nahida", "Yae Miko", "Kaedehara Kazuha"],
-        power: { cur: 45, proj: 65, curTier: "B", projTier: "A+", role: "Đơn · AOE nhanh", tags: ["st", "aoe", "upgrade"], badge: "Hồi phục 0 Nhựa", upgrade: "Câu Ống Đồng cho Furina để trả Bàn Nham Kết Lục về Keqing (CR nhảy 26% → 70%)" },
+        power: {
+          cur: 45, proj: 65, curTier: "B", projTier: "A+",
+          role: "Đơn · AOE nhanh", tags: ["st", "aoe", "upgrade"], badge: "Hồi phục 0 Nhựa",
+          short: "Keqing", labelPos: "top", cost: "0 Nhựa",
+          chips: ["Câu Ống Đồng Furina", "Trả Bàn Nham (CR 70%)"],
+          upgrade: "Câu Ống Đồng cho Furina để trả Bàn Nham Kết Lục về Keqing (CR nhảy 26% → 70%)",
+        },
       },
       {
         title: "Ayaka Đóng Băng",
@@ -387,7 +411,13 @@ const MODES = {
         note: "Sẵn sàng 100% · ~95% CR thực · Đổi Rosaria C6 + Kokomi Thiên Nham càng khỏe",
         status: "ok",
         members: ["Kamisato Ayaka", "Mona", "Kaedehara Kazuha", "Sangonomiya Kokomi"],
-        power: { cur: 54, proj: 67, curTier: "A", projTier: "A+", role: "AOE Đóng Băng", tags: ["aoe"], badge: "~95% CR thực", upgrade: "Thử ghép Furina + Kokomi/Charlotte hoặc Rosaria C6 + Kokomi Thiên Nham · Amenoma R5" },
+        power: {
+          cur: 54, proj: 67, curTier: "A", projTier: "A+",
+          role: "AOE Đóng Băng", tags: ["aoe"], badge: "~95% CR thực",
+          short: "Ayaka", labelPos: "left", cost: "Thấp",
+          chips: ["Thử Furina + Charlotte", "Rosaria C6 / Amenoma R5"],
+          upgrade: "Thử ghép Furina + Kokomi/Charlotte hoặc Rosaria C6 + Kokomi Thiên Nham · Amenoma R5",
+        },
       },
       {
         title: "Hu Tao Bốc Hơi",
@@ -395,7 +425,13 @@ const MODES = {
         note: "Sẵn sàng 100% · 2 Hòa Phác Diên riêng",
         status: "ok",
         members: ["Hu Tao", "Yelan", "Xingqiu", "Zhongli"],
-        power: { cur: 59, proj: 72, curTier: "A+", projTier: "S", role: "Đơn mục tiêu", tags: ["st"], badge: "Ổn định 2 Thủy", upgrade: "Yelan Tây Phong 70→90 · Kéo nhẹ CR Hu Tao (54%→70%+) · Thử ghép Furina + Xianyun" },
+        power: {
+          cur: 59, proj: 72, curTier: "A+", projTier: "S",
+          role: "Đơn mục tiêu", tags: ["st"], badge: "Ổn định 2 Thủy",
+          short: "Hu Tao", labelPos: "right", cost: "Thấp",
+          chips: ["Yelan Tây Phong 90", "Hu Tao CR 70%+", "Thử Furina + Xianyun"],
+          upgrade: "Yelan Tây Phong 70→90 · Kéo nhẹ CR Hu Tao (54%→70%+) · Thử ghép Furina + Xianyun",
+        },
       },
       {
         title: "Yoimiya Đánh Thường",
@@ -403,7 +439,13 @@ const MODES = {
         note: "Sẵn sàng 100% · 2,160 DEF Yun Jin",
         status: "ok",
         members: ["Yoimiya", "Yelan", "Yun Jin", "Zhongli"],
-        power: { cur: 55, proj: 62, curTier: "A", projTier: "A", role: "Boss bay · Đơn", tags: ["st"], badge: "Sẵn sàng 100%", upgrade: "Yelan Tây Phong 70→90 · Bổ sung ~100 EM cho Yoimiya để tối ưu Bốc Hơi" },
+        power: {
+          cur: 55, proj: 62, curTier: "A", projTier: "A",
+          role: "Boss bay · Đơn", tags: ["st"], badge: "Sẵn sàng 100%",
+          short: "Yoimiya", labelPos: "right", cost: "Thấp",
+          chips: ["Yelan Tây Phong 90", "Bổ sung ~100 EM"],
+          upgrade: "Yelan Tây Phong 70→90 · Bổ sung ~100 EM cho Yoimiya để tối ưu Bốc Hơi",
+        },
       },
       {
         title: "Ganyu Tan Chảy",
@@ -411,7 +453,13 @@ const MODES = {
         note: "Sẵn sàng 100%",
         status: "ok",
         members: ["Ganyu", "Bennett", "Xiangling", "Zhongli"],
-        power: { cur: 52, proj: 60, curTier: "A", projTier: "A", role: "Đơn · Nuke", tags: ["st"], badge: "Sẵn sàng 100%", upgrade: "Đổi Cát EM (~220+ EM) cho Ganyu · Bennett đổi Kiếm Gỗ tăng buff ATK" },
+        power: {
+          cur: 52, proj: 60, curTier: "A", projTier: "A",
+          role: "Đơn · Nuke", tags: ["st"], badge: "Sẵn sàng 100%",
+          short: "Ganyu", labelPos: "left", cost: "Thấp",
+          chips: ["Đổi Cát EM (~220+)", "Bennett Kiếm Gỗ"],
+          upgrade: "Đổi Cát EM (~220+ EM) cho Ganyu · Bennett đổi Kiếm Gỗ tăng buff ATK",
+        },
       },
       {
         title: "Nilou Sum Suê",
@@ -419,7 +467,13 @@ const MODES = {
         note: "Sẵn sàng 100%",
         status: "ok",
         members: ["Nilou", "Nahida", "Sangonomiya Kokomi", "Collei"],
-        power: { cur: 56, proj: 70, curTier: "A+", projTier: "S", role: "Vua AOE (2+ quái)", tags: ["aoe", "upgrade"], badge: "AOE 78k+", upgrade: "Đổi Nilou sang 2pc+2pc HP% (51.5k → 68k+ HP) · Bổ sung EM cho Kokomi khi đánh AOE" },
+        power: {
+          cur: 56, proj: 70, curTier: "A+", projTier: "S",
+          role: "Vua AOE (2+ quái)", tags: ["aoe", "upgrade"], badge: "AOE 78k+",
+          short: "Nilou", labelPos: "top", cost: "Thấp",
+          chips: ["2pc+2pc HP% (68k+ HP)", "Thêm EM cho Kokomi"],
+          upgrade: "Đổi Nilou sang 2pc+2pc HP% (51.5k → 68k+ HP) · Bổ sung EM cho Kokomi khi đánh AOE",
+        },
       },
       {
         title: "Eula Vật Lý",
@@ -427,7 +481,13 @@ const MODES = {
         note: "Tình huống / Siêu Dẫn · CR 51.7%",
         status: "warn",
         members: ["Eula", "Raiden Shogun", "Rosaria", "Zhongli"],
-        power: { cur: 48, proj: 56, curTier: "B+", projTier: "A", role: "Nuke Vật Lý", tags: ["st"], badge: "Tình huống", upgrade: "Đẩy CR Eula (51.7%→70%+) giảm hụt Nộ · Hoặc ghép Furina + Raiden + Mika C4" },
+        power: {
+          cur: 48, proj: 56, curTier: "B+", projTier: "A",
+          role: "Nuke Vật Lý", tags: ["st"], badge: "Tình huống",
+          short: "Eula", labelPos: "bottom", cost: "Thấp",
+          chips: ["Đẩy CR 70%+", "Thử Furina + Mika C4"],
+          upgrade: "Đẩy CR Eula (51.7%→70%+) giảm hụt Nộ · Hoặc ghép Furina + Raiden + Mika C4",
+        },
       },
       {
         title: "Navia 2 Nham",
@@ -435,7 +495,13 @@ const MODES = {
         note: "Navia đã hoàn chỉnh · Còn nâng E Chiori (1 → 8–9)",
         status: "ok",
         members: ["Navia", "Chiori", "Bennett", "Xiangling"],
-        power: { cur: 58, proj: 76, curTier: "A+", projTier: "S", role: "Phá khiên · Đơn", tags: ["st", "upgrade"], badge: "La Hoàn 12 Nửa 1", upgrade: "Nâng E Chiori 1→9 + Ly Nham +20 + tìm STBK (hiện 71%) · Bennett đổi Kiếm Gỗ" },
+        power: {
+          cur: 58, proj: 76, curTier: "A+", projTier: "S",
+          role: "Phá khiên · Đơn", tags: ["st", "upgrade"], badge: "La Hoàn 12 Nửa 1",
+          short: "Navia", labelPos: "left", cost: "Trung bình",
+          chips: ["Chiori E 1→9", "Ly Nham +20 & STBK", "Bennett Kiếm Gỗ"],
+          upgrade: "Nâng E Chiori 1→9 + Ly Nham +20 + tìm STBK (hiện 71%) · Bennett đổi Kiếm Gỗ",
+        },
       },
       {
         title: "Mitya Meta 7.2",
@@ -443,7 +509,13 @@ const MODES = {
         note: "Nâng Ly EM Mitya +0→+20, kéo Trấn & Lv.90 + farm sách Charity cho bộ 3",
         status: "warn",
         members: ["Mitya", "Valeriy", "Kaedehara Kazuha", "Aino"],
-        power: { cur: 28, proj: 96, curTier: "C", projTier: "S+", role: "Meta 7.2 · Đơn/AOE", tags: ["st", "aoe", "upgrade"], badge: "Trần cao nhất 7.2", upgrade: "Mitya Lv.60→90 + Trấn 20→90 + Ly EM +20 + Valeriy C3 Lv.80 + Aino 4pc Khúc Ca" },
+        power: {
+          cur: 28, proj: 96, curTier: "C", projTier: "S+",
+          role: "Meta 7.2 · Đơn/AOE", tags: ["st", "aoe", "upgrade"], badge: "Trần cao nhất 7.2",
+          short: "Mitya 7.2", labelPos: "right", cost: "Cao",
+          chips: ["Mitya 60→90 + Trấn 90", "Ly EM +20", "Valeriy 80 + Aino Khúc Ca"],
+          upgrade: "Mitya Lv.60→90 + Trấn 20→90 + Ly EM +20 + Valeriy C3 Lv.80 + Aino 4pc Khúc Ca",
+        },
       },
     ],
   },
@@ -481,8 +553,12 @@ let APP = {
   filter: "pending", // pending | all
   mode: "teams",
   index: 0,
+  powerTab: "chart", // chart | matrix | vs
   powerSort: "proj", // proj | cur | gain
   powerTag: "all",   // all | st | aoe | upgrade
+  matrixActive: 0,
+  vsA: 0,
+  vsB: 11,
   modalChar: null,
   done: loadDone(),
 };
@@ -973,14 +1049,131 @@ function renderStageView() {
   `;
 }
 
-function renderPowerView() {
-  const allTeams = MODES.teams.items.map((it, idx) => ({ ...it, idx }));
-  const maxProj = Math.max(...allTeams.map((t) => t.power.proj), 1);
+const EL_HEX = {
+  Hydro: "#4ea8f5",
+  Electro: "#b07af5",
+  Geo: "#e5b556",
+  Pyro: "#eb6c4a",
+  Cryo: "#7adaf5",
+  Anemo: "#5edab2",
+  Dendro: "#8ad452",
+};
 
+function calcTeamReadiness(members) {
+  if (!members || !members.length) return { pct: 0, avgLv: 0, maxArts: 0, maxWeapons: 0 };
+  let scoreSum = 0;
+  let lvSum = 0;
+  let maxArts = 0;
+  let maxWeapons = 0;
+  members.forEach((n) => {
+    const c = byName(n);
+    if (!c) return;
+    const lv = Number(c.level || 0);
+    const wLv = Number(c.weapon?.level || 0);
+    const arts = (c.artifacts || []).slice(0, 5);
+    const artSum = arts.reduce((acc, a) => acc + Math.min(Number(a.level || 0), 20), 0);
+    const talSum = String(c.talent_levels || "1/1/1")
+      .split("/")
+      .slice(0, 3)
+      .reduce((acc, v) => acc + (Number(v) || 1), 0);
+    scoreSum +=
+      (Math.min(lv, 90) / 90) * 0.35 +
+      (Math.min(wLv, 90) / 90) * 0.25 +
+      (Math.min(artSum, 100) / 100) * 0.25 +
+      (Math.min(talSum, 24) / 24) * 0.15;
+    lvSum += lv;
+    maxArts += arts.filter((a) => Number(a.level || 0) >= 20).length;
+    if (wLv >= 90) maxWeapons += 1;
+  });
+  return {
+    pct: Math.round((scoreSum / members.length) * 100),
+    avgLv: Math.round(lvSum / members.length),
+    maxArts,
+    maxWeapons,
+  };
+}
+
+function costClass(cost) {
+  if (cost === "0 Nhựa" || cost === "Thấp") return "cost-low";
+  if (cost === "Cao") return "cost-high";
+  return "cost-mid";
+}
+
+function renderTeamFaces(members, sizeCls = "power-faces") {
+  return `<div class="${sizeCls}">${members
+    .map((n) => {
+      const c = byName(n);
+      return c?.icon
+        ? `<button type="button" class="power-face-btn" data-open-char="${esc(n)}" title="${esc(n)} Lv.${esc(c.level)} C${esc(c.constellation)} — bấm xem chi tiết"><img src="${esc(c.icon)}" alt="${esc(n)}" loading="lazy" referrerpolicy="no-referrer" /></button>`
+        : `<span class="face-ghost" title="${esc(n)}">${esc(n.slice(0, 2).toUpperCase())}</span>`;
+    })
+    .join("")}</div>`;
+}
+
+function renderPowerPodium(allTeams) {
   const topCur = allTeams.reduce((a, b) => (b.power.cur > a.power.cur ? b : a), allTeams[0]);
   const topProj = allTeams.reduce((a, b) => (b.power.proj > a.power.proj ? b : a), allTeams[0]);
-  const topGain = allTeams.reduce((a, b) => (powerGainPct(b.power) > powerGainPct(a.power) ? b : a), allTeams[0]);
+  const keqingTeam = allTeams.find((t) => t.title.startsWith("Keqing")) || allTeams[0];
 
+  const cards = [
+    {
+      label: "#1 Đánh Ngay (Hiện tại)",
+      team: topCur,
+      metric: `~${topCur.power.cur}k DPS`,
+      sub: `Tier ${topCur.power.curTier} → ${topCur.power.projTier} · ${topCur.power.badge}`,
+      tone: "podium-cur",
+    },
+    {
+      label: "#1 Trần Meta 7.2 (Dự tính)",
+      team: topProj,
+      metric: `~${topProj.power.proj}k DPS`,
+      sub: `Tier ${topProj.power.projTier} · +${powerGainPct(topProj.power)}% tiềm năng`,
+      tone: "podium-proj",
+    },
+    {
+      label: "#1 ROI Nhựa (Dễ tăng nhất)",
+      team: keqingTeam,
+      metric: `+${powerGainPct(keqingTeam.power)}% · 0 Nhựa`,
+      sub: `Hoặc ${topCur.power.short} (+${powerGainPct(topCur.power)}% · 1 bí cảnh)`,
+      tone: "podium-roi",
+    },
+  ];
+
+  return `
+    <div class="power-podium">
+      ${cards
+        .map((card) => {
+          const lead = byName(card.team.members[0]);
+          const el = lead?.element || "Geo";
+          const faces = card.team.members
+            .map((n) => {
+              const c = byName(n);
+              return c?.icon ? `<img src="${esc(c.icon)}" alt="${esc(n)}" referrerpolicy="no-referrer" />` : "";
+            })
+            .join("");
+          return `
+            <div class="podium-card ${card.tone}" style="--el: var(--el-${esc(el)}, 211,188,142);" data-jump-team="${card.team.idx}">
+              ${lead?.splash ? `<img class="podium-splash" src="${esc(lead.splash)}" alt="" referrerpolicy="no-referrer" />` : ""}
+              <div class="podium-body">
+                <span class="podium-label">${esc(card.label)}</span>
+                <div class="podium-title-row">
+                  <strong>${esc(card.team.title)}</strong>
+                  <span class="podium-metric">${esc(card.metric)}</span>
+                </div>
+                <div class="podium-foot">
+                  <div class="podium-faces">${faces}</div>
+                  <small>${esc(card.sub)}</small>
+                </div>
+              </div>
+            </div>
+          `;
+        })
+        .join("")}
+    </div>
+  `;
+}
+
+function renderPowerChart(allTeams) {
   const filtered = allTeams.filter((t) => APP.powerTag === "all" || t.power.tags.includes(APP.powerTag));
   const sorted = [...filtered].sort((a, b) => {
     if (APP.powerSort === "cur") return b.power.cur - a.power.cur || b.power.proj - a.power.proj;
@@ -988,118 +1181,400 @@ function renderPowerView() {
     return b.power.proj - a.power.proj || b.power.cur - a.power.cur;
   });
 
-  const tagButtons = [
-    ["all", `Tất cả (${allTeams.length})`],
-    ["st", "Boss / Đơn"],
-    ["aoe", "AOE / Đa mục tiêu"],
-    ["upgrade", "Cần nâng cấp lớn"],
-  ];
-  const sortButtons = [
-    ["proj", "Trần dự tính ↓"],
-    ["cur", "Hiện tại ↓"],
-    ["gain", "Mức tăng % ↓"],
-  ];
-
   const rowsHtml = sorted
     .map((t, rankIdx) => {
       const p = t.power;
-      const curW = Math.round((p.cur / maxProj) * 100);
-      const projW = Math.round((p.proj / maxProj) * 100);
+      const ready = calcTeamReadiness(t.members);
       const gain = powerGainPct(p);
-      const faces = t.members
-        .map((n) => {
-          const c = byName(n);
-          return c?.icon
-            ? `<button type="button" class="power-face-btn" data-open-char="${esc(n)}" title="${esc(n)} Lv.${esc(c.level)} C${esc(c.constellation)} — bấm xem chi tiết"><img src="${esc(c.icon)}" alt="${esc(n)}" loading="lazy" referrerpolicy="no-referrer" /></button>`
-            : `<span class="face-ghost" title="${esc(n)}">${esc(n.slice(0, 2).toUpperCase())}</span>`;
-        })
+      const chipsHtml = (p.chips || [])
+        .map((ch) => `<span class="up-chip">${esc(ch)}</span>`)
         .join("");
 
       return `
-        <div class="power-row">
-          <div class="power-rank">
-            <span class="rank-num">#${rankIdx + 1}</span>
-            <div class="tier-shift">
-              <span class="tier-pill ${tierClass(p.curTier)}">${esc(p.curTier)}</span>
-              <span class="swap-arrow">→</span>
-              <span class="tier-pill ${tierClass(p.projTier)}">${esc(p.projTier)}</span>
+        <div class="bullet-row">
+          <div class="bullet-team">
+            <div class="bullet-head">
+              <span class="rank-num">#${rankIdx + 1}</span>
+              <button type="button" class="power-team-link" data-jump-team="${t.idx}">${esc(t.title)}</button>
             </div>
-          </div>
-
-          <div class="power-team">
-            <div class="power-team-top">
-              <button type="button" class="power-team-link" data-jump-team="${t.idx}">${esc(t.title)} →</button>
-              <span class="power-role">${esc(p.role)}</span>
+            <div class="bullet-sub">
               <span class="power-badge status-${esc(t.status)}">${esc(p.badge)}</span>
+              <span class="power-role">${esc(p.role)}</span>
+              <span class="ready-pill" title="Mức hoàn thiện đội hình hiện tại (Lv/Vũ khí/TDV/Thiên phú)">Build ${ready.pct}%</span>
             </div>
-            <div class="power-faces">${faces}</div>
+            ${renderTeamFaces(t.members)}
           </div>
 
-          <div class="power-bar-wrap">
-            <div class="power-bar-track" title="Hiện tại ~${p.cur}k DPS · Dự tính ~${p.proj}k DPS">
-              <div class="power-bar-proj" style="width:${projW}%"></div>
-              <div class="power-bar-cur" style="width:${curW}%"></div>
+          <div class="bullet-viz">
+            <div class="bullet-bar-line">
+              <div class="bullet-track" title="Hiện tại ~${p.cur}k DPS · Dự tính ~${p.proj}k DPS">
+                <i class="tick-line" style="left:55%"></i>
+                <i class="tick-line" style="left:75%"></i>
+                <i class="tick-line" style="left:90%"></i>
+                <div class="bullet-proj" style="width:${p.proj}%"></div>
+                <div class="bullet-cur" style="width:${p.cur}%"></div>
+              </div>
+              <div class="bullet-nums">
+                <span class="dps-pair"><strong>${p.cur}k</strong> → <b class="proj-val">${p.proj}k</b></span>
+                <span class="power-gain">+${gain}%</span>
+                <span class="tier-shift">
+                  <em class="tier-pill ${tierClass(p.curTier)}">${esc(p.curTier)}</em>
+                  <span class="swap-arrow">→</span>
+                  <em class="tier-pill ${tierClass(p.projTier)}">${esc(p.projTier)}</em>
+                </span>
+                <button type="button" class="vs-mini-btn" data-vs-pick="${t.idx}" title="Đem đội này vào So Kè 1v1">So kè</button>
+              </div>
             </div>
-            <div class="power-nums">
-              <span><strong>${p.cur}k</strong> → <strong class="proj-val">${p.proj}k</strong> DPS</span>
-              <span class="power-gain">+${gain}%</span>
+
+            <div class="bullet-chips">
+              <span class="cost-pill ${costClass(p.cost)}">${esc(p.cost)}</span>
+              ${chipsHtml}
             </div>
           </div>
-
-          <div class="power-upgrade">${esc(p.upgrade)}</div>
         </div>
       `;
     })
     .join("");
 
   return `
-    <div class="power-kpi-grid">
-      <div class="power-kpi">
-        <span>Mạnh nhất Hiện tại</span>
-        <strong>${esc(topCur.title)}</strong>
-        <small>~${topCur.power.cur}k DPS · Tier ${esc(topCur.power.curTier)} · ${esc(topCur.power.badge)}</small>
-      </div>
-      <div class="power-kpi">
-        <span>Trần Dự tính Cao nhất</span>
-        <strong>${esc(topProj.title)}</strong>
-        <small>~${topProj.power.proj}k DPS · Tier ${esc(topProj.power.projTier)} · ${esc(topProj.power.badge)}</small>
-      </div>
-      <div class="power-kpi">
-        <span>Tăng trưởng % Cao nhất</span>
-        <strong>${esc(topGain.title)}</strong>
-        <small>+${powerGainPct(topGain.power)}% · ${topGain.power.cur}k → ${topGain.power.proj}k DPS</small>
-      </div>
+    <div class="bullet-legend-row">
+      <span><i class="leg-cur"></i> Sức mạnh hiện tại (24/11)</span>
+      <span><i class="leg-proj"></i> Trần dự tính sau nâng cấp</span>
+      <span><i class="leg-tick"></i> Mốc 55k (36★) · 75k (Nhanh) · 90k (Meta S+)</span>
     </div>
 
-    <div class="power-controls">
-      <div class="filter-group">
-        ${tagButtons
-          .map(([k, label]) => `<button type="button" class="filter-btn ${APP.powerTag === k ? "active" : ""}" data-power-tag="${k}">${esc(label)}</button>`)
-          .join("")}
-      </div>
-      <div class="filter-group">
-        <span class="power-sort-lbl">Sắp xếp:</span>
-        ${sortButtons
-          .map(([k, label]) => `<button type="button" class="filter-btn ${APP.powerSort === k ? "active" : ""}" data-power-sort="${k}">${esc(label)}</button>`)
-          .join("")}
-      </div>
-    </div>
-
-    <div class="onslaught-banner power-method-note">
-      <strong>Quy ước ước lượng DPS (chuẩn 1 vòng xoay 20s La Hoàn 12, đơn vị k DPS):</strong>
-      Dữ liệu hiện tại tính từ chỉ số thực tế crawl 24/11 và đối chiếu kỷ lục Ảo Cảnh <strong>191s</strong> (Neuv+Furina <strong>34s</strong>, Raiden+Furina <strong>56s</strong>).
-      <span class="power-legend"><i class="leg-cur"></i> Hiện tại &nbsp;<i class="leg-proj"></i> Trần dự tính sau nâng cấp (bấm tên đội để xem Sân Khấu · bấm avatar để mở chỉ số).</span>
-    </div>
-
-    <div class="power-table">
-      <div class="power-head">
-        <span>Hạng · Tier</span>
-        <span>Đội hình &amp; Vai trò</span>
-        <span>Sức mạnh (Hiện tại → Dự tính)</span>
-        <span>Đòn bẩy tăng sát thương chính</span>
+    <div class="bullet-board">
+      <div class="bullet-axis-head">
+        <div class="bullet-axis-title">Đội hình &amp; Thành viên (bấm tên xem Sân Khấu · bấm ảnh xem chỉ số)</div>
+        <div class="bullet-axis-scale">
+          <span style="left:0%">0k</span>
+          <span style="left:55%">55k · Chuẩn 36★</span>
+          <span style="left:75%">75k · Nhanh</span>
+          <span style="left:90%">90k · S+</span>
+        </div>
       </div>
       ${rowsHtml}
     </div>
+  `;
+}
+
+function renderPowerMatrix(allTeams) {
+  const padL = 62;
+  const padR = 26;
+  const padT = 28;
+  const padB = 46;
+  const W = 820;
+  const H = 430;
+  const xMin = 22;
+  const xMax = 69;
+  const yMin = 50;
+  const yMax = 102;
+  const plotW = W - padL - padR;
+  const plotH = H - padT - padB;
+  const pxX = (v) => padL + ((v - xMin) / (xMax - xMin)) * plotW;
+  const pxY = (v) => padT + ((yMax - v) / (yMax - yMin)) * plotH;
+
+  const xMid = pxX(52);
+  const yMid = pxY(70);
+
+  const xTicks = [30, 40, 50, 60];
+  const yTicks = [60, 70, 80, 90, 100];
+
+  const clips = allTeams
+    .map((t) => {
+      const cx = pxX(t.power.cur).toFixed(1);
+      const cy = pxY(t.power.proj).toFixed(1);
+      return `<clipPath id="mx-clip-${t.idx}"><circle cx="${cx}" cy="${cy}" r="14" /></clipPath>`;
+    })
+    .join("");
+
+  const nodes = allTeams
+    .map((t) => {
+      const p = t.power;
+      const cx = pxX(p.cur);
+      const cy = pxY(p.proj);
+      const lead = byName(t.members[0]);
+      const stroke = EL_HEX[lead?.element || "Geo"] || "#d3bc8e";
+      const isAct = t.idx === APP.matrixActive;
+
+      let lx = cx;
+      let ly = cy - 20;
+      let anchor = "middle";
+      if (p.labelPos === "right") {
+        lx = cx + 19;
+        ly = cy + 4;
+        anchor = "start";
+      } else if (p.labelPos === "left") {
+        lx = cx - 19;
+        ly = cy + 4;
+        anchor = "end";
+      } else if (p.labelPos === "bottom") {
+        lx = cx;
+        ly = cy + 28;
+        anchor = "middle";
+      }
+
+      return `
+        <g class="matrix-node ${isAct ? "is-active" : ""}" data-matrix-pick="${t.idx}">
+          <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="20" fill="transparent" />
+          ${isAct ? `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="19" fill="none" stroke="#f1ece1" stroke-width="1.5" stroke-dasharray="3 2" />` : ""}
+          <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="15" fill="#181520" stroke="${stroke}" stroke-width="${isAct ? 2.5 : 1.7}" />
+          ${lead?.icon ? `<image href="${esc(lead.icon)}" x="${(cx - 14).toFixed(1)}" y="${(cy - 14).toFixed(1)}" width="28" height="28" clip-path="url(#mx-clip-${t.idx})" preserveAspectRatio="xMidYMid slice" />` : ""}
+          <text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${anchor}" class="matrix-lbl">${esc(p.short)}</text>
+        </g>
+      `;
+    })
+    .join("");
+
+  const act = allTeams[APP.matrixActive] || allTeams[0];
+  const actP = act.power;
+  const actReady = calcTeamReadiness(act.members);
+  const actLead = byName(act.members[0]);
+
+  return `
+    <div class="matrix-layout">
+      <div class="matrix-canvas-card">
+        <svg viewBox="0 0 ${W} ${H}" class="matrix-svg" role="img" aria-label="Bản đồ 2D sức mạnh hiện tại và dự tính">
+          <defs>${clips}</defs>
+
+          <!-- Quadrants -->
+          <rect x="${padL}" y="${padT}" width="${(xMid - padL).toFixed(1)}" height="${(yMid - padT).toFixed(1)}" fill="rgba(176, 122, 245, 0.06)" />
+          <rect x="${xMid.toFixed(1)}" y="${padT}" width="${(W - padR - xMid).toFixed(1)}" height="${(yMid - padT).toFixed(1)}" fill="rgba(108, 212, 165, 0.08)" />
+          <rect x="${padL}" y="${yMid.toFixed(1)}" width="${(xMid - padL).toFixed(1)}" height="${(H - padB - yMid).toFixed(1)}" fill="rgba(232, 114, 114, 0.04)" />
+          <rect x="${xMid.toFixed(1)}" y="${yMid.toFixed(1)}" width="${(W - padR - xMid).toFixed(1)}" height="${(H - padB - yMid).toFixed(1)}" fill="rgba(211, 188, 142, 0.05)" />
+
+          <!-- Quadrant Titles -->
+          <text x="${padL + 10}" y="${padT + 18}" class="q-title q-purple">⚡ TIỀM NĂNG LỚN (BUILD DẦN)</text>
+          <text x="${W - padR - 10}" y="${padT + 18}" text-anchor="end" class="q-title q-green">★ ƯU TIÊN #1 (ĐÁNH NGAY &amp; NUÔI)</text>
+          <text x="${padL + 10}" y="${H - padB - 10}" class="q-title q-muted">↻ CHỜ TRẢ ĐỒ / TÌNH HUỐNG</text>
+          <text x="${W - padR - 10}" y="${H - padB - 10}" text-anchor="end" class="q-title q-gold">✓ ỔN ĐỊNH (DÙNG LUÔN)</text>
+
+          <!-- Grid lines & ticks -->
+          ${xTicks
+            .map((xv) => {
+              const x = pxX(xv).toFixed(1);
+              return `<line x1="${x}" y1="${padT}" x2="${x}" y2="${H - padB}" class="mx-grid" />
+                      <text x="${x}" y="${H - padB + 18}" text-anchor="middle" class="mx-tick">${xv}k</text>`;
+            })
+            .join("")}
+          ${yTicks
+            .map((yv) => {
+              const y = pxY(yv).toFixed(1);
+              return `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" class="mx-grid" />
+                      <text x="${padL - 8}" y="${Number(y) + 4}" text-anchor="end" class="mx-tick">${yv}k</text>`;
+            })
+            .join("")}
+
+          <!-- Threshold dividers -->
+          <line x1="${xMid.toFixed(1)}" y1="${padT}" x2="${xMid.toFixed(1)}" y2="${H - padB}" class="mx-divider" />
+          <line x1="${padL}" y1="${yMid.toFixed(1)}" x2="${W - padR}" y2="${yMid.toFixed(1)}" class="mx-divider" />
+
+          <!-- Y=X diagonal reference -->
+          <line x1="${pxX(50).toFixed(1)}" y1="${pxY(50).toFixed(1)}" x2="${pxX(69).toFixed(1)}" y2="${pxY(69).toFixed(1)}" class="mx-diag" />
+
+          <!-- Axis labels -->
+          <text x="${((padL + W - padR) / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle" class="mx-axis">Sức mạnh HIỆN TẠI (24/11 · k DPS) →</text>
+          <text x="16" y="${((padT + H - padB) / 2).toFixed(1)}" text-anchor="middle" transform="rotate(-90 16 ${((padT + H - padB) / 2).toFixed(1)})" class="mx-axis">Trần DỰ TÍNH (k DPS) →</text>
+
+          ${nodes}
+        </svg>
+      </div>
+
+      <aside class="matrix-inspector" style="--el: var(--el-${esc(actLead?.element || "Geo")}, 211,188,142);">
+        ${actLead?.splash ? `<img class="inspector-splash" src="${esc(actLead.splash)}" alt="" referrerpolicy="no-referrer" />` : ""}
+        <div class="inspector-inner">
+          <div class="inspector-eyebrow">Đang chọn trên bản đồ</div>
+          <h3>${esc(act.title)}</h3>
+          <div class="inspector-badges">
+            <span class="power-badge status-${esc(act.status)}">${esc(actP.badge)}</span>
+            <span class="cost-pill ${costClass(actP.cost)}">${esc(actP.cost)}</span>
+          </div>
+
+          ${renderTeamFaces(act.members)}
+
+          <div class="inspector-meter">
+            <div class="bullet-track">
+              <div class="bullet-proj" style="width:${actP.proj}%"></div>
+              <div class="bullet-cur" style="width:${actP.cur}%"></div>
+            </div>
+            <div class="power-nums">
+              <span><strong>${actP.cur}k</strong> → <strong class="proj-val">${actP.proj}k DPS</strong></span>
+              <span class="power-gain">+${powerGainPct(actP)}%</span>
+            </div>
+          </div>
+
+          <div class="inspector-stats">
+            <div><span>Tier</span><strong>${esc(actP.curTier)} → ${esc(actP.projTier)}</strong></div>
+            <div><span>Độ hoàn thiện</span><strong>${actReady.pct}% (Lv.${actReady.avgLv})</strong></div>
+            <div><span>TDV Lv.20</span><strong>${actReady.maxArts}/${act.members.length * 5}</strong></div>
+          </div>
+
+          <div class="inspector-chips">
+            ${(actP.chips || []).map((ch) => `<span class="up-chip">${esc(ch)}</span>`).join("")}
+          </div>
+
+          <div class="inspector-actions">
+            <button type="button" class="power-jump-btn" data-jump-team="${act.idx}">Xem Sân Khấu →</button>
+            <button type="button" class="vs-mini-btn" data-vs-pick="${act.idx}">So kè 1v1 →</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  `;
+}
+
+function renderPowerVs(allTeams) {
+  const a = allTeams[APP.vsA] || allTeams[0];
+  const b = allTeams[APP.vsB] || allTeams[11] || allTeams[1];
+  const rA = calcTeamReadiness(a.members);
+  const rB = calcTeamReadiness(b.members);
+  const gA = powerGainPct(a.power);
+  const gB = powerGainPct(b.power);
+
+  const presets = [
+    [0, 11, "Neuv+Furina vs Mitya"],
+    [1, 2, "Raiden+Furina vs National"],
+    [10, 5, "Navia vs Hu Tao"],
+    [8, 4, "Nilou vs Ayaka"],
+  ];
+
+  const metrics = [
+    { label: "DPS Hiện tại (24/11)", vA: a.power.cur, vB: b.power.cur, fmtA: `${a.power.cur}k`, fmtB: `${b.power.cur}k`, max: 100 },
+    { label: "Trần DPS Dự tính", vA: a.power.proj, vB: b.power.proj, fmtA: `${a.power.proj}k`, fmtB: `${b.power.proj}k`, max: 100 },
+    { label: "Tiềm năng Tăng trưởng", vA: gA, vB: gB, fmtA: `+${gA}%`, fmtB: `+${gB}%`, max: Math.max(gA, gB, 100) },
+    { label: "Độ hoàn thiện Thực tế", vA: rA.pct, vB: rB.pct, fmtA: `${rA.pct}%`, fmtB: `${rB.pct}%`, max: 100 },
+  ];
+
+  const renderHeaderCard = (team, ready, side) => {
+    const lead = byName(team.members[0]);
+    const el = lead?.element || "Geo";
+    const opts = allTeams
+      .map((t) => `<option value="${t.idx}" ${t.idx === team.idx ? "selected" : ""}>${esc(t.title)} (${t.power.cur}k → ${t.power.proj}k)</option>`)
+      .join("");
+    return `
+      <div class="vs-card vs-side-${side}" style="--el: var(--el-${esc(el)}, 211,188,142);">
+        ${lead?.splash ? `<img class="vs-splash" src="${esc(lead.splash)}" alt="" referrerpolicy="no-referrer" />` : ""}
+        <div class="vs-card-inner">
+          <select class="vs-select" data-vs-select="${side}" aria-label="Chọn đội ${side.toUpperCase()}">${opts}</select>
+          <div class="vs-meta-row">
+            <span class="tier-pill ${tierClass(team.power.curTier)}">${esc(team.power.curTier)}</span>
+            <span class="swap-arrow">→</span>
+            <span class="tier-pill ${tierClass(team.power.projTier)}">${esc(team.power.projTier)}</span>
+            <span class="cost-pill ${costClass(team.power.cost)}">${esc(team.power.cost)}</span>
+            <span class="power-role">${esc(team.power.role)}</span>
+          </div>
+          ${renderTeamFaces(team.members)}
+          <div class="vs-chips">
+            ${(team.power.chips || []).map((ch) => `<span class="up-chip">${esc(ch)}</span>`).join("")}
+          </div>
+          <div class="vs-sub-info">Build ${ready.pct}% · TDV +20: ${ready.maxArts}/20 · VK 90: ${ready.maxWeapons}/4</div>
+        </div>
+      </div>
+    `;
+  };
+
+  const barsHtml = metrics
+    .map((m) => {
+      const wA = Math.round((m.vA / m.max) * 100);
+      const wB = Math.round((m.vB / m.max) * 100);
+      const winA = m.vA > m.vB;
+      const winB = m.vB > m.vA;
+      return `
+        <div class="vs-metric-row">
+          <div class="vs-val vs-val-a ${winA ? "is-win" : ""}">${esc(m.fmtA)}</div>
+          <div class="vs-bar-a"><div class="vs-fill vs-fill-a ${winA ? "is-win" : ""}" style="width:${wA}%"></div></div>
+          <div class="vs-metric-lbl">${esc(m.label)}</div>
+          <div class="vs-bar-b"><div class="vs-fill vs-fill-b ${winB ? "is-win" : ""}" style="width:${wB}%"></div></div>
+          <div class="vs-val vs-val-b ${winB ? "is-win" : ""}">${esc(m.fmtB)}</div>
+        </div>
+      `;
+    })
+    .join("");
+
+  const curWinner = a.power.cur >= b.power.cur ? a : b;
+  const projWinner = a.power.proj >= b.power.proj ? a : b;
+
+  return `
+    <div class="vs-presets">
+      <span class="power-sort-lbl">Kèo nhanh:</span>
+      ${presets
+        .map(([ia, ib, label]) => `<button type="button" class="filter-btn ${APP.vsA === ia && APP.vsB === ib ? "active" : ""}" data-vs-preset="${ia},${ib}">${esc(label)}</button>`)
+        .join("")}
+    </div>
+
+    <div class="vs-grid">
+      ${renderHeaderCard(a, rA, "a")}
+      <div class="vs-badge-mid">VS</div>
+      ${renderHeaderCard(b, rB, "b")}
+    </div>
+
+    <div class="vs-bars-card">
+      ${barsHtml}
+    </div>
+
+    <div class="onslaught-banner vs-verdict">
+      <strong>Kết luận kèo:</strong>
+      Đánh ngay hôm nay chọn <strong>${esc(curWinner.title)}</strong> (~${curWinner.power.cur}k DPS, hơn ${Math.abs(a.power.cur - b.power.cur)}k)
+      · Đầu tư dài hạn chọn <strong>${esc(projWinner.title)}</strong> (~${projWinner.power.proj}k DPS, trần ${esc(projWinner.power.projTier)}).
+    </div>
+  `;
+}
+
+function renderPowerView() {
+  const allTeams = MODES.teams.items.map((it, idx) => ({ ...it, idx }));
+
+  const subTabs = [
+    ["chart", "Biểu Đồ DPS"],
+    ["matrix", "Bản Đồ 2D"],
+    ["vs", "So Kè 1v1"],
+  ];
+  const tagButtons = [
+    ["all", `Tất cả (${allTeams.length})`],
+    ["st", "Đơn"],
+    ["aoe", "AOE"],
+    ["upgrade", "Tăng mạnh"],
+  ];
+  const sortButtons = [
+    ["proj", "Dự tính ↓"],
+    ["cur", "Hiện tại ↓"],
+    ["gain", "Tăng % ↓"],
+  ];
+
+  let body = "";
+  if (APP.powerTab === "matrix") body = renderPowerMatrix(allTeams);
+  else if (APP.powerTab === "vs") body = renderPowerVs(allTeams);
+  else body = renderPowerChart(allTeams);
+
+  return `
+    ${renderPowerPodium(allTeams)}
+
+    <div class="power-subbar">
+      <div class="power-subtabs">
+        ${subTabs
+          .map(([k, label]) => `<button type="button" class="subtab-btn ${APP.powerTab === k ? "active" : ""}" data-power-tab="${k}">${esc(label)}</button>`)
+          .join("")}
+      </div>
+
+      ${
+        APP.powerTab === "chart"
+          ? `<div class="power-chart-tools">
+              <div class="filter-group">
+                ${tagButtons
+                  .map(([k, label]) => `<button type="button" class="filter-btn ${APP.powerTag === k ? "active" : ""}" data-power-tag="${k}">${esc(label)}</button>`)
+                  .join("")}
+              </div>
+              <div class="filter-group">
+                <span class="power-sort-lbl">Xếp:</span>
+                ${sortButtons
+                  .map(([k, label]) => `<button type="button" class="filter-btn ${APP.powerSort === k ? "active" : ""}" data-power-sort="${k}">${esc(label)}</button>`)
+                  .join("")}
+              </div>
+            </div>`
+          : `<span class="power-hint">${APP.powerTab === "matrix" ? "Bấm từng icon đội trên bản đồ để soi chi tiết &amp; độ hoàn thiện" : "Chọn 2 đội bất kỳ để so trực diện sức mạnh hiện tại vs trần dự tính"}</span>`
+      }
+    </div>
+
+    ${body}
   `;
 }
 
@@ -1390,6 +1865,13 @@ function render() {
     });
   });
 
+  document.querySelectorAll("[data-power-tab]").forEach((b) => {
+    b.addEventListener("click", () => {
+      APP.powerTab = b.getAttribute("data-power-tab");
+      render();
+    });
+  });
+
   document.querySelectorAll("[data-power-tag]").forEach((b) => {
     b.addEventListener("click", () => {
       APP.powerTag = b.getAttribute("data-power-tag");
@@ -1404,8 +1886,45 @@ function render() {
     });
   });
 
-  document.querySelectorAll("[data-jump-team]").forEach((b) => {
+  document.querySelectorAll("[data-matrix-pick]").forEach((el) => {
+    el.addEventListener("click", () => {
+      APP.matrixActive = Number(el.getAttribute("data-matrix-pick"));
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-vs-pick]").forEach((b) => {
     b.addEventListener("click", () => {
+      const picked = Number(b.getAttribute("data-vs-pick"));
+      APP.vsA = picked;
+      APP.vsB = picked === 0 ? 11 : 0;
+      APP.powerTab = "vs";
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-vs-preset]").forEach((b) => {
+    b.addEventListener("click", () => {
+      const [ia, ib] = b.getAttribute("data-vs-preset").split(",").map(Number);
+      APP.vsA = ia;
+      APP.vsB = ib;
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-vs-select]").forEach((sel) => {
+    sel.addEventListener("change", () => {
+      const side = sel.getAttribute("data-vs-select");
+      const val = Number(sel.value);
+      if (side === "a") APP.vsA = val;
+      else APP.vsB = val;
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-jump-team]").forEach((b) => {
+    b.addEventListener("click", (e) => {
+      if (e.target.closest("[data-open-char]")) return;
       APP.view = "stage";
       APP.mode = "teams";
       APP.index = Number(b.getAttribute("data-jump-team"));
