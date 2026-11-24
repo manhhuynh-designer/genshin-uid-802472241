@@ -349,18 +349,102 @@ const MODES = {
   teams: {
     label: "Đội Hình",
     items: [
-      { title: "Neuvillette + Furina Hyper", sub: "✓ Clear Ảo Cảnh Boss 2 trong 34s (kỷ lục mới 191s!)", note: "Vừa có Furina Lv.80 ghép song Thủy · Nâng Cát ER +20 & farm thêm 4pc Thợ Săn/Đoàn Kịch", status: "ok", members: ["Neuvillette", "Furina", "Kaedehara Kazuha", "Zhongli"] },
-      { title: "Raiden Aggravate / Hyper", sub: "✓ Raiden 69.9/132.4 · Clear Ảo Cảnh Boss 1 trong 56s", note: "Raiden vừa đổi Nón CR% cực ổn định · Furina + Yae + Yelan nổ sát thương cực nhanh", status: "ok", members: ["Raiden Shogun", "Furina", "Yae Miko", "Yelan"] },
-      { title: "Raiden National", sub: "Ổn định Boss đơn · XL Lao Xiên Cá (245.6% ER)", note: "Sẵn sàng 100% · Chuyển Kiếm Gỗ sang Bennett càng khỏe", status: "ok", members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"] },
-      { title: "Keqing Tăng Cường", sub: "Tạm cầm Kiếm Bến Tàu (26.0/231.4) do Furina mượn Bàn Nham", note: "Câu Ống Đồng cho Furina để trả Bàn Nham (70/231) · Nahida 1,012 EM · Kazuha 1,011 EM", status: "warn", members: ["Keqing", "Nahida", "Yae Miko", "Kaedehara Kazuha"] },
-      { title: "Ayaka Đóng Băng", sub: "Ayaka 10/10/10 · Mona 8/8/13 (có thể thay bằng Furina)", note: "Sẵn sàng 100% · ~95% CR thực · Đổi Rosaria C6 + Kokomi Thiên Nham càng khỏe", status: "ok", members: ["Kamisato Ayaka", "Mona", "Kaedehara Kazuha", "Sangonomiya Kokomi"] },
-      { title: "Hu Tao Bốc Hơi", sub: "2 Thủy + Khiên Zhongli", note: "Sẵn sàng 100% · 2 Hòa Phác Diên riêng", status: "ok", members: ["Hu Tao", "Yelan", "Xingqiu", "Zhongli"] },
-      { title: "Yoimiya Đánh Thường", sub: "Yoimiya 74/203 · Yun Jin C6", note: "Sẵn sàng 100% · 2,160 DEF Yun Jin", status: "ok", members: ["Yoimiya", "Yelan", "Yun Jin", "Zhongli"] },
-      { title: "Ganyu Tan Chảy", sub: "Ganyu 10/10/10 · 4pc Đoàn Hát", note: "Sẵn sàng 100%", status: "ok", members: ["Ganyu", "Bennett", "Xiangling", "Zhongli"] },
-      { title: "Nilou Sum Suê", sub: "51.5k HP · Nahida 4pc Rừng Sâu (1,012 EM)", note: "Sẵn sàng 100%", status: "ok", members: ["Nilou", "Nahida", "Sangonomiya Kokomi", "Collei"] },
-      { title: "Eula Vật Lý", sub: "C2 10/10/10 · Rosaria C6 bù CR", note: "Tình huống / Siêu Dẫn · CR 51.7%", status: "warn", members: ["Eula", "Raiden Shogun", "Rosaria", "Zhongli"] },
-      { title: "Navia 2 Nham", sub: "✓ Đã chốt 80.0/180.1 · Vương miện E10/Q9 · Li Cốt R1", note: "Navia đã hoàn chỉnh · Còn nâng E Chiori (1 → 8–9)", status: "ok", members: ["Navia", "Chiori", "Bennett", "Xiangling"] },
-      { title: "Mitya Meta 7.2", sub: "Snezhnaya 6% · Mitya Lv.60 (64.5/195.5) · Aino Lv.70 C1 · Valeriy C3", note: "Nâng Ly EM Mitya +0→+20, kéo Trấn & Lv.90 + farm sách Charity cho bộ 3", status: "warn", members: ["Mitya", "Valeriy", "Kaedehara Kazuha", "Aino"] },
+      {
+        title: "Neuvillette + Furina Hyper",
+        sub: "✓ Clear Ảo Cảnh Boss 2 trong 34s (kỷ lục mới 191s!)",
+        note: "Vừa có Furina Lv.80 ghép song Thủy · Nâng Cát ER +20 & farm thêm 4pc Thợ Săn/Đoàn Kịch",
+        status: "ok",
+        members: ["Neuvillette", "Furina", "Kaedehara Kazuha", "Zhongli"],
+        power: { cur: 64, proj: 92, curTier: "A+", projTier: "S+", role: "AOE · Đơn", tags: ["st", "aoe", "upgrade"], badge: "Ảo Cảnh 34s", upgrade: "Neuv 4pc Thợ Săn + Furina Lv.90 Q10 / 4pc Đoàn Kịch / Ống Đồng (chung 1 bí cảnh Fontaine)" },
+      },
+      {
+        title: "Raiden + Furina Hyper",
+        sub: "✓ Raiden 69.9/132.4 · Clear Ảo Cảnh Boss 1 trong 56s",
+        note: "Raiden vừa đổi Nón CR% cực ổn định · Furina + Yae + Yelan nổ sát thương cực nhanh",
+        status: "ok",
+        members: ["Raiden Shogun", "Furina", "Yae Miko", "Yelan"],
+        power: { cur: 62, proj: 78, curTier: "A+", projTier: "S", role: "Đơn mục tiêu", tags: ["st", "upgrade"], badge: "Ảo Cảnh 56s", upgrade: "Furina Lv.90 Q10 + Cát ER +20/4pc Đoàn Kịch · Yelan Tây Phong 90 · Yae tăng CR (60%+)" },
+      },
+      {
+        title: "Raiden National",
+        sub: "Ổn định Boss đơn · XL Lao Xiên Cá (245.6% ER)",
+        note: "Sẵn sàng 100% · Chuyển Kiếm Gỗ sang Bennett càng khỏe",
+        status: "ok",
+        members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"],
+        power: { cur: 61, proj: 68, curTier: "A+", projTier: "A+", role: "Đơn mục tiêu", tags: ["st"], badge: "Sẵn sàng 100%", upgrade: "Bennett đổi Kiếm Gỗ (565 Base ATK) · Yelan Tây Phong 90 · Tối ưu nhẹ Crit Xiangling" },
+      },
+      {
+        title: "Keqing Tăng Cường",
+        sub: "Tạm cầm Kiếm Bến Tàu (26.0/231.4) do Furina mượn Bàn Nham",
+        note: "Câu Ống Đồng cho Furina để trả Bàn Nham (70/231) · Nahida 1,012 EM · Kazuha 1,011 EM",
+        status: "warn",
+        members: ["Keqing", "Nahida", "Yae Miko", "Kaedehara Kazuha"],
+        power: { cur: 45, proj: 65, curTier: "B", projTier: "A+", role: "Đơn · AOE nhanh", tags: ["st", "aoe", "upgrade"], badge: "Hồi phục 0 Nhựa", upgrade: "Câu Ống Đồng cho Furina để trả Bàn Nham Kết Lục về Keqing (CR nhảy 26% → 70%)" },
+      },
+      {
+        title: "Ayaka Đóng Băng",
+        sub: "Ayaka 10/10/10 · Mona 8/8/13 (có thể thay bằng Furina)",
+        note: "Sẵn sàng 100% · ~95% CR thực · Đổi Rosaria C6 + Kokomi Thiên Nham càng khỏe",
+        status: "ok",
+        members: ["Kamisato Ayaka", "Mona", "Kaedehara Kazuha", "Sangonomiya Kokomi"],
+        power: { cur: 54, proj: 67, curTier: "A", projTier: "A+", role: "AOE Đóng Băng", tags: ["aoe"], badge: "~95% CR thực", upgrade: "Thử ghép Furina + Kokomi/Charlotte hoặc Rosaria C6 + Kokomi Thiên Nham · Amenoma R5" },
+      },
+      {
+        title: "Hu Tao Bốc Hơi",
+        sub: "2 Thủy + Khiên Zhongli",
+        note: "Sẵn sàng 100% · 2 Hòa Phác Diên riêng",
+        status: "ok",
+        members: ["Hu Tao", "Yelan", "Xingqiu", "Zhongli"],
+        power: { cur: 59, proj: 72, curTier: "A+", projTier: "S", role: "Đơn mục tiêu", tags: ["st"], badge: "Ổn định 2 Thủy", upgrade: "Yelan Tây Phong 70→90 · Kéo nhẹ CR Hu Tao (54%→70%+) · Thử ghép Furina + Xianyun" },
+      },
+      {
+        title: "Yoimiya Đánh Thường",
+        sub: "Yoimiya 74/203 · Yun Jin C6",
+        note: "Sẵn sàng 100% · 2,160 DEF Yun Jin",
+        status: "ok",
+        members: ["Yoimiya", "Yelan", "Yun Jin", "Zhongli"],
+        power: { cur: 55, proj: 62, curTier: "A", projTier: "A", role: "Boss bay · Đơn", tags: ["st"], badge: "Sẵn sàng 100%", upgrade: "Yelan Tây Phong 70→90 · Bổ sung ~100 EM cho Yoimiya để tối ưu Bốc Hơi" },
+      },
+      {
+        title: "Ganyu Tan Chảy",
+        sub: "Ganyu 10/10/10 · 4pc Đoàn Hát",
+        note: "Sẵn sàng 100%",
+        status: "ok",
+        members: ["Ganyu", "Bennett", "Xiangling", "Zhongli"],
+        power: { cur: 52, proj: 60, curTier: "A", projTier: "A", role: "Đơn · Nuke", tags: ["st"], badge: "Sẵn sàng 100%", upgrade: "Đổi Cát EM (~220+ EM) cho Ganyu · Bennett đổi Kiếm Gỗ tăng buff ATK" },
+      },
+      {
+        title: "Nilou Sum Suê",
+        sub: "51.5k HP · Nahida 4pc Rừng Sâu (1,012 EM)",
+        note: "Sẵn sàng 100%",
+        status: "ok",
+        members: ["Nilou", "Nahida", "Sangonomiya Kokomi", "Collei"],
+        power: { cur: 56, proj: 70, curTier: "A+", projTier: "S", role: "Vua AOE (2+ quái)", tags: ["aoe", "upgrade"], badge: "AOE 78k+", upgrade: "Đổi Nilou sang 2pc+2pc HP% (51.5k → 68k+ HP) · Bổ sung EM cho Kokomi khi đánh AOE" },
+      },
+      {
+        title: "Eula Vật Lý",
+        sub: "C2 10/10/10 · Rosaria C6 bù CR",
+        note: "Tình huống / Siêu Dẫn · CR 51.7%",
+        status: "warn",
+        members: ["Eula", "Raiden Shogun", "Rosaria", "Zhongli"],
+        power: { cur: 48, proj: 56, curTier: "B+", projTier: "A", role: "Nuke Vật Lý", tags: ["st"], badge: "Tình huống", upgrade: "Đẩy CR Eula (51.7%→70%+) giảm hụt Nộ · Hoặc ghép Furina + Raiden + Mika C4" },
+      },
+      {
+        title: "Navia 2 Nham",
+        sub: "✓ Đã chốt 80.0/180.1 · Vương miện E10/Q9 · Li Cốt R1",
+        note: "Navia đã hoàn chỉnh · Còn nâng E Chiori (1 → 8–9)",
+        status: "ok",
+        members: ["Navia", "Chiori", "Bennett", "Xiangling"],
+        power: { cur: 58, proj: 76, curTier: "A+", projTier: "S", role: "Phá khiên · Đơn", tags: ["st", "upgrade"], badge: "La Hoàn 12 Nửa 1", upgrade: "Nâng E Chiori 1→9 + Ly Nham +20 + tìm STBK (hiện 71%) · Bennett đổi Kiếm Gỗ" },
+      },
+      {
+        title: "Mitya Meta 7.2",
+        sub: "Snezhnaya 6% · Mitya Lv.60 (64.5/195.5) · Aino Lv.70 C1 · Valeriy C3",
+        note: "Nâng Ly EM Mitya +0→+20, kéo Trấn & Lv.90 + farm sách Charity cho bộ 3",
+        status: "warn",
+        members: ["Mitya", "Valeriy", "Kaedehara Kazuha", "Aino"],
+        power: { cur: 28, proj: 96, curTier: "C", projTier: "S+", role: "Meta 7.2 · Đơn/AOE", tags: ["st", "aoe", "upgrade"], badge: "Trần cao nhất 7.2", upgrade: "Mitya Lv.60→90 + Trấn 20→90 + Ly EM +20 + Valeriy C3 Lv.80 + Aino 4pc Khúc Ca" },
+      },
     ],
   },
   abyss: {
@@ -393,10 +477,12 @@ const MODES = {
 
 let APP = {
   data: null,
-  view: "tracker",   // tracker | stage | week
+  view: "tracker",   // tracker | stage | power | week
   filter: "pending", // pending | all
   mode: "teams",
   index: 0,
+  powerSort: "proj", // proj | cur | gain
+  powerTag: "all",   // all | st | aoe | upgrade
   modalChar: null,
   done: loadDone(),
 };
@@ -480,6 +566,7 @@ function renderViewBar() {
       <nav class="view-tabs">
         <button class="view-tab ${APP.view === "tracker" ? "active" : ""}" data-view="tracker">Việc Cần Làm (${pendingCount})</button>
         <button class="view-tab ${APP.view === "stage" ? "active" : ""}" data-view="stage">Sân Khấu Đội Hình</button>
+        <button class="view-tab ${APP.view === "power" ? "active" : ""}" data-view="power">So Sánh Sức Mạnh (${MODES.teams.items.length})</button>
         <button class="view-tab ${APP.view === "week" ? "active" : ""}" data-view="week">Lịch Farm 7 Ngày</button>
       </nav>
       <div class="progress-inline">
@@ -709,7 +796,50 @@ function renderTrackerView() {
   `;
 }
 
+function powerGainPct(p) {
+  if (!p || !p.cur) return 0;
+  return Math.round(((p.proj - p.cur) / p.cur) * 100);
+}
+
+function tierClass(tier) {
+  const t = String(tier || "").toLowerCase();
+  if (t === "s+") return "tier-s-plus";
+  if (t === "s") return "tier-s";
+  if (t === "a+") return "tier-a-plus";
+  if (t === "a") return "tier-a";
+  if (t.startsWith("b")) return "tier-b";
+  return "tier-c";
+}
+
 function renderFoot() {
+  if (APP.mode === "teams") {
+    const items = MODES.teams.items;
+    const active = items[APP.index] || items[0];
+    const p = active?.power;
+    if (!p) return "";
+    const maxProj = Math.max(...items.map((it) => it.power?.proj || 0), 1);
+    const curW = Math.round((p.cur / maxProj) * 100);
+    const projW = Math.round((p.proj / maxProj) * 100);
+    const gain = powerGainPct(p);
+    return `
+      <div class="stage-foot stage-power-foot">
+        <div class="stage-power-top">
+          <div class="stage-power-meta">
+            <span>Hiện tại <strong>~${p.cur}k DPS</strong> <em class="tier-pill ${tierClass(p.curTier)}">${esc(p.curTier)}</em></span>
+            <span class="swap-arrow">→</span>
+            <span>Dự tính <strong>~${p.proj}k DPS</strong> <em class="tier-pill ${tierClass(p.projTier)}">${esc(p.projTier)}</em></span>
+            <span class="power-gain">+${gain}%</span>
+          </div>
+          <button class="power-jump-btn" type="button" data-view-jump="power">Xem bảng so sánh ${items.length} đội →</button>
+        </div>
+        <div class="power-bar-track">
+          <div class="power-bar-proj" style="width:${projW}%"></div>
+          <div class="power-bar-cur" style="width:${curW}%"></div>
+        </div>
+        <div class="stage-power-note"><strong>Nút thắt chính:</strong> ${esc(p.upgrade)}</div>
+      </div>
+    `;
+  }
   if (APP.mode === "theater") {
     const elig = APP.data.characters.filter(
       (c) => c.level >= 70 && (["Hydro", "Electro", "Geo"].includes(c.element) || c.name === "Qiqi")
@@ -840,6 +970,136 @@ function renderStageView() {
         ${renderFoot()}
       </section>
     </section>
+  `;
+}
+
+function renderPowerView() {
+  const allTeams = MODES.teams.items.map((it, idx) => ({ ...it, idx }));
+  const maxProj = Math.max(...allTeams.map((t) => t.power.proj), 1);
+
+  const topCur = allTeams.reduce((a, b) => (b.power.cur > a.power.cur ? b : a), allTeams[0]);
+  const topProj = allTeams.reduce((a, b) => (b.power.proj > a.power.proj ? b : a), allTeams[0]);
+  const topGain = allTeams.reduce((a, b) => (powerGainPct(b.power) > powerGainPct(a.power) ? b : a), allTeams[0]);
+
+  const filtered = allTeams.filter((t) => APP.powerTag === "all" || t.power.tags.includes(APP.powerTag));
+  const sorted = [...filtered].sort((a, b) => {
+    if (APP.powerSort === "cur") return b.power.cur - a.power.cur || b.power.proj - a.power.proj;
+    if (APP.powerSort === "gain") return powerGainPct(b.power) - powerGainPct(a.power) || b.power.proj - a.power.proj;
+    return b.power.proj - a.power.proj || b.power.cur - a.power.cur;
+  });
+
+  const tagButtons = [
+    ["all", `Tất cả (${allTeams.length})`],
+    ["st", "Boss / Đơn"],
+    ["aoe", "AOE / Đa mục tiêu"],
+    ["upgrade", "Cần nâng cấp lớn"],
+  ];
+  const sortButtons = [
+    ["proj", "Trần dự tính ↓"],
+    ["cur", "Hiện tại ↓"],
+    ["gain", "Mức tăng % ↓"],
+  ];
+
+  const rowsHtml = sorted
+    .map((t, rankIdx) => {
+      const p = t.power;
+      const curW = Math.round((p.cur / maxProj) * 100);
+      const projW = Math.round((p.proj / maxProj) * 100);
+      const gain = powerGainPct(p);
+      const faces = t.members
+        .map((n) => {
+          const c = byName(n);
+          return c?.icon
+            ? `<button type="button" class="power-face-btn" data-open-char="${esc(n)}" title="${esc(n)} Lv.${esc(c.level)} C${esc(c.constellation)} — bấm xem chi tiết"><img src="${esc(c.icon)}" alt="${esc(n)}" loading="lazy" referrerpolicy="no-referrer" /></button>`
+            : `<span class="face-ghost" title="${esc(n)}">${esc(n.slice(0, 2).toUpperCase())}</span>`;
+        })
+        .join("");
+
+      return `
+        <div class="power-row">
+          <div class="power-rank">
+            <span class="rank-num">#${rankIdx + 1}</span>
+            <div class="tier-shift">
+              <span class="tier-pill ${tierClass(p.curTier)}">${esc(p.curTier)}</span>
+              <span class="swap-arrow">→</span>
+              <span class="tier-pill ${tierClass(p.projTier)}">${esc(p.projTier)}</span>
+            </div>
+          </div>
+
+          <div class="power-team">
+            <div class="power-team-top">
+              <button type="button" class="power-team-link" data-jump-team="${t.idx}">${esc(t.title)} →</button>
+              <span class="power-role">${esc(p.role)}</span>
+              <span class="power-badge status-${esc(t.status)}">${esc(p.badge)}</span>
+            </div>
+            <div class="power-faces">${faces}</div>
+          </div>
+
+          <div class="power-bar-wrap">
+            <div class="power-bar-track" title="Hiện tại ~${p.cur}k DPS · Dự tính ~${p.proj}k DPS">
+              <div class="power-bar-proj" style="width:${projW}%"></div>
+              <div class="power-bar-cur" style="width:${curW}%"></div>
+            </div>
+            <div class="power-nums">
+              <span><strong>${p.cur}k</strong> → <strong class="proj-val">${p.proj}k</strong> DPS</span>
+              <span class="power-gain">+${gain}%</span>
+            </div>
+          </div>
+
+          <div class="power-upgrade">${esc(p.upgrade)}</div>
+        </div>
+      `;
+    })
+    .join("");
+
+  return `
+    <div class="power-kpi-grid">
+      <div class="power-kpi">
+        <span>Mạnh nhất Hiện tại</span>
+        <strong>${esc(topCur.title)}</strong>
+        <small>~${topCur.power.cur}k DPS · Tier ${esc(topCur.power.curTier)} · ${esc(topCur.power.badge)}</small>
+      </div>
+      <div class="power-kpi">
+        <span>Trần Dự tính Cao nhất</span>
+        <strong>${esc(topProj.title)}</strong>
+        <small>~${topProj.power.proj}k DPS · Tier ${esc(topProj.power.projTier)} · ${esc(topProj.power.badge)}</small>
+      </div>
+      <div class="power-kpi">
+        <span>Tăng trưởng % Cao nhất</span>
+        <strong>${esc(topGain.title)}</strong>
+        <small>+${powerGainPct(topGain.power)}% · ${topGain.power.cur}k → ${topGain.power.proj}k DPS</small>
+      </div>
+    </div>
+
+    <div class="power-controls">
+      <div class="filter-group">
+        ${tagButtons
+          .map(([k, label]) => `<button type="button" class="filter-btn ${APP.powerTag === k ? "active" : ""}" data-power-tag="${k}">${esc(label)}</button>`)
+          .join("")}
+      </div>
+      <div class="filter-group">
+        <span class="power-sort-lbl">Sắp xếp:</span>
+        ${sortButtons
+          .map(([k, label]) => `<button type="button" class="filter-btn ${APP.powerSort === k ? "active" : ""}" data-power-sort="${k}">${esc(label)}</button>`)
+          .join("")}
+      </div>
+    </div>
+
+    <div class="onslaught-banner power-method-note">
+      <strong>Quy ước ước lượng DPS (chuẩn 1 vòng xoay 20s La Hoàn 12, đơn vị k DPS):</strong>
+      Dữ liệu hiện tại tính từ chỉ số thực tế crawl 24/11 và đối chiếu kỷ lục Ảo Cảnh <strong>191s</strong> (Neuv+Furina <strong>34s</strong>, Raiden+Furina <strong>56s</strong>).
+      <span class="power-legend"><i class="leg-cur"></i> Hiện tại &nbsp;<i class="leg-proj"></i> Trần dự tính sau nâng cấp (bấm tên đội để xem Sân Khấu · bấm avatar để mở chỉ số).</span>
+    </div>
+
+    <div class="power-table">
+      <div class="power-head">
+        <span>Hạng · Tier</span>
+        <span>Đội hình &amp; Vai trò</span>
+        <span>Sức mạnh (Hiện tại → Dự tính)</span>
+        <span>Đòn bẩy tăng sát thương chính</span>
+      </div>
+      ${rowsHtml}
+    </div>
   `;
 }
 
@@ -1100,6 +1360,7 @@ function render() {
   let content = "";
   if (APP.view === "tracker") content = renderTrackerView();
   else if (APP.view === "stage") content = renderStageView();
+  else if (APP.view === "power") content = renderPowerView();
   else content = renderWeekView();
 
   document.getElementById("app-root").innerHTML = [
@@ -1115,9 +1376,39 @@ function render() {
     });
   });
 
-  document.querySelectorAll(".filter-btn").forEach((b) => {
+  document.querySelectorAll("[data-view-jump]").forEach((b) => {
+    b.addEventListener("click", () => {
+      APP.view = b.getAttribute("data-view-jump");
+      render();
+    });
+  });
+
+  document.querySelectorAll(".filter-btn[data-filter]").forEach((b) => {
     b.addEventListener("click", () => {
       APP.filter = b.getAttribute("data-filter");
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-power-tag]").forEach((b) => {
+    b.addEventListener("click", () => {
+      APP.powerTag = b.getAttribute("data-power-tag");
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-power-sort]").forEach((b) => {
+    b.addEventListener("click", () => {
+      APP.powerSort = b.getAttribute("data-power-sort");
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-jump-team]").forEach((b) => {
+    b.addEventListener("click", () => {
+      APP.view = "stage";
+      APP.mode = "teams";
+      APP.index = Number(b.getAttribute("data-jump-team"));
       render();
     });
   });

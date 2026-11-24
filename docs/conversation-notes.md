@@ -70,3 +70,24 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 2. **Valeriy (Lv.1 C3):** Khiên + Buffer cho Mitya — rèn `Nhạc Khúc Biển Sâu` (ATK%) + farm sách *Charity*.
 3. **Alyosha (Lv.1 C0):** 4★ Thương Lôi off-field Healer + Buff ATK hệ Stellar-Conduct (ưu tiên `Thương Tây Phong` + `4pc Tông Thất` / `Heart of the Furnace`, sách & boss ở Snezhnaya).
 4. **Aino (Lv.70 C1 · `1/5/4`):** Đã lên Lv.70 + `Đại Kiếm Tây Phong Lv.90`, tiếp tục kéo lên Lv.80 & thiên phú `1/6/8`.
+
+---
+
+## 4. Bảng So Sánh Sức Mạnh Dự Tính Các Đội Hình (24/11/2026)
+
+*Ước lượng trên chuẩn vòng xoay 20s tại La Hoàn Tầng 12 (`k DPS`), đối chiếu theo chỉ số crawl 24/11 và kỷ lục Ảo Cảnh 191s (`Neuvillette + Furina` 34s, `Raiden + Furina` 56s).*
+
+| Đội hình | Vai trò | Hiện tại (Tier) | Dự tính (Tier) | Tăng | Đòn bẩy nâng cấp chính |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| **Mitya Meta 7.2** (`Mitya · Valeriy · Kazuha · Aino`) | Meta 7.2 · Đơn/AOE | ~28k (`C`) | **~96k** (`S+`) | +243% | Mitya Lv.60→90 + Trấn 20→90 + Ly EM +20 + Valeriy C3 Lv.80 + Aino 4pc Khúc Ca |
+| **Neuvillette + Furina Hyper** (`Neuvillette · Furina · Kazuha · Zhongli`) | AOE · Đơn | **~64k** (`A+`) | **~92k** (`S+`) | +44% | Neuv 4pc Thợ Săn + Furina Lv.90 Q10 / 4pc Đoàn Kịch / Ống Đồng (chung 1 bí cảnh Fontaine) |
+| **Raiden + Furina Hyper** (`Raiden · Furina · Yae · Yelan`) | Đơn mục tiêu | ~62k (`A+`) | ~78k (`S`) | +26% | Furina Lv.90 Q10 + Cát ER +20/4pc Đoàn Kịch · Yelan Tây Phong 90 · Yae tăng CR (60%+) |
+| **Navia 2 Nham** (`Navia · Chiori · Bennett · Xiangling`) | Phá khiên · Đơn | ~58k (`A+`) | ~76k (`S`) | +31% | Nâng E Chiori 1→9 + Ly Nham +20 + tìm STBK (hiện 71%) · Bennett đổi Kiếm Gỗ |
+| **Hu Tao Bốc Hơi** (`Hu Tao · Yelan · Xingqiu · Zhongli`) | Đơn mục tiêu | ~59k (`A+`) | ~72k (`S`) | +22% | Yelan Tây Phong 70→90 · Kéo nhẹ CR Hu Tao (54%→70%+) · Thử ghép Furina + Xianyun |
+| **Nilou Sum Suê** (`Nilou · Nahida · Kokomi · Collei`) | Vua AOE (2+ quái) | ~56k (`A+`) | ~70k (`S`) | +25% | Đổi Nilou sang 2pc+2pc HP% (51.5k → 68k+ HP) · Bổ sung EM cho Kokomi khi đánh AOE |
+| **Raiden National** (`Raiden · Bennett · Xiangling · Yelan`) | Đơn mục tiêu | ~61k (`A+`) | ~68k (`A+`) | +11% | Bennett đổi Kiếm Gỗ (565 Base ATK) · Yelan Tây Phong 90 · Tối ưu nhẹ Crit Xiangling |
+| **Ayaka Đóng Băng** (`Ayaka · Mona · Kazuha · Kokomi`) | AOE Đóng Băng | ~54k (`A`) | ~67k (`A+`) | +24% | Thử ghép Furina + Kokomi/Charlotte hoặc Rosaria C6 + Kokomi Thiên Nham · Amenoma R5 |
+| **Keqing Tăng Cường** (`Keqing · Nahida · Yae · Kazuha`) | Đơn · AOE nhanh | ~45k (`B`) | ~65k (`A+`) | +44% | Câu Ống Đồng cho Furina để trả Bàn Nham Kết Lục về Keqing (CR nhảy 26% → 70%) |
+| **Yoimiya Đánh Thường** (`Yoimiya · Yelan · Yun Jin · Zhongli`) | Boss bay · Đơn | ~55k (`A`) | ~62k (`A`) | +13% | Yelan Tây Phong 70→90 · Bổ sung ~100 EM cho Yoimiya để tối ưu Bốc Hơi |
+| **Ganyu Tan Chảy** (`Ganyu · Bennett · Xiangling · Zhongli`) | Đơn · Nuke | ~52k (`A`) | ~60k (`A`) | +15% | Đổi Cát EM (~220+ EM) cho Ganyu · Bennett đổi Kiếm Gỗ tăng buff ATK |
+| **Eula Vật Lý** (`Eula · Raiden · Rosaria · Zhongli`) | Nuke Vật Lý | ~48k (`B+`) | ~56k (`A`) | +17% | Đẩy CR Eula (51.7%→70%+) giảm hụt Nộ · Hoặc ghép Furina + Raiden + Mika C4 |
