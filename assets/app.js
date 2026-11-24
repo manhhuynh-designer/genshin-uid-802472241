@@ -26,7 +26,7 @@ const ACTIONS = [
   { id: "a_chev", bucket: "now", name: "Chevreuse", swapFrom: null, swapNote: "✓ Đã gắn Hắc Anh Thương R5 (HP lên 25.9k)", fixTitle: "Đổi Ly Hỏa & Nón CR → Full HP% + lên Lv.80", fixSub: "Kéo từ 25.9k → mốc 40,000 HP để mở trọn +40% ATK Quá Tải", setKey: "no" },
   { id: "a_kuki", bucket: "now", name: "Kuki Shinobu", swapFrom: null, swapNote: "✓ Đã gắn Thiết Phong Kích R3 (EM lên 483)", fixTitle: "Đổi Cát ATK / Ly HP / Nón CR → 3 món EM", fixSub: "Kéo từ 483 → ~900+ EM & nâng Lv.80 → 90 tối ưu Nở Rộ", setKey: "gd" },
   { id: "a_raiden", bucket: "now", name: "Raiden Shogun", swapFrom: null, swapNote: "✓ Đã đổi Nón CR% (69.9/132.4 · 258.9% ER · Clear Boss 1 trong 56s)", fixTitle: "Đã ổn định (tùy chọn giữ Trấn Đoạn Thảo R1)", fixSub: "Đổi Kiếm Gỗ cho Bennett từ Nilou để kéo thêm ATK trong Nộ", setKey: null },
-  { id: "a_yae", bucket: "now", name: "Yae Miko", swapFrom: null, swapNote: "Giữ Trấn Chân Ý Của Kagura R1 · 2,238 ATK · 51.0/252.2 · Đã đủ Lv.70+ mở Ma Nữ", fixTitle: "Mở khóa Ma Nữ (Edict of Cleansing) & đổi Nón → CR%", fixSub: "Trụ 14s→24s, Q không phá trụ, +80%/200% ATK Tinh-Siêu Dẫn · Đổi Nón CR% (~75/204) rồi farm 4pc Ảo Tưởng chung Mitya", setKey: "dids" },
+  { id: "a_yae", bucket: "now", name: "Yae Miko", swapFrom: null, swapNote: "✓ Đã mở Ma Nữ (Edict of Cleansing) · Giữ Trấn Kagura R1 · 2,238 ATK · 51.0/252.2", fixTitle: "Đổi Nón STBK → Nón CR% (51/252 → ~75/204)", fixSub: "✓ Đã có trụ 24s, Q không phá trụ, +80%/200% ATK · Đổi Nón CR% ổn định CRIT rồi farm 4pc Ảo Tưởng chung Mitya", setKey: "dids" },
   { id: "a_keqing", bucket: "now", name: "Keqing", swapFrom: "Furina", swapNote: "Đang tạm cầm Kiếm Bến Tàu Lv.60 (CR tụt còn 26.0%)", fixTitle: "Câu Ống Đồng cho Furina để trả Bàn Nham Kết Lục", fixSub: "Hoặc lắp tạm Tiếng Hét Của Rồng R5 + đổi Nón CR% khi Furina chưa xong", setKey: null },
   { id: "a_yelan", bucket: "now", name: "Yelan", swapFrom: null, swapNote: "✓ Đã gắn Cung Tây Phong R5 (ER lên 191.2%)", fixTitle: "Nâng Cung Tây Phong Lv.70 → Lv.90", fixSub: "68.9/152.6 · 28.8k HP đã đẹp · Lên 90 thêm ~11% ER là chốt", setKey: null },
   { id: "a_gorou", bucket: "now", name: "Gorou", swapFrom: null, swapNote: "Đang cầm Cung Săn Bắn 1★ Lv.1", fixTitle: "Lắp cung Nạp tạm & thêm Ly (đang 4 món)", fixSub: "Đủ đồ dự bị slot Nham cho Nhà Hát Giả Tưởng 7.2", setKey: null },
@@ -103,9 +103,9 @@ const CHAR_GUIDES = {
   },
   "Yae Miko": {
     mainStats: "Cát ATK% · Ly ATK% (Tinh-Siêu Dẫn) hoặc ST Lôi (Tăng Cường/Hyper) · Nón CR%",
-    targets: "Mục tiêu: Mở Ma Nữ (Edict of Cleansing) · ~75%+ CR / ~190–205% CD (90%+ CR với 4pc Ảo Tưởng) · ≥2,200 ATK",
+    targets: "✓ Đã mở Ma Nữ (Edict of Cleansing) · Mục tiêu: ~75%+ CR / ~190–205% CD (90%+ CR với 4pc Ảo Tưởng) · ≥2,200 ATK",
     steps: [
-      "Làm quest Lời Tiết Lộ Tình Cờ → Chỉ Dụ Của Ma Nữ (Great Youkai's Instruction, 0 Nhựa, cần Lv.70+) mở Edict of Cleansing: trụ Sesshou Sakura 14s → 24s, Q không phá trụ, kích Siêu Dẫn/Tinh-Siêu Dẫn cộng +80% ATK (CD 2.5s) và trong Polestar Field nổ thêm +200% ATK Sát Thương Tinh-Siêu Dẫn (CRIT được).",
+      "✓ Đã hoàn thành quest Chỉ Dụ Của Ma Nữ (Edict of Cleansing): trụ Sesshou Sakura 14s → 24s, Q không phá trụ, kích Siêu Dẫn/Tinh-Siêu Dẫn cộng +80% ATK (CD 2.5s) và trong Polestar Field nổ thêm +200% ATK Sát Thương Tinh-Siêu Dẫn (CRIT được).",
       "Đổi Nón STBK 62.2% hiện tại sang Nón CR% (51.0/252.2 → ~75/204, +10.8% DPS trung bình) để ổn định bạo kích cho đòn +200% ATK.",
       "Đi đội Tinh-Siêu Dẫn với Mitya: farm chung 4pc Ảo Tưởng Vụn Vỡ (Thorny Crown — Mondstadt, +ATK%, +ST Tinh-Siêu Dẫn, +16% CR) & cân nhắc Ly ATK% (vì ST Tinh-Siêu Dẫn không ăn %ST Lôi hay 4pc Đoàn Kịch).",
       "Cung Mệnh sau nâng cấp (nếu roll thêm): C1 +50% DMG Lôi/Tinh-Siêu Dẫn toàn đội 10s; C2 +60/90/120/200 EM; C4 hồi 8 Năng lượng/5s & +100% Burst DMG; C6 +200% CRIT DMG Tinh-Siêu Dẫn.",
@@ -348,7 +348,7 @@ const COLLECT_WEAPONS = [
 
 const FARM_DAYS = [
   { key: 1, short: "T2", title: "Thứ 2", chars: ["Chiori", "Aino", "Furina"], resin: "3× Boss Tuần (Narwhal cho Furina/Chiori + Aino) · Sách Aino", extra: "Nhặt Cỏ Naku, Hoa Lumidouce, Hoa Hồ Lô Ánh Sáng" },
-  { key: 2, short: "T3", title: "Thứ 3", chars: ["Furina", "Yae Miko", "Aino"], resin: "Sách Chính Nghĩa (Fontaine — Q/E Furina) · Boss Vịt Nắm Đấm (Nod-Krai — Aino)", extra: "Làm quest Ma Nữ mở Edict of Cleansing cho Yae (0 Nhựa) & câu Ống Đồng" },
+  { key: 2, short: "T3", title: "Thứ 3", chars: ["Furina", "Yae Miko", "Aino"], resin: "Sách Chính Nghĩa (Fontaine — Q/E Furina) · Boss Vịt Nắm Đấm (Nod-Krai — Aino)", extra: "Câu cá Fontaine lấy Ống Đồng Fleuve Cendre cho Furina (✓ Yae đã mở Ma Nữ)" },
   { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Yelan", "Aino"], resin: "Sách Ánh Sáng (Inazuma — E Chiori) · Nâng Cung Tây Phong (Yelan 70 → 90)", extra: "Ép Tráp Thánh → Bóng Hình Màu Xanh (Jean) / Tông Thất (Chev) / Tiếng Đêm (Navia)" },
   { key: 4, short: "T5", title: "Thứ 5", chars: ["Neuvillette", "Furina", "Fischl"], resin: "Full Nhựa: Kết Cục Của Tội Lỗi (Fontaine) — 4pc Thợ Săn & 4pc Đoàn Kịch", extra: "Nhặt lại đặc sản (hồi 48h)" },
   { key: 5, short: "T6", title: "Thứ 6", chars: ["Furina", "Neuvillette", "Aino"], resin: "Sách Chính Nghĩa (Furina) + Check Ảo Cảnh / TDV Fontaine", extra: "Hoàn tất lắp đồ cho Beidou/Gorou/Ningguang trước Nhà Hát 01/12" },
@@ -384,8 +384,8 @@ const MODES = {
           cur: 62, proj: 81, curTier: "A+", projTier: "S",
           role: "Đơn mục tiêu", tags: ["st", "upgrade"], badge: "Ảo Cảnh 56s",
           short: "Raiden+Furina", labelPos: "top", cost: "Trung bình",
-          chips: ["Furina Lv.90 Q10", "Yae Ma Nữ + Nón CR%", "Yelan Tây Phong 90"],
-          upgrade: "Furina Lv.90 Q10 + Cát ER +20/4pc Đoàn Kịch · Yae mở Ma Nữ (trụ 24s, Q không phá trụ) + Nón CR% · Yelan Tây Phong 90",
+          chips: ["Furina Lv.90 Q10", "Yae đổi Nón CR%", "Yelan Tây Phong 90"],
+          upgrade: "Furina Lv.90 Q10 + Cát ER +20/4pc Đoàn Kịch · Yae (✓ Ma Nữ) đổi Nón CR% · Yelan Tây Phong 90",
         },
       },
       {
@@ -412,8 +412,8 @@ const MODES = {
           cur: 45, proj: 68, curTier: "B", projTier: "A+",
           role: "Đơn · AOE nhanh", tags: ["st", "aoe", "upgrade"], badge: "Hồi phục 0 Nhựa",
           short: "Keqing", labelPos: "top", cost: "0 Nhựa",
-          chips: ["Trả Bàn Nham (CR 70%)", "Yae Ma Nữ + Nón CR%"],
-          upgrade: "Câu Ống Đồng trả Bàn Nham về Keqing (CR 26% → 70%) · Yae mở Ma Nữ (trụ 24s, Q không phá trụ) + Nón CR%",
+          chips: ["Trả Bàn Nham (CR 70%)", "Yae đổi Nón CR%"],
+          upgrade: "Câu Ống Đồng trả Bàn Nham về Keqing (CR 26% → 70%) · Yae (✓ Ma Nữ) đổi Nón CR%",
         },
       },
       {
@@ -524,8 +524,8 @@ const MODES = {
           cur: 38, proj: 98, curTier: "B", projTier: "S+",
           role: "Meta 7.2 · Tinh-Siêu Dẫn", tags: ["st", "aoe", "upgrade"], badge: "Trần cao nhất 7.2",
           short: "Mitya+Yae", labelPos: "right", cost: "Cao",
-          chips: ["Mitya 60→90 + Trấn 90", "Yae Ma Nữ + 4pc Ảo Tưởng", "Valeriy C3 80 · Roll Odette"],
-          upgrade: "Mitya Lv.60→90 + Trấn 20→90 + Ly EM +20 · Yae mở Ma Nữ + Nón CR% + 4pc Ảo Tưởng · Valeriy C3 Lv.80 (đổi Rosaria → Odette vượt 100k+)",
+          chips: ["Mitya 60→90 + Trấn 90", "Yae Nón CR% + 4pc Ảo Tưởng", "Valeriy C3 80 · Roll Odette"],
+          upgrade: "Mitya Lv.60→90 + Trấn 20→90 + Ly EM +20 · Yae (✓ Ma Nữ) đổi Nón CR% + 4pc Ảo Tưởng · Valeriy C3 Lv.80 (đổi Rosaria → Odette vượt 100k+)",
         },
       },
     ],
