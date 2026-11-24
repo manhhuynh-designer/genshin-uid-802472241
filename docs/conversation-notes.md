@@ -51,6 +51,10 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
    - `Aino`: Đã lên **Lv.70 C1** (`1/5/4`) → nâng tiếp **Lv.70 → 80**, thiên phú `1/5/4 → 1/6/8`, farm dần **4pc Khúc Ca Trăng Lụa** (Nod-Krai 9%).
    - `Jean`: Đã có `215.4% ER` → nâng Ly ATK% (`+0 → +20`) và ép dần **4pc Bóng Hình**.
    - `Venti`: 4/5 món TDV trên HoYoLAB đang `+0` → nâng lên `+20`.
+7. **Yae Miko (Lv.90 C0, 6/10/10, Chân Ý Của Kagura R1 — Nâng cấp Ma Nữ / *Witch's Revelation*)**
+   - *Hiện trạng:* `2,238 ATK`, `51.0% CR / 252.2% CD`, `189 EM`, `111.7% ER` (`2pc Giác Đấu + 2pc Hồi Ức + 1pc Sao Băng`), Nón đang đeo STBK `62.2%`.
+   - *Khác biệt sau nâng cấp Ma Nữ (thiên phú `Edict of Cleansing`, mở qua quest `Great Youkai's Instruction`, 0 Nhựa, cần Lv.70+):* Trụ Sesshou Sakura tăng **`14s → 24s`**, dùng Nộ **không còn phá trụ**, đồng đội kích Siêu Dẫn/Tinh-Siêu Dẫn cộng **`+80% ATK`** (CD `2.5s`), và trong *Polestar Field* nổ thêm **`+200% ATK`** Sát Thương Tinh-Siêu Dẫn **(CRIT được)**. (Nếu roll thêm Cung Mệnh: C1 `+50%` DMG Lôi/Tinh-Siêu Dẫn toàn đội `10s`; C2 `+60/90/120/200 EM`; C4 hồi `8` Năng lượng/`5s` & `+100%` Nộ; C6 `+200% CRIT DMG` Tinh-Siêu Dẫn.)
+   - *Khắc phục:* Làm ngay quest Ma Nữ (`0` Nhựa), đổi **Nón STBK → Nón CR%** (`51/252 → ~75/204`, `+10.8%` DPS trung bình) để ổn định bạo kích đòn `200% ATK`; khi ghép đội Tinh-Siêu Dẫn với Mitya, farm chung **`4pc Ảo Tưởng Vụn Vỡ`** (*Thorny Crown — Mondstadt*, `+ATK%`, `+ST Tinh-Siêu Dẫn`, `+16% CR`) và cân nhắc **Ly ATK%** (vì ST Tinh-Siêu Dẫn không ăn `%ST Lôi` hay `4pc Đoàn Kịch`).
 
 ---
 
@@ -60,34 +64,34 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
   - *Nửa 1 (+75% Lunar-Crystallize):* `✓ Navia (Li Cốt 80/180) + Zhongli + Chiori + Xianyun/Bennett`
   - *Nửa 2 (+200 EM):* `✓ Neuvillette + Furina + Kazuha + Zhongli` (vừa clear Ảo Cảnh 34s) hoặc `✓ Raiden National` (`69.9/132.4` vừa clear Boss 1 56s).
 - **Nhà Hát (`01.11 – 01.12`, Thủy · Lôi · Nham — đã đi tới Màn 3, Độ khó 3 · `27+3` nhân vật):**
-  - `Furina` Lv.80 & `Aino` Lv.70 C1 vừa bổ sung thêm 2 slot Thủy chất lượng cùng `Navia`, `Ayato`, `Noelle`; cần lắp gấp đồ cho `Beidou`, `Gorou` và nâng Ly/Nón CR% cho `Ningguang` trước **01/12**.
+  - `Furina` Lv.80 & `Aino` Lv.70 C1 vừa bổ sung thêm 2 slot Thủy chất lượng cùng `Navia`, `Ayato`, `Noelle`; cần lắp gấp đồ cho `Beidou`, `Gorou` và nâng Ly/Nón CR% cho `Ningguang` trước **01/12**. (`Yae` sau khi mở Ma Nữ giữ trụ 24s không mất khi Nộ sẽ đi Màn 6 cực mượt.)
 
 ---
 
 ## 3. Danh sách Nhân vật Meta 7.2 tại Snezhnaya (`Đã mở 6%`)
 
-1. **Mitya (Lv.60 C0, trấn `Sắc Lệnh Tinh Tú` Lv.20 R1):** Đã lên Lv.60 (`64.5/195.5 · 356 EM`) — nâng Ly EM `+0 → +20`, kéo Trấn & Mitya lên Lv.90 + farm sách *Charity*.
-2. **Valeriy (Lv.1 C3):** Khiên + Buffer cho Mitya — rèn `Nhạc Khúc Biển Sâu` (ATK%) + farm sách *Charity*.
-3. **Alyosha (Lv.1 C0):** 4★ Thương Lôi off-field Healer + Buff ATK hệ Stellar-Conduct (ưu tiên `Thương Tây Phong` + `4pc Tông Thất` / `Heart of the Furnace`, sách & boss ở Snezhnaya).
+1. **Mitya (Lv.60 C0, trấn `Sắc Lệnh Tinh Tú` Lv.20 R1):** Lõi Tinh-Siêu Dẫn đi cặp **Yae Miko (Ma Nữ)** + **Rosaria C6 / Nhà Lữ Hành Băng** (sau nâng lên **Odette**) + **Valeriy C3** — nâng Ly EM `+0 → +20`, kéo Trấn & Mitya lên Lv.90 + farm chung **`4pc Ảo Tưởng Vụn Vỡ`** cho cả Mitya & Yae.
+2. **Valeriy (Lv.1 C3):** Khiên chống gián đoạn (giữ nhịp Trọng Kích Mitya) + Buffer cho lõi **Mitya + Yae (Ma Nữ)** — rèn `Nhạc Khúc Biển Sâu` (ATK%) + farm sách *Charity* (ưu tiên hơn Alyosha vì trùng slot hỗ trợ).
+3. **Alyosha (Lv.1 C0):** 4★ Thương Lôi off-field Healer + Buff ATK (cạnh tranh trực tiếp slot của Valeriy; dùng thay Valeriy khi đội hình cần hồi máu — buff ATK của Alyosha scale rất hợp đòn `+80%/200% ATK` của Yae Ma Nữ).
 4. **Aino (Lv.70 C1 · `1/5/4`):** Đã lên Lv.70 + `Đại Kiếm Tây Phong Lv.90`, tiếp tục kéo lên Lv.80 & thiên phú `1/6/8`.
 
 ---
 
 ## 4. Bảng So Sánh Sức Mạnh Dự Tính Các Đội Hình (24/11/2026)
 
-*Ước lượng trên chuẩn vòng xoay 20s tại La Hoàn Tầng 12 (`k DPS`), đối chiếu theo chỉ số crawl 24/11 và kỷ lục Ảo Cảnh 191s (`Neuvillette + Furina` 34s, `Raiden + Furina` 56s).*
+*Ước lượng trên chuẩn vòng xoay 20s tại La Hoàn Tầng 12 (`k DPS`), đối chiếu theo chỉ số crawl 24/11, nâng cấp Ma Nữ của Yae Miko (`Edict of Cleansing`) và kỷ lục Ảo Cảnh 191s (`Neuvillette + Furina` 34s, `Raiden + Furina` 56s).*
 
 | Đội hình | Vai trò | Hiện tại (Tier) | Dự tính (Tier) | Tăng | Đòn bẩy nâng cấp chính |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| **Mitya Meta 7.2** (`Mitya · Valeriy · Kazuha · Aino`) | Meta 7.2 · Đơn/AOE | ~28k (`C`) | **~96k** (`S+`) | +243% | Mitya Lv.60→90 + Trấn 20→90 + Ly EM +20 + Valeriy C3 Lv.80 + Aino 4pc Khúc Ca |
+| **Mitya + Yae Tinh-Siêu Dẫn** (`Mitya · Yae · Rosaria · Valeriy`) | Meta 7.2 · Tinh-Siêu Dẫn | ~38k (`B`) | **~98k** (`S+`) | +158% | Mitya Lv.60→90 + Trấn 20→90 + Ly EM +20 · Yae Ma Nữ + Nón CR% + 4pc Ảo Tưởng · Valeriy C3 Lv.80 (đổi Rosaria → Odette vượt 100k+) |
 | **Neuvillette + Furina Hyper** (`Neuvillette · Furina · Kazuha · Zhongli`) | AOE · Đơn | **~64k** (`A+`) | **~92k** (`S+`) | +44% | Neuv 4pc Thợ Săn + Furina Lv.90 Q10 / 4pc Đoàn Kịch / Ống Đồng (chung 1 bí cảnh Fontaine) |
-| **Raiden + Furina Hyper** (`Raiden · Furina · Yae · Yelan`) | Đơn mục tiêu | ~62k (`A+`) | ~78k (`S`) | +26% | Furina Lv.90 Q10 + Cát ER +20/4pc Đoàn Kịch · Yelan Tây Phong 90 · Yae tăng CR (60%+) |
+| **Raiden + Furina Hyper** (`Raiden · Furina · Yae · Yelan`) | Đơn mục tiêu | ~62k (`A+`) | ~81k (`S`) | +31% | Furina Lv.90 Q10 + Cát ER +20/4pc Đoàn Kịch · Yae mở Ma Nữ (trụ 24s, Q không phá trụ) + Nón CR% · Yelan Tây Phong 90 |
 | **Navia 2 Nham** (`Navia · Chiori · Bennett · Xiangling`) | Phá khiên · Đơn | ~58k (`A+`) | ~76k (`S`) | +31% | Nâng E Chiori 1→9 + Ly Nham +20 + tìm STBK (hiện 71%) · Bennett đổi Kiếm Gỗ |
 | **Hu Tao Bốc Hơi** (`Hu Tao · Yelan · Xingqiu · Zhongli`) | Đơn mục tiêu | ~59k (`A+`) | ~72k (`S`) | +22% | Yelan Tây Phong 70→90 · Kéo nhẹ CR Hu Tao (54%→70%+) · Thử ghép Furina + Xianyun |
 | **Nilou Sum Suê** (`Nilou · Nahida · Kokomi · Collei`) | Vua AOE (2+ quái) | ~56k (`A+`) | ~70k (`S`) | +25% | Đổi Nilou sang 2pc+2pc HP% (51.5k → 68k+ HP) · Bổ sung EM cho Kokomi khi đánh AOE |
+| **Keqing Tăng Cường** (`Keqing · Nahida · Yae · Kazuha`) | Đơn · AOE nhanh | ~45k (`B`) | ~68k (`A+`) | +51% | Câu Ống Đồng trả Bàn Nham về Keqing (CR 26% → 70%) · Yae mở Ma Nữ (trụ 24s, Q không phá trụ) + Nón CR% |
 | **Raiden National** (`Raiden · Bennett · Xiangling · Yelan`) | Đơn mục tiêu | ~61k (`A+`) | ~68k (`A+`) | +11% | Bennett đổi Kiếm Gỗ (565 Base ATK) · Yelan Tây Phong 90 · Tối ưu nhẹ Crit Xiangling |
 | **Ayaka Đóng Băng** (`Ayaka · Mona · Kazuha · Kokomi`) | AOE Đóng Băng | ~54k (`A`) | ~67k (`A+`) | +24% | Thử ghép Furina + Kokomi/Charlotte hoặc Rosaria C6 + Kokomi Thiên Nham · Amenoma R5 |
-| **Keqing Tăng Cường** (`Keqing · Nahida · Yae · Kazuha`) | Đơn · AOE nhanh | ~45k (`B`) | ~65k (`A+`) | +44% | Câu Ống Đồng cho Furina để trả Bàn Nham Kết Lục về Keqing (CR nhảy 26% → 70%) |
 | **Yoimiya Đánh Thường** (`Yoimiya · Yelan · Yun Jin · Zhongli`) | Boss bay · Đơn | ~55k (`A`) | ~62k (`A`) | +13% | Yelan Tây Phong 70→90 · Bổ sung ~100 EM cho Yoimiya để tối ưu Bốc Hơi |
 | **Ganyu Tan Chảy** (`Ganyu · Bennett · Xiangling · Zhongli`) | Đơn · Nuke | ~52k (`A`) | ~60k (`A`) | +15% | Đổi Cát EM (~220+ EM) cho Ganyu · Bennett đổi Kiếm Gỗ tăng buff ATK |
-| **Eula Vật Lý** (`Eula · Raiden · Rosaria · Zhongli`) | Nuke Vật Lý | ~48k (`B+`) | ~56k (`A`) | +17% | Đẩy CR Eula (51.7%→70%+) giảm hụt Nộ · Hoặc ghép Furina + Raiden + Mika C4 |
+| **Eula Vật Lý** (`Eula · Raiden · Rosaria · Zhongli`) | Nuke Vật Lý | ~48k (`B+`) | ~56k (`A`) | +17% | Đẩy CR Eula (51.7%→70%+) giảm hụt Nộ · Hoặc thay Raiden bằng Yae (Ma Nữ) ăn +80% ATK Siêu Dẫn |
