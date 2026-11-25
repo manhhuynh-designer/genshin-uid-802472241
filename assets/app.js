@@ -595,11 +595,66 @@ const MODES = {
   },
 };
 
+const CHAR_BENCHMARKS = {
+  // Core & Meta 7.2
+  Neuvillette: { role: "Carry Thủy", group: "core", stats: [{ key: "Giới Hạn HP", label: "HP", target: 38000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 60, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 240, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 120, unit: "%" }] },
+  Furina: { role: "Buffer / Sub Thủy", group: "core", stats: [{ key: "Giới Hạn HP", label: "HP", target: 40000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 160, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 170, unit: "%" }] },
+  Mitya: { role: "Carry Tinh-Siêu Dẫn", group: "core", stats: [{ key: "Tinh Thông Nguyên Tố", label: "EM", target: 800, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 180, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 110, unit: "%" }] },
+  "Yae Miko": { role: "Sub Lôi (Ma Nữ)", group: "core", stats: [{ key: "Tấn Công", label: "ATK", target: 2200, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 75, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 200, unit: "%" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 150, unit: "" }] },
+  Navia: { role: "Carry Nham", group: "core", stats: [{ key: "Tấn Công", label: "ATK", target: 2000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 75, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 175, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 120, unit: "%" }] },
+  "Raiden Shogun": { role: "Carry / Nạp Lôi", group: "core", stats: [{ key: "Tấn Công", label: "ATK", target: 1600, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 140, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 260, unit: "%" }] },
+  Yelan: { role: "Sub Thủy", group: "core", stats: [{ key: "Giới Hạn HP", label: "HP", target: 32000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 160, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 200, unit: "%" }] },
+  Chiori: { role: "Sub Nham", group: "core", stats: [{ key: "Phòng Ngự", label: "DEF", target: 2200, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 140, unit: "%" }] },
+  Aino: { role: "Support Nod-Krai", group: "core", stats: [{ key: "Tinh Thông Nguyên Tố", label: "EM", target: 500, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 185, unit: "%" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 50, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 130, unit: "%" }] },
+  "Kaedehara Kazuha": { role: "Buffer Phong", group: "core", stats: [{ key: "Tinh Thông Nguyên Tố", label: "EM", target: 950, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 145, unit: "%" }] },
+  Nahida: { role: "Sub Thảo", group: "core", stats: [{ key: "Tinh Thông Nguyên Tố", label: "EM", target: 950, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 120, unit: "%" }] },
+  Zhongli: { role: "Khiên Nham", group: "core", stats: [{ key: "Giới Hạn HP", label: "HP", target: 40000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 60, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 120, unit: "%" }] },
+  Bennett: { role: "Buffer Hỏa", group: "core", stats: [{ key: "Giới Hạn HP", label: "HP", target: 25000, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 240, unit: "%" }] },
+  Nilou: { role: "Sum Suê Thủy", group: "core", stats: [{ key: "Giới Hạn HP", label: "HP", target: 68000, unit: "" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 150, unit: "" }] },
+  Valeriy: { role: "Khiên / Buffer 7.2", group: "core", stats: [{ key: "Tấn Công", label: "ATK", target: 2200, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 160, unit: "%" }] },
+  Alyosha: { role: "Healer / Buffer 7.2", group: "core", stats: [{ key: "Tấn Công", label: "ATK", target: 2000, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 180, unit: "%" }] },
+
+  // DPS
+  Keqing: { role: "Carry Lôi", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 200, unit: "%" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 120, unit: "" }] },
+  "Hu Tao": { role: "Carry Hỏa", group: "dps", stats: [{ key: "Giới Hạn HP", label: "HP", target: 32000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 75, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 200, unit: "%" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 200, unit: "" }] },
+  "Kamisato Ayaka": { role: "Carry Băng", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2100, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 40, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 220, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 135, unit: "%" }] },
+  Yoimiya: { role: "Carry Hỏa", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2100, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 75, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 190, unit: "%" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 100, unit: "" }] },
+  Ganyu: { role: "Carry Băng", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 60, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 200, unit: "%" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 200, unit: "" }] },
+  "Kamisato Ayato": { role: "Carry Thủy", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 170, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 130, unit: "%" }] },
+  Eula: { role: "Carry Vật Lý", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2200, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 185, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 125, unit: "%" }] },
+  Tighnari: { role: "Carry Thảo", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 1600, unit: "" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 300, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 160, unit: "%" }] },
+  Diluc: { role: "Carry Hỏa", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2200, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 170, unit: "%" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 120, unit: "" }] },
+  Ningguang: { role: "DPS Nham", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2100, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 65, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 150, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 120, unit: "%" }] },
+
+  // Sub-DPS & Support
+  Fischl: { role: "Sub Lôi", group: "support", stats: [{ key: "Tấn Công", label: "ATK", target: 1800, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 65, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 140, unit: "%" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 150, unit: "" }] },
+  Xiangling: { role: "Sub Hỏa", group: "support", stats: [{ key: "Tỷ Lệ Bạo Kích", label: "CR", target: 60, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 120, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 220, unit: "%" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 150, unit: "" }] },
+  Xingqiu: { role: "Sub Thủy", group: "support", stats: [{ key: "Tấn Công", label: "ATK", target: 1500, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 60, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 130, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 200, unit: "%" }] },
+  Beidou: { role: "Sub Lôi", group: "support", stats: [{ key: "Tấn Công", label: "ATK", target: 1600, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 60, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 120, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 170, unit: "%" }] },
+  "Sangonomiya Kokomi": { role: "Healer Thủy", group: "support", stats: [{ key: "Giới Hạn HP", label: "HP", target: 35000, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 150, unit: "%" }] },
+  Jean: { role: "Healer Phong", group: "support", stats: [{ key: "Tấn Công", label: "ATK", target: 1800, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 190, unit: "%" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 50, unit: "%" }] },
+  Xianyun: { role: "Healer / Đáp Phong", group: "support", stats: [{ key: "Tấn Công", label: "ATK", target: 2800, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 180, unit: "%" }] },
+  Mona: { role: "Buffer Thủy", group: "support", stats: [{ key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 220, unit: "%" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 55, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 130, unit: "%" }] },
+  Venti: { role: "Gom quái Phong", group: "support", stats: [{ key: "Tinh Thông Nguyên Tố", label: "EM", target: 600, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 180, unit: "%" }] },
+  "Kuki Shinobu": { role: "Nở Rộ Lôi", group: "support", stats: [{ key: "Tinh Thông Nguyên Tố", label: "EM", target: 900, unit: "" }, { key: "Giới Hạn HP", label: "HP", target: 25000, unit: "" }] },
+  Chevreuse: { role: "Buffer Quá Tải", group: "support", stats: [{ key: "Giới Hạn HP", label: "HP", target: 40000, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 140, unit: "%" }] },
+  Rosaria: { role: "Sub / Buff CR Băng", group: "support", stats: [{ key: "Tỷ Lệ Bạo Kích", label: "CR", target: 75, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 160, unit: "%" }, { key: "Tấn Công", label: "ATK", target: 1700, unit: "" }] },
+  "Yun Jin": { role: "Buffer Đánh Thường", group: "support", stats: [{ key: "Phòng Ngự", label: "DEF", target: 2300, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 190, unit: "%" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 45, unit: "%" }] },
+  Layla: { role: "Khiên Băng", group: "support", stats: [{ key: "Giới Hạn HP", label: "HP", target: 38000, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 140, unit: "%" }] },
+  Noelle: { role: "Khiên / DPS Nham", group: "support", stats: [{ key: "Phòng Ngự", label: "DEF", target: 2400, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 55, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 110, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 130, unit: "%" }] },
+  Sucrose: { role: "Buffer EM Phong", group: "support", stats: [{ key: "Tinh Thông Nguyên Tố", label: "EM", target: 750, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 150, unit: "%" }] },
+  "Kujou Sara": { role: "Buffer Lôi", group: "support", stats: [{ key: "Tấn Công", label: "ATK", target: 1800, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 180, unit: "%" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 55, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 120, unit: "%" }] },
+  Gorou: { role: "Buffer Nham", group: "support", stats: [{ key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 180, unit: "%" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 45, unit: "%" }] },
+};
+
 let APP = {
   data: null,
-  view: "tracker",      // tracker | stage | power | week
+  view: "tracker",      // tracker | bench | stage | power | week
   trackerTab: "chars",  // chars | now | farm | weapons
   filter: "pending",    // pending | all
+  benchGroup: "all",    // all | core | dps | support
+  benchStatus: "all",   // all | bad | warn | ok
+  benchSort: "score_asc", // score_asc | score_desc | level
   mode: "teams",
   index: 0,
   powerTab: "chart",    // chart | matrix | vs
@@ -694,17 +749,70 @@ function renderTodayStrip() {
   `;
 }
 
+function parseStatNum(raw) {
+  const num = parseFloat(String(raw ?? "").replace(/[^0-9.-]/g, ""));
+  return Number.isFinite(num) ? num : 0;
+}
+
+function fmtBenchVal(val, unit) {
+  if (unit === "%") return `${val.toFixed(val % 1 === 0 ? 0 : 1)}%`;
+  if (val >= 10000) return `${(val / 1000).toFixed(1)}k`;
+  if (val >= 1000) return Math.round(val).toLocaleString("en-US");
+  return String(Math.round(val));
+}
+
+function evalCharBenchmark(name) {
+  const spec = CHAR_BENCHMARKS[name];
+  const c = byName(name);
+  if (!spec || !c) return null;
+  const items = spec.stats.map((st) => {
+    const actual = parseStatNum(stat(c, st.key));
+    const ratio = st.target > 0 ? actual / st.target : 1;
+    const barPct = Math.max(2, Math.min(100, Math.round(ratio * 100)));
+    const tone = ratio >= 0.95 ? "ok" : ratio >= 0.78 ? "warn" : "bad";
+    const diff = actual - st.target;
+    const deltaText = ratio >= 0.98
+      ? (diff > st.target * 0.05 ? `+${fmtBenchVal(diff, st.unit)}` : "Đạt ✓")
+      : `-${fmtBenchVal(Math.abs(diff), st.unit)}`;
+    return { ...st, actual, ratio, barPct, tone, deltaText };
+  });
+  const score = Math.round(
+    (items.reduce((acc, it) => acc + Math.min(it.ratio, 1.05), 0) / items.length) * 100
+  );
+  const clampedScore = Math.min(100, score);
+  const status = clampedScore >= 90 ? "ok" : clampedScore >= 72 ? "warn" : "bad";
+  const weakest = items.reduce((a, b) => (b.ratio < a.ratio ? b : a), items[0]);
+  return { name, c, spec, items, score: clampedScore, status, weakest };
+}
+
+function renderBenchMeters(items, detailed = false) {
+  return `<div class="${detailed ? "modal-bench-grid" : "bench-meters"}">${items
+    .map((it) => `
+      <div class="b-meter">
+        <div class="b-meter-top">
+          <span class="b-lbl">${esc(it.label)}</span>
+          <span class="b-nums tone-${it.tone}"><strong>${esc(fmtBenchVal(it.actual, it.unit))}</strong><small>/${esc(fmtBenchVal(it.target, it.unit))}</small></span>
+          ${detailed ? `<span class="b-delta tone-${it.tone}">${esc(it.deltaText)}</span>` : ""}
+        </div>
+        <div class="b-track"><div class="b-fill tone-${it.tone}" style="width:${it.barPct}%"></div></div>
+      </div>
+    `)
+    .join("")}</div>`;
+}
+
 function renderViewBar() {
   const allTasks = [...ACTIONS, ...SURPLUS_WEAPONS, ...COLLECT_WEAPONS];
   const total = allTasks.length;
   const doneCount = allTasks.filter((a) => APP.done[a.id]).length;
   const pct = Math.round((doneCount / total) * 100);
   const pendingCount = total - doneCount;
+  const benchCount = Object.keys(CHAR_BENCHMARKS).length;
 
   return `
     <div class="view-bar">
       <nav class="view-tabs">
         <button class="view-tab ${APP.view === "tracker" ? "active" : ""}" data-view="tracker">Việc Làm (${pendingCount})</button>
+        <button class="view-tab ${APP.view === "bench" ? "active" : ""}" data-view="bench">Chỉ Số (${benchCount})</button>
         <button class="view-tab ${APP.view === "stage" ? "active" : ""}" data-view="stage">Đội Hình</button>
         <button class="view-tab ${APP.view === "power" ? "active" : ""}" data-view="power">Sức Mạnh (${MODES.teams.items.length})</button>
         <button class="view-tab ${APP.view === "week" ? "active" : ""}" data-view="week">Lịch 7 Ngày</button>
@@ -1677,6 +1785,81 @@ function renderWeekView() {
   `;
 }
 
+function renderBenchmarksView() {
+  const allEval = Object.keys(CHAR_BENCHMARKS)
+    .map((n) => evalCharBenchmark(n))
+    .filter(Boolean);
+
+  const countByStatus = (st) => allEval.filter((x) => x.status === st).length;
+  const groups = [
+    ["all", `Tất cả (${allEval.length})`],
+    ["core", "Ưu tiên"],
+    ["dps", "DPS"],
+    ["support", "Support"],
+  ];
+  const sorts = [
+    ["score_asc", "Thiếu nhất ↑"],
+    ["score_desc", "Đạt chuẩn ↓"],
+    ["level", "Level ↓"],
+  ];
+
+  const list = allEval
+    .filter((x) => APP.benchGroup === "all" || x.spec.group === APP.benchGroup)
+    .filter((x) => APP.benchStatus === "all" || x.status === APP.benchStatus)
+    .sort((a, b) => {
+      if (APP.benchSort === "score_desc") return b.score - a.score || b.c.level - a.c.level;
+      if (APP.benchSort === "level") return b.c.level - a.c.level || b.score - a.score;
+      return a.score - b.score || b.c.level - a.c.level;
+    });
+
+  return `
+    <div class="bench-summary">
+      <button type="button" class="bench-kpi kpi-ok ${APP.benchStatus === "ok" ? "active" : ""}" data-bench-status="ok">
+        <span>Đạt chuẩn (≥90%)</span>
+        <strong>${countByStatus("ok")}</strong>
+      </button>
+      <button type="button" class="bench-kpi kpi-warn ${APP.benchStatus === "warn" ? "active" : ""}" data-bench-status="warn">
+        <span>Gần đạt (72–89%)</span>
+        <strong>${countByStatus("warn")}</strong>
+      </button>
+      <button type="button" class="bench-kpi kpi-bad ${APP.benchStatus === "bad" ? "active" : ""}" data-bench-status="bad">
+        <span>Cần nâng (&lt;72%)</span>
+        <strong>${countByStatus("bad")}</strong>
+      </button>
+    </div>
+
+    <div class="tracker-controls">
+      <div class="power-subtabs">
+        ${groups.map(([k, label]) => `<button type="button" class="subtab-btn ${APP.benchGroup === k ? "active" : ""}" data-bench-group="${k}">${esc(label)}</button>`).join("")}
+      </div>
+      <div class="filter-group">
+        ${sorts.map(([k, label]) => `<button type="button" class="filter-btn ${APP.benchSort === k ? "active" : ""}" data-bench-sort="${k}">${esc(label)}</button>`).join("")}
+      </div>
+    </div>
+
+    <div class="bench-list">
+      ${list
+        .map(
+          (b) => `
+          <div class="bench-row" data-open-char="${esc(b.name)}">
+            <div class="col-char">
+              ${b.c.icon ? `<img src="${esc(b.c.icon)}" alt="${esc(b.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+              <div class="char-id">
+                <strong>${esc(b.name)}</strong>
+                <small>Lv.${esc(b.c.level)} C${esc(b.c.constellation)} · ${esc(b.spec.role)}</small>
+              </div>
+            </div>
+            <div class="bench-score score-${b.status}">${b.score}%</div>
+            ${renderBenchMeters(b.items, false)}
+            <span class="row-chevron" aria-hidden="true">›</span>
+          </div>
+        `
+        )
+        .join("") || `<div class="empty-done">Không có nhân vật nào trong nhóm lọc này.</div>`}
+    </div>
+  `;
+}
+
 function openCharModal(name) {
   if (!name) return;
   APP.modalChar = name;
@@ -1749,6 +1932,7 @@ function renderModal() {
 
   const arts = c?.artifacts || [];
   const artMissingWarn = arts.length < 5 ? ` · Đang thiếu ${5 - arts.length} món` : "";
+  const bench = c ? evalCharBenchmark(name) : null;
 
   root.innerHTML = `
     <div class="char-modal-backdrop" id="char-modal-backdrop">
@@ -1807,12 +1991,20 @@ function renderModal() {
         ${
           c
             ? `<section class="modal-section">
-                <h3 class="modal-section-title">Chỉ số thực tế (25/11)</h3>
-                <div class="modal-stats-grid">
-                  ${[...coreStats, ...dmgEntries]
-                    .map(([label, val]) => `<div class="modal-stat-item"><span>${esc(label)}</span><strong>${esc(val)}</strong></div>`)
-                    .join("")}
+                <div class="modal-section-head">
+                  <h3 class="modal-section-title">${bench ? "So sánh chỉ số lý tưởng (25/11)" : "Chỉ số thực tế (25/11)"}</h3>
+                  ${bench ? `<span class="bench-score score-${bench.status}">Đạt ${bench.score}%</span>` : ""}
                 </div>
+                ${
+                  bench
+                    ? `${renderBenchMeters(bench.items, true)}
+                       ${dmgEntries.length ? `<div class="modal-extra-stats">${dmgEntries.map(([label, val]) => `<span>${esc(label)}: <strong>${esc(val)}</strong></span>`).join("")}</div>` : ""}`
+                    : `<div class="modal-stats-grid">
+                        ${[...coreStats, ...dmgEntries]
+                          .map(([label, val]) => `<div class="modal-stat-item"><span>${esc(label)}</span><strong>${esc(val)}</strong></div>`)
+                          .join("")}
+                      </div>`
+                }
               </section>`
             : ""
         }
@@ -1899,6 +2091,7 @@ function renderModal() {
 function render() {
   let content = "";
   if (APP.view === "tracker") content = renderTrackerView();
+  else if (APP.view === "bench") content = renderBenchmarksView();
   else if (APP.view === "stage") content = renderStageView();
   else if (APP.view === "power") content = renderPowerView();
   else content = renderWeekView();
@@ -1933,6 +2126,28 @@ function render() {
   document.querySelectorAll("[data-tracker-tab]").forEach((b) => {
     b.addEventListener("click", () => {
       APP.trackerTab = b.getAttribute("data-tracker-tab");
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-bench-group]").forEach((b) => {
+    b.addEventListener("click", () => {
+      APP.benchGroup = b.getAttribute("data-bench-group");
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-bench-status]").forEach((b) => {
+    b.addEventListener("click", () => {
+      const st = b.getAttribute("data-bench-status");
+      APP.benchStatus = APP.benchStatus === st ? "all" : st;
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-bench-sort]").forEach((b) => {
+    b.addEventListener("click", () => {
+      APP.benchSort = b.getAttribute("data-bench-sort");
       render();
     });
   });
