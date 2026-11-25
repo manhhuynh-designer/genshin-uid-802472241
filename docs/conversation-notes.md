@@ -1,64 +1,65 @@
 # Ghi chú Tư vấn & Kế hoạch Tài khoản Genshin (`UID 802472241`)
 
-Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật ngày **25/11/2026** (Version **7.2**, **73 nhân vật**).
+Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật chiều **25/11/2026 (`13:42`)** (Version **7.2**, **73 nhân vật**).
 
 ---
 
 ## 0. Các việc đã hoàn thành sau đợt Crawl 25/11/2026
 
+- **Hoàn thành Vòng Xoay Vũ Khí (crawl `25/11 13:42`):**
+  - `Furina`: **✓ Đã chuyển `Răng Nanh Rỉ Sét Lv.90 R5`** (`35,626 HP · 41.6/180.6 · 151.8% ER`).
+  - `Keqing`: **✓ Đã trả lại `Bàn Nham Kết Lục Lv.90 R1`** (`26.0% → 70.1% CR / 231.4% CD · 1,800 ATK`).
+  - `Nilou`: **✓ Đã nhận `Kiếm Bến Tàu Lv.60 R1`** (`51,545 → 56,168 HP`, còn kéo lên Lv.90 & `2+2 HP%`).
+  - `Bennett`: **✓ Đã nhận `Kiếm Gỗ Lv.90 R2`** (`565 Base ATK · 249.3% ER`).
+  - `Jean`: **✓ Đã chuyển sang `Ống Đồng Fleuve Cendre Lv.50 R2`** (`189.3% ER`).
+  - `Layla`: **✓ Đã nhận `Tây Phong Kiếm Lv.80 R5`** (`123.3% → 179.2% ER · 34,931 HP`).
+  - `Mona`: **✓ Đã gắn `Chương Nhạc Lang Thang Lv.90 R5`** (`149.5% → 204.6% CD · 1,183 ATK`).
+  - `Beidou`: **✓ Đã nhận `Vua Biển Hàng Hiệu Lv.80 R5`** (`486 → 1,559 ATK`).
+  - `Kujou Sara`: **✓ Đã nhận `Lạc Hà Lv.90 R5`** (`136.2% → 166.8% ER · 1,716 ATK`).
+  - `Yaoyao`: **✓ Đã gắn `Đối Thoại Của Hiền Giả Sa Mạc Lv.1 R1`** (`27,653 HP`), giải phóng `Xương Sống Thiên Không Lv.90` vào kho.
+  - `Valeriy`: **✓ Đã gắn `Kagotsurube Isshin Lv.80 R1`** (`647 ATK`, không cần tốn Phôi rèn `Nhạc Khúc Biển Sâu`).
+  - `Alyosha`: **✓ Đã gắn `Mũi Nhọn Của Gió Lv.70 R5`** (`550 ATK`).
+- **Cập nhật nhân vật & TDV (`25/11`):**
+  - `Navia`: **vương miện Q lên Lv.10 (`6/10/10`)**, đổi sang **`2pc Phiến Đá + 2pc Giác Đấu`** (`1,980 ATK · 56.7% CR / 189.5% CD · 142.7% ER`).
+  - `Mitya`: **✓ Đã lên `Lv.70 · 2/3/4 · Trấn Lv.50 · 2pc Giấc Mộng + 2pc Đoàn Hát`** (`516 EM · 67.2/188.5`), Ly EM vẫn `+0`.
+  - `Aino`: **✓ Đã lên `Lv.80 C1 · 1/5/4 · 464 EM · 191.6% ER`**.
+  - `Yae Miko`: **✓ Đã hoàn thành quest Chỉ Dụ Của Ma Nữ** (`Edict of Cleansing`).
+  - `Raiden Shogun`: **✓ Đã đổi Nón CR%** (`69.9% CR / 132.4% CD · 258.9% ER`).
 - **Nhân vật mới & Lịch sử roll (`128` lượt trong `data/wish_history/`, `30/10 – 23/11`):**
-  - **`Furina`** (5★ Thủy, về ở **pity 63** lúc `2026-11-23 21:16:05`): `Lv.80 C0 · 4/8/8`, **✓ Đã sở hữu & gắn `Ống Đồng Fleuve Cendre Lv.50 R2`**, đổi Cát HP% +20 (`35,626 HP · 41.6% CR / 180.6% CD · 135.6% ER · 4pc Thiên Nham`, `Bàn Nham Kết Lục` đã trả về túi đồ).
-  - **`Người Mẫu Nữ`** (Băng, nhân vật thứ **73**): `Lv.20 C0 · 1/1/1`.
-  - Tổng kết roll: Nhân Vật (`301`): `105` roll (`Mitya` @42, `Furina` @63, pity 5★: **0**, pity 4★: `2`); Vũ Khí (`302`): `16` roll (`Sắc Lệnh Tinh Tú` @15, pity 5★: `1`, pity 4★: `4`); Thường (`200`): `7` roll (pity 5★: `7`, pity 4★: `2`).
-- **Cập nhật nhân vật & trang bị ngày 25/11:**
-  - `Mitya`: nâng **`Lv.60 → Lv.70`**, thiên phú **`1/1/1 → 2/3/4`**, Trấn **`Lv.20 → Lv.50`** (`67.2% CR / 188.5% CD · 516 EM · 2pc Đoàn Hát`), Ly EM vẫn `+0`.
-  - `Aino`: nâng **`Lv.70 → Lv.80 C1`** (`1/5/4 · 464 EM · 191.6% ER`).
-  - `Layla` & `Chevreuse`: tráo mảnh TDV với Furina (`Layla` `34,931 HP · 123.3% ER`; `Chevreuse` nhận Cát ER `+0` còn `21,612 HP`).
-  - `Yae Miko`: **✓ Đã hoàn thành quest Chỉ Dụ Của Ma Nữ** (mở khóa thiên phú `Edict of Cleansing`: trụ 24s, Q không phá trụ, `+80%/200% ATK` Tinh-Siêu Dẫn).
-  - `Raiden Shogun`: đã đổi sang **Nón CR%** (`69.9% CR / 132.4% CD · 258.9% ER`).
-  - `Keqing`: vẫn đang tạm cầm `Kiếm Bến Tàu Lv.60 R1` (`26.0% CR / 231.4% CD · 1,434 ATK`).
-- **Thành tích & Bản đồ mới:**
-  - **Ảo Cảnh Hiểm Ác (Độ khó III):** Kỷ lục **`191s`** (*Kẻ Neo Sóng* `56s` — Raiden/Furina/Yae/Yelan, *Hoàng Đế Thép Lửa* `34s` — Neuvillette/Kazuha/Zhongli/Furina, *Thằn Lằn* `101s` — Neuvillette/Raiden/Navia/Diona).
-  - **Snezhnaya & Bản đồ (`25/11`):** Snezhnaya **`6% → 7%`** (`10` Băng Thần Đồng), Nod-Krai **`9% → 10%`** (`30` Nguyệt Thần Đồng), Thủy Thần Đồng **`163 → 164`**, Natlan **`4%`** (`22` Hỏa Thần Đồng), Điểm dịch chuyển **`524 → 529`**, Bí cảnh **`64 → 65`**, Ngày hoạt động **`1,312`**, Thành tựu `1,131`.
-  - **Nhà Hát Giả Tưởng (`01.11 – 01.12`):** Màn **3** (Độ khó **3**, hiện có **28** nhân vật Lv.70+ đủ hệ nhờ Mitya lên Lv.70).
-- **Đã hoàn thành trước đó (`21–23/11`):**
-  - `Navia` chốt **`Kiếm Li Cốt R1` + `6/10/9` (Vương miện E)** (`80.0/180.1`), `Neuvillette` chuyển tạm **`4pc Trái Tim Trầm Luân` + `Ly Thủy`** (`52.8/234.9`), `Valeriy` C3, `Aino` `Đại Kiếm Tây Phong Lv.90`, `Ayato` (`62.5/152.1`), `Xiangling` (`Lao Xiên Cá R5`), `Nahida` (`4pc Rừng Sâu 1,012 EM`), `Noelle` (`Kiếm Bạch Ảnh`), `Ningguang` (`Quyển Thiên Không R2`), `Yelan` (`Tây Phong R5`), `Fischl` (`Tuyệt Huyền R5`), `Kuki` (`Thiết Phong Kích R3`), `Chevreuse` (`Hắc Anh Thương R5`), `Jean` (`Tây Phong Kiếm R5`), `Chiori` (`Cát DEF%`), `Alyosha` mới.
+  - **`Furina`** (5★ Thủy, về ở **pity 63** lúc `2026-11-23 21:16:05`), **`Người Mẫu Nữ`** (Băng, thứ 73).
+  - Pity hiện tại: Nhân Vật (`301`): `0/90` (4★: `2/10`); Vũ Khí (`302`): `1/80`; Thường (`200`): `7/90`.
+- **Thành tích & Bản đồ:**
+  - **Ảo Cảnh Hiểm Ác (Độ khó III):** **`191s`** (*Boss 1* `56s`, *Boss 2* `34s`, *Boss 3* `101s`).
+  - **Bản đồ (`25/11`):** Snezhnaya **`7%`** (`10` Băng Thần Đồng), Nod-Krai **`10%`** (`30` Nguyệt Thần Đồng), Natlan **`4%`**, Điểm dịch chuyển **`529`**, Bí cảnh **`65`**, Ngày hoạt động **`1,313`**, Thành tựu `1,131`.
+  - **Nhà Hát Giả Tưởng (`01.11 – 01.12`):** Màn **3** (Độ khó **3**, **`28+3`** nhân vật Lv.70+).
 
 ---
 
 ## 1. Các việc cần chỉnh tiếp (Ưu tiên hiện tại)
 
-1. **Vòng Xoay Kiếm Đơn Tối Ưu (`Furina · Keqing · Bennett · Nilou · Jean · Layla/Lynette`)**
-   - **`Furina` (Lv.80 C0, `35,626 HP`, `41.6/180.6 · 135.6% ER`) ← `Răng Nanh Rỉ Sét Lv.90 R5` (từ `Bennett`):** Mạnh hơn Ống Đồng R5 ~6–10% DPS (`+32% ST E`, `+12% CR E`, lên ngay `151.7% ER` với Cát HP% hoặc `~203.5%` nếu kèm Cát ER), kéo `Lv.80 → 90`, Q `8 → 10`, farm **`4pc Đoàn Kịch Hoàng Kim`** chung bí cảnh Neuvillette.
-   - **`Keqing` (Lv.90 C1) ← `Bàn Nham Kết Lục Lv.90 R1` (đã rảnh trong túi đồ):** Lắp lại ngay để CR nhảy **`26.0% → 70.1% / 231.4% CD`**.
-   - **`Bennett` (Lv.90 C6) ← `Kiếm Gỗ Lv.90 R2` (từ `Nilou`):** Base ATK `510 → 565` buff Nộ to hơn, ER vẫn dư **`249.3%`**.
-   - **`Nilou` (Lv.90 C0) ← `Kiếm Bến Tàu Lv.60 → 90 R1` (từ `Keqing`):** Lấy dòng phụ **`41.3% HP`** & đổi sang **`2pc+2pc HP%`** (kéo từ `51.5k → 68k+ HP`).
-   - **`Ống Đồng Fleuve Cendre` (đã có):**
-     - **Phương án A (khuyên dùng):** Chuyển sang **`Jean` (Lv.80 C2)** *(ăn hạt Phong đúng 5s `+32% ER` + CR E)* → dư **`Tây Phong Kiếm Lv.80 R5`** cho **`Layla` (`34,931 HP`)** thay `Narzissenkreuz` (hoặc `Qiqi C4 Ma Nữ`).
-     - **Phương án B:** Gắn thẳng cho **`Lynette` (Lv.80 C2)** thay kiếm 1★, hoặc giữ dự phòng cho Furina khi thiếu Nạp.
-2. **Neuvillette (Lv.90 C0, 10/10/10, Nghi Thức Dòng Chảy Vĩnh Hằng R1)**
-   - *Hiện trạng:* `35,466 HP`, `52.8% CR / 234.9% CD` trên **`4pc Trái Tim Trầm Luân`** (vừa ghép Furina clear Boss 2 Ảo Cảnh trong **34s**).
-   - *Khắc phục:* Farm tiếp **`4pc Thợ Săn Marechaussee`** (Fontaine) — giữ nguyên nền CR hiện tại sẽ nhảy lên **`~88.8% CR / 234.9% CD`**.
+1. **Vũ Khí — Hoàn thiện nâng cấp sau khi xoay (`✓` đã đổi xong vị trí 12 cây)**
+   - `Furina`: **✓ Đã chuyển `Răng Nanh Rỉ Sét Lv.90 R5`** (`35,626 HP · 41.6/180.6 · 151.8% ER`) → kéo `Lv.80 → 90`, Q `8 → 10`, farm **`4pc Đoàn Kịch Hoàng Kim`** chung bí cảnh Neuvillette.
+   - `Nilou`: **✓ Đã nhận `Kiếm Bến Tàu Lv.60`** (`56,168 HP`) → kéo kiếm `Lv.60 → 90` & đổi sang **`2pc+2pc HP%`** (`68k+ HP`).
+   - `Jean`: **✓ Đã chuyển `Ống Đồng Fleuve Cendre Lv.50 R2`** (`189.3% ER`) → kéo `Lv.50 → 90`, nâng Ly ATK% `+0 → +20`, ép **`4pc Bóng Hình`**.
+   - `Valeriy`: **✓ Đã gắn `Kagotsurube Isshin Lv.80 R1`** (`647 ATK`) → kéo Lv.1 → 80, Isshin 90, farm **`4pc Trái Tim Lửa Nung`**.
+   - `Alyosha`: **✓ Đã gắn `Mũi Nhọn Của Gió Lv.70 R5`** (hoặc lấy `Xương Sống Thiên Không Lv.90` vừa giải phóng từ Yaoyao).
+2. **Neuvillette (Lv.90 C0, 10/10/10) & Navia (Lv.90 C0, 6/10/10)**
+   - `Neuvillette`: `35,466 HP · 52.8/234.9` trên `4pc Trầm Luân` → farm **`4pc Thợ Săn Marechaussee`** (`~88.8% CR`).
+   - `Navia`: **✓ Đã vương miện Q10 (`6/10/10`)** và chuyển `2 Phiến Đá + 2 Giác Đấu` (`1,980 ATK · 142.7% ER`) — lưu ý kéo lại CR **`56.7% → ≥70%`**.
 3. **Beidou (Lv.80 C6) & Gorou (Lv.70 C5) & Ningguang (Lv.89 C6)**
-   - `Beidou`: Vẫn cầm **kiếm 1★ Lv.1** và mới 3 món TDV (`111% ER`) → gắn `Vua Biển R5` (từ Xinyan) hoặc `Kiếm Vô Công 5★` (từ Chongyun kèm **Cát ER** / `4pc Dấu Ấn`).
-   - `Gorou`: Vẫn cầm **cung 1★ Lv.1** & thiếu Ly → lắp tạm cung Nạp để đủ slot Nhà Hát 7.2 trước `01/12`.
-   - `Ningguang`: Đã có `Quyển Thiên Không R2` (`2,501 ATK`) nhưng Ly Nham đang `+0` và CR mới **`14.7%`** → nâng Ly `+20` và đổi sang **Nón CR%**.
-4. **Raiden Shogun (Lv.90 C1, 6/9/10, Đoạn Thảo Trường Đao R1)**
-   - *Hiện trạng:* ✓ Đã đổi Nón CR% lên **`69.9% CR / 132.4% CD · 258.9% ER`**, clear Boss 1 Ảo Cảnh trong **56s** cùng Furina.
-   - *Tối ưu thêm:* Chuyển `Kiếm Gỗ` (Base ATK 565) từ Nilou cho Bennett theo vòng xoay kiếm ở mục 1.
-5. **Chevreuse (Lv.70 C1) & Kuki Shinobu (Lv.80 C4) & Fischl (Lv.80 C6) & Yelan (Lv.90 C0)**
-   - `Chevreuse`: HP tụt còn `21,612` do nhường Cát HP% cho Furina (đang đeo Cát ER `+0`, Ly Hỏa & Nón CR) → đổi **3 món HP%** + nâng Lv.80 để chạm **`40,000 HP`**.
-   - `Kuki Shinobu`: EM mới `483` (còn đeo Cát ATK / Ly HP / Nón CR) → đổi **3 món EM** + nâng **Lv.90** (`~900+ EM`).
-   - `Fischl`: Đang `31.8% CR / 137.1% CD` → đổi sang **Nón CR%** + farm dần **4pc Đoàn Kịch Hoàng Kim**.
-   - `Yelan`: Nâng **`Cung Tây Phong Lv.70 → Lv.90`** để đẩy ER lên ~`202%`.
-6. **Chiori (Lv.80 C0), Aino (Lv.80 C1), Jean (Lv.80 C2), Venti (Lv.80 C0)**
-   - `Chiori`: Đã có Cát DEF% (`2,163 DEF`) → nâng E từ `1` → `8–9`, nâng Ly Nham `+14 → +20`.
-   - `Aino`: ✓ Đã lên **Lv.80 C1** (`1/5/4 · 464 EM`) → nâng thiên phú `1/5/4 → 1/6/8`, farm dần **4pc Khúc Ca Trăng Lụa** (Nod-Krai 10%).
-   - `Jean`: Đã có `215.4% ER` → nâng Ly ATK% (`+0 → +20`), ép dần **4pc Bóng Hình**, và cân nhắc nhận **Ống Đồng** (PA A) để dư Tây Phong R5 cho Layla.
-   - `Venti`: 4/5 món TDV trên HoYoLAB đang `+0` → nâng lên `+20`.
-7. **Yae Miko (Lv.90 C0, 6/10/10, Chân Ý Của Kagura R1 — ✓ Đã mở Ma Nữ / *Witch's Revelation*)**
-   - *Hiện trạng:* **✓ Đã hoàn thành quest Chỉ Dụ Của Ma Nữ** (`Edict of Cleansing`: trụ `14s → 24s`, Nộ không phá trụ, `+80% ATK` Siêu Dẫn/Tinh-Siêu Dẫn, `+200% ATK` CRIT trong *Polestar Field*). Chỉ số hiện tại: `2,238 ATK`, `51.0% CR / 252.2% CD`, `189 EM`, `111.7% ER` (`2pc Giác Đấu + 2pc Hồi Ức + 1pc Sao Băng`), Nón đang đeo STBK `62.2%`. (CM dự phòng nếu roll thêm: C1 `+50%` DMG Lôi/Tinh-Siêu Dẫn toàn đội `10s`; C2 `+60/90/120/200 EM`; C4 hồi `8` Năng lượng/`5s` & `+100%` Nộ; C6 `+200% CRIT DMG` Tinh-Siêu Dẫn.)
-   - *Khắc phục:* Đổi **Nón STBK → Nón CR%** (`51/252 → ~75/204`, `+10.8%` DPS trung bình) để ổn định bạo kích đòn `200% ATK`; khi ghép đội Tinh-Siêu Dẫn với Mitya, farm chung **`4pc Ảo Tưởng Vụn Vỡ`** (*Thorny Crown — Mondstadt*, `+ATK%`, `+ST Tinh-Siêu Dẫn`, `+16% CR`) và cân nhắc **Ly ATK%** (vì ST Tinh-Siêu Dẫn không ăn `%ST Lôi` hay `4pc Đoàn Kịch`).
+   - `Beidou`: **✓ Đã gắn `Vua Biển R5`** (`1,559 ATK`) → lắp đủ 5 món TDV có **Cát ER** trước `01/12`.
+   - `Gorou`: Vẫn cầm **cung 1★ Lv.1** & thiếu Ly → lắp tạm cung Nạp cho Nhà Hát `01/12`.
+   - `Ningguang`: `Quyển Thiên Không R2` (`2,501 ATK`) nhưng Ly Nham `+0` & CR `14.7%` → nâng Ly `+20` + đổi **Nón CR%**.
+4. **Chevreuse (Lv.70 C1) & Kuki Shinobu (Lv.80 C4) & Fischl (Lv.80 C6) & Yelan (Lv.90 C0)**
+   - `Chevreuse`: `21,612 HP` → đổi **3 món HP%** + nâng Lv.80 chạm **`40,000 HP`**.
+   - `Kuki Shinobu`: EM mới `483` → đổi **3 món EM** + nâng **Lv.90** (`~900+ EM`).
+   - `Fischl`: `31.8/137.1` → đổi **Nón CR%** + farm dần **4pc Đoàn Kịch**.
+   - `Yelan`: nâng **`Cung Tây Phong Lv.70 → Lv.90`** (`~202% ER`).
+5. **Chiori (Lv.80 C0), Aino (Lv.80 C1), Venti (Lv.80 C0), Yae Miko (Lv.90 C0 Ma Nữ)**
+   - `Chiori`: nâng E `1 → 8–9`, Ly Nham `+14 → +20`.
+   - `Aino`: kéo thiên phú `1/5/4 → 1/6/8` & farm **4pc Khúc Ca Trăng Lụa** (Nod-Krai `10%`).
+   - `Venti`: 4/5 món TDV đang `+0` → nâng lên `+20`.
+   - `Yae Miko` (**✓ Ma Nữ**): `51.0/252.2 · 2,238 ATK` → đổi **Nón CR%** (`~75/204`) & farm **`4pc Ảo Tưởng Vụn Vỡ`** chung **Mitya**.
 
 ---
 
