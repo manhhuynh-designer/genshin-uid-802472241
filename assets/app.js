@@ -1,4 +1,4 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json?v=19";
+const DATA_URL = "./data/genshin_uid_802472241_data.json";
 const STORAGE_KEY = "genshin_uid_802472241_done_v4";
 
 const SET_META = {
@@ -690,6 +690,154 @@ function stat(c, key) {
   return (c && c.stats && c.stats[key] && c.stats[key].final) || "-";
 }
 
+function formatCrawlDate(withTime = false) {
+  const raw = APP.data?.crawled_at || "";
+  const m = String(raw).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+  if (!m) return "Mới nhất";
+  return withTime ? `${m[3]}/${m[2]} ${m[4]}:${m[5]}` : `${m[3]}/${m[2]}`;
+}
+
+function regionPct(name) {
+  const list = APP.data?.world_explorations || [];
+  const q = String(name || "").toLowerCase();
+  const r = list.find((it) => String(it.name || "").toLowerCase().includes(q));
+  return r ? Math.round(Number(r.exploration_percentage || 0) / 10) : 0;
+}
+
+function parseTalents(c) {
+  return String(c?.talent_levels || "1/1/1")
+    .split("/")
+    .slice(0, 3)
+    .map((v) => Number(v) || 1);
+}
+
+function dpsToTier(dps) {
+  if (dps >= 90) return "S+";
+  if (dps >= 70) return "S";
+  if (dps >= 58) return "A+";
+  if (dps >= 50) return "A";
+  if (dps >= 46) return "B+";
+  return "B";
+}
+
+function evalTheaterStatus() {
+  const chars = APP.data?.characters || [];
+  const elig = chars.filter(
+    (c) => c.level >= 70 && (["Hydro", "Electro", "Geo"].includes(c.element) || c.name === "Qiqi")
+  );
+  const needGear = new Set();
+  elig.forEach((c) => {
+    const wRar = Number(c.weapon?.rarity || 1);
+    const arts = c.artifacts || [];
+    const hasZeroArt = arts.some((a) => Number(a.level || 0) === 0);
+    const b = evalCharBenchmark(c.name);
+    if (wRar <= 2 || arts.length < 5 || hasZeroArt || (b && b.score < 70)) {
+      needGear.add(c.name);
+    }
+  });
+  return { elig, needGear };
+}
+
+function getActionShortFix(a, c) {
+  if (!a) return "";
+  if (!c) return a.shortFix || a.fixTitle;
+  const lv = Number(c.level || 1);
+  const wLv = Number(c.weapon?.level || 1);
+  const wRar = Number(c.weapon?.rarity || 1);
+  const [na, e, q] = parseTalents(c);
+  const sets = c.artifact_sets || "";
+  const arts = c.artifacts || [];
+  const zeroArts = arts.filter((ar) => Number(ar.level || 0) === 0).length;
+  const cr = parseStatNum(stat(c, "Tỷ Lệ Bạo Kích"));
+  const hp = parseStatNum(stat(c, "Giới Hạn HP"));
+  const em = parseStatNum(stat(c, "Tinh Thông Nguyên Tố"));
+  const er = parseStatNum(stat(c, "Hiệu Quả Nạp Nguyên Tố"));
+
+  switch (a.name) {
+    case "Furina": {
+      const hasSet = /4pc\s+Đoàn Kịch/i.test(sets);
+      if (lv >= 90 && q >= 10 && hasSet) return "✓ Đã hoàn thiện Lv.90 Q10 · 4pc Đoàn Kịch";
+      const parts = [];
+      if (lv < 90) parts.push(`Kéo Lv.${lv}→90`);
+      if (q < 10) parts.push(`Q${q}→10`);
+      if (!hasSet) parts.push("4pc Đoàn Kịch");
+      return `✓ Lv.${lv} ${na}/${e}/${q} · Còn ${parts.join(" & ")}`;
+    }
+    case "Neuvillette":
+      return /4pc\s+Thợ Săn/i.test(sets)
+        ? "✓ Đã đủ 4pc Thợ Săn Marechaussee"
+        : `Farm 4pc Thợ Săn (${cr.toFixed(1)}% CR trước buff)`;
+    case "Chiori": {
+      const doneE = e >= 8;
+      const doneAll = doneE && zeroArts === 0 && cr >= 65;
+      if (doneAll) return "✓ Đã xong Chiori (E8+ · Đủ Crit)";
+      const parts = [];
+      if (!doneE) parts.push(`Nâng E ${e}→8–9`);
+      parts.push("Ly Nham +20 / STBK");
+      return parts.join(" · ");
+    }
+    case "Aino": {
+      const hasSet = /4pc\s+Khúc Ca/i.test(sets);
+      if (q >= 8 && e >= 6 && hasSet) return "✓ Đã xong Aino 4pc Khúc Ca";
+      return `Thiên phú ${na}/${e}/${q} → 1/6/8 · ${hasSet ? "✓ 4pc Khúc Ca" : "Farm 4pc Khúc Ca"}`;
+    }
+    case "Jean": {
+      const hasVV = /4pc\s+Bóng Hình/i.test(sets);
+      if (wLv >= 90 && hasVV && zeroArts === 0) return "✓ Đã xong Jean 90 · 4pc Bóng Hình";
+      return `Ống Đồng Lv.${wLv}→90 · ${hasVV ? "✓ VV" : "Ép 4pc Bóng Hình"}`;
+    }
+    case "Venti":
+      return zeroArts > 0 ? `Nâng ${zeroArts} món TDV +0 → +20` : "✓ Đã cường hóa đủ 5 món TDV";
+    case "Navia":
+      return cr < 70 ? `✓ ${na}/${e}/${q} · Đẩy lại CR ${cr.toFixed(1)}% → 70%+` : `✓ ${na}/${e}/${q} · Đã đủ ${cr.toFixed(1)}% CR`;
+    case "Nilou": {
+      const hasSet = /2pc\s+Thiên Nham.*2pc\s+Vầng Sáng|2pc\s+Vầng Sáng.*2pc\s+Thiên Nham/i.test(sets);
+      if (wLv >= 90 && hasSet && hp >= 68000) return `✓ Đã hoàn thiện Nilou (${fmtBenchVal(hp, "")} HP)`;
+      const todo = [];
+      if (wLv < 90) todo.push(`Bến Tàu ${wLv}→90`);
+      if (!hasSet) todo.push("2+2 HP%");
+      return `✓ ${(hp / 1000).toFixed(1)}k HP · Còn ${todo.join(" & ")}`;
+    }
+    case "Yelan":
+      return wLv >= 90 ? `✓ Tây Phong 90 (${er.toFixed(1)}% ER)` : `Nâng Cung Tây Phong Lv.${wLv} → 90`;
+    case "Ningguang":
+      return cr < 55 ? `Ly Nham +20 · Đổi Nón CR% (đang ${cr.toFixed(1)}%)` : "✓ Đã đủ CR · Sẵn sàng Nhà Hát";
+    case "Beidou":
+      return arts.length < 5 || er < 155
+        ? `✓ ${c.weapon?.name || "Vua Biển"} · Đủ 5 TDV (ER ${er.toFixed(0)}%)`
+        : "✓ Đã đủ đồ đi Nhà Hát";
+    case "Fischl":
+      return cr < 55 ? `Đổi Nón CR% (đang ${cr.toFixed(1)}% CR)` : "✓ Đã ổn Crit · Tùy chọn 4pc Đoàn Kịch";
+    case "Chevreuse":
+      return hp < 38000 ? `Đổi 3 món HP% · Kéo Lv.${lv}→80 (${(hp / 1000).toFixed(1)}k HP)` : `✓ Đã chạm ${(hp / 1000).toFixed(1)}k HP`;
+    case "Kuki Shinobu":
+      return em < 800 || lv < 90 ? `Đổi 3 món EM (${Math.round(em)}) · Kéo Lv.${lv}→90` : `✓ Đã đạt ${Math.round(em)} EM Lv.${lv}`;
+    case "Yae Miko":
+      return /4pc\s+Ảo Tưởng/i.test(sets) && cr >= 70
+        ? "✓ Yae Ma Nữ · 4pc Ảo Tưởng"
+        : cr < 68
+          ? `Đổi Nón CR% (${cr.toFixed(1)}%→~75%)`
+          : "Farm 4pc Ảo Tưởng chung Mitya";
+    case "Gorou":
+      return wRar <= 2 || arts.length < 5 ? "Bỏ cung 1★ · Lắp cung Nạp + đủ 5 TDV" : "✓ Đã đủ đồ dự bị Nham";
+    case "Mitya": {
+      const hasSet = /4pc\s+Ảo Tưởng/i.test(sets);
+      if (lv >= 90 && wLv >= 90 && zeroArts === 0 && hasSet) return "✓ Đã hoàn thiện Mitya Lv.90";
+      const todo = [];
+      if (zeroArts > 0) todo.push("Ly EM +20");
+      if (lv < 90 || wLv < 90) todo.push(`Lv.${lv}/VK ${wLv}→90`);
+      if (!hasSet) todo.push("4pc Ảo Tưởng");
+      return todo.join(" · ");
+    }
+    case "Valeriy":
+      return lv < 80 ? `✓ ${c.weapon?.name || "VK"} Lv.${wLv} · Kéo Lv.${lv}→80 & TDV ATK%` : `✓ Đã Lv.${lv} · Tối ưu 4pc Lửa Nung`;
+    case "Alyosha":
+      return lv < 80 ? `✓ ${c.weapon?.name || "VK"} Lv.${wLv} · Kéo Lv.${lv}→80` : `✓ Đã Lv.${lv} · Sẵn sàng Tinh-Siêu Dẫn`;
+    default:
+      return a.shortFix || a.fixTitle;
+  }
+}
+
 function compactStats(c) {
   if (!c) return "";
   const hpSet = new Set(["Furina", "Neuvillette", "Chevreuse", "Nilou", "Yelan", "Layla", "Sangonomiya Kokomi", "Zhongli"]);
@@ -813,7 +961,7 @@ function renderViewBar() {
         <button class="view-tab ${APP.view === "tracker" ? "active" : ""}" data-view="tracker">Việc Làm (${pendingCount})</button>
         <button class="view-tab ${APP.view === "bench" ? "active" : ""}" data-view="bench">Chỉ Số (${benchCount})</button>
         <button class="view-tab ${APP.view === "stage" ? "active" : ""}" data-view="stage">Đội Hình</button>
-        <button class="view-tab ${APP.view === "power" ? "active" : ""}" data-view="power">Sức Mạnh (${MODES.teams.items.length})</button>
+        <button class="view-tab ${APP.view === "power" ? "active" : ""}" data-view="power">Sức Mạnh (${getDynamicTeams().length})</button>
         <button class="view-tab ${APP.view === "week" ? "active" : ""}" data-view="week">Lịch 7 Ngày</button>
       </nav>
       <div class="progress-inline">
@@ -869,7 +1017,7 @@ function renderActionBucket(title, sub, cls, items) {
                 </div>
                 <div class="col-main">
                   <div class="main-top">
-                    <strong class="short-fix">${esc(a.shortFix || a.fixTitle)}</strong>
+                    <strong class="short-fix">${esc(getActionShortFix(a, c))}</strong>
                     ${a.tag ? `<span class="act-tag ${tagTone(a.tag)}">${esc(a.tag)}</span>` : ""}
                   </div>
                   ${c ? `<div class="char-live-stat">${esc(compactStats(c))}</div>` : ""}
@@ -1020,8 +1168,8 @@ function renderTrackerView() {
     blocks.push(renderActionBucket("1. Chỉnh Ngay · 0 Nhựa", "Đổi đồ có sẵn · Nón CR% · Slot Nhà Hát", "bucket-now", nowItems));
   }
   if (APP.trackerTab === "chars" || APP.trackerTab === "farm") {
-    blocks.push(renderActionBucket("2. Cần Farm · Vùng Đã Mở", "Fontaine 64% · Nod-Krai 10% · Inazuma 100%", "bucket-farm", farmItems));
-    blocks.push(renderActionBucket("3. Snezhnaya (7%)", "10 Băng Thần Đồng · Sách Charity & Boss", "bucket-later", laterItems));
+    blocks.push(renderActionBucket("2. Cần Farm · Vùng Đã Mở", `Fontaine ${regionPct("Fontaine")}% · Nod-Krai ${regionPct("Nod-Krai")}% · Inazuma ${regionPct("Inazuma")}%`, "bucket-farm", farmItems));
+    blocks.push(renderActionBucket(`3. Snezhnaya (${regionPct("Snezhnaya")}%)`, "10 Băng Thần Đồng · Sách Charity & Boss", "bucket-later", laterItems));
   }
   if (APP.trackerTab === "weapons") {
     blocks.push(renderSurplusBucket());
@@ -1061,7 +1209,7 @@ function tierClass(tier) {
 
 function renderFoot() {
   if (APP.mode === "teams") {
-    const items = MODES.teams.items;
+    const items = getDynamicTeams();
     const active = items[APP.index] || items[0];
     const p = active?.power;
     if (!p) return "";
@@ -1093,10 +1241,7 @@ function renderFoot() {
     `;
   }
   if (APP.mode === "theater") {
-    const elig = APP.data.characters.filter(
-      (c) => c.level >= 70 && (["Hydro", "Electro", "Geo"].includes(c.element) || c.name === "Qiqi")
-    );
-    const needGear = new Set(["Beidou", "Gorou", "Ningguang"]);
+    const { elig, needGear } = evalTheaterStatus();
     return `
       <div class="stage-foot">
         <div class="foot-title">
@@ -1117,10 +1262,11 @@ function renderFoot() {
     `;
   }
   if (APP.mode === "abyss") {
+    const ab = APP.data?.spiral_abyss?.[0];
     return `
       <div class="stage-foot">
         <div class="foot-title">
-          <span><strong>La Hoàn 16.11–16.12</strong> · 11-3 (25/36★)</span>
+          <span><strong>La Hoàn</strong> · ${esc(ab?.max_floor || "11-3")} (${esc(ab?.total_star ?? 25)}/36★)</span>
           <span>Tầng 12: Nửa 1 +75% Lunar-Crystallize · Nửa 2 +200 EM</span>
         </div>
       </div>
@@ -1130,7 +1276,14 @@ function renderFoot() {
 }
 
 function renderStageView() {
-  const items = MODES[APP.mode].items;
+  let items = APP.mode === "teams" ? getDynamicTeams() : MODES[APP.mode].items;
+  if (APP.mode === "meta" && APP.data) {
+    items = items.map((it) => {
+      if (it.title.startsWith("Build Ngay")) return { ...it, sub: `Fontaine ${regionPct("Fontaine")}% · Nod-Krai ${regionPct("Nod-Krai")}%` };
+      if (it.title.startsWith("Snezhnaya")) return { ...it, title: `Snezhnaya (${regionPct("Snezhnaya")}%)` };
+      return it;
+    });
+  }
   const active = items[APP.index] || items[0];
 
   const rowsHtml = items
@@ -1169,7 +1322,7 @@ function renderStageView() {
       let noteText = c ? "Ổn định ✓" : "Chưa có";
       if (isPending) {
         noteClass = act.bucket === "now" ? "note-bad" : "note-warn";
-        noteText = act.shortFix || act.fixTitle;
+        noteText = getActionShortFix(act, c);
       } else if (act && APP.done[act.id]) {
         noteText = "Đã xong ✓";
       }
@@ -1270,6 +1423,246 @@ function calcTeamReadiness(members) {
     maxArts,
     maxWeapons,
   };
+}
+
+const TARGET_SET_CHECK = {
+  Neuvillette: (s) => /4pc\s+Thợ Săn/i.test(s),
+  Furina: (s) => /4pc\s+Đoàn Kịch/i.test(s),
+  Mitya: (s) => /4pc\s+Ảo Tưởng/i.test(s),
+  "Yae Miko": (s) => /4pc\s+Ảo Tưởng/i.test(s),
+  Nilou: (s) => /2pc\s+Thiên Nham.*2pc\s+Vầng Sáng|2pc\s+Vầng Sáng.*2pc\s+Thiên Nham/i.test(s),
+  Navia: (s) => /4pc\s+Tiếng Đêm/i.test(s),
+  Valeriy: (s) => /4pc\s+Trái Tim Lửa Nung|4pc\s+Nghi Thức Tông Thất/i.test(s),
+};
+
+const TEAM_POWER_CFG = {
+  "Neuvillette + Furina": {
+    weights: [0.46, 0.34, 0.11, 0.09],
+    setCheck: ["Neuvillette", "Furina"],
+    maxCurCap: 92,
+    checks: [
+      ({ get, sets, statN }) => (sets(get("Neuvillette")).includes("4pc Thợ Săn") ? null : `Neuv 4pc Thợ Săn (${statN(get("Neuvillette"), "Tỷ Lệ Bạo Kích").toFixed(1)}% CR)`),
+      ({ get, tals }) => {
+        const f = get("Furina");
+        if (!f) return null;
+        const lv = f.level || 1;
+        const q = tals(f)[2];
+        if (lv < 90 && q < 10) return `Furina Lv.${lv}→90 · Q${q}→10`;
+        if (lv < 90) return `Furina Lv.${lv}→90`;
+        if (q < 10) return `Furina Q${q}→10`;
+        return null;
+      },
+      ({ get, sets }) => (sets(get("Furina")).includes("4pc Đoàn Kịch") ? null : "Furina 4pc Đoàn Kịch"),
+    ],
+  },
+  "Raiden + Furina": {
+    weights: [0.34, 0.32, 0.20, 0.14],
+    setCheck: ["Furina"],
+    maxCurCap: 81,
+    checks: [
+      ({ get, tals, sets }) => {
+        const f = get("Furina");
+        if (!f) return null;
+        const lv = f.level || 1;
+        const q = tals(f)[2];
+        const parts = [];
+        if (lv < 90) parts.push(`Lv.${lv}→90`);
+        if (q < 10) parts.push(`Q${q}→10`);
+        if (!sets(f).includes("4pc Đoàn Kịch")) parts.push("4pc Đoàn Kịch");
+        return parts.length ? `Furina ${parts.join(" · ")}` : null;
+      },
+      ({ get, statN }) => (statN(get("Yae Miko"), "Tỷ Lệ Bạo Kích") >= 68 ? null : `Yae Nón CR% (${statN(get("Yae Miko"), "Tỷ Lệ Bạo Kích").toFixed(0)}%)`),
+      ({ get, wLv }) => (wLv(get("Yelan")) >= 90 ? null : `Yelan Tây Phong ${wLv(get("Yelan"))}→90`),
+    ],
+  },
+  "Raiden National": {
+    weights: [0.38, 0.20, 0.24, 0.18],
+    setCheck: [],
+    maxCurCap: 68,
+    checks: [
+      ({ get, wLv }) => (wLv(get("Yelan")) >= 90 ? null : `Yelan Tây Phong ${wLv(get("Yelan"))}→90`),
+      ({ get, statN }) => (statN(get("Xiangling"), "Tỷ Lệ Bạo Kích") >= 65 ? null : `Tối ưu nhẹ Crit XL (${statN(get("Xiangling"), "Tỷ Lệ Bạo Kích").toFixed(0)}% CR)`),
+    ],
+  },
+  "Keqing Tăng Cường": {
+    weights: [0.46, 0.20, 0.24, 0.10],
+    setCheck: [],
+    maxCurCap: 68,
+    checks: [
+      ({ get, statN }) => (statN(get("Keqing"), "Tỷ Lệ Bạo Kích") >= 65 ? null : "Keqing Bàn Nham 70% CR"),
+      ({ get, statN }) => (statN(get("Yae Miko"), "Tỷ Lệ Bạo Kích") >= 68 ? null : `Yae Nón CR% (${statN(get("Yae Miko"), "Tỷ Lệ Bạo Kích").toFixed(0)}%)`),
+      ({ get, sets }) => (sets(get("Keqing")).includes("4pc Như Sấm") ? null : "Tùy chọn 4pc Như Sấm"),
+    ],
+  },
+  "Ayaka Đóng Băng": {
+    weights: [0.55, 0.18, 0.15, 0.12],
+    setCheck: [],
+    maxCurCap: 61,
+    checks: [
+      ({ get, wR }) => (wR(get("Kamisato Ayaka")) >= 5 ? null : "Amenoma R3→R5"),
+    ],
+    extraChips: ["Thử Furina + Charlotte"],
+  },
+  "Hu Tao Bốc Hơi": {
+    weights: [0.48, 0.24, 0.18, 0.10],
+    setCheck: [],
+    maxCurCap: 68,
+    checks: [
+      ({ get, wLv }) => (wLv(get("Yelan")) >= 90 ? null : `Yelan Tây Phong ${wLv(get("Yelan"))}→90`),
+      ({ get, statN }) => (statN(get("Hu Tao"), "Tỷ Lệ Bạo Kích") >= 70 ? null : `Hu Tao CR ${statN(get("Hu Tao"), "Tỷ Lệ Bạo Kích").toFixed(0)}%→70%+`),
+    ],
+    extraChips: ["Thử Furina + Xianyun"],
+  },
+  "Yoimiya Đánh Thường": {
+    weights: [0.52, 0.24, 0.14, 0.10],
+    setCheck: [],
+    maxCurCap: 62,
+    checks: [
+      ({ get, wLv }) => (wLv(get("Yelan")) >= 90 ? null : `Yelan Tây Phong ${wLv(get("Yelan"))}→90`),
+      ({ get, statN }) => (statN(get("Yoimiya"), "Tinh Thông Nguyên Tố") >= 90 ? null : `Bổ sung EM (${Math.round(statN(get("Yoimiya"), "Tinh Thông Nguyên Tố"))}→100+)`),
+    ],
+  },
+  "Ganyu Tan Chảy": {
+    weights: [0.52, 0.20, 0.18, 0.10],
+    setCheck: [],
+    maxCurCap: 60,
+    checks: [
+      ({ get, statN }) => (statN(get("Ganyu"), "Tinh Thông Nguyên Tố") >= 180 ? null : `Đổi Cát EM (${Math.round(statN(get("Ganyu"), "Tinh Thông Nguyên Tố"))}→220+)`),
+    ],
+  },
+  "Nilou Sum Suê": {
+    weights: [0.50, 0.24, 0.16, 0.10],
+    setCheck: ["Nilou"],
+    maxCurCap: 70,
+    checks: [
+      ({ get, wLv }) => (wLv(get("Nilou")) >= 90 ? null : `Bến Tàu ${wLv(get("Nilou"))}→90`),
+      ({ get, sets, statN }) => (/2pc\s+Thiên Nham.*2pc\s+Vầng Sáng|2pc\s+Vầng Sáng.*2pc\s+Thiên Nham/i.test(sets(get("Nilou"))) && statN(get("Nilou"), "Giới Hạn HP") >= 66000 ? null : `Đổi 2+2 HP% (${(statN(get("Nilou"), "Giới Hạn HP") / 1000).toFixed(1)}k→68k+)`),
+      ({ get, statN }) => (statN(get("Sangonomiya Kokomi"), "Tinh Thông Nguyên Tố") >= 400 ? null : "EM cho Kokomi"),
+    ],
+  },
+  "Eula Vật Lý": {
+    weights: [0.58, 0.18, 0.14, 0.10],
+    setCheck: [],
+    maxCurCap: 54,
+    checks: [
+      ({ get, statN }) => (statN(get("Eula"), "Tỷ Lệ Bạo Kích") >= 68 ? null : `Đẩy CR ${statN(get("Eula"), "Tỷ Lệ Bạo Kích").toFixed(1)}%→70%+`),
+    ],
+    extraChips: ["Thử Furina + Mika C4"],
+  },
+  "Navia 2 Nham": {
+    weights: [0.48, 0.30, 0.12, 0.10],
+    setCheck: ["Navia"],
+    maxCurCap: 76,
+    checks: [
+      ({ get, statN }) => (statN(get("Navia"), "Tỷ Lệ Bạo Kích") >= 70 ? null : `Đẩy lại CR ${statN(get("Navia"), "Tỷ Lệ Bạo Kích").toFixed(1)}%→70%+`),
+      ({ get, tals }) => (tals(get("Chiori"))[1] >= 8 ? null : `Chiori E ${tals(get("Chiori"))[1]}→9`),
+      ({ get, art0 }) => (art0(get("Chiori")) > 0 || !get("Chiori")?.artifacts?.every((a) => a.level >= 20) ? "Ly Nham Chiori +20" : null),
+    ],
+  },
+  "Mitya + Yae Tinh-Siêu Dẫn": {
+    weights: [0.44, 0.28, 0.10, 0.18],
+    setCheck: ["Mitya", "Yae Miko", "Valeriy"],
+    maxCurCap: 98,
+    checks: [
+      ({ get, wLv, art0 }) => {
+        const m = get("Mitya");
+        if (!m) return null;
+        const todo = [];
+        if ((m.level || 1) < 90) todo.push(`Mitya ${m.level}→90`);
+        if (wLv(m) < 90) todo.push(`Trấn ${wLv(m)}→90`);
+        if (art0(m) > 0) todo.push("Ly EM +20");
+        return todo.length ? todo.join(" · ") : null;
+      },
+      ({ get, sets, statN }) => {
+        const y = get("Yae Miko");
+        const cr = statN(y, "Tỷ Lệ Bạo Kích");
+        const hasSet = /4pc\s+Ảo Tưởng/i.test(sets(y));
+        if (cr >= 68 && hasSet) return null;
+        return [cr < 68 ? "Yae Nón CR%" : null, !hasSet ? "4pc Ảo Tưởng" : null].filter(Boolean).join(" + ");
+      },
+      ({ get }) => ((get("Valeriy")?.level || 1) >= 80 ? null : `Valeriy Lv.${get("Valeriy")?.level || 1}→80`),
+    ],
+    extraChips: ["Đổi Rosaria → Odette"],
+  },
+};
+
+function evalMemberPower(name, checkSet) {
+  const c = byName(name);
+  if (!c) return 0.25;
+  const spec = CHAR_BENCHMARKS[name];
+  let statMult = 0.85;
+  if (spec && spec.stats.length) {
+    let prod = 1;
+    for (const st of spec.stats) {
+      const actual = parseStatNum(stat(c, st.key));
+      const r = st.target > 0 ? Math.max(0.25, Math.min(actual / st.target, 1.04)) : 1;
+      prod *= r;
+    }
+    statMult = Math.min(1.02, Math.pow(prod, 1 / spec.stats.length));
+  }
+  const lv = Number(c.level || 1);
+  const lvMult = 0.35 + 0.65 * (Math.min(lv, 90) / 90);
+  const wLv = Number(c.weapon?.level || 1);
+  const wRar = Number(c.weapon?.rarity || 1);
+  const wpnMult = wRar <= 2 ? 0.55 : 0.72 + 0.28 * (Math.min(wLv, 90) / 90);
+  const tals = parseTalents(c).sort((a, b) => b - a);
+  const talMult = 0.65 + 0.35 * Math.min((tals[0] + tals[1]) / 19, 1);
+  const arts = (c.artifacts || []).slice(0, 5);
+  const artSum = arts.reduce((acc, a) => acc + Math.min(Number(a.level || 0), 20), 0);
+  const artMult = 0.65 + 0.35 * (artSum / 100);
+  const hasSet = !checkSet || !TARGET_SET_CHECK[name] || TARGET_SET_CHECK[name](c.artifact_sets || "");
+  const setMult = hasSet ? 1.0 : 0.86;
+  return statMult * lvMult * wpnMult * talMult * artMult * setMult;
+}
+
+function getDynamicTeams() {
+  return MODES.teams.items.map((it, idx) => {
+    const p = it.power;
+    const cfg = TEAM_POWER_CFG[it.title];
+    if (!cfg || !APP.data) return { ...it, idx };
+
+    let sum = 0;
+    let wSum = 0;
+    it.members.forEach((m, i) => {
+      const w = cfg.weights[i] ?? 0.12;
+      sum += w * evalMemberPower(m, cfg.setCheck.includes(m));
+      wSum += w;
+    });
+    const eff = sum / (wSum || 1);
+    const cur = Math.min(p.proj, Math.round(cfg.maxCurCap * eff));
+    const curTier = dpsToTier(cur);
+    const projTier = dpsToTier(p.proj);
+    const ready = calcTeamReadiness(it.members);
+
+    const ctx = {
+      get: (n) => byName(n),
+      sets: (c) => c?.artifact_sets || "",
+      tals: (c) => parseTalents(c),
+      wLv: (c) => Number(c?.weapon?.level || 1),
+      wR: (c) => Number(c?.weapon?.refinement || 1),
+      art0: (c) => (c?.artifacts || []).filter((a) => Number(a.level || 0) === 0).length,
+      statN: (c, k) => parseStatNum(stat(c, k)),
+    };
+    const liveChips = (cfg.checks || []).map((fn) => fn(ctx)).filter(Boolean);
+    const allChips = [...liveChips, ...(cfg.extraChips || [])];
+    const chips = allChips.length ? allChips : ["✓ Đã tối ưu đội hình"];
+    const status = cur >= 58 && ready.pct >= 85 ? "ok" : "warn";
+
+    return {
+      ...it,
+      idx,
+      status,
+      sub: `${cur}k → ${p.proj}k (${projTier}) · Build ${ready.pct}%`,
+      power: {
+        ...p,
+        cur,
+        curTier,
+        projTier,
+        chips,
+        upgrade: liveChips.length ? allChips.join(" · ") : p.upgrade,
+      },
+    };
+  });
 }
 
 function costClass(cost) {
@@ -1416,7 +1809,7 @@ function renderPowerChart(allTeams) {
 
   return `
     <div class="bullet-legend-row">
-      <span><i class="leg-cur"></i> Hiện tại (26/11)</span>
+      <span><i class="leg-cur"></i> Hiện tại (${esc(formatCrawlDate())})</span>
       <span><i class="leg-proj"></i> Dự tính</span>
       <span><i class="leg-tick"></i> 55k (36★) · 75k (Nhanh) · 90k (S+)</span>
     </div>
@@ -1443,20 +1836,27 @@ function renderPowerMatrix(allTeams) {
   const padB = 46;
   const W = 820;
   const H = 430;
-  const xMin = 22;
-  const xMax = 69;
-  const yMin = 50;
-  const yMax = 102;
+  const curVals = allTeams.map((t) => t.power.cur);
+  const projVals = allTeams.map((t) => t.power.proj);
+  const minCur = Math.min(...curVals);
+  const maxCur = Math.max(...curVals);
+  const xMin = Math.min(40, Math.floor((minCur - 8) / 5) * 5);
+  const xMax = Math.max(82, Math.ceil((maxCur + 6) / 5) * 5);
+  const yMin = Math.min(50, Math.floor((Math.min(...projVals) - 6) / 5) * 5);
+  const yMax = Math.max(102, Math.ceil((Math.max(...projVals) + 4) / 5) * 5);
   const plotW = W - padL - padR;
   const plotH = H - padT - padB;
   const pxX = (v) => padL + ((v - xMin) / (xMax - xMin)) * plotW;
   const pxY = (v) => padT + ((yMax - v) / (yMax - yMin)) * plotH;
 
-  const xMid = pxX(52);
+  const xMid = pxX(Math.min(xMax - 6, Math.max(xMin + 6, 58)));
   const yMid = pxY(70);
 
-  const xTicks = [30, 40, 50, 60];
+  const xTicks = [];
+  for (let v = Math.ceil((xMin + 2) / 10) * 10; v <= xMax - 2; v += 10) xTicks.push(v);
   const yTicks = [60, 70, 80, 90, 100];
+  const diagStart = Math.max(xMin, yMin);
+  const diagEnd = Math.min(xMax, yMax);
 
   const clips = allTeams
     .map((t) => {
@@ -1548,7 +1948,7 @@ function renderPowerMatrix(allTeams) {
           <line x1="${padL}" y1="${yMid.toFixed(1)}" x2="${W - padR}" y2="${yMid.toFixed(1)}" class="mx-divider" />
 
           <!-- Y=X diagonal reference -->
-          <line x1="${pxX(50).toFixed(1)}" y1="${pxY(50).toFixed(1)}" x2="${pxX(69).toFixed(1)}" y2="${pxY(69).toFixed(1)}" class="mx-diag" />
+          ${diagEnd > diagStart ? `<line x1="${pxX(diagStart).toFixed(1)}" y1="${pxY(diagStart).toFixed(1)}" x2="${pxX(diagEnd).toFixed(1)}" y2="${pxY(diagEnd).toFixed(1)}" class="mx-diag" />` : ""}
 
           <!-- Axis labels -->
           <text x="${((padL + W - padR) / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle" class="mx-axis">Hiện tại (k DPS) →</text>
@@ -1698,7 +2098,7 @@ function renderPowerVs(allTeams) {
 }
 
 function renderPowerView() {
-  const allTeams = MODES.teams.items.map((it, idx) => ({ ...it, idx }));
+  const allTeams = getDynamicTeams();
 
   const subTabs = [
     ["chart", "Biểu Đồ DPS"],
@@ -1960,7 +2360,7 @@ function renderModal() {
             act
               ? `
                 <div class="modal-fix-summary">
-                  <strong>${esc(act.fixTitle)}</strong>
+                  <strong>${esc(getActionShortFix(act, c))}</strong>
                   <span class="fix-badge ${act.bucket === "now" ? "" : "warn"}">${act.bucket === "now" ? "● Làm ngay" : act.bucket === "farm" ? "● Cần farm" : "● Snezhnaya"}</span>
                 </div>
                 <div class="modal-mainstats">
@@ -1991,7 +2391,7 @@ function renderModal() {
           c
             ? `<section class="modal-section">
                 <div class="modal-section-head">
-                  <h3 class="modal-section-title">${bench ? "So sánh chỉ số lý tưởng (26/11)" : "Chỉ số thực tế (26/11)"}</h3>
+                  <h3 class="modal-section-title">${bench ? `So sánh chỉ số lý tưởng (${esc(formatCrawlDate())})` : `Chỉ số thực tế (${esc(formatCrawlDate())})`}</h3>
                   ${bench ? `<span class="bench-score score-${bench.status}">Đạt ${bench.score}%</span>` : ""}
                 </div>
                 ${
@@ -2250,21 +2650,45 @@ function render() {
   });
 }
 
+function hydrateHeader() {
+  const acc = APP.data?.account;
+  if (!acc) return;
+  const bg = document.getElementById("hero-bg");
+  const logo = document.getElementById("hero-logo");
+  const titleEl = document.getElementById("player-title");
+  const eyeEl = document.getElementById("account-eyebrow");
+  const abEl = document.getElementById("metric-abyss");
+  const onEl = document.getElementById("metric-onslaught");
+  const thEl = document.getElementById("metric-theater");
+
+  if (acc.banner && bg) bg.style.backgroundImage = `url('${acc.banner}')`;
+  if (acc.logo && logo) logo.src = acc.logo;
+  if (titleEl) titleEl.textContent = acc.nickname;
+  if (eyeEl) eyeEl.textContent = `ASIA · UID ${acc.uid} · AR ${acc.adventure_rank} · Crawl ${formatCrawlDate(true)}`;
+
+  const ab = APP.data?.spiral_abyss?.[0];
+  if (abEl && ab) abEl.textContent = `${ab.max_floor} · ${ab.total_star}★`;
+
+  const st = APP.data?.stygian_onslaught;
+  if (onEl && st) onEl.textContent = `${st.difficulty} · ${st.best_time_sec}s`;
+
+  const th = APP.data?.imaginarium_theater;
+  if (thEl) {
+    const { elig } = evalTheaterStatus();
+    const round = th?.max_round_id ?? 3;
+    thEl.textContent = `Màn ${round} · ${elig.length}+3`;
+  }
+}
+
 async function init() {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && APP.modalChar) closeCharModal();
   });
   try {
-    const res = await fetch(DATA_URL);
+    const res = await fetch(DATA_URL, { cache: "no-cache" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     APP.data = await res.json();
-    if (APP.data.account.banner) {
-      document.getElementById("hero-bg").style.backgroundImage = `url('${APP.data.account.banner}')`;
-    }
-    if (APP.data.account.logo) {
-      document.getElementById("hero-logo").src = APP.data.account.logo;
-    }
-    document.getElementById("player-title").textContent = APP.data.account.nickname;
+    hydrateHeader();
     render();
   } catch (err) {
     document.getElementById("app-root").innerHTML = `<div class="loading">Không tải được dữ liệu: ${esc(err.message)}</div>`;
