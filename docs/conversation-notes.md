@@ -1,11 +1,14 @@
 # Ghi chú Tư vấn & Kế hoạch Tài khoản Genshin (`UID 802472241`)
 
-Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật chiều **25/11/2026 (`13:42`)** (Version **7.2**, **73 nhân vật**).
+Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật sáng **26/11/2026 (`09:45`)** (Version **7.2**, **73 nhân vật**).
 
 ---
 
-## 0. Các việc đã hoàn thành sau đợt Crawl 25/11/2026
+## 0. Các việc đã hoàn thành sau đợt Crawl 25–26/11/2026
 
+- **Cập nhật sáng `26/11 09:45`:**
+  - `Furina`: **✓ Đã nâng `Lv.80 → Lv.90`** & thiên phú **`4/8/8 → 4/9/9`** (`39,678 HP · 1,144 ATK · 46.4% CR / 180.6% CD · 151.8% ER · Răng Nanh R5`).
+  - Rương nhặt thêm: **`+1` Rương Siêu Cấp** (`226 → 227`), **`+3` Rương Thường** (`2,570 → 2,573`).
 - **Hoàn thành Vòng Xoay Vũ Khí (crawl `25/11 13:42`):**
   - `Furina`: **✓ Đã chuyển `Răng Nanh Rỉ Sét Lv.90 R5`** (`35,626 HP · 41.6/180.6 · 151.8% ER`).
   - `Keqing`: **✓ Đã trả lại `Bàn Nham Kết Lục Lv.90 R1`** (`26.0% → 70.1% CR / 231.4% CD · 1,800 ATK`).
@@ -38,7 +41,7 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 ## 1. Các việc cần chỉnh tiếp (Ưu tiên hiện tại)
 
 1. **Vũ Khí — Hoàn thiện nâng cấp sau khi xoay (`✓` đã đổi xong vị trí 12 cây)**
-   - `Furina`: **✓ Đã chuyển `Răng Nanh Rỉ Sét Lv.90 R5`** (`35,626 HP · 41.6/180.6 · 151.8% ER`) → kéo `Lv.80 → 90`, Q `8 → 10`, farm **`4pc Đoàn Kịch Hoàng Kim`** chung bí cảnh Neuvillette.
+   - `Furina`: **✓ Đã lên `Lv.90 · 4/9/9` + `Răng Nanh Rỉ Sét Lv.90 R5`** (`39,678 HP · 46.4/180.6 · 151.8% ER`) → vương miện Q `9 → 10`, farm **`4pc Đoàn Kịch Hoàng Kim`** chung bí cảnh Neuvillette.
    - `Nilou`: **✓ Đã nhận `Kiếm Bến Tàu Lv.60`** (`56,168 HP`) → kéo kiếm `Lv.60 → 90` & đổi sang **`2pc+2pc HP%`** (`68k+ HP`).
    - `Jean`: **✓ Đã chuyển `Ống Đồng Fleuve Cendre Lv.50 R2`** (`189.3% ER`) → kéo `Lv.50 → 90`, nâng Ly ATK% `+0 → +20`, ép **`4pc Bóng Hình`**.
    - `Valeriy`: **✓ Đã gắn `Kagotsurube Isshin Lv.80 R1`** (`647 ATK`) → kéo Lv.1 → 80, Isshin 90, farm **`4pc Trái Tim Lửa Nung`**.
@@ -69,7 +72,7 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
   - *Nửa 1 (+75% Lunar-Crystallize):* `✓ Navia (Li Cốt 80/180) + Zhongli + Chiori + Xianyun/Bennett`
   - *Nửa 2 (+200 EM):* `✓ Neuvillette + Furina + Kazuha + Zhongli` (vừa clear Ảo Cảnh 34s) hoặc `✓ Raiden National` (`69.9/132.4` vừa clear Boss 1 56s).
 - **Nhà Hát (`01.11 – 01.12`, Thủy · Lôi · Nham — đã đi tới Màn 3, Độ khó 3 · `28+3` nhân vật):**
-  - `Furina` Lv.80 & `Aino` Lv.80 C1 vừa bổ sung thêm lực lượng Thủy cùng `Navia`, `Ayato`, `Noelle`, và `Mitya` vừa lên Lv.70 nâng tổng slot lên **28**; cần lắp gấp đồ cho `Beidou`, `Gorou` và nâng Ly/Nón CR% cho `Ningguang` trước **01/12**. (`Yae` ✓ đã mở Ma Nữ giữ trụ 24s không mất khi Nộ đi Màn 6 rất mượt.)
+  - `Furina` Lv.90 & `Aino` Lv.80 C1 vừa bổ sung thêm lực lượng Thủy cùng `Navia`, `Ayato`, `Noelle`, và `Mitya` vừa lên Lv.70 nâng tổng slot lên **28**; cần lắp gấp đồ cho `Beidou`, `Gorou` và nâng Ly/Nón CR% cho `Ningguang` trước **01/12**. (`Yae` ✓ đã mở Ma Nữ giữ trụ 24s không mất khi Nộ đi Màn 6 rất mượt.)
 
 ---
 
@@ -82,9 +85,9 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 
 ---
 
-## 4. Bảng So Sánh Sức Mạnh Dự Tính Các Đội Hình (25/11/2026)
+## 4. Bảng So Sánh Sức Mạnh Dự Tính Các Đội Hình (26/11/2026)
 
-*Ước lượng trên chuẩn vòng xoay 20s tại La Hoàn Tầng 12 (`k DPS`), đối chiếu theo chỉ số crawl 25/11, nâng cấp Ma Nữ của Yae Miko (`Edict of Cleansing`), vòng xoay Kiếm Đơn và kỷ lục Ảo Cảnh 191s (`Neuvillette + Furina` 34s, `Raiden + Furina` 56s).*
+*Ước lượng trên chuẩn vòng xoay 20s tại La Hoàn Tầng 12 (`k DPS`), đối chiếu theo chỉ số crawl 26/11, nâng cấp Ma Nữ của Yae Miko (`Edict of Cleansing`), Furina Lv.90 (`4/9/9`), vòng xoay Kiếm Đơn và kỷ lục Ảo Cảnh 191s (`Neuvillette + Furina` 34s, `Raiden + Furina` 56s).*
 
 | Đội hình | Vai trò | Hiện tại (Tier) | Dự tính (Tier) | Tăng | Đòn bẩy nâng cấp chính |
 | :--- | :--- | :---: | :---: | :---: | :--- |

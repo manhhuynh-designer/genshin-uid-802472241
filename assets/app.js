@@ -1,4 +1,4 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json?v=18";
+const DATA_URL = "./data/genshin_uid_802472241_data.json?v=19";
 const STORAGE_KEY = "genshin_uid_802472241_done_v4";
 
 const SET_META = {
@@ -18,7 +18,7 @@ const SET_META = {
   hp2: { name: "2pc Thiên Nham + 2pc Vầng Sáng (HP%)", short: "2+2 HP%", where: "Tráp Thánh Thiên Nham / Bí cảnh Sumeru", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png" },
 };
 
-// Unified per-character action dossier (synced with crawl 25/11/2026 13:42 — hoàn thành vòng xoay 12 vũ khí, Navia 6/10/10, Mitya 2+2 EM)
+// Unified per-character action dossier (synced with crawl 26/11/2026 09:45 — Furina Lv.90 4/9/9, 39.7k HP)
 const ACTIONS = [
   // Bucket 1: Do now in-game (0 Resin or quick swap / artifact mainstat fix)
   { id: "a_ning", bucket: "now", tag: "Nhà Hát", shortFix: "Nâng Ly Nham +20 · Đổi Nón CR%", name: "Ningguang", swapFrom: null, swapNote: "✓ Đã gắn Quyển Thiên Không R2 (2,501 ATK)", fixTitle: "Nâng Ly Nham (+0 → +20) & đổi Nón → CR%", fixSub: "CR đang 14.7% / 169.7% CD · Chỉnh xong sẵn sàng Nhà Hát Màn 8", setKey: null },
@@ -34,7 +34,7 @@ const ACTIONS = [
   { id: "a_gorou", bucket: "now", tag: "Nhà Hát", shortFix: "Bỏ cung 1★ · Lắp cung Nạp + Ly", name: "Gorou", swapFrom: null, swapNote: "Đang cầm Cung Săn Bắn 1★ Lv.1", fixTitle: "Lắp cung Nạp tạm & thêm Ly (đang 4 món)", fixSub: "Đủ đồ dự bị slot Nham cho Nhà Hát Giả Tưởng 7.2", setKey: null },
 
   // Bucket 2: Farm in unlocked regions (Fontaine 64%, Nod-Krai 10%, Inazuma 100%, Sumeru 100%)
-  { id: "a_furina", bucket: "farm", tag: "Fontaine", shortFix: "✓ Đã Răng Nanh R5 · Kéo Lv.90 Q10", name: "Furina", swapFrom: null, swapNote: "✓ Đã chuyển Răng Nanh Rỉ Sét Lv.90 R5 (35.6k HP · 151.8% ER · 41.6/180.6)", fixTitle: "Kéo Lv.80 → Lv.90 · Q8 → Q10 · Farm 4pc Đoàn Kịch", fixSub: "Đã chốt Răng Nanh R5 (+32% ST E, +12% CR E) · Farm chung 4pc Đoàn Kịch với Neuvillette", setKey: "gt" },
+  { id: "a_furina", bucket: "farm", tag: "Fontaine", shortFix: "✓ Đã Lv.90 4/9/9 · Q10 & 4pc Đoàn Kịch", name: "Furina", swapFrom: null, swapNote: "✓ Đã lên Lv.90 (4/9/9 · 39.7k HP · 151.8% ER · 46.4/180.6) · Răng Nanh R5", fixTitle: "Nâng Q (9 → 10) · Farm 4pc Đoàn Kịch", fixSub: "✓ Đã lên Lv.90 (39,678 HP) & Răng Nanh R5 (+32% ST E, +12% CR E) · Farm chung Neuvillette", setKey: "gt" },
   { id: "a_neuv", bucket: "farm", tag: "Fontaine", shortFix: "Farm 4pc Thợ Săn Marechaussee", name: "Neuvillette", swapFrom: null, swapNote: "Giữ Trấn Nghi Thức R1 · Tạm 4pc Trầm Luân (52.8/234.9 · Clear Boss 2 34s)", fixTitle: "Farm tiếp 4pc Thợ Săn Marechaussee (Fontaine)", fixSub: "Đã sửa CR từ 26% → 52.8% (+35.2% Crit) · Qua Thợ Săn nhảy lên ~88.8% CR", setKey: "mh" },
   { id: "a_chiori", bucket: "farm", tag: "Inazuma", shortFix: "Nâng E 1→8–9 · Ly Nham +20", name: "Chiori", swapFrom: null, swapNote: "✓ Đã đủ Cát DEF% (2,163 DEF · 60.2/71.0)", fixTitle: "Nâng E từ 1 → 8–9 · Nâng Ly Nham (+14 → +20)", fixSub: "Sách Ánh Sáng (Inazuma T4/T7) + tìm thêm dòng phụ STBK", setKey: "gt" },
   { id: "a_aino", bucket: "farm", tag: "Nod-Krai", shortFix: "Thiên phú 1/5/4 → 1/6/8 · Khúc Ca", name: "Aino", swapFrom: null, swapNote: "✓ Đã lên Lv.80 C1 · 1/5/4 · Đại Kiếm Tây Phong Lv.90 R5 (464 EM)", fixTitle: "Nâng Thiên phú 1/5/4 → 1/6/8 · Farm 4pc Khúc Ca Trăng Lụa", fixSub: "Boss Vịt Nắm Đấm + bí cảnh Nod-Krai (10%)", setKey: "silken" },
@@ -122,10 +122,10 @@ const CHAR_GUIDES = {
   },
   Furina: {
     mainStats: "Cát HP% (hoặc ER% khi đi 1 Thủy) · Ly HP% · Nón STBK/CR%",
-    targets: "✓ Đã đeo Răng Nanh Rỉ Sét R5 (35,626 HP · 151.8% ER) · Mục tiêu: Lv.90 · 4/9/10 · 4pc Đoàn Kịch",
+    targets: "✓ Đã Lv.90 · 4/9/9 · Răng Nanh R5 (39,678 HP · 46.4/180.6 · 151.8% ER) · Mục tiêu: Q10 & 4pc Đoàn Kịch",
     steps: [
-      "✓ Đã chuyển Răng Nanh Rỉ Sét Lv.90 R5 từ Bennett (+32% ST E, +12% CR E, ER lên 151.8%).",
-      "Kéo Furina Lv.80 → Lv.90, nâng Q (8 → 10) + E (8 → 9–10) vào T3/T6/CN.",
+      "✓ Đã nâng Furina lên Lv.90 (39,678 HP, 46.4% CR) và nâng thiên phú lên 4/9/9.",
+      "Vương miện Q (9 → 10) vào T3/T6/CN để tối đa % tăng sát thương cả đội.",
       "Farm dần bộ 4pc Đoàn Kịch Hoàng Kim chung bí cảnh với Neuvillette (hiện vẫn đeo 4pc Thiên Nham; giữ Cát ER dự phòng nếu đi 1 Thủy).",
     ],
   },
@@ -581,13 +581,13 @@ const MODES = {
       { title: "Màn 3 · Terrorshroom", sub: "Kích Lôi nhanh", note: "✓ Keqing vừa nhận lại Bàn Nham (70/231) gánh mượt", status: "ok", members: ["Keqing", "Fischl", "Xingqiu", "Barbara"] },
       { title: "Màn 6 · Nightmares", sub: "Phá khiên Thủy + Lôi", note: "Ayato · Aino Lv.80 · Yae Ma Nữ giữ trụ 24s rất mượt", status: "ok", members: ["Kamisato Ayato", "Yae Miko", "Yelan", "Kuki Shinobu"] },
       { title: "Màn 8 · Samachurl", sub: "Giữ Nham + Thủy", note: "✓ Navia 6/10/10 gánh · Beidou đã có Vua Biển · Còn Gorou & Ningguang", status: "warn", members: ["Navia", "Zhongli", "Chiori", "Xingqiu"] },
-      { title: "Màn 10 · Moonfly", sub: "Cần Healer + Buff mạnh", note: "✓ Furina Răng Nanh R5 (35.6k HP) · Mượn thêm Xilonen từ bạn", status: "ok", members: ["Neuvillette", "Furina", "Raiden Shogun", "Sangonomiya Kokomi"] },
+      { title: "Màn 10 · Moonfly", sub: "Cần Healer + Buff mạnh", note: "✓ Furina Lv.90 Răng Nanh R5 (39.7k HP) · Mượn thêm Xilonen từ bạn", status: "ok", members: ["Neuvillette", "Furina", "Raiden Shogun", "Sangonomiya Kokomi"] },
     ],
   },
   meta: {
     label: "Meta 7.2",
     items: [
-      { title: "Build Ngay (Vùng Mở)", sub: "Fontaine 64% · Nod-Krai 10%", note: "✓ Đã xoay xong vòng kiếm · Kéo Furina 90 & farm bí cảnh Tội Lỗi", status: "ok", members: ["Furina", "Neuvillette", "Aino", "Chiori"] },
+      { title: "Build Ngay (Vùng Mở)", sub: "Fontaine 64% · Nod-Krai 10%", note: "✓ Furina đã lên Lv.90 (4/9/9) · Farm bí cảnh Tội Lỗi (Thợ Săn + Đoàn Kịch)", status: "ok", members: ["Furina", "Neuvillette", "Aino", "Chiori"] },
       { title: "Snezhnaya (7%)", sub: "Lõi Tinh-Siêu Dẫn 7.2", note: "✓ Mitya 2+2 EM · Valeriy Isshin Lv.80 · Alyosha Mũi Nhọn Lv.70", status: "warn", members: ["Mitya", "Yae Miko", "Valeriy", "Alyosha"] },
       { title: "Mục Tiêu Roll Tiếp", sub: "Pity 5★: 0 (sau Furina)", note: "Chờ Băng Thần Anastasya (7.3) · Xilonen · Odette", status: "ok", members: ["Furina", "Xilonen", "Odette", "Columbina"] },
     ],
@@ -1416,7 +1416,7 @@ function renderPowerChart(allTeams) {
 
   return `
     <div class="bullet-legend-row">
-      <span><i class="leg-cur"></i> Hiện tại (25/11)</span>
+      <span><i class="leg-cur"></i> Hiện tại (26/11)</span>
       <span><i class="leg-proj"></i> Dự tính</span>
       <span><i class="leg-tick"></i> 55k (36★) · 75k (Nhanh) · 90k (S+)</span>
     </div>
@@ -1991,7 +1991,7 @@ function renderModal() {
           c
             ? `<section class="modal-section">
                 <div class="modal-section-head">
-                  <h3 class="modal-section-title">${bench ? "So sánh chỉ số lý tưởng (25/11)" : "Chỉ số thực tế (25/11)"}</h3>
+                  <h3 class="modal-section-title">${bench ? "So sánh chỉ số lý tưởng (26/11)" : "Chỉ số thực tế (26/11)"}</h3>
                   ${bench ? `<span class="bench-score score-${bench.status}">Đạt ${bench.score}%</span>` : ""}
                 </div>
                 ${
