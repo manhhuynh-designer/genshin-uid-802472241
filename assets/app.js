@@ -660,7 +660,7 @@ let APP = {
   artSet: "all",
   artChar: "all",
   artSort: "cv_desc",   // cv_desc | rolls_desc | lvl_asc
-  artLimit: 60,
+  artLimit: 36,
   mode: "teams",
   index: 0,
   powerTab: "chart",    // chart | matrix | vs
@@ -1164,14 +1164,41 @@ function shortStatName(name) {
   return STAT_SHORT_MAP[name] || name || "-";
 }
 
-function renderArtifactSubstatsGrid(subs) {
-  return `<div class="sub-chip-grid">${(subs || [])
+function renderRingGauge(pct, colorVar, label, size = 44) {
+  const r = (size / 2) - 4;
+  const circ = +(2 * Math.PI * r).toFixed(2);
+  const clamped = Math.max(0, Math.min(100, Number(pct) || 0));
+  const offset = +(circ * (1 - clamped / 100)).toFixed(2);
+  const cx = size / 2;
+  return `
+    <div class="ring-wrap" style="width:${size}px;height:${size}px;">
+      <svg viewBox="0 0 ${size} ${size}" class="ring-svg" aria-hidden="true">
+        <circle cx="${cx}" cy="${cx}" r="${r}" class="ring-bg" />
+        <circle cx="${cx}" cy="${cx}" r="${r}" class="ring-fg" style="stroke:${colorVar};stroke-dasharray:${circ};stroke-dashoffset:${offset};" />
+      </svg>
+      <span class="ring-lbl">${esc(label)}</span>
+    </div>
+  `;
+}
+
+function renderSubstatMiniGrid(subs) {
+  return `<div class="rc-subs">${(subs || [])
     .map((sp) => {
       const label = shortStatName(sp.name);
       const isCrit = label === "CR" || label === "CD";
       const isGood = isCrit || label === "ER" || label === "EM" || label.endsWith("%");
       const cls = isCrit ? "is-crit" : isGood ? "is-good" : "is-flat";
-      return `<span class="sub-chip ${cls}"><b>${esc(label)}</b> +${esc(sp.value)}${sp.rolls > 0 ? `<em class="sub-roll">+${esc(sp.rolls)}</em>` : ""}</span>`;
+      const rolls = Math.max(0, Number(sp.rolls || 0));
+      const pips = Array.from({ length: Math.min(5, rolls + 1) }, (_, i) => `<i class="rc-pip ${i === 0 ? "pip-base" : "pip-up"}"></i>`).join("");
+      return `
+        <div class="rc-sub ${cls}">
+          <div class="rc-sub-top">
+            <span class="rc-sub-k">${esc(label)}</span>
+            <strong class="rc-sub-v">+${esc(sp.value)}</strong>
+          </div>
+          <div class="rc-ticks" title="${rolls} lần nâng">${pips}</div>
+        </div>
+      `;
     })
     .join("")}</div>`;
 }
@@ -1186,38 +1213,125 @@ function renderRollDots(critRolls, badRolls) {
 
 const FIVE_SLOT_ORDER = ["Hoa", "Lông", "Cát", "Ly", "Nón"];
 
-function renderFiveSlotStrip(char) {
+function renderVisualSlotTiles(char) {
   const bySlot = new Map();
   (char?.artifacts || []).forEach((ar) => {
     bySlot.set(SLOT_SHORT_MAP[ar.slot] || ar.slot, ar);
   });
-  return `<div class="slot-strip">${FIVE_SLOT_ORDER.map((sl) => {
+  return `<div class="slot-tile-strip">${FIVE_SLOT_ORDER.map((sl) => {
     const ar = bySlot.get(sl);
-    if (!ar) return `<span class="slot-pip slot-miss" title="Thiếu ${sl}">${sl} —</span>`;
+    if (!ar) {
+      return `
+        <div class="slot-tile tile-miss" title="Thiếu ${sl}">
+          <span class="st-empty">+</span>
+          <span class="st-slot">${sl}</span>
+        </div>
+      `;
+    }
     const lvl = Number(ar.level || 0);
-    if (lvl < 20) return `<span class="slot-pip slot-low" title="${sl} ${shortStatName(ar.main_stat)} +${lvl}">${sl} +${lvl}</span>`;
-    return `<span class="slot-pip slot-ok" title="${sl} ${shortStatName(ar.main_stat)} +20">${sl} ✓</span>`;
+    const isLow = lvl < 20;
+    const ev = evalArtifact(ar, char);
+    return `
+      <div class="slot-tile ${isLow ? "tile-low" : "tile-ok"}" title="${sl} ${shortStatName(ar.main_stat)} (${ar.set}) · +${lvl} · ${ev.cv.toFixed(1)} CV">
+        ${ar.icon ? `<img src="${esc(ar.icon)}" alt="${esc(sl)}" loading="lazy" referrerpolicy="no-referrer" />` : `<span class="st-empty">${sl}</span>`}
+        <span class="st-lv ${isLow ? "lv-bad" : ""}">+${lvl}</span>
+        <span class="st-slot">${sl}</span>
+      </div>
+    `;
   }).join("")}</div>`;
+}
+
+function renderCvDistBar(allArts) {
+  const tot = allArts.length || 1;
+  const bGod = allArts.filter((x) => x.cv >= 40).length;
+  const bHigh = allArts.filter((x) => x.cv >= 30 && x.cv < 40).length;
+  const bMid = allArts.filter((x) => x.cv >= 20 && x.cv < 30).length;
+  const bLow = allArts.filter((x) => x.cv < 20).length;
+  const segs = [
+    { cls: "seg-god", cnt: bGod, label: "40+ CV", pct: (bGod / tot) * 100 },
+    { cls: "seg-high", cnt: bHigh, label: "30–39 CV", pct: (bHigh / tot) * 100 },
+    { cls: "seg-mid", cnt: bMid, label: "20–29 CV", pct: (bMid / tot) * 100 },
+    { cls: "seg-low", cnt: bLow, label: "<20 CV", pct: (bLow / tot) * 100 },
+  ];
+  const slotAvgs = FIVE_SLOT_ORDER.map((sl) => {
+    const sub = allArts.filter((x) => x.slotShort === sl && x.level >= 20);
+    const avg = sub.length ? (sub.reduce((a, b) => a + b.cv, 0) / sub.length).toFixed(1) : "0.0";
+    return `<span class="slot-avg-pill"><b>${sl}</b> ${avg}</span>`;
+  }).join("");
+
+  return `
+    <div class="cv-dist-card">
+      <div class="cv-dist-top">
+        <div class="cv-dist-legend">
+          ${segs.map((s) => `<span class="cv-leg-item"><i class="${s.cls}"></i>${s.label} <b>${s.cnt}</b></span>`).join("")}
+        </div>
+        <div class="slot-avg-strip" title="CV trung bình mảnh +20 theo khe">${slotAvgs}</div>
+      </div>
+      <div class="cv-stacked-bar">
+        ${segs.map((s) => (s.cnt > 0 ? `<div class="cv-seg ${s.cls}" style="width:${s.pct.toFixed(2)}%" title="${s.label}: ${s.cnt} món (${Math.round(s.pct)}%)"></div>` : "")).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function renderRelicCard(x, mode = "vault") {
+  const tierAura = mode === "reroll"
+    ? (x.rerollVerdict === "go" ? "rc-go" : "rc-hold")
+    : `rc-${x.cvTier}`;
+  return `
+    <article class="relic-card ${tierAura}" data-open-char="${esc(x.owner.name)}">
+      <div class="rc-head">
+        <div class="rc-ico-wrap">
+          ${x.ar.icon ? `<img class="rc-ico" src="${esc(x.ar.icon)}" alt="${esc(x.slotShort)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+          ${x.owner.icon ? `<img class="rc-owner" src="${esc(x.owner.icon)}" alt="${esc(x.owner.name)}" title="${esc(x.owner.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+        </div>
+        <div class="rc-title">
+          <div class="rc-main-row">
+            <strong>${esc(shortStatName(x.ar.main_stat))} ${esc(x.ar.main_val)}</strong>
+            <span class="rc-lvl ${x.level < 20 ? "is-low" : ""}">+${esc(x.level)}</span>
+          </div>
+          <small>${esc(x.owner.name)} · ${esc(x.slotShort)} · ${esc(x.ar.set)}</small>
+        </div>
+        <div class="rc-badges">
+          <span class="cv-pill cv-${x.cvTier}">${x.cv.toFixed(1)} CV</span>
+          ${x.is4Liner ? `<span class="four-pill is-4">4 dòng</span>` : mode === "reroll" ? `<span class="four-pill">3 dòng</span>` : ""}
+        </div>
+      </div>
+      ${mode === "reroll" ? `<div class="rc-roll-strip">${renderRollDots(x.critRolls, x.badRolls)}<span class="rc-leak-tag">Lệch ${x.badRolls}</span></div>` : ""}
+      ${renderSubstatMiniGrid(x.ar.substats)}
+      ${mode === "reroll" ? `<div class="rc-footer ${x.rerollVerdict === "go" ? "is-go" : "is-hold"}"><span>${esc(x.rerollReason)}</span><b>${x.rerollCost} Bụi</b></div>` : ""}
+    </article>
+  `;
 }
 
 function renderArtifactsView() {
   const allArts = evalAllArtifacts();
   const auditList = auditCharArtifacts();
   const lowPiecesCount = auditList.reduce((acc, r) => acc + r.lowArts.length + r.missing, 0);
+  const max20Count = allArts.filter((x) => x.level >= 20).length;
+  const max20Pct = allArts.length ? Math.round((max20Count / allArts.length) * 100) : 0;
+
   const rerollAll = allArts
     .filter((x) => x.rerollVerdict !== "none")
     .sort((a, b) => (a.rerollVerdict === "go" ? 0 : 1) - (b.rerollVerdict === "go" ? 0 : 1) || b.is4Liner - a.is4Liner || b.badRolls - a.badRolls || b.cv - a.cv);
   const goCount = rerollAll.filter((x) => x.rerollVerdict === "go").length;
+  const goPct = rerollAll.length ? Math.round((goCount / rerollAll.length) * 100) : 0;
+
   const topCvCount = allArts.filter((x) => x.cv >= 30).length;
+  const topCvPct = allArts.length ? Math.round((topCvCount / allArts.length) * 100) : 0;
   const fourLinerCount = allArts.filter((x) => x.is4Liner).length;
+
   const domains = evalDomainPlans();
+  const totalDomainPieces = domains.slice(0, 3).reduce((acc, d) => acc + d.rows.reduce((a, r) => a + r.need, 0), 0);
+  const haveDomainPieces = domains.slice(0, 3).reduce((acc, d) => acc + d.rows.reduce((a, r) => a + Math.min(r.need, r.count), 0), 0);
+  const domPct = totalDomainPieces ? Math.round((haveDomainPieces / totalDomainPieces) * 100) : 0;
   const pendingDomainChars = domains.slice(0, 3).reduce((acc, d) => acc + d.rows.filter((r) => r.count < r.need).length, 0);
 
   const tabCards = [
-    { key: "fix", cls: "kpi-bad", title: "Cần Xử Lý", val: `${auditList.length} NV`, sub: `${lowPiecesCount} món thiếu / <+20` },
-    { key: "reroll", cls: "kpi-warn", title: "Bụi Khai Sáng", val: `${goCount} đáng cứu`, sub: `Trong ${rerollAll.length} mảnh lệch Crit` },
-    { key: "vault", cls: "kpi-ok", title: "Kho & Top CV", val: `${topCvCount} món ≥30`, sub: `${allArts.length} món · ${fourLinerCount} món 4-dòng` },
-    { key: "domains", cls: "kpi-gold", title: "Bí Cảnh & Tráp", val: `${pendingDomainChars} NV`, sub: "Tiến độ gom bộ x/4" },
+    { key: "fix", cls: "kpi-bad", color: "var(--bad)", pct: max20Pct, ring: `${max20Pct}%`, title: "Cần Xử Lý", val: `${auditList.length} NV`, sub: `${lowPiecesCount} khe thiếu / <+20` },
+    { key: "reroll", cls: "kpi-warn", color: "var(--warn)", pct: goPct, ring: `${goCount}/${rerollAll.length}`, title: "Bụi Khai Sáng", val: `${goCount} đáng cứu`, sub: `Trong ${rerollAll.length} mảnh lệch Crit` },
+    { key: "vault", cls: "kpi-ok", color: "var(--ok)", pct: topCvPct, ring: `${topCvPct}%`, title: "Kho & Top CV", val: `${topCvCount} món ≥30`, sub: `${allArts.length} món · ${fourLinerCount} 4-dòng` },
+    { key: "domains", cls: "kpi-gold", color: "var(--gold)", pct: domPct, ring: `${haveDomainPieces}/${totalDomainPieces}`, title: "Bí Cảnh & Tráp", val: `${pendingDomainChars} NV chờ`, sub: "Tiến độ mảnh x/4" },
   ];
 
   let bodyHtml = "";
@@ -1225,48 +1339,45 @@ function renderArtifactsView() {
   if (APP.artTab === "fix") {
     const coreAudit = auditList.filter((r) => r.isCore);
     const otherAudit = auditList.filter((r) => !r.isCore);
-    const renderFixGroup = (title, badgeCls, rows) => {
+    const renderFixGroup = (title, toneCls, rows) => {
       if (!rows.length) return "";
       return `
-        <div class="art-panel">
-          <div class="art-panel-head">
-            <h3 class="${badgeCls}">${esc(title)} <em>(${rows.length})</em></h3>
-            <span class="panel-hint">Bấm từng dòng để xem chi tiết</span>
+        <section class="art-group-block">
+          <div class="art-group-head">
+            <h3 class="${toneCls}">${esc(title)} <em>(${rows.length})</em></h3>
+            <span>5 ô icon tương ứng Hoa · Lông · Cát · Ly · Nón — bấm thẻ để xem chi tiết</span>
           </div>
-          <div class="art-table-head art-fix-cols">
-            <span>Nhân vật</span>
-            <span>Bộ đang đeo</span>
-            <span>5 Khe TDV</span>
-            <span>Cần làm</span>
-            <span></span>
-          </div>
-          <div class="art-list">
+          <div class="art-char-grid">
             ${rows
               .map((r) => {
+                const el = r.c.element || "Geo";
                 const flags = [];
                 if (r.missing > 0) flags.push(`<span class="art-flag flag-bad">Thiếu ${r.missing}</span>`);
                 if (r.zeroCount > 0) flags.push(`<span class="art-flag flag-bad">${r.zeroCount} món +0</span>`);
                 const midLow = r.lowArts.filter((a) => Number(a.level || 0) > 0).length;
                 if (midLow > 0) flags.push(`<span class="art-flag flag-warn">${midLow} chưa +20</span>`);
                 return `
-                  <div class="art-fix-row" data-open-char="${esc(r.c.name)}">
-                    <div class="col-char">
-                      ${r.c.icon ? `<img src="${esc(r.c.icon)}" alt="${esc(r.c.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                      <div class="char-id">
-                        <strong>${esc(r.c.name)}${r.isCore ? ` <em class="core-dot">★</em>` : ""}</strong>
-                        <small>Lv.${esc(r.c.level)} C${esc(r.c.constellation)}</small>
+                  <article class="art-char-card" style="--el: var(--el-${esc(el)}, 211,188,142);" data-open-char="${esc(r.c.name)}">
+                    ${r.c.splash ? `<img class="acc-splash" src="${esc(r.c.splash)}" alt="" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                    <div class="acc-inner">
+                      <div class="acc-head">
+                        <div class="acc-id">
+                          ${r.c.icon ? `<img class="acc-avatar" src="${esc(r.c.icon)}" alt="${esc(r.c.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                          <div>
+                            <strong>${esc(r.c.name)}${r.isCore ? ` <em class="core-dot">★</em>` : ""}</strong>
+                            <small>Lv.${esc(r.c.level)} C${esc(r.c.constellation)} · ${esc(r.c.artifact_sets || "Chưa có bộ")}</small>
+                          </div>
+                        </div>
+                        <div class="art-fix-flags">${flags.join("")}</div>
                       </div>
+                      ${renderVisualSlotTiles(r.c)}
                     </div>
-                    <div class="art-fix-set">${esc(r.c.artifact_sets || "Chưa có bộ TDV")}</div>
-                    ${renderFiveSlotStrip(r.c)}
-                    <div class="art-fix-flags">${flags.join("")}</div>
-                    <span class="row-chevron" aria-hidden="true">›</span>
-                  </div>
+                  </article>
                 `;
               })
               .join("")}
           </div>
-        </div>
+        </section>
       `;
     };
     bodyHtml = auditList.length
@@ -1287,49 +1398,6 @@ function renderArtifactsView() {
       if (APP.artRerollFilter === "core") return x.isCore;
       return true;
     });
-
-    const renderRerollGroup = (title, panelCls, rows) => {
-      if (!rows.length) return "";
-      return `
-        <div class="art-panel ${panelCls}">
-          <div class="art-panel-head">
-            <h3>${esc(title)} <em>(${rows.length})</em></h3>
-          </div>
-          <div class="art-table-head art-reroll-cols">
-            <span>Mảnh TDV</span>
-            <span>Nhảy dòng &amp; CV</span>
-            <span>Khuyến nghị</span>
-            <span></span>
-          </div>
-          <div class="art-list">
-            ${rows
-              .map((x) => `
-                <div class="art-reroll-row" data-open-char="${esc(x.owner.name)}">
-                  <div class="art-owner-col">
-                    ${x.ar.icon ? `<img class="art-ico-pic" src="${esc(x.ar.icon)}" alt="${esc(x.slotShort)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                    ${x.owner.icon ? `<img class="art-owner-face" src="${esc(x.owner.icon)}" alt="${esc(x.owner.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                    <div class="art-meta-col">
-                      <strong>${esc(x.owner.name)} · ${esc(x.slotShort)} ${esc(shortStatName(x.ar.main_stat))}</strong>
-                      <small>${esc(x.ar.set)} · +${esc(x.level)}</small>
-                    </div>
-                  </div>
-                  <div class="art-roll-col">
-                    ${renderRollDots(x.critRolls, x.badRolls)}
-                    <span class="four-pill ${x.is4Liner ? "is-4" : ""}">${x.is4Liner ? "4 dòng" : "3 dòng"}</span>
-                    <span class="cv-pill cv-${x.cvTier}">${x.cv.toFixed(1)} CV</span>
-                  </div>
-                  <div class="art-verdict-col">
-                    <span class="reroll-badge ${x.rerollVerdict === "go" ? "rv-go" : "rv-hold"}">${esc(x.rerollReason)} · ${x.rerollCost} Bụi</span>
-                  </div>
-                  <span class="row-chevron" aria-hidden="true">›</span>
-                </div>
-              `)
-              .join("")}
-          </div>
-        </div>
-      `;
-    };
-
     const goRows = filtered.filter((x) => x.rerollVerdict === "go");
     const holdRows = filtered.filter((x) => x.rerollVerdict !== "go");
 
@@ -1342,9 +1410,14 @@ function renderArtifactsView() {
           ${rFilters.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artRerollFilter === k ? "active" : ""}" data-art-rfilter="${k}">${esc(lbl)}</button>`).join("")}
         </div>
       </div>
-      ${filtered.length
-        ? `${renderRerollGroup("★ Đáng dùng Bụi Khai Sáng", "panel-go", goRows)}${renderRerollGroup("⏸ Nên giữ Bụi — Tránh phí", "panel-hold", holdRows)}`
-        : `<div class="empty-done">Không có mảnh TDV nào khớp bộ lọc.</div>`}
+      ${
+        filtered.length
+          ? `
+            ${goRows.length ? `<section class="art-group-block"><div class="art-group-head"><h3 class="tone-ok-txt">★ Đáng dùng Bụi Khai Sáng <em>(${goRows.length})</em></h3></div><div class="relic-grid">${goRows.map((x) => renderRelicCard(x, "reroll")).join("")}</div></section>` : ""}
+            ${holdRows.length ? `<section class="art-group-block"><div class="art-group-head"><h3 class="tone-muted-txt">⏸ Nên giữ Bụi — Tránh phí <em>(${holdRows.length})</em></h3></div><div class="relic-grid">${holdRows.map((x) => renderRelicCard(x, "reroll")).join("")}</div></section>` : ""}
+          `
+          : `<div class="empty-done">Không có mảnh TDV nào khớp bộ lọc.</div>`
+      }
     `;
   } else if (APP.artTab === "vault") {
     const slotBtns = [
@@ -1383,6 +1456,7 @@ function renderArtifactsView() {
     const visible = filtered.slice(0, APP.artLimit);
 
     bodyHtml = `
+      ${renderCvDistBar(allArts)}
       <div class="art-controls">
         <div class="filter-group">
           ${slotBtns.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artSlot === k ? "active" : ""}" data-art-slot="${esc(k)}">${esc(lbl)}</button>`).join("")}
@@ -1399,74 +1473,47 @@ function renderArtifactsView() {
           ${sortBtns.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artSort === k ? "active" : ""}" data-art-sort="${k}">${esc(lbl)}</button>`).join("")}
         </div>
       </div>
-      <div class="art-panel">
-        <div class="art-table-head art-vault-cols">
-          <span>Mảnh TDV (${filtered.length})</span>
-          <span>Điểm CV</span>
-          <span>4 Dòng Phụ</span>
-          <span></span>
-        </div>
-        <div class="art-list">
-          ${visible
-            .map((x) => `
-              <div class="art-row" data-open-char="${esc(x.owner.name)}">
-                <div class="art-owner-col">
-                  ${x.ar.icon ? `<img class="art-ico-pic" src="${esc(x.ar.icon)}" alt="${esc(x.slotShort)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                  ${x.owner.icon ? `<img class="art-owner-face" src="${esc(x.owner.icon)}" alt="${esc(x.owner.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                  <div class="art-meta-col">
-                    <strong>${esc(x.slotShort)} · ${esc(shortStatName(x.ar.main_stat))} ${esc(x.ar.main_val)}</strong>
-                    <small>${esc(x.owner.name)} · ${esc(x.ar.set)} · <span class="${x.level < 20 ? "art-lvl-low" : ""}">+${esc(x.level)}</span></small>
-                  </div>
-                </div>
-                <div class="art-cv-col">
-                  <span class="cv-pill cv-${x.cvTier}">${x.cv.toFixed(1)} CV</span>
-                  ${x.is4Liner ? `<span class="four-pill is-4">4 dòng</span>` : ""}
-                </div>
-                ${renderArtifactSubstatsGrid(x.ar.substats)}
-                <span class="row-chevron" aria-hidden="true">›</span>
-              </div>
-            `)
-            .join("") || `<div class="empty-done">Không có Thánh Di Vật nào khớp bộ lọc.</div>`}
-        </div>
-      </div>
-      ${filtered.length > APP.artLimit ? `<div class="art-more-wrap"><button type="button" class="art-more-btn" data-art-more="1">Xem thêm (+60 · đang hiện ${visible.length}/${filtered.length})</button></div>` : ""}
+      ${visible.length ? `<div class="relic-grid">${visible.map((x) => renderRelicCard(x, "vault")).join("")}</div>` : `<div class="empty-done">Không có Thánh Di Vật nào khớp bộ lọc.</div>`}
+      ${filtered.length > APP.artLimit ? `<div class="art-more-wrap"><button type="button" class="art-more-btn" data-art-more="1">Xem thêm (+36 · đang hiện ${visible.length}/${filtered.length})</button></div>` : ""}
     `;
   } else {
     bodyHtml = `
       <div class="domain-grid">
         ${domains
-          .map((dom) => `
-            <article class="domain-card">
-              <div class="domain-head">
-                <div>
-                  <h3>${esc(dom.title)}</h3>
-                  <small>${esc(dom.note)}</small>
+          .map((dom) => {
+            const uniqIcons = [...new Set(dom.rows.map((r) => r.setMeta?.icon).filter(Boolean))].slice(0, 3);
+            return `
+              <article class="domain-card">
+                <div class="domain-head">
+                  <div class="domain-head-left">
+                    ${uniqIcons.length ? `<div class="domain-set-icons">${uniqIcons.map((u) => `<img src="${esc(u)}" alt="" loading="lazy" referrerpolicy="no-referrer" />`).join("")}</div>` : ""}
+                    <div>
+                      <h3>${esc(dom.title)}</h3>
+                      <small>${esc(dom.note)}</small>
+                    </div>
+                  </div>
+                  <span class="act-tag ${esc(dom.tone)}">${esc(dom.tag)}</span>
                 </div>
-                <span class="act-tag ${esc(dom.tone)}">${esc(dom.tag)}</span>
-              </div>
-              <div class="domain-rows">
-                ${dom.rows
-                  .map((r) => {
-                    const pips = Array.from({ length: r.need }, (_, i) => `<i class="seg-pip ${i < r.count ? `is-filled tone-${r.tone}` : ""}"></i>`).join("");
-                    return `
-                      <div class="domain-char-row" data-open-char="${esc(r.char)}">
-                        ${r.c?.icon ? `<img class="mini-face" src="${esc(r.c.icon)}" alt="${esc(r.char)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                        ${r.setMeta?.icon ? `<img class="set-mini-ico" src="${esc(r.setMeta.icon)}" alt="${esc(r.setMeta.short || "")}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                        <div class="domain-char-info">
-                          <strong>${esc(r.char)} → ${esc(r.setMeta?.short || r.match)}</strong>
-                          <small>${esc(r.c?.artifact_sets || "Chưa lắp bộ")}</small>
+                <div class="domain-char-grid">
+                  ${dom.rows
+                    .map((r) => {
+                      const ringCol = r.tone === "ok" ? "var(--ok)" : r.tone === "warn" ? "var(--warn)" : "var(--bad)";
+                      return `
+                        <div class="domain-tile" data-open-char="${esc(r.char)}">
+                          ${r.c?.icon ? `<img class="dt-face" src="${esc(r.c.icon)}" alt="${esc(r.char)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                          <div class="dt-info">
+                            <strong>${esc(r.char)}</strong>
+                            <small>${esc(r.setMeta?.short || r.match)}</small>
+                          </div>
+                          ${renderRingGauge(r.pct, ringCol, `${r.count}/${r.need}`, 36)}
                         </div>
-                        <div class="domain-prog">
-                          <span class="seg-bar">${pips}</span>
-                          <span class="tone-${r.tone}">${r.count}/${r.need}</span>
-                        </div>
-                      </div>
-                    `;
-                  })
-                  .join("")}
-              </div>
-            </article>
-          `)
+                      `;
+                    })
+                    .join("")}
+                </div>
+              </article>
+            `;
+          })
           .join("")}
       </div>
     `;
@@ -1478,9 +1525,12 @@ function renderArtifactsView() {
         .map(
           (tc) => `
             <button type="button" class="art-tab-card ${tc.cls} ${APP.artTab === tc.key ? "active" : ""}" data-art-tab="${tc.key}">
-              <div class="atc-top"><span>${esc(tc.title)}</span><em class="atc-dot"></em></div>
-              <strong>${esc(tc.val)}</strong>
-              <small>${esc(tc.sub)}</small>
+              ${renderRingGauge(tc.pct, tc.color, tc.ring, 46)}
+              <div class="atc-body">
+                <span class="atc-title">${esc(tc.title)}</span>
+                <strong>${esc(tc.val)}</strong>
+                <small>${esc(tc.sub)}</small>
+              </div>
             </button>
           `
         )
@@ -2982,20 +3032,29 @@ function renderModal() {
                 <h3 class="modal-section-title">Thánh Di Vật (${arts.length}/5)${artMissingWarn ? `<span style="color:var(--bad);">${esc(artMissingWarn)}</span>` : ""} ${c.artifact_sets ? `· <span style="color:var(--muted); text-transform:none; font-weight:500;">${esc(c.artifact_sets)}</span>` : ""}</h3>
                 ${
                   arts.length
-                    ? `<div class="modal-art-list">
+                    ? `<div class="modal-relic-grid">
                         ${arts
                           .map((ar) => {
-                            const lvl = Number(ar.level ?? 0);
-                            const isLow = lvl < 20;
                             const ev = evalArtifact(ar, c);
                             return `
-                              <div class="modal-art-row">
-                                ${ar.icon ? `<img src="${esc(ar.icon)}" alt="${esc(ar.slot || "")}" loading="lazy" referrerpolicy="no-referrer" />` : "<div></div>"}
-                                <div class="modal-art-main">
-                                  <strong>${esc(shortStatName(ar.main_stat))} ${esc(ar.main_val)} ${ev.cv > 0 ? `<span class="cv-pill cv-${ev.cvTier}">${ev.cv.toFixed(1)} CV</span>` : ""}${ev.is4Liner ? ` <span class="four-pill is-4">4 dòng</span>` : ""}</strong>
-                                  <small>${esc(SLOT_SHORT_MAP[ar.slot] || ar.slot)} · ${esc(ar.set)} · <span class="${isLow ? "art-lvl-low" : ""}">Lv.+${esc(lvl)}</span></small>
+                              <div class="relic-card rc-${ev.cvTier} modal-relic-card">
+                                <div class="rc-head">
+                                  <div class="rc-ico-wrap">
+                                    ${ar.icon ? `<img class="rc-ico" src="${esc(ar.icon)}" alt="${esc(ev.slotShort)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                                  </div>
+                                  <div class="rc-title">
+                                    <div class="rc-main-row">
+                                      <strong>${esc(shortStatName(ar.main_stat))} ${esc(ar.main_val)}</strong>
+                                      <span class="rc-lvl ${ev.level < 20 ? "is-low" : ""}">+${esc(ev.level)}</span>
+                                    </div>
+                                    <small>${esc(ev.slotShort)} · ${esc(ar.set)}</small>
+                                  </div>
+                                  <div class="rc-badges">
+                                    ${ev.cv > 0 ? `<span class="cv-pill cv-${ev.cvTier}">${ev.cv.toFixed(1)} CV</span>` : ""}
+                                    ${ev.is4Liner ? `<span class="four-pill is-4">4 dòng</span>` : ""}
+                                  </div>
                                 </div>
-                                ${renderArtifactSubstatsGrid(ar.substats)}
+                                ${renderSubstatMiniGrid(ar.substats)}
                               </div>
                             `;
                           })
@@ -3112,7 +3171,7 @@ function render() {
   document.querySelectorAll("[data-art-slot]").forEach((b) => {
     b.addEventListener("click", () => {
       APP.artSlot = b.getAttribute("data-art-slot");
-      APP.artLimit = 60;
+      APP.artLimit = 36;
       render();
     });
   });
@@ -3120,7 +3179,7 @@ function render() {
   document.querySelectorAll("[data-art-set]").forEach((sel) => {
     sel.addEventListener("change", () => {
       APP.artSet = sel.value;
-      APP.artLimit = 60;
+      APP.artLimit = 36;
       render();
     });
   });
@@ -3128,7 +3187,7 @@ function render() {
   document.querySelectorAll("[data-art-char]").forEach((sel) => {
     sel.addEventListener("change", () => {
       APP.artChar = sel.value;
-      APP.artLimit = 60;
+      APP.artLimit = 36;
       render();
     });
   });
@@ -3136,14 +3195,14 @@ function render() {
   document.querySelectorAll("[data-art-sort]").forEach((b) => {
     b.addEventListener("click", () => {
       APP.artSort = b.getAttribute("data-art-sort");
-      APP.artLimit = 60;
+      APP.artLimit = 36;
       render();
     });
   });
 
   document.querySelectorAll("[data-art-more]").forEach((b) => {
     b.addEventListener("click", () => {
-      APP.artLimit += 60;
+      APP.artLimit += 36;
       render();
     });
   });
