@@ -383,13 +383,13 @@ const COLLECT_WEAPONS = [
 ];
 
 const FARM_DAYS = [
-  { key: 1, short: "T2", title: "Thứ 2", chars: ["Chiori", "Furina", "Mitya"], resinChips: ["3× Boss Tuần", "Narwhal (Furina)"], extra: "Cỏ Naku · Lumidouce · Hồ Lô" },
-  { key: 2, short: "T3", title: "Thứ 3", chars: ["Furina", "Nilou", "Jean"], resinChips: ["Sách Chính Nghĩa (Furina Q10)", "Bến Tàu & Ống Đồng 90"], extra: "✓ Đã xoay xong 12 VK · Kéo VK lên 90" },
-  { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Yelan", "Jean"], resinChips: ["Sách Ánh Sáng (Chiori E)", "Tây Phong Yelan → 90"], extra: "Ép Tráp: 4pc VV / Tông Thất" },
-  { key: 4, short: "T5", title: "Thứ 5", chars: ["Neuvillette", "Furina", "Fischl"], resinChips: ["Bí cảnh Tội Lỗi (Fontaine)", "4pc Thợ Săn & Đoàn Kịch"], extra: "Nhặt đặc sản hồi 48h" },
-  { key: 5, short: "T6", title: "Thứ 6", chars: ["Furina", "Neuvillette", "Nilou"], resinChips: ["Sách Chính Nghĩa (Furina)", "TDV Fontaine / Ảo Cảnh"], extra: "Chốt Beidou / Gorou / Ningguang (01/12)" },
-  { key: 6, short: "T7", title: "Thứ 7", chars: ["Chiori", "Yelan", "Mitya"], resinChips: ["Sách Ánh Sáng (Chiori E)", "Chốt Tây Phong 90"], extra: "Leo lại La Hoàn 11-3 & 12" },
-  { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Mitya", "Yae Miko", "Valeriy"], resinChips: ["Sách Charity (Mitya)", "4pc Ảo Tưởng (Mitya + Yae)"], extra: "Boss Snezhnaya (7%) · Bù sách thiếu" },
+  { key: 1, short: "T2", title: "Thứ 2", chars: ["Furina", "Mitya", "Chiori"], resinChips: ["3× Boss Tuần", "Narwhal (Furina)", "Boss Snezhnaya (Mitya)"], extra: "Đặt lịch tuần · Nhặt đặc sản hồi 48h" },
+  { key: 2, short: "T3", title: "Thứ 3", chars: ["Furina", "Nilou", "Neuvillette"], resinChips: ["Sách Chính Nghĩa (Furina Q10)", "Kiếm Bến Tàu 60→90 (Nilou)"], extra: "Dư nhựa → Bí cảnh Tội Lỗi (Fontaine)" },
+  { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Yelan", "Mitya"], resinChips: ["Sách Ánh Sáng (Chiori E)", "Tây Phong Yelan → 90", "Trấn Mitya → 90"], extra: "Ép Tráp: 4pc Tông Thất / Dấu Ấn / Tiếng Đêm" },
+  { key: 4, short: "T5", title: "Thứ 5", chars: ["Neuvillette", "Furina", "Fischl"], resinChips: ["Bí cảnh Tội Lỗi (Fontaine)", "4pc Thợ Săn & Đoàn Kịch"], extra: "1 bí cảnh nuôi chung Neuv + Furina + Fischl" },
+  { key: 5, short: "T6", title: "Thứ 6", chars: ["Furina", "Neuvillette", "Nilou"], resinChips: ["Sách Chính Nghĩa (Furina Q10)", "Chốt Bến Tàu 90 / TDV Fontaine"], extra: "Chốt Beidou / Gorou / Ningguang trước hạn Nhà Hát 01/12" },
+  { key: 6, short: "T7", title: "Thứ 7", chars: ["Chiori", "Yelan", "Mitya"], resinChips: ["Sách Ánh Sáng (Chiori E)", "4pc Ảo Tưởng (Mitya + Yae)"], extra: "Leo lại La Hoàn 11-3 & 12" },
+  { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Mitya", "Yae Miko", "Valeriy"], resinChips: ["Sách Charity (Mitya)", "4pc Ảo Tưởng (Mitya + Yae)"], extra: "Kéo Mitya Lv.90 + Trấn 90 trước, Valeriy làm sau" },
 ];
 
 const MODES = {
