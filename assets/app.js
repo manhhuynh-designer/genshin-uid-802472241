@@ -658,6 +658,7 @@ let APP = {
   artRerollFilter: "all", // all | go | four | rare | core
   artSlot: "all",       // all | Hoa | Lông | Cát | Ly | Nón
   artSet: "all",
+  artChar: "all",
   artSort: "cv_desc",   // cv_desc | rolls_desc | lvl_asc
   artLimit: 60,
   mode: "teams",
@@ -1137,13 +1138,66 @@ function evalDomainPlans() {
   }));
 }
 
-function renderArtifactSubstatsHtml(subs) {
-  return (subs || [])
+const STAT_SHORT_MAP = {
+  "Tỷ Lệ Bạo Kích": "CR",
+  "Sát Thương Bạo Kích": "CD",
+  "Hiệu Quả Nạp Nguyên Tố": "ER",
+  "Tinh Thông Nguyên Tố": "EM",
+  "Tỷ Lệ Tấn Công": "ATK%",
+  "Tấn Công": "ATK",
+  "Tỷ Lệ HP": "HP%",
+  HP: "HP",
+  "Tỷ Lệ Phòng Ngự": "DEF%",
+  "Phòng Ngự": "DEF",
+  "Tăng Trị Liệu": "Trị Liệu",
+  "Tăng Sát Thương Nguyên Tố Thủy": "ST Thủy",
+  "Tăng Sát Thương Nguyên Tố Hỏa": "ST Hỏa",
+  "Tăng Sát Thương Nguyên Tố Lôi": "ST Lôi",
+  "Tăng Sát Thương Nguyên Tố Băng": "ST Băng",
+  "Tăng Sát Thương Nguyên Tố Phong": "ST Phong",
+  "Tăng Sát Thương Nguyên Tố Nham": "ST Nham",
+  "Tăng Sát Thương Nguyên Tố Thảo": "ST Thảo",
+  "Tăng Sát Thương Vật Lý": "ST Vật Lý",
+};
+
+function shortStatName(name) {
+  return STAT_SHORT_MAP[name] || name || "-";
+}
+
+function renderArtifactSubstatsGrid(subs) {
+  return `<div class="sub-chip-grid">${(subs || [])
     .map((sp) => {
-      const isCrit = sp.name === "Tỷ Lệ Bạo Kích" || sp.name === "Sát Thương Bạo Kích";
-      return `<span class="${isCrit ? "sub-crit" : ""}">${esc(sp.name)} +${esc(sp.value)}${sp.rolls > 0 ? `<em class="sub-roll">(+${esc(sp.rolls)})</em>` : ""}</span>`;
+      const label = shortStatName(sp.name);
+      const isCrit = label === "CR" || label === "CD";
+      const isGood = isCrit || label === "ER" || label === "EM" || label.endsWith("%");
+      const cls = isCrit ? "is-crit" : isGood ? "is-good" : "is-flat";
+      return `<span class="sub-chip ${cls}"><b>${esc(label)}</b> +${esc(sp.value)}${sp.rolls > 0 ? `<em class="sub-roll">+${esc(sp.rolls)}</em>` : ""}</span>`;
     })
-    .join("");
+    .join("")}</div>`;
+}
+
+function renderRollDots(critRolls, badRolls) {
+  const dots = [];
+  for (let i = 0; i < critRolls; i++) dots.push(`<i class="roll-dot dot-crit"></i>`);
+  for (let i = 0; i < badRolls; i++) dots.push(`<i class="roll-dot dot-bad"></i>`);
+  const tot = critRolls + badRolls;
+  return `<div class="roll-meter" title="${critRolls} lần vào CR/CD · ${badRolls} lần lệch"><span class="roll-dots">${dots.join("")}</span><small>${critRolls}/${tot} Crit</small></div>`;
+}
+
+const FIVE_SLOT_ORDER = ["Hoa", "Lông", "Cát", "Ly", "Nón"];
+
+function renderFiveSlotStrip(char) {
+  const bySlot = new Map();
+  (char?.artifacts || []).forEach((ar) => {
+    bySlot.set(SLOT_SHORT_MAP[ar.slot] || ar.slot, ar);
+  });
+  return `<div class="slot-strip">${FIVE_SLOT_ORDER.map((sl) => {
+    const ar = bySlot.get(sl);
+    if (!ar) return `<span class="slot-pip slot-miss" title="Thiếu ${sl}">${sl} —</span>`;
+    const lvl = Number(ar.level || 0);
+    if (lvl < 20) return `<span class="slot-pip slot-low" title="${sl} ${shortStatName(ar.main_stat)} +${lvl}">${sl} +${lvl}</span>`;
+    return `<span class="slot-pip slot-ok" title="${sl} ${shortStatName(ar.main_stat)} +20">${sl} ✓</span>`;
+  }).join("")}</div>`;
 }
 
 function renderArtifactsView() {
@@ -1159,49 +1213,68 @@ function renderArtifactsView() {
   const domains = evalDomainPlans();
   const pendingDomainChars = domains.slice(0, 3).reduce((acc, d) => acc + d.rows.filter((r) => r.count < r.need).length, 0);
 
-  const subTabs = [
-    ["fix", `Cần Xử Lý (${auditList.length})`],
-    ["reroll", `Bụi Khai Sáng (${rerollAll.length})`],
-    ["vault", `Kho & Top CV (${allArts.length})`],
-    ["domains", "Bí Cảnh & Tráp"],
+  const tabCards = [
+    { key: "fix", cls: "kpi-bad", title: "Cần Xử Lý", val: `${auditList.length} NV`, sub: `${lowPiecesCount} món thiếu / <+20` },
+    { key: "reroll", cls: "kpi-warn", title: "Bụi Khai Sáng", val: `${goCount} đáng cứu`, sub: `Trong ${rerollAll.length} mảnh lệch Crit` },
+    { key: "vault", cls: "kpi-ok", title: "Kho & Top CV", val: `${topCvCount} món ≥30`, sub: `${allArts.length} món · ${fourLinerCount} món 4-dòng` },
+    { key: "domains", cls: "kpi-gold", title: "Bí Cảnh & Tráp", val: `${pendingDomainChars} NV`, sub: "Tiến độ gom bộ x/4" },
   ];
 
   let bodyHtml = "";
 
   if (APP.artTab === "fix") {
-    bodyHtml = `
-      <div class="art-list">
-        ${auditList
-          .map((r) => {
-            const badges = [];
-            if (r.missing > 0) badges.push(`<span class="art-flag flag-bad">Thiếu ${r.missing} món</span>`);
-            if (r.zeroCount > 0) badges.push(`<span class="art-flag flag-bad">${r.zeroCount} món +0</span>`);
-            r.lowArts
-              .filter((a) => Number(a.level || 0) > 0)
-              .forEach((a) => {
-                badges.push(`<span class="art-flag flag-warn">${esc(SLOT_SHORT_MAP[a.slot] || a.slot)} +${esc(a.level)}</span>`);
-              });
-            return `
-              <div class="art-fix-row" data-open-char="${esc(r.c.name)}">
-                <div class="col-char">
-                  ${r.c.icon ? `<img src="${esc(r.c.icon)}" alt="${esc(r.c.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                  <div class="char-id">
-                    <strong>${esc(r.c.name)}${r.isCore ? ` <em class="core-dot">★</em>` : ""}</strong>
-                    <small>Lv.${esc(r.c.level)} C${esc(r.c.constellation)} · ${(r.c.artifacts || []).length}/5 món</small>
+    const coreAudit = auditList.filter((r) => r.isCore);
+    const otherAudit = auditList.filter((r) => !r.isCore);
+    const renderFixGroup = (title, badgeCls, rows) => {
+      if (!rows.length) return "";
+      return `
+        <div class="art-panel">
+          <div class="art-panel-head">
+            <h3 class="${badgeCls}">${esc(title)} <em>(${rows.length})</em></h3>
+            <span class="panel-hint">Bấm từng dòng để xem chi tiết</span>
+          </div>
+          <div class="art-table-head art-fix-cols">
+            <span>Nhân vật</span>
+            <span>Bộ đang đeo</span>
+            <span>5 Khe TDV</span>
+            <span>Cần làm</span>
+            <span></span>
+          </div>
+          <div class="art-list">
+            ${rows
+              .map((r) => {
+                const flags = [];
+                if (r.missing > 0) flags.push(`<span class="art-flag flag-bad">Thiếu ${r.missing}</span>`);
+                if (r.zeroCount > 0) flags.push(`<span class="art-flag flag-bad">${r.zeroCount} món +0</span>`);
+                const midLow = r.lowArts.filter((a) => Number(a.level || 0) > 0).length;
+                if (midLow > 0) flags.push(`<span class="art-flag flag-warn">${midLow} chưa +20</span>`);
+                return `
+                  <div class="art-fix-row" data-open-char="${esc(r.c.name)}">
+                    <div class="col-char">
+                      ${r.c.icon ? `<img src="${esc(r.c.icon)}" alt="${esc(r.c.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                      <div class="char-id">
+                        <strong>${esc(r.c.name)}${r.isCore ? ` <em class="core-dot">★</em>` : ""}</strong>
+                        <small>Lv.${esc(r.c.level)} C${esc(r.c.constellation)}</small>
+                      </div>
+                    </div>
+                    <div class="art-fix-set">${esc(r.c.artifact_sets || "Chưa có bộ TDV")}</div>
+                    ${renderFiveSlotStrip(r.c)}
+                    <div class="art-fix-flags">${flags.join("")}</div>
+                    <span class="row-chevron" aria-hidden="true">›</span>
                   </div>
-                </div>
-                <div class="art-fix-set">${esc(r.c.artifact_sets || "Chưa có bộ TDV")}</div>
-                <div class="art-fix-flags">${badges.join("")}</div>
-                <span class="row-chevron" aria-hidden="true">›</span>
-              </div>
-            `;
-          })
-          .join("") || `<div class="empty-done">✓ Toàn bộ nhân vật Lv.70+ đã đủ 5 món TDV +20!</div>`}
-      </div>
-    `;
+                `;
+              })
+              .join("")}
+          </div>
+        </div>
+      `;
+    };
+    bodyHtml = auditList.length
+      ? `${renderFixGroup("★ Nhân vật ưu tiên", "tone-bad-txt", coreAudit)}${renderFixGroup("Nhân vật Lv.70+ khác (Nhà Hát / Dự bị)", "tone-muted-txt", otherAudit)}`
+      : `<div class="empty-done">✓ Toàn bộ nhân vật Lv.70+ đã đủ 5 món TDV +20!</div>`;
   } else if (APP.artTab === "reroll") {
     const rFilters = [
-      ["all", `Tất cả lệch (${rerollAll.length})`],
+      ["all", `Tất cả (${rerollAll.length})`],
       ["go", `Đáng cứu ★ (${goCount})`],
       ["four", `4 dòng gốc (${rerollAll.filter((x) => x.is4Liner).length})`],
       ["rare", `Cát/Ly/Nón (${rerollAll.filter((x) => x.isRareSlot).length})`],
@@ -1214,40 +1287,64 @@ function renderArtifactsView() {
       if (APP.artRerollFilter === "core") return x.isCore;
       return true;
     });
+
+    const renderRerollGroup = (title, panelCls, rows) => {
+      if (!rows.length) return "";
+      return `
+        <div class="art-panel ${panelCls}">
+          <div class="art-panel-head">
+            <h3>${esc(title)} <em>(${rows.length})</em></h3>
+          </div>
+          <div class="art-table-head art-reroll-cols">
+            <span>Mảnh TDV</span>
+            <span>Nhảy dòng &amp; CV</span>
+            <span>Khuyến nghị</span>
+            <span></span>
+          </div>
+          <div class="art-list">
+            ${rows
+              .map((x) => `
+                <div class="art-reroll-row" data-open-char="${esc(x.owner.name)}">
+                  <div class="art-owner-col">
+                    ${x.ar.icon ? `<img class="art-ico-pic" src="${esc(x.ar.icon)}" alt="${esc(x.slotShort)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                    ${x.owner.icon ? `<img class="art-owner-face" src="${esc(x.owner.icon)}" alt="${esc(x.owner.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                    <div class="art-meta-col">
+                      <strong>${esc(x.owner.name)} · ${esc(x.slotShort)} ${esc(shortStatName(x.ar.main_stat))}</strong>
+                      <small>${esc(x.ar.set)} · +${esc(x.level)}</small>
+                    </div>
+                  </div>
+                  <div class="art-roll-col">
+                    ${renderRollDots(x.critRolls, x.badRolls)}
+                    <span class="four-pill ${x.is4Liner ? "is-4" : ""}">${x.is4Liner ? "4 dòng" : "3 dòng"}</span>
+                    <span class="cv-pill cv-${x.cvTier}">${x.cv.toFixed(1)} CV</span>
+                  </div>
+                  <div class="art-verdict-col">
+                    <span class="reroll-badge ${x.rerollVerdict === "go" ? "rv-go" : "rv-hold"}">${esc(x.rerollReason)} · ${x.rerollCost} Bụi</span>
+                  </div>
+                  <span class="row-chevron" aria-hidden="true">›</span>
+                </div>
+              `)
+              .join("")}
+          </div>
+        </div>
+      `;
+    };
+
+    const goRows = filtered.filter((x) => x.rerollVerdict === "go");
+    const holdRows = filtered.filter((x) => x.rerollVerdict !== "go");
+
     bodyHtml = `
       <div class="art-rule-bar">
-        <strong>Quy tắc Bụi Khai Sáng:</strong> Chỉ ưu tiên <b>Cát / Ly / Nón</b> đúng bộ cuối · <b>4 dòng gốc</b> (5 lần nhảy) · lệch ≥3 lần (2 Bụi). Không tốn Bụi vào bộ tạm!
+        <strong>Quy tắc Bụi Khai Sáng:</strong> Chỉ dùng cho <b>Cát / Ly / Nón</b> đúng bộ cuối · <b>4 dòng gốc</b> (5 chấm) · lệch ≥3 chấm (2 Bụi). Không tốn Bụi vào bộ tạm!
       </div>
       <div class="art-controls">
         <div class="filter-group">
           ${rFilters.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artRerollFilter === k ? "active" : ""}" data-art-rfilter="${k}">${esc(lbl)}</button>`).join("")}
         </div>
       </div>
-      <div class="art-list">
-        ${filtered
-          .map((x) => `
-            <div class="art-reroll-row" data-open-char="${esc(x.owner.name)}">
-              <div class="art-owner-col">
-                ${x.ar.icon ? `<img class="art-ico-pic" src="${esc(x.ar.icon)}" alt="${esc(x.slotShort)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                ${x.owner.icon ? `<img class="art-owner-face" src="${esc(x.owner.icon)}" alt="${esc(x.owner.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                <div class="art-meta-col">
-                  <strong>${esc(x.owner.name)} · ${esc(x.slotShort)} (${esc(x.ar.main_stat)})</strong>
-                  <small>${esc(x.ar.set)} · Lv.+${esc(x.level)}</small>
-                </div>
-              </div>
-              <div class="art-roll-col">
-                <span class="four-pill ${x.is4Liner ? "is-4" : ""}">${x.is4Liner ? "4 dòng gốc (5 lần)" : "3 dòng gốc (4 lần)"}</span>
-                <span class="cv-pill cv-${x.cvTier}">${x.cv.toFixed(1)} CV</span>
-                <small class="roll-stat-txt">CR +${x.crRolls} · CD +${x.cdRolls} · <b style="color:var(--bad);">Lệch ${x.badRolls}</b></small>
-              </div>
-              <div class="art-verdict-col">
-                <span class="reroll-badge ${x.rerollVerdict === "go" ? "rv-go" : "rv-hold"}">${esc(x.rerollReason)} · ${x.rerollCost} Bụi</span>
-              </div>
-              <span class="row-chevron" aria-hidden="true">›</span>
-            </div>
-          `)
-          .join("") || `<div class="empty-done">Không có mảnh TDV nào khớp bộ lọc — tiết kiệm Bụi Khai Sáng chờ Ly/Cát/Nón 4 dòng đúng bộ!</div>`}
-      </div>
+      ${filtered.length
+        ? `${renderRerollGroup("★ Đáng dùng Bụi Khai Sáng", "panel-go", goRows)}${renderRerollGroup("⏸ Nên giữ Bụi — Tránh phí", "panel-hold", holdRows)}`
+        : `<div class="empty-done">Không có mảnh TDV nào khớp bộ lọc.</div>`}
     `;
   } else if (APP.artTab === "vault") {
     const slotBtns = [
@@ -1264,15 +1361,20 @@ function renderArtifactsView() {
       ["lvl_asc", "Cấp ↑"],
     ];
     const setCounts = new Map();
+    const charCounts = new Map();
     allArts.forEach((x) => {
       const s = x.ar.set || "Khác";
       setCounts.set(s, (setCounts.get(s) || 0) + 1);
+      const cn = x.owner.name;
+      charCounts.set(cn, (charCounts.get(cn) || 0) + 1);
     });
     const setOpts = [...setCounts.entries()].sort((a, b) => b[1] - a[1]);
+    const charOpts = [...charCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
 
     const filtered = allArts
       .filter((x) => APP.artSlot === "all" || x.slotShort === APP.artSlot)
       .filter((x) => APP.artSet === "all" || x.ar.set === APP.artSet)
+      .filter((x) => APP.artChar === "all" || x.owner.name === APP.artChar)
       .sort((a, b) => {
         if (APP.artSort === "rolls_desc") return Number(b.is4Liner) - Number(a.is4Liner) || b.critRolls - a.critRolls || b.cv - a.cv;
         if (APP.artSort === "lvl_asc") return a.level - b.level || b.cv - a.cv;
@@ -1286,6 +1388,10 @@ function renderArtifactsView() {
           ${slotBtns.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artSlot === k ? "active" : ""}" data-art-slot="${esc(k)}">${esc(lbl)}</button>`).join("")}
         </div>
         <div class="filter-group">
+          <select class="art-select" data-art-char aria-label="Lọc theo nhân vật">
+            <option value="all" ${APP.artChar === "all" ? "selected" : ""}>Tất cả NV (${charOpts.length})</option>
+            ${charOpts.map(([name, cnt]) => `<option value="${esc(name)}" ${APP.artChar === name ? "selected" : ""}>${esc(name)} (${cnt})</option>`).join("")}
+          </select>
           <select class="art-select" data-art-set aria-label="Lọc theo bộ Thánh Di Vật">
             <option value="all" ${APP.artSet === "all" ? "selected" : ""}>Tất cả bộ (${setOpts.length})</option>
             ${setOpts.map(([name, cnt]) => `<option value="${esc(name)}" ${APP.artSet === name ? "selected" : ""}>${esc(name)} (${cnt})</option>`).join("")}
@@ -1293,27 +1399,35 @@ function renderArtifactsView() {
           ${sortBtns.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artSort === k ? "active" : ""}" data-art-sort="${k}">${esc(lbl)}</button>`).join("")}
         </div>
       </div>
-      <div class="art-list">
-        ${visible
-          .map((x) => `
-            <div class="art-row" data-open-char="${esc(x.owner.name)}">
-              <div class="art-owner-col">
-                ${x.ar.icon ? `<img class="art-ico-pic" src="${esc(x.ar.icon)}" alt="${esc(x.slotShort)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                ${x.owner.icon ? `<img class="art-owner-face" src="${esc(x.owner.icon)}" alt="${esc(x.owner.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                <div class="art-meta-col">
-                  <strong>${esc(x.ar.main_stat)} ${esc(x.ar.main_val)}</strong>
-                  <small>${esc(x.owner.name)} · ${esc(x.slotShort)} · ${esc(x.ar.set)} · <span class="${x.level < 20 ? "art-lvl-low" : ""}">+${esc(x.level)}</span></small>
+      <div class="art-panel">
+        <div class="art-table-head art-vault-cols">
+          <span>Mảnh TDV (${filtered.length})</span>
+          <span>Điểm CV</span>
+          <span>4 Dòng Phụ</span>
+          <span></span>
+        </div>
+        <div class="art-list">
+          ${visible
+            .map((x) => `
+              <div class="art-row" data-open-char="${esc(x.owner.name)}">
+                <div class="art-owner-col">
+                  ${x.ar.icon ? `<img class="art-ico-pic" src="${esc(x.ar.icon)}" alt="${esc(x.slotShort)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                  ${x.owner.icon ? `<img class="art-owner-face" src="${esc(x.owner.icon)}" alt="${esc(x.owner.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                  <div class="art-meta-col">
+                    <strong>${esc(x.slotShort)} · ${esc(shortStatName(x.ar.main_stat))} ${esc(x.ar.main_val)}</strong>
+                    <small>${esc(x.owner.name)} · ${esc(x.ar.set)} · <span class="${x.level < 20 ? "art-lvl-low" : ""}">+${esc(x.level)}</span></small>
+                  </div>
                 </div>
+                <div class="art-cv-col">
+                  <span class="cv-pill cv-${x.cvTier}">${x.cv.toFixed(1)} CV</span>
+                  ${x.is4Liner ? `<span class="four-pill is-4">4 dòng</span>` : ""}
+                </div>
+                ${renderArtifactSubstatsGrid(x.ar.substats)}
+                <span class="row-chevron" aria-hidden="true">›</span>
               </div>
-              <div class="art-cv-col">
-                <span class="cv-pill cv-${x.cvTier}">${x.cv.toFixed(1)} CV</span>
-                ${x.is4Liner ? `<span class="four-pill is-4">4 dòng</span>` : ""}
-              </div>
-              <div class="art-subs-inline">${renderArtifactSubstatsHtml(x.ar.substats)}</div>
-              <span class="row-chevron" aria-hidden="true">›</span>
-            </div>
-          `)
-          .join("") || `<div class="empty-done">Không có Thánh Di Vật nào khớp bộ lọc.</div>`}
+            `)
+            .join("") || `<div class="empty-done">Không có Thánh Di Vật nào khớp bộ lọc.</div>`}
+        </div>
       </div>
       ${filtered.length > APP.artLimit ? `<div class="art-more-wrap"><button type="button" class="art-more-btn" data-art-more="1">Xem thêm (+60 · đang hiện ${visible.length}/${filtered.length})</button></div>` : ""}
     `;
@@ -1332,19 +1446,23 @@ function renderArtifactsView() {
               </div>
               <div class="domain-rows">
                 ${dom.rows
-                  .map((r) => `
-                    <div class="domain-char-row" data-open-char="${esc(r.char)}">
-                      ${r.c?.icon ? `<img class="mini-face" src="${esc(r.c.icon)}" alt="${esc(r.char)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
-                      <div class="domain-char-info">
-                        <strong>${esc(r.char)}</strong>
-                        <small>${esc(r.setMeta?.short || r.match)}</small>
+                  .map((r) => {
+                    const pips = Array.from({ length: r.need }, (_, i) => `<i class="seg-pip ${i < r.count ? `is-filled tone-${r.tone}` : ""}"></i>`).join("");
+                    return `
+                      <div class="domain-char-row" data-open-char="${esc(r.char)}">
+                        ${r.c?.icon ? `<img class="mini-face" src="${esc(r.c.icon)}" alt="${esc(r.char)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                        ${r.setMeta?.icon ? `<img class="set-mini-ico" src="${esc(r.setMeta.icon)}" alt="${esc(r.setMeta.short || "")}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+                        <div class="domain-char-info">
+                          <strong>${esc(r.char)} → ${esc(r.setMeta?.short || r.match)}</strong>
+                          <small>${esc(r.c?.artifact_sets || "Chưa lắp bộ")}</small>
+                        </div>
+                        <div class="domain-prog">
+                          <span class="seg-bar">${pips}</span>
+                          <span class="tone-${r.tone}">${r.count}/${r.need}</span>
+                        </div>
                       </div>
-                      <div class="domain-prog">
-                        <div class="b-track"><div class="b-fill tone-${r.tone}" style="width:${r.pct}%"></div></div>
-                        <span class="tone-${r.tone}">${r.count}/${r.need}</span>
-                      </div>
-                    </div>
-                  `)
+                    `;
+                  })
                   .join("")}
               </div>
             </article>
@@ -1355,30 +1473,18 @@ function renderArtifactsView() {
   }
 
   return `
-    <div class="art-summary">
-      <button type="button" class="bench-kpi kpi-bad ${APP.artTab === "fix" ? "active" : ""}" data-art-tab="fix">
-        <span>Cần xử lý (${auditList.length} NV)</span>
-        <strong>${lowPiecesCount} món</strong>
-      </button>
-      <button type="button" class="bench-kpi kpi-warn ${APP.artTab === "reroll" ? "active" : ""}" data-art-tab="reroll">
-        <span>Bụi Khai Sáng</span>
-        <strong>${goCount}/${rerollAll.length}</strong>
-      </button>
-      <button type="button" class="bench-kpi kpi-ok ${APP.artTab === "vault" ? "active" : ""}" data-art-tab="vault">
-        <span>Top CV ≥30 (${fourLinerCount} 4-dòng)</span>
-        <strong>${topCvCount} món</strong>
-      </button>
-      <button type="button" class="bench-kpi kpi-gold ${APP.artTab === "domains" ? "active" : ""}" data-art-tab="domains">
-        <span>Chưa đủ bộ</span>
-        <strong>${pendingDomainChars} NV</strong>
-      </button>
-    </div>
-
-    <div class="tracker-controls">
-      <div class="power-subtabs">
-        ${subTabs.map(([k, lbl]) => `<button type="button" class="subtab-btn ${APP.artTab === k ? "active" : ""}" data-art-tab="${k}">${esc(lbl)}</button>`).join("")}
-      </div>
-      <span class="power-hint">Đồng bộ live ${esc(formatCrawlDate())} · ${allArts.length} món trên ${APP.data?.characters?.filter((c) => (c.artifacts || []).length > 0).length || 0} NV</span>
+    <div class="art-tab-cards">
+      ${tabCards
+        .map(
+          (tc) => `
+            <button type="button" class="art-tab-card ${tc.cls} ${APP.artTab === tc.key ? "active" : ""}" data-art-tab="${tc.key}">
+              <div class="atc-top"><span>${esc(tc.title)}</span><em class="atc-dot"></em></div>
+              <strong>${esc(tc.val)}</strong>
+              <small>${esc(tc.sub)}</small>
+            </button>
+          `
+        )
+        .join("")}
     </div>
 
     ${bodyHtml}
@@ -2886,14 +2992,10 @@ function renderModal() {
                               <div class="modal-art-row">
                                 ${ar.icon ? `<img src="${esc(ar.icon)}" alt="${esc(ar.slot || "")}" loading="lazy" referrerpolicy="no-referrer" />` : "<div></div>"}
                                 <div class="modal-art-main">
-                                  <strong>${esc(ar.main_stat)} ${esc(ar.main_val)} ${ev.cv > 0 ? `<span class="cv-pill cv-${ev.cvTier}">${ev.cv.toFixed(1)} CV</span>` : ""}${ev.is4Liner ? ` <span class="four-pill is-4">4 dòng</span>` : ""}</strong>
-                                  <small>${esc(ar.slot)} · ${esc(ar.set)} · <span class="${isLow ? "art-lvl-low" : ""}">Lv.+${esc(lvl)}</span></small>
+                                  <strong>${esc(shortStatName(ar.main_stat))} ${esc(ar.main_val)} ${ev.cv > 0 ? `<span class="cv-pill cv-${ev.cvTier}">${ev.cv.toFixed(1)} CV</span>` : ""}${ev.is4Liner ? ` <span class="four-pill is-4">4 dòng</span>` : ""}</strong>
+                                  <small>${esc(SLOT_SHORT_MAP[ar.slot] || ar.slot)} · ${esc(ar.set)} · <span class="${isLow ? "art-lvl-low" : ""}">Lv.+${esc(lvl)}</span></small>
                                 </div>
-                                <div class="modal-art-subs">
-                                  ${(ar.substats || [])
-                                    .map((sp) => `<span>${esc(sp.name)} +${esc(sp.value)}${sp.rolls > 0 ? `<span class="sub-roll">(+${esc(sp.rolls)})</span>` : ""}</span>`)
-                                    .join("")}
-                                </div>
+                                ${renderArtifactSubstatsGrid(ar.substats)}
                               </div>
                             `;
                           })
@@ -3018,6 +3120,14 @@ function render() {
   document.querySelectorAll("[data-art-set]").forEach((sel) => {
     sel.addEventListener("change", () => {
       APP.artSet = sel.value;
+      APP.artLimit = 60;
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-art-char]").forEach((sel) => {
+    sel.addEventListener("change", () => {
+      APP.artChar = sel.value;
       APP.artLimit = 60;
       render();
     });
