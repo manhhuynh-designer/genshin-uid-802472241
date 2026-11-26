@@ -32,19 +32,19 @@ const ACTIONS = [
   { id: "a_nilou", bucket: "now", tag: "0 Nhựa", shortFix: "✓ Đeo Bến Tàu · Kéo 90 & 2+2 HP%", name: "Nilou", swapFrom: null, swapNote: "✓ Đã nhận Kiếm Bến Tàu Lv.60 (56.2k HP) & chuyển Kiếm Gỗ → Bennett", fixTitle: "Nâng Kiếm Bến Tàu 60 → 90 (41.3% HP) · Đổi 2+2 HP%", fixSub: "HP đã tăng 51.5k → 56.2k · Kéo kiếm lên 90 + 2pc+2pc HP% để chạm 68k+ HP", setKey: "hp2" },
   { id: "a_yelan", bucket: "now", tag: "Nâng VK", shortFix: "Nâng Cung Tây Phong Lv.70 → 90", name: "Yelan", swapFrom: null, swapNote: "✓ Đã gắn Cung Tây Phong R5 (ER lên 191.2%)", fixTitle: "Nâng Cung Tây Phong Lv.70 → Lv.90", fixSub: "68.9/152.6 · 28.8k HP đã đẹp · Lên 90 thêm ~11% ER là chốt", setKey: null },
   { id: "a_gorou", bucket: "now", tag: "Nhà Hát", shortFix: "Bỏ cung 1★ · Lắp cung Nạp + Ly", name: "Gorou", swapFrom: null, swapNote: "Đang cầm Cung Săn Bắn 1★ Lv.1", fixTitle: "Lắp cung Nạp tạm & thêm Ly (đang 4 món)", fixSub: "Đủ đồ dự bị slot Nham cho Nhà Hát Giả Tưởng 7.2", setKey: null },
+  { id: "a_aino", bucket: "now", tag: "0 Nhựa", shortFix: "Đổi Nón CR% nổ Tây Phong · Dừng farm", name: "Aino", swapFrom: null, swapNote: "✓ Đã Lv.80 C1 · 1/5/4 · Tây Phong Lv.90 R5 (40.0% CR · 191.6% ER · 464 EM)", fixTitle: "Đổi Nón STBK → Nón CR% (~60%+ nổ Tây Phong) · Dừng tốn nhựa", fixSub: "Chưa có đồng đội Nod-Krai 5★ · Giữ Lv.80 (1/5/4) đi Nhà Hát, tạm hoãn 4pc Khúc Ca (tùy chọn 4pc Giáo Quan)", setKey: null },
 
-  // Bucket 2: Farm in unlocked regions (Fontaine 64%, Nod-Krai 10%, Inazuma 100%, Sumeru 100%)
+  // Bucket 2: Farm in unlocked regions (Fontaine 64%, Inazuma 100%, Sumeru 100%)
   { id: "a_furina", bucket: "farm", tag: "Fontaine", shortFix: "✓ Đã Lv.90 4/9/9 · Q10 & 4pc Đoàn Kịch", name: "Furina", swapFrom: null, swapNote: "✓ Đã lên Lv.90 (4/9/9 · 39.7k HP · 151.8% ER · 46.4/180.6) · Răng Nanh R5", fixTitle: "Nâng Q (9 → 10) · Farm 4pc Đoàn Kịch", fixSub: "✓ Đã lên Lv.90 (39,678 HP) & Răng Nanh R5 (+32% ST E, +12% CR E) · Farm chung Neuvillette", setKey: "gt" },
   { id: "a_neuv", bucket: "farm", tag: "Fontaine", shortFix: "Farm 4pc Thợ Săn Marechaussee", name: "Neuvillette", swapFrom: null, swapNote: "Giữ Trấn Nghi Thức R1 · Tạm 4pc Trầm Luân (52.8/234.9 · Clear Boss 2 34s)", fixTitle: "Farm tiếp 4pc Thợ Săn Marechaussee (Fontaine)", fixSub: "Đã sửa CR từ 26% → 52.8% (+35.2% Crit) · Qua Thợ Săn nhảy lên ~88.8% CR", setKey: "mh" },
   { id: "a_chiori", bucket: "farm", tag: "Inazuma", shortFix: "Nâng E 1→8–9 · Ly Nham +20", name: "Chiori", swapFrom: null, swapNote: "✓ Đã đủ Cát DEF% (2,163 DEF · 60.2/71.0)", fixTitle: "Nâng E từ 1 → 8–9 · Nâng Ly Nham (+14 → +20)", fixSub: "Sách Ánh Sáng (Inazuma T4/T7) + tìm thêm dòng phụ STBK", setKey: "gt" },
-  { id: "a_aino", bucket: "farm", tag: "Nod-Krai", shortFix: "Thiên phú 1/5/4 → 1/6/8 · Khúc Ca", name: "Aino", swapFrom: null, swapNote: "✓ Đã lên Lv.80 C1 · 1/5/4 · Đại Kiếm Tây Phong Lv.90 R5 (464 EM)", fixTitle: "Nâng Thiên phú 1/5/4 → 1/6/8 · Farm 4pc Khúc Ca Trăng Lụa", fixSub: "Boss Vịt Nắm Đấm + bí cảnh Nod-Krai (10%)", setKey: "silken" },
   { id: "a_jean", bucket: "farm", tag: "Tráp TDV", shortFix: "Nâng Ống Đồng 90 · Ly ATK +20 · VV", name: "Jean", swapFrom: null, swapNote: "✓ Đã nhận Ống Đồng Lv.50 R2 (189.3% ER) · Trả Tây Phong R5 cho Layla", fixTitle: "Nâng Ống Đồng 50 → 90 · Ly ATK +20 · Ép 4pc Bóng Hình", fixSub: "Hoàn thiện bộ 4pc VV trừ 40% kháng & lên Ống Đồng đủ Nạp >200%", setKey: "vv" },
   { id: "a_venti", bucket: "farm", tag: "Cường hóa", shortFix: "Nâng 4 món TDV +0 → +20", name: "Venti", swapFrom: null, swapNote: "Giữ Trấn Tiếng Thở Dài Vô Tận R1 (196.6% ER)", fixTitle: "4 món TDV trên HoYoLAB vẫn ở +0", fixSub: "Nâng Lông/Cát EM/Ly Phong/Nón lên +20 (đã đủ 4pc Bóng Hình)", setKey: "vv" },
   { id: "a_navia", bucket: "farm", tag: "Tối ưu", shortFix: "✓ 6/10/10 · Đẩy lại CR ~70%+ (56.7%)", name: "Navia", swapFrom: null, swapNote: "✓ Đã vương miện Q10 (6/10/10 · Kiếm Li Cốt R1 · 1,980 ATK · 142.7% ER)", fixTitle: "Kéo lại CR 56.7% → 70%+ (đổi lại Nón/mảnh 4pc)", fixSub: "Vừa chuyển 2 Phiến Đá + 2 Giác Đấu nên ER lên 142.7% nhưng CR tụt từ 80% → 56.7%", setKey: "nw" },
 
   // Bucket 3: Snezhnaya unlocked (7%, 10 Iceculus) — start farming!
   { id: "a_mitya", bucket: "later", tag: "Snezhnaya", shortFix: "Ly EM +20 · Kéo Lv.90 + Trấn 90", name: "Mitya", swapFrom: null, swapNote: "✓ Đã lên Lv.70 (2/3/4 · 67.2/188.5 · 516 EM) · 2pc Giấc Mộng + 2pc Đoàn Hát · Trấn Lv.50", fixTitle: "Nâng Ly EM +0 → +20 · Kéo Trấn & Mitya lên Lv.90", fixSub: "Đã ghép xong 2+2 EM (+160 EM) · Farm dần 4pc Ảo Tưởng chung Yae (Ma Nữ)", setKey: "dids" },
-  { id: "a_valeriy", bucket: "later", tag: "Snezhnaya", shortFix: "✓ Đeo Isshin 80 · Kéo Lv & TDV ATK%", name: "Valeriy", swapFrom: null, swapNote: "✓ Đã gắn Kagotsurube Isshin Lv.80 R1 (647 ATK) · Đỡ tốn Phôi rèn!", fixTitle: "Kéo Lv.1 → 80 · Nâng Isshin 90 · Cát/Ly/Nón ATK%", fixSub: "Khiên + buff lõi Mitya + Yae (Ma Nữ) · Farm chung sách Charity với Mitya", setKey: "furnace" },
+  { id: "a_valeriy", bucket: "later", tag: "Snezhnaya", shortFix: "✓ Đeo Isshin 80 · Làm sau Mitya (Lv.70/80)", name: "Valeriy", swapFrom: null, swapNote: "✓ C3 (+100 EM từ C2) · Đã gắn Isshin Lv.80 R1 (647 ATK)", fixTitle: "Build gọn Lv.70/80 (sau Mitya 90) · E6–8 · Full ATK%", fixSub: "C3 đã mở C2 +100 EM & khiên giữ nhịp Mitya; trần thật nằm ở C6 nên ưu tiên Mitya & Yae trước", setKey: "furnace" },
   { id: "a_alyosha", bucket: "later", tag: "Snezhnaya", shortFix: "✓ Đeo Mũi Nhọn 70 · Kéo Lv / Xương Sống", name: "Alyosha", swapFrom: null, swapNote: "✓ Đã gắn Mũi Nhọn Của Gió Lv.70 R5 (550 ATK) · Hoặc lấy Xương Sống 5★ Lv.90 đang rảnh", fixTitle: "Kéo Lv.1 → 80 · Nâng E > Q · Dùng Mũi Nhọn R5 hoặc Xương Sống 90", fixSub: "Healer + Buff ATK team Tinh-Siêu Dẫn · Cân nhắc chuyển Xương Sống 5★ (Yaoyao vừa trả)", setKey: "no" },
 ];
 
@@ -173,12 +173,12 @@ const CHAR_GUIDES = {
     ],
   },
   Aino: {
-    mainStats: "Cát ER% hoặc EM · Ly EM/Thủy · Nón EM/CR%",
-    targets: "✓ Đã lên Lv.80 C1 · Mục tiêu: Thiên phú 1/6/8 (hiện 1/5/4) · ≥180% ER · 4pc Khúc Ca",
+    mainStats: "Cát ER%/EM · Ly EM/Thủy · Nón CR% (ưu tiên nổ Tây Phong)",
+    targets: "✓ Đã Lv.80 C1 · Tây Phong R5 (191.6% ER) · Mục tiêu: ≥60% CR nổ Tây Phong · Dừng nâng TP",
     steps: [
-      "Đại Kiếm Tây Phong Lv.90 R5 (191.6% ER · 464 EM) đã rất mượt — cân nhắc rèn Chìa Khóa Vạn Năng khi dư Phôi.",
-      "Đánh Boss Vịt Nắm Đấm (Nod-Krai 10%) nâng tiếp E/Q từ 5/4 → 6/8.",
-      "Farm dần bộ 4pc Khúc Ca Trăng Lụa tại Nod-Krai (10%) để tối ưu buff Moonsign.",
+      "Đổi Nón STBK 62.2% → Nón CR% (kéo 40.0% → ~60–70% CR) để Đại Kiếm Tây Phong R5 tạo hạt ổn định (0 nhựa).",
+      "Giữ nguyên Lv.80 C1 · 1/5/4 làm slot Thủy dự bị cho Nhà Hát; tùy chọn lắp 4pc Giáo Quan (+200 EM cùng C1) khi đi đội phản ứng.",
+      "Tạm dừng tốn nhựa nâng thiên phú & farm 4pc Khúc Ca Trăng Lụa cho tới khi roll thêm ít nhất 1 nhân vật Nod-Krai 5★ (ví dụ Columbina).",
     ],
   },
   Jean: {
@@ -218,11 +218,11 @@ const CHAR_GUIDES = {
   },
   Valeriy: {
     mainStats: "Cát ATK% · Ly ATK% · Nón ATK%",
-    targets: "✓ Đã gắn Kagotsurube Isshin Lv.80 (647 ATK) · Mục tiêu: Lv.80 · Isshin Lv.90 · 3 món ATK%",
+    targets: "✓ C3 (đã mở C2 +100 EM) · Isshin Lv.80 · Build gọn Lv.70/80 sau khi xong Mitya 90",
     steps: [
-      "✓ Đã gắn Kagotsurube Isshin Lv.80 R1 (37.7% ATK + 15% ATK nội tại) — không cần tốn Phôi rèn Nhạc Khúc Biển Sâu.",
-      "Kéo Lv.1 → 80, nâng Isshin Lv.90 và farm sách Charity chung với Mitya.",
-      "Lắp 3 món chính ATK% trên bộ 4pc Trái Tim Lửa Nung (hoặc tạm 4pc Tông Thất Cổ).",
+      "✓ C3 đã mở buff +100 EM toàn đội (C2) & khiên giữ nhịp Trọng Kích Mitya; gắn sẵn Kagotsurube Isshin Lv.80 R1 không cần tốn Phôi.",
+      "Làm SAU khi kéo xong Mitya Lv.90 + Trấn 90: nâng Valeriy gọn lên Lv.70/80, ưu tiên E Lv.6–8, không cần kéo tối đa vì trần thật nằm ở C6.",
+      "Lắp 3 món chính ATK% trên bộ 4pc Nghi Thức Tông Thất Cổ (hoặc 4pc Trái Tim Lửa Nung / 2+2 ATK%).",
     ],
   },
   Alyosha: {
@@ -383,11 +383,11 @@ const COLLECT_WEAPONS = [
 ];
 
 const FARM_DAYS = [
-  { key: 1, short: "T2", title: "Thứ 2", chars: ["Chiori", "Aino", "Furina"], resinChips: ["3× Boss Tuần", "Narwhal", "Sách Aino"], extra: "Cỏ Naku · Lumidouce · Hồ Lô" },
-  { key: 2, short: "T3", title: "Thứ 3", chars: ["Furina", "Nilou", "Aino"], resinChips: ["Sách Chính Nghĩa (Furina)", "Boss Vịt (Aino)"], extra: "✓ Đã xoay xong 12 VK · Kéo Bến Tàu & Ống Đồng 90" },
-  { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Yelan", "Aino"], resinChips: ["Sách Ánh Sáng (Chiori)", "Tây Phong Yelan → 90"], extra: "Ép Tráp: 4pc VV / Tông Thất" },
+  { key: 1, short: "T2", title: "Thứ 2", chars: ["Chiori", "Furina", "Mitya"], resinChips: ["3× Boss Tuần", "Narwhal (Furina)"], extra: "Cỏ Naku · Lumidouce · Hồ Lô" },
+  { key: 2, short: "T3", title: "Thứ 3", chars: ["Furina", "Nilou", "Jean"], resinChips: ["Sách Chính Nghĩa (Furina Q10)", "Bến Tàu & Ống Đồng 90"], extra: "✓ Đã xoay xong 12 VK · Kéo VK lên 90" },
+  { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Yelan", "Jean"], resinChips: ["Sách Ánh Sáng (Chiori E)", "Tây Phong Yelan → 90"], extra: "Ép Tráp: 4pc VV / Tông Thất" },
   { key: 4, short: "T5", title: "Thứ 5", chars: ["Neuvillette", "Furina", "Fischl"], resinChips: ["Bí cảnh Tội Lỗi (Fontaine)", "4pc Thợ Săn & Đoàn Kịch"], extra: "Nhặt đặc sản hồi 48h" },
-  { key: 5, short: "T6", title: "Thứ 6", chars: ["Furina", "Neuvillette", "Aino"], resinChips: ["Sách Chính Nghĩa (Furina)", "TDV Fontaine / Ảo Cảnh"], extra: "Chốt Beidou / Gorou / Ningguang (01/12)" },
+  { key: 5, short: "T6", title: "Thứ 6", chars: ["Furina", "Neuvillette", "Nilou"], resinChips: ["Sách Chính Nghĩa (Furina)", "TDV Fontaine / Ảo Cảnh"], extra: "Chốt Beidou / Gorou / Ningguang (01/12)" },
   { key: 6, short: "T7", title: "Thứ 7", chars: ["Chiori", "Yelan", "Mitya"], resinChips: ["Sách Ánh Sáng (Chiori E)", "Chốt Tây Phong 90"], extra: "Leo lại La Hoàn 11-3 & 12" },
   { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Mitya", "Yae Miko", "Valeriy"], resinChips: ["Sách Charity (Mitya)", "4pc Ảo Tưởng (Mitya + Yae)"], extra: "Boss Snezhnaya (7%) · Bù sách thiếu" },
 ];
@@ -587,7 +587,7 @@ const MODES = {
   meta: {
     label: "Meta 7.2",
     items: [
-      { title: "Build Ngay (Vùng Mở)", sub: "Fontaine 64% · Nod-Krai 10%", note: "✓ Furina đã lên Lv.90 (4/9/9) · Farm bí cảnh Tội Lỗi (Thợ Săn + Đoàn Kịch)", status: "ok", members: ["Furina", "Neuvillette", "Aino", "Chiori"] },
+      { title: "Build Ngay (Vùng Mở)", sub: "Fontaine 64% · Inazuma 100%", note: "✓ Furina đã lên Lv.90 (4/9/9) · Farm bí cảnh Tội Lỗi (Thợ Săn + Đoàn Kịch) · Aino dừng ở Lv.80", status: "ok", members: ["Furina", "Neuvillette", "Chiori", "Nilou"] },
       { title: "Snezhnaya (7%)", sub: "Lõi Tinh-Siêu Dẫn 7.2", note: "✓ Mitya 2+2 EM · Valeriy Isshin Lv.80 · Alyosha Mũi Nhọn Lv.70", status: "warn", members: ["Mitya", "Yae Miko", "Valeriy", "Alyosha"] },
       { title: "Mục Tiêu Roll Tiếp", sub: "Pity 5★: 0 (sau Furina)", note: "Chờ Băng Thần Anastasya (7.3) · Xilonen · Odette", status: "ok", members: ["Furina", "Xilonen", "Odette", "Columbina"] },
     ],
@@ -604,7 +604,7 @@ const CHAR_BENCHMARKS = {
   "Raiden Shogun": { role: "Carry / Nạp Lôi", group: "core", stats: [{ key: "Tấn Công", label: "ATK", target: 1600, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 140, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 260, unit: "%" }] },
   Yelan: { role: "Sub Thủy", group: "core", stats: [{ key: "Giới Hạn HP", label: "HP", target: 32000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 160, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 200, unit: "%" }] },
   Chiori: { role: "Sub Nham", group: "core", stats: [{ key: "Phòng Ngự", label: "DEF", target: 2200, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 140, unit: "%" }] },
-  Aino: { role: "Support Nod-Krai", group: "core", stats: [{ key: "Tinh Thông Nguyên Tố", label: "EM", target: 500, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 185, unit: "%" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 50, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 130, unit: "%" }] },
+  Aino: { role: "Support Nod-Krai (Tây Phong)", group: "core", stats: [{ key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 185, unit: "%" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 60, unit: "%" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 400, unit: "" }] },
   "Kaedehara Kazuha": { role: "Buffer Phong", group: "core", stats: [{ key: "Tinh Thông Nguyên Tố", label: "EM", target: 950, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 145, unit: "%" }] },
   Nahida: { role: "Sub Thảo", group: "core", stats: [{ key: "Tinh Thông Nguyên Tố", label: "EM", target: 950, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 120, unit: "%" }] },
   Zhongli: { role: "Khiên Nham", group: "core", stats: [{ key: "Giới Hạn HP", label: "HP", target: 40000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 60, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 120, unit: "%" }] },
@@ -776,11 +776,10 @@ function getActionShortFix(a, c) {
       parts.push("Ly Nham +20 / STBK");
       return parts.join(" · ");
     }
-    case "Aino": {
-      const hasSet = /4pc\s+Khúc Ca/i.test(sets);
-      if (q >= 8 && e >= 6 && hasSet) return "✓ Đã xong Aino 4pc Khúc Ca";
-      return `Thiên phú ${na}/${e}/${q} → 1/6/8 · ${hasSet ? "✓ 4pc Khúc Ca" : "Farm 4pc Khúc Ca"}`;
-    }
+    case "Aino":
+      return cr < 55
+        ? `Đổi Nón CR% nổ Tây Phong (đang ${cr.toFixed(0)}%) · Dừng farm`
+        : "✓ Đã ổn định Nhà Hát · Chờ đồng đội Nod-Krai";
     case "Jean": {
       const hasVV = /4pc\s+Bóng Hình/i.test(sets);
       if (wLv >= 90 && hasVV && zeroArts === 0) return "✓ Đã xong Jean 90 · 4pc Bóng Hình";
@@ -830,7 +829,7 @@ function getActionShortFix(a, c) {
       return todo.join(" · ");
     }
     case "Valeriy":
-      return lv < 80 ? `✓ ${c.weapon?.name || "VK"} Lv.${wLv} · Kéo Lv.${lv}→80 & TDV ATK%` : `✓ Đã Lv.${lv} · Tối ưu 4pc Lửa Nung`;
+      return lv < 80 ? `✓ ${c.weapon?.name || "VK"} Lv.${wLv} · Build gọn Lv.70/80 (sau Mitya)` : `✓ Đã Lv.${lv} · Tối ưu TDV ATK%`;
     case "Alyosha":
       return lv < 80 ? `✓ ${c.weapon?.name || "VK"} Lv.${wLv} · Kéo Lv.${lv}→80` : `✓ Đã Lv.${lv} · Sẵn sàng Tinh-Siêu Dẫn`;
     default:

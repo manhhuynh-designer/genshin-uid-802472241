@@ -44,7 +44,7 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
    - `Furina`: **✓ Đã lên `Lv.90 · 4/9/9` + `Răng Nanh Rỉ Sét Lv.90 R5`** (`39,678 HP · 46.4/180.6 · 151.8% ER`) → vương miện Q `9 → 10`, farm **`4pc Đoàn Kịch Hoàng Kim`** chung bí cảnh Neuvillette.
    - `Nilou`: **✓ Đã nhận `Kiếm Bến Tàu Lv.60`** (`56,168 HP`) → kéo kiếm `Lv.60 → 90` & đổi sang **`2pc+2pc HP%`** (`68k+ HP`).
    - `Jean`: **✓ Đã chuyển `Ống Đồng Fleuve Cendre Lv.50 R2`** (`189.3% ER`) → kéo `Lv.50 → 90`, nâng Ly ATK% `+0 → +20`, ép **`4pc Bóng Hình`**.
-   - `Valeriy`: **✓ Đã gắn `Kagotsurube Isshin Lv.80 R1`** (`647 ATK`) → kéo Lv.1 → 80, Isshin 90, farm **`4pc Trái Tim Lửa Nung`**.
+   - `Valeriy`: **✓ C3 (+100 EM từ C2) · Đã gắn `Kagotsurube Isshin Lv.80 R1`** (`647 ATK`) → build gọn `Lv.70/80` (E `6–8`, full ATK% `4pc Tông Thất`/Lửa Nung) **sau** khi kéo xong Mitya `90`.
    - `Alyosha`: **✓ Đã gắn `Mũi Nhọn Của Gió Lv.70 R5`** (hoặc lấy `Xương Sống Thiên Không Lv.90` vừa giải phóng từ Yaoyao).
 2. **Neuvillette (Lv.90 C0, 10/10/10) & Navia (Lv.90 C0, 6/10/10)**
    - `Neuvillette`: `35,466 HP · 52.8/234.9` trên `4pc Trầm Luân` → farm **`4pc Thợ Săn Marechaussee`** (`~88.8% CR`).
@@ -60,7 +60,7 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
    - `Yelan`: nâng **`Cung Tây Phong Lv.70 → Lv.90`** (`~202% ER`).
 5. **Chiori (Lv.80 C0), Aino (Lv.80 C1), Venti (Lv.80 C0), Yae Miko (Lv.90 C0 Ma Nữ)**
    - `Chiori`: nâng E `1 → 8–9`, Ly Nham `+14 → +20`.
-   - `Aino`: kéo thiên phú `1/5/4 → 1/6/8` & farm **4pc Khúc Ca Trăng Lụa** (Nod-Krai `10%`).
+   - `Aino`: **đổi Nón STBK → Nón CR%** (`40% → ~60%+ CR` để nổ Tây Phong R5 đều; tùy chọn `4pc Giáo Quan`) — **dừng tốn nhựa** nâng `1/5/4` hay farm Nod-Krai cho tới khi roll thêm 1 nhân vật Nod-Krai 5★.
    - `Venti`: 4/5 món TDV đang `+0` → nâng lên `+20`.
    - `Yae Miko` (**✓ Ma Nữ**): `51.0/252.2 · 2,238 ATK` → đổi **Nón CR%** (`~75/204`) & farm **`4pc Ảo Tưởng Vụn Vỡ`** chung **Mitya**.
 
@@ -79,9 +79,9 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 ## 3. Danh sách Nhân vật Meta 7.2 tại Snezhnaya (`Đã mở 7%`)
 
 1. **Mitya (✓ đã lên Lv.70 C0 · `2/3/4`, trấn `Sắc Lệnh Tinh Tú` Lv.50 R1, `516 EM`):** Lõi Tinh-Siêu Dẫn đi cặp **Yae Miko (Ma Nữ)** + **Rosaria C6 / Nhà Lữ Hành Băng** (sau nâng lên **Odette**) + **Valeriy C3** — nâng nốt Ly EM `+0 → +20`, kéo Trấn & Mitya lên Lv.90 + farm chung **`4pc Ảo Tưởng Vụn Vỡ`** cho cả Mitya & Yae.
-2. **Valeriy (Lv.1 C3):** Khiên chống gián đoạn (giữ nhịp Trọng Kích Mitya) + Buffer cho lõi **Mitya + Yae (Ma Nữ)** — rèn `Nhạc Khúc Biển Sâu` (ATK%) + farm sách *Charity* (ưu tiên hơn Alyosha vì trùng slot hỗ trợ).
-3. **Alyosha (Lv.1 C0):** 4★ Thương Lôi off-field Healer + Buff ATK (cạnh tranh trực tiếp slot của Valeriy; dùng thay Valeriy khi đội hình cần hồi máu — buff ATK của Alyosha scale rất hợp đòn `+80%/200% ATK` của Yae Ma Nữ).
-4. **Aino (✓ đã lên Lv.80 C1 · `1/5/4 · 464 EM`):** Đã hoàn thành Lv.80 + `Đại Kiếm Tây Phong Lv.90`, tiếp tục kéo thiên phú `1/5/4 → 1/6/8` & farm `4pc Khúc Ca` (Nod-Krai `10%`).
+2. **Valeriy (Lv.1 C3):** Khiên chống gián đoạn (giữ nhịp Trọng Kích Mitya) + C2 buff **`+100 EM` toàn đội** — gắn sẵn `Kagotsurube Isshin Lv.80` (không tốn Phôi); build gọn `Lv.70/80` (E `6–8`) **sau khi xong Mitya 90** vì trần C6 mới là mốc bứt phá lớn.
+3. **Alyosha (Lv.1 C0):** 4★ Thương Lôi off-field Healer + Buff ATK (cạnh tranh trực tiếp slot của Valeriy; ưu tiên dùng Valeriy C3 để lấy khiên +100 EM trước, chỉ đổi sang Alyosha khi gặp màn bắt buộc hồi máu).
+4. **Aino (✓ đã lên Lv.80 C1 · `1/5/4 · 464 EM`):** Dùng làm pin `Đại Kiếm Tây Phong Lv.90 R5` + slot Thủy dự bị Nhà Hát — chỉ đổi **Nón CR%** (0 nhựa) rồi dừng đầu tư nhựa cho đến khi roll thêm đồng đội Nod-Krai 5★ (Columbina).
 
 ---
 
