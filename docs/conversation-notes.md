@@ -117,5 +117,5 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 | **Raiden National** (`Raiden · Bennett · Xiangling · Yelan`) | Đơn mục tiêu | ~64k (`A+`) | ~68k (`A+`) | +6% | Tối ưu nhẹ Crit Xiangling (51% CR) *(Yelan ✓ Tây Phong 90)* |
 | **Ayaka Đóng Băng** (`Ayaka · Mona · Kazuha · Kokomi`) | AOE Đóng Băng | ~59k (`A+`) | ~67k (`A+`) | +14% | Amenoma R3→R5 · Thử Furina + Charlotte |
 | **Yoimiya Đánh Thường** (`Yoimiya · Yelan · Yun Jin · Zhongli`) | Boss bay · Đơn | ~58k (`A+`) | ~62k (`A+`) | +7% | Bổ sung EM (63→100+) *(Yelan ✓ Tây Phong 90)* |
-| **Ganyu Tan Chảy** (`Ganyu · Bennett · Xiangling · Zhongli`) | Đơn · Nuke | ~52k (`A`) | ~60k (`A+`) | +15% | Đổi Cát EM (80→220+) |
+| **Ganyu Thả Nộ · 2 Băng** (`Ayaka · Ganyu · Kazuha · Kokomi`) | AOE · Quickswap | ~55k (`A`) | ~68k (`A+`) | +24% | Bỏ ngắm bắn (`E→Q`) · Đổi `4pc Dấu Ấn/Tông Thất` + `Cung ER` (`110% → 160%+ ER`) |
 | **Eula Vật Lý** (`Eula · Raiden · Rosaria · Zhongli`) | Nuke Vật Lý | ~50k (`A`) | ~56k (`A`) | +12% | Đẩy CR 51.7%→70%+ · Thử Furina + Mika C4 |

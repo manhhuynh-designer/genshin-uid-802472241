@@ -251,6 +251,15 @@ const CHAR_GUIDES = {
       "Giữ nguyên Quyển Thiên Không Lv.90 R1 và bộ 4pc Bóng Hình Màu Xanh (-40% kháng Thủy/Hỏa).",
     ],
   },
+  Ganyu: {
+    mainStats: "Cát ER% (160–200% ER) · Ly ST Băng · Nón CR/STBK (4pc Dấu Ấn hoặc 4pc Tông Thất)",
+    targets: "Sub-DPS Thả Nộ E→Q (không ngắm bắn) · Q Lv.10 sẵn sàng · Cần kéo 110.4% → 160–200% ER",
+    steps: [
+      "Chuyển hẳn sang lối chơi Quickswap: chỉ ra sân E → Q (phủ 15s/15s, +20% ST Băng cho đồng đội) rồi đổi người, không ngắm bắn Trọng Kích.",
+      "Đổi bộ 4pc Đoàn Hát (chỉ buff Trọng Kích) sang 4pc Dấu Ấn Ngăn Cách hoặc 4pc Tông Thất Cổ; đổi Cung Trừ Ma sang Cung Tây Phong / cung ER.",
+      "Dùng cực mượt làm Sub-DPS 2 Băng cho Ayaka, thay Rosaria ở màn đông quái cho Mitya + Yae, hoặc cấp Băng ngoài sân trong Nhà Hát.",
+    ],
+  },
   Illuga: {
     mainStats: "Cát ER%/EM · Ly EM · Nón EM",
     targets: "4★ Nham Nod-Krai (mới Lv.1 C0) · Mục tiêu khi build: ≥180% ER · Full EM · Tai Ương / Tây Phong",
@@ -535,17 +544,17 @@ const MODES = {
         },
       },
       {
-        title: "Ganyu Tan Chảy",
-        sub: "✓ Kiếm Gỗ Bennett · 54k → 60k (A)",
-        note: "Bennett đã gắn Kiếm Gỗ · Đổi Cát EM (~220+) cho Ganyu",
-        status: "ok",
-        members: ["Ganyu", "Bennett", "Xiangling", "Zhongli"],
+        title: "Ganyu Thả Nộ · 2 Băng",
+        sub: "Quickswap E→Q · 55k → 68k (A+)",
+        note: "Bỏ ngắm bắn Trọng Kích · Ganyu chỉ E→Q (+20% ST Băng + cộng hưởng 2 Băng) · Đổi 4pc Dấu Ấn/Tông Thất & cung ER",
+        status: "warn",
+        members: ["Kamisato Ayaka", "Ganyu", "Kaedehara Kazuha", "Sangonomiya Kokomi"],
         power: {
-          cur: 54, proj: 60, curTier: "A", projTier: "A",
-          role: "Đơn · Nuke", tags: ["st"], badge: "Sẵn sàng",
-          short: "Ganyu", labelPos: "left", cost: "Thấp",
-          chips: ["Đổi Cát EM (~220+)"],
-          upgrade: "Đổi Cát EM (~220+ EM) cho Ganyu (Bennett đã chuyển Kiếm Gỗ 565 Base ATK)",
+          cur: 55, proj: 68, curTier: "A", projTier: "A+",
+          role: "AOE · Quickswap", tags: ["aoe", "upgrade"], badge: "E→Q không ngắm",
+          short: "Ganyu Burst", labelPos: "left", cost: "Thấp",
+          chips: ["Ganyu ER 160%+", "4pc Dấu Ấn / Tông Thất", "Đổi Cung Trừ Ma → Cung ER"],
+          upgrade: "Đổi Ganyu từ 4pc Đoàn Hát + Cung Trừ Ma sang 4pc Dấu Ấn/Tông Thất + Cung Tây Phong/ER (160%+ ER)",
         },
       },
       {
@@ -658,7 +667,7 @@ const CHAR_BENCHMARKS = {
   "Hu Tao": { role: "Carry Hỏa", group: "dps", stats: [{ key: "Giới Hạn HP", label: "HP", target: 32000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 75, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 200, unit: "%" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 200, unit: "" }] },
   "Kamisato Ayaka": { role: "Carry Băng", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2100, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 40, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 220, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 135, unit: "%" }] },
   Yoimiya: { role: "Carry Hỏa", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2100, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 75, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 190, unit: "%" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 100, unit: "" }] },
-  Ganyu: { role: "Carry Băng", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 60, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 200, unit: "%" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 200, unit: "" }] },
+  Ganyu: { role: "Sub Băng (Thả Nộ)", group: "support", stats: [{ key: "Tấn Công", label: "ATK", target: 1700, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 60, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 150, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 175, unit: "%" }] },
   "Kamisato Ayato": { role: "Carry Thủy", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2000, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 170, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 130, unit: "%" }] },
   Eula: { role: "Carry Vật Lý", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 2200, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 185, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 125, unit: "%" }] },
   Tighnari: { role: "Carry Thảo", group: "dps", stats: [{ key: "Tấn Công", label: "ATK", target: 1600, unit: "" }, { key: "Tinh Thông Nguyên Tố", label: "EM", target: 300, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 70, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 160, unit: "%" }] },
@@ -1042,7 +1051,7 @@ const ART_BUILD_SPECS = {
   Keqing: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "EM"], main: { Cát: ["ATK%", "EM"], Ly: ["ST Lôi"], Nón: ["CR", "CD"] } },
   "Kamisato Ayaka": { role: "crit", wantSubs: ["CR", "CD", "ATK%", "ER"], main: { Cát: ["ATK%"], Ly: ["ST Băng"], Nón: ["CD", "ATK%"] } },
   Yoimiya: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "EM"], main: { Cát: ["ATK%", "EM"], Ly: ["ST Hỏa"], Nón: ["CR", "CD"] } },
-  Ganyu: { role: "crit", wantSubs: ["CR", "CD", "EM", "ATK%"], main: { Cát: ["EM", "ATK%"], Ly: ["ST Băng"], Nón: ["CR", "CD"] }, preferEM: 150 },
+  Ganyu: { role: "crit", wantSubs: ["CR", "CD", "ER", "ATK%"], main: { Cát: ["ER", "ATK%"], Ly: ["ST Băng"], Nón: ["CR", "CD"] }, preferER: 160 },
   Fischl: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "EM"], main: { Cát: ["ATK%", "EM"], Ly: ["ST Lôi"], Nón: ["CR", "CD"] }, preferCR: true },
   Xiangling: { role: "crit", wantSubs: ["CR", "CD", "ER", "EM", "ATK%"], main: { Cát: ["ER", "EM", "ATK%"], Ly: ["ST Hỏa"], Nón: ["CR", "CD"] } },
   Xingqiu: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "ER"], main: { Cát: ["ATK%", "ER"], Ly: ["ST Thủy"], Nón: ["CR", "CD"] } },
@@ -1094,6 +1103,7 @@ const ER_FLOOR = {
   Jean: 185,
   "Kamisato Ayaka": 130,
   Navia: 120,
+  Ganyu: 160,
 };
 
 const KEY_STAT = {
@@ -2556,6 +2566,7 @@ const TARGET_SET_CHECK = {
   "Yae Miko": (s) => /4pc\s+Ảo Tưởng/i.test(s),
   Nilou: (s) => /2pc\s+Thiên Nham.*2pc\s+Vầng Sáng|2pc\s+Vầng Sáng.*2pc\s+Thiên Nham/i.test(s),
   Navia: (s) => /4pc\s+Tiếng Đêm/i.test(s),
+  Ganyu: (s) => /4pc\s+Dấu Ấn|4pc\s+Nghi Thức Tông Thất|4pc\s+Dũng Sĩ/i.test(s),
   Valeriy: (s) => /4pc\s+Trái Tim Lửa Nung|4pc\s+Nghi Thức Tông Thất/i.test(s),
 };
 
@@ -2673,12 +2684,14 @@ const TEAM_POWER_CFG = {
       ({ get, statN }) => (statN(get("Yoimiya"), "Tinh Thông Nguyên Tố") >= 90 ? null : `Bổ sung EM (${Math.round(statN(get("Yoimiya"), "Tinh Thông Nguyên Tố"))}→100+)`),
     ],
   },
-  "Ganyu Tan Chảy": {
-    weights: [0.52, 0.20, 0.18, 0.10],
-    setCheck: [],
-    maxCurCap: 60,
+  "Ganyu Thả Nộ · 2 Băng": {
+    weights: [0.45, 0.28, 0.15, 0.12],
+    setCheck: ["Ganyu"],
+    maxCurCap: 68,
     checks: [
-      ({ get, statN }) => (statN(get("Ganyu"), "Tinh Thông Nguyên Tố") >= 180 ? null : `Đổi Cát EM (${Math.round(statN(get("Ganyu"), "Tinh Thông Nguyên Tố"))}→220+)`),
+      ({ get, statN }) => (statN(get("Ganyu"), "Hiệu Quả Nạp Nguyên Tố") >= 160 ? null : `Ganyu ER (${statN(get("Ganyu"), "Hiệu Quả Nạp Nguyên Tố").toFixed(0)}%→160%+)`),
+      ({ get, sets }) => (/4pc\s+Dấu Ấn|4pc\s+Nghi Thức Tông Thất|4pc\s+Dũng Sĩ/i.test(sets(get("Ganyu"))) ? null : "Đổi 4pc Đoàn Hát → Dấu Ấn/Tông Thất"),
+      ({ get }) => (/Trừ Ma/i.test(get("Ganyu")?.weapon?.name || "") ? "Đổi Cung Trừ Ma → Cung ER" : null),
     ],
   },
   "Nilou Sum Suê": {
