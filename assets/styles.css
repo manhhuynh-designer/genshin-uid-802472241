@@ -2141,6 +2141,161 @@ body.modal-open { overflow: hidden; }
 }
 .art-more-btn:hover { background: rgba(211, 188, 142, 0.18); }
 
+/* Swap Radar Cards (Zero-Resin Upgrades) */
+.swap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.swap-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(var(--el, 211, 188, 142), 0.3);
+  background: linear-gradient(155deg, rgba(var(--el, 211, 188, 142), 0.1), rgba(16, 14, 22, 0.96) 62%);
+}
+.swap-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.swap-target {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  cursor: pointer;
+}
+.swap-face {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(var(--el, 211, 188, 142), 0.6);
+  flex-shrink: 0;
+}
+.swap-target strong { display: block; font-size: 13.5px; color: var(--ivory); }
+.swap-target small { display: block; font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; }
+.swap-head-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.flag-ok { color: var(--ok); background: rgba(108, 212, 165, 0.14); border-color: rgba(108, 212, 165, 0.42); }
+.flag-purple { color: #c4a7ff; background: rgba(176, 122, 245, 0.15); border-color: rgba(176, 122, 245, 0.45); }
+.swap-gain-pill {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ok);
+  background: rgba(108, 212, 165, 0.15);
+  border: 1px solid rgba(108, 212, 165, 0.45);
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.swap-pair {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  align-items: stretch;
+}
+.swap-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.swap-box {
+  padding: 8px 9px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(12, 11, 16, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  min-width: 0;
+}
+.swap-box.is-new {
+  border-color: rgba(108, 212, 165, 0.45);
+  background: rgba(108, 212, 165, 0.07);
+}
+.sb-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+}
+.sb-role { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sb-role b { color: var(--gold); }
+.sb-metric { font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; flex-shrink: 0; }
+.sb-metric.is-up { color: var(--ok); }
+.sb-piece { display: flex; align-items: center; gap: 7px; min-width: 0; }
+.sb-piece img { width: 30px; height: 30px; object-fit: contain; flex-shrink: 0; }
+.sb-piece > div { min-width: 0; }
+.sb-piece strong { display: block; font-size: 12px; color: var(--ivory); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sb-piece strong em { font-style: normal; color: var(--gold); font-size: 10.5px; margin-left: 2px; }
+.sb-piece small { display: block; font-size: 10px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.swap-subs-line { display: flex; flex-wrap: wrap; gap: 4px; }
+.sw-sub {
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.sw-sub.is-crit { color: #f6d57a; background: rgba(246, 213, 122, 0.11); font-weight: 600; }
+.sw-sub.is-good { color: var(--ok); background: rgba(108, 212, 165, 0.1); }
+.sw-sub.is-flat { opacity: 0.65; }
+
+/* Smart Audit Tiles Extensions */
+.slot-tile.tile-wrong { border-color: rgba(232, 114, 114, 0.8); background: rgba(232, 114, 114, 0.14); }
+.slot-tile.tile-weak { border-color: rgba(176, 122, 245, 0.65); background: rgba(176, 122, 245, 0.09); }
+.st-lv.lv-wrong { color: #fff; background: var(--bad); }
+.st-metric { font-style: normal; font-size: 9px; color: var(--gold); opacity: 0.85; margin-left: 2px; }
+.acc-issues-line {
+  font-size: 11px;
+  padding: 5px 9px;
+  border-radius: 7px;
+  background: rgba(176, 122, 245, 0.1);
+  border: 1px solid rgba(176, 122, 245, 0.28);
+  color: #d6c2ff;
+}
+.acc-issues-line.is-bad {
+  background: rgba(232, 114, 114, 0.12);
+  border-color: rgba(232, 114, 114, 0.38);
+  color: #ffb8b8;
+  font-weight: 600;
+}
+
+/* Domain Loot Rules */
+.domain-loot-box {
+  padding: 9px 11px;
+  border-radius: 9px;
+  border: 1px solid rgba(211, 188, 142, 0.18);
+  background: rgba(0, 0, 0, 0.24);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 11.5px;
+}
+.dl-title { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold); }
+.dl-row { display: flex; align-items: baseline; gap: 7px; color: var(--ivory); line-height: 1.4; }
+.dl-set-tag {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(211, 188, 142, 0.14);
+  border: 1px solid rgba(211, 188, 142, 0.35);
+  color: var(--gold);
+}
+.dl-trash { font-size: 11px; color: var(--muted); padding-top: 3px; border-top: 1px dashed rgba(255, 255, 255, 0.1); }
+
 /* Graphical Domain Cards */
 .domain-grid {
   display: grid;
@@ -2219,11 +2374,14 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 980px) {
   .art-tab-cards { grid-template-columns: 1fr 1fr; }
   .art-char-grid { grid-template-columns: 1fr; }
+  .swap-grid { grid-template-columns: 1fr; }
   .domain-grid { grid-template-columns: 1fr; }
   .modal-relic-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .art-tab-cards { grid-template-columns: 1fr; }
   .relic-grid { grid-template-columns: 1fr; }
+  .swap-pair { grid-template-columns: 1fr; }
+  .swap-arrow { transform: rotate(90deg); padding: 2px 0; }
   .domain-char-grid { grid-template-columns: 1fr; }
 }

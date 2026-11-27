@@ -695,12 +695,14 @@ let APP = {
   benchGroup: "all",    // all | core | dps | support
   benchStatus: "all",   // all | bad | warn | ok
   benchSort: "score_asc", // score_asc | score_desc | level
-  artTab: "fix",        // fix | reroll | vault | domains
-  artRerollFilter: "all", // all | go | four | rare | core
+  artTab: "swap",       // swap | audit | domains | vault
+  artSwapFilter: "all", // all | same | offset | fix
+  artAuditFilter: "issues", // issues | core
+  artVaultMode: "all",  // all | go | reroll | four
   artSlot: "all",       // all | Hoa | Lông | Cát | Ly | Nón
   artSet: "all",
   artChar: "all",
-  artSort: "cv_desc",   // cv_desc | rolls_desc | lvl_asc
+  artSort: "cv_desc",   // cv_desc | rv_desc | rolls_desc | lvl_asc
   artLimit: 36,
   mode: "teams",
   index: 0,
@@ -1002,6 +1004,78 @@ const SLOT_SHORT_MAP = {
   "Nón Lý Trí": "Nón",
 };
 
+const STAT_SHORT_MAP = {
+  "Tỷ Lệ Bạo Kích": "CR",
+  "Sát Thương Bạo Kích": "CD",
+  "Hiệu Quả Nạp Nguyên Tố": "ER",
+  "Tinh Thông Nguyên Tố": "EM",
+  "Tỷ Lệ Tấn Công": "ATK%",
+  "Tấn Công": "ATK",
+  "Tỷ Lệ HP": "HP%",
+  HP: "HP",
+  "Tỷ Lệ Phòng Ngự": "DEF%",
+  "Phòng Ngự": "DEF",
+  "Tăng Trị Liệu": "Trị Liệu",
+  "Tăng Sát Thương Nguyên Tố Thủy": "ST Thủy",
+  "Tăng Sát Thương Nguyên Tố Hỏa": "ST Hỏa",
+  "Tăng Sát Thương Nguyên Tố Lôi": "ST Lôi",
+  "Tăng Sát Thương Nguyên Tố Băng": "ST Băng",
+  "Tăng Sát Thương Nguyên Tố Phong": "ST Phong",
+  "Tăng Sát Thương Nguyên Tố Nham": "ST Nham",
+  "Tăng Sát Thương Nguyên Tố Thảo": "ST Thảo",
+  "Tăng Sát Thương Vật Lý": "ST Vật Lý",
+};
+
+function shortStatName(name) {
+  return STAT_SHORT_MAP[name] || name || "-";
+}
+
+const ART_BUILD_SPECS = {
+  Neuvillette: { role: "crit", wantSubs: ["CR", "CD", "HP%", "ER"], main: { Cát: ["HP%"], Ly: ["ST Thủy", "HP%"], Nón: ["CR", "CD", "HP%"] } },
+  Furina: { role: "crit", wantSubs: ["CR", "CD", "HP%", "ER"], main: { Cát: ["HP%", "ER"], Ly: ["HP%", "ST Thủy"], Nón: ["CR", "CD", "HP%"] } },
+  Mitya: { role: "crit", wantSubs: ["CR", "CD", "EM", "ATK%", "ER"], main: { Cát: ["EM"], Ly: ["EM", "ST Lôi"], Nón: ["CR", "CD", "EM"] } },
+  "Yae Miko": { role: "crit", wantSubs: ["CR", "CD", "ATK%", "EM"], main: { Cát: ["ATK%", "EM"], Ly: ["ST Lôi", "ATK%"], Nón: ["CR", "CD"] }, preferCR: true },
+  "Hu Tao": { role: "crit", wantSubs: ["CR", "CD", "HP%", "EM"], main: { Cát: ["HP%", "EM"], Ly: ["ST Hỏa"], Nón: ["CR", "CD"] }, preferCR: true },
+  Navia: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "ER"], main: { Cát: ["ATK%"], Ly: ["ST Nham"], Nón: ["CR", "CD"] }, preferCR: true },
+  "Raiden Shogun": { role: "crit", wantSubs: ["CR", "CD", "ER", "ATK%"], main: { Cát: ["ER", "ATK%"], Ly: ["ST Lôi", "ATK%"], Nón: ["CR", "CD"] } },
+  Yelan: { role: "crit", wantSubs: ["CR", "CD", "HP%", "ER"], main: { Cát: ["HP%", "ER"], Ly: ["ST Thủy"], Nón: ["CR", "CD", "HP%"] } },
+  Chiori: { role: "crit", wantSubs: ["CR", "CD", "DEF%"], main: { Cát: ["DEF%"], Ly: ["ST Nham"], Nón: ["CR", "CD"] } },
+  Keqing: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "EM"], main: { Cát: ["ATK%", "EM"], Ly: ["ST Lôi"], Nón: ["CR", "CD"] } },
+  "Kamisato Ayaka": { role: "crit", wantSubs: ["CR", "CD", "ATK%", "ER"], main: { Cát: ["ATK%"], Ly: ["ST Băng"], Nón: ["CD", "ATK%"] } },
+  Yoimiya: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "EM"], main: { Cát: ["ATK%", "EM"], Ly: ["ST Hỏa"], Nón: ["CR", "CD"] } },
+  Ganyu: { role: "crit", wantSubs: ["CR", "CD", "EM", "ATK%"], main: { Cát: ["EM", "ATK%"], Ly: ["ST Băng"], Nón: ["CR", "CD"] }, preferEM: 150 },
+  Fischl: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "EM"], main: { Cát: ["ATK%", "EM"], Ly: ["ST Lôi"], Nón: ["CR", "CD"] }, preferCR: true },
+  Xiangling: { role: "crit", wantSubs: ["CR", "CD", "ER", "EM", "ATK%"], main: { Cát: ["ER", "EM", "ATK%"], Ly: ["ST Hỏa"], Nón: ["CR", "CD"] } },
+  Xingqiu: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "ER"], main: { Cát: ["ATK%", "ER"], Ly: ["ST Thủy"], Nón: ["CR", "CD"] } },
+  Beidou: { role: "crit", wantSubs: ["CR", "CD", "ER", "ATK%"], main: { Cát: ["ER", "ATK%"], Ly: ["ST Lôi"], Nón: ["CR", "CD"] }, preferER: 155 },
+  Ningguang: { role: "crit", wantSubs: ["CR", "CD", "ATK%"], main: { Cát: ["ATK%"], Ly: ["ST Nham"], Nón: ["CR", "CD"] }, preferCR: true },
+  Eula: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "ER"], main: { Cát: ["ATK%"], Ly: ["ST Vật Lý"], Nón: ["CR", "CD"] }, preferCR: true },
+  Xianyun: { role: "support", wantSubs: ["ATK%", "ER"], main: { Cát: ["ER", "ATK%"], Ly: ["ATK%"], Nón: ["ATK%"] }, preferER: 155 },
+  Chevreuse: { role: "support", wantSubs: ["HP%", "ER"], main: { Cát: ["HP%"], Ly: ["HP%"], Nón: ["HP%"] } },
+  "Kuki Shinobu": { role: "support", wantSubs: ["EM", "HP%"], main: { Cát: ["EM"], Ly: ["EM"], Nón: ["EM"] } },
+  Nilou: { role: "support", wantSubs: ["HP%", "EM", "ER"], main: { Cát: ["HP%"], Ly: ["HP%"], Nón: ["HP%"] } },
+  Aino: { role: "support", wantSubs: ["CR", "ER", "EM"], main: { Cát: ["ER", "EM"], Ly: ["EM", "ST Thủy"], Nón: ["CR"] }, preferCR: true },
+  Jean: { role: "support", wantSubs: ["ATK%", "ER", "CR"], main: { Cát: ["ER", "ATK%"], Ly: ["ATK%"], Nón: ["ATK%", "Trị Liệu", "CR"] } },
+  "Kaedehara Kazuha": { role: "support", wantSubs: ["EM", "ER"], main: { Cát: ["EM", "ER"], Ly: ["EM"], Nón: ["EM"] } },
+  Nahida: { role: "support", wantSubs: ["EM", "CR", "CD", "ER"], main: { Cát: ["EM"], Ly: ["EM", "ST Thảo"], Nón: ["EM", "CR", "CD"] } },
+  Zhongli: { role: "support", wantSubs: ["HP%", "CR", "CD"], main: { Cát: ["HP%"], Ly: ["HP%", "ST Nham"], Nón: ["HP%", "CR"] } },
+  Bennett: { role: "support", wantSubs: ["ER", "HP%"], main: { Cát: ["ER", "HP%"], Ly: ["HP%"], Nón: ["Trị Liệu", "HP%"] } },
+  "Sangonomiya Kokomi": { role: "support", wantSubs: ["HP%", "ER", "EM"], main: { Cát: ["HP%", "EM"], Ly: ["HP%", "EM"], Nón: ["Trị Liệu", "EM", "HP%"] } },
+  Rosaria: { role: "crit", wantSubs: ["CR", "ER", "ATK%", "CD"], main: { Cát: ["ER", "ATK%"], Ly: ["ST Băng", "ATK%"], Nón: ["CR"] } },
+};
+
+const SWAP_TARGETS = [
+  "Neuvillette", "Furina", "Mitya", "Yae Miko", "Navia", "Raiden Shogun", "Yelan",
+  "Hu Tao", "Kamisato Ayaka", "Yoimiya", "Ganyu", "Keqing", "Chiori", "Xianyun",
+  "Nilou", "Kuki Shinobu", "Chevreuse", "Fischl", "Jean", "Xingqiu", "Xiangling", "Bennett",
+];
+
+const PROTECTED_OWNERS = new Set([
+  ...SWAP_TARGETS,
+  "Kaedehara Kazuha", "Nahida", "Zhongli", "Sangonomiya Kokomi",
+  "Mona", "Rosaria", "Yun Jin", "Collei", "Eula",
+]);
+
 const DOMAIN_PLANS = [
   {
     title: "Kết Cục Của Tội Lỗi (Fontaine)",
@@ -1014,6 +1088,13 @@ const DOMAIN_PLANS = [
       { char: "Fischl", setKey: "gt", match: "Đoàn Kịch" },
       { char: "Chiori", setKey: "gt", match: "Đoàn Kịch" },
     ],
+    lootRules: {
+      keep: [
+        { set: "Thợ Săn", text: "Cát HP% (Neuv) · Cát EM (Hu Tao) · Ly Thủy/Hỏa/HP% · Nón STBK/CR (trần CR Hu Tao ≤64%)" },
+        { set: "Đoàn Kịch", text: "Cát HP%/ER% (Furina) · Cát ATK%/EM (Fischl) · Cát DEF% (Chiori) · Ly HP%/Lôi/Nham · Nón CR/STBK" },
+      ],
+      trash: "Đốt ép Tráp: Cát/Ly DEF% trên Thợ Săn · Cát ATK% không Crit kép · Mảnh 3 dòng không có Crit/HP%/ER/EM.",
+    },
   },
   {
     title: "Thorny Crown (Mondstadt)",
@@ -1024,6 +1105,12 @@ const DOMAIN_PLANS = [
       { char: "Mitya", setKey: "dids", match: "Ảo Tưởng" },
       { char: "Yae Miko", setKey: "dids", match: "Ảo Tưởng" },
     ],
+    lootRules: {
+      keep: [
+        { set: "Ảo Tưởng", text: "Cát EM (Mitya) & ATK% (Yae) · Ly EM/Lôi/ATK% · Nón CR/STBK (ưu tiên Nón CR cho Yae Ma Nữ)" },
+      ],
+      trash: "Đốt ép Tráp: Cát/Ly HP% & DEF% · Nón Trị Liệu · Mảnh 3 dòng không có Crit/EM/ATK%.",
+    },
   },
   {
     title: "Tráp Thánh (Strongbox · 0 Nhựa bí cảnh)",
@@ -1037,6 +1124,13 @@ const DOMAIN_PLANS = [
       { char: "Navia", setKey: "nw", match: "Tiếng Đêm" },
       { char: "Nilou", setKey: "hp2", match: "Thiên Nham|Vầng Sáng", need: 2 },
     ],
+    lootRules: {
+      keep: [
+        { set: "Bóng Hình", text: "Cát ER% + Ly/Nón ATK% (Xianyun/Jean) · Hoặc giữ mọi mảnh EM cho hệ Phong" },
+        { set: "Tông Thất / Tiếng Đêm", text: "3 món HP% (Chevreuse) · Cát ATK% + Ly Nham + Nón CR% (Navia)" },
+      ],
+      trash: "Chỉ đổ phôi rác 5★ từ Fontaine / Mondstadt — tuyệt đối không tốn nhựa đi bí cảnh cũ.",
+    },
   },
   {
     title: "Nod-Krai · Tạm Hoãn",
@@ -1046,8 +1140,55 @@ const DOMAIN_PLANS = [
     targets: [
       { char: "Aino", setKey: "silken", match: "Khúc Ca" },
     ],
+    lootRules: {
+      keep: [
+        { set: "Khúc Ca", text: "Tạm chưa farm · Chờ roll 5★ Nod-Krai (Columbina) mới giữ Cát ER%/EM & Nón CR%." },
+      ],
+      trash: "Hiện tại giữ Aino Lv.80 với đồ sẵn có hoặc 4pc Giáo Quan nếu đi đội phản ứng.",
+    },
   },
 ];
+
+function calcUsefulRolls(ar, charName) {
+  const spec = ART_BUILD_SPECS[charName];
+  const want = new Set(spec?.wantSubs || ["CR", "CD", "ATK%", "ER", "EM"]);
+  let total = 0;
+  (ar?.substats || []).forEach((s) => {
+    const k = shortStatName(s.name);
+    if (want.has(k)) total += 1 + Number(s.rolls || 0);
+  });
+  return total;
+}
+
+function getSlotMainIssue(ar, ownerChar) {
+  const name = ownerChar?.name || "";
+  const spec = ART_BUILD_SPECS[name];
+  if (!spec || !ar) return null;
+  const slotShort = SLOT_SHORT_MAP[ar.slot] || ar.slot || "";
+  if (!["Cát", "Ly", "Nón"].includes(slotShort)) return null;
+  const mainShort = shortStatName(ar.main_stat);
+  const allowed = spec.main?.[slotShort];
+  if (allowed && !allowed.includes(mainShort)) {
+    return `${slotShort} ${mainShort} → ${allowed.join("/")}`;
+  }
+  if (spec.preferCR && slotShort === "Nón" && mainShort === "CD") {
+    const isHuTaoMH = name === "Hu Tao" && /4pc\s+Thợ Săn/i.test(ownerChar?.artifact_sets || "");
+    if (!isHuTaoMH && parseStatNum(stat(ownerChar, "Tỷ Lệ Bạo Kích")) < 62) {
+      return `Nón STBK → CR%`;
+    }
+  }
+  if (spec.preferER && slotShort === "Cát" && mainShort !== "ER") {
+    if (parseStatNum(stat(ownerChar, "Hiệu Quả Nạp Nguyên Tố")) < spec.preferER) {
+      return `Cát ${mainShort} → ER%`;
+    }
+  }
+  if (spec.preferEM && slotShort === "Cát" && mainShort !== "EM") {
+    if (parseStatNum(stat(ownerChar, "Tinh Thông Nguyên Tố")) < spec.preferEM) {
+      return `Cát ${mainShort} → EM`;
+    }
+  }
+  return null;
+}
 
 function evalArtifact(ar, ownerChar) {
   const subs = ar?.substats || [];
@@ -1085,6 +1226,11 @@ function evalArtifact(ar, ownerChar) {
   const isCore = CHAR_BENCHMARKS[ownerName]?.group === "core";
   const isTempSet = Boolean(TARGET_SET_CHECK[ownerName] && !TARGET_SET_CHECK[ownerName](ownerChar?.artifact_sets || ""));
   const cvTier = cv >= 40 ? "god" : cv >= 30 ? "high" : cv >= 20 ? "mid" : "low";
+  const spec = ART_BUILD_SPECS[ownerName];
+  const role = spec?.role || "crit";
+  const rvRolls = calcUsefulRolls(ar, ownerName);
+  const rvTier = rvRolls >= 7 ? "god" : rvRolls >= 5 ? "high" : rvRolls >= 3 ? "mid" : "low";
+  const mainIssue = getSlotMainIssue(ar, ownerChar);
 
   let rerollVerdict = "none";
   let rerollReason = "";
@@ -1112,6 +1258,10 @@ function evalArtifact(ar, ownerChar) {
     cd,
     cv,
     cvTier,
+    role,
+    rvRolls,
+    rvTier,
+    mainIssue,
     totRolls,
     crRolls,
     cdRolls,
@@ -1137,25 +1287,159 @@ function evalAllArtifacts() {
   return out;
 }
 
-function auditCharArtifacts() {
+function findZeroResinSwaps(allArts) {
+  const donors = allArts.filter((x) => x.rarity === 5 && x.level >= 20 && !PROTECTED_OWNERS.has(x.owner.name));
+  const candidates = [];
+
+  SWAP_TARGETS.forEach((targetName) => {
+    const target = byName(targetName);
+    const spec = ART_BUILD_SPECS[targetName];
+    if (!target || !spec) return;
+    const arts = target.artifacts || [];
+    const setCounts = {};
+    arts.forEach((a) => {
+      const s = a.set || "";
+      setCounts[s] = (setCounts[s] || 0) + 1;
+    });
+    const hasFiveSet = Object.values(setCounts).some((v) => v >= 5);
+
+    arts.forEach((rawCur) => {
+      const cur = evalArtifact(rawCur, target);
+      const isOffSet = (setCounts[cur.ar.set] || 0) <= 1 || hasFiveSet;
+      const curMainIssue = getSlotMainIssue(cur.ar, target);
+
+      donors.forEach((cand) => {
+        if (cand.slotShort !== cur.slotShort) return;
+        const sameSet = cand.ar.set === cur.ar.set;
+        if (!sameSet && !isOffSet) return;
+        if (["Cát", "Ly", "Nón"].includes(cur.slotShort)) {
+          const candMain = shortStatName(cand.ar.main_stat);
+          const allowed = spec.main?.[cur.slotShort];
+          if (allowed && !allowed.includes(candMain)) return;
+          if (getSlotMainIssue(cand.ar, { ...target, artifact_sets: target.artifact_sets || "" })) return;
+        }
+        const candRvForTarget = calcUsefulRolls(cand.ar, targetName);
+        const cvGain = +(cand.cv - cur.cv).toFixed(1);
+        const rvGain = candRvForTarget - cur.rvRolls;
+
+        let kind = null;
+        let headline = "";
+        let score = 0;
+        if (cur.level < 20 && (cand.cv >= 15 || candRvForTarget >= 4)) {
+          kind = "fix";
+          headline = `Thay +${cur.level} → +20`;
+          score = 70 + cand.cv + rvGain * 6 + (sameSet ? 12 : 0);
+        } else if (curMainIssue) {
+          if (spec.role === "support" ? candRvForTarget >= 2 : (cand.cv >= 12 || candRvForTarget >= 4)) {
+            kind = "fix";
+            headline = `Sửa ${curMainIssue}`;
+            score = 65 + Math.max(0, cvGain) + rvGain * 7 + (sameSet ? 10 : 0);
+          }
+        } else if (spec.role === "crit" && cvGain >= 8) {
+          kind = sameSet ? "same" : "offset";
+          headline = `+${cvGain.toFixed(1)} CV`;
+          score = cvGain * 2 + (sameSet ? 12 : 0) + rvGain * 3;
+        } else if (spec.role === "support" && rvGain >= 2) {
+          kind = sameSet ? "same" : "offset";
+          headline = `+${rvGain} dòng tốt`;
+          score = rvGain * 14 + (sameSet ? 10 : 0) + Math.max(0, cvGain) * 0.3;
+        }
+        if (!kind) return;
+
+        candidates.push({
+          target,
+          donor: cand.owner,
+          cur,
+          cand,
+          sameSet,
+          isOffSet,
+          hasFiveSet,
+          kind,
+          headline,
+          cvGain,
+          rvGain,
+          candRvForTarget,
+          score,
+        });
+      });
+    });
+  });
+
+  candidates.sort((a, b) => b.score - a.score || b.cvGain - a.cvGain || b.rvGain - a.rvGain);
+  const usedDonors = new Set();
+  const usedTargets = new Set();
+  const perTargetCount = new Map();
+  const usedFiveOffset = new Set();
+  const picked = [];
+
+  for (const item of candidates) {
+    const dk = `${item.donor.name}::${item.cand.slotShort}`;
+    const tk = `${item.target.name}::${item.cur.slotShort}`;
+    if (usedDonors.has(dk) || usedTargets.has(tk)) continue;
+    if ((perTargetCount.get(item.target.name) || 0) >= 2) continue;
+    if (item.hasFiveSet && !item.sameSet) {
+      if (usedFiveOffset.has(item.target.name)) continue;
+      usedFiveOffset.add(item.target.name);
+    }
+    usedDonors.add(dk);
+    usedTargets.add(tk);
+    perTargetCount.set(item.target.name, (perTargetCount.get(item.target.name) || 0) + 1);
+    picked.push(item);
+  }
+  return picked;
+}
+
+function auditCharArtifactsSmart() {
   const rows = [];
   (APP.data?.characters || []).forEach((c) => {
+    const spec = ART_BUILD_SPECS[c.name];
+    if ((c.level || 0) < 70 && !spec) return;
     if ((c.level || 0) < 70) return;
     const arts = c.artifacts || [];
     const missing = Math.max(0, 5 - arts.length);
     const lowArts = arts.filter((a) => Number(a.level || 0) < 20);
-    if (missing === 0 && lowArts.length === 0) return;
     const zeroCount = lowArts.filter((a) => Number(a.level || 0) === 0).length;
+    const mainIssues = [];
+    let weakestSlot = null;
+    let weakestScore = Infinity;
+
+    arts.forEach((a) => {
+      const ev = evalArtifact(a, c);
+      if (ev.mainIssue) mainIssues.push({ slot: ev.slotShort, msg: ev.mainIssue });
+      if (spec) {
+        const pieceScore = ev.level < 20 || ev.mainIssue
+          ? -100 + ev.level
+          : spec.role === "support"
+            ? ev.rvRolls * 10 + (ev.isCore ? 0 : 0)
+            : ev.cv + ev.rvRolls * 2;
+        if (pieceScore < weakestScore) {
+          weakestScore = pieceScore;
+          weakestSlot = ev.slotShort;
+        }
+      }
+    });
+
+    const isCore = CHAR_BENCHMARKS[c.name]?.group === "core" || Boolean(spec);
+    const hasIssues = missing > 0 || lowArts.length > 0 || mainIssues.length > 0;
+    if (!hasIssues && !spec) return;
+
     rows.push({
       c,
+      spec,
       missing,
       lowArts,
       zeroCount,
+      mainIssues,
+      weakestSlot,
+      hasIssues,
       isCore: CHAR_BENCHMARKS[c.name]?.group === "core",
     });
   });
+
   rows.sort((a, b) => (
+    Number(b.hasIssues) - Number(a.hasIssues) ||
     Number(b.isCore) - Number(a.isCore) ||
+    b.mainIssues.length - a.mainIssues.length ||
     b.missing - a.missing ||
     b.zeroCount - a.zeroCount ||
     b.lowArts.length - a.lowArts.length ||
@@ -1177,32 +1461,6 @@ function evalDomainPlans() {
       return { ...tg, c, count, need, pct: Math.round((clamped / need) * 100), tone, setMeta: SET_META[tg.setKey] };
     }),
   }));
-}
-
-const STAT_SHORT_MAP = {
-  "Tỷ Lệ Bạo Kích": "CR",
-  "Sát Thương Bạo Kích": "CD",
-  "Hiệu Quả Nạp Nguyên Tố": "ER",
-  "Tinh Thông Nguyên Tố": "EM",
-  "Tỷ Lệ Tấn Công": "ATK%",
-  "Tấn Công": "ATK",
-  "Tỷ Lệ HP": "HP%",
-  HP: "HP",
-  "Tỷ Lệ Phòng Ngự": "DEF%",
-  "Phòng Ngự": "DEF",
-  "Tăng Trị Liệu": "Trị Liệu",
-  "Tăng Sát Thương Nguyên Tố Thủy": "ST Thủy",
-  "Tăng Sát Thương Nguyên Tố Hỏa": "ST Hỏa",
-  "Tăng Sát Thương Nguyên Tố Lôi": "ST Lôi",
-  "Tăng Sát Thương Nguyên Tố Băng": "ST Băng",
-  "Tăng Sát Thương Nguyên Tố Phong": "ST Phong",
-  "Tăng Sát Thương Nguyên Tố Nham": "ST Nham",
-  "Tăng Sát Thương Nguyên Tố Thảo": "ST Thảo",
-  "Tăng Sát Thương Vật Lý": "ST Vật Lý",
-};
-
-function shortStatName(name) {
-  return STAT_SHORT_MAP[name] || name || "-";
 }
 
 function renderRingGauge(pct, colorVar, label, size = 44) {
@@ -1254,11 +1512,13 @@ function renderRollDots(critRolls, badRolls) {
 
 const FIVE_SLOT_ORDER = ["Hoa", "Lông", "Cát", "Ly", "Nón"];
 
-function renderVisualSlotTiles(char) {
+function renderVisualSlotTiles(char, auditRow) {
   const bySlot = new Map();
   (char?.artifacts || []).forEach((ar) => {
     bySlot.set(SLOT_SHORT_MAP[ar.slot] || ar.slot, ar);
   });
+  const weakSlot = auditRow?.weakestSlot;
+  const spec = auditRow?.spec;
   return `<div class="slot-tile-strip">${FIVE_SLOT_ORDER.map((sl) => {
     const ar = bySlot.get(sl);
     if (!ar) {
@@ -1272,11 +1532,22 @@ function renderVisualSlotTiles(char) {
     const lvl = Number(ar.level || 0);
     const isLow = lvl < 20;
     const ev = evalArtifact(ar, char);
+    const isWrong = Boolean(ev.mainIssue);
+    const isWeak = !isWrong && !isLow && weakSlot === sl;
+    const cls = isWrong ? "tile-wrong" : isLow ? "tile-low" : isWeak ? "tile-weak" : "tile-ok";
+    const metric = spec?.role === "support" ? `${ev.rvRolls}d` : `${ev.cv.toFixed(0)}cv`;
+    const tip = [
+      `${sl} ${shortStatName(ar.main_stat)} (${ar.set})`,
+      `+${lvl}`,
+      `${ev.cv.toFixed(1)} CV`,
+      `${ev.rvRolls} dòng hữu ích`,
+      ev.mainIssue ? `⚠ ${ev.mainIssue}` : isWeak ? "Khe yếu nhất" : "",
+    ].filter(Boolean).join(" · ");
     return `
-      <div class="slot-tile ${isLow ? "tile-low" : "tile-ok"}" title="${sl} ${shortStatName(ar.main_stat)} (${ar.set}) · +${lvl} · ${ev.cv.toFixed(1)} CV">
+      <div class="slot-tile ${cls}" title="${esc(tip)}">
         ${ar.icon ? `<img src="${esc(ar.icon)}" alt="${esc(sl)}" loading="lazy" referrerpolicy="no-referrer" />` : `<span class="st-empty">${sl}</span>`}
-        <span class="st-lv ${isLow ? "lv-bad" : ""}">+${lvl}</span>
-        <span class="st-slot">${sl}</span>
+        <span class="st-lv ${isWrong ? "lv-wrong" : isLow ? "lv-bad" : ""}">${isWrong ? "!" : `+${lvl}`}</span>
+        <span class="st-slot">${sl} <em class="st-metric">${metric}</em></span>
       </div>
     `;
   }).join("")}</div>`;
@@ -1316,9 +1587,20 @@ function renderCvDistBar(allArts) {
 }
 
 function renderRelicCard(x, mode = "vault") {
+  const isSup = x.role === "support" && mode !== "reroll";
   const tierAura = mode === "reroll"
     ? (x.rerollVerdict === "go" ? "rc-go" : "rc-hold")
-    : `rc-${x.cvTier}`;
+    : `rc-${isSup ? x.rvTier : x.cvTier}`;
+  const mainPill = isSup
+    ? `<span class="cv-pill cv-${x.rvTier}">${x.rvRolls} dòng tốt</span>`
+    : `<span class="cv-pill cv-${x.cvTier}">${x.cv.toFixed(1)} CV</span>`;
+  const subPill = x.is4Liner
+    ? `<span class="four-pill is-4">4 dòng</span>`
+    : mode === "reroll"
+      ? `<span class="four-pill">3 dòng</span>`
+      : isSup
+        ? `<span class="four-pill">${x.cv.toFixed(0)} CV</span>`
+        : `<span class="four-pill">${x.rvRolls} dòng tốt</span>`;
   return `
     <article class="relic-card ${tierAura}" data-open-char="${esc(x.owner.name)}">
       <div class="rc-head">
@@ -1334,8 +1616,8 @@ function renderRelicCard(x, mode = "vault") {
           <small>${esc(x.owner.name)} · ${esc(x.slotShort)} · ${esc(x.ar.set)}</small>
         </div>
         <div class="rc-badges">
-          <span class="cv-pill cv-${x.cvTier}">${x.cv.toFixed(1)} CV</span>
-          ${x.is4Liner ? `<span class="four-pill is-4">4 dòng</span>` : mode === "reroll" ? `<span class="four-pill">3 dòng</span>` : ""}
+          ${mainPill}
+          ${subPill}
         </div>
       </div>
       ${mode === "reroll" ? `<div class="rc-roll-strip">${renderRollDots(x.critRolls, x.badRolls)}<span class="rc-leak-tag">Lệch ${x.badRolls}</span></div>` : ""}
@@ -1345,19 +1627,97 @@ function renderRelicCard(x, mode = "vault") {
   `;
 }
 
+function renderSwapSubLine(subs, wantList) {
+  const want = new Set(wantList || ["CR", "CD", "ATK%", "ER", "EM"]);
+  return (subs || [])
+    .map((s) => {
+      const k = shortStatName(s.name);
+      const cls = (k === "CR" || k === "CD") ? "is-crit" : want.has(k) ? "is-good" : "is-flat";
+      return `<span class="sw-sub ${cls}">${esc(k)} +${esc(s.value)}</span>`;
+    })
+    .join("");
+}
+
+function renderSwapCard(sw) {
+  const el = sw.target.element || "Geo";
+  const spec = ART_BUILD_SPECS[sw.target.name];
+  const scopeTag = sw.kind === "fix"
+    ? `<span class="art-flag flag-bad">Sửa lỗi</span>`
+    : sw.sameSet
+      ? `<span class="art-flag flag-ok">Cùng bộ</span>`
+      : `<span class="art-flag flag-warn">Off-set</span>`;
+  const curMetric = spec?.role === "support" ? `${sw.cur.rvRolls} dòng` : `${sw.cur.cv.toFixed(1)} CV`;
+  const newMetric = spec?.role === "support" ? `${sw.candRvForTarget} dòng` : `${sw.cand.cv.toFixed(1)} CV`;
+
+  return `
+    <article class="swap-card" style="--el: var(--el-${esc(el)}, 211,188,142);">
+      <div class="swap-head">
+        <div class="swap-target" data-open-char="${esc(sw.target.name)}">
+          ${sw.target.icon ? `<img class="swap-face" src="${esc(sw.target.icon)}" alt="${esc(sw.target.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+          <div>
+            <strong>${esc(sw.target.name)} · ${esc(sw.cur.slotShort)}</strong>
+            <small>${sw.sameSet ? `Giữ nguyên bộ ${esc(sw.cand.ar.set)}` : sw.hasFiveSet ? `Đang 5pc → lắp Off-set giữ nguyên 4pc` : `Khe Off-set tự do`}</small>
+          </div>
+        </div>
+        <div class="swap-head-right">
+          ${scopeTag}
+          <span class="swap-gain-pill">${esc(sw.headline)}</span>
+        </div>
+      </div>
+
+      <div class="swap-pair">
+        <div class="swap-box is-cur" data-open-char="${esc(sw.target.name)}">
+          <div class="sb-top">
+            <span class="sb-role">Đang đeo</span>
+            <span class="sb-metric">${esc(curMetric)}</span>
+          </div>
+          <div class="sb-piece">
+            ${sw.cur.ar.icon ? `<img src="${esc(sw.cur.ar.icon)}" alt="" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+            <div>
+              <strong>${esc(shortStatName(sw.cur.ar.main_stat))} ${esc(sw.cur.ar.main_val)} <em>+${sw.cur.level}</em></strong>
+              <small>${esc(sw.cur.ar.set)}</small>
+            </div>
+          </div>
+          <div class="swap-subs-line">${renderSwapSubLine(sw.cur.ar.substats, spec?.wantSubs)}</div>
+        </div>
+
+        <div class="swap-arrow" aria-hidden="true">→</div>
+
+        <div class="swap-box is-new" data-open-char="${esc(sw.donor.name)}">
+          <div class="sb-top">
+            <span class="sb-role">Lấy từ <b>${esc(sw.donor.name)}</b> (Lv.${sw.donor.level})</span>
+            <span class="sb-metric is-up">${esc(newMetric)}</span>
+          </div>
+          <div class="sb-piece">
+            ${sw.cand.ar.icon ? `<img src="${esc(sw.cand.ar.icon)}" alt="" loading="lazy" referrerpolicy="no-referrer" />` : ""}
+            <div>
+              <strong>${esc(shortStatName(sw.cand.ar.main_stat))} ${esc(sw.cand.ar.main_val)} <em>+${sw.cand.level}</em></strong>
+              <small>${esc(sw.cand.ar.set)}</small>
+            </div>
+          </div>
+          <div class="swap-subs-line">${renderSwapSubLine(sw.cand.ar.substats, spec?.wantSubs)}</div>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
 function renderArtifactsView() {
   const allArts = evalAllArtifacts();
-  const auditList = auditCharArtifacts();
-  const lowPiecesCount = auditList.reduce((acc, r) => acc + r.lowArts.length + r.missing, 0);
-  const max20Count = allArts.filter((x) => x.level >= 20).length;
-  const max20Pct = allArts.length ? Math.round((max20Count / allArts.length) * 100) : 0;
+  const swaps = findZeroResinSwaps(allArts);
+  const sameSetCount = swaps.filter((s) => s.sameSet).length;
+  const fixSwapCount = swaps.filter((s) => s.kind === "fix").length;
+
+  const auditAll = auditCharArtifactsSmart();
+  const issueChars = auditAll.filter((r) => r.hasIssues);
+  const wrongMainTotal = issueChars.reduce((acc, r) => acc + r.mainIssues.length, 0);
+  const lowPiecesCount = issueChars.reduce((acc, r) => acc + r.lowArts.length + r.missing, 0);
+  const cleanPct = auditAll.length ? Math.round(((auditAll.length - issueChars.length) / auditAll.length) * 100) : 100;
 
   const rerollAll = allArts
     .filter((x) => x.rerollVerdict !== "none")
     .sort((a, b) => (a.rerollVerdict === "go" ? 0 : 1) - (b.rerollVerdict === "go" ? 0 : 1) || b.is4Liner - a.is4Liner || b.badRolls - a.badRolls || b.cv - a.cv);
   const goCount = rerollAll.filter((x) => x.rerollVerdict === "go").length;
-  const goPct = rerollAll.length ? Math.round((goCount / rerollAll.length) * 100) : 0;
-
   const topCvCount = allArts.filter((x) => x.cv >= 30).length;
   const topCvPct = allArts.length ? Math.round((topCvCount / allArts.length) * 100) : 0;
   const fourLinerCount = allArts.filter((x) => x.is4Liner).length;
@@ -1369,34 +1729,71 @@ function renderArtifactsView() {
   const pendingDomainChars = domains.slice(0, 3).reduce((acc, d) => acc + d.rows.filter((r) => r.count < r.need).length, 0);
 
   const tabCards = [
-    { key: "fix", cls: "kpi-bad", color: "var(--bad)", pct: max20Pct, ring: `${max20Pct}%`, title: "Cần Xử Lý", val: `${auditList.length} NV`, sub: `${lowPiecesCount} khe thiếu / <+20` },
-    { key: "reroll", cls: "kpi-warn", color: "var(--warn)", pct: goPct, ring: `${goCount}/${rerollAll.length}`, title: "Bụi Khai Sáng", val: `${goCount} đáng cứu`, sub: `Trong ${rerollAll.length} mảnh lệch Crit` },
-    { key: "vault", cls: "kpi-ok", color: "var(--ok)", pct: topCvPct, ring: `${topCvPct}%`, title: "Kho & Top CV", val: `${topCvCount} món ≥30`, sub: `${allArts.length} món · ${fourLinerCount} 4-dòng` },
-    { key: "domains", cls: "kpi-gold", color: "var(--gold)", pct: domPct, ring: `${haveDomainPieces}/${totalDomainPieces}`, title: "Bí Cảnh & Tráp", val: `${pendingDomainChars} NV chờ`, sub: "Tiến độ mảnh x/4" },
+    { key: "swap", cls: "kpi-ok", color: "var(--ok)", pct: Math.min(100, swaps.length * 8), ring: `${swaps.length}`, title: "Tráo Đồ 0 Nhựa", val: `${swaps.length} kèo đổi`, sub: `${sameSetCount} cùng bộ · ${fixSwapCount} sửa lỗi` },
+    { key: "audit", cls: "kpi-bad", color: "var(--bad)", pct: cleanPct, ring: `${cleanPct}%`, title: "Lỗi Build & Khe Yếu", val: `${issueChars.length} NV lỗi`, sub: `${wrongMainTotal} sai dòng · ${lowPiecesCount} thiếu/<20` },
+    { key: "domains", cls: "kpi-gold", color: "var(--gold)", pct: domPct, ring: `${haveDomainPieces}/${totalDomainPieces}`, title: "Bí Cảnh & Khóa Đồ", val: `${pendingDomainChars} NV chờ`, sub: "Tiến độ x/4 + bảng khóa" },
+    { key: "vault", cls: "kpi-warn", color: "var(--warn)", pct: topCvPct, ring: `${topCvPct}%`, title: "Kho & Bụi Khai Sáng", val: `${goCount} đáng cứu`, sub: `${allArts.length} món · ${topCvCount} món ≥30 CV` },
   ];
 
   let bodyHtml = "";
 
-  if (APP.artTab === "fix") {
-    const coreAudit = auditList.filter((r) => r.isCore);
-    const otherAudit = auditList.filter((r) => !r.isCore);
-    const renderFixGroup = (title, toneCls, rows) => {
+  if (APP.artTab === "swap") {
+    const sFilters = [
+      ["all", `Tất cả (${swaps.length})`],
+      ["fix", `Sửa lỗi / +0 (${swaps.filter((s) => s.kind === "fix").length})`],
+      ["same", `Cùng bộ (${swaps.filter((s) => s.kind !== "fix" && s.sameSet).length})`],
+      ["offset", `Khe Off-set (${swaps.filter((s) => s.kind !== "fix" && !s.sameSet).length})`],
+    ];
+    const shownSwaps = swaps.filter((s) => {
+      if (APP.artSwapFilter === "fix") return s.kind === "fix";
+      if (APP.artSwapFilter === "same") return s.kind !== "fix" && s.sameSet;
+      if (APP.artSwapFilter === "offset") return s.kind !== "fix" && !s.sameSet;
+      return true;
+    });
+    bodyHtml = `
+      <div class="art-rule-bar">
+        <strong>Tráo Đồ 0 Nhựa:</strong> Chỉ mượn mảnh 5★ +20 đang nằm trên <b>nhân vật dự bị</b> (Thoma, Barbara, Candace, Kachina…) — <b>không</b> lấy đồ của nhân vật đang dùng và luôn giữ nguyên bộ 4pc của người nhận.
+      </div>
+      <div class="art-controls">
+        <div class="filter-group">
+          ${sFilters.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artSwapFilter === k ? "active" : ""}" data-art-swap-filter="${k}">${esc(lbl)}</button>`).join("")}
+        </div>
+      </div>
+      ${shownSwaps.length ? `<div class="swap-grid">${shownSwaps.map(renderSwapCard).join("")}</div>` : `<div class="empty-done">Không còn kèo tráo đồ nào khớp bộ lọc này.</div>`}
+    `;
+  } else if (APP.artTab === "audit") {
+    const auditFilters = [
+      ["issues", `Có lỗi cần sửa (${issueChars.length})`],
+      ["core", `Tất cả NV chính · Soi khe yếu (${auditAll.filter((r) => r.spec).length})`],
+    ];
+    const shownRows = APP.artAuditFilter === "core" ? auditAll.filter((r) => r.spec) : issueChars;
+    const coreAudit = shownRows.filter((r) => r.isCore || r.spec);
+    const otherAudit = shownRows.filter((r) => !r.isCore && !r.spec);
+
+    const renderAuditGroup = (title, toneCls, rows) => {
       if (!rows.length) return "";
       return `
         <section class="art-group-block">
           <div class="art-group-head">
             <h3 class="${toneCls}">${esc(title)} <em>(${rows.length})</em></h3>
-            <span>5 ô icon tương ứng Hoa · Lông · Cát · Ly · Nón — bấm thẻ để xem chi tiết</span>
+            <span>Chấm than (!) = sai dòng chính · Viền tím = khe yếu nhất nên thay trước</span>
           </div>
           <div class="art-char-grid">
             ${rows
               .map((r) => {
                 const el = r.c.element || "Geo";
                 const flags = [];
+                if (r.mainIssues.length > 0) flags.push(`<span class="art-flag flag-bad">${r.mainIssues.length} sai dòng</span>`);
                 if (r.missing > 0) flags.push(`<span class="art-flag flag-bad">Thiếu ${r.missing}</span>`);
                 if (r.zeroCount > 0) flags.push(`<span class="art-flag flag-bad">${r.zeroCount} món +0</span>`);
                 const midLow = r.lowArts.filter((a) => Number(a.level || 0) > 0).length;
                 if (midLow > 0) flags.push(`<span class="art-flag flag-warn">${midLow} chưa +20</span>`);
+                if (!flags.length && r.weakestSlot) flags.push(`<span class="art-flag flag-purple">Yếu: ${esc(r.weakestSlot)}</span>`);
+                const issueLine = r.mainIssues.length
+                  ? `Cần đổi: ${r.mainIssues.map((m) => m.msg).join(" · ")}`
+                  : r.weakestSlot
+                    ? `Khe yếu nhất hiện tại: ${r.weakestSlot} (ưu tiên thay/farm trước)`
+                    : "";
                 return `
                   <article class="art-char-card" style="--el: var(--el-${esc(el)}, 211,188,142);" data-open-char="${esc(r.c.name)}">
                     ${r.c.splash ? `<img class="acc-splash" src="${esc(r.c.splash)}" alt="" loading="lazy" referrerpolicy="no-referrer" />` : ""}
@@ -1411,7 +1808,8 @@ function renderArtifactsView() {
                         </div>
                         <div class="art-fix-flags">${flags.join("")}</div>
                       </div>
-                      ${renderVisualSlotTiles(r.c)}
+                      ${renderVisualSlotTiles(r.c, r)}
+                      ${issueLine ? `<div class="acc-issues-line ${r.mainIssues.length ? "is-bad" : ""}">${esc(issueLine)}</div>` : ""}
                     </div>
                   </article>
                 `;
@@ -1421,108 +1819,28 @@ function renderArtifactsView() {
         </section>
       `;
     };
-    bodyHtml = auditList.length
-      ? `${renderFixGroup("★ Nhân vật ưu tiên", "tone-bad-txt", coreAudit)}${renderFixGroup("Nhân vật Lv.70+ khác (Nhà Hát / Dự bị)", "tone-muted-txt", otherAudit)}`
-      : `<div class="empty-done">✓ Toàn bộ nhân vật Lv.70+ đã đủ 5 món TDV +20!</div>`;
-  } else if (APP.artTab === "reroll") {
-    const rFilters = [
-      ["all", `Tất cả (${rerollAll.length})`],
-      ["go", `Đáng cứu ★ (${goCount})`],
-      ["four", `4 dòng gốc (${rerollAll.filter((x) => x.is4Liner).length})`],
-      ["rare", `Cát/Ly/Nón (${rerollAll.filter((x) => x.isRareSlot).length})`],
-      ["core", `NV Ưu tiên (${rerollAll.filter((x) => x.isCore).length})`],
-    ];
-    const filtered = rerollAll.filter((x) => {
-      if (APP.artRerollFilter === "go") return x.rerollVerdict === "go";
-      if (APP.artRerollFilter === "four") return x.is4Liner;
-      if (APP.artRerollFilter === "rare") return x.isRareSlot;
-      if (APP.artRerollFilter === "core") return x.isCore;
-      return true;
-    });
-    const goRows = filtered.filter((x) => x.rerollVerdict === "go");
-    const holdRows = filtered.filter((x) => x.rerollVerdict !== "go");
 
     bodyHtml = `
-      <div class="art-rule-bar">
-        <strong>Quy tắc Bụi Khai Sáng:</strong> Chỉ dùng cho <b>Cát / Ly / Nón</b> đúng bộ cuối · <b>4 dòng gốc</b> (5 chấm) · lệch ≥3 chấm (2 Bụi). Không tốn Bụi vào bộ tạm!
-      </div>
       <div class="art-controls">
         <div class="filter-group">
-          ${rFilters.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artRerollFilter === k ? "active" : ""}" data-art-rfilter="${k}">${esc(lbl)}</button>`).join("")}
+          ${auditFilters.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artAuditFilter === k ? "active" : ""}" data-art-audit-filter="${k}">${esc(lbl)}</button>`).join("")}
         </div>
       </div>
       ${
-        filtered.length
-          ? `
-            ${goRows.length ? `<section class="art-group-block"><div class="art-group-head"><h3 class="tone-ok-txt">★ Đáng dùng Bụi Khai Sáng <em>(${goRows.length})</em></h3></div><div class="relic-grid">${goRows.map((x) => renderRelicCard(x, "reroll")).join("")}</div></section>` : ""}
-            ${holdRows.length ? `<section class="art-group-block"><div class="art-group-head"><h3 class="tone-muted-txt">⏸ Nên giữ Bụi — Tránh phí <em>(${holdRows.length})</em></h3></div><div class="relic-grid">${holdRows.map((x) => renderRelicCard(x, "reroll")).join("")}</div></section>` : ""}
-          `
-          : `<div class="empty-done">Không có mảnh TDV nào khớp bộ lọc.</div>`
+        shownRows.length
+          ? `${renderAuditGroup("★ Nhân vật ưu tiên & Build chính", "tone-bad-txt", coreAudit)}${renderAuditGroup("Nhân vật Lv.70+ khác (Nhà Hát / Dự bị)", "tone-muted-txt", otherAudit)}`
+          : `<div class="empty-done">✓ Toàn bộ nhân vật đã đúng dòng chính và đủ 5 món +20!</div>`
       }
     `;
-  } else if (APP.artTab === "vault") {
-    const slotBtns = [
-      ["all", "Tất cả khe"],
-      ["Hoa", "Hoa"],
-      ["Lông", "Lông"],
-      ["Cát", "Cát"],
-      ["Ly", "Ly"],
-      ["Nón", "Nón"],
-    ];
-    const sortBtns = [
-      ["cv_desc", "CV ↓"],
-      ["rolls_desc", "4 dòng ↓"],
-      ["lvl_asc", "Cấp ↑"],
-    ];
-    const setCounts = new Map();
-    const charCounts = new Map();
-    allArts.forEach((x) => {
-      const s = x.ar.set || "Khác";
-      setCounts.set(s, (setCounts.get(s) || 0) + 1);
-      const cn = x.owner.name;
-      charCounts.set(cn, (charCounts.get(cn) || 0) + 1);
-    });
-    const setOpts = [...setCounts.entries()].sort((a, b) => b[1] - a[1]);
-    const charOpts = [...charCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
-
-    const filtered = allArts
-      .filter((x) => APP.artSlot === "all" || x.slotShort === APP.artSlot)
-      .filter((x) => APP.artSet === "all" || x.ar.set === APP.artSet)
-      .filter((x) => APP.artChar === "all" || x.owner.name === APP.artChar)
-      .sort((a, b) => {
-        if (APP.artSort === "rolls_desc") return Number(b.is4Liner) - Number(a.is4Liner) || b.critRolls - a.critRolls || b.cv - a.cv;
-        if (APP.artSort === "lvl_asc") return a.level - b.level || b.cv - a.cv;
-        return b.cv - a.cv || b.critRolls - a.critRolls;
-      });
-    const visible = filtered.slice(0, APP.artLimit);
-
-    bodyHtml = `
-      ${renderCvDistBar(allArts)}
-      <div class="art-controls">
-        <div class="filter-group">
-          ${slotBtns.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artSlot === k ? "active" : ""}" data-art-slot="${esc(k)}">${esc(lbl)}</button>`).join("")}
-        </div>
-        <div class="filter-group">
-          <select class="art-select" data-art-char aria-label="Lọc theo nhân vật">
-            <option value="all" ${APP.artChar === "all" ? "selected" : ""}>Tất cả NV (${charOpts.length})</option>
-            ${charOpts.map(([name, cnt]) => `<option value="${esc(name)}" ${APP.artChar === name ? "selected" : ""}>${esc(name)} (${cnt})</option>`).join("")}
-          </select>
-          <select class="art-select" data-art-set aria-label="Lọc theo bộ Thánh Di Vật">
-            <option value="all" ${APP.artSet === "all" ? "selected" : ""}>Tất cả bộ (${setOpts.length})</option>
-            ${setOpts.map(([name, cnt]) => `<option value="${esc(name)}" ${APP.artSet === name ? "selected" : ""}>${esc(name)} (${cnt})</option>`).join("")}
-          </select>
-          ${sortBtns.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artSort === k ? "active" : ""}" data-art-sort="${k}">${esc(lbl)}</button>`).join("")}
-        </div>
-      </div>
-      ${visible.length ? `<div class="relic-grid">${visible.map((x) => renderRelicCard(x, "vault")).join("")}</div>` : `<div class="empty-done">Không có Thánh Di Vật nào khớp bộ lọc.</div>`}
-      ${filtered.length > APP.artLimit ? `<div class="art-more-wrap"><button type="button" class="art-more-btn" data-art-more="1">Xem thêm (+36 · đang hiện ${visible.length}/${filtered.length})</button></div>` : ""}
-    `;
-  } else {
+  } else if (APP.artTab === "domains") {
     bodyHtml = `
       <div class="domain-grid">
         ${domains
           .map((dom) => {
             const uniqIcons = [...new Set(dom.rows.map((r) => r.setMeta?.icon).filter(Boolean))].slice(0, 3);
+            const keepHtml = (dom.lootRules?.keep || [])
+              .map((k) => `<div class="dl-row"><span class="dl-set-tag">${esc(k.set)}</span><span>${esc(k.text)}</span></div>`)
+              .join("");
             return `
               <article class="domain-card">
                 <div class="domain-head">
@@ -1552,11 +1870,106 @@ function renderArtifactsView() {
                     })
                     .join("")}
                 </div>
+                ${
+                  dom.lootRules
+                    ? `<div class="domain-loot-box">
+                        <div class="dl-title">Khóa ngay khi farm xong:</div>
+                        ${keepHtml}
+                        ${dom.lootRules.trash ? `<div class="dl-trash">${esc(dom.lootRules.trash)}</div>` : ""}
+                      </div>`
+                    : ""
+                }
               </article>
             `;
           })
           .join("")}
       </div>
+    `;
+  } else {
+    const vModes = [
+      ["all", `Tất cả kho (${allArts.length})`],
+      ["go", `★ Đáng dùng Bụi (${goCount})`],
+      ["reroll", `Lệch Crit (${rerollAll.length})`],
+      ["four", `4 dòng gốc (${fourLinerCount})`],
+    ];
+    const slotBtns = [
+      ["all", "Tất cả khe"],
+      ["Hoa", "Hoa"],
+      ["Lông", "Lông"],
+      ["Cát", "Cát"],
+      ["Ly", "Ly"],
+      ["Nón", "Nón"],
+    ];
+    const sortBtns = [
+      ["cv_desc", "CV ↓"],
+      ["rv_desc", "Dòng tốt ↓"],
+      ["rolls_desc", "4 dòng ↓"],
+      ["lvl_asc", "Cấp ↑"],
+    ];
+    const setCounts = new Map();
+    const charCounts = new Map();
+    allArts.forEach((x) => {
+      const s = x.ar.set || "Khác";
+      setCounts.set(s, (setCounts.get(s) || 0) + 1);
+      const cn = x.owner.name;
+      charCounts.set(cn, (charCounts.get(cn) || 0) + 1);
+    });
+    const setOpts = [...setCounts.entries()].sort((a, b) => b[1] - a[1]);
+    const charOpts = [...charCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+
+    const basePool = APP.artVaultMode === "go"
+      ? rerollAll.filter((x) => x.rerollVerdict === "go")
+      : APP.artVaultMode === "reroll"
+        ? rerollAll
+        : APP.artVaultMode === "four"
+          ? allArts.filter((x) => x.is4Liner)
+          : allArts;
+
+    const filtered = basePool
+      .filter((x) => APP.artSlot === "all" || x.slotShort === APP.artSlot)
+      .filter((x) => APP.artSet === "all" || x.ar.set === APP.artSet)
+      .filter((x) => APP.artChar === "all" || x.owner.name === APP.artChar)
+      .sort((a, b) => {
+        if (APP.artSort === "rv_desc") return b.rvRolls - a.rvRolls || b.cv - a.cv;
+        if (APP.artSort === "rolls_desc") return Number(b.is4Liner) - Number(a.is4Liner) || b.critRolls - a.critRolls || b.cv - a.cv;
+        if (APP.artSort === "lvl_asc") return a.level - b.level || b.cv - a.cv;
+        return b.cv - a.cv || b.rvRolls - a.rvRolls;
+      });
+    const visible = filtered.slice(0, APP.artLimit);
+    const cardMode = APP.artVaultMode === "go" || APP.artVaultMode === "reroll" ? "reroll" : "vault";
+
+    bodyHtml = `
+      ${renderCvDistBar(allArts)}
+      <div class="art-controls">
+        <div class="filter-group">
+          ${vModes.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artVaultMode === k ? "active" : ""}" data-art-vmode="${k}">${esc(lbl)}</button>`).join("")}
+        </div>
+        <div class="filter-group">
+          ${sortBtns.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artSort === k ? "active" : ""}" data-art-sort="${k}">${esc(lbl)}</button>`).join("")}
+        </div>
+      </div>
+      ${
+        cardMode === "reroll"
+          ? `<div class="art-rule-bar"><strong>Quy tắc Bụi Khai Sáng:</strong> Chỉ dùng cho <b>Cát / Ly / Nón</b> đúng bộ cuối · <b>4 dòng gốc</b> · lệch ≥3 chấm (2 Bụi). Không tốn Bụi vào bộ tạm!</div>`
+          : ""
+      }
+      <div class="art-controls">
+        <div class="filter-group">
+          ${slotBtns.map(([k, lbl]) => `<button type="button" class="filter-btn ${APP.artSlot === k ? "active" : ""}" data-art-slot="${esc(k)}">${esc(lbl)}</button>`).join("")}
+        </div>
+        <div class="filter-group">
+          <select class="art-select" data-art-char aria-label="Lọc theo nhân vật">
+            <option value="all" ${APP.artChar === "all" ? "selected" : ""}>Tất cả NV (${charOpts.length})</option>
+            ${charOpts.map(([name, cnt]) => `<option value="${esc(name)}" ${APP.artChar === name ? "selected" : ""}>${esc(name)} (${cnt})</option>`).join("")}
+          </select>
+          <select class="art-select" data-art-set aria-label="Lọc theo bộ Thánh Di Vật">
+            <option value="all" ${APP.artSet === "all" ? "selected" : ""}>Tất cả bộ (${setOpts.length})</option>
+            ${setOpts.map(([name, cnt]) => `<option value="${esc(name)}" ${APP.artSet === name ? "selected" : ""}>${esc(name)} (${cnt})</option>`).join("")}
+          </select>
+        </div>
+      </div>
+      ${visible.length ? `<div class="relic-grid">${visible.map((x) => renderRelicCard(x, cardMode)).join("")}</div>` : `<div class="empty-done">Không có Thánh Di Vật nào khớp bộ lọc.</div>`}
+      ${filtered.length > APP.artLimit ? `<div class="art-more-wrap"><button type="button" class="art-more-btn" data-art-more="1">Xem thêm (+36 · đang hiện ${visible.length}/${filtered.length})</button></div>` : ""}
     `;
   }
 
@@ -3230,9 +3643,24 @@ function render() {
     });
   });
 
-  document.querySelectorAll("[data-art-rfilter]").forEach((b) => {
+  document.querySelectorAll("[data-art-swap-filter]").forEach((b) => {
     b.addEventListener("click", () => {
-      APP.artRerollFilter = b.getAttribute("data-art-rfilter");
+      APP.artSwapFilter = b.getAttribute("data-art-swap-filter");
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-art-audit-filter]").forEach((b) => {
+    b.addEventListener("click", () => {
+      APP.artAuditFilter = b.getAttribute("data-art-audit-filter");
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-art-vmode]").forEach((b) => {
+    b.addEventListener("click", () => {
+      APP.artVaultMode = b.getAttribute("data-art-vmode");
+      APP.artLimit = 36;
       render();
     });
   });

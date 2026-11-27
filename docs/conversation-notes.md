@@ -83,6 +83,7 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
   - `Navia 2 Nham`: đổi `Chiori C0` → **`Zhongli C1`** khi đi cùng `Bennett + Xiangling` (tránh thiếu Vật Tạo Nham mất 1 búp bê Tamoto).
   - Thêm đội **`Hu Tao Đánh Đáp`** (`Hu Tao + Furina + Yelan + Xianyun`, trần `82k S`): hiện **chưa farm 4pc Thợ Săn** nên **đánh tạm 4pc Hồi Ức** + chỉnh 0 nhựa `Xianyun` (`122.7% → 160%+ ER`, Ly/Nón ATK%); khi farm bí cảnh Fontaine cho `Neuvillette + Furina` mới giữ mảnh `4pc Thợ Săn` + Cát EM dư cho Hu Tao.
   - Dọn toàn bộ ghi chú tĩnh cũ (`Yelan` đã Tây Phong 90, `Furina` đã Lv.90, `Mitya` đã Lv.80 + Trấn 70, `Snezhnaya` đã 10%).
+  - **Thiết kế lại Tab TDV (4 mục thực chiến):** `Tráo Đồ 0 Nhựa` (quét mảnh +20 trên dự bị lắp được ngay cho nhân vật chính), `Lỗi Build & Khe Yếu` (bắt sai dòng chính + thiếu/chưa +20 + khoanh khe yếu nhất), `Bí Cảnh & Khóa Đồ` (bảng khóa/đốt theo từng bí cảnh), và `Kho & Bụi Khai Sáng` (gộp nút lọc Bụi + tính `Dòng Tốt` theo vai trò Support/Crit).
 - **Nhà Hát (`01.11 – 01.12`, Thủy · Lôi · Nham — đã đi tới Màn 3, Độ khó 3 · `28+3` nhân vật):**
   - `Furina` Lv.90 & `Aino` Lv.80 C1 vừa bổ sung thêm lực lượng Thủy cùng `Navia`, `Ayato`, `Noelle`, và `Mitya` vừa lên Lv.70 nâng tổng slot lên **28**; cần lắp gấp đồ cho `Beidou`, `Gorou` và nâng Ly/Nón CR% cho `Ningguang` trước **01/12**. (`Yae` ✓ đã mở Ma Nữ giữ trụ 24s không mất khi Nộ đi Màn 6 rất mượt.)
 
