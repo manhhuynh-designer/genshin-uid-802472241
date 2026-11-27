@@ -24,7 +24,6 @@ const ACTIONS = [
   { id: "a_ning", bucket: "now", tag: "Nhà Hát", shortFix: "Nâng Ly Nham +20 · Đổi Nón CR%", name: "Ningguang", swapFrom: null, swapNote: "✓ Đã gắn Quyển Thiên Không R2 (2,501 ATK)", fixTitle: "Nâng Ly Nham (+0 → +20) & đổi Nón → CR%", fixSub: "CR đang 14.7% / 169.7% CD · Chỉnh xong sẵn sàng Nhà Hát Màn 8", setKey: null },
   { id: "a_beidou", bucket: "now", tag: "Nhà Hát", shortFix: "✓ Đã Vua Biển · Đủ 5 TDV (Cát ER)", name: "Beidou", swapFrom: null, swapNote: "✓ Đã chuyển Vua Biển Hàng Hiệu Lv.80 R5 (1,559 ATK)", fixTitle: "✓ Đã gắn Vua Biển R5 · Lắp đủ 5 món TDV (Cát ER)", fixSub: "Đang mới 3 món TDV, 111% ER · Thêm 2 món đủ Cát ER trước hạn Nhà Hát 01/12", setKey: "esf" },
   { id: "a_fischl", bucket: "now", tag: "0 Nhựa", shortFix: "Đổi Nón STBK → Nón CR%", name: "Fischl", swapFrom: null, swapNote: "✓ Đã gắn Tuyệt Huyền R5 (224 EM · +48% ST Oz)", fixTitle: "Đổi Nón STBK → Nón CR% (đang 31.8% CR)", fixSub: "Giữ 2 Lôi 2 ATK tạm rồi farm dần 4pc Đoàn Kịch ở Fontaine", setKey: "gt" },
-  { id: "a_chev", bucket: "now", tag: "0 Nhựa", shortFix: "Đổi 3 món HP% · Kéo Lv.80 (40k HP)", name: "Chevreuse", swapFrom: null, swapNote: "✓ Đã gắn Hắc Anh Thương R5 · HP tụt còn 21.6k (Cát ER +0)", fixTitle: "Đổi Cát ER +0, Ly Hỏa & Nón CR → Full HP% + lên Lv.80", fixSub: "Kéo từ 21.6k → mốc 40,000 HP để mở trọn +40% ATK Quá Tải", setKey: "no" },
   { id: "a_kuki", bucket: "now", tag: "0 Nhựa", shortFix: "Đổi 3 món EM · Kéo Lv.90 (900+ EM)", name: "Kuki Shinobu", swapFrom: null, swapNote: "✓ Đã gắn Thiết Phong Kích R3 (EM lên 483)", fixTitle: "Đổi Cát ATK / Ly HP / Nón CR → 3 món EM", fixSub: "Kéo từ 483 → ~900+ EM & nâng Lv.80 → 90 tối ưu Nở Rộ", setKey: "gd" },
   { id: "a_raiden", bucket: "now", tag: "Ổn định", shortFix: "✓ Đã chốt (Bennett đã Kiếm Gỗ)", name: "Raiden Shogun", swapFrom: null, swapNote: "✓ Đã đổi Nón CR% (69.9/132.4 · 258.9% ER) & Bennett đã gắn Kiếm Gỗ", fixTitle: "✓ Đã hoàn thiện (Trấn Đoạn Thảo R1 · 69.9/132.4)", fixSub: "Sẵn sàng hoàn toàn cho cả La Hoàn & Ảo Cảnh", setKey: null },
   { id: "a_yae", bucket: "now", tag: "Ma Nữ ✓", shortFix: "Đổi Nón CR% (~75/204)", name: "Yae Miko", swapFrom: null, swapNote: "✓ Đã mở Ma Nữ (Edict of Cleansing) · Giữ Trấn Kagura R1 · 2,238 ATK · 51.0/252.2", fixTitle: "Đổi Nón STBK → Nón CR% (51/252 → ~75/204)", fixSub: "✓ Đã có trụ 24s, Q không phá trụ, +80%/200% ATK · Đổi Nón CR% ổn định CRIT rồi farm 4pc Ảo Tưởng chung Mitya", setKey: "dids" },
@@ -1051,7 +1050,6 @@ const ART_BUILD_SPECS = {
   Ningguang: { role: "crit", wantSubs: ["CR", "CD", "ATK%"], main: { Cát: ["ATK%"], Ly: ["ST Nham"], Nón: ["CR", "CD"] }, preferCR: true },
   Eula: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "ER"], main: { Cát: ["ATK%"], Ly: ["ST Vật Lý"], Nón: ["CR", "CD"] }, preferCR: true },
   Xianyun: { role: "support", wantSubs: ["ATK%", "ER"], main: { Cát: ["ER", "ATK%"], Ly: ["ATK%"], Nón: ["ATK%"] }, preferER: 155 },
-  Chevreuse: { role: "support", wantSubs: ["HP%", "ER"], main: { Cát: ["HP%"], Ly: ["HP%"], Nón: ["HP%"] } },
   "Kuki Shinobu": { role: "support", wantSubs: ["EM", "HP%"], main: { Cát: ["EM"], Ly: ["EM"], Nón: ["EM"] } },
   Nilou: { role: "support", wantSubs: ["HP%", "EM", "ER"], main: { Cát: ["HP%"], Ly: ["HP%"], Nón: ["HP%"] } },
   Aino: { role: "support", wantSubs: ["CR", "ER", "EM"], main: { Cát: ["ER", "EM"], Ly: ["EM", "ST Thủy"], Nón: ["CR"] }, preferCR: true },
@@ -1067,7 +1065,7 @@ const ART_BUILD_SPECS = {
 const SWAP_TARGETS = [
   "Neuvillette", "Furina", "Mitya", "Yae Miko", "Navia", "Raiden Shogun", "Yelan",
   "Hu Tao", "Kamisato Ayaka", "Yoimiya", "Ganyu", "Keqing", "Chiori", "Xianyun",
-  "Nilou", "Kuki Shinobu", "Chevreuse", "Fischl", "Jean", "Xingqiu", "Xiangling", "Bennett",
+  "Nilou", "Kuki Shinobu", "Fischl", "Jean", "Xingqiu", "Xiangling", "Bennett",
 ];
 
 const PROTECTED_OWNERS = new Set([
@@ -1100,7 +1098,6 @@ const ER_FLOOR = {
 
 const KEY_STAT = {
   Nilou: "HP%",
-  Chevreuse: "HP%",
   "Kuki Shinobu": "EM",
   Xianyun: "ER",
   Jean: "ER",
@@ -1160,7 +1157,6 @@ const DOMAIN_PLANS = [
     note: "Đổi phôi rác 5★ thành các bộ cũ — không tốn nhựa đi bí cảnh",
     targets: [
       { char: "Jean", setKey: "vv", match: "Bóng Hình" },
-      { char: "Chevreuse", setKey: "no", match: "Tông Thất" },
       { char: "Beidou", setKey: "esf", match: "Dấu Ấn" },
       { char: "Navia", setKey: "nw", match: "Tiếng Đêm" },
       { char: "Nilou", setKey: "hp2", match: "Thiên Nham|Vầng Sáng", need: 2 },
@@ -1168,7 +1164,7 @@ const DOMAIN_PLANS = [
     lootRules: {
       keep: [
         { set: "Bóng Hình", text: "Cát ER% + Ly/Nón ATK% (Xianyun/Jean) · Hoặc giữ mọi mảnh EM cho hệ Phong" },
-        { set: "Tông Thất / Tiếng Đêm", text: "3 món HP% (Chevreuse) · Cát ATK% + Ly Nham + Nón CR% (Navia)" },
+        { set: "Tông Thất / Tiếng Đêm", text: "3 món ATK% (Valeriy/Alyosha) · Cát ATK% + Ly Nham + Nón CR% (Navia)" },
       ],
       trash: "Chỉ đổ phôi rác 5★ từ Fontaine / Mondstadt — tuyệt đối không tốn nhựa đi bí cảnh cũ.",
     },
