@@ -76,8 +76,13 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 ## 2. Tư vấn La Hoàn & Nhà Hát (`11/2026 – 12/2026`)
 
 - **La Hoàn (`16.11 – 16.12`, đang `11-3`, `25/36★`):**
-  - *Nửa 1 (+75% Lunar-Crystallize):* `✓ Navia (Li Cốt 80/180) + Zhongli + Chiori + Xianyun/Bennett`
+  - *Nửa 1 (+75% Lunar-Crystallize):* `✓ Navia (Li Cốt 80/180) + Zhongli + Chiori + Bennett` *(Zhongli kích đủ 2 búp bê cho Chiori C0, Bennett cấp Hỏa Kết Tinh + buff ATK; thay cho Xianyun Phong không tạo Kết Tinh)*
   - *Nửa 2 (+200 EM):* `✓ Neuvillette + Furina + Kazuha + Zhongli` (vừa clear Ảo Cảnh 34s) hoặc `✓ Raiden National` (`69.9/132.4` vừa clear Boss 1 56s).
+- **Rà soát lại Đội hình gợi ý (`27/11 10:48`):**
+  - `Raiden + Furina`: đổi `Yae Miko` → **`Jean C3`** (hoặc `Xianyun`) để có Healer toàn đội kích Náo Nhiệt `Furina C0` + 4pc Bóng Hình Màu Xanh.
+  - `Navia 2 Nham`: đổi `Chiori C0` → **`Zhongli C1`** khi đi cùng `Bennett + Xiangling` (tránh thiếu Vật Tạo Nham mất 1 búp bê Tamoto).
+  - Thêm đội **`Hu Tao Đánh Đáp`** (`Hu Tao + Furina + Yelan + Xianyun`, trần `82k S`): hiện **chưa farm 4pc Thợ Săn** nên **đánh tạm 4pc Hồi Ức** + chỉnh 0 nhựa `Xianyun` (`122.7% → 160%+ ER`, Ly/Nón ATK%); khi farm bí cảnh Fontaine cho `Neuvillette + Furina` mới giữ mảnh `4pc Thợ Săn` + Cát EM dư cho Hu Tao.
+  - Dọn toàn bộ ghi chú tĩnh cũ (`Yelan` đã Tây Phong 90, `Furina` đã Lv.90, `Mitya` đã Lv.80 + Trấn 70, `Snezhnaya` đã 10%).
 - **Nhà Hát (`01.11 – 01.12`, Thủy · Lôi · Nham — đã đi tới Màn 3, Độ khó 3 · `28+3` nhân vật):**
   - `Furina` Lv.90 & `Aino` Lv.80 C1 vừa bổ sung thêm lực lượng Thủy cùng `Navia`, `Ayato`, `Noelle`, và `Mitya` vừa lên Lv.70 nâng tổng slot lên **28**; cần lắp gấp đồ cho `Beidou`, `Gorou` và nâng Ly/Nón CR% cho `Ningguang` trước **01/12**. (`Yae` ✓ đã mở Ma Nữ giữ trụ 24s không mất khi Nộ đi Màn 6 rất mượt.)
 
@@ -100,11 +105,12 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 
 | Đội hình | Vai trò | Hiện tại (Tier) | Dự tính (Tier) | Tăng | Đòn bẩy nâng cấp chính |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| **Mitya + Yae Tinh-Siêu Dẫn** (`Mitya · Yae · Rosaria · Valeriy`) | Meta 7.2 · Tinh-Siêu Dẫn | **~53k** (`A`) | **~98k** (`S+`) | +85% | Mitya 80→90 + Trấn 70→90 + Ly EM +20 · Yae (✓ Ma Nữ) đổi Nón CR% + 4pc Ảo Tưởng · Valeriy Lv.1→80 (đổi Rosaria → Odette vượt 100k+) |
+| **Mitya + Yae Tinh-Siêu Dẫn** (`Mitya · Yae · Rosaria · Valeriy`) | Meta 7.2 · Tinh-Siêu Dẫn | **~53k** (`A`) | **~98k** (`S+`) | +85% | Mitya 80→90 + Trấn 70→90 + Ly EM +20 · Yae (✓ Ma Nữ) đổi Nón CR% + 4pc Ảo Tưởng · Valeriy Lv.1→80 (đổi Rosaria/NLH Băng → Odette vượt 100k+) |
 | **Neuvillette + Furina Hyper** (`Neuvillette · Furina · Kazuha · Zhongli`) | AOE · Đơn | **~76k** (`S`) | **~92k** (`S+`) | +21% | Neuv 4pc Thợ Săn (52.8% CR) · Furina Q9→10 & 4pc Đoàn Kịch (chung 1 bí cảnh Fontaine) |
-| **Raiden + Furina Hyper** (`Raiden · Furina · Yae · Yelan`) | Đơn mục tiêu | **~72k** (`S`) | ~81k (`S`) | +13% | Furina Q9→10 · 4pc Đoàn Kịch · Yae Nón CR% (51%) *(Yelan ✓ Tây Phong 90)* |
-| **Navia 2 Nham** (`Navia · Chiori · Bennett · Xiangling`) | Phá khiên · Đơn | ~56k (`A`) | ~76k (`S`) | +36% | Đẩy lại CR Navia (56.7%→70%+) · Chiori E 1→9 · Ly Nham Chiori +20 |
-| **Hu Tao Bốc Hơi** (`Hu Tao · Yelan · Xingqiu · Zhongli`) | Đơn mục tiêu | ~59k (`A+`) | ~72k (`S`) | +22% | Hu Tao CR 54%→70%+ · Thử Furina + Xianyun *(Yelan ✓ Tây Phong 90)* |
+| **Hu Tao Đánh Đáp** (`Hu Tao · Furina · Yelan · Xianyun`) | Đơn · Đánh Đáp | ~62k (`A+`) | **~82k** (`S`) | +32% | Chưa farm Thợ Săn vẫn đánh tạm 4pc Hồi Ức · Chỉnh Xianyun Cát ER (`160%+`) + Ly/Nón ATK% · Farm ké 4pc Thợ Săn + Cát EM sau |
+| **Raiden + Furina Hyper** (`Raiden · Furina · Yelan · Jean`) | Đơn mục tiêu | **~72k** (`S`) | ~81k (`S`) | +13% | Furina Q9→10 · 4pc Đoàn Kịch · Jean C3 đủ 4pc Bóng Hình + Ống Đồng 90 *(Yelan ✓ Tây Phong 90)* |
+| **Navia 2 Nham** (`Navia · Zhongli · Bennett · Xiangling`) | Phá khiên · Đơn | ~58k (`A+`) | ~76k (`S`) | +31% | Đẩy lại CR Navia (56.7%→70%+) · 4pc Tiếng Đêm (Tráp) *(đổi Zhongli thay Chiori C0)* |
+| **Hu Tao Bốc Hơi** (`Hu Tao · Yelan · Xingqiu · Zhongli`) | Đơn mục tiêu | ~59k (`A+`) | ~72k (`S`) | +22% | Bản không tranh Furina · Hu Tao CR 54%→70%+ · Đánh Thường 9→10 *(Yelan ✓ Tây Phong 90)* |
 | **Nilou Sum Suê** (`Nilou · Nahida · Kokomi · Collei`) | Vua AOE (2+ quái) | ~54k (`A`) | ~70k (`S`) | +30% | Bến Tàu 60→90 · Đổi 2+2 HP% (56.2k→68k+ HP) · EM cho Kokomi |
 | **Keqing Tăng Cường** (`Keqing · Nahida · Yae · Kazuha`) | Đơn · AOE nhanh | ~65k (`A+`) | ~68k (`A+`) | +5% | Đã trả Bàn Nham (70.1/231.4) · Yae Nón CR% (51%) · Tùy chọn 4pc Như Sấm |
 | **Raiden National** (`Raiden · Bennett · Xiangling · Yelan`) | Đơn mục tiêu | ~64k (`A+`) | ~68k (`A+`) | +6% | Tối ưu nhẹ Crit Xiangling (51% CR) *(Yelan ✓ Tây Phong 90)* |

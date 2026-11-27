@@ -234,6 +234,24 @@ const CHAR_GUIDES = {
       "Lắp bộ 4pc Nghi Thức Tông Thất Cổ (hoặc Heart of the Furnace nếu team đã có Tông Thất).",
     ],
   },
+  "Hu Tao": {
+    mainStats: "Cát HP% (4pc Hồi Ức) hoặc Cát EM (4pc Thợ Săn + Furina) · Ly ST Hỏa · Nón CR% (Hồi Ức) / STBK (Thợ Săn)",
+    targets: "Hiện tại: 4pc Hồi Ức (54.3/221.3 · 117 EM · 9/10/10) · Chưa farm 4pc Thợ Săn",
+    steps: [
+      "Nếu giữ đi đội truyền thống (Yelan + Xingqiu + Zhongli): đổi Nón STBK → Nón CR% (kéo 54.3% → 70%+) để giảm hụt crit Trọng Kích.",
+      "Nâng Đánh Thường 9 → 10 vì Trọng Kích và Đánh Đáp đều ăn theo kỹ năng này.",
+      "Khi đi cặp Furina + Yelan + Xianyun: có thể đánh tạm bằng bộ 4pc Hồi Ức ngay; sau này farm Fontaine cho Neuvillette/Furina thì giữ mảnh 4pc Thợ Săn dư + Cát EM (giữ CR trước buff ≤64% trên Hòa Phác Diên).",
+    ],
+  },
+  Xianyun: {
+    mainStats: "Cát ER% (160–180% ER) · Ly ATK% · Nón ATK% (4pc Bóng Hình Màu Xanh)",
+    targets: "Hiện tại: 2,647 ATK · 122.7% ER · Quyển Thiên Không Lv.90 · Cần kéo ER ≥160% & 3,000+ ATK",
+    steps: [
+      "Đổi ngay Cát ATK% sang Cát Hiệu Quả Nạp (ER%) để kéo 122.7% → 160–180% ER, bảo đảm bật Nộ đều mỗi vòng.",
+      "Đổi Ly ST Phong & Nón Tăng Trị Liệu sang Ly ATK% + Nón ATK% vì cả buff Đánh Đáp (A4) và hồi máu toàn đội đều scale theo ATK.",
+      "Giữ nguyên Quyển Thiên Không Lv.90 R1 và bộ 4pc Bóng Hình Màu Xanh (-40% kháng Thủy/Hỏa).",
+    ],
+  },
   Illuga: {
     mainStats: "Cát ER%/EM · Ly EM · Nón EM",
     targets: "4★ Nham Nod-Krai (mới Lv.1 C0) · Mục tiêu khi build: ≥180% ER · Full EM · Tai Ương / Tây Phong",
@@ -407,44 +425,44 @@ const MODES = {
     items: [
       {
         title: "Neuvillette + Furina",
-        sub: "✓ Răng Nanh R5 · 67k → 92k (S+)",
-        note: "Chung 1 bí cảnh Fontaine · Nâng Lv.90 Q10 & farm Thợ Săn / Đoàn Kịch",
+        sub: "✓ Furina Lv.90 · Răng Nanh R5 · 67k → 92k (S+)",
+        note: "Chung 1 bí cảnh Fontaine · Furina đã Lv.90 (4/9/9), còn Q9→10 & farm Thợ Săn / Đoàn Kịch (tùy chọn kẹp Jean C3/Xianyun nếu cần hồi máu toàn đội)",
         status: "ok",
         members: ["Neuvillette", "Furina", "Kaedehara Kazuha", "Zhongli"],
         power: {
           cur: 67, proj: 92, curTier: "A+", projTier: "S+",
           role: "AOE · Đơn", tags: ["st", "aoe", "upgrade"], badge: "Ảo Cảnh 34s",
           short: "Neuv+Furina", labelPos: "left", cost: "1 bí cảnh",
-          chips: ["Neuv 4pc Thợ Săn", "Furina Lv.90 Q10", "4pc Đoàn Kịch"],
-          upgrade: "Neuv 4pc Thợ Săn + Furina Lv.90 Q10 / 4pc Đoàn Kịch (đã gắn Răng Nanh R5 · chung 1 bí cảnh Fontaine)",
+          chips: ["Neuv 4pc Thợ Săn", "Furina Q9→10", "4pc Đoàn Kịch"],
+          upgrade: "Neuv 4pc Thợ Săn + Furina Q9→10 / 4pc Đoàn Kịch (đã Lv.90 & Răng Nanh R5 · chung 1 bí cảnh Fontaine)",
         },
       },
       {
         title: "Raiden + Furina",
-        sub: "✓ Răng Nanh R5 · 64k → 81k (S)",
-        note: "Raiden 69.9/132.4 · Furina đã gắn Răng Nanh R5 · Yae Ma Nữ đổi Nón CR%",
+        sub: "✓ Đã bổ sung Healer Jean C3 · 64k → 81k (S)",
+        note: "Thêm Healer Jean C3 kích Náo Nhiệt Furina C0 + 4pc VV (hoặc thay bằng Xianyun) · Yelan đã Tây Phong 90",
         status: "ok",
-        members: ["Raiden Shogun", "Furina", "Yae Miko", "Yelan"],
+        members: ["Raiden Shogun", "Furina", "Yelan", "Jean"],
         power: {
           cur: 64, proj: 81, curTier: "A+", projTier: "S",
           role: "Đơn mục tiêu", tags: ["st", "upgrade"], badge: "Ảo Cảnh 56s",
           short: "Raiden+Furina", labelPos: "top", cost: "Trung bình",
-          chips: ["Furina Lv.90 Q10", "Yae Nón CR%", "Yelan Tây Phong 90"],
-          upgrade: "Furina Lv.90 Q10 + 4pc Đoàn Kịch · Yae (✓ Ma Nữ) đổi Nón CR% · Yelan Tây Phong 90",
+          chips: ["Furina Q9→10 · 4pc Đoàn Kịch", "Jean 4pc Bóng Hình + Ống Đồng 90"],
+          upgrade: "Furina Q9→10 + 4pc Đoàn Kịch · Jean C3 lắp đủ 4pc Bóng Hình + kéo Ống Đồng 90 (✓ Yelan Tây Phong 90)",
         },
       },
       {
         title: "Raiden National",
-        sub: "✓ Kiếm Gỗ Bennett · 63k → 68k (A+)",
-        note: "Đã đổi Kiếm Gỗ cho Bennett · Sẵn sàng 100%",
+        sub: "✓ Kiếm Gỗ · Tây Phong 90 · 63k → 68k (A+)",
+        note: "Raiden 69.9/132.4 · Bennett Kiếm Gỗ · Yelan đã Tây Phong 90 — Sẵn sàng 100%",
         status: "ok",
         members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"],
         power: {
           cur: 63, proj: 68, curTier: "A+", projTier: "A+",
           role: "Đơn mục tiêu", tags: ["st"], badge: "Sẵn sàng 100%",
           short: "National", labelPos: "right", cost: "Thấp",
-          chips: ["Yelan Tây Phong 90", "Tối ưu nhẹ Crit XL"],
-          upgrade: "Yelan Tây Phong 90 · Tối ưu nhẹ Crit Xiangling (Bennett đã chuyển Kiếm Gỗ 565 Base ATK)",
+          chips: ["Tối ưu nhẹ Crit XL"],
+          upgrade: "Tối ưu nhẹ Crit Xiangling (✓ Bennett Kiếm Gỗ · ✓ Yelan Tây Phong Lv.90 R5)",
         },
       },
       {
@@ -477,30 +495,44 @@ const MODES = {
       },
       {
         title: "Hu Tao Bốc Hơi",
-        sub: "2 Thủy · 59k → 72k (S)",
-        note: "2 Hòa Phác Diên · Kéo nhẹ CR Hu Tao 70%+ & Tây Phong Yelan 90",
+        sub: "2 Thủy An Toàn · 59k → 72k (S)",
+        note: "Bản không tranh Furina · Yelan đã Tây Phong 90 · Đổi Nón CR% Hu Tao (54%→70%+) & nâng Đánh Thường 9→10",
         status: "ok",
         members: ["Hu Tao", "Yelan", "Xingqiu", "Zhongli"],
         power: {
           cur: 59, proj: 72, curTier: "A+", projTier: "S",
-          role: "Đơn mục tiêu", tags: ["st"], badge: "2 Thủy",
-          short: "Hu Tao", labelPos: "right", cost: "Thấp",
-          chips: ["Yelan Tây Phong 90", "Hu Tao CR 70%+", "Thử Furina + Xianyun"],
-          upgrade: "Yelan Tây Phong 70→90 · Kéo nhẹ CR Hu Tao (54%→70%+) · Thử ghép Furina + Xianyun",
+          role: "Đơn mục tiêu", tags: ["st"], badge: "Không tranh Furina",
+          short: "Hu Tao 2 Thủy", labelPos: "right", cost: "Thấp",
+          chips: ["Hu Tao CR 70%+", "Đánh Thường 9→10"],
+          upgrade: "Đổi Nón CR% cho Hu Tao (54.3%→70%+) · Nâng Đánh Thường 9→10 (✓ Yelan Tây Phong 90)",
+        },
+      },
+      {
+        title: "Hu Tao Đánh Đáp",
+        sub: "Tạm 4pc Hồi Ức · 62k → 82k (S)",
+        note: "Chưa farm Thợ Săn vẫn đánh tạm 4pc Hồi Ức được · Chỉnh Xianyun 160%+ ER & farm ké 4pc Thợ Săn (Fontaine) sau",
+        status: "warn",
+        members: ["Hu Tao", "Furina", "Yelan", "Xianyun"],
+        power: {
+          cur: 62, proj: 82, curTier: "A+", projTier: "S",
+          role: "Đơn · Đánh Đáp", tags: ["st", "upgrade"], badge: "Trần Hu Tao C0",
+          short: "Hu Tao Plunge", labelPos: "right", cost: "1 bí cảnh",
+          chips: ["Xianyun Cát ER (160%+)", "Farm ké 4pc Thợ Săn + Cát EM", "Furina Q9→10 · 4pc Đoàn Kịch"],
+          upgrade: "Chỉnh 0 nhựa Xianyun sang Cát ER (160%+) + Ly/Nón ATK% · Farm ké 4pc Thợ Săn + Cát EM khi farm Fontaine cho Neuv/Furina",
         },
       },
       {
         title: "Yoimiya Đánh Thường",
         sub: "Sẵn sàng · 55k → 62k (A)",
-        note: "Yoimiya 74/203 · Yun Jin C6 (2,160 DEF)",
+        note: "Yoimiya 74/203 · Yun Jin C6 (2,160 DEF) · Yelan đã Tây Phong 90",
         status: "ok",
         members: ["Yoimiya", "Yelan", "Yun Jin", "Zhongli"],
         power: {
           cur: 55, proj: 62, curTier: "A", projTier: "A",
           role: "Boss bay · Đơn", tags: ["st"], badge: "Sẵn sàng",
           short: "Yoimiya", labelPos: "right", cost: "Thấp",
-          chips: ["Yelan Tây Phong 90", "Bổ sung ~100 EM"],
-          upgrade: "Yelan Tây Phong 70→90 · Bổ sung ~100 EM cho Yoimiya để tối ưu Bốc Hơi",
+          chips: ["Bổ sung ~100 EM"],
+          upgrade: "Bổ sung ~100 EM cho Yoimiya để tối ưu Bốc Hơi (✓ Yelan Tây Phong 90)",
         },
       },
       {
@@ -547,30 +579,30 @@ const MODES = {
       },
       {
         title: "Navia 2 Nham",
-        sub: "✓ 6/10/10 · 58k → 76k (S)",
-        note: "Đã vương miện Q10 (142.7% ER) · Cần đẩy lại CR 56.7% → 70%+ & nâng E Chiori",
+        sub: "✓ 6/10/10 · Zhongli C1 · 58k → 76k (S)",
+        note: "Đổi Zhongli thay Chiori C0 (tránh thiếu Vật Tạo Nham mất 1 búp bê) · Đẩy lại CR Navia 56.7% → 70%+",
         status: "warn",
-        members: ["Navia", "Chiori", "Bennett", "Xiangling"],
+        members: ["Navia", "Zhongli", "Bennett", "Xiangling"],
         power: {
           cur: 58, proj: 76, curTier: "A+", projTier: "S",
           role: "Phá khiên · Đơn", tags: ["st", "upgrade"], badge: "12 Nửa 1",
           short: "Navia", labelPos: "left", cost: "Trung bình",
-          chips: ["Đẩy CR 70%+", "Chiori E 1→9", "Ly Nham +20"],
-          upgrade: "Đẩy lại CR Navia (56.7% → 70%+) + Nâng E Chiori 1→9 + Ly Nham +20",
+          chips: ["Navia CR 70%+", "4pc Tiếng Đêm (Tráp)"],
+          upgrade: "Đẩy lại CR Navia (56.7% → 70%+) · Ép Tráp 4pc Tiếng Đêm (đã đổi Zhongli hỗ trợ ấn & trừ 20% kháng)",
         },
       },
       {
         title: "Mitya + Yae Tinh-Siêu Dẫn",
-        sub: "✓ Mitya 2+2 EM · Valeriy Isshin · 46k → 98k (S+)",
-        note: "Đã ghép 2+2 EM cho Mitya & Isshin Lv.80 cho Valeriy · Đổi Rosaria → Odette vượt 100k+",
+        sub: "✓ Mitya Lv.80 · Trấn 70 · 53k → 98k (S+)",
+        note: "Mitya đã Lv.80 + Trấn Lv.70 (Valeriy Isshin 80) · Kéo 90 + 4pc Ảo Tưởng · Đổi Rosaria (hoặc NLH Băng 90) → Odette vượt 100k+",
         status: "warn",
         members: ["Mitya", "Yae Miko", "Rosaria", "Valeriy"],
         power: {
-          cur: 46, proj: 98, curTier: "B", projTier: "S+",
+          cur: 53, proj: 98, curTier: "A", projTier: "S+",
           role: "Meta 7.2", tags: ["st", "aoe", "upgrade"], badge: "Trần #1 7.2",
           short: "Mitya+Yae", labelPos: "right", cost: "Cao",
           chips: ["Mitya 90 + Trấn 90", "Yae Nón CR% + 4pc Ảo Tưởng", "Valeriy Lv.80"],
-          upgrade: "Mitya Lv.70→90 + Trấn 50→90 + Ly EM +20 · Yae (✓ Ma Nữ) đổi Nón CR% + 4pc Ảo Tưởng · Valeriy C3 Lv.80 (đổi Rosaria → Odette vượt 100k+)",
+          upgrade: "Mitya Lv.80→90 + Trấn 70→90 + Ly EM +20 · Yae (✓ Ma Nữ) đổi Nón CR% + 4pc Ảo Tưởng · Valeriy C3 Lv.80 (đổi Rosaria/NLH Băng → Odette vượt 100k+)",
         },
       },
     ],
@@ -578,9 +610,9 @@ const MODES = {
   abyss: {
     label: "La Hoàn",
     items: [
-      { title: "12 · Nửa 1 — Navia", sub: "+75% Lunar-Crystallize", note: "Navia 6/10/10 (142.7% ER) · Đẩy CR ≥70% & nâng E Chiori", status: "warn", members: ["Navia", "Zhongli", "Chiori", "Xianyun"] },
-      { title: "12 · Nửa 2 — Neuv + Furina", sub: "+200 EM · Ảo Cảnh 34s", note: "Furina đã gắn Răng Nanh R5 — đội hình 34s mạnh nhất hiện tại", status: "ok", members: ["Neuvillette", "Furina", "Kaedehara Kazuha", "Zhongli"] },
-      { title: "12 · Nửa 2 — National", sub: "+200 EM · Wavebinder", note: "Raiden 69.9/132.4 + Bennett Kiếm Gỗ sẵn sàng đánh ngay", status: "ok", members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"] },
+      { title: "12 · Nửa 1 — Navia", sub: "+75% Lunar-Crystallize", note: "Navia 6/10/10 + Zhongli kích đủ 2 búp bê Chiori C0 · Bennett cấp Hỏa Kết Tinh & buff ATK", status: "warn", members: ["Navia", "Zhongli", "Chiori", "Bennett"] },
+      { title: "12 · Nửa 2 — Neuv + Furina", sub: "+200 EM · Ảo Cảnh 34s", note: "Furina đã Lv.90 Răng Nanh R5 — đội hình Ảo Cảnh 34s mạnh nhất hiện tại", status: "ok", members: ["Neuvillette", "Furina", "Kaedehara Kazuha", "Zhongli"] },
+      { title: "12 · Nửa 2 — National", sub: "+200 EM · Wavebinder", note: "Raiden 69.9/132.4 + Bennett Kiếm Gỗ + Yelan Tây Phong 90 sẵn sàng đánh ngay", status: "ok", members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"] },
       { title: "12 · Nửa 1 — Eula", sub: "12-2 Frostnight Herra", note: "Rosaria C6 bù CR · Có thể thay Raiden bằng Yae Ma Nữ", status: "warn", members: ["Eula", "Raiden Shogun", "Rosaria", "Zhongli"] },
     ],
   },
@@ -597,7 +629,7 @@ const MODES = {
     label: "Meta 7.2",
     items: [
       { title: "Build Ngay (Vùng Mở)", sub: "Fontaine 64% · Inazuma 100%", note: "✓ Furina đã lên Lv.90 (4/9/9) · Farm bí cảnh Tội Lỗi (Thợ Săn + Đoàn Kịch) · Aino dừng ở Lv.80", status: "ok", members: ["Furina", "Neuvillette", "Chiori", "Nilou"] },
-      { title: "Snezhnaya (7%)", sub: "Lõi Tinh-Siêu Dẫn 7.2", note: "✓ Mitya 2+2 EM · Valeriy Isshin Lv.80 · Alyosha Mũi Nhọn Lv.70", status: "warn", members: ["Mitya", "Yae Miko", "Valeriy", "Alyosha"] },
+      { title: "Snezhnaya (10%)", sub: "Lõi Tinh-Siêu Dẫn 7.2", note: "✓ Mitya Lv.80 + Trấn 70 · Valeriy Isshin Lv.80 · Alyosha Mũi Nhọn Lv.70 · Mới roll Illuga C0 (chưa cần nâng vội)", status: "warn", members: ["Mitya", "Yae Miko", "Valeriy", "Alyosha"] },
       { title: "Mục Tiêu Roll Tiếp", sub: "Pity 5★: 0 (sau Furina)", note: "Chờ Băng Thần Anastasya (7.3) · Xilonen · Odette", status: "ok", members: ["Furina", "Xilonen", "Odette", "Columbina"] },
     ],
   },
@@ -677,7 +709,7 @@ let APP = {
   powerTag: "all",      // all | st | aoe | upgrade
   matrixActive: 0,
   vsA: 0,
-  vsB: 11,
+  vsB: 12,
   modalChar: null,
   done: loadDone(),
 };
@@ -975,7 +1007,7 @@ const DOMAIN_PLANS = [
     title: "Kết Cục Của Tội Lỗi (Fontaine)",
     tag: "Ưu tiên #1 · Nhựa",
     tone: "tag-gold",
-    note: "Farm 1 bí cảnh nuôi đồng thời Neuvillette + Furina + Fischl/Chiori",
+    note: "Farm 1 bí cảnh nuôi đồng thời Neuvillette + Furina + Fischl/Chiori (mảnh Thợ Săn dư có EM/STBK giữ cho Hu Tao đi Furina)",
     targets: [
       { char: "Neuvillette", setKey: "mh", match: "Thợ Săn" },
       { char: "Furina", setKey: "gt", match: "Đoàn Kịch" },
@@ -2033,6 +2065,8 @@ function calcTeamReadiness(members) {
 const TARGET_SET_CHECK = {
   Neuvillette: (s) => /4pc\s+Thợ Săn/i.test(s),
   Furina: (s) => /4pc\s+Đoàn Kịch/i.test(s),
+  "Hu Tao": (s) => /4pc\s+Thợ Săn/i.test(s),
+  Jean: (s) => /4pc\s+Bóng Hình/i.test(s),
   Mitya: (s) => /4pc\s+Ảo Tưởng/i.test(s),
   "Yae Miko": (s) => /4pc\s+Ảo Tưởng/i.test(s),
   Nilou: (s) => /2pc\s+Thiên Nham.*2pc\s+Vầng Sáng|2pc\s+Vầng Sáng.*2pc\s+Thiên Nham/i.test(s),
@@ -2061,8 +2095,8 @@ const TEAM_POWER_CFG = {
     ],
   },
   "Raiden + Furina": {
-    weights: [0.34, 0.32, 0.20, 0.14],
-    setCheck: ["Furina"],
+    weights: [0.38, 0.30, 0.22, 0.10],
+    setCheck: ["Furina", "Jean"],
     maxCurCap: 81,
     checks: [
       ({ get, tals, sets }) => {
@@ -2076,7 +2110,14 @@ const TEAM_POWER_CFG = {
         if (!sets(f).includes("4pc Đoàn Kịch")) parts.push("4pc Đoàn Kịch");
         return parts.length ? `Furina ${parts.join(" · ")}` : null;
       },
-      ({ get, statN }) => (statN(get("Yae Miko"), "Tỷ Lệ Bạo Kích") >= 68 ? null : `Yae Nón CR% (${statN(get("Yae Miko"), "Tỷ Lệ Bạo Kích").toFixed(0)}%)`),
+      ({ get, sets, wLv }) => {
+        const j = get("Jean");
+        if (!j) return null;
+        const parts = [];
+        if (!sets(j).includes("4pc Bóng Hình")) parts.push("4pc Bóng Hình");
+        if (wLv(j) < 90) parts.push(`Ống Đồng ${wLv(j)}→90`);
+        return parts.length ? `Jean ${parts.join(" · ")}` : null;
+      },
       ({ get, wLv }) => (wLv(get("Yelan")) >= 90 ? null : `Yelan Tây Phong ${wLv(get("Yelan"))}→90`),
     ],
   },
@@ -2115,8 +2156,28 @@ const TEAM_POWER_CFG = {
     checks: [
       ({ get, wLv }) => (wLv(get("Yelan")) >= 90 ? null : `Yelan Tây Phong ${wLv(get("Yelan"))}→90`),
       ({ get, statN }) => (statN(get("Hu Tao"), "Tỷ Lệ Bạo Kích") >= 70 ? null : `Hu Tao CR ${statN(get("Hu Tao"), "Tỷ Lệ Bạo Kích").toFixed(0)}%→70%+`),
+      ({ get, tals }) => (tals(get("Hu Tao"))[0] >= 10 ? null : "Hu Tao Đánh Thường 9→10"),
     ],
-    extraChips: ["Thử Furina + Xianyun"],
+  },
+  "Hu Tao Đánh Đáp": {
+    weights: [0.44, 0.24, 0.18, 0.14],
+    setCheck: ["Hu Tao", "Furina"],
+    maxCurCap: 82,
+    checks: [
+      ({ get, statN }) => {
+        const er = statN(get("Xianyun"), "Hiệu Quả Nạp Nguyên Tố");
+        return er >= 160 ? null : `Xianyun Cát ER (${er.toFixed(0)}%→160%+)`;
+      },
+      ({ get, sets }) => (sets(get("Hu Tao")).includes("4pc Thợ Săn") ? null : "Farm ké 4pc Thợ Săn + Cát EM (tạm Hồi Ức)"),
+      ({ get, tals, sets }) => {
+        const f = get("Furina");
+        if (!f) return null;
+        const parts = [];
+        if (tals(f)[2] < 10) parts.push(`Q${tals(f)[2]}→10`);
+        if (!sets(f).includes("4pc Đoàn Kịch")) parts.push("4pc Đoàn Kịch");
+        return parts.length ? `Furina ${parts.join(" · ")}` : null;
+      },
+    ],
   },
   "Yoimiya Đánh Thường": {
     weights: [0.52, 0.24, 0.14, 0.10],
@@ -2155,13 +2216,12 @@ const TEAM_POWER_CFG = {
     extraChips: ["Thử Furina + Mika C4"],
   },
   "Navia 2 Nham": {
-    weights: [0.48, 0.30, 0.12, 0.10],
+    weights: [0.54, 0.14, 0.16, 0.16],
     setCheck: ["Navia"],
     maxCurCap: 76,
     checks: [
       ({ get, statN }) => (statN(get("Navia"), "Tỷ Lệ Bạo Kích") >= 70 ? null : `Đẩy lại CR ${statN(get("Navia"), "Tỷ Lệ Bạo Kích").toFixed(1)}%→70%+`),
-      ({ get, tals }) => (tals(get("Chiori"))[1] >= 8 ? null : `Chiori E ${tals(get("Chiori"))[1]}→9`),
-      ({ get, art0 }) => (art0(get("Chiori")) > 0 || !get("Chiori")?.artifacts?.every((a) => a.level >= 20) ? "Ly Nham Chiori +20" : null),
+      ({ get, sets }) => (sets(get("Navia")).includes("4pc Tiếng Đêm") ? null : "Navia 4pc Tiếng Đêm (Tráp)"),
     ],
   },
   "Mitya + Yae Tinh-Siêu Dẫn": {
