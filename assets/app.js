@@ -30,7 +30,7 @@ const ACTIONS = [
   { id: "a_yae", bucket: "now", tag: "Ma Nữ ✓", shortFix: "Đổi Nón CR% (~75/204)", name: "Yae Miko", swapFrom: null, swapNote: "✓ Đã mở Ma Nữ (Edict of Cleansing) · Giữ Trấn Kagura R1 · 2,238 ATK · 51.0/252.2", fixTitle: "Đổi Nón STBK → Nón CR% (51/252 → ~75/204)", fixSub: "✓ Đã có trụ 24s, Q không phá trụ, +80%/200% ATK · Đổi Nón CR% ổn định CRIT rồi farm 4pc Ảo Tưởng chung Mitya", setKey: "dids" },
   { id: "a_keqing", bucket: "now", tag: "Ổn định", shortFix: "✓ Đã trả Bàn Nham (70.1/231.4)", name: "Keqing", swapFrom: null, swapNote: "✓ Đã lắp lại Bàn Nham Kết Lục Lv.90 R1 (1,800 ATK · 70.1/231.4) & đưa Bến Tàu → Nilou", fixTitle: "✓ Đã trả Bàn Nham Kết Lục R1 (70.1% CR / 231.4% CD)", fixSub: "Hoàn tất 0 Nhựa · Sẵn sàng đi Nhà Hát & Tăng Cường", setKey: null },
   { id: "a_nilou", bucket: "now", tag: "0 Nhựa", shortFix: "✓ Đeo Bến Tàu · Kéo 90 & 2+2 HP%", name: "Nilou", swapFrom: null, swapNote: "✓ Đã nhận Kiếm Bến Tàu Lv.60 (56.2k HP) & chuyển Kiếm Gỗ → Bennett", fixTitle: "Nâng Kiếm Bến Tàu 60 → 90 (41.3% HP) · Đổi 2+2 HP%", fixSub: "HP đã tăng 51.5k → 56.2k · Kéo kiếm lên 90 + 2pc+2pc HP% để chạm 68k+ HP", setKey: "hp2" },
-  { id: "a_yelan", bucket: "now", tag: "Nâng VK", shortFix: "Nâng Cung Tây Phong Lv.70 → 90", name: "Yelan", swapFrom: null, swapNote: "✓ Đã gắn Cung Tây Phong R5 (ER lên 191.2%)", fixTitle: "Nâng Cung Tây Phong Lv.70 → Lv.90", fixSub: "68.9/152.6 · 28.8k HP đã đẹp · Lên 90 thêm ~11% ER là chốt", setKey: null },
+  { id: "a_yelan", bucket: "now", tag: "Ổn định", shortFix: "✓ Đã chốt Tây Phong Lv.90 R5 (202% ER)", name: "Yelan", swapFrom: null, swapNote: "✓ Đã nâng Cung Tây Phong Lv.90 R5 (202.0% ER · 68.9/152.6)", fixTitle: "✓ Đã hoàn thiện Yelan (Tây Phong Lv.90 R5 · 202% ER)", fixSub: "Đã đạt trọn ngưỡng ER + Crit · Sẵn sàng mọi đội hình", setKey: null },
   { id: "a_gorou", bucket: "now", tag: "Nhà Hát", shortFix: "Bỏ cung 1★ · Lắp cung Nạp + Ly", name: "Gorou", swapFrom: null, swapNote: "Đang cầm Cung Săn Bắn 1★ Lv.1", fixTitle: "Lắp cung Nạp tạm & thêm Ly (đang 4 món)", fixSub: "Đủ đồ dự bị slot Nham cho Nhà Hát Giả Tưởng 7.2", setKey: null },
   { id: "a_aino", bucket: "now", tag: "0 Nhựa", shortFix: "Đổi Nón CR% nổ Tây Phong · Dừng farm", name: "Aino", swapFrom: null, swapNote: "✓ Đã Lv.80 C1 · 1/5/4 · Tây Phong Lv.90 R5 (40.0% CR · 191.6% ER · 464 EM)", fixTitle: "Đổi Nón STBK → Nón CR% (~60%+ nổ Tây Phong) · Dừng tốn nhựa", fixSub: "Chưa có đồng đội Nod-Krai 5★ · Giữ Lv.80 (1/5/4) đi Nhà Hát, tạm hoãn 4pc Khúc Ca (tùy chọn 4pc Giáo Quan)", setKey: null },
 
@@ -43,7 +43,7 @@ const ACTIONS = [
   { id: "a_navia", bucket: "farm", tag: "Tối ưu", shortFix: "✓ 6/10/10 · Đẩy lại CR ~70%+ (56.7%)", name: "Navia", swapFrom: null, swapNote: "✓ Đã vương miện Q10 (6/10/10 · Kiếm Li Cốt R1 · 1,980 ATK · 142.7% ER)", fixTitle: "Kéo lại CR 56.7% → 70%+ (đổi lại Nón/mảnh 4pc)", fixSub: "Vừa chuyển 2 Phiến Đá + 2 Giác Đấu nên ER lên 142.7% nhưng CR tụt từ 80% → 56.7%", setKey: "nw" },
 
   // Bucket 3: Snezhnaya unlocked (7%, 10 Iceculus) — start farming!
-  { id: "a_mitya", bucket: "later", tag: "Snezhnaya", shortFix: "Ly EM +20 · Kéo Lv.90 + Trấn 90", name: "Mitya", swapFrom: null, swapNote: "✓ Đã lên Lv.70 (2/3/4 · 67.2/188.5 · 516 EM) · 2pc Giấc Mộng + 2pc Đoàn Hát · Trấn Lv.50", fixTitle: "Nâng Ly EM +0 → +20 · Kéo Trấn & Mitya lên Lv.90", fixSub: "Đã ghép xong 2+2 EM (+160 EM) · Farm dần 4pc Ảo Tưởng chung Yae (Ma Nữ)", setKey: "dids" },
+  { id: "a_mitya", bucket: "later", tag: "Snezhnaya", shortFix: "Ly EM +20 · Kéo Lv.90 + Trấn 90", name: "Mitya", swapFrom: null, swapNote: "✓ Đã lên Lv.80 (2/3/4 · 67.2/213.6 · 516 EM) · 2pc Giấc Mộng + 2pc Đoàn Hát · Trấn Lv.70", fixTitle: "Nâng Ly EM +0 → +20 · Kéo Trấn (70→90) & Mitya (80→90)", fixSub: "Đã lên Lv.80 & Trấn Lv.70 · Farm dần 4pc Ảo Tưởng chung Yae (Ma Nữ)", setKey: "dids" },
   { id: "a_valeriy", bucket: "later", tag: "Snezhnaya", shortFix: "✓ Đeo Isshin 80 · Làm sau Mitya (Lv.70/80)", name: "Valeriy", swapFrom: null, swapNote: "✓ C3 (+100 EM từ C2) · Đã gắn Isshin Lv.80 R1 (647 ATK)", fixTitle: "Build gọn Lv.70/80 (sau Mitya 90) · E6–8 · Full ATK%", fixSub: "C3 đã mở C2 +100 EM & khiên giữ nhịp Mitya; trần thật nằm ở C6 nên ưu tiên Mitya & Yae trước", setKey: "furnace" },
   { id: "a_alyosha", bucket: "later", tag: "Snezhnaya", shortFix: "✓ Đeo Mũi Nhọn 70 · Kéo Lv / Xương Sống", name: "Alyosha", swapFrom: null, swapNote: "✓ Đã gắn Mũi Nhọn Của Gió Lv.70 R5 (550 ATK) · Hoặc lấy Xương Sống 5★ Lv.90 đang rảnh", fixTitle: "Kéo Lv.1 → 80 · Nâng E > Q · Dùng Mũi Nhọn R5 hoặc Xương Sống 90", fixSub: "Healer + Buff ATK team Tinh-Siêu Dẫn · Cân nhắc chuyển Xương Sống 5★ (Yaoyao vừa trả)", setKey: "no" },
 ];
@@ -140,9 +140,9 @@ const CHAR_GUIDES = {
   },
   Yelan: {
     mainStats: "Cát HP% · Ly ST Thủy · Nón CR/CD",
-    targets: "Mục tiêu: ~200% ER · Giữ 68.9/152.6 & 28.8k HP",
+    targets: "✓ Đã chốt đẹp: Cung Tây Phong Lv.90 R5 · 202.0% ER · 68.9/152.6 · 28.8k HP",
     steps: [
-      "Nâng Cung Tây Phong R5 từ Lv.70 → Lv.90 để lấy thêm ~11% ER (hiện 191.2% ER).",
+      "✓ Đã nâng Cung Tây Phong R5 lên Lv.90 (ER chạm mốc 202.0%).",
       "Giữ nguyên bộ 4pc Dấu Ấn Ngăn Cách và các chỉ số 68.9% CR / 152.6% CD hiện tại.",
     ],
   },
@@ -209,10 +209,10 @@ const CHAR_GUIDES = {
   },
   Mitya: {
     mainStats: "Cát EM · Ly EM hoặc ST Lôi · Nón CR/CD",
-    targets: "✓ Đã ghép 2+2 EM (Lv.70 · 2/3/4 · 516 EM · 67.2/188.5) · Mục tiêu: Lv.90 & Trấn Lv.90",
+    targets: "✓ Đã lên Lv.80 · Trấn Lv.70 (2/3/4 · 516 EM · 67.2/213.6) · Mục tiêu: Lv.90 & Trấn Lv.90",
     steps: [
-      "✓ Đã ghép xong 2pc Giấc Mộng + 2pc Đoàn Hát (67.2% CR / 188.5% CD · 516 EM) — nâng nốt Ly EM từ Lv.0 → Lv.20.",
-      "Kéo tiếp Trấn 5★ Sắc Lệnh Tinh Tú Lv.50 → Lv.90 và Mitya Lv.70 → Lv.90 kèm thiên phú (sách Charity tại Snezhnaya 7%).",
+      "✓ Đã kéo Mitya lên Lv.80 & Trấn Lv.70 (CD tăng lên 213.6%) — nâng nốt Ly EM từ Lv.0 → Lv.20.",
+      "Kéo tiếp Trấn 5★ Sắc Lệnh Tinh Tú Lv.70 → Lv.90 và Mitya Lv.80 → Lv.90 kèm thiên phú (sách Charity tại Snezhnaya).",
       "Farm chung bộ 4pc Ảo Tưởng Vụn Vỡ cho cả Mitya lẫn Yae Miko (Ma Nữ); ghép cùng Rosaria C6 / NLH Băng (sau nâng lên Odette) & Valeriy C3.",
     ],
   },
@@ -232,6 +232,15 @@ const CHAR_GUIDES = {
       "✓ Đã gắn Mũi Nhọn Của Gió Lv.70 R5 (+ATK% & EM); khi cần nhiều Nạp hơn có thể chuyển Xương Sống Thiên Không Lv.90 (Yaoyao vừa trả vào kho).",
       "Ưu tiên nâng Thiên phú E → Q; đóng vai hồi máu + buffer ATK cho đội Tinh-Siêu Dẫn khi thay Valeriy.",
       "Lắp bộ 4pc Nghi Thức Tông Thất Cổ (hoặc Heart of the Furnace nếu team đã có Tông Thất).",
+    ],
+  },
+  Illuga: {
+    mainStats: "Cát ER%/EM · Ly EM · Nón EM",
+    targets: "4★ Nham Nod-Krai (mới Lv.1 C0) · Mục tiêu khi build: ≥180% ER · Full EM · Tai Ương / Tây Phong",
+    steps: [
+      "Hỗ trợ Nguyệt-Kết Tinh (Lunar-Crystallize) từ Nod-Krai: buff E/Q cộng sát thương phẳng cho đội Nham-Thủy theo Tinh Thông Nguyên Tố (EM).",
+      "Đang Lv.1 C0 — ưu tiên giữ nhựa cho Fontaine & Mitya + Yae trước; chưa cần nâng vội.",
+      "Về sau có thể ghép với Navia + Aino (+ Zhongli/Columbina) để mở Nguyệt Triệu cấp 2 và kích bộ 4pc Khúc Ca Trăng Lụa.",
     ],
   },
 };
@@ -385,10 +394,10 @@ const COLLECT_WEAPONS = [
 const FARM_DAYS = [
   { key: 1, short: "T2", title: "Thứ 2", chars: ["Furina", "Mitya", "Chiori"], resinChips: ["3× Boss Tuần", "Narwhal (Furina)", "Boss Snezhnaya (Mitya)"], extra: "Đặt lịch tuần · Nhặt đặc sản hồi 48h" },
   { key: 2, short: "T3", title: "Thứ 3", chars: ["Furina", "Nilou", "Neuvillette"], resinChips: ["Sách Chính Nghĩa (Furina Q10)", "Kiếm Bến Tàu 60→90 (Nilou)"], extra: "Dư nhựa → Bí cảnh Tội Lỗi (Fontaine)" },
-  { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Yelan", "Mitya"], resinChips: ["Sách Ánh Sáng (Chiori E)", "Tây Phong Yelan → 90", "Trấn Mitya → 90"], extra: "Ép Tráp: 4pc Tông Thất / Dấu Ấn / Tiếng Đêm" },
+  { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Mitya", "Neuvillette"], resinChips: ["Sách Ánh Sáng (Chiori E)", "Trấn Mitya 70→90", "TDV Fontaine"], extra: "Ép Tráp: 4pc Tông Thất / Dấu Ấn / Tiếng Đêm" },
   { key: 4, short: "T5", title: "Thứ 5", chars: ["Neuvillette", "Furina", "Fischl"], resinChips: ["Bí cảnh Tội Lỗi (Fontaine)", "4pc Thợ Săn & Đoàn Kịch"], extra: "1 bí cảnh nuôi chung Neuv + Furina + Fischl" },
   { key: 5, short: "T6", title: "Thứ 6", chars: ["Furina", "Neuvillette", "Nilou"], resinChips: ["Sách Chính Nghĩa (Furina Q10)", "Chốt Bến Tàu 90 / TDV Fontaine"], extra: "Chốt Beidou / Gorou / Ningguang trước hạn Nhà Hát 01/12" },
-  { key: 6, short: "T7", title: "Thứ 7", chars: ["Chiori", "Yelan", "Mitya"], resinChips: ["Sách Ánh Sáng (Chiori E)", "4pc Ảo Tưởng (Mitya + Yae)"], extra: "Leo lại La Hoàn 11-3 & 12" },
+  { key: 6, short: "T7", title: "Thứ 7", chars: ["Chiori", "Mitya", "Yae Miko"], resinChips: ["Sách Ánh Sáng (Chiori E)", "4pc Ảo Tưởng (Mitya + Yae)"], extra: "Leo lại La Hoàn 11-3 & 12" },
   { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Mitya", "Yae Miko", "Valeriy"], resinChips: ["Sách Charity (Mitya)", "4pc Ảo Tưởng (Mitya + Yae)"], extra: "Kéo Mitya Lv.90 + Trấn 90 trước, Valeriy làm sau" },
 ];
 
@@ -1765,7 +1774,7 @@ function renderTrackerView() {
   }
   if (APP.trackerTab === "chars" || APP.trackerTab === "farm") {
     blocks.push(renderActionBucket("2. Cần Farm · Vùng Đã Mở", `Fontaine ${regionPct("Fontaine")}% · Nod-Krai ${regionPct("Nod-Krai")}% · Inazuma ${regionPct("Inazuma")}%`, "bucket-farm", farmItems));
-    blocks.push(renderActionBucket(`3. Snezhnaya (${regionPct("Snezhnaya")}%)`, "10 Băng Thần Đồng · Sách Charity & Boss", "bucket-later", laterItems));
+    blocks.push(renderActionBucket(`3. Snezhnaya (${regionPct("Snezhnaya")}%)`, `${APP.data?.account?.stats?.iceculus_number ?? 10} Băng Thần Đồng · Sách Charity & Boss`, "bucket-later", laterItems));
   }
   if (APP.trackerTab === "weapons") {
     blocks.push(renderSurplusBucket());
