@@ -1074,7 +1074,48 @@ const PROTECTED_OWNERS = new Set([
   ...SWAP_TARGETS,
   "Kaedehara Kazuha", "Nahida", "Zhongli", "Sangonomiya Kokomi",
   "Mona", "Rosaria", "Yun Jin", "Collei", "Eula",
+  "Barbara", "Gorou", "Kujou Sara", "Aino", "Beidou", "Ningguang", "Noelle", "Lisa", "Sucrose",
 ]);
+
+function isSafeDonor(c) {
+  if (!c) return false;
+  if (PROTECTED_OWNERS.has(c.name)) return false;
+  if (c.rarity === 5 && (c.level || 0) >= 80) return false;
+  return true;
+}
+
+const ER_FLOOR = {
+  Neuvillette: 118,
+  Furina: 148,
+  "Raiden Shogun": 250,
+  Yelan: 195,
+  Xiangling: 220,
+  Xingqiu: 200,
+  Bennett: 235,
+  Xianyun: 160,
+  Jean: 185,
+  "Kamisato Ayaka": 130,
+  Navia: 120,
+};
+
+const KEY_STAT = {
+  Nilou: "HP%",
+  Chevreuse: "HP%",
+  "Kuki Shinobu": "EM",
+  Xianyun: "ER",
+  Jean: "ER",
+  Bennett: "ER",
+};
+
+function getPieceStatVal(ar, shortK) {
+  if (!ar) return 0;
+  let val = 0;
+  if (shortStatName(ar.main_stat) === shortK) val += parseStatNum(ar.main_val);
+  (ar.substats || []).forEach((s) => {
+    if (shortStatName(s.name) === shortK) val += parseStatNum(s.value);
+  });
+  return val;
+}
 
 const DOMAIN_PLANS = [
   {
@@ -1288,7 +1329,7 @@ function evalAllArtifacts() {
 }
 
 function findZeroResinSwaps(allArts) {
-  const donors = allArts.filter((x) => x.rarity === 5 && x.level >= 20 && !PROTECTED_OWNERS.has(x.owner.name));
+  const donors = allArts.filter((x) => x.rarity === 5 && x.level >= 20 && isSafeDonor(x.owner));
   const candidates = [];
 
   SWAP_TARGETS.forEach((targetName) => {
@@ -1302,10 +1343,14 @@ function findZeroResinSwaps(allArts) {
       setCounts[s] = (setCounts[s] || 0) + 1;
     });
     const hasFiveSet = Object.values(setCounts).some((v) => v >= 5);
+    const curER = parseStatNum(stat(target, "Hiệu Quả Nạp Nguyên Tố"));
+    const erFloor = ER_FLOOR[targetName] || 0;
+    const keyStat = KEY_STAT[targetName];
 
     arts.forEach((rawCur) => {
       const cur = evalArtifact(rawCur, target);
       const isOffSet = (setCounts[cur.ar.set] || 0) <= 1 || hasFiveSet;
+      const curMain = shortStatName(cur.ar.main_stat);
       const curMainIssue = getSlotMainIssue(cur.ar, target);
 
       donors.forEach((cand) => {
@@ -1314,10 +1359,26 @@ function findZeroResinSwaps(allArts) {
         if (!sameSet && !isOffSet) return;
         if (["Cát", "Ly", "Nón"].includes(cur.slotShort)) {
           const candMain = shortStatName(cand.ar.main_stat);
+          if (!curMainIssue && candMain !== curMain) return;
           const allowed = spec.main?.[cur.slotShort];
           if (allowed && !allowed.includes(candMain)) return;
           if (getSlotMainIssue(cand.ar, { ...target, artifact_sets: target.artifact_sets || "" })) return;
         }
+
+        const dCR = +(getPieceStatVal(cand.ar, "CR") - getPieceStatVal(cur.ar, "CR")).toFixed(1);
+        const dCD = +(getPieceStatVal(cand.ar, "CD") - getPieceStatVal(cur.ar, "CD")).toFixed(1);
+        const dER = +(getPieceStatVal(cand.ar, "ER") - getPieceStatVal(cur.ar, "ER")).toFixed(1);
+        const dHP = +(getPieceStatVal(cand.ar, "HP%") - getPieceStatVal(cur.ar, "HP%")).toFixed(1);
+        const dATK = +(getPieceStatVal(cand.ar, "ATK%") - getPieceStatVal(cur.ar, "ATK%")).toFixed(1);
+        const dDEF = +(getPieceStatVal(cand.ar, "DEF%") - getPieceStatVal(cur.ar, "DEF%")).toFixed(1);
+        const dEM = Math.round(getPieceStatVal(cand.ar, "EM") - getPieceStatVal(cur.ar, "EM"));
+
+        if (erFloor > 0 && curER + dER < erFloor && dER < 0) return;
+        if (keyStat && !curMainIssue) {
+          const dKs = getPieceStatVal(cand.ar, keyStat) - getPieceStatVal(cur.ar, keyStat);
+          if (dKs < 0) return;
+        }
+
         const candRvForTarget = calcUsefulRolls(cand.ar, targetName);
         const cvGain = +(cand.cv - cur.cv).toFixed(1);
         const rvGain = candRvForTarget - cur.rvRolls;
@@ -1325,7 +1386,7 @@ function findZeroResinSwaps(allArts) {
         let kind = null;
         let headline = "";
         let score = 0;
-        if (cur.level < 20 && (cand.cv >= 15 || candRvForTarget >= 4)) {
+        if (cur.level < 20 && (spec.role === "support" ? candRvForTarget >= 3 : (cand.cv >= 15 || candRvForTarget >= 4))) {
           kind = "fix";
           headline = `Thay +${cur.level} → +20`;
           score = 70 + cand.cv + rvGain * 6 + (sameSet ? 12 : 0);
@@ -1335,16 +1396,29 @@ function findZeroResinSwaps(allArts) {
             headline = `Sửa ${curMainIssue}`;
             score = 65 + Math.max(0, cvGain) + rvGain * 7 + (sameSet ? 10 : 0);
           }
-        } else if (spec.role === "crit" && cvGain >= 8) {
+        } else if (spec.role === "crit" && cvGain >= 10 && rvGain >= 0) {
           kind = sameSet ? "same" : "offset";
           headline = `+${cvGain.toFixed(1)} CV`;
           score = cvGain * 2 + (sameSet ? 12 : 0) + rvGain * 3;
-        } else if (spec.role === "support" && rvGain >= 2) {
+        } else if (spec.role === "support" && rvGain >= 3) {
           kind = sameSet ? "same" : "offset";
           headline = `+${rvGain} dòng tốt`;
           score = rvGain * 14 + (sameSet ? 10 : 0) + Math.max(0, cvGain) * 0.3;
         }
         if (!kind) return;
+
+        const deltas = [];
+        const addDelta = (val, suf, thr) => {
+          if (Math.abs(val) < thr) return;
+          deltas.push({ text: `${val > 0 ? "+" : ""}${val}${suf}`, pos: val > 0 });
+        };
+        addDelta(dCR, "% CR", 1);
+        addDelta(dCD, "% CD", 1);
+        addDelta(dER, "% ER", 2);
+        addDelta(dHP, "% HP", 2);
+        addDelta(dATK, "% ATK", 2);
+        addDelta(dDEF, "% DEF", 3);
+        addDelta(dEM, " EM", 15);
 
         candidates.push({
           target,
@@ -1359,6 +1433,7 @@ function findZeroResinSwaps(allArts) {
           cvGain,
           rvGain,
           candRvForTarget,
+          deltas,
           score,
         });
       });
@@ -1698,6 +1773,7 @@ function renderSwapCard(sw) {
           <div class="swap-subs-line">${renderSwapSubLine(sw.cand.ar.substats, spec?.wantSubs)}</div>
         </div>
       </div>
+      ${sw.deltas?.length ? `<div class="swap-deltas">${sw.deltas.map((d) => `<span class="sw-delta ${d.pos ? "is-pos" : "is-neg"}">${esc(d.text)}</span>`).join("")}</div>` : ""}
     </article>
   `;
 }
@@ -1752,7 +1828,7 @@ function renderArtifactsView() {
     });
     bodyHtml = `
       <div class="art-rule-bar">
-        <strong>Tráo Đồ 0 Nhựa:</strong> Chỉ mượn mảnh 5★ +20 đang nằm trên <b>nhân vật dự bị</b> (Thoma, Barbara, Candace, Kachina…) — <b>không</b> lấy đồ của nhân vật đang dùng và luôn giữ nguyên bộ 4pc của người nhận.
+        <strong>Tráo Đồ 0 Nhựa:</strong> Chỉ mượn mảnh 5★ +20 từ <b>dự bị bỏ kho</b> (không đụng 5★ Lv.80+ hay NV Nhà Hát), giữ nguyên bộ 4pc, khóa dòng chính hợp lệ và không làm tụt ngưỡng Nạp (ER).
       </div>
       <div class="art-controls">
         <div class="filter-group">
