@@ -1,12 +1,14 @@
 # Ghi chú Tư vấn & Kế hoạch Tài khoản Genshin (`UID 802472241`)
 
-Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật ngày **28/11/2026 (`12:58`)** & lịch sử roll mới nhất (**151** lượt, Version **7.2**, **74 nhân vật**).
+Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật ngày **28/11/2026 (`16:21`)** & lịch sử roll mới nhất (**151** lượt, Version **7.2**, **74 nhân vật**).
 
 ---
 
 ## 0. Các việc đã hoàn thành sau đợt Crawl & Export Roll 25–28/11/2026
 
-- **Cập nhật ngày `28/11 12:58` (`Mitya`) & `10:55` (Crawl & Export Roll):**
+- **Cập nhật chiều `28/11 16:21` (`Ganyu · Diona Ma Nữ ✓`) & sáng `12:58 / 10:55`:**
+  - `Ganyu`: **✓ Đã đổi `Cung Trừ Ma → Lạc Hà Lv.90 R5`** (từ Kujou Sara) & gắn **`2pc Dấu Ấn Ngăn Cách`** (`Kiếm Cách Uy Vũ` từ Xingqiu + `Lông Vũ Rơi Rụng` từ kho/NLH) — ER nhảy **`110.4% → 161.0%`**, chỉ số mới `59.4% CR / 162.2% CD · 1,847 ATK · 3pc Đoàn Hát + 2pc Dấu Ấn`. (`Kujou Sara` giữ tạm `Cung Trừ Ma Lv.90 R5`, `1,862 ATK · 136.2% ER`.)
+  - `Diona C6`: **✓ Đã mở khóa quest Chỉ Dụ Của Ma Nữ** (`Cung Tế Lễ Lv.80 R3 · 24,422 HP · 199.8% ER · 3pc Thiên Nham + 2pc Thiếu Nữ`): sau E (20s), kích Siêu Dẫn / Tinh-Siêu Dẫn tự bắn thêm **3 Trảo Băng ngoài sân** (CD 3.5s, kích đều `4pc Thiên Nham`), Nộ C6 cộng thêm **`+40% ST Tinh-Siêu Dẫn`**, **`+200 EM`** & **`+25% Max HP`**, đồng thời kích cộng hưởng **2 Ma Nữ** cùng `Yae Miko` trong biến thể 2 Băng `Mitya · Yae · Ganyu · Diona C6`.
   - `Mitya`: **✓ Đã lên `Lv.90 C0` · `7/7/7` & Trấn `Sắc Lệnh Tinh Tú Lv.90 R1`** (`213.6% → 238.7% CD` · `1,178 → 1,368 ATK` · `516 EM`).
   - `Valeriy`: **✓ Đã nâng `Lv.1 → Lv.20 C3`** (`647 → 693 ATK · Isshin Lv.80 R1`).
   - **Bản đồ & Tài khoản (`28/11`):** Snezhnaya **`10% → 14%`** (`20 → 37` Băng Thần Đồng `+17`, *Kẻ Neo Sóng* `x15`), Fontaine Danh Vọng **`10`**, Điểm dịch chuyển **`533 → 538`**, Rương **`+5` Thường / `+14` Cao Cấp / `+1` Hiếm / `+1` Kỳ Dị**, Thành tựu **`1,133 → 1,136`**, Ngày hoạt động **`1,314 → 1,315`**.
@@ -99,7 +101,7 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 
 ## 3. Danh sách Nhân vật Meta 7.2 tại Snezhnaya (`Đã mở 14%`)
 
-1. **Mitya (✓ đã lên `Lv.90` C0 · `7/7/7`, trấn `Sắc Lệnh Tinh Tú` `Lv.90` R1, `516 EM · 67.2/238.7 · 1,368 ATK`):** Lõi Tinh-Siêu Dẫn đi cặp **Yae Miko (Ma Nữ)** + **Rosaria C6 / Nhà Lữ Hành Băng** (sau nâng lên **Odette**) + **Valeriy C3** — nâng nốt Ly EM `+0 → +20` & farm chung **`4pc Ảo Tưởng Vụn Vỡ`** cho cả Mitya & Yae.
+1. **Mitya (✓ đã lên `Lv.90` C0 · `7/7/7`, trấn `Sắc Lệnh Tinh Tú` `Lv.90` R1, `516 EM · 67.2/238.7 · 1,368 ATK`):** Lõi Tinh-Siêu Dẫn — bên cạnh bản `Rosaria C6 + Valeriy C3` (sau nâng lên **Odette**), đã có ngay biến thể **2 Băng + 2 Ma Nữ**: **`Mitya · Yae Ma Nữ · Ganyu (Lạc Hà 161% ER) · Diona C6 Ma Nữ`** (`+40% ST Tinh-Siêu Dẫn`, `+200 EM`, `+3 Trảo Băng ngoài sân`, đủ ấn & khiên không cần đợi nuôi Valeriy). Nâng nốt Ly EM `+0 → +20` & farm chung **`4pc Ảo Tưởng Vụn Vỡ`** cho cả Mitya & Yae.
 2. **Valeriy (✓ đã lên `Lv.20 C3`):** Khiên chống gián đoạn (giữ nhịp Trọng Kích Mitya) + C2 buff **`+100 EM` toàn đội** — gắn sẵn `Kagotsurube Isshin Lv.80` (không tốn Phôi); build gọn `Lv.70/80` (E `6–8`) **sau khi xong Mitya 90** vì trần C6 mới là mốc bứt phá lớn.
 3. **Alyosha (Lv.1 C0):** 4★ Thương Lôi off-field Healer + Buff ATK (cạnh tranh trực tiếp slot của Valeriy; ưu tiên dùng Valeriy C3 để lấy khiên +100 EM trước, chỉ đổi sang Alyosha khi gặp màn bắt buộc hồi máu).
 4. **Aino (`Lv.80 C1`) & Illuga (`Lv.1 C0`, mới pull `27/11`):**
@@ -114,7 +116,7 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 
 | Đội hình | Vai trò | Hiện tại (Tier) | Dự tính (Tier) | Tăng | Đòn bẩy nâng cấp chính |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| **Mitya + Yae Tinh-Siêu Dẫn** (`Mitya · Yae · Rosaria · Valeriy`) | Meta 7.2 · Tinh-Siêu Dẫn | **~61k** (`A+`) | **~98k** (`S+`) | +61% | Mitya Ly EM +20 + 4pc Ảo Tưởng · Yae (✓ Ma Nữ) đổi Nón CR% + 4pc Ảo Tưởng · Valeriy Lv.20→80 (đổi Rosaria/NLH Băng → Odette vượt 100k+) |
+| **Mitya + Yae Tinh-Siêu Dẫn** (`Mitya · Yae · Rosaria · Valeriy`) | Meta 7.2 · Tinh-Siêu Dẫn | **~61k** (`A+`) | **~98k** (`S+`) | +61% | Mitya Ly EM +20 + 4pc Ảo Tưởng · Yae (✓ Ma Nữ) đổi Nón CR% · Đã sẵn bản 2 Băng: Ganyu (`161% ER`) + Diona C6 (✓ Ma Nữ) |
 | **Neuvillette + Furina Hyper** (`Neuvillette · Furina · Kazuha · Zhongli`) | AOE · Đơn | **~76k** (`S`) | **~92k** (`S+`) | +21% | Neuv 4pc Thợ Săn (52.8% CR) · Furina Q9→10 & 4pc Đoàn Kịch (chung 1 bí cảnh Fontaine) |
 | **Hu Tao Đánh Đáp** (`Hu Tao · Furina · Yelan · Xianyun`) | Đơn · Đánh Đáp | ~62k (`A+`) | **~82k** (`S`) | +32% | Chưa farm Thợ Săn vẫn đánh tạm 4pc Hồi Ức · Chỉnh Xianyun Cát ER (`160%+`) + Ly/Nón ATK% · Farm ké 4pc Thợ Săn + Cát EM sau |
 | **Raiden + Furina Hyper** (`Raiden · Furina · Yelan · Jean`) | Đơn mục tiêu | **~72k** (`S`) | ~81k (`S`) | +13% | Furina Q9→10 · 4pc Đoàn Kịch · Jean C3 đủ 4pc Bóng Hình + Ống Đồng 90 *(Yelan ✓ Tây Phong 90)* |
@@ -125,5 +127,5 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 | **Raiden National** (`Raiden · Bennett · Xiangling · Yelan`) | Đơn mục tiêu | ~64k (`A+`) | ~68k (`A+`) | +6% | Tối ưu nhẹ Crit Xiangling (51% CR) *(Yelan ✓ Tây Phong 90)* |
 | **Ayaka Đóng Băng** (`Ayaka · Mona · Kazuha · Kokomi`) | AOE Đóng Băng | ~59k (`A+`) | ~67k (`A+`) | +14% | Amenoma R3→R5 · Thử Furina + Charlotte |
 | **Yoimiya Đánh Thường** (`Yoimiya · Yelan · Yun Jin · Zhongli`) | Boss bay · Đơn | ~58k (`A+`) | ~62k (`A+`) | +7% | Bổ sung EM (63→100+) *(Yelan ✓ Tây Phong 90)* |
-| **Ganyu Thả Nộ · 2 Băng** (`Ayaka · Ganyu · Kazuha · Kokomi`) | AOE · Quickswap | ~55k (`A`) | ~68k (`A+`) | +24% | Bỏ ngắm bắn (`E→Q`) · Đổi `4pc Dấu Ấn/Tông Thất` + `Cung ER` (`110% → 160%+ ER`) |
+| **Ganyu Thả Nộ · 2 Băng** (`Ayaka · Ganyu · Kazuha · Kokomi`) | AOE · Quickswap | **~64k** (`A+`) | ~68k (`A+`) | +6% | ✓ Đã sang `Lạc Hà R5` (`161.0% ER`) + `2pc Dấu Ấn` · Thay nốt 3 mảnh Đoàn Hát → `4pc Dấu Ấn / Tông Thất` |
 | **Eula Vật Lý** (`Eula · Raiden · Rosaria · Zhongli`) | Nuke Vật Lý | ~50k (`A`) | ~56k (`A`) | +12% | Đẩy CR 51.7%→70%+ · Thử Furina + Mika C4 |

@@ -1,5 +1,5 @@
 {
-  "crawled_at": "2026-11-28T12:58:00+07:00",
+  "crawled_at": "2026-11-28T16:21:00+07:00",
   "account": {
     "uid": "802472241",
     "nickname": "Mahyh",
@@ -4057,40 +4057,40 @@
       ],
       "talent_levels": "10/10/10",
       "weapon": {
-        "name": "Cung Trừ Ma",
+        "name": "Lạc Hà",
         "rarity": 4,
         "level": 90,
         "refinement": 5,
-        "base_atk": "454",
-        "substat_name": "Tỷ Lệ Tấn Công",
-        "substat_val": "55.1%",
-        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0d09981aa5c965eb05df4d6fa400d7bc.png"
+        "base_atk": "565",
+        "substat_name": "Hiệu Quả Nạp Nguyên Tố",
+        "substat_val": "30.6%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ab3de086b1a1f6a42d1b5c8ae32f3b15.png"
       },
       "stats": {
         "Giới Hạn HP": {
           "base": "9797",
-          "add": "5990",
-          "final": "15787"
+          "add": "7042",
+          "final": "16839"
         },
         "Tỷ Lệ Bạo Kích": {
-          "base": "58.3%",
+          "base": "59.4%",
           "add": "",
-          "final": "58.3%"
+          "final": "59.4%"
         },
         "Tấn Công": {
-          "base": "789",
-          "add": "1280",
-          "final": "2069"
+          "base": "900",
+          "add": "947",
+          "final": "1847"
         },
         "Sát Thương Bạo Kích": {
-          "base": "198.0%",
+          "base": "162.2%",
           "add": "",
-          "final": "198.0%"
+          "final": "162.2%"
         },
         "Phòng Ngự": {
           "base": "630",
-          "add": "145",
-          "final": "776"
+          "add": "167",
+          "final": "797"
         },
         "Tăng Trị Liệu": {
           "base": "0.0%",
@@ -4113,76 +4113,76 @@
           "final": "46.6%"
         },
         "Hiệu Quả Nạp Nguyên Tố": {
-          "base": "110.4%",
+          "base": "161.0%",
           "add": "",
-          "final": "110.4%"
+          "final": "161.0%"
         }
       },
-      "artifact_sets": "4pc Đoàn Hát Lang Thang Đại Lục, 1pc Giấc Mộng Thủy Tiên",
+      "artifact_sets": "3pc Đoàn Hát Lang Thang Đại Lục, 2pc Dấu Ấn Ngăn Cách",
       "artifacts": [
         {
           "slot": "Hoa Sự Sống",
-          "name": "Hoa Tươi Trên Lữ Trình",
-          "set": "Giấc Mộng Thủy Tiên",
+          "name": "Kiếm Cách Uy Vũ",
+          "set": "Dấu Ấn Ngăn Cách",
           "rarity": 5,
           "level": 20,
           "main_stat": "HP",
           "main_val": "4780",
           "substats": [
             {
-              "name": "Tấn Công",
-              "value": "14",
+              "name": "Sát Thương Bạo Kích",
+              "value": "14.0%",
+              "rolls": 1
+            },
+            {
+              "name": "Tỷ Lệ HP",
+              "value": "5.3%",
               "rolls": 0
             },
             {
-              "name": "Sát Thương Bạo Kích",
-              "value": "28.8%",
-              "rolls": 3
-            },
-            {
-              "name": "Phòng Ngự",
-              "value": "44",
-              "rolls": 1
-            },
-            {
               "name": "Tỷ Lệ Bạo Kích",
-              "value": "7.0%",
+              "value": "10.1%",
+              "rolls": 2
+            },
+            {
+              "name": "Tỷ Lệ Tấn Công",
+              "value": "9.3%",
               "rolls": 1
             }
           ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/17dfffacc89923b85f3fa406f041208e.png"
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16879d66028f85addecf5a7208f6bffb.png"
         },
         {
           "slot": "Lông Vũ Tử Vong",
-          "name": "Mũi Tên Nhạc Sĩ",
-          "set": "Đoàn Hát Lang Thang Đại Lục",
+          "name": "Lông Vũ Rơi Rụng",
+          "set": "Dấu Ấn Ngăn Cách",
           "rarity": 5,
           "level": 20,
           "main_stat": "Tấn Công",
           "main_val": "311",
           "substats": [
             {
-              "name": "Sát Thương Bạo Kích",
-              "value": "21.8%",
+              "name": "Phòng Ngự",
+              "value": "62",
               "rolls": 2
             },
             {
               "name": "Tỷ Lệ Tấn Công",
-              "value": "9.9%",
+              "value": "10.5%",
               "rolls": 1
             },
             {
               "name": "Tỷ Lệ Bạo Kích",
-              "value": "6.2%",
-              "rolls": 1
+              "value": "3.1%",
+              "rolls": 0
             },
             {
-              "name": "Tỷ Lệ Phòng Ngự",
-              "value": "7.3%",
-              "rolls": 0
+              "name": "Sát Thương Bạo Kích",
+              "value": "10.9%",
+              "rolls": 1
             }
           ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/70e4bef4acbb4d4789923c3e546aeaf1.png"
+          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -11780,23 +11780,23 @@
       "stats": {
         "Giới Hạn HP": {
           "base": "9514",
-          "add": "7597",
-          "final": "17112"
+          "add": "8096",
+          "final": "17610"
         },
         "Tỷ Lệ Bạo Kích": {
-          "base": "43.9%",
+          "base": "39.6%",
           "add": "",
-          "final": "43.9%"
+          "final": "39.6%"
         },
         "Tấn Công": {
           "base": "642",
-          "add": "652",
-          "final": "1294"
+          "add": "592",
+          "final": "1234"
         },
         "Sát Thương Bạo Kích": {
-          "base": "139.4%",
+          "base": "142.5%",
           "add": "",
-          "final": "139.4%"
+          "final": "142.5%"
         },
         "Phòng Ngự": {
           "base": "705",
@@ -11809,9 +11809,9 @@
           "final": "0.0%"
         },
         "Tinh Thông Nguyên Tố": {
-          "base": "61",
+          "base": "77",
           "add": "",
-          "final": "61"
+          "final": "77"
         },
         "Tăng Nhận Trị Liệu": {
           "base": "0.0%",
@@ -11841,24 +11841,24 @@
           "main_val": "4780",
           "substats": [
             {
-              "name": "Sát Thương Bạo Kích",
-              "value": "14.0%",
+              "name": "Tỷ Lệ HP",
+              "value": "10.5%",
               "rolls": 1
             },
             {
-              "name": "Tỷ Lệ HP",
-              "value": "5.3%",
+              "name": "Tinh Thông Nguyên Tố",
+              "value": "16",
               "rolls": 0
             },
             {
               "name": "Tỷ Lệ Bạo Kích",
-              "value": "10.1%",
-              "rolls": 2
+              "value": "5.8%",
+              "rolls": 1
             },
             {
-              "name": "Tỷ Lệ Tấn Công",
-              "value": "9.3%",
-              "rolls": 1
+              "name": "Sát Thương Bạo Kích",
+              "value": "17.1%",
+              "rolls": 2
             }
           ],
           "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/16879d66028f85addecf5a7208f6bffb.png"
@@ -12988,14 +12988,14 @@
       ],
       "talent_levels": "4/8/11",
       "weapon": {
-        "name": "Lạc Hà",
+        "name": "Cung Trừ Ma",
         "rarity": 4,
         "level": 90,
         "refinement": 5,
-        "base_atk": "565",
-        "substat_name": "Hiệu Quả Nạp Nguyên Tố",
-        "substat_val": "30.6%",
-        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ab3de086b1a1f6a42d1b5c8ae32f3b15.png"
+        "base_atk": "454",
+        "substat_name": "Tỷ Lệ Tấn Công",
+        "substat_val": "55.1%",
+        "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0d09981aa5c965eb05df4d6fa400d7bc.png"
       },
       "stats": {
         "Giới Hạn HP": {
@@ -13009,9 +13009,9 @@
           "final": "39.2%"
         },
         "Tấn Công": {
-          "base": "738",
-          "add": "978",
-          "final": "1716"
+          "base": "628",
+          "add": "1235",
+          "final": "1862"
         },
         "Sát Thương Bạo Kích": {
           "base": "158.8%",
@@ -13044,9 +13044,9 @@
           "final": "46.6%"
         },
         "Hiệu Quả Nạp Nguyên Tố": {
-          "base": "166.8%",
+          "base": "136.2%",
           "add": "",
-          "final": "166.8%"
+          "final": "136.2%"
         }
       },
       "artifact_sets": "4pc Dấu Ấn Ngăn Cách, 1pc Đoàn Hát Lang Thang Đại Lục",

@@ -18,7 +18,7 @@ const SET_META = {
   hp2: { name: "2pc Thiên Nham + 2pc Vầng Sáng (HP%)", short: "2+2 HP%", where: "Tráp Thánh Thiên Nham / Bí cảnh Sumeru", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png" },
 };
 
-// Unified per-character action dossier (synced with crawl 28/11/2026 12:58 — Mitya Lv.90 7/7/7 Trấn Lv.90, Valeriy Lv.20, 151 rolls)
+// Unified per-character action dossier (synced with crawl 28/11/2026 16:21 — Mitya Lv.90 Trấn 90, Ganyu Lạc Hà 161% ER, Diona C6 Ma Nữ ✓)
 const ACTIONS = [
   // Bucket 1: Do now in-game (0 Resin or quick swap / artifact mainstat fix)
   { id: "a_ning", bucket: "now", tag: "Nhà Hát", shortFix: "Nâng Ly Nham +20 · Đổi Nón CR%", name: "Ningguang", swapFrom: null, swapNote: "✓ Đã gắn Quyển Thiên Không R2 (2,501 ATK)", fixTitle: "Nâng Ly Nham (+0 → +20) & đổi Nón → CR%", fixSub: "CR đang 14.7% / 169.7% CD · Chỉnh xong sẵn sàng Nhà Hát Màn 8", setKey: null },
@@ -32,6 +32,8 @@ const ACTIONS = [
   { id: "a_yelan", bucket: "now", tag: "Ổn định", shortFix: "✓ Đã chốt Tây Phong Lv.90 R5 (202% ER)", name: "Yelan", swapFrom: null, swapNote: "✓ Đã nâng Cung Tây Phong Lv.90 R5 (202.0% ER · 68.9/152.6)", fixTitle: "✓ Đã hoàn thiện Yelan (Tây Phong Lv.90 R5 · 202% ER)", fixSub: "Đã đạt trọn ngưỡng ER + Crit · Sẵn sàng mọi đội hình", setKey: null },
   { id: "a_gorou", bucket: "now", tag: "Nhà Hát", shortFix: "Bỏ cung 1★ · Lắp cung Nạp + Ly", name: "Gorou", swapFrom: null, swapNote: "Đang cầm Cung Săn Bắn 1★ Lv.1", fixTitle: "Lắp cung Nạp tạm & thêm Ly (đang 4 món)", fixSub: "Đủ đồ dự bị slot Nham cho Nhà Hát Giả Tưởng 7.2", setKey: null },
   { id: "a_aino", bucket: "now", tag: "0 Nhựa", shortFix: "Đổi Nón CR% nổ Tây Phong · Dừng farm", name: "Aino", swapFrom: null, swapNote: "✓ Đã Lv.80 C1 · 1/5/4 · Tây Phong Lv.90 R5 (40.0% CR · 191.6% ER · 464 EM)", fixTitle: "Đổi Nón STBK → Nón CR% (~60%+ nổ Tây Phong) · Dừng tốn nhựa", fixSub: "Chưa có đồng đội Nod-Krai 5★ · Giữ Lv.80 (1/5/4) đi Nhà Hát, tạm hoãn 4pc Khúc Ca (tùy chọn 4pc Giáo Quan)", setKey: null },
+  { id: "a_ganyu", bucket: "now", tag: "Quickswap", shortFix: "✓ Lạc Hà 161% ER · Hoàn thiện 4pc Dấu Ấn", name: "Ganyu", swapFrom: null, swapNote: "✓ Đã đổi Lạc Hà Lv.90 R5 + 2pc Dấu Ấn (161.0% ER · 59.4/162.2 · 1,847 ATK)", fixTitle: "Thay 3pc Đoàn Hát còn lại (Cát/Ly/Nón) → đủ 4pc Dấu Ấn / Tông Thất", fixSub: "✓ Đã đạt 161.0% ER · Rất hợp cả Ayaka Đóng Băng lẫn đội 2 Băng Mitya + Yae + Diona C6 Ma Nữ", setKey: "esf" },
+  { id: "a_diona", bucket: "now", tag: "Ma Nữ ✓", shortFix: "✓ Đã Ma Nữ · Đổi 4pc Thiên Nham / Tông Thất", name: "Diona", swapFrom: null, swapNote: "✓ Đã mở Ma Nữ (+3 Trảo Băng · +40% ST Tinh-Siêu Dẫn · +200 EM) · Cung Tế Lễ R3 · 24.4k HP · 199.8% ER", fixTitle: "Thay 2pc Thiếu Nữ (Hoa/Lông) → đủ 4pc Thiên Nham hoặc 4pc Tông Thất", fixSub: "Trảo Băng Ma Nữ tự bắn mỗi 3.5s ngoài sân kích 4pc Thiên Nham liên tục & kích 2 Ma Nữ cùng Yae Miko", setKey: "totm" },
 
   // Bucket 2: Farm in unlocked regions (Fontaine 64%, Inazuma 100%, Sumeru 100%)
   { id: "a_furina", bucket: "farm", tag: "Fontaine", shortFix: "✓ Đã Lv.90 4/9/9 · Q10 & 4pc Đoàn Kịch", name: "Furina", swapFrom: null, swapNote: "✓ Đã lên Lv.90 (4/9/9 · 39.7k HP · 151.8% ER · 46.4/180.6) · Răng Nanh R5", fixTitle: "Nâng Q (9 → 10) · Farm 4pc Đoàn Kịch", fixSub: "✓ Đã lên Lv.90 (39,678 HP) & Răng Nanh R5 (+32% ST E, +12% CR E) · Farm chung Neuvillette", setKey: "gt" },
@@ -252,12 +254,21 @@ const CHAR_GUIDES = {
     ],
   },
   Ganyu: {
-    mainStats: "Cát ER% (160–200% ER) · Ly ST Băng · Nón CR/STBK (4pc Dấu Ấn hoặc 4pc Tông Thất)",
-    targets: "Sub-DPS Thả Nộ E→Q (không ngắm bắn) · Q Lv.10 sẵn sàng · Cần kéo 110.4% → 160–200% ER",
+    mainStats: "Cát ER%/ATK% (≥160% ER) · Ly ST Băng · Nón CR/STBK (4pc Dấu Ấn hoặc 4pc Tông Thất)",
+    targets: "✓ Đã sang Lạc Hà R5 + 2pc Dấu Ấn (161.0% ER · 59.4/162.2 · 1,847 ATK) · Hoàn thiện 4pc Dấu Ấn / Tông Thất",
     steps: [
-      "Chuyển hẳn sang lối chơi Quickswap: chỉ ra sân E → Q (phủ 15s/15s, +20% ST Băng cho đồng đội) rồi đổi người, không ngắm bắn Trọng Kích.",
-      "Đổi bộ 4pc Đoàn Hát (chỉ buff Trọng Kích) sang 4pc Dấu Ấn Ngăn Cách hoặc 4pc Tông Thất Cổ; đổi Cung Trừ Ma sang Cung Tây Phong / cung ER.",
-      "Dùng cực mượt làm Sub-DPS 2 Băng cho Ayaka, thay Rosaria ở màn đông quái cho Mitya + Yae, hoặc cấp Băng ngoài sân trong Nhà Hát.",
+      "✓ Đã đổi sang Lạc Hà Lv.90 R5 + Hoa/Lông Dấu Ấn giúp Nạp nhảy 110.4% → 161.0% ER (xoay Nộ Q10 đều không cần ngắm bắn).",
+      "Đổi nốt 3 mảnh Đoàn Hát còn lại (Cát ATK%/ER%, Ly Băng, Nón CR%) sang đủ 4pc Dấu Ấn Ngăn Cách hoặc 4pc Tông Thất Cổ.",
+      "Đi cặp cực mượt trong đội 2 Băng với Mitya + Yae (Ma Nữ) + Diona C6 (Ma Nữ) hoặc Quickswap cùng Ayaka.",
+    ],
+  },
+  Diona: {
+    mainStats: "Cát ER%/HP% · Ly HP% · Nón HP%/Trị Liệu (4pc Thiên Nham hoặc 4pc Tông Thất)",
+    targets: "✓ Đã mở Ma Nữ (+3 Trảo Băng ngoài sân · +40% ST Tinh-Siêu Dẫn · +200 EM · +25% HP) · 24.4k HP · 199.8% ER",
+    steps: [
+      "✓ Đã hoàn thành quest Chỉ Dụ Của Ma Nữ: sau E (20s), kích Tinh-Siêu Dẫn / Siêu Dẫn tự bắn thêm 3 Trảo Băng ngoài sân (CD 3.5s) và Nộ C6 buff thêm +40% ST Tinh-Siêu Dẫn + 200 EM + 25% HP.",
+      "Đi cùng Yae Miko (Ma Nữ) kích cộng hưởng 2 Ma Nữ trong đội 2 Băng `Mitya · Yae · Ganyu · Diona C6` giúp khắc phục hẳn tình trạng thiếu ấn Băng & không cần đợi nuôi Valeriy.",
+      "Đang đeo 3pc Thiên Nham + 2pc Thiếu Nữ — đổi Hoa + Lông sang Thiên Nham để 3 Trảo Băng ngoài sân kích liên tục 4pc Thiên Nham (+20% ATK & +30% Khiên) hoặc ép 4pc Tông Thất.",
     ],
   },
   Illuga: {
@@ -292,19 +303,21 @@ const SURPLUS_WEAPONS = [
   },
   {
     id: "s_fading",
-    from: "Collei",
-    to: "Kujou Sara",
-    shortAction: "✓ Đã đưa Sara (166.8% ER)",
-    action: "✓ Đã chuyển Lạc Hà R5 → Kujou Sara",
-    plan: "✓ Sara đã nhận Lạc Hà Lv.90 R5 (Base ATK 565 · ER nhảy 136.2% → 166.8%).",
+    from: "Kujou Sara",
+    fromLabel: "Đã chuyển từ Sara",
+    customWeapon: { name: "Lạc Hà", rarity: 4, level: 90, refinement: 5, substat_name: "ER", substat_val: "30.6%", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ab3de086b1a1f6a42d1b5c8ae32f3b15.png" },
+    to: "Ganyu",
+    shortAction: "✓ Đã đưa Ganyu (161.0% ER)",
+    action: "✓ Đã chuyển Lạc Hà R5 → Ganyu",
+    plan: "✓ Ganyu đã nhận Lạc Hà Lv.90 R5 (Base ATK 565 · ER nhảy 110.4% → 161.0%) để đánh Quickswap Thả Nộ & 2 Băng cùng Mitya.",
   },
   {
     id: "s_rust",
-    from: "Kujou Sara",
-    to: "Collei",
-    shortAction: "✓ Collei cầm tạm (hoặc đổi Tây Phong)",
-    action: "Collei đang cầm tạm Cung Rỉ Sét R4",
-    plan: "Collei đang giữ tạm Cung Rỉ Sét R4 sau khi nhường Lạc Hà cho Sara (có thể đổi cung ER sau nếu đi team Sum Suê).",
+    from: "Ganyu",
+    to: "Kujou Sara",
+    shortAction: "Sara giữ tạm Trừ Ma (Base 454)",
+    action: "Kujou Sara đang giữ tạm Cung Trừ Ma R5",
+    plan: "Sau khi nhường Lạc Hà cho Ganyu, Sara đang cầm Cung Trừ Ma R5 (1,862 ATK · 136.2% ER) — nếu cần buff ATK E cao nhất cho Raiden thì dùng cung Base ATK 565.",
   },
   {
     id: "s_festering",
@@ -545,16 +558,16 @@ const MODES = {
       },
       {
         title: "Ganyu Thả Nộ · 2 Băng",
-        sub: "Quickswap E→Q · 55k → 68k (A+)",
-        note: "Bỏ ngắm bắn Trọng Kích · Ganyu chỉ E→Q (+20% ST Băng + cộng hưởng 2 Băng) · Đổi 4pc Dấu Ấn/Tông Thất & cung ER",
+        sub: "✓ Lạc Hà 161% ER · 2pc Dấu Ấn",
+        note: "✓ Đã sang Lạc Hà R5 (161.0% ER · 59.4/162.2) + 2pc Dấu Ấn · Thay nốt 3 mảnh Đoàn Hát → 4pc Dấu Ấn/Tông Thất (dùng mượt với cả Ayaka & Mitya)",
         status: "warn",
         members: ["Kamisato Ayaka", "Ganyu", "Kaedehara Kazuha", "Sangonomiya Kokomi"],
         power: {
           cur: 55, proj: 68, curTier: "A", projTier: "A+",
-          role: "AOE · Quickswap", tags: ["aoe", "upgrade"], badge: "E→Q không ngắm",
+          role: "AOE · Quickswap", tags: ["aoe", "upgrade"], badge: "✓ Lạc Hà 161% ER",
           short: "Ganyu Burst", labelPos: "bottom", cost: "Thấp",
-          chips: ["Ganyu ER 160%+", "4pc Dấu Ấn / Tông Thất", "Đổi Cung Trừ Ma → Cung ER"],
-          upgrade: "Đổi Ganyu từ 4pc Đoàn Hát + Cung Trừ Ma sang 4pc Dấu Ấn/Tông Thất + Cung Tây Phong/ER (160%+ ER)",
+          chips: ["✓ Ganyu 161% ER", "Hoàn thiện 4pc Dấu Ấn / Tông Thất"],
+          upgrade: "✓ Đã đạt 161.0% ER với Lạc Hà R5 — thay nốt 3 mảnh Đoàn Hát sang đủ 4pc Dấu Ấn Ngăn Cách hoặc 4pc Tông Thất Cổ",
         },
       },
       {
@@ -601,16 +614,16 @@ const MODES = {
       },
       {
         title: "Mitya + Yae Tinh-Siêu Dẫn",
-        sub: "✓ Mitya Lv.90 (7/7/7 · Trấn 90) · 61k → 98k (S+)",
-        note: "Mitya đã chốt Lv.90 + Trấn Lv.90 (238.7% CD · Valeriy Lv.20 Isshin 80) · Còn Ly EM +20 & 4pc Ảo Tưởng · Đổi Rosaria → Odette vượt 100k+",
+        sub: "✓ Mitya Lv.90 (Trấn 90) · Đủ phương án 2 Băng (Diona C6 Ma Nữ + Ganyu)",
+        note: "✓ Diona C6 đã mở Ma Nữ (+40% ST Tinh-Siêu Dẫn, +200 EM, +3 Trảo Băng ngoài sân) · Biến thể 2 Băng sẵn sàng: Mitya + Yae Ma Nữ + Ganyu (161% ER) + Diona C6 Ma Nữ",
         status: "warn",
         members: ["Mitya", "Yae Miko", "Rosaria", "Valeriy"],
         power: {
           cur: 53, proj: 98, curTier: "A", projTier: "S+",
           role: "Meta 7.2", tags: ["st", "aoe", "upgrade"], badge: "Trần #1 7.2",
           short: "Mitya+Yae", labelPos: "right", cost: "Cao",
-          chips: ["Ly EM +20", "Yae Nón CR% + 4pc Ảo Tưởng", "Valeriy Lv.80"],
-          upgrade: "Mitya Ly EM +20 + 4pc Ảo Tưởng · Yae (✓ Ma Nữ) đổi Nón CR% + 4pc Ảo Tưởng · Valeriy C3 Lv.80 (đổi Rosaria/NLH Băng → Odette vượt 100k+)",
+          chips: ["Ly EM +20", "Yae Nón CR% + 4pc Ảo Tưởng", "Thử Ganyu + Diona Ma Nữ ✓"],
+          upgrade: "Mitya Ly EM +20 + 4pc Ảo Tưởng · Yae (✓ Ma Nữ) đổi Nón CR% · Đang sẵn biến thể 2 Băng: Ganyu Lạc Hà (161% ER) + Diona C6 Ma Nữ (đủ ấn & +40% ST Tinh-Siêu Dẫn)",
         },
       },
     ],
@@ -687,6 +700,7 @@ const CHAR_BENCHMARKS = {
   "Kuki Shinobu": { role: "Nở Rộ Lôi", group: "support", stats: [{ key: "Tinh Thông Nguyên Tố", label: "EM", target: 900, unit: "" }, { key: "Giới Hạn HP", label: "HP", target: 25000, unit: "" }] },
   Chevreuse: { role: "Buffer Quá Tải", group: "support", stats: [{ key: "Giới Hạn HP", label: "HP", target: 40000, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 140, unit: "%" }] },
   Rosaria: { role: "Sub / Buff CR Băng", group: "support", stats: [{ key: "Tỷ Lệ Bạo Kích", label: "CR", target: 75, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 160, unit: "%" }, { key: "Tấn Công", label: "ATK", target: 1700, unit: "" }] },
+  Diona: { role: "Khiên / Buff Băng (Ma Nữ)", group: "support", stats: [{ key: "Giới Hạn HP", label: "HP", target: 28000, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 195, unit: "%" }] },
   "Yun Jin": { role: "Buffer Đánh Thường", group: "support", stats: [{ key: "Phòng Ngự", label: "DEF", target: 2300, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 190, unit: "%" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 45, unit: "%" }] },
   Layla: { role: "Khiên Băng", group: "support", stats: [{ key: "Giới Hạn HP", label: "HP", target: 38000, unit: "" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 140, unit: "%" }] },
   Noelle: { role: "Khiên / DPS Nham", group: "support", stats: [{ key: "Phòng Ngự", label: "DEF", target: 2400, unit: "" }, { key: "Tỷ Lệ Bạo Kích", label: "CR", target: 55, unit: "%" }, { key: "Sát Thương Bạo Kích", label: "CD", target: 110, unit: "%" }, { key: "Hiệu Quả Nạp Nguyên Tố", label: "ER", target: 130, unit: "%" }] },
@@ -1052,6 +1066,7 @@ const ART_BUILD_SPECS = {
   "Kamisato Ayaka": { role: "crit", wantSubs: ["CR", "CD", "ATK%", "ER"], main: { Cát: ["ATK%"], Ly: ["ST Băng"], Nón: ["CD", "ATK%"] } },
   Yoimiya: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "EM"], main: { Cát: ["ATK%", "EM"], Ly: ["ST Hỏa"], Nón: ["CR", "CD"] } },
   Ganyu: { role: "crit", wantSubs: ["CR", "CD", "ER", "ATK%"], main: { Cát: ["ER", "ATK%"], Ly: ["ST Băng"], Nón: ["CR", "CD"] }, preferER: 160 },
+  Diona: { role: "support", wantSubs: ["HP%", "ER"], main: { Cát: ["ER", "HP%"], Ly: ["HP%"], Nón: ["HP%", "Trị Liệu"] } },
   Fischl: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "EM"], main: { Cát: ["ATK%", "EM"], Ly: ["ST Lôi"], Nón: ["CR", "CD"] }, preferCR: true },
   Xiangling: { role: "crit", wantSubs: ["CR", "CD", "ER", "EM", "ATK%"], main: { Cát: ["ER", "EM", "ATK%"], Ly: ["ST Hỏa"], Nón: ["CR", "CD"] } },
   Xingqiu: { role: "crit", wantSubs: ["CR", "CD", "ATK%", "ER"], main: { Cát: ["ATK%", "ER"], Ly: ["ST Thủy"], Nón: ["CR", "CD"] } },
@@ -1080,7 +1095,7 @@ const SWAP_TARGETS = [
 const PROTECTED_OWNERS = new Set([
   ...SWAP_TARGETS,
   "Kaedehara Kazuha", "Nahida", "Zhongli", "Sangonomiya Kokomi",
-  "Mona", "Rosaria", "Yun Jin", "Collei", "Eula",
+  "Mona", "Rosaria", "Diona", "Yun Jin", "Collei", "Eula",
   "Barbara", "Gorou", "Kujou Sara", "Aino", "Beidou", "Ningguang", "Noelle", "Lisa", "Sucrose",
 ]);
 
@@ -2567,6 +2582,7 @@ const TARGET_SET_CHECK = {
   Nilou: (s) => /2pc\s+Thiên Nham.*2pc\s+Vầng Sáng|2pc\s+Vầng Sáng.*2pc\s+Thiên Nham/i.test(s),
   Navia: (s) => /4pc\s+Tiếng Đêm/i.test(s),
   Ganyu: (s) => /4pc\s+Dấu Ấn|4pc\s+Nghi Thức Tông Thất|4pc\s+Dũng Sĩ/i.test(s),
+  Diona: (s) => /4pc\s+Thiên Nham|4pc\s+Nghi Thức Tông Thất/i.test(s),
   Valeriy: (s) => /4pc\s+Trái Tim Lửa Nung|4pc\s+Nghi Thức Tông Thất/i.test(s),
 };
 
@@ -2690,7 +2706,7 @@ const TEAM_POWER_CFG = {
     maxCurCap: 68,
     checks: [
       ({ get, statN }) => (statN(get("Ganyu"), "Hiệu Quả Nạp Nguyên Tố") >= 160 ? null : `Ganyu ER (${statN(get("Ganyu"), "Hiệu Quả Nạp Nguyên Tố").toFixed(0)}%→160%+)`),
-      ({ get, sets }) => (/4pc\s+Dấu Ấn|4pc\s+Nghi Thức Tông Thất|4pc\s+Dũng Sĩ/i.test(sets(get("Ganyu"))) ? null : "Đổi 4pc Đoàn Hát → Dấu Ấn/Tông Thất"),
+      ({ get, sets }) => (/4pc\s+Dấu Ấn|4pc\s+Nghi Thức Tông Thất|4pc\s+Dũng Sĩ/i.test(sets(get("Ganyu"))) ? null : "Đổi nốt 3pc Đoàn Hát → 4pc Dấu Ấn/Tông Thất"),
       ({ get }) => (/Trừ Ma/i.test(get("Ganyu")?.weapon?.name || "") ? "Đổi Cung Trừ Ma → Cung ER" : null),
     ],
   },
