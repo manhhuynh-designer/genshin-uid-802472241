@@ -1,10 +1,19 @@
 # Ghi chú Tư vấn & Kế hoạch Tài khoản Genshin (`UID 802472241`)
 
-Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật sáng **27/11/2026 (`09:42`)** (Version **7.2**, **74 nhân vật**).
+Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật ngày **28/11/2026 (`10:55`)** & lịch sử roll mới nhất (**151** lượt, Version **7.2**, **74 nhân vật**).
 
 ---
 
-## 0. Các việc đã hoàn thành sau đợt Crawl 25–27/11/2026
+## 0. Các việc đã hoàn thành sau đợt Crawl & Export Roll 25–28/11/2026
+
+- **Cập nhật sáng `28/11 10:55` (Crawl & Export Roll):**
+  - `Mitya`: **✓ Đã kéo thiên phú `2/3/4 → 7/7/7` & Trấn `Sắc Lệnh Tinh Tú Lv.70 → Lv.80`** (`213.6% → 221.3% CD` · `1,178 → 1,255 ATK`).
+  - `Valeriy`: **✓ Đã nâng `Lv.1 → Lv.20 C3`** (`647 → 693 ATK · Isshin Lv.80 R1`).
+  - **Bản đồ & Tài khoản (`28/11`):** Snezhnaya **`10% → 14%`** (`20 → 37` Băng Thần Đồng `+17`, *Kẻ Neo Sóng* `x15`), Fontaine Danh Vọng **`10`**, Điểm dịch chuyển **`533 → 538`**, Rương **`+5` Thường / `+14` Cao Cấp / `+1` Hiếm / `+1` Kỳ Dị**, Thành tựu **`1,133 → 1,136`**, Ngày hoạt động **`1,314 → 1,315`**.
+  - **Lịch sử roll mới nhất (`151` lượt trong `data/wish_history/genshin_wish_802472241_20261128_*`, `30/10 – 27/11`, +23 lượt so với `24/11`):**
+    - **`Jean C3`** nổ sớm @ **pity 12** + **`Charlotte C3`** + **`Tuyệt Huyền`** về ở **Banner Thường (`200`)** ngày `26/11 14:14:10` → Banner Nhân Vật vẫn đang **50/50**.
+    - **`Illuga C0`** về ở **Banner Nhân Vật (`301/400`)** ngày `26/11 14:18:04`.
+    - **Pity hiện tại (`28/11`):** Nhân Vật (`301`): **`10/90` (50/50 · 4★ `6/10`)**; Vũ Khí (`302`): **`1/80` (4★ `4/10`)**; Thường (`200`): **`8/90` (4★ `2/10`)**; Sử Ký (`500`): `0`.
 
 - **Cập nhật sáng `27/11 09:42`:**
   - **Nhân vật mới thứ 74:** **`Illuga`** (4★ Nham · Nod-Krai, `Lv.1 C0`) — hỗ trợ Nguyệt-Kết Tinh scale theo EM.
@@ -35,12 +44,11 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
   - `Aino`: **✓ Đã lên `Lv.80 C1 · 1/5/4 · 464 EM · 191.6% ER`**.
   - `Yae Miko`: **✓ Đã hoàn thành quest Chỉ Dụ Của Ma Nữ** (`Edict of Cleansing`).
   - `Raiden Shogun`: **✓ Đã đổi Nón CR%** (`69.9% CR / 132.4% CD · 258.9% ER`).
-- **Nhân vật mới & Lịch sử roll (`128` lượt trong `data/wish_history/`, `30/10 – 23/11`):**
+- **Lịch sử roll mốc trước đó (`128` lượt trong `20261124`, `30/10 – 23/11` — đã gộp vào bản `20261128` ở trên):**
   - **`Furina`** (5★ Thủy, về ở **pity 63** lúc `2026-11-23 21:16:05`), **`Người Mẫu Nữ`** (Băng, thứ 73).
-  - Pity hiện tại: Nhân Vật (`301`): `0/90` (4★: `2/10`); Vũ Khí (`302`): `1/80`; Thường (`200`): `7/90`.
-- **Thành tích & Bản đồ:**
+- **Thành tích & Bản đồ (`28/11`):**
   - **Ảo Cảnh Hiểm Ác (Độ khó III):** **`191s`** (*Boss 1* `56s`, *Boss 2* `34s`, *Boss 3* `101s`).
-  - **Bản đồ (`27/11`):** Snezhnaya **`10%`** (`20` Băng Thần Đồng), Nod-Krai **`10%`** (`30` Nguyệt Thần Đồng), Natlan **`4%`**, Điểm dịch chuyển **`533`**, Bí cảnh **`66`**, Ngày hoạt động **`1,314`**, Thành tựu `1,133`.
+  - **Bản đồ (`28/11`):** Snezhnaya **`14%`** (`37` Băng Thần Đồng), Nod-Krai **`10%`** (`30` Nguyệt Thần Đồng), Fontaine Danh Vọng **`10`**, Natlan **`4%`**, Điểm dịch chuyển **`538`**, Bí cảnh **`66`**, Ngày hoạt động **`1,315`**, Thành tựu `1,136`.
   - **Nhà Hát Giả Tưởng (`01.11 – 01.12`):** Màn **3** (Độ khó **3**, **`28+3`** nhân vật Lv.70+).
 
 ---
@@ -89,10 +97,10 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 
 ---
 
-## 3. Danh sách Nhân vật Meta 7.2 tại Snezhnaya (`Đã mở 10%`)
+## 3. Danh sách Nhân vật Meta 7.2 tại Snezhnaya (`Đã mở 14%`)
 
-1. **Mitya (✓ đã lên `Lv.80` C0 · `2/3/4`, trấn `Sắc Lệnh Tinh Tú` `Lv.70` R1, `516 EM · 67.2/213.6`):** Lõi Tinh-Siêu Dẫn đi cặp **Yae Miko (Ma Nữ)** + **Rosaria C6 / Nhà Lữ Hành Băng** (sau nâng lên **Odette**) + **Valeriy C3** — nâng nốt Ly EM `+0 → +20`, kéo Trấn (`70 → 90`) & Mitya (`80 → 90`) + farm chung **`4pc Ảo Tưởng Vụn Vỡ`** cho cả Mitya & Yae.
-2. **Valeriy (Lv.1 C3):** Khiên chống gián đoạn (giữ nhịp Trọng Kích Mitya) + C2 buff **`+100 EM` toàn đội** — gắn sẵn `Kagotsurube Isshin Lv.80` (không tốn Phôi); build gọn `Lv.70/80` (E `6–8`) **sau khi xong Mitya 90** vì trần C6 mới là mốc bứt phá lớn.
+1. **Mitya (✓ đã lên `Lv.80` C0 · `7/7/7`, trấn `Sắc Lệnh Tinh Tú` `Lv.80` R1, `516 EM · 67.2/221.3`):** Lõi Tinh-Siêu Dẫn đi cặp **Yae Miko (Ma Nữ)** + **Rosaria C6 / Nhà Lữ Hành Băng** (sau nâng lên **Odette**) + **Valeriy C3** — nâng nốt Ly EM `+0 → +20`, kéo Trấn (`80 → 90`) & Mitya (`80 → 90`) + farm chung **`4pc Ảo Tưởng Vụn Vỡ`** cho cả Mitya & Yae.
+2. **Valeriy (✓ đã lên `Lv.20 C3`):** Khiên chống gián đoạn (giữ nhịp Trọng Kích Mitya) + C2 buff **`+100 EM` toàn đội** — gắn sẵn `Kagotsurube Isshin Lv.80` (không tốn Phôi); build gọn `Lv.70/80` (E `6–8`) **sau khi xong Mitya 90** vì trần C6 mới là mốc bứt phá lớn.
 3. **Alyosha (Lv.1 C0):** 4★ Thương Lôi off-field Healer + Buff ATK (cạnh tranh trực tiếp slot của Valeriy; ưu tiên dùng Valeriy C3 để lấy khiên +100 EM trước, chỉ đổi sang Alyosha khi gặp màn bắt buộc hồi máu).
 4. **Aino (`Lv.80 C1`) & Illuga (`Lv.1 C0`, mới pull `27/11`):**
    - `Aino`: Dùng làm pin `Đại Kiếm Tây Phong Lv.90 R5` + slot Thủy dự bị Nhà Hát — chỉ đổi **Nón CR%** (0 nhựa) rồi dừng đầu tư nhựa.
@@ -100,13 +108,13 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 
 ---
 
-## 4. Bảng So Sánh Sức Mạnh Dự Tính Các Đội Hình (27/11/2026)
+## 4. Bảng So Sánh Sức Mạnh Dự Tính Các Đội Hình (28/11/2026)
 
-*Ước lượng trên chuẩn vòng xoay 20s tại La Hoàn Tầng 12 (`k DPS`), tính tự động trong `assets/app.js` theo chỉ số crawl `27/11` (Mitya `Lv.80` + Trấn `Lv.70`, Yelan `Tây Phong Lv.90`, nâng cấp Ma Nữ của Yae Miko, Furina `Lv.90 · 4/9/9`, vòng xoay 12 vũ khí và kỷ lục Ảo Cảnh 191s).*
+*Ước lượng trên chuẩn vòng xoay 20s tại La Hoàn Tầng 12 (`k DPS`), tính tự động trong `assets/app.js` theo chỉ số crawl `28/11` (Mitya `Lv.80 · 7/7/7` + Trấn `Lv.80`, Yelan `Tây Phong Lv.90`, nâng cấp Ma Nữ của Yae Miko, Furina `Lv.90 · 4/9/9`, vòng xoay 12 vũ khí và kỷ lục Ảo Cảnh 191s).*
 
 | Đội hình | Vai trò | Hiện tại (Tier) | Dự tính (Tier) | Tăng | Đòn bẩy nâng cấp chính |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| **Mitya + Yae Tinh-Siêu Dẫn** (`Mitya · Yae · Rosaria · Valeriy`) | Meta 7.2 · Tinh-Siêu Dẫn | **~53k** (`A`) | **~98k** (`S+`) | +85% | Mitya 80→90 + Trấn 70→90 + Ly EM +20 · Yae (✓ Ma Nữ) đổi Nón CR% + 4pc Ảo Tưởng · Valeriy Lv.1→80 (đổi Rosaria/NLH Băng → Odette vượt 100k+) |
+| **Mitya + Yae Tinh-Siêu Dẫn** (`Mitya · Yae · Rosaria · Valeriy`) | Meta 7.2 · Tinh-Siêu Dẫn | **~58k** (`A+`) | **~98k** (`S+`) | +69% | Mitya 80→90 + Trấn 80→90 + Ly EM +20 · Yae (✓ Ma Nữ) đổi Nón CR% + 4pc Ảo Tưởng · Valeriy Lv.20→80 (đổi Rosaria/NLH Băng → Odette vượt 100k+) |
 | **Neuvillette + Furina Hyper** (`Neuvillette · Furina · Kazuha · Zhongli`) | AOE · Đơn | **~76k** (`S`) | **~92k** (`S+`) | +21% | Neuv 4pc Thợ Săn (52.8% CR) · Furina Q9→10 & 4pc Đoàn Kịch (chung 1 bí cảnh Fontaine) |
 | **Hu Tao Đánh Đáp** (`Hu Tao · Furina · Yelan · Xianyun`) | Đơn · Đánh Đáp | ~62k (`A+`) | **~82k** (`S`) | +32% | Chưa farm Thợ Săn vẫn đánh tạm 4pc Hồi Ức · Chỉnh Xianyun Cát ER (`160%+`) + Ly/Nón ATK% · Farm ké 4pc Thợ Săn + Cát EM sau |
 | **Raiden + Furina Hyper** (`Raiden · Furina · Yelan · Jean`) | Đơn mục tiêu | **~72k** (`S`) | ~81k (`S`) | +13% | Furina Q9→10 · 4pc Đoàn Kịch · Jean C3 đủ 4pc Bóng Hình + Ống Đồng 90 *(Yelan ✓ Tây Phong 90)* |

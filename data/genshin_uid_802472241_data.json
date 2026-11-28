@@ -1,25 +1,25 @@
 {
-  "crawled_at": "2026-11-27T09:42:49.088032+07:00",
+  "crawled_at": "2026-11-28T10:55:00+07:00",
   "account": {
     "uid": "802472241",
     "nickname": "Mahyh",
     "adventure_rank": 60,
     "server": "Asia Server (os_asia)",
     "stats": {
-      "active_day_number": 1314,
-      "achievement_number": 1133,
+      "active_day_number": 1315,
+      "achievement_number": 1136,
       "anemoculus_number": 66,
       "geoculus_number": 131,
       "avatar_number": 74,
-      "way_point_number": 533,
+      "way_point_number": 538,
       "domain_number": 66,
       "spiral_abyss": "11-3",
-      "precious_chest_number": 600,
+      "precious_chest_number": 601,
       "luxurious_chest_number": 227,
-      "exquisite_chest_number": 1985,
-      "common_chest_number": 2584,
+      "exquisite_chest_number": 1999,
+      "common_chest_number": 2589,
       "electroculus_number": 181,
-      "magic_chest_number": 221,
+      "magic_chest_number": 222,
       "dendroculus_number": 271,
       "hydroculus_number": 164,
       "pyroculus_number": 22,
@@ -121,7 +121,7 @@
         "is_unlock": true
       },
       "moonoculus_number": 30,
-      "iceculus_number": 20
+      "iceculus_number": 37
     },
     "banner": "https://upload-os-bbs.hoyolab.com/game_record/game_record_ys_background.png",
     "logo": "https://fastcdn.hoyoverse.com/static-resource-v2/2024/04/12/b700cce2ac4c68a520b15cafa86a03f0_2812765778371293568.png"
@@ -129,7 +129,7 @@
   "world_explorations": [
     {
       "level": 0,
-      "exploration_percentage": 100,
+      "exploration_percentage": 140,
       "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterIcon_Snezhnaya.png",
       "name": "Snezhnaya",
       "type": "Reputation",
@@ -162,7 +162,7 @@
           "name": "Ốc Đảo Teplo",
           "level": 0,
           "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterOffering_SnezhnayaSpecialBrewOasis.png",
-          "open_state": "OfferingOpenStateLocked"
+          "open_state": "OfferingOpenStateUnlocked"
         },
         {
           "name": "Cục Vận Tải Đường Sắt Hoàng Gia",
@@ -189,7 +189,7 @@
         },
         {
           "name": "Đỉnh Băng Giá",
-          "exploration_percentage": 224
+          "exploration_percentage": 250
         },
         {
           "name": "Thung Lũng Lông Vũ Lửa",
@@ -201,11 +201,11 @@
         },
         {
           "name": "Novokitezhgrad",
-          "exploration_percentage": 147
+          "exploration_percentage": 317
         },
         {
           "name": "Đỉnh Sải Cánh",
-          "exploration_percentage": 23
+          "exploration_percentage": 104
         }
       ],
       "boss_list": [
@@ -610,7 +610,7 @@
       "world_type": 1
     },
     {
-      "level": 9,
+      "level": 10,
       "exploration_percentage": 640,
       "icon": "https://act-webstatic.hoyoverse.com/game_record/genshin/city_icon/UI_ChapterIcon_Fengdan.png",
       "name": "Fontaine",
@@ -2153,24 +2153,24 @@
           "final": "17240"
         },
         "Tỷ Lệ Bạo Kích": {
-          "base": "83.2%",
+          "base": "80.1%",
           "add": "",
-          "final": "83.2%"
+          "final": "80.1%"
         },
         "Tấn Công": {
           "base": "823",
-          "add": "886",
-          "final": "1710"
+          "add": "489",
+          "final": "1312"
         },
         "Sát Thương Bạo Kích": {
-          "base": "79.5%",
+          "base": "68.7%",
           "add": "",
-          "final": "79.5%"
+          "final": "68.7%"
         },
         "Phòng Ngự": {
           "base": "683",
-          "add": "379",
-          "final": "1062"
+          "add": "317",
+          "final": "999"
         },
         "Tăng Trị Liệu": {
           "base": "0.0%",
@@ -2193,12 +2193,12 @@
           "final": "0.0%"
         },
         "Hiệu Quả Nạp Nguyên Tố": {
-          "base": "186.0%",
+          "base": "166.0%",
           "add": "",
-          "final": "186.0%"
+          "final": "166.0%"
         }
       },
-      "artifact_sets": "2pc Dấu Ấn Ngăn Cách, 2pc Ký Ức Rừng Sâu, 1pc Hiền Nhân Bốc Lửa",
+      "artifact_sets": "2pc Ký Ức Rừng Sâu, 1pc Dấu Ấn Ngăn Cách, 1pc Hiền Nhân Bốc Lửa",
       "artifacts": [
         {
           "slot": "Hoa Sự Sống",
@@ -2231,38 +2231,6 @@
             }
           ],
           "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/daea64738ee81507c05b9752f51f195f.png"
-        },
-        {
-          "slot": "Lông Vũ Tử Vong",
-          "name": "Lông Vũ Rơi Rụng",
-          "set": "Dấu Ấn Ngăn Cách",
-          "rarity": 5,
-          "level": 20,
-          "main_stat": "Tấn Công",
-          "main_val": "311",
-          "substats": [
-            {
-              "name": "Phòng Ngự",
-              "value": "62",
-              "rolls": 2
-            },
-            {
-              "name": "Tỷ Lệ Tấn Công",
-              "value": "10.5%",
-              "rolls": 1
-            },
-            {
-              "name": "Tỷ Lệ Bạo Kích",
-              "value": "3.1%",
-              "rolls": 0
-            },
-            {
-              "name": "Sát Thương Bạo Kích",
-              "value": "10.9%",
-              "rolls": 1
-            }
-          ],
-          "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/35a171a3906cf9789f208628f0f28770.png"
         },
         {
           "slot": "Cát Thời Gian",
@@ -9443,19 +9411,19 @@
       "constellation": 0,
       "friendship": 1,
       "talents": [
-        "Phản Ứng Dây Chuyền: 2",
-        "Quy Luật - Dò Tìm Biến Số: 3",
-        "Phân Tích - Nguyên Lý Biến Đổi: 4"
+        "Phản Ứng Dây Chuyền: 7",
+        "Quy Luật - Dò Tìm Biến Số: 7",
+        "Phân Tích - Nguyên Lý Biến Đổi: 7"
       ],
-      "talent_levels": "2/3/4",
+      "talent_levels": "7/7/7",
       "weapon": {
         "name": "Sắc Lệnh Tinh Tú",
         "rarity": 5,
-        "level": 70,
+        "level": 80,
         "refinement": 1,
-        "base_atk": "408",
+        "base_atk": "475",
         "substat_name": "Sát Thương Bạo Kích",
-        "substat_val": "72.7%",
+        "substat_val": "80.4%",
         "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/6aea6776/ec4643eca7890833b5b415f7ad5dc79b.png"
       },
       "stats": {
@@ -9470,14 +9438,14 @@
           "final": "67.2%"
         },
         "Tấn Công": {
-          "base": "640",
-          "add": "538",
-          "final": "1178"
+          "base": "707",
+          "add": "548",
+          "final": "1255"
         },
         "Sát Thương Bạo Kích": {
-          "base": "213.6%",
+          "base": "221.3%",
           "add": "",
-          "final": "213.6%"
+          "final": "221.3%"
         },
         "Phòng Ngự": {
           "base": "698",
@@ -17937,7 +17905,7 @@
       "element": "Electro",
       "rarity": 4,
       "rarity_raw": 4,
-      "level": 1,
+      "level": 20,
       "constellation": 3,
       "friendship": 1,
       "talents": [
@@ -17958,9 +17926,9 @@
       },
       "stats": {
         "Giới Hạn HP": {
-          "base": "839",
+          "base": "2155",
           "add": "",
-          "final": "839"
+          "final": "2155"
         },
         "Tỷ Lệ Bạo Kích": {
           "base": "5.0%",
@@ -17968,9 +17936,9 @@
           "final": "5.0%"
         },
         "Tấn Công": {
-          "base": "470",
-          "add": "177",
-          "final": "647"
+          "base": "504",
+          "add": "190",
+          "final": "693"
         },
         "Sát Thương Bạo Kích": {
           "base": "50.0%",
@@ -17978,9 +17946,9 @@
           "final": "50.0%"
         },
         "Phòng Ngự": {
-          "base": "59",
+          "base": "151",
           "add": "",
-          "final": "59"
+          "final": "151"
         },
         "Tăng Trị Liệu": {
           "base": "0.0%",
