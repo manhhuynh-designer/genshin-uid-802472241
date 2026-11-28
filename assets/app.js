@@ -613,17 +613,31 @@ const MODES = {
         },
       },
       {
-        title: "Mitya + Yae Tinh-Siêu Dẫn",
-        sub: "✓ Mitya Lv.90 (Trấn 90) · Đủ phương án 2 Băng (Diona C6 Ma Nữ + Ganyu)",
-        note: "✓ Diona C6 đã mở Ma Nữ (+40% ST Tinh-Siêu Dẫn, +200 EM, +3 Trảo Băng ngoài sân) · Biến thể 2 Băng sẵn sàng: Mitya + Yae Ma Nữ + Ganyu (161% ER) + Diona C6 Ma Nữ",
-        status: "warn",
-        members: ["Mitya", "Yae Miko", "Rosaria", "Valeriy"],
+        title: "Mitya + Yae · 2 Băng Ma Nữ",
+        sub: "✓ 2 Băng + 2 Ma Nữ · Diona C6 (+200 EM · +40% ST Tinh-Siêu Dẫn)",
+        note: "Đội Mitya trần DPS cao nhất dùng sẵn đồ: Mitya Lv.90 Trấn 90 + Yae Ma Nữ + Ganyu Lạc Hà (161% ER) + Diona C6 Ma Nữ (+3 Trảo Băng ngoài sân)",
+        status: "ok",
+        members: ["Mitya", "Yae Miko", "Ganyu", "Diona"],
         power: {
-          cur: 53, proj: 98, curTier: "A", projTier: "S+",
-          role: "Meta 7.2", tags: ["st", "aoe", "upgrade"], badge: "Trần #1 7.2",
-          short: "Mitya+Yae", labelPos: "right", cost: "Cao",
-          chips: ["Ly EM +20", "Yae Nón CR% + 4pc Ảo Tưởng", "Thử Ganyu + Diona Ma Nữ ✓"],
-          upgrade: "Mitya Ly EM +20 + 4pc Ảo Tưởng · Yae (✓ Ma Nữ) đổi Nón CR% · Đang sẵn biến thể 2 Băng: Ganyu Lạc Hà (161% ER) + Diona C6 Ma Nữ (đủ ấn & +40% ST Tinh-Siêu Dẫn)",
+          cur: 72, proj: 98, curTier: "S", projTier: "S+",
+          role: "Meta 7.2 · 2 Ma Nữ", tags: ["st", "aoe", "upgrade"], badge: "2 Băng · 2 Ma Nữ",
+          short: "Mitya+Diona", labelPos: "right", cost: "Trung bình",
+          chips: ["Mitya Ly EM +20", "Yae Nón CR% + 4pc Ảo Tưởng", "Diona 4pc Thiên Nham"],
+          upgrade: "Mitya Ly EM +20 & 4pc Ảo Tưởng · Yae (✓ Ma Nữ) Nón CR% & 4pc Ảo Tưởng · Ganyu 4pc Dấu Ấn · Diona 4pc Thiên Nham",
+        },
+      },
+      {
+        title: "Mitya + Yae · 2 Băng Layla",
+        sub: "✓ Khiên 34.9k HP · Tây Phong R5 · Bám boss cơ động",
+        note: "Phương án khiên trâu & linh hoạt khi boss đánh đau hoặc nhảy khỏi vòng Nộ Diona (có thể đổi Ganyu ↔ Rosaria C6 tùy màn)",
+        status: "ok",
+        members: ["Mitya", "Yae Miko", "Ganyu", "Layla"],
+        power: {
+          cur: 64, proj: 88, curTier: "A+", projTier: "S",
+          role: "Meta 7.2 · Khiên trâu", tags: ["st", "aoe", "upgrade"], badge: "Khiên 34.9k · Cơ động",
+          short: "Mitya+Layla", labelPos: "left", cost: "Trung bình",
+          chips: ["Mitya Ly EM +20", "Yae Nón CR% + 4pc Ảo Tưởng", "Layla 4pc Thiên Nham"],
+          upgrade: "Mitya Ly EM +20 & 4pc Ảo Tưởng · Yae Nón CR% & 4pc Ảo Tưởng · Ganyu 4pc Dấu Ấn · Layla đủ 4pc Thiên Nham",
         },
       },
     ],
@@ -632,7 +646,8 @@ const MODES = {
     label: "La Hoàn",
     items: [
       { title: "12 · Nửa 1 — Navia", sub: "+75% Lunar-Crystallize", note: "Navia 6/10/10 + Zhongli kích đủ 2 búp bê Chiori C0 · Bennett cấp Hỏa Kết Tinh & buff ATK", status: "warn", members: ["Navia", "Zhongli", "Chiori", "Bennett"] },
-      { title: "12 · Nửa 2 — Neuv + Furina", sub: "+200 EM · Ảo Cảnh 34s", note: "Furina đã Lv.90 Răng Nanh R5 — đội hình Ảo Cảnh 34s mạnh nhất hiện tại", status: "ok", members: ["Neuvillette", "Furina", "Kaedehara Kazuha", "Zhongli"] },
+      { title: "12 · Nửa 2 — Neuv + Furina", sub: "+200 EM · Ảo Cảnh 34s", note: "Furina đã Lv.90 Răng Nanh R5 — đội hình Ảo Cảnh 34s mạnh nhất hiện tại (cùng Mitya + Ganyu + Diona ở nửa kia không trùng người)", status: "ok", members: ["Neuvillette", "Furina", "Kaedehara Kazuha", "Zhongli"] },
+      { title: "12 · Nửa 2 — Mitya 2 Băng", sub: "+200 EM · 2 Ma Nữ Tinh-Siêu Dẫn", note: "✓ Mitya Lv.90 + Yae Ma Nữ + Ganyu Lạc Hà (161% ER) + Diona C6 Ma Nữ — đổi sang Layla nếu gặp boss nhảy xa / đánh vỡ khiên", status: "ok", members: ["Mitya", "Yae Miko", "Ganyu", "Diona"] },
       { title: "12 · Nửa 2 — National", sub: "+200 EM · Wavebinder", note: "Raiden 69.9/132.4 + Bennett Kiếm Gỗ + Yelan Tây Phong 90 sẵn sàng đánh ngay", status: "ok", members: ["Raiden Shogun", "Bennett", "Xiangling", "Yelan"] },
       { title: "12 · Nửa 1 — Eula", sub: "12-2 Frostnight Herra", note: "Rosaria C6 bù CR · Có thể thay Raiden bằng Yae Ma Nữ", status: "warn", members: ["Eula", "Raiden Shogun", "Rosaria", "Zhongli"] },
     ],
@@ -2583,6 +2598,7 @@ const TARGET_SET_CHECK = {
   Navia: (s) => /4pc\s+Tiếng Đêm/i.test(s),
   Ganyu: (s) => /4pc\s+Dấu Ấn|4pc\s+Nghi Thức Tông Thất|4pc\s+Dũng Sĩ/i.test(s),
   Diona: (s) => /4pc\s+Thiên Nham|4pc\s+Nghi Thức Tông Thất/i.test(s),
+  Layla: (s) => /4pc\s+Thiên Nham/i.test(s),
   Valeriy: (s) => /4pc\s+Trái Tim Lửa Nung|4pc\s+Nghi Thức Tông Thất/i.test(s),
 };
 
@@ -2738,18 +2754,19 @@ const TEAM_POWER_CFG = {
       ({ get, sets }) => (sets(get("Navia")).includes("4pc Tiếng Đêm") ? null : "Navia 4pc Tiếng Đêm (Tráp)"),
     ],
   },
-  "Mitya + Yae Tinh-Siêu Dẫn": {
-    weights: [0.44, 0.28, 0.10, 0.18],
-    setCheck: ["Mitya", "Yae Miko", "Valeriy"],
+  "Mitya + Yae · 2 Băng Ma Nữ": {
+    weights: [0.44, 0.28, 0.16, 0.12],
+    setCheck: ["Mitya", "Yae Miko", "Ganyu", "Diona"],
     maxCurCap: 98,
     checks: [
-      ({ get, wLv, art0 }) => {
+      ({ get, wLv, art0, sets }) => {
         const m = get("Mitya");
         if (!m) return null;
         const todo = [];
         if ((m.level || 1) < 90) todo.push(`Mitya ${m.level}→90`);
         if (wLv(m) < 90) todo.push(`Trấn ${wLv(m)}→90`);
         if (art0(m) > 0) todo.push("Ly EM +20");
+        if (!/4pc\s+Ảo Tưởng/i.test(sets(m))) todo.push("Mitya 4pc Ảo Tưởng");
         return todo.length ? todo.join(" · ") : null;
       },
       ({ get, sets, statN }) => {
@@ -2759,9 +2776,47 @@ const TEAM_POWER_CFG = {
         if (cr >= 68 && hasSet) return null;
         return [cr < 68 ? "Yae Nón CR%" : null, !hasSet ? "4pc Ảo Tưởng" : null].filter(Boolean).join(" + ");
       },
-      ({ get }) => ((get("Valeriy")?.level || 1) >= 80 ? null : `Valeriy Lv.${get("Valeriy")?.level || 1}→80`),
+      ({ get, sets }) => {
+        const g = get("Ganyu");
+        return /4pc\s+Dấu Ấn|4pc\s+Nghi Thức Tông Thất|4pc\s+Dũng Sĩ/i.test(sets(g)) ? null : "Ganyu 4pc Dấu Ấn";
+      },
+      ({ get, sets }) => {
+        const d = get("Diona");
+        return /4pc\s+Thiên Nham|4pc\s+Nghi Thức Tông Thất/i.test(sets(d)) ? null : "Diona 4pc Thiên Nham";
+      },
     ],
-    extraChips: ["Đổi Rosaria → Odette"],
+    extraChips: ["Đổi Ganyu → Odette (>100k)"],
+  },
+  "Mitya + Yae · 2 Băng Layla": {
+    weights: [0.46, 0.28, 0.16, 0.10],
+    setCheck: ["Mitya", "Yae Miko", "Ganyu", "Layla"],
+    maxCurCap: 88,
+    checks: [
+      ({ get, art0, sets }) => {
+        const m = get("Mitya");
+        if (!m) return null;
+        const todo = [];
+        if (art0(m) > 0) todo.push("Ly EM +20");
+        if (!/4pc\s+Ảo Tưởng/i.test(sets(m))) todo.push("Mitya 4pc Ảo Tưởng");
+        return todo.length ? todo.join(" · ") : null;
+      },
+      ({ get, sets, statN }) => {
+        const y = get("Yae Miko");
+        const cr = statN(y, "Tỷ Lệ Bạo Kích");
+        const hasSet = /4pc\s+Ảo Tưởng/i.test(sets(y));
+        if (cr >= 68 && hasSet) return null;
+        return [cr < 68 ? "Yae Nón CR%" : null, !hasSet ? "4pc Ảo Tưởng" : null].filter(Boolean).join(" + ");
+      },
+      ({ get, sets }) => {
+        const g = get("Ganyu");
+        return /4pc\s+Dấu Ấn|4pc\s+Nghi Thức Tông Thất|4pc\s+Dũng Sĩ/i.test(sets(g)) ? null : "Ganyu 4pc Dấu Ấn";
+      },
+      ({ get, sets }) => {
+        const l = get("Layla");
+        return /4pc\s+Thiên Nham/i.test(sets(l)) ? null : "Layla 4pc Thiên Nham";
+      },
+    ],
+    extraChips: ["Hoặc thay Ganyu bằng Rosaria C6"],
   },
 };
 
@@ -3182,17 +3237,17 @@ function renderPowerMatrix(allTeams) {
 
 function renderPowerVs(allTeams) {
   const a = allTeams[APP.vsA] || allTeams[0];
-  const b = allTeams[APP.vsB] || allTeams[11] || allTeams[1];
+  const b = allTeams[APP.vsB] || allTeams[12] || allTeams[1];
   const rA = calcTeamReadiness(a.members);
   const rB = calcTeamReadiness(b.members);
   const gA = powerGainPct(a.power);
   const gB = powerGainPct(b.power);
 
   const presets = [
-    [0, 11, "Neuv+Furina vs Mitya+Yae"],
+    [0, 12, "Neuv+Furina vs Mitya+Diona"],
+    [12, 13, "Mitya+Diona vs Mitya+Layla"],
     [1, 2, "Raiden+Furina vs National"],
-    [10, 5, "Navia vs Hu Tao"],
-    [8, 4, "Nilou vs Ayaka"],
+    [11, 5, "Navia vs Hu Tao"],
   ];
 
   const metrics = [
@@ -3837,7 +3892,7 @@ function render() {
     b.addEventListener("click", () => {
       const picked = Number(b.getAttribute("data-vs-pick"));
       APP.vsA = picked;
-      APP.vsB = picked === 0 ? 11 : 0;
+      APP.vsB = picked === 0 ? 12 : 0;
       APP.powerTab = "vs";
       render();
     });

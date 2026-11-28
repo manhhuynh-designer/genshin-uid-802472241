@@ -116,7 +116,8 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 
 | Đội hình | Vai trò | Hiện tại (Tier) | Dự tính (Tier) | Tăng | Đòn bẩy nâng cấp chính |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| **Mitya + Yae Tinh-Siêu Dẫn** (`Mitya · Yae · Rosaria · Valeriy`) | Meta 7.2 · Tinh-Siêu Dẫn | **~61k** (`A+`) | **~98k** (`S+`) | +61% | Mitya Ly EM +20 + 4pc Ảo Tưởng · Yae (✓ Ma Nữ) đổi Nón CR% · Đã sẵn bản 2 Băng: Ganyu (`161% ER`) + Diona C6 (✓ Ma Nữ) |
+| **Mitya + Yae · 2 Băng Ma Nữ** (`Mitya · Yae · Ganyu · Diona`) | Meta 7.2 · 2 Ma Nữ | **~72k** (`S`) | **~98k** (`S+`) | +36% | Mitya Ly EM +20 + 4pc Ảo Tưởng · Yae Nón CR% + 4pc Ảo Tưởng · Ganyu `4pc Dấu Ấn` · Diona C6 Ma Nữ `4pc Thiên Nham` |
+| **Mitya + Yae · 2 Băng Layla** (`Mitya · Yae · Ganyu · Layla`) | Meta 7.2 · Khiên trâu | **~64k** (`A+`) | **~88k** (`S`) | +38% | Khiên `34.9k HP` + Tây Phong R5 (đổi Ganyu ↔ Rosaria C6 tùy màn) · Mitya Ly EM +20 · Layla `4pc Thiên Nham` |
 | **Neuvillette + Furina Hyper** (`Neuvillette · Furina · Kazuha · Zhongli`) | AOE · Đơn | **~76k** (`S`) | **~92k** (`S+`) | +21% | Neuv 4pc Thợ Săn (52.8% CR) · Furina Q9→10 & 4pc Đoàn Kịch (chung 1 bí cảnh Fontaine) |
 | **Hu Tao Đánh Đáp** (`Hu Tao · Furina · Yelan · Xianyun`) | Đơn · Đánh Đáp | ~62k (`A+`) | **~82k** (`S`) | +32% | Chưa farm Thợ Săn vẫn đánh tạm 4pc Hồi Ức · Chỉnh Xianyun Cát ER (`160%+`) + Ly/Nón ATK% · Farm ké 4pc Thợ Săn + Cát EM sau |
 | **Raiden + Furina Hyper** (`Raiden · Furina · Yelan · Jean`) | Đơn mục tiêu | **~72k** (`S`) | ~81k (`S`) | +13% | Furina Q9→10 · 4pc Đoàn Kịch · Jean C3 đủ 4pc Bóng Hình + Ống Đồng 90 *(Yelan ✓ Tây Phong 90)* |
