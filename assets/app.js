@@ -440,28 +440,87 @@ const FARM_DAYS = [
   { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Mitya", "Yae Miko", "Valeriy"], resinChips: ["Sách Charity (Mitya E/Q)", "4pc Ảo Tưởng (Mitya + Yae)"], extra: "Mitya Lv.90 + Trấn 90 đã xong — bắt đầu kẹp Valeriy Lv.70/80" },
 ];
 
-const THEATER_PLAN = {
-  season: "01.11 – 01.12 · Thủy · Lôi · Nham",
-  specialMeta: {
-    Flins: { element: "Electro", tag: "Dùng thử", sub: "Trial · Mở màn" },
-    Kachina: { element: "Geo", tag: "Dùng thử", sub: "Trial · Mở màn" },
-    Odette: { element: "Cryo", tag: "Mượn bạn", sub: "Mượn · Cặp Mitya" },
-    Qiqi: { element: "Cryo", tag: "Khách mời", sub: "Khách mời Băng" },
+const THEATER_SPECIAL = {
+  Flins: { element: "Electro", tag: "Dùng thử", sub: "Trial · Mở màn" },
+  Kachina: { element: "Geo", tag: "Dùng thử", sub: "Trial · Mở màn" },
+  Odette: { element: "Cryo", tag: "Mượn bạn", sub: "Mượn · Cặp Mitya" },
+  Qiqi: { element: "Cryo", tag: "Khách mời", sub: "Khách mời Băng" },
+};
+
+const THEATER_RULES = [
+  "M1 chỉ Mở Màn",
+  "Mitya + Odette = 0 Thủy",
+  "Neuvillette ≤ 2 Thủy",
+  "Navia luôn 2 Nham",
+  "Flins + Aino luôn đi chung",
+  "Mọi Boss có Heal/Khiên",
+];
+
+const THEATER_PLANS = {
+  hard8: {
+    label: "Khó · 8 Màn (16 NV)",
+    short: "Khó · 8 Màn (16/16 NV đã pick)",
+    season: "01.11 – 01.12 · Thủy · Lôi · Nham",
+    pickCount: 16,
+    groups: [
+      { label: "6 Mở Màn (4 acc + 2 Trial)", members: ["Yelan", "Aino", "Fischl", "Zhongli", "Flins", "Kachina"] },
+      { label: "Thủy đã pick (4)", members: ["Neuvillette", "Furina", "Sangonomiya Kokomi", "Xingqiu"] },
+      { label: "Lôi đã pick (4)", members: ["Yae Miko", "Raiden Shogun", "Mitya", "Kuki Shinobu"] },
+      { label: "Nham (1) & Mượn bạn (1)", members: ["Navia", "Odette"] },
+    ],
+    extraLabel: "+4 NV thưởng buff tùy chọn (nếu mở ô thêm ở Khó): Keqing · Ayato · Mona · Chiori",
+    extraMembers: ["Keqing", "Kamisato Ayato", "Mona", "Chiori"],
+    extraIsBonus: true,
+    items: [
+      { title: "Màn 1 · Quái thường", sub: "100% Mở Màn · Nguyệt-Điện Cảm", note: "100% dùng NV Mở Màn · Flins + Aino kích Nguyệt-Điện Cảm, Kachina Cuộn Giấy buff 40% & khiên Kết Tinh", status: "ok", members: ["Flins", "Aino", "Fischl", "Kachina"] },
+      { title: "Màn 2 · Quái thường", sub: "Neuv ≤2 Thủy · Tự hồi máu", note: "2 Thủy + 2 Lôi (không 3 Thủy) · Neuvillette tự hồi máu kéo Fanfare Furina · Xả hết Fischl", status: "ok", members: ["Neuvillette", "Furina", "Fischl", "Yae Miko"] },
+      { title: "Màn 3 · BOSS Nấm Khổng Lồ", sub: "0 Thủy · 3 Lôi đạp thanh kích hoạt", note: "Tinh-Siêu Dẫn 0 Thủy · Mitya + Yae Ma Nữ + Kuki nạp thanh Lôi cực nhanh làm Nấm ngã gục + Kuki hồi máu", status: "ok", members: ["Mitya", "Odette", "Yae Miko", "Kuki Shinobu"] },
+      { title: "Màn 4 · Thủ Trụ Địa Mạch", sub: "Navia 2 Nham + 2 Thủy", note: "2 Nham (Cuộn Giấy +40% DMG) + 2 Thủy Kết Tinh liên tục, Xingqiu chống ngắt · Xả hết Kachina", status: "ok", members: ["Navia", "Kachina", "Yelan", "Xingqiu"] },
+      { title: "Màn 5 · Quái tinh anh", sub: "0 Thủy · Xả Mitya + Odette", note: "Tinh-Siêu Dẫn 0 Thủy · Raiden E off-field 25s (không tranh sân) + Kuki hồi máu · Xả hết Mitya, Odette, Kuki", status: "ok", members: ["Mitya", "Odette", "Raiden Shogun", "Kuki Shinobu"] },
+      { title: "Màn 6 · BOSS Kẻ Thì Thầm Ác Mộng", sub: "Nguyệt-Điện Cảm + Kokomi Heal", note: "Flins + Aino C1 phá khiên Nguyệt siêu tốc · Yelan buff DMG + Kokomi hồi máu bất tử · Xả Flins, Aino, Yelan", status: "ok", members: ["Flins", "Aino", "Yelan", "Sangonomiya Kokomi"] },
+      { title: "Màn 7 · Quái tinh anh nặng", sub: "Neuv 2 Thủy + Lôi + Nham", note: "2 Thủy + 1 Lôi (Raiden E off-field · không tranh sân) + 1 Nham (Khiên Zhongli -20% kháng) = 2 tầng Rồng, sống khỏe", status: "ok", members: ["Neuvillette", "Furina", "Raiden Shogun", "Zhongli"] },
+      { title: "Màn 8 · BOSS Samachurl Bách Chiến", sub: "2 Nham phá nồi · 2 Thủy dập lửa", note: "2 Nham (Navia 6/10/10 + Zhongli) phá nồi/khiên · 2 Thủy (Xingqiu + Kokomi) dập lửa trại ngay + Khiên & Heal chốt sổ", status: "ok", members: ["Navia", "Zhongli", "Xingqiu", "Sangonomiya Kokomi"] },
+    ],
+    flowerTips: [
+      "Màn 1–2 (Gom quân sớm): Ưu tiên mua Sự kiện Đồng Hành (Thủy/Lôi) để rút sẵn Neuvillette, Furina, Yae Miko (M2) và bộ Mitya + Odette + Kuki (M3).",
+      "Màn 3–5 (Khóa cặp Mitya & Navia): Chỉ cần rút đủ 16 NV đã chọn (tổng đúng 32 lượt = 8×4); không rút lệch nhân vật ngoài bộ khung.",
+      "Màn 6–8 (Dồn Chúc Phúc): Chốt xong Flins+Aino+Kokomi (M6), Neuvillette+Zhongli (M7), Navia+Zhongli+Xingqiu+Kokomi (M8) rồi dồn hết Hoa vào Điện Cảm & Kết Tinh.",
+    ],
   },
-  groups: [
-    { label: "6 Mở Màn (4 acc + 2 Trial)", members: ["Yelan", "Aino", "Fischl", "Zhongli", "Flins", "Kachina"] },
-    { label: "Thủy (7)", members: ["Neuvillette", "Furina", "Kamisato Ayato", "Sangonomiya Kokomi", "Xingqiu", "Mona", "Barbara"] },
-    { label: "Lôi (7)", members: ["Raiden Shogun", "Yae Miko", "Keqing", "Mitya", "Kuki Shinobu", "Lisa", "Kujou Sara"] },
-    { label: "Nham (4)", members: ["Navia", "Chiori", "Ningguang", "Noelle"] },
-    { label: "Khách mời & Mượn (2)", members: ["Qiqi", "Odette"] },
-  ],
-  excluded: ["Nilou", "Candace", "Beidou", "Yun Jin", "Gorou"],
-  flowerTips: [
-    "Màn 1–3 (Gom quân): Chỉ mua Sự kiện Đồng Hành (ưu tiên Lôi/Thủy) để sớm rút Keqing, Xingqiu, Mona, Ayato; dư hoa mới lấy Chúc Phúc Điện Cảm Lv.1.",
-    "Màn 4–6 (Khóa Boss): Bắt buộc rút đủ Yae Miko trước Màn 6 và gom dần bộ Nham (Navia, Chiori) trước Màn 8; đẩy Chúc Phúc Điện Cảm lên Lv.2–4.",
-    "Màn 7–10 (Chốt DPS): Dùng Làm mới thẻ tìm đủ cặp Mitya + Odette (M7 & M9) và bộ 4 Neuvillette + Furina + Kokomi + Raiden (M10); dồn hết hoa vào Điện Cảm + Kết Tinh.",
-    "Thẻ Bí Ẩn & Quay Lại: Tránh mua Bí Ẩn ở Màn 1–6 (trừ thẻ miễn phí/hồi Sức Bền); giữ lượt Quay Lại Màn (Rewind) cho đoạn Màn 6–8.",
-  ],
+  vis10: {
+    label: "Tầm Nhìn · 10 Màn (26 NV)",
+    short: "Tầm Nhìn · 10 Màn (26/26 NV)",
+    season: "01.11 – 01.12 · Thủy · Lôi · Nham",
+    pickCount: 26,
+    groups: [
+      { label: "6 Mở Màn (4 acc + 2 Trial)", members: ["Yelan", "Aino", "Fischl", "Zhongli", "Flins", "Kachina"] },
+      { label: "Thủy (7)", members: ["Neuvillette", "Furina", "Kamisato Ayato", "Sangonomiya Kokomi", "Xingqiu", "Mona", "Barbara"] },
+      { label: "Lôi (7)", members: ["Raiden Shogun", "Yae Miko", "Keqing", "Mitya", "Kuki Shinobu", "Lisa", "Kujou Sara"] },
+      { label: "Nham (4)", members: ["Navia", "Chiori", "Ningguang", "Noelle"] },
+      { label: "Khách mời & Mượn bạn (2)", members: ["Qiqi", "Odette"] },
+    ],
+    extraLabel: "5 NV bỏ ngoài (tránh loãng thẻ — chỉ tick nếu đi Ánh Trăng 12 Màn)",
+    extraMembers: ["Nilou", "Candace", "Beidou", "Yun Jin", "Gorou"],
+    extraIsBonus: false,
+    items: [
+      { title: "Màn 1 · Quái thường", sub: "100% Mở Màn · Nguyệt-Điện Cảm", note: "100% dùng NV Mở Màn · Flins + Aino kích Nguyệt-Điện Cảm dọn nhanh · Giữ 1 lượt Flins+Aino cho Màn 6", status: "ok", members: ["Flins", "Aino", "Fischl", "Kachina"] },
+      { title: "Màn 2 · Quái thường", sub: "Keqing Điện Cảm + Heal", note: "Keqing Bàn Nham (70/231) + Fischl + Xingqiu + Barbara (hồi máu) dọn mượt · Xả hết Fischl", status: "ok", members: ["Keqing", "Fischl", "Xingqiu", "Barbara"] },
+      { title: "Màn 3 · BOSS Nấm Khổng Lồ", sub: "2 Lôi đạp thanh + Heal", note: "Keqing + Sara đạp thanh Lôi làm boss ngã gục · Yelan buff DMG + Barbara hồi máu · Xả Keqing & Barbara", status: "ok", members: ["Keqing", "Kujou Sara", "Yelan", "Barbara"] },
+      { title: "Màn 4 · Thủ Trụ Địa Mạch", sub: "Câu giờ · Đốt 4 NV phụ", note: "Chọn phòng quái đi chậm · E Mona khiêu khích + E Ningguang chắn đạn + Noelle khiên & hồi máu câu hết giờ", status: "ok", members: ["Ningguang", "Noelle", "Mona", "Lisa"] },
+      { title: "Màn 5 · Quái tinh anh", sub: "Ayato Điện Cảm + Kuki Heal", note: "Ưu tiên phòng đông quái ăn Chúc Phúc Điện Cảm · Ayato + Yae Ma Nữ + Kuki hồi máu · Xả hết Mona", status: "ok", members: ["Kamisato Ayato", "Yae Miko", "Mona", "Kuki Shinobu"] },
+      { title: "Màn 6 · BOSS Kẻ Thì Thầm Ác Mộng", sub: "Nguyệt-Điện Cảm + Kokomi Heal", note: "Flins + Aino C1 kích Nguyệt-Điện Cảm phá khiên cực nhanh · Yelan buff DMG + Kokomi hồi máu bất tử · Xả Flins, Aino, Yelan", status: "ok", members: ["Flins", "Aino", "Yelan", "Sangonomiya Kokomi"] },
+      { title: "Màn 7 · Tinh anh (Mitya + Odette)", sub: "0 Thủy · Lượt 1/2", note: "Tinh-Siêu Dẫn 0 Thủy giữ sạch ấn Băng · Mitya + Odette + Yae Ma Nữ + Kuki hồi máu · Xả Yae & Kuki", status: "ok", members: ["Mitya", "Odette", "Yae Miko", "Kuki Shinobu"] },
+      { title: "Màn 8 · BOSS Samachurl Bách Chiến", sub: "Navia 2+ Nham · XQ dập lửa", note: "3 Nham (Navia 6/10/10 + Zhongli khiên + Kachina Cuộn Giấy) phá nồi/khiên + XQ dập lửa & chống ngắt", status: "ok", members: ["Navia", "Zhongli", "Kachina", "Xingqiu"] },
+      { title: "Màn 9 · Tinh anh nặng", sub: "0 Thủy · Xả Mitya + Odette", note: "Tinh-Siêu Dẫn 0 Thủy · Raiden E off-field (không tranh sân) + Noelle khiên & heal · Xả lượt 2/2 Mitya + Odette", status: "ok", members: ["Mitya", "Odette", "Raiden Shogun", "Noelle"] },
+      { title: "Màn 10 · BOSS Bướm Ánh Trăng", sub: "Neuv 2 Thủy + Qiqi Full Heal", note: "2 Thủy (Neuv + Furina) + Qiqi (Băng hồi 100% HP phá Kén & kích tầng Rồng) + Zhongli (khiên -20% kháng) — đủ chuẩn 100%", status: "ok", members: ["Neuvillette", "Furina", "Qiqi", "Zhongli"] },
+    ],
+    flowerTips: [
+      "Màn 1–3 (Gom quân): Mua Sự kiện Đồng Hành (Lôi/Thủy) sớm để rút Keqing, Sara, Xingqiu, Barbara trước Boss 3.",
+      "Màn 4–6 (Khóa Boss 6): Giữ lượt 2/2 của Flins + Aino + Yelan và gom Yae Miko + Kokomi để dọn Boss 6 nhẹ nhàng.",
+      "Màn 7–10 (Chốt cặp Mitya & Neuv): Dùng Làm mới thẻ tìm đủ Mitya + Odette (M7 & M9) và Neuvillette + Furina + Qiqi + Zhongli (M10).",
+      "Thẻ Bí Ẩn & Quay Lại: Tránh mua Bí Ẩn ở Màn 1–6 (trừ thẻ miễn phí/hồi Sức Bền); giữ lượt Quay Lại Màn cho đoạn M6–8.",
+    ],
+  },
 };
 
 const MODES = {
@@ -678,18 +737,7 @@ const MODES = {
   },
   theater: {
     label: "Nhà Hát",
-    items: [
-      { title: "Màn 1 · Quái thường", sub: "Dễ · Giữ Yelan & Zhongli", note: "Flins + Aino kích Nguyệt-Điện Cảm dọn nhanh · Giữ 1 lượt cho Màn 6, cấm đụng Yelan & Zhongli", status: "ok", members: ["Flins", "Aino", "Fischl", "Kachina"] },
-      { title: "Màn 2 · Quái thường", sub: "Dễ · Xả Fischl & Kachina", note: "Xả hết sức bền Fischl & Kachina · Chưa rút Keqing thì thay bằng Ayato hoặc Mitya + Qiqi", status: "ok", members: ["Keqing", "Fischl", "Kachina", "Lisa"] },
-      { title: "Màn 3 · BOSS Nấm Khổng Lồ", sub: "Đánh Lôi nạp thanh kích hoạt", note: "✓ Keqing (Bàn Nham 70/231) + Sara nạp thanh Lôi làm boss ngã gục giảm kháng · Dự phòng: Mitya + Qiqi", status: "ok", members: ["Keqing", "Kujou Sara", "Xingqiu", "Barbara"] },
-      { title: "Màn 4 · Thủ Trụ Địa Mạch", sub: "Câu giờ · Đốt 4 NV phụ", note: "Chọn phòng quái đi chậm · Đứng xa trụ, thả E Mona khiêu khích + E Ningguang chắn đạn hết giờ", status: "ok", members: ["Mona", "Ningguang", "Noelle", "Lisa"] },
-      { title: "Màn 5 · Quái thường / Tinh anh", sub: "Điện Cảm · Xả Mona & Noelle", note: "Ưu tiên phòng đông quái ăn Chúc Phúc Điện Cảm · Xả nốt Mona & Noelle", status: "ok", members: ["Kamisato Ayato", "Kuki Shinobu", "Mona", "Noelle"] },
-      { title: "Màn 6 · BOSS Kẻ Thì Thầm Ác Mộng", sub: "Phá khiên Nguyệt-Điện Cảm", note: "Flins + Aino C1 kích Nguyệt-Điện Cảm phá khiên cực nhanh · Yae Ma Nữ giữ trụ 24s · Cần heal đổi Yelan → Barbara/Kuki", status: "ok", members: ["Flins", "Aino", "Yae Miko", "Yelan"] },
-      { title: "Màn 7 · Tinh anh (Mitya + Odette)", sub: "Cặp >100k · Lượt 1/2", note: "✓ Đã mượn Odette — tránh kẹp Thủy để giữ sạch ấn Băng cho Tinh-Siêu Dẫn · Xả hết Yae & Kuki", status: "ok", members: ["Mitya", "Odette", "Yae Miko", "Kuki Shinobu"] },
-      { title: "Màn 8 · BOSS Samachurl Bách Chiến", sub: "Thủy dập lửa · Nham phá nồi", note: "✓ Q Xingqiu dập lửa trại ngay + tạo Kết Tinh cho Navia (6/10/10) bắn E & Zhongli phá nồi/khiên", status: "warn", members: ["Navia", "Zhongli", "Chiori", "Xingqiu"] },
-      { title: "Màn 9 · Tinh anh nặng", sub: "Xả Mitya + Odette (2/2)", note: "Xả lượt 2/2 cặp Mitya + Odette (+Qiqi hồi máu & 2 Băng) · Phương án 2: Navia · Zhongli · Chiori · Yelan", status: "ok", members: ["Mitya", "Odette", "Raiden Shogun", "Qiqi"] },
-      { title: "Màn 10 · BOSS Bướm Ánh Trăng", sub: "Hồi 100% HP cả đội phá Kén", note: "Boss bung Kén Ánh Trăng → bật Q Furina + Q Kokomi kéo cả 4 NV lên 100% HP phá kén rồi Neuvillette xả tia nước", status: "ok", members: ["Neuvillette", "Furina", "Sangonomiya Kokomi", "Raiden Shogun"] },
-    ],
+    items: THEATER_PLANS.hard8.items,
   },
   meta: {
     label: "Meta 7.2",
@@ -772,6 +820,7 @@ let APP = {
   artSort: "cv_desc",   // cv_desc | rv_desc | rolls_desc | lvl_asc
   artLimit: 36,
   mode: "teams",
+  theaterTier: "hard8",
   index: 0,
   powerTab: "chart",    // chart | matrix | vs
   powerSort: "proj",    // proj | cur | gain
@@ -2433,10 +2482,11 @@ function renderFoot() {
     `;
   }
   if (APP.mode === "theater") {
+    const plan = THEATER_PLANS[APP.theaterTier] || THEATER_PLANS.hard8;
     const { needGear } = evalTheaterStatus();
-    const renderTheaterPill = (name, isExcluded = false) => {
+    const renderTheaterPill = (name, isMuted = false) => {
       const c = byName(name);
-      const sp = THEATER_PLAN.specialMeta[name];
+      const sp = THEATER_SPECIAL[name];
       const isExternal = sp && (sp.tag === "Dùng thử" || sp.tag === "Mượn bạn");
       if (isExternal) {
         const cls = sp.tag === "Dùng thử" ? "is-trial" : "is-friend";
@@ -2445,14 +2495,16 @@ function renderFoot() {
           : `<span class="face-dot el-${esc(sp.element)}">${esc(sp.element.slice(0, 1))}</span>`;
         return `<span class="t-face ${cls}" title="${esc(sp.sub)}">${avatar}${esc(name)} <small>${esc(sp.tag)}</small></span>`;
       }
-      const cls = isExcluded ? "is-excl" : needGear.has(name) ? "warn" : "";
+      const cls = isMuted ? "is-excl" : needGear.has(name) ? "warn" : "";
       const tagHtml = sp ? ` <small>${esc(sp.tag)}</small>` : "";
       return `<span class="t-face ${cls}" ${c ? `data-open-char="${esc(c.name)}" title="${esc(c.name)} Lv.${c.level} C${c.constellation}"` : ""}>${
         c?.icon ? `<img src="${esc(c.icon)}" alt="${esc(c.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""
       }${esc(name)}${tagHtml}</span>`;
     };
 
-    const groupsHtml = THEATER_PLAN.groups
+    const rulesHtml = THEATER_RULES.map((r) => `<span class="theater-rule-pill">✓ ${esc(r)}</span>`).join("");
+
+    const groupsHtml = plan.groups
       .map(
         (g) => `
           <div class="theater-group">
@@ -2463,19 +2515,20 @@ function renderFoot() {
       )
       .join("");
 
-    const tipsHtml = THEATER_PLAN.flowerTips.map((t) => `<li>${esc(t)}</li>`).join("");
+    const tipsHtml = plan.flowerTips.map((t) => `<li>${esc(t)}</li>`).join("");
 
     return `
       <div class="stage-foot theater-strategy">
         <div class="foot-title">
-          <span><strong>Checklist chọn ban đầu 26/26</strong> · Chế độ Tầm Nhìn 10 Màn (${esc(THEATER_PLAN.season)})</span>
-          <span style="color:var(--bad);">Đỏ = Còn chỉnh nhẹ · Mượn: <strong>Odette</strong></span>
+          <span><strong>Checklist ${esc(plan.pickCount)}/${esc(plan.pickCount)}</strong> · ${esc(plan.short)} (${esc(plan.season)})</span>
+          <span>Mượn: <strong style="color:var(--ok);">Odette</strong></span>
         </div>
+        <div class="theater-rules-bar">${rulesHtml}</div>
         <div class="theater-groups">
           ${groupsHtml}
           <div class="theater-group">
-            <span class="theater-group-lbl">5 NV bỏ ngoài (tránh loãng thẻ — chỉ tick nếu đi Ánh Trăng 12 Màn)</span>
-            <div class="theater-faces">${THEATER_PLAN.excluded.map((n) => renderTheaterPill(n, true)).join("")}</div>
+            <span class="theater-group-lbl">${esc(plan.extraLabel)}</span>
+            <div class="theater-faces">${plan.extraMembers.map((n) => renderTheaterPill(n, !plan.extraIsBonus)).join("")}</div>
           </div>
         </div>
         <div class="theater-tips-wrap">
@@ -2500,7 +2553,7 @@ function renderFoot() {
 }
 
 function renderStageView() {
-  let items = APP.mode === "teams" ? getDynamicTeams() : MODES[APP.mode].items;
+  let items = APP.mode === "teams" ? getDynamicTeams() : APP.mode === "theater" ? (THEATER_PLANS[APP.theaterTier] || THEATER_PLANS.hard8).items : MODES[APP.mode].items;
   if (APP.mode === "meta" && APP.data) {
     items = items.map((it) => {
       if (it.title.startsWith("Build Ngay")) return { ...it, sub: `Fontaine ${regionPct("Fontaine")}% · Nod-Krai ${regionPct("Nod-Krai")}%` };
@@ -2508,6 +2561,7 @@ function renderStageView() {
       return it;
     });
   }
+  if (APP.index >= items.length) APP.index = 0;
   const active = items[APP.index] || items[0];
 
   const rowsHtml = items
@@ -2544,7 +2598,7 @@ function renderStageView() {
   const pillarsHtml = active.members
     .map((name) => {
       const c = byName(name);
-      const sp = APP.mode === "theater" ? THEATER_PLAN.specialMeta[name] : null;
+      const sp = APP.mode === "theater" ? THEATER_SPECIAL[name] : null;
       const isExternal = Boolean(sp && (sp.tag === "Dùng thử" || sp.tag === "Mượn bạn"));
       const showChar = Boolean(c && !isExternal);
       const act = showChar ? findActionForChar(name) : null;
@@ -2597,6 +2651,15 @@ function renderStageView() {
     })
     .join("");
 
+  const theaterTierBar =
+    APP.mode === "theater"
+      ? `<div class="theater-tier-bar">
+          ${Object.entries(THEATER_PLANS)
+            .map(([k, p]) => `<button type="button" class="theater-tier-btn ${APP.theaterTier === k ? "active" : ""}" data-theater-tier="${k}">${esc(p.label)}</button>`)
+            .join("")}
+        </div>`
+      : "";
+
   const headerSub = active.power?.badge
     ? `<span class="power-badge status-${esc(active.status)}">${esc(active.power.badge)}</span>`
     : `<span class="showcase-sub">${esc(active.note)}</span>`;
@@ -2609,6 +2672,7 @@ function renderStageView() {
             .map(([k, m]) => `<button class="mode-tab ${APP.mode === k ? "active" : ""}" data-mode="${k}">${esc(m.label)}</button>`)
             .join("")}
         </nav>
+        ${theaterTierBar}
         <div class="roster-list">${rowsHtml}</div>
       </aside>
 
@@ -4023,6 +4087,14 @@ function render() {
   document.querySelectorAll(".mode-tab").forEach((b) => {
     b.addEventListener("click", () => {
       APP.mode = b.getAttribute("data-mode");
+      APP.index = 0;
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-theater-tier]").forEach((b) => {
+    b.addEventListener("click", () => {
+      APP.theaterTier = b.getAttribute("data-theater-tier");
       APP.index = 0;
       render();
     });

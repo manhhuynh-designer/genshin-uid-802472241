@@ -777,6 +777,45 @@ img.clickable-face:hover, .sflow-char.clickable-face:hover img { transform: scal
   color: var(--ivory);
 }
 .theater-tips li { line-height: 1.45; }
+.theater-tier-bar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.theater-tier-btn {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.theater-tier-btn:hover { color: var(--ivory); border-color: var(--line-strong); }
+.theater-tier-btn.active {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: rgba(211, 188, 142, 0.11);
+}
+.theater-rules-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.theater-rule-pill {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ok);
+  background: rgba(108, 212, 165, 0.09);
+  border: 1px solid rgba(108, 212, 165, 0.28);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
 
 /* VIEW 3: 7-Day Farm Timeline */
 .onslaught-banner {
