@@ -440,6 +440,30 @@ const FARM_DAYS = [
   { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Mitya", "Yae Miko", "Valeriy"], resinChips: ["Sách Charity (Mitya E/Q)", "4pc Ảo Tưởng (Mitya + Yae)"], extra: "Mitya Lv.90 + Trấn 90 đã xong — bắt đầu kẹp Valeriy Lv.70/80" },
 ];
 
+const THEATER_PLAN = {
+  season: "01.11 – 01.12 · Thủy · Lôi · Nham",
+  specialMeta: {
+    Flins: { element: "Electro", tag: "Dùng thử", sub: "Trial · Mở màn" },
+    Kachina: { element: "Geo", tag: "Dùng thử", sub: "Trial · Mở màn" },
+    Odette: { element: "Cryo", tag: "Mượn bạn", sub: "Mượn · Cặp Mitya" },
+    Qiqi: { element: "Cryo", tag: "Khách mời", sub: "Khách mời Băng" },
+  },
+  groups: [
+    { label: "6 Mở Màn (4 acc + 2 Trial)", members: ["Yelan", "Aino", "Fischl", "Zhongli", "Flins", "Kachina"] },
+    { label: "Thủy (7)", members: ["Neuvillette", "Furina", "Kamisato Ayato", "Sangonomiya Kokomi", "Xingqiu", "Mona", "Barbara"] },
+    { label: "Lôi (7)", members: ["Raiden Shogun", "Yae Miko", "Keqing", "Mitya", "Kuki Shinobu", "Lisa", "Kujou Sara"] },
+    { label: "Nham (4)", members: ["Navia", "Chiori", "Ningguang", "Noelle"] },
+    { label: "Khách mời & Mượn (2)", members: ["Qiqi", "Odette"] },
+  ],
+  excluded: ["Nilou", "Candace", "Beidou", "Yun Jin", "Gorou"],
+  flowerTips: [
+    "Màn 1–3 (Gom quân): Chỉ mua Sự kiện Đồng Hành (ưu tiên Lôi/Thủy) để sớm rút Keqing, Xingqiu, Mona, Ayato; dư hoa mới lấy Chúc Phúc Điện Cảm Lv.1.",
+    "Màn 4–6 (Khóa Boss): Bắt buộc rút đủ Yae Miko trước Màn 6 và gom dần bộ Nham (Navia, Chiori) trước Màn 8; đẩy Chúc Phúc Điện Cảm lên Lv.2–4.",
+    "Màn 7–10 (Chốt DPS): Dùng Làm mới thẻ tìm đủ cặp Mitya + Odette (M7 & M9) và bộ 4 Neuvillette + Furina + Kokomi + Raiden (M10); dồn hết hoa vào Điện Cảm + Kết Tinh.",
+    "Thẻ Bí Ẩn & Quay Lại: Tránh mua Bí Ẩn ở Màn 1–6 (trừ thẻ miễn phí/hồi Sức Bền); giữ lượt Quay Lại Màn (Rewind) cho đoạn Màn 6–8.",
+  ],
+};
+
 const MODES = {
   teams: {
     label: "Đội Hình",
@@ -655,10 +679,16 @@ const MODES = {
   theater: {
     label: "Nhà Hát",
     items: [
-      { title: "Màn 3 · Terrorshroom", sub: "Kích Lôi nhanh", note: "✓ Keqing vừa nhận lại Bàn Nham (70/231) gánh mượt", status: "ok", members: ["Keqing", "Fischl", "Xingqiu", "Barbara"] },
-      { title: "Màn 6 · Nightmares", sub: "Phá khiên Thủy + Lôi", note: "Ayato · Aino Lv.80 · Yae Ma Nữ giữ trụ 24s rất mượt", status: "ok", members: ["Kamisato Ayato", "Yae Miko", "Yelan", "Kuki Shinobu"] },
-      { title: "Màn 8 · Samachurl", sub: "Giữ Nham + Thủy", note: "✓ Navia 6/10/10 gánh · Beidou đã có Vua Biển · Còn Gorou & Ningguang", status: "warn", members: ["Navia", "Zhongli", "Chiori", "Xingqiu"] },
-      { title: "Màn 10 · Moonfly", sub: "Cần Healer + Buff mạnh", note: "✓ Furina Lv.90 Răng Nanh R5 (39.7k HP) · Mượn thêm Xilonen từ bạn", status: "ok", members: ["Neuvillette", "Furina", "Raiden Shogun", "Sangonomiya Kokomi"] },
+      { title: "Màn 1 · Quái thường", sub: "Dễ · Giữ Yelan & Zhongli", note: "Flins + Aino kích Nguyệt-Điện Cảm dọn nhanh · Giữ 1 lượt cho Màn 6, cấm đụng Yelan & Zhongli", status: "ok", members: ["Flins", "Aino", "Fischl", "Kachina"] },
+      { title: "Màn 2 · Quái thường", sub: "Dễ · Xả Fischl & Kachina", note: "Xả hết sức bền Fischl & Kachina · Chưa rút Keqing thì thay bằng Ayato hoặc Mitya + Qiqi", status: "ok", members: ["Keqing", "Fischl", "Kachina", "Lisa"] },
+      { title: "Màn 3 · BOSS Nấm Khổng Lồ", sub: "Đánh Lôi nạp thanh kích hoạt", note: "✓ Keqing (Bàn Nham 70/231) + Sara nạp thanh Lôi làm boss ngã gục giảm kháng · Dự phòng: Mitya + Qiqi", status: "ok", members: ["Keqing", "Kujou Sara", "Xingqiu", "Barbara"] },
+      { title: "Màn 4 · Thủ Trụ Địa Mạch", sub: "Câu giờ · Đốt 4 NV phụ", note: "Chọn phòng quái đi chậm · Đứng xa trụ, thả E Mona khiêu khích + E Ningguang chắn đạn hết giờ", status: "ok", members: ["Mona", "Ningguang", "Noelle", "Lisa"] },
+      { title: "Màn 5 · Quái thường / Tinh anh", sub: "Điện Cảm · Xả Mona & Noelle", note: "Ưu tiên phòng đông quái ăn Chúc Phúc Điện Cảm · Xả nốt Mona & Noelle", status: "ok", members: ["Kamisato Ayato", "Kuki Shinobu", "Mona", "Noelle"] },
+      { title: "Màn 6 · BOSS Kẻ Thì Thầm Ác Mộng", sub: "Phá khiên Nguyệt-Điện Cảm", note: "Flins + Aino C1 kích Nguyệt-Điện Cảm phá khiên cực nhanh · Yae Ma Nữ giữ trụ 24s · Cần heal đổi Yelan → Barbara/Kuki", status: "ok", members: ["Flins", "Aino", "Yae Miko", "Yelan"] },
+      { title: "Màn 7 · Tinh anh (Mitya + Odette)", sub: "Cặp >100k · Lượt 1/2", note: "✓ Đã mượn Odette — tránh kẹp Thủy để giữ sạch ấn Băng cho Tinh-Siêu Dẫn · Xả hết Yae & Kuki", status: "ok", members: ["Mitya", "Odette", "Yae Miko", "Kuki Shinobu"] },
+      { title: "Màn 8 · BOSS Samachurl Bách Chiến", sub: "Thủy dập lửa · Nham phá nồi", note: "✓ Q Xingqiu dập lửa trại ngay + tạo Kết Tinh cho Navia (6/10/10) bắn E & Zhongli phá nồi/khiên", status: "warn", members: ["Navia", "Zhongli", "Chiori", "Xingqiu"] },
+      { title: "Màn 9 · Tinh anh nặng", sub: "Xả Mitya + Odette (2/2)", note: "Xả lượt 2/2 cặp Mitya + Odette (+Qiqi hồi máu & 2 Băng) · Phương án 2: Navia · Zhongli · Chiori · Yelan", status: "ok", members: ["Mitya", "Odette", "Raiden Shogun", "Qiqi"] },
+      { title: "Màn 10 · BOSS Bướm Ánh Trăng", sub: "Hồi 100% HP cả đội phá Kén", note: "Boss bung Kén Ánh Trăng → bật Q Furina + Q Kokomi kéo cả 4 NV lên 100% HP phá kén rồi Neuvillette xả tia nước", status: "ok", members: ["Neuvillette", "Furina", "Sangonomiya Kokomi", "Raiden Shogun"] },
     ],
   },
   meta: {
@@ -2403,22 +2433,54 @@ function renderFoot() {
     `;
   }
   if (APP.mode === "theater") {
-    const { elig, needGear } = evalTheaterStatus();
+    const { needGear } = evalTheaterStatus();
+    const renderTheaterPill = (name, isExcluded = false) => {
+      const c = byName(name);
+      const sp = THEATER_PLAN.specialMeta[name];
+      const isExternal = sp && (sp.tag === "Dùng thử" || sp.tag === "Mượn bạn");
+      if (isExternal) {
+        const cls = sp.tag === "Dùng thử" ? "is-trial" : "is-friend";
+        const avatar = c?.icon
+          ? `<img src="${esc(c.icon)}" alt="${esc(name)}" loading="lazy" referrerpolicy="no-referrer" />`
+          : `<span class="face-dot el-${esc(sp.element)}">${esc(sp.element.slice(0, 1))}</span>`;
+        return `<span class="t-face ${cls}" title="${esc(sp.sub)}">${avatar}${esc(name)} <small>${esc(sp.tag)}</small></span>`;
+      }
+      const cls = isExcluded ? "is-excl" : needGear.has(name) ? "warn" : "";
+      const tagHtml = sp ? ` <small>${esc(sp.tag)}</small>` : "";
+      return `<span class="t-face ${cls}" ${c ? `data-open-char="${esc(c.name)}" title="${esc(c.name)} Lv.${c.level} C${c.constellation}"` : ""}>${
+        c?.icon ? `<img src="${esc(c.icon)}" alt="${esc(c.name)}" loading="lazy" referrerpolicy="no-referrer" />` : ""
+      }${esc(name)}${tagHtml}</span>`;
+    };
+
+    const groupsHtml = THEATER_PLAN.groups
+      .map(
+        (g) => `
+          <div class="theater-group">
+            <span class="theater-group-lbl">${esc(g.label)}</span>
+            <div class="theater-faces">${g.members.map((n) => renderTheaterPill(n)).join("")}</div>
+          </div>
+        `
+      )
+      .join("");
+
+    const tipsHtml = THEATER_PLAN.flowerTips.map((t) => `<li>${esc(t)}</li>`).join("");
+
     return `
-      <div class="stage-foot">
+      <div class="stage-foot theater-strategy">
         <div class="foot-title">
-          <span><strong>${elig.length}+3</strong> nhân vật đủ cấp · Hạn 01/12</span>
-          <span style="color:var(--bad);">Đỏ = Cần lắp VK / TDV</span>
+          <span><strong>Checklist chọn ban đầu 26/26</strong> · Chế độ Tầm Nhìn 10 Màn (${esc(THEATER_PLAN.season)})</span>
+          <span style="color:var(--bad);">Đỏ = Còn chỉnh nhẹ · Mượn: <strong>Odette</strong></span>
         </div>
-        <div class="theater-faces">
-          ${elig
-            .map(
-              (c) => `<span class="t-face ${needGear.has(c.name) ? "warn" : ""}" data-open-char="${esc(c.name)}" title="${esc(c.name)} Lv.${c.level} C${c.constellation}">
-                <img src="${esc(c.icon)}" alt="${esc(c.name)}" loading="lazy" referrerpolicy="no-referrer" />
-                ${esc(c.name)}
-              </span>`
-            )
-            .join("")}
+        <div class="theater-groups">
+          ${groupsHtml}
+          <div class="theater-group">
+            <span class="theater-group-lbl">5 NV bỏ ngoài (tránh loãng thẻ — chỉ tick nếu đi Ánh Trăng 12 Màn)</span>
+            <div class="theater-faces">${THEATER_PLAN.excluded.map((n) => renderTheaterPill(n, true)).join("")}</div>
+          </div>
+        </div>
+        <div class="theater-tips-wrap">
+          <div class="theater-tips-title">Chiến thuật Hoa Ảo Kịch &amp; xử lý RNG rút thẻ</div>
+          <ul class="theater-tips">${tipsHtml}</ul>
         </div>
       </div>
     `;
@@ -2470,45 +2532,64 @@ function renderStageView() {
     })
     .join("");
 
+  const vigorMap = {};
+  if (APP.mode === "theater") {
+    items.slice(0, APP.index + 1).forEach((it) => {
+      (it.members || []).forEach((m) => {
+        vigorMap[m] = (vigorMap[m] || 0) + 1;
+      });
+    });
+  }
+
   const pillarsHtml = active.members
     .map((name) => {
       const c = byName(name);
-      const act = findActionForChar(name);
-      const isPending = act && !APP.done[act.id];
-      const el = c?.element || "Geo";
+      const sp = APP.mode === "theater" ? THEATER_PLAN.specialMeta[name] : null;
+      const isExternal = Boolean(sp && (sp.tag === "Dùng thử" || sp.tag === "Mượn bạn"));
+      const showChar = Boolean(c && !isExternal);
+      const act = showChar ? findActionForChar(name) : null;
+      const isPending = Boolean(act && !APP.done[act.id]);
+      const el = showChar ? c.element : sp?.element || c?.element || "Geo";
       const artUrl = c?.splash || c?.icon || "";
-      const wIcon = c?.weapon?.icon;
-      const artIcons = (c?.artifacts || []).slice(0, 3).map((a) => a.icon).filter(Boolean);
+      const wIcon = showChar ? c?.weapon?.icon : null;
+      const artIcons = showChar ? (c?.artifacts || []).slice(0, 3).map((a) => a.icon).filter(Boolean) : [];
+      const vigor = vigorMap[name];
+      const vigorSuffix = vigor ? ` · Lượt ${vigor}/2` : "";
 
       let noteClass = "note-ok";
-      let noteText = c ? "Ổn định ✓" : "Chưa có";
-      if (isPending) {
+      let noteText = isExternal ? `${sp.sub}${vigorSuffix}` : showChar ? "Ổn định ✓" : "Chưa có";
+      if (!isExternal && isPending) {
         noteClass = act.bucket === "now" ? "note-bad" : "note-warn";
         noteText = getActionShortFix(act, c);
-      } else if (act && APP.done[act.id]) {
+      } else if (!isExternal && act && APP.done[act.id]) {
         noteText = "Đã xong ✓";
       }
+      if (!isExternal && showChar && vigorSuffix) {
+        const tagPrefix = sp ? ` · ${sp.tag}` : "";
+        noteText += `${tagPrefix}${vigorSuffix}`;
+      }
+
+      const lvTag = isExternal ? sp.tag : showChar ? `Lv.${esc(c.level)} C${esc(c.constellation)}` : "Target";
+      const gearRow = showChar
+        ? `<div class="pillar-gear">
+            ${wIcon ? `<img src="${esc(wIcon)}" title="${esc(c.weapon?.name || "")}" referrerpolicy="no-referrer" />` : ""}
+            ${artIcons.map((u) => `<img src="${esc(u)}" referrerpolicy="no-referrer" />`).join("")}
+            <span class="talent-txt">${esc(c.talent_levels)}</span>
+          </div>`
+        : `<div class="pillar-gear"><span class="talent-txt">${esc(isExternal ? (sp.tag === "Dùng thử" ? "Bản dùng thử Mở màn" : "Mượn từ bạn bè") : "Mục tiêu")}</span></div>`;
 
       return `
-        <article class="character-pillar" style="--el: var(--el-${esc(el)}, 211,188,142);" ${c ? `data-open-char="${esc(name)}" title="Bấm xem chi tiết & 5 món TDV"` : ""}>
+        <article class="character-pillar" style="--el: var(--el-${esc(el)}, 211,188,142);" ${showChar ? `data-open-char="${esc(name)}" title="Bấm xem chi tiết & 5 món TDV"` : ""}>
           <div class="splash-wrap">
             ${artUrl ? `<img class="splash-img" src="${esc(artUrl)}" alt="${esc(name)}" referrerpolicy="no-referrer" />` : `<div class="splash-ghost">${esc(name.slice(0, 2).toUpperCase())}</div>`}
           </div>
           <div class="pillar-meta">
             <div class="pillar-name-row">
               <strong>${esc(name)}</strong>
-              <span>${c ? `Lv.${esc(c.level)} C${esc(c.constellation)}` : "Target"}</span>
+              <span>${lvTag}</span>
             </div>
-            ${
-              c
-                ? `<div class="pillar-gear">
-                    ${wIcon ? `<img src="${esc(wIcon)}" title="${esc(c.weapon?.name || "")}" referrerpolicy="no-referrer" />` : ""}
-                    ${artIcons.map((u) => `<img src="${esc(u)}" referrerpolicy="no-referrer" />`).join("")}
-                    <span class="talent-txt">${esc(c.talent_levels)}</span>
-                  </div>`
-                : `<div class="pillar-gear"><span class="talent-txt">Mục tiêu</span></div>`
-            }
-            ${c ? `<div class="pillar-stats">${esc(compactStats(c))}</div>` : ""}
+            ${gearRow}
+            ${showChar ? `<div class="pillar-stats">${esc(compactStats(c))}</div>` : ""}
             <div class="pillar-note ${noteClass}">${esc(noteText)}</div>
           </div>
         </article>

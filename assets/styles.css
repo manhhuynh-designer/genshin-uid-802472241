@@ -704,6 +704,79 @@ img.clickable-face:hover, .sflow-char.clickable-face:hover img { transform: scal
 }
 .t-face img { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; }
 .t-face.warn { color: var(--bad); }
+.t-face small {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gold);
+  opacity: 0.9;
+  margin-left: 2px;
+}
+.face-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10.5px;
+  font-weight: 700;
+  background: rgba(211, 188, 142, 0.14);
+  color: var(--ivory);
+}
+.face-dot.el-Electro { background: rgba(var(--el-Electro), 0.25); color: #e2cbff; }
+.face-dot.el-Cryo { background: rgba(var(--el-Cryo), 0.24); color: #c7f3ff; }
+.face-dot.el-Geo { background: rgba(var(--el-Geo), 0.24); color: #f9dfb0; }
+.t-face.is-trial {
+  border: 1px solid rgba(var(--el-Geo), 0.42);
+  background: rgba(var(--el-Geo), 0.1);
+}
+.t-face.is-friend {
+  border: 1px solid rgba(var(--el-Cryo), 0.46);
+  background: rgba(var(--el-Cryo), 0.12);
+}
+.t-face.is-excl {
+  opacity: 0.68;
+  border: 1px dashed rgba(211, 188, 142, 0.22);
+}
+.theater-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.theater-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.theater-group .theater-faces { margin-top: 0; }
+.theater-group-lbl {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.theater-tips-wrap {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+}
+.theater-tips-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.theater-tips {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--ivory);
+}
+.theater-tips li { line-height: 1.45; }
 
 /* VIEW 3: 7-Day Farm Timeline */
 .onslaught-banner {
