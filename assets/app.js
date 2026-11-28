@@ -1,4 +1,4 @@
-const DATA_URL = "./data/genshin_uid_802472241_data.json";
+const DATA_URL = "./data/genshin_uid_802472241_data.json?v=42";
 const STORAGE_KEY = "genshin_uid_802472241_done_v4";
 
 const SET_META = {
@@ -18,7 +18,7 @@ const SET_META = {
   hp2: { name: "2pc Thiên Nham + 2pc Vầng Sáng (HP%)", short: "2+2 HP%", where: "Tráp Thánh Thiên Nham / Bí cảnh Sumeru", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png" },
 };
 
-// Unified per-character action dossier (synced with crawl 28/11/2026 16:21 — Mitya Lv.90 Trấn 90, Ganyu Lạc Hà 161% ER, Diona C6 Ma Nữ ✓)
+// Unified per-character action dossier (synced with crawl 28/11/2026 16:57 — Mitya Lv.90 Trấn 90, Ganyu 161% ER, Diona C6 Ma Nữ ✓, Xianyun 2,751 ATK · 140.2% ER)
 const ACTIONS = [
   // Bucket 1: Do now in-game (0 Resin or quick swap / artifact mainstat fix)
   { id: "a_ning", bucket: "now", tag: "Nhà Hát", shortFix: "Nâng Ly Nham +20 · Đổi Nón CR%", name: "Ningguang", swapFrom: null, swapNote: "✓ Đã gắn Quyển Thiên Không R2 (2,501 ATK)", fixTitle: "Nâng Ly Nham (+0 → +20) & đổi Nón → CR%", fixSub: "CR đang 14.7% / 169.7% CD · Chỉnh xong sẵn sàng Nhà Hát Màn 8", setKey: null },
@@ -246,10 +246,10 @@ const CHAR_GUIDES = {
   },
   Xianyun: {
     mainStats: "Cát ER% (160–180% ER) · Ly ATK% · Nón ATK% (4pc Bóng Hình Màu Xanh)",
-    targets: "Hiện tại: 2,647 ATK · 122.7% ER · Quyển Thiên Không Lv.90 · Cần kéo ER ≥160% & 3,000+ ATK",
+    targets: "Hiện tại: 2,751 ATK · 140.2% ER · 62.9/78.8 · Quyển Thiên Không Lv.90 · Cần kéo ER ≥160% & 3,000+ ATK",
     steps: [
-      "Đổi ngay Cát ATK% sang Cát Hiệu Quả Nạp (ER%) để kéo 122.7% → 160–180% ER, bảo đảm bật Nộ đều mỗi vòng.",
-      "Đổi Ly ST Phong & Nón Tăng Trị Liệu sang Ly ATK% + Nón ATK% vì cả buff Đánh Đáp (A4) và hồi máu toàn đội đều scale theo ATK.",
+      "✓ Vừa đổi Nón CR% (+17.5% ER · +14.0% ATK% từ Heizou) đẩy 122.7% → 140.2% ER & 2,647 → 2,751 ATK; đổi thêm Cát ATK% → Cát ER% để chạm ≥160% ER.",
+      "Đổi Ly ST Phong & Nón CR% hiện tại sang Ly ATK% + Nón ATK% (giữ dòng phụ ER) vì cả buff Đánh Đáp (A4) lẫn hồi máu toàn đội đều scale theo ATK.",
       "Giữ nguyên Quyển Thiên Không Lv.90 R1 và bộ 4pc Bóng Hình Màu Xanh (-40% kháng Thủy/Hỏa).",
     ],
   },
@@ -531,7 +531,7 @@ const MODES = {
       {
         title: "Hu Tao Đánh Đáp",
         sub: "Tạm 4pc Hồi Ức · 62k → 82k (S)",
-        note: "Chưa farm Thợ Săn vẫn đánh tạm 4pc Hồi Ức được · Chỉnh Xianyun 160%+ ER & farm ké 4pc Thợ Săn (Fontaine) sau",
+        note: "Chưa farm Thợ Săn vẫn đánh tạm 4pc Hồi Ức được · Xianyun đã lên 2,751 ATK / 140.2% ER (đổi thêm Cát ER + Ly/Nón ATK%) & farm ké Thợ Săn sau",
         status: "warn",
         members: ["Hu Tao", "Furina", "Yelan", "Xianyun"],
         power: {
@@ -3591,12 +3591,16 @@ function renderModal() {
         <section class="modal-section">
           <h3 class="modal-section-title">Kế hoạch &amp; Dòng chính</h3>
           ${
-            act
+            act || guide
               ? `
-                <div class="modal-fix-summary">
-                  <strong>${esc(getActionShortFix(act, c))}</strong>
-                  <span class="fix-badge ${act.bucket === "now" ? "" : "warn"}">${act.bucket === "now" ? "● Làm ngay" : act.bucket === "farm" ? "● Cần farm" : "● Snezhnaya"}</span>
-                </div>
+                ${
+                  act
+                    ? `<div class="modal-fix-summary">
+                        <strong>${esc(getActionShortFix(act, c))}</strong>
+                        <span class="fix-badge ${act.bucket === "now" ? "" : "warn"}">${act.bucket === "now" ? "● Làm ngay" : act.bucket === "farm" ? "● Cần farm" : "● Snezhnaya"}</span>
+                      </div>`
+                    : ""
+                }
                 <div class="modal-mainstats">
                   ${guide ? `<div><strong>Dòng chính:</strong> ${esc(guide.mainStats)}</div><div><strong>Ngưỡng đẹp:</strong> ${esc(guide.targets)}</div>` : `<div>${esc(act.fixSub)}</div>`}
                 </div>

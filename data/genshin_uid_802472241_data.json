@@ -1,5 +1,5 @@
 {
-  "crawled_at": "2026-11-28T16:21:00+07:00",
+  "crawled_at": "2026-11-28T16:57:00+07:00",
   "account": {
     "uid": "802472241",
     "nickname": "Mahyh",
@@ -6754,33 +6754,33 @@
       "stats": {
         "Giới Hạn HP": {
           "base": "10409",
-          "add": "7971",
-          "final": "18380"
+          "add": "7702",
+          "final": "18111"
         },
         "Tỷ Lệ Bạo Kích": {
-          "base": "31.8%",
+          "base": "62.9%",
           "add": "",
-          "final": "31.8%"
+          "final": "62.9%"
         },
         "Tấn Công": {
           "base": "1009",
-          "add": "1638",
-          "final": "2647"
+          "add": "1742",
+          "final": "2751"
         },
         "Sát Thương Bạo Kích": {
-          "base": "95.9%",
+          "base": "78.8%",
           "add": "",
-          "final": "95.9%"
+          "final": "78.8%"
         },
         "Phòng Ngự": {
           "base": "573",
-          "add": "98",
-          "final": "671"
+          "add": "75",
+          "final": "648"
         },
         "Tăng Trị Liệu": {
-          "base": "35.9%",
+          "base": "0.0%",
           "add": "",
-          "final": "35.9%"
+          "final": "0.0%"
         },
         "Tinh Thông Nguyên Tố": {
           "base": "23",
@@ -6798,9 +6798,9 @@
           "final": "61.6%"
         },
         "Hiệu Quả Nạp Nguyên Tố": {
-          "base": "122.7%",
+          "base": "140.2%",
           "add": "",
-          "final": "122.7%"
+          "final": "140.2%"
         }
       },
       "artifact_sets": "4pc Bóng Hình Màu Xanh, 1pc Giấc Mộng Hoàng Kim",
@@ -6939,27 +6939,27 @@
           "set": "Bóng Hình Màu Xanh",
           "rarity": 5,
           "level": 20,
-          "main_stat": "Tăng Trị Liệu",
-          "main_val": "35.9%",
+          "main_stat": "Tỷ Lệ Bạo Kích",
+          "main_val": "31.1%",
           "substats": [
             {
-              "name": "Tấn Công",
-              "value": "37",
-              "rolls": 1
-            },
-            {
-              "name": "Phòng Ngự",
-              "value": "42",
-              "rolls": 1
-            },
-            {
-              "name": "HP",
-              "value": "269",
-              "rolls": 0
+              "name": "Hiệu Quả Nạp Nguyên Tố",
+              "value": "17.5%",
+              "rolls": 2
             },
             {
               "name": "Sát Thương Bạo Kích",
-              "value": "22.5%",
+              "value": "5.4%",
+              "rolls": 0
+            },
+            {
+              "name": "Phòng Ngự",
+              "value": "19",
+              "rolls": 0
+            },
+            {
+              "name": "Tỷ Lệ Tấn Công",
+              "value": "14.0%",
               "rolls": 2
             }
           ],
@@ -14915,33 +14915,33 @@
       "stats": {
         "Giới Hạn HP": {
           "base": "9919",
-          "add": "4780",
-          "final": "14699"
+          "add": "5049",
+          "final": "14968"
         },
         "Tỷ Lệ Bạo Kích": {
-          "base": "69.5%",
+          "base": "38.4%",
           "add": "",
-          "final": "69.5%"
+          "final": "38.4%"
         },
         "Tấn Công": {
           "base": "233",
-          "add": "520",
-          "final": "753"
+          "add": "525",
+          "final": "758"
         },
         "Sát Thương Bạo Kích": {
-          "base": "117.6%",
+          "base": "134.7%",
           "add": "",
-          "final": "117.6%"
+          "final": "134.7%"
         },
         "Phòng Ngự": {
           "base": "637",
-          "add": "160",
-          "final": "796"
+          "add": "183",
+          "final": "819"
         },
         "Tăng Trị Liệu": {
-          "base": "0.0%",
+          "base": "35.9%",
           "add": "",
-          "final": "0.0%"
+          "final": "35.9%"
         },
         "Tinh Thông Nguyên Tố": {
           "base": "0",
@@ -14959,9 +14959,9 @@
           "final": "85.6%"
         },
         "Hiệu Quả Nạp Nguyên Tố": {
-          "base": "129.2%",
+          "base": "111.7%",
           "add": "",
-          "final": "129.2%"
+          "final": "111.7%"
         }
       },
       "artifact_sets": "4pc Bóng Hình Màu Xanh, 1pc Kỵ Sĩ Đạo Nhuốm Máu",
@@ -15100,27 +15100,27 @@
           "set": "Bóng Hình Màu Xanh",
           "rarity": 5,
           "level": 20,
-          "main_stat": "Tỷ Lệ Bạo Kích",
-          "main_val": "31.1%",
+          "main_stat": "Tăng Trị Liệu",
+          "main_val": "35.9%",
           "substats": [
             {
-              "name": "Hiệu Quả Nạp Nguyên Tố",
-              "value": "17.5%",
-              "rolls": 2
-            },
-            {
-              "name": "Sát Thương Bạo Kích",
-              "value": "5.4%",
-              "rolls": 0
+              "name": "Tấn Công",
+              "value": "37",
+              "rolls": 1
             },
             {
               "name": "Phòng Ngự",
-              "value": "19",
+              "value": "42",
+              "rolls": 1
+            },
+            {
+              "name": "HP",
+              "value": "269",
               "rolls": 0
             },
             {
-              "name": "Tỷ Lệ Tấn Công",
-              "value": "14.0%",
+              "name": "Sát Thương Bạo Kích",
+              "value": "22.5%",
               "rolls": 2
             }
           ],

@@ -1,12 +1,13 @@
 # Ghi chú Tư vấn & Kế hoạch Tài khoản Genshin (`UID 802472241`)
 
-Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật ngày **28/11/2026 (`16:21`)** & lịch sử roll mới nhất (**151** lượt, Version **7.2**, **74 nhân vật**).
+Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle crawl cập nhật ngày **28/11/2026 (`16:57`)** & lịch sử roll mới nhất (**151** lượt, Version **7.2**, **74 nhân vật**).
 
 ---
 
 ## 0. Các việc đã hoàn thành sau đợt Crawl & Export Roll 25–28/11/2026
 
-- **Cập nhật chiều `28/11 16:21` (`Ganyu · Diona Ma Nữ ✓`) & sáng `12:58 / 10:55`:**
+- **Cập nhật chiều `28/11 16:57` (`Xianyun · Heizou`) & `16:21` (`Ganyu · Diona Ma Nữ ✓`) & sáng `12:58 / 10:55`:**
+  - `Xianyun`: **✓ Đã tráo Nón Thợ Săn (`Bóng Hình`)** từ `Shikanoin Heizou` (`Tăng Trị Liệu 35.9% → Tỷ Lệ Bạo Kích 31.1%` với **`17.5% ER · 14.0% ATK% · 5.4% CD`**) — ATK tăng **`2,647 → 2,751`**, ER tăng **`122.7% → 140.2%`**, CRIT **`31.8/95.9 → 62.9/78.8`**, giữ nguyên `4pc Bóng Hình Màu Xanh` & `Quyển Thiên Không Lv.90 R1`. (`Shikanoin Heizou` nhận lại Nón Tăng Trị Liệu `35.9%`, thành `758 ATK · 38.4/134.7 · 111.7% ER`.)
   - `Ganyu`: **✓ Đã đổi `Cung Trừ Ma → Lạc Hà Lv.90 R5`** (từ Kujou Sara) & gắn **`2pc Dấu Ấn Ngăn Cách`** (`Kiếm Cách Uy Vũ` từ Xingqiu + `Lông Vũ Rơi Rụng` từ kho/NLH) — ER nhảy **`110.4% → 161.0%`**, chỉ số mới `59.4% CR / 162.2% CD · 1,847 ATK · 3pc Đoàn Hát + 2pc Dấu Ấn`. (`Kujou Sara` giữ tạm `Cung Trừ Ma Lv.90 R5`, `1,862 ATK · 136.2% ER`.)
   - `Diona C6`: **✓ Đã mở khóa quest Chỉ Dụ Của Ma Nữ** (`Cung Tế Lễ Lv.80 R3 · 24,422 HP · 199.8% ER · 3pc Thiên Nham + 2pc Thiếu Nữ`): sau E (20s), kích Siêu Dẫn / Tinh-Siêu Dẫn tự bắn thêm **3 Trảo Băng ngoài sân** (CD 3.5s, kích đều `4pc Thiên Nham`), Nộ C6 cộng thêm **`+40% ST Tinh-Siêu Dẫn`**, **`+200 EM`** & **`+25% Max HP`**, đồng thời kích cộng hưởng **2 Ma Nữ** cùng `Yae Miko` trong biến thể 2 Băng `Mitya · Yae · Ganyu · Diona C6`.
   - `Mitya`: **✓ Đã lên `Lv.90 C0` · `7/7/7` & Trấn `Sắc Lệnh Tinh Tú Lv.90 R1`** (`213.6% → 238.7% CD` · `1,178 → 1,368 ATK` · `516 EM`).
@@ -91,7 +92,7 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 - **Rà soát lại Đội hình gợi ý (`27/11 10:48`):**
   - `Raiden + Furina`: đổi `Yae Miko` → **`Jean C3`** (hoặc `Xianyun`) để có Healer toàn đội kích Náo Nhiệt `Furina C0` + 4pc Bóng Hình Màu Xanh.
   - `Navia 2 Nham`: đổi `Chiori C0` → **`Zhongli C1`** khi đi cùng `Bennett + Xiangling` (tránh thiếu Vật Tạo Nham mất 1 búp bê Tamoto).
-  - Thêm đội **`Hu Tao Đánh Đáp`** (`Hu Tao + Furina + Yelan + Xianyun`, trần `82k S`): hiện **chưa farm 4pc Thợ Săn** nên **đánh tạm 4pc Hồi Ức** + chỉnh 0 nhựa `Xianyun` (`122.7% → 160%+ ER`, Ly/Nón ATK%); khi farm bí cảnh Fontaine cho `Neuvillette + Furina` mới giữ mảnh `4pc Thợ Săn` + Cát EM dư cho Hu Tao.
+  - Thêm đội **`Hu Tao Đánh Đáp`** (`Hu Tao + Furina + Yelan + Xianyun`, trần `82k S`): hiện **chưa farm 4pc Thợ Săn** nên **đánh tạm 4pc Hồi Ức** + chỉnh tiếp 0 nhựa `Xianyun` (`140.2% → 160%+ ER`, Ly/Nón ATK%); khi farm bí cảnh Fontaine cho `Neuvillette + Furina` mới giữ mảnh `4pc Thợ Săn` + Cát EM dư cho Hu Tao.
   - Dọn toàn bộ ghi chú tĩnh cũ (`Yelan` đã Tây Phong 90, `Furina` đã Lv.90, `Mitya` đã Lv.80 + Trấn 70, `Snezhnaya` đã 10%).
   - **Thiết kế lại Tab TDV (4 mục thực chiến):** `Tráo Đồ 0 Nhựa` (quét mảnh +20 trên dự bị lắp được ngay cho nhân vật chính), `Lỗi Build & Khe Yếu` (bắt sai dòng chính + thiếu/chưa +20 + khoanh khe yếu nhất), `Bí Cảnh & Khóa Đồ` (bảng khóa/đốt theo từng bí cảnh), và `Kho & Bụi Khai Sáng` (gộp nút lọc Bụi + tính `Dòng Tốt` theo vai trò Support/Crit).
 - **Nhà Hát (`01.11 – 01.12`, Thủy · Lôi · Nham — đã đi tới Màn 3, Độ khó 3 · `28+3` nhân vật):**
@@ -119,7 +120,7 @@ Tổng hợp toàn bộ phân tích từ dữ liệu HoYoLAB Battle Chronicle cr
 | **Mitya + Yae · 2 Băng Ma Nữ** (`Mitya · Yae · Ganyu · Diona`) | Meta 7.2 · 2 Ma Nữ | **~72k** (`S`) | **~98k** (`S+`) | +36% | Mitya Ly EM +20 + 4pc Ảo Tưởng · Yae Nón CR% + 4pc Ảo Tưởng · Ganyu `4pc Dấu Ấn` · Diona C6 Ma Nữ `4pc Thiên Nham` |
 | **Mitya + Yae · 2 Băng Layla** (`Mitya · Yae · Ganyu · Layla`) | Meta 7.2 · Khiên trâu | **~64k** (`A+`) | **~88k** (`S`) | +38% | Khiên `34.9k HP` + Tây Phong R5 (đổi Ganyu ↔ Rosaria C6 tùy màn) · Mitya Ly EM +20 · Layla `4pc Thiên Nham` |
 | **Neuvillette + Furina Hyper** (`Neuvillette · Furina · Kazuha · Zhongli`) | AOE · Đơn | **~76k** (`S`) | **~92k** (`S+`) | +21% | Neuv 4pc Thợ Săn (52.8% CR) · Furina Q9→10 & 4pc Đoàn Kịch (chung 1 bí cảnh Fontaine) |
-| **Hu Tao Đánh Đáp** (`Hu Tao · Furina · Yelan · Xianyun`) | Đơn · Đánh Đáp | ~62k (`A+`) | **~82k** (`S`) | +32% | Chưa farm Thợ Săn vẫn đánh tạm 4pc Hồi Ức · Chỉnh Xianyun Cát ER (`160%+`) + Ly/Nón ATK% · Farm ké 4pc Thợ Săn + Cát EM sau |
+| **Hu Tao Đánh Đáp** (`Hu Tao · Furina · Yelan · Xianyun`) | Đơn · Đánh Đáp | ~62k (`A+`) | **~82k** (`S`) | +32% | Chưa farm Thợ Săn vẫn đánh tạm 4pc Hồi Ức · Chỉnh Xianyun Cát ER (`140.2%→160%+`) + Ly/Nón ATK% · Farm ké 4pc Thợ Săn + Cát EM sau |
 | **Raiden + Furina Hyper** (`Raiden · Furina · Yelan · Jean`) | Đơn mục tiêu | **~72k** (`S`) | ~81k (`S`) | +13% | Furina Q9→10 · 4pc Đoàn Kịch · Jean C3 đủ 4pc Bóng Hình + Ống Đồng 90 *(Yelan ✓ Tây Phong 90)* |
 | **Navia 2 Nham** (`Navia · Zhongli · Bennett · Xiangling`) | Phá khiên · Đơn | ~58k (`A+`) | ~76k (`S`) | +31% | Đẩy lại CR Navia (56.7%→70%+) · 4pc Tiếng Đêm (Tráp) *(đổi Zhongli thay Chiori C0)* |
 | **Hu Tao Bốc Hơi** (`Hu Tao · Yelan · Xingqiu · Zhongli`) | Đơn mục tiêu | ~59k (`A+`) | ~72k (`S`) | +22% | Bản không tranh Furina · Hu Tao CR 54%→70%+ · Đánh Thường 9→10 *(Yelan ✓ Tây Phong 90)* |
