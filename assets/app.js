@@ -18,7 +18,7 @@ const SET_META = {
   hp2: { name: "2pc Thiên Nham + 2pc Vầng Sáng (HP%)", short: "2+2 HP%", where: "Tráp Thánh Thiên Nham / Bí cảnh Sumeru", icon: "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e52f0d8928f3982864ecc8ea13165ebf.png" },
 };
 
-// Unified per-character action dossier (synced with crawl 28/11/2026 10:55 — Mitya 7/7/7 Trấn Lv.80, Valeriy Lv.20, 151 rolls)
+// Unified per-character action dossier (synced with crawl 28/11/2026 12:58 — Mitya Lv.90 7/7/7 Trấn Lv.90, Valeriy Lv.20, 151 rolls)
 const ACTIONS = [
   // Bucket 1: Do now in-game (0 Resin or quick swap / artifact mainstat fix)
   { id: "a_ning", bucket: "now", tag: "Nhà Hát", shortFix: "Nâng Ly Nham +20 · Đổi Nón CR%", name: "Ningguang", swapFrom: null, swapNote: "✓ Đã gắn Quyển Thiên Không R2 (2,501 ATK)", fixTitle: "Nâng Ly Nham (+0 → +20) & đổi Nón → CR%", fixSub: "CR đang 14.7% / 169.7% CD · Chỉnh xong sẵn sàng Nhà Hát Màn 8", setKey: null },
@@ -42,7 +42,7 @@ const ACTIONS = [
   { id: "a_navia", bucket: "farm", tag: "Tối ưu", shortFix: "✓ 6/10/10 · Đẩy lại CR ~70%+ (56.7%)", name: "Navia", swapFrom: null, swapNote: "✓ Đã vương miện Q10 (6/10/10 · Kiếm Li Cốt R1 · 1,980 ATK · 142.7% ER)", fixTitle: "Kéo lại CR 56.7% → 70%+ (đổi lại Nón/mảnh 4pc)", fixSub: "Vừa chuyển 2 Phiến Đá + 2 Giác Đấu nên ER lên 142.7% nhưng CR tụt từ 80% → 56.7%", setKey: "nw" },
 
   // Bucket 3: Snezhnaya unlocked (14%, 37 Iceculus) — start farming!
-  { id: "a_mitya", bucket: "later", tag: "Snezhnaya", shortFix: "Ly EM +20 · Kéo Lv.90 + Trấn 90", name: "Mitya", swapFrom: null, swapNote: "✓ Đã lên Lv.80 (7/7/7 · 67.2/221.3 · 516 EM) · 2pc Giấc Mộng + 2pc Đoàn Hát · Trấn Lv.80", fixTitle: "Nâng Ly EM +0 → +20 · Kéo Trấn (80→90) & Mitya (80→90)", fixSub: "✓ Đã kéo 7/7/7 & Trấn Lv.80 · Farm dần 4pc Ảo Tưởng chung Yae (Ma Nữ)", setKey: "dids" },
+  { id: "a_mitya", bucket: "later", tag: "Snezhnaya", shortFix: "✓ Lv.90 Trấn 90 · Ly EM +20 · 4pc Ảo Tưởng", name: "Mitya", swapFrom: null, swapNote: "✓ Đã lên Lv.90 (7/7/7 · 67.2/238.7 · 516 EM · 1,368 ATK) · Trấn Lv.90 · 2pc Giấc Mộng + 2pc Đoàn Hát", fixTitle: "Nâng Ly EM +0 → +20 · Farm 4pc Ảo Tưởng & kéo thiên phú 9–10", fixSub: "✓ Đã chốt Lv.90 & Trấn Lv.90 · Còn Ly EM Lv.0 và farm bộ 4pc Ảo Tưởng chung Yae (Ma Nữ)", setKey: "dids" },
   { id: "a_valeriy", bucket: "later", tag: "Snezhnaya", shortFix: "✓ Lv.20 · Đeo Isshin 80 · Sau Mitya", name: "Valeriy", swapFrom: null, swapNote: "✓ Đã lên Lv.20 C3 (+100 EM từ C2) · Đã gắn Isshin Lv.80 R1 (693 ATK)", fixTitle: "Build gọn Lv.70/80 (sau Mitya 90) · E6–8 · Full ATK%", fixSub: "C3 đã mở C2 +100 EM & khiên giữ nhịp Mitya; trần thật nằm ở C6 nên ưu tiên Mitya & Yae trước", setKey: "furnace" },
   { id: "a_alyosha", bucket: "later", tag: "Snezhnaya", shortFix: "✓ Đeo Mũi Nhọn 70 · Kéo Lv / Xương Sống", name: "Alyosha", swapFrom: null, swapNote: "✓ Đã gắn Mũi Nhọn Của Gió Lv.70 R5 (550 ATK) · Hoặc lấy Xương Sống 5★ Lv.90 đang rảnh", fixTitle: "Kéo Lv.1 → 80 · Nâng E > Q · Dùng Mũi Nhọn R5 hoặc Xương Sống 90", fixSub: "Healer + Buff ATK team Tinh-Siêu Dẫn · Cân nhắc chuyển Xương Sống 5★ (Yaoyao vừa trả)", setKey: "no" },
 ];
@@ -208,11 +208,11 @@ const CHAR_GUIDES = {
   },
   Mitya: {
     mainStats: "Cát EM · Ly EM hoặc ST Lôi · Nón CR/CD",
-    targets: "✓ Đã lên Lv.80 · Trấn Lv.80 (7/7/7 · 516 EM · 67.2/221.3) · Mục tiêu: Lv.90 & Trấn Lv.90",
+    targets: "✓ Đã chốt Lv.90 · Trấn Lv.90 (7/7/7 · 516 EM · 67.2/238.7 · 1,368 ATK) · Mục tiêu: Ly EM +20 & 4pc Ảo Tưởng",
     steps: [
-      "✓ Đã kéo Mitya lên Lv.80 (7/7/7) & Trấn Lv.80 (CD tăng lên 221.3%) — nâng nốt Ly EM từ Lv.0 → Lv.20.",
-      "Kéo tiếp Trấn 5★ Sắc Lệnh Tinh Tú Lv.80 → Lv.90 và Mitya Lv.80 → Lv.90 kèm thiên phú (sách Charity tại Snezhnaya).",
-      "Farm chung bộ 4pc Ảo Tưởng Vụn Vỡ cho cả Mitya lẫn Yae Miko (Ma Nữ); ghép cùng Rosaria C6 / NLH Băng (sau nâng lên Odette) & Valeriy C3.",
+      "✓ Đã hoàn tất Mitya Lv.90 & Trấn 5★ Sắc Lệnh Tinh Tú Lv.90 (CD đạt 238.7%) — nâng ngay Ly EM (Niềm Kiêu Hãnh Băng Giá) từ Lv.0 → Lv.20.",
+      "Kéo tiếp thiên phú lõi E/Q từ 7 → 9–10 bằng sách Charity tại Snezhnaya (T7/CN) khi dư Nhựa.",
+      "Farm chung bộ 4pc Ảo Tưởng Vụn Vỡ cho cả Mitya lẫn Yae Miko (Ma Nữ); bắt đầu kéo Valeriy C3 lên Lv.70/80 khi Mitya đã lên 90.",
     ],
   },
   Valeriy: {
@@ -420,11 +420,11 @@ const COLLECT_WEAPONS = [
 const FARM_DAYS = [
   { key: 1, short: "T2", title: "Thứ 2", chars: ["Furina", "Mitya", "Chiori"], resinChips: ["3× Boss Tuần", "Narwhal (Furina)", "Boss Snezhnaya (Mitya)"], extra: "Đặt lịch tuần · Nhặt đặc sản hồi 48h" },
   { key: 2, short: "T3", title: "Thứ 3", chars: ["Furina", "Nilou", "Neuvillette"], resinChips: ["Sách Chính Nghĩa (Furina Q10)", "Kiếm Bến Tàu 60→90 (Nilou)"], extra: "Dư nhựa → Bí cảnh Tội Lỗi (Fontaine)" },
-  { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Mitya", "Neuvillette"], resinChips: ["Sách Ánh Sáng (Chiori E)", "Trấn Mitya 70→90", "TDV Fontaine"], extra: "Ép Tráp: 4pc Tông Thất / Dấu Ấn / Tiếng Đêm" },
+  { key: 3, short: "T4", title: "Thứ 4", chars: ["Chiori", "Mitya", "Neuvillette"], resinChips: ["Sách Ánh Sáng (Chiori E)", "4pc Ảo Tưởng (Mitya)", "TDV Fontaine"], extra: "Ép Tráp: 4pc Tông Thất / Dấu Ấn / Tiếng Đêm" },
   { key: 4, short: "T5", title: "Thứ 5", chars: ["Neuvillette", "Furina", "Fischl"], resinChips: ["Bí cảnh Tội Lỗi (Fontaine)", "4pc Thợ Săn & Đoàn Kịch"], extra: "1 bí cảnh nuôi chung Neuv + Furina + Fischl" },
   { key: 5, short: "T6", title: "Thứ 6", chars: ["Furina", "Neuvillette", "Nilou"], resinChips: ["Sách Chính Nghĩa (Furina Q10)", "Chốt Bến Tàu 90 / TDV Fontaine"], extra: "Chốt Beidou / Gorou / Ningguang trước hạn Nhà Hát 01/12" },
   { key: 6, short: "T7", title: "Thứ 7", chars: ["Chiori", "Mitya", "Yae Miko"], resinChips: ["Sách Ánh Sáng (Chiori E)", "4pc Ảo Tưởng (Mitya + Yae)"], extra: "Leo lại La Hoàn 11-3 & 12" },
-  { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Mitya", "Yae Miko", "Valeriy"], resinChips: ["Sách Charity (Mitya)", "4pc Ảo Tưởng (Mitya + Yae)"], extra: "Kéo Mitya Lv.90 + Trấn 90 trước, Valeriy làm sau" },
+  { key: 0, short: "CN", title: "Chủ Nhật", chars: ["Mitya", "Yae Miko", "Valeriy"], resinChips: ["Sách Charity (Mitya E/Q)", "4pc Ảo Tưởng (Mitya + Yae)"], extra: "Mitya Lv.90 + Trấn 90 đã xong — bắt đầu kẹp Valeriy Lv.70/80" },
 ];
 
 const MODES = {
@@ -601,16 +601,16 @@ const MODES = {
       },
       {
         title: "Mitya + Yae Tinh-Siêu Dẫn",
-        sub: "✓ Mitya Lv.80 (7/7/7) · Trấn 80 · 58k → 98k (S+)",
-        note: "Mitya đã Lv.80 (7/7/7) + Trấn Lv.80 (Valeriy Lv.20 Isshin 80) · Kéo 90 + 4pc Ảo Tưởng · Đổi Rosaria (hoặc NLH Băng 90) → Odette vượt 100k+",
+        sub: "✓ Mitya Lv.90 (7/7/7 · Trấn 90) · 61k → 98k (S+)",
+        note: "Mitya đã chốt Lv.90 + Trấn Lv.90 (238.7% CD · Valeriy Lv.20 Isshin 80) · Còn Ly EM +20 & 4pc Ảo Tưởng · Đổi Rosaria → Odette vượt 100k+",
         status: "warn",
         members: ["Mitya", "Yae Miko", "Rosaria", "Valeriy"],
         power: {
           cur: 53, proj: 98, curTier: "A", projTier: "S+",
           role: "Meta 7.2", tags: ["st", "aoe", "upgrade"], badge: "Trần #1 7.2",
           short: "Mitya+Yae", labelPos: "right", cost: "Cao",
-          chips: ["Mitya 90 + Trấn 90", "Yae Nón CR% + 4pc Ảo Tưởng", "Valeriy Lv.80"],
-          upgrade: "Mitya Lv.80→90 + Trấn 80→90 + Ly EM +20 · Yae (✓ Ma Nữ) đổi Nón CR% + 4pc Ảo Tưởng · Valeriy C3 Lv.80 (đổi Rosaria/NLH Băng → Odette vượt 100k+)",
+          chips: ["Ly EM +20", "Yae Nón CR% + 4pc Ảo Tưởng", "Valeriy Lv.80"],
+          upgrade: "Mitya Ly EM +20 + 4pc Ảo Tưởng · Yae (✓ Ma Nữ) đổi Nón CR% + 4pc Ảo Tưởng · Valeriy C3 Lv.80 (đổi Rosaria/NLH Băng → Odette vượt 100k+)",
         },
       },
     ],
@@ -637,7 +637,7 @@ const MODES = {
     label: "Meta 7.2",
     items: [
       { title: "Build Ngay (Vùng Mở)", sub: "Fontaine 64% · Inazuma 100%", note: "✓ Furina đã lên Lv.90 (4/9/9) · Farm bí cảnh Tội Lỗi (Thợ Săn + Đoàn Kịch) · Aino dừng ở Lv.80", status: "ok", members: ["Furina", "Neuvillette", "Chiori", "Nilou"] },
-      { title: "Snezhnaya (10%)", sub: "Lõi Tinh-Siêu Dẫn 7.2", note: "✓ Mitya Lv.80 (7/7/7) + Trấn 80 · Valeriy Lv.20 Isshin Lv.80 · Alyosha Mũi Nhọn Lv.70 · Mới roll Illuga C0 (chưa cần nâng vội)", status: "warn", members: ["Mitya", "Yae Miko", "Valeriy", "Alyosha"] },
+      { title: "Snezhnaya (10%)", sub: "Lõi Tinh-Siêu Dẫn 7.2", note: "✓ Mitya Lv.90 (7/7/7) + Trấn 90 (238.7% CD) · Valeriy Lv.20 Isshin Lv.80 · Alyosha Mũi Nhọn Lv.70 · Mới roll Illuga C0", status: "warn", members: ["Mitya", "Yae Miko", "Valeriy", "Alyosha"] },
       { title: "Mục Tiêu Roll Tiếp", sub: "Pity 5★: 10 (50/50) · Thường: 8 (Jean C3 @12)", note: "151 roll (26/11 ra Illuga C0 ở 301 · Jean C3 & Charlotte C3 ở 200) · Chờ Băng Thần Anastasya (7.3) · Xilonen · Odette", status: "ok", members: ["Furina", "Xilonen", "Odette", "Columbina"] },
     ],
   },

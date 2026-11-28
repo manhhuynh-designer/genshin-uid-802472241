@@ -1,5 +1,5 @@
 {
-  "crawled_at": "2026-11-28T10:55:00+07:00",
+  "crawled_at": "2026-11-28T12:58:00+07:00",
   "account": {
     "uid": "802472241",
     "nickname": "Mahyh",
@@ -9407,7 +9407,7 @@
       "element": "Electro",
       "rarity": 5,
       "rarity_raw": 5,
-      "level": 80,
+      "level": 90,
       "constellation": 0,
       "friendship": 1,
       "talents": [
@@ -9419,18 +9419,18 @@
       "weapon": {
         "name": "Sắc Lệnh Tinh Tú",
         "rarity": 5,
-        "level": 80,
+        "level": 90,
         "refinement": 1,
-        "base_atk": "475",
+        "base_atk": "542",
         "substat_name": "Sát Thương Bạo Kích",
-        "substat_val": "80.4%",
+        "substat_val": "88.2%",
         "icon": "https://act-webstatic.hoyoverse.com/hk4e/e20200928calculate/item_icon/6aea6776/ec4643eca7890833b5b415f7ad5dc79b.png"
       },
       "stats": {
         "Giới Hạn HP": {
-          "base": "10264",
+          "base": "11634",
           "add": "6124",
-          "final": "16388"
+          "final": "17758"
         },
         "Tỷ Lệ Bạo Kích": {
           "base": "67.2%",
@@ -9438,19 +9438,19 @@
           "final": "67.2%"
         },
         "Tấn Công": {
-          "base": "707",
-          "add": "548",
-          "final": "1255"
+          "base": "805",
+          "add": "563",
+          "final": "1368"
         },
         "Sát Thương Bạo Kích": {
-          "base": "221.3%",
+          "base": "238.7%",
           "add": "",
-          "final": "221.3%"
+          "final": "238.7%"
         },
         "Phòng Ngự": {
-          "base": "698",
-          "add": "81",
-          "final": "780"
+          "base": "792",
+          "add": "92",
+          "final": "884"
         },
         "Tăng Trị Liệu": {
           "base": "0.0%",
